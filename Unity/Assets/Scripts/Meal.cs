@@ -2,7 +2,7 @@
 
     public struct Meal {
         public string Name;
-        public string Serving;
+        public string ServingSize;
         public float Fat;
         public float Carbs;
         public float Protein;
@@ -11,9 +11,9 @@
 
         public static readonly Meal NullMeal = new Meal("NullMeal", "", 0, 0, 0, ""); 
 
-        public Meal(string name, string serving, float fat, float carbs, float protein, string description) {
+        public Meal(string name, string servingSize, float fat, float carbs, float protein, string description) {
             Name = name;
-            Serving = serving;
+            ServingSize = servingSize;
             Fat = fat > 0 ? fat : 0;
             Carbs = carbs > 0 ? carbs : 0;
             Protein = protein > 0 ? protein : 0;
@@ -21,8 +21,8 @@
             Description = description;
         }
 
-        public static Meal GetMealProportion(float amount, Meal meal) {
-            return new Meal(meal.Name, meal.Serving, meal.Fat * amount, meal.Carbs * amount, meal.Protein * amount, meal.Description);
+        public static Meal GetMealProportion(float serving, Meal meal) {
+            return new Meal(meal.Name, meal.ServingSize, meal.Fat * serving, meal.Carbs * serving, meal.Protein * serving, meal.Description);
         }
 
         public static bool operator ==(Meal meal1, Meal meal2) {
@@ -41,7 +41,7 @@
         }
 
         public override string ToString() {
-            return Name + " (per " + Serving + "), [ F:" + Fat + ", C:" + Carbs + ", P:" + Protein + " ], " + Description;
+            return Name + " (per " + ServingSize + "), [ F:" + Fat + ", C:" + Carbs + ", P:" + Protein + " ], " + Description;
         }
     }
 }

@@ -11,7 +11,7 @@ namespace CalorieCounter {
 
         private Transform _contentTransform;
 
-        public void AddMeal(float amount, Meal meal) {
+        public void AddMeal(float serving, Meal meal) {
             GameObject amountText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject mealText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject fatText = Instantiate(_scrollViewTextPrefab, _contentTransform);
@@ -19,9 +19,9 @@ namespace CalorieCounter {
             GameObject proteinText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _contentTransform);
 
-            Meal mealProportion = Meal.GetMealProportion(amount, meal);
+            Meal mealProportion = Meal.GetMealProportion(serving, meal);
 
-            amountText.GetComponent<TextMeshProUGUI>().text = amount.ToString();
+            amountText.GetComponent<TextMeshProUGUI>().text = serving.ToString();
             mealText.GetComponent<TextMeshProUGUI>().text = mealProportion.Name;
             fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();

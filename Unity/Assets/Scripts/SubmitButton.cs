@@ -9,7 +9,7 @@ namespace CalorieCounter {
         private MealDropdown _mealDropdown;
 
         [SerializeField]
-        private AmountDropdown _amountDropdown;
+        private ServingDropdown _amountDropdown;
 
         [SerializeField]
         private MealScrollView _mealScrollView;
@@ -18,7 +18,7 @@ namespace CalorieCounter {
         private GameObject _error;
 
         public void OnSubmit() {
-            if (_amountDropdown.SelectedAmount <= 0) {
+            if (_amountDropdown.SelectedServing <= 0) {
                 _error.GetComponent<TextMeshProUGUI>().text = "Select Valid Amount";
                 _error.SetActive(true);
                 return;
@@ -29,7 +29,7 @@ namespace CalorieCounter {
             }
 
             _error.SetActive(false);
-            _mealScrollView.AddMeal(_amountDropdown.SelectedAmount, _mealDropdown.SelectedMeal);
+            _mealScrollView.AddMeal(_amountDropdown.SelectedServing, _mealDropdown.SelectedMeal);
             _mealDropdown.ResetDropdown();
             _amountDropdown.ResetDropdown();
         }
