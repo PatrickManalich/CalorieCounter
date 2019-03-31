@@ -3890,6 +3890,7 @@ GameObject:
   - component: {fileID: 1576245870}
   - component: {fileID: 1576245869}
   - component: {fileID: 1576245868}
+  - component: {fileID: 1576245871}
   m_Layer: 5
   m_Name: MealDropdown
   m_TagString: Untagged
@@ -3972,7 +3973,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1576245871}
+        m_MethodName: DropdownIndexChanged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: TMPro.TMP_Dropdown+DropdownEvent, Unity.TextMeshPro, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1576245869
@@ -4012,6 +4024,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576245866}
   m_CullTransparentMesh: 0
+--- !u!114 &1576245871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576245866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ad4da5d35a4a641a96516a65162e1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mealType: 0
 --- !u!1 &1638622423
 GameObject:
   m_ObjectHideFlags: 0
