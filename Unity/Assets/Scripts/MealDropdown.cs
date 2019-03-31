@@ -9,24 +9,25 @@ namespace CalorieCounter {
         [SerializeField]
         private AbstractMeals.MealType _mealType;
 
+        public Meal SelectedMeal { get; private set; }
+
         private const string ChooseText = "Choose";
 
         private TMP_Dropdown _mealDropdown;
-        private IReadOnlyList<Meal> _meals;
+        private List<Meal> _meals;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
-        private string _selectedMealName;
 
         public void DropdownIndexChanged(int index) {
-            _selectedMealName = _optionDataList[index].text;
+            SelectedMeal = _meals.Find(x => x.Name == _optionDataList[index].text);
         }
 
         private void Start() {
             _mealDropdown = GetComponent<TMP_Dropdown>();
 
             if (_mealType == AbstractMeals.MealType.Small) {
-                _meals = new SmallMeals().Meals;
+                _meals = new List<Meal>(new SmallMeals().Meals);
             } else {
-                _meals = new LargeMeals().Meals;
+                _meals = new List<Meal>(new LargeMeals().Meals);
             }
 
             _mealDropdown.ClearOptions();
@@ -35,7 +36,6 @@ namespace CalorieCounter {
                 _optionDataList.Add(new TMP_Dropdown.OptionData(meal.Name));
             }
             _mealDropdown.AddOptions(_optionDataList);
-            _selectedMealName = _optionDataList[0].text;
         }
         
     }
