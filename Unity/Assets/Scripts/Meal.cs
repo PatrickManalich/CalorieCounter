@@ -8,6 +8,8 @@
         public float Protein;
         public string Description;
 
+        public static readonly Meal NullMeal = new Meal("NullMeal", "", 0, 0, 0, ""); 
+
         public Meal(string name, string serving, float fat, float carbs, float protein, string description) {
             Name = name;
             Serving = serving;
@@ -15,6 +17,21 @@
             Carbs = carbs > 0 ? carbs : 0;
             Protein = protein > 0 ? protein : 0;
             Description = description;
+        }
+
+        public static bool operator ==(Meal meal1, Meal meal2) {
+            return meal1.Equals(meal2);
+        }
+
+        public static bool operator !=(Meal meal1, Meal meal2) {
+            return !meal1.Equals(meal2);
+        }
+
+        public override bool Equals(object obj) {
+            return base.Equals(obj);
+        }
+        public override int GetHashCode() {
+            return base.GetHashCode();
         }
 
         public override string ToString() {

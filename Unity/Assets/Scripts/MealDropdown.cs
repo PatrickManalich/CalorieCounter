@@ -36,6 +36,7 @@ namespace CalorieCounter {
                 _optionDataList.Add(new TMP_Dropdown.OptionData(meal.Name));
             }
             _mealDropdown.AddOptions(_optionDataList);
+            SelectedMeal = Meal.NullMeal;
         }
         
     }
