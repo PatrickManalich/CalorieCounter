@@ -11,18 +11,22 @@ namespace CalorieCounter {
 
         private Transform _contentTransform;
 
-        public void AddMeal(Meal meal) {
-            GameObject nameText = Instantiate(_scrollViewTextPrefab, _contentTransform);
+        public void AddMeal(float amount, Meal meal) {
+            GameObject amountText = Instantiate(_scrollViewTextPrefab, _contentTransform);
+            GameObject mealText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject fatText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject carbText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject proteinText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _contentTransform);
 
-            nameText.GetComponent<TextMeshProUGUI>().text = meal.Name;
-            fatText.GetComponent<TextMeshProUGUI>().text = meal.Fat.ToString();
-            carbText.GetComponent<TextMeshProUGUI>().text = meal.Carbs.ToString();
-            proteinText.GetComponent<TextMeshProUGUI>().text = meal.Protein.ToString();
-            calorieText.GetComponent<TextMeshProUGUI>().text = meal.Calories.ToString();
+            Meal mealProportion = Meal.GetMealProportion(amount, meal);
+
+            amountText.GetComponent<TextMeshProUGUI>().text = amount.ToString();
+            mealText.GetComponent<TextMeshProUGUI>().text = mealProportion.Name;
+            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
+            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
+            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
+            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
         }
 
         private void Start() {

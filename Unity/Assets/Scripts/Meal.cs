@@ -21,6 +21,10 @@
             Description = description;
         }
 
+        public static Meal GetMealProportion(float amount, Meal meal) {
+            return new Meal(meal.Name, meal.Serving, meal.Fat * amount, meal.Carbs * amount, meal.Protein * amount, meal.Description);
+        }
+
         public static bool operator ==(Meal meal1, Meal meal2) {
             return meal1.Equals(meal2);
         }

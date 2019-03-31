@@ -10,15 +10,17 @@ namespace CalorieCounter {
         private AbstractMeals.MealType _mealType;
 
         public Meal SelectedMeal { get; private set; }
-
-        private const string ChooseText = "Choose";
-
+        
         private TMP_Dropdown _mealDropdown;
         private List<Meal> _meals;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
         public void DropdownIndexChanged(int index) {
-            SelectedMeal = _meals.Find(x => x.Name == _optionDataList[index].text);
+            if (_meals.Exists(x => x.Name == _optionDataList[index].text)) {
+                SelectedMeal = _meals.Find(x => x.Name == _optionDataList[index].text);
+            } else {
+                SelectedMeal = Meal.NullMeal;
+            }
         }
 
         public void ResetDropdown() {
@@ -36,7 +38,7 @@ namespace CalorieCounter {
             }
 
             _mealDropdown.ClearOptions();
-            _optionDataList.Add(new TMP_Dropdown.OptionData(ChooseText));
+            _optionDataList.Add(new TMP_Dropdown.OptionData(""));
             foreach (var meal in _meals) {
                 _optionDataList.Add(new TMP_Dropdown.OptionData(meal.Name));
             }
