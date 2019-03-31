@@ -21,6 +21,11 @@ namespace CalorieCounter {
             SelectedMeal = _meals.Find(x => x.Name == _optionDataList[index].text);
         }
 
+        public void ResetDropdown() {
+            _mealDropdown.value = 0;
+            SelectedMeal = Meal.NullMeal;
+        }
+
         private void Start() {
             _mealDropdown = GetComponent<TMP_Dropdown>();
 

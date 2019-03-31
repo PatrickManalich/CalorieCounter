@@ -9,6 +9,9 @@ namespace CalorieCounter {
         private MealDropdown _mealDropdown;
 
         [SerializeField]
+        private MealScrollView _mealScrollView;
+
+        [SerializeField]
         private GameObject _error;
 
         public void OnSubmit() {
@@ -19,6 +22,8 @@ namespace CalorieCounter {
             }
 
             _error.SetActive(false);
+            _mealScrollView.AddMeal(_mealDropdown.SelectedMeal);
+            _mealDropdown.ResetDropdown();
         }
 
         private void Start() {

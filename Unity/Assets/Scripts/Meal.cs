@@ -6,6 +6,7 @@
         public float Fat;
         public float Carbs;
         public float Protein;
+        public float Calories;
         public string Description;
 
         public static readonly Meal NullMeal = new Meal("NullMeal", "", 0, 0, 0, ""); 
@@ -16,6 +17,7 @@
             Fat = fat > 0 ? fat : 0;
             Carbs = carbs > 0 ? carbs : 0;
             Protein = protein > 0 ? protein : 0;
+            Calories = (fat * 9) + (carbs * 4) + (protein * 4);
             Description = description;
         }
 
