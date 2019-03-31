@@ -6,7 +6,7 @@ namespace CalorieCounter {
 
         public enum MealType { Small, Large }
 
-        public abstract IReadOnlyCollection<Meal> Meals { get; }
+        public abstract IReadOnlyList<Meal> Meals { get; }
 
     }
 }

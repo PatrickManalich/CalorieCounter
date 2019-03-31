@@ -12,7 +12,7 @@ namespace CalorieCounter {
         private const string ChooseText = "Choose";
 
         private TMP_Dropdown _mealDropdown;
-        private IReadOnlyCollection<Meal> _meals;
+        private IReadOnlyList<Meal> _meals;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
         private string _selectedMealName;
 

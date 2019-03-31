@@ -6,7 +6,7 @@ namespace CalorieCounter {
 
         private List<Meal> _meals = new List<Meal>();
 
-        public override IReadOnlyCollection<Meal> Meals {
+        public override IReadOnlyList<Meal> Meals {
             get {
                 return _meals.AsReadOnly();
             }
