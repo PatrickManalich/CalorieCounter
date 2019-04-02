@@ -1,5 +1,7 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace CalorieCounter {
@@ -9,7 +11,14 @@ namespace CalorieCounter {
         [SerializeField]
         private GameObject _scrollViewTextPrefab;
 
+        [System.Serializable]
+        public class MealEvent : UnityEvent<Meal> { }
+
+        public MealEvent OnMealSubmitted;
+
         private Transform _contentTransform;
+
+        private List<Meal> _mealProportions = new List<Meal>();
 
         public void AddMeal(float serving, Meal meal) {
             GameObject amountText = Instantiate(_scrollViewTextPrefab, _contentTransform);
@@ -27,6 +36,9 @@ namespace CalorieCounter {
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
+
+            _mealProportions.Add(mealProportion);
+            OnMealSubmitted.Invoke(mealProportion);
         }
 
         private void Start() {
