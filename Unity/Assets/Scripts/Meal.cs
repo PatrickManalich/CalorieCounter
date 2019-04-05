@@ -1,4 +1,6 @@
-﻿namespace CalorieCounter {
+﻿using System;
+
+namespace CalorieCounter {
 
     public struct Meal {
         public string Name;
@@ -12,10 +14,10 @@
         public Meal(float fat, float carbs, float protein) {
             Name = "";
             ServingSize = "";
-            Fat = fat > 0 ? fat : 0;
-            Carbs = carbs > 0 ? carbs : 0;
-            Protein = protein > 0 ? protein : 0;
-            Calories = (fat * 9) + (carbs * 4) + (protein * 4);
+            Fat = fat > 0 ? Round(fat) : 0;
+            Carbs = carbs > 0 ? Round(carbs) : 0;
+            Protein = protein > 0 ? Round(protein) : 0;
+            Calories = Round((fat * 9) + (carbs * 4) + (protein * 4));
             Description = "";
         }
 
@@ -38,7 +40,10 @@
         }
 
         public static Meal GetMealProportion(float serving, Meal meal) {
-            return new Meal(meal.Name, meal.ServingSize, meal.Fat * serving, meal.Carbs * serving, meal.Protein * serving, meal.Description);
+            float fatProportion = Round(meal.Fat * serving);
+            float carbsProportion = Round(meal.Carbs * serving);
+            float proteinProportion = Round(meal.Protein * serving);
+            return new Meal(meal.Name, meal.ServingSize, fatProportion, carbsProportion, proteinProportion, meal.Description);
         }
 
         public static bool operator ==(Meal meal1, Meal meal2) {
@@ -58,6 +63,10 @@
 
         public override string ToString() {
             return Name + " (per " + ServingSize + "), [ Fat:" + Fat + ", Carbs:" + Carbs + ", Protein:" + Protein + ", Calories:" + Calories + " ], " + Description;
+        }
+
+        private static float Round(float number) {
+            return (float)Math.Round(number, 1);
         }
     }
 }
