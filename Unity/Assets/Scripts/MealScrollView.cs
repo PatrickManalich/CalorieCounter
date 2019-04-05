@@ -11,6 +11,9 @@ namespace CalorieCounter {
         [SerializeField]
         private GameObject _scrollViewTextPrefab;
 
+        [SerializeField]
+        private GameObject _deleteButtonContainerPrefab;
+
         [System.Serializable]
         public class MealEvent : UnityEvent<Meal> { }
 
@@ -29,6 +32,15 @@ namespace CalorieCounter {
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _contentTransform);
 
             Meal mealProportion = Meal.GetMealProportion(serving, meal);
+
+            DeleteButton deleteButton = Instantiate(_deleteButtonContainerPrefab, _contentTransform).GetComponentInChildren<DeleteButton>();
+            deleteButton.RemovableGameObjects.Add(amountText);
+            deleteButton.RemovableGameObjects.Add(mealText);
+            deleteButton.RemovableGameObjects.Add(fatText);
+            deleteButton.RemovableGameObjects.Add(carbText);
+            deleteButton.RemovableGameObjects.Add(proteinText);
+            deleteButton.RemovableGameObjects.Add(calorieText);
+            deleteButton.MealProportion = mealProportion;
 
             amountText.GetComponent<TextMeshProUGUI>().text = serving.ToString();
             mealText.GetComponent<TextMeshProUGUI>().text = mealProportion.Name;

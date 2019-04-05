@@ -35,6 +35,10 @@
             return new Meal(meal1.Fat + meal2.Fat, meal1.Carbs + meal2.Carbs, meal1.Protein + meal2.Protein);
         }
 
+        public static Meal operator -(Meal meal1, Meal meal2) {
+            return new Meal(meal1.Fat - meal2.Fat, meal1.Carbs - meal2.Carbs, meal1.Protein - meal2.Protein);
+        }
+
         public static Meal GetMealProportion(float serving, Meal meal) {
             return new Meal(meal.Name, meal.ServingSize, meal.Fat * serving, meal.Carbs * serving, meal.Protein * serving, meal.Description);
         }
