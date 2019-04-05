@@ -677,7 +677,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 127662987}
-        m_MethodName: OnSubmit
+        m_MethodName: SubmitMeal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3942,7 +3942,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 767946881}
-        m_MethodName: DropdownIndexChanged
+        m_MethodName: RefreshSelectedMeal
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5091,7 +5091,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1128983969}
-        m_MethodName: OnSubmit
+        m_MethodName: SubmitMeal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7437,7 +7437,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1521270210}
-        m_MethodName: DropdownIndexChanged
+        m_MethodName: RefreshSelectedServing
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8278,7 +8278,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1576245871}
-        m_MethodName: DropdownIndexChanged
+        m_MethodName: RefreshSelectedMeal
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8803,7 +8803,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1671688307}
-        m_MethodName: DropdownIndexChanged
+        m_MethodName: RefreshSelectedServing
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

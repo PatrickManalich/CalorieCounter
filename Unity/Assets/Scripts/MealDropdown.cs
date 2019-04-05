@@ -15,7 +15,7 @@ namespace CalorieCounter {
         private List<Meal> _meals;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
-        public void DropdownIndexChanged(int index) {
+        public void RefreshSelectedMeal(int index) {
             if (_meals.Exists(x => x.Name == _optionDataList[index].text)) {
                 SelectedMeal = _meals.Find(x => x.Name == _optionDataList[index].text);
             } else {

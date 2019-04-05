@@ -13,7 +13,7 @@ namespace CalorieCounter {
         private TMP_Dropdown _servingDropdown;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
-        public void DropdownIndexChanged(int index) {
+        public void RefreshSelectedServing(int index) {
             float parsedFloat;
             if (float.TryParse(_optionDataList[index].text, out parsedFloat)) {
                 SelectedServing = parsedFloat;
