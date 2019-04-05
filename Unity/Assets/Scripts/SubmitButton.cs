@@ -22,7 +22,7 @@ namespace CalorieCounter {
                 _error.GetComponent<TextMeshProUGUI>().text = "Select Valid Amount";
                 _error.SetActive(true);
                 return;
-            } else if (_mealDropdown.SelectedMeal == Meal.NullMeal) {
+            } else if (_mealDropdown.SelectedMeal == default) {
                 _error.GetComponent<TextMeshProUGUI>().text = "Select Valid Meal";
                 _error.SetActive(true);
                 return;

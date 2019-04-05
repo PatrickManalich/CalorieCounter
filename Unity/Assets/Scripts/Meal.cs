@@ -9,8 +9,6 @@
         public float Calories;
         public string Description;
 
-        public static readonly Meal NullMeal = new Meal(0, 0, 0);
-
         public Meal(float fat, float carbs, float protein) {
             Name = "";
             ServingSize = "";

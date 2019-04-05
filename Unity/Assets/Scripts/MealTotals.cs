@@ -17,7 +17,7 @@ namespace CalorieCounter {
         [SerializeField]
         private TextMeshProUGUI _caloriesText;
 
-        private Meal _mealTotals = Meal.NullMeal;
+        private Meal _mealTotals = default;
 
         public void AddMealProportion(Meal mealProportion) {
             _mealTotals += mealProportion;

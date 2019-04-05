@@ -19,13 +19,13 @@ namespace CalorieCounter {
             if (_meals.Exists(x => x.Name == _optionDataList[index].text)) {
                 SelectedMeal = _meals.Find(x => x.Name == _optionDataList[index].text);
             } else {
-                SelectedMeal = Meal.NullMeal;
+                SelectedMeal = default;
             }
         }
 
         public void ResetDropdown() {
             _mealDropdown.value = 0;
-            SelectedMeal = Meal.NullMeal;
+            SelectedMeal = default;
         }
 
         private void Start() {
@@ -43,7 +43,7 @@ namespace CalorieCounter {
                 _optionDataList.Add(new TMP_Dropdown.OptionData(meal.Name));
             }
             _mealDropdown.AddOptions(_optionDataList);
-            SelectedMeal = Meal.NullMeal;
+            SelectedMeal = default;
         }
         
     }
