@@ -17,7 +17,7 @@ namespace CalorieCounter.Meals {
         [SerializeField]
         private TextMeshProUGUI _errorText;
 
-        public void SubmitMeal() {
+        public void TryAddingMeal() {
             if (_amountDropdown.SelectedServing <= 0) {
                 _errorText.text = "Select Valid Amount";
                 _errorText.gameObject.SetActive(true);
