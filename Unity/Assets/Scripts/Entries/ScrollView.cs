@@ -23,7 +23,7 @@ namespace CalorieCounter.Entries {
 
         private List<Entry> _entries = new List<Entry>();
 
-        public void AddInputFields() {
+        public void AddInputFields(Selectable lastSelectable) {
             Instantiate(_scrollViewBlankPrefab, _content.transform);
 
             GameObject previous = null;
@@ -38,6 +38,7 @@ namespace CalorieCounter.Entries {
                 }
                 _inputFields.Add(previous.GetComponent<TMP_InputField>());
             }
+            _inputFields[_inputFields.Count - 1].GetComponent<Tabbable>().NextSelectable = lastSelectable;
         }
 
         public void DeleteInputFields() {

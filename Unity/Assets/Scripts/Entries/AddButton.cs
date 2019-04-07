@@ -26,7 +26,7 @@ namespace CalorieCounter.Entries {
             }
 
             _errorText.gameObject.SetActive(false);
-            _scrollView.AddInputFields();
+            _scrollView.AddInputFields(_submitButton.GetComponent<Selectable>());
             _submitButton.gameObject.SetActive(true);
             _cancelButton.gameObject.SetActive(true);
         }

@@ -1243,6 +1243,7 @@ GameObject:
   - component: {fileID: 497729720}
   - component: {fileID: 497729719}
   - component: {fileID: 497729718}
+  - component: {fileID: 497729722}
   m_Layer: 5
   m_Name: CancelButton
   m_TagString: Untagged
@@ -1375,6 +1376,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497729716}
   m_CullTransparentMesh: 0
+--- !u!114 &497729722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 497729716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda9f35d199bdd844959f57b55da62f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextSelectable: {fileID: 1128983966}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2878,6 +2892,7 @@ GameObject:
   - component: {fileID: 1374171249}
   - component: {fileID: 1374171248}
   - component: {fileID: 1374171247}
+  - component: {fileID: 1374171251}
   m_Layer: 5
   m_Name: SubmitButton
   m_TagString: Untagged
@@ -3010,6 +3025,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1374171245}
   m_CullTransparentMesh: 0
+--- !u!114 &1374171251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374171245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda9f35d199bdd844959f57b55da62f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NextSelectable: {fileID: 497729719}
 --- !u!1 &1522375256
 GameObject:
   m_ObjectHideFlags: 0
