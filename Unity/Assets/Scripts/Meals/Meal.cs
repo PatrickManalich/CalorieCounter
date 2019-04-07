@@ -3,6 +3,7 @@
 namespace CalorieCounter.Meals {
 
     public struct Meal {
+
         public string Name;
         public string ServingSize;
         public float Fat;
