@@ -34,12 +34,7 @@ namespace CalorieCounter.Meals {
             Meal mealProportion = Meal.GetMealProportion(serving, meal);
 
             DeleteButton deleteButton = Instantiate(_deleteButtonContainerPrefab, _contentTransform).GetComponentInChildren<DeleteButton>();
-            deleteButton.RemovableGameObjects.Add(amountText);
-            deleteButton.RemovableGameObjects.Add(mealText);
-            deleteButton.RemovableGameObjects.Add(fatText);
-            deleteButton.RemovableGameObjects.Add(carbText);
-            deleteButton.RemovableGameObjects.Add(proteinText);
-            deleteButton.RemovableGameObjects.Add(calorieText);
+            deleteButton.RemovableGameObjects.InsertRange(0, new List<GameObject> { amountText, mealText, fatText, carbText, proteinText, calorieText });
             deleteButton.MealProportion = mealProportion;
 
             amountText.GetComponent<TextMeshProUGUI>().text = serving.ToString();
