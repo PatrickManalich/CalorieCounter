@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,8 @@ namespace CalorieCounter.ScaleStats {
         [SerializeField]
         private GridLayoutGroup _content;
 
+        private List<TMP_InputField> _inputFields = new List<TMP_InputField>(); 
+
         public void AddInputFields() {
             Instantiate(_scrollViewBlankPrefab, _content.transform);
 
@@ -28,16 +31,25 @@ namespace CalorieCounter.ScaleStats {
                     previous.GetComponent<Tabbable>().NextSelectable = current.GetComponent<Selectable>();
                     previous = current;
                 }
+                _inputFields.Add(previous.GetComponent<TMP_InputField>());
             }
         }
 
+        public void AddScaleStats() {
+            Debug.Log("Adding!");
+        }
+
         public bool HasInputFields() {
-            foreach(Transform child in _content.transform) {
-                if(child.GetComponent<TMP_InputField>() != null) {
-                    return true;
+            return _inputFields.Count > 0;
+        }
+
+        public bool AllInputFieldsFilled() {
+            foreach(var inputField in _inputFields) {
+                if(inputField.text == "") {
+                    return false;
                 }
             }
-            return false;
+            return true;
         }
     }
 }
