@@ -40,6 +40,14 @@ namespace CalorieCounter.Entries {
             }
         }
 
+        public void DeleteInputFields() {
+            for (int i = 0; i < _content.constraintCount; i++) {
+                int childIndex = (_entries.Count * _content.constraintCount) + i;
+                Destroy(_content.transform.GetChild(childIndex).gameObject);
+            }
+            _inputFields.Clear();
+        }
+
         public void AddEntry() {
             GameObject dateText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject weightText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -52,10 +60,7 @@ namespace CalorieCounter.Entries {
             Entry entry = new Entry(float.Parse(_inputFields[0].text), float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text),
                 float.Parse(_inputFields[3].text), float.Parse(_inputFields[4].text), float.Parse(_inputFields[5].text));
 
-            for(int i = 0; i < _content.constraintCount; i++) {
-                int childIndex = (_entries.Count * _content.constraintCount) + i;
-                Destroy(_content.transform.GetChild(childIndex).gameObject);
-            }
+            DeleteInputFields();
 
             dateText.GetComponent<TextMeshProUGUI>().text = entry.Date.ToString("MM/dd/yyyy");
             weightText.GetComponent<TextMeshProUGUI>().text = entry.Weight.ToString();
@@ -65,7 +70,6 @@ namespace CalorieCounter.Entries {
             boneMassText.GetComponent<TextMeshProUGUI>().text = entry.BoneMass.ToString();
             bmiText.GetComponent<TextMeshProUGUI>().text = entry.Bmi.ToString();
 
-            _inputFields.Clear();
             _entries.Add(entry);
         }
 
