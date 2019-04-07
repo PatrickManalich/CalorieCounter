@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8591053463964645235}
   m_Layer: 5
-  m_Name: DeleteButtonContainer
+  m_Name: ScrollViewDeleteButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,11 +355,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8591053463964645235}
     m_Modifications:
-    - target: {fileID: 8753170863334632685, guid: 4ced30b2fffa89f4f92d204273b538ea,
-        type: 3}
-      propertyPath: m_Name
-      value: DeleteButton
-      objectReference: {fileID: 0}
     - target: {fileID: 567866645378051803, guid: 4ced30b2fffa89f4f92d204273b538ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -464,6 +459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8753170863334632685, guid: 4ced30b2fffa89f4f92d204273b538ea,
+        type: 3}
+      propertyPath: m_Name
+      value: DeleteButton
       objectReference: {fileID: 0}
     - target: {fileID: 4152281114327285138, guid: 4ced30b2fffa89f4f92d204273b538ea,
         type: 3}
