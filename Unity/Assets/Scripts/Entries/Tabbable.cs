@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace CalorieCounter.ScaleStats {
+namespace CalorieCounter.Entries {
 
     public class Tabbable : MonoBehaviour, IUpdateSelectedHandler {
 

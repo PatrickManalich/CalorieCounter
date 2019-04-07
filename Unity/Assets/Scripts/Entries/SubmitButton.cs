@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.ScaleStats {
+namespace CalorieCounter.Entries {
 
     public class SubmitButton : MonoBehaviour {
 
@@ -15,7 +15,7 @@ namespace CalorieCounter.ScaleStats {
         [SerializeField]
         private TextMeshProUGUI _errorText;
 
-        public void TryAddingScaleStats() {
+        public void TryAddingEntry() {
             if (!_scrollView.AllInputFieldsFilled()) {
                 _errorText.text = "Fill All Input Fields";
                 _errorText.gameObject.SetActive(true);
@@ -23,7 +23,7 @@ namespace CalorieCounter.ScaleStats {
             }
 
             _errorText.gameObject.SetActive(false);
-            _scrollView.AddScaleStats();
+            _scrollView.AddEntry();
             gameObject.SetActive(false);
             _cancelButton.gameObject.SetActive(false);
         }        

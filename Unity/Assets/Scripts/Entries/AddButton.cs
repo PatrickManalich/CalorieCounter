@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.ScaleStats {
+namespace CalorieCounter.Entries {
 
     public class AddButton : MonoBehaviour {
 

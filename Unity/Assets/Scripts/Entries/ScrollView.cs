@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.ScaleStats {
+namespace CalorieCounter.Entries {
 
     public class ScrollView : MonoBehaviour {
 
@@ -35,7 +35,7 @@ namespace CalorieCounter.ScaleStats {
             }
         }
 
-        public void AddScaleStats() {
+        public void AddEntry() {
             Debug.Log("Adding!");
         }
 
