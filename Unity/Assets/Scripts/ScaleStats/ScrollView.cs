@@ -18,8 +18,16 @@ namespace CalorieCounter.ScaleStats {
         public void AddInputFields() {
             Instantiate(_scrollViewBlankPrefab, _content.transform);
 
+            GameObject previous = null;
             for(int i = 0; i < _content.constraintCount - 1; i++) {
-                Instantiate(_scrollViewInputFieldPrefab, _content.transform);
+                if(i == 0) {
+                    previous = Instantiate(_scrollViewInputFieldPrefab, _content.transform);
+                    previous.GetComponent<TMP_InputField>().ActivateInputField();
+                } else {
+                    GameObject current = Instantiate(_scrollViewInputFieldPrefab, _content.transform);
+                    previous.GetComponent<Tabbable>().NextSelectable = current.GetComponent<Selectable>();
+                    previous = current;
+                }
             }
         }
 
