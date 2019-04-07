@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 19275659}
   - component: {fileID: 19275662}
   m_Layer: 5
-  m_Name: MealScrollView
+  m_Name: ScrollView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,7 +342,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: CalorieCounter.MealScrollView+MealEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: CalorieCounter.Meals.ScrollView+MealEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &29919848
 GameObject:
@@ -796,7 +796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mealDropdown: {fileID: 767946881}
   _amountDropdown: {fileID: 1521270210}
-  _mealScrollView: {fileID: 688997043}
+  _scrollView: {fileID: 688997043}
   _error: {fileID: 1871739065}
 --- !u!114 &127662988
 MonoBehaviour:
@@ -2567,7 +2567,7 @@ GameObject:
   - component: {fileID: 428840574}
   - component: {fileID: 428840573}
   m_Layer: 0
-  m_Name: MealTotals
+  m_Name: Totals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3620,7 +3620,7 @@ GameObject:
   - component: {fileID: 688997044}
   - component: {fileID: 688997043}
   m_Layer: 5
-  m_Name: MealScrollView
+  m_Name: ScrollView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3678,7 +3678,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: CalorieCounter.MealScrollView+MealEvent, Assembly-CSharp, Version=0.0.0.0,
+    m_TypeName: CalorieCounter.Meals.ScrollView+MealEvent, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &688997044
 MonoBehaviour:
@@ -5319,7 +5319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mealDropdown: {fileID: 1576245871}
   _amountDropdown: {fileID: 1671688307}
-  _mealScrollView: {fileID: 19275662}
+  _scrollView: {fileID: 19275662}
   _error: {fileID: 319171209}
 --- !u!1 &1165763513
 GameObject:

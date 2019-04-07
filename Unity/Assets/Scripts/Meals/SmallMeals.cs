@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
-namespace CalorieCounter {
+namespace CalorieCounter.Meals {
 
     public class SmallMeals : AbstractMeals {
 

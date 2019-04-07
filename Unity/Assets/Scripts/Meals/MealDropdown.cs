@@ -2,7 +2,7 @@
 using TMPro;
 using System.Collections.Generic;
 
-namespace CalorieCounter {
+namespace CalorieCounter.Meals {
 
     public class MealDropdown : MonoBehaviour {
 

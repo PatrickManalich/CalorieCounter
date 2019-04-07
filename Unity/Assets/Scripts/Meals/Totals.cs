@@ -1,9 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace CalorieCounter {
+namespace CalorieCounter.Meals {
 
-    public class MealTotals : MonoBehaviour {
+    public class Totals : MonoBehaviour {
 
         [SerializeField]
         private TextMeshProUGUI _fatText;
@@ -17,23 +17,23 @@ namespace CalorieCounter {
         [SerializeField]
         private TextMeshProUGUI _caloriesText;
 
-        private Meal _mealTotals = default;
+        private Meal _totalsMeal = default;
 
         public void AddMealProportion(Meal mealProportion) {
-            _mealTotals += mealProportion;
+            _totalsMeal += mealProportion;
             RefreshText();
         }
 
         public void SubtractMealProportion(Meal mealProportion) {
-            _mealTotals -= mealProportion;
+            _totalsMeal -= mealProportion;
             RefreshText();
         }
 
         private void RefreshText() {
-            _fatText.text = _mealTotals.Fat.ToString() + "/0";
-            _carbsText.text = _mealTotals.Carbs.ToString() + "/0";
-            _proteinText.text = _mealTotals.Protein.ToString() + "/0";
-            _caloriesText.text = _mealTotals.Calories.ToString() + "/0";
+            _fatText.text = _totalsMeal.Fat.ToString() + "/0";
+            _carbsText.text = _totalsMeal.Carbs.ToString() + "/0";
+            _proteinText.text = _totalsMeal.Protein.ToString() + "/0";
+            _caloriesText.text = _totalsMeal.Calories.ToString() + "/0";
         }
     }
 }

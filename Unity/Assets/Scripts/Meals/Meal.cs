@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CalorieCounter {
+namespace CalorieCounter.Meals {
 
     public struct Meal {
         public string Name;

@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace CalorieCounter {
+namespace CalorieCounter.Meals {
     public class DeleteButton : MonoBehaviour {
 
         public List<GameObject> RemovableGameObjects = new List<GameObject>();
 
         public Meal MealProportion;
 
-        private MealTotals _mealTotals;
+        private Totals _totals;
 
         public void DeleteMeal() {
-            _mealTotals.SubtractMealProportion(MealProportion);
+            _totals.SubtractMealProportion(MealProportion);
             foreach (var gameObject in RemovableGameObjects) {
                 Destroy(gameObject);
             }
@@ -19,7 +19,7 @@ namespace CalorieCounter {
         }
 
         private void Start() {
-            _mealTotals = FindObjectOfType<MealTotals>();
+            _totals = FindObjectOfType<Totals>();
         }
     }
 }

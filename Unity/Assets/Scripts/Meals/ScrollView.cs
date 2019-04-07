@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace CalorieCounter {
+namespace CalorieCounter.Meals {
 
-    public class MealScrollView : MonoBehaviour {
+    public class ScrollView : MonoBehaviour {
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab;

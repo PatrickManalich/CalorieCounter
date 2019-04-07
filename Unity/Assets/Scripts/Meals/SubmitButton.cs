@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace CalorieCounter {
+namespace CalorieCounter.Meals {
 
     public class SubmitButton : MonoBehaviour {
         
@@ -12,7 +12,7 @@ namespace CalorieCounter {
         private ServingDropdown _amountDropdown;
 
         [SerializeField]
-        private MealScrollView _mealScrollView;
+        private ScrollView _scrollView;
 
         [SerializeField]
         private GameObject _error;
@@ -29,7 +29,7 @@ namespace CalorieCounter {
             }
 
             _error.SetActive(false);
-            _mealScrollView.AddMeal(_amountDropdown.SelectedServing, _mealDropdown.SelectedMeal);
+            _scrollView.AddMeal(_amountDropdown.SelectedServing, _mealDropdown.SelectedMeal);
             _mealDropdown.ResetDropdown();
             _amountDropdown.ResetDropdown();
         }
