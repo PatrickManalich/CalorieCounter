@@ -15,27 +15,27 @@ namespace CalorieCounter.Meals {
         private ScrollView _scrollView;
 
         [SerializeField]
-        private GameObject _error;
+        private TextMeshProUGUI _errorText;
 
         public void SubmitMeal() {
             if (_amountDropdown.SelectedServing <= 0) {
-                _error.GetComponent<TextMeshProUGUI>().text = "Select Valid Amount";
-                _error.SetActive(true);
+                _errorText.text = "Select Valid Amount";
+                _errorText.gameObject.SetActive(true);
                 return;
             } else if (_mealDropdown.SelectedMeal == default) {
-                _error.GetComponent<TextMeshProUGUI>().text = "Select Valid Meal";
-                _error.SetActive(true);
+                _errorText.text = "Select Valid Meal";
+                _errorText.gameObject.SetActive(true);
                 return;
             }
 
-            _error.SetActive(false);
+            _errorText.gameObject.SetActive(false);
             _scrollView.AddMeal(_amountDropdown.SelectedServing, _mealDropdown.SelectedMeal);
             _mealDropdown.ResetDropdown();
             _amountDropdown.ResetDropdown();
         }
 
         private void Start() {
-            _error.SetActive(false);
+            _errorText.gameObject.SetActive(false);
         }
     }
 }

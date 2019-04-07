@@ -328,6 +328,7 @@ MonoBehaviour:
     type: 3}
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
     type: 3}
+  _contentTransform: {fileID: 2136228770}
   OnMealSubmitted:
     m_PersistentCalls:
       m_Calls:
@@ -797,7 +798,7 @@ MonoBehaviour:
   _mealDropdown: {fileID: 767946881}
   _amountDropdown: {fileID: 1521270210}
   _scrollView: {fileID: 688997043}
-  _error: {fileID: 1871739065}
+  _errorText: {fileID: 1871739067}
 --- !u!114 &127662988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3664,6 +3665,7 @@ MonoBehaviour:
     type: 3}
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
     type: 3}
+  _contentTransform: {fileID: 1343613514}
   OnMealSubmitted:
     m_PersistentCalls:
       m_Calls:
@@ -5320,7 +5322,7 @@ MonoBehaviour:
   _mealDropdown: {fileID: 1576245871}
   _amountDropdown: {fileID: 1671688307}
   _scrollView: {fileID: 19275662}
-  _error: {fileID: 319171209}
+  _errorText: {fileID: 319171211}
 --- !u!1 &1165763513
 GameObject:
   m_ObjectHideFlags: 0

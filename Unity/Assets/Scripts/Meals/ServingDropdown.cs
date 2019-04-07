@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 namespace CalorieCounter.Meals {
 
+    [RequireComponent(typeof(TMP_Dropdown))]
     public class ServingDropdown : MonoBehaviour {
         
         public float SelectedServing { get; private set; }

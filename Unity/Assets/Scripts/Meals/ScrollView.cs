@@ -14,12 +14,13 @@ namespace CalorieCounter.Meals {
         [SerializeField]
         private GameObject _deleteButtonContainerPrefab;
 
+        [SerializeField]
+        private Transform _contentTransform;
+
         [System.Serializable]
         public class MealEvent : UnityEvent<Meal> { }
 
         public MealEvent OnMealSubmitted;
-
-        private Transform _contentTransform;
 
         private List<Meal> _mealProportions = new List<Meal>();
 
@@ -51,10 +52,6 @@ namespace CalorieCounter.Meals {
 
             _mealProportions.Add(mealProportion);
             OnMealSubmitted.Invoke(mealProportion);
-        }
-
-        private void Start() {
-            _contentTransform = GetComponentInChildren<GridLayoutGroup>().transform;
         }
     }
 }
