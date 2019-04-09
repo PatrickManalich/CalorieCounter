@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-namespace CalorieCounter.Meals {
+namespace CalorieCounter.MealEntries {
 
     public class TotalMeal : MonoBehaviour {
 

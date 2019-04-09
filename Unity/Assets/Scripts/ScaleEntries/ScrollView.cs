@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.Entries {
+namespace CalorieCounter.ScaleEntries {
 
     public class ScrollView : MonoBehaviour {
 
@@ -21,7 +21,7 @@ namespace CalorieCounter.Entries {
 
         private List<TMP_InputField> _inputFields = new List<TMP_InputField>();
 
-        private List<Entry> _entries = new List<Entry>();
+        private List<ScaleEntry> _entries = new List<ScaleEntry>();
 
         public void AddInputFields(Selectable lastSelectable) {
             Instantiate(_scrollViewBlankPrefab, _content.transform);
@@ -58,7 +58,7 @@ namespace CalorieCounter.Entries {
             GameObject boneMassText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject bmiText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-            Entry entry = new Entry(float.Parse(_inputFields[0].text), float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text),
+            ScaleEntry entry = new ScaleEntry(float.Parse(_inputFields[0].text), float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text),
                 float.Parse(_inputFields[3].text), float.Parse(_inputFields[4].text), float.Parse(_inputFields[5].text));
 
             DeleteInputFields();

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace CalorieCounter.Meals {
+namespace CalorieCounter.MealEntries {
     public class DeleteButton : MonoBehaviour {
 
         public List<GameObject> RemovableGameObjects = new List<GameObject>();

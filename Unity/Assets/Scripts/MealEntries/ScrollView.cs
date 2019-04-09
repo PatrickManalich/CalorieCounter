@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace CalorieCounter.Meals {
+namespace CalorieCounter.MealEntries {
 
     public class ScrollView : MonoBehaviour {
 

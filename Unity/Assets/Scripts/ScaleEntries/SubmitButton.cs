@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.Entries {
+namespace CalorieCounter.ScaleEntries {
 
     public class SubmitButton : MonoBehaviour {
 

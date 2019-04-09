@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CalorieCounter.Meals {
+namespace CalorieCounter.MealEntries {
 
     public abstract class AbstractMeals {
 

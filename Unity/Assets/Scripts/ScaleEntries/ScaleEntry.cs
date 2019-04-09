@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace CalorieCounter.Entries {
+namespace CalorieCounter.ScaleEntries {
 
-    public struct Entry {
+    public struct ScaleEntry {
 
         public DateTime Date;
         public float Weight;
@@ -12,7 +12,7 @@ namespace CalorieCounter.Entries {
         public float BoneMass;
         public float Bmi;
 
-        public Entry(float weight, float bodyFat, float bodyWater, float muscleMass, float boneMass, float bmi) {
+        public ScaleEntry(float weight, float bodyFat, float bodyWater, float muscleMass, float boneMass, float bmi) {
             Date = DateTime.Today;
             Weight = weight > 0 ? Round(weight) : 0;
             BodyFat = bodyFat > 0 ? Round(bodyFat) : 0;
