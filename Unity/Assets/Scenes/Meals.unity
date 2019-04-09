@@ -2568,7 +2568,7 @@ GameObject:
   - component: {fileID: 428840574}
   - component: {fileID: 428840573}
   m_Layer: 0
-  m_Name: Totals
+  m_Name: TotalMeal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

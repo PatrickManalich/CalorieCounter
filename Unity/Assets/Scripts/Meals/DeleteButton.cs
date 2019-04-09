@@ -8,10 +8,10 @@ namespace CalorieCounter.Meals {
 
         public Meal MealProportion;
 
-        private Totals _totals;
+        private TotalMeal _totalMeal;
 
         public void DeleteMeal() {
-            _totals.SubtractMealProportion(MealProportion);
+            _totalMeal.SubtractMealProportion(MealProportion);
             foreach (var gameObject in RemovableGameObjects) {
                 Destroy(gameObject);
             }
@@ -19,7 +19,7 @@ namespace CalorieCounter.Meals {
         }
 
         private void Start() {
-            _totals = FindObjectOfType<Totals>();
+            _totalMeal = FindObjectOfType<TotalMeal>();
         }
     }
 }
