@@ -7,6 +7,8 @@ namespace CalorieCounter.ScaleEntries {
 
     public class ScrollView : MonoBehaviour {
 
+        public List<ScaleEntry> Entries { get; private set; } = new List<ScaleEntry>();
+
         [SerializeField]
         private GameObject _scrollViewBlankPrefab;
 
@@ -20,8 +22,6 @@ namespace CalorieCounter.ScaleEntries {
         private GridLayoutGroup _content;
 
         private List<TMP_InputField> _inputFields = new List<TMP_InputField>();
-
-        private List<ScaleEntry> _entries = new List<ScaleEntry>();
 
         public void AddInputFields(Selectable lastSelectable) {
             Instantiate(_scrollViewBlankPrefab, _content.transform);
@@ -43,7 +43,7 @@ namespace CalorieCounter.ScaleEntries {
 
         public void DeleteInputFields() {
             for (int i = 0; i < _content.constraintCount; i++) {
-                int childIndex = (_entries.Count * _content.constraintCount) + i;
+                int childIndex = (Entries.Count * _content.constraintCount) + i;
                 Destroy(_content.transform.GetChild(childIndex).gameObject);
             }
             _inputFields.Clear();
@@ -71,7 +71,7 @@ namespace CalorieCounter.ScaleEntries {
             boneMassText.GetComponent<TextMeshProUGUI>().text = entry.BoneMass.ToString();
             bmiText.GetComponent<TextMeshProUGUI>().text = entry.Bmi.ToString();
 
-            _entries.Add(entry);
+            Entries.Add(entry);
         }
 
         public bool HasInputFields() {

@@ -30,9 +30,5 @@ namespace CalorieCounter.ScaleEntries {
             _submitButton.gameObject.SetActive(true);
             _cancelButton.gameObject.SetActive(true);
         }
-
-        private void Start() {
-            _errorText.gameObject.SetActive(false);
-        }
     }
 }
