@@ -49,29 +49,12 @@ namespace CalorieCounter.ScaleEntries {
             _inputFields.Clear();
         }
 
-        public void AddEntry() {
-            GameObject dateText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject weightText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject bodyFatText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject bodyWaterText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject muscleMassText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject boneMassText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject bmiText = Instantiate(_scrollViewTextPrefab, _content.transform);
-
+        public void AddEntryFromInputFields() {
             ScaleEntry entry = new ScaleEntry(float.Parse(_inputFields[0].text), float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text),
                 float.Parse(_inputFields[3].text), float.Parse(_inputFields[4].text), float.Parse(_inputFields[5].text));
 
             DeleteInputFields();
-
-            dateText.GetComponent<TextMeshProUGUI>().text = entry.Date.ToString("MM/dd/yyyy");
-            weightText.GetComponent<TextMeshProUGUI>().text = entry.Weight.ToString();
-            bodyFatText.GetComponent<TextMeshProUGUI>().text = entry.BodyFat.ToString();
-            bodyWaterText.GetComponent<TextMeshProUGUI>().text = entry.BodyWater.ToString();
-            muscleMassText.GetComponent<TextMeshProUGUI>().text = entry.MuscleMass.ToString();
-            boneMassText.GetComponent<TextMeshProUGUI>().text = entry.BoneMass.ToString();
-            bmiText.GetComponent<TextMeshProUGUI>().text = entry.Bmi.ToString();
-
-            Entries.Add(entry);
+            AddEntry(entry);
         }
 
         public bool HasInputFields() {
@@ -90,6 +73,33 @@ namespace CalorieCounter.ScaleEntries {
                 }
             }
             return true;
+        }
+
+        private void Awake() {
+            List<ScaleEntry> importedEntries = JsonController.Import(Application.dataPath);
+            foreach(var entry in importedEntries) {
+                AddEntry(entry);
+            }
+        }
+
+        private void AddEntry(ScaleEntry entry) {
+            GameObject dateText = Instantiate(_scrollViewTextPrefab, _content.transform);
+            GameObject weightText = Instantiate(_scrollViewTextPrefab, _content.transform);
+            GameObject bodyFatText = Instantiate(_scrollViewTextPrefab, _content.transform);
+            GameObject bodyWaterText = Instantiate(_scrollViewTextPrefab, _content.transform);
+            GameObject muscleMassText = Instantiate(_scrollViewTextPrefab, _content.transform);
+            GameObject boneMassText = Instantiate(_scrollViewTextPrefab, _content.transform);
+            GameObject bmiText = Instantiate(_scrollViewTextPrefab, _content.transform);
+
+            dateText.GetComponent<TextMeshProUGUI>().text = entry.Date.ToString("MM/dd/yyyy");
+            weightText.GetComponent<TextMeshProUGUI>().text = entry.Weight.ToString();
+            bodyFatText.GetComponent<TextMeshProUGUI>().text = entry.BodyFat.ToString();
+            bodyWaterText.GetComponent<TextMeshProUGUI>().text = entry.BodyWater.ToString();
+            muscleMassText.GetComponent<TextMeshProUGUI>().text = entry.MuscleMass.ToString();
+            boneMassText.GetComponent<TextMeshProUGUI>().text = entry.BoneMass.ToString();
+            bmiText.GetComponent<TextMeshProUGUI>().text = entry.Bmi.ToString();
+
+            Entries.Add(entry);
         }
     }
 }

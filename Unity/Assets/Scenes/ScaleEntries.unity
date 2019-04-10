@@ -3052,7 +3052,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1374171247}
-        m_MethodName: TryAddingEntry
+        m_MethodName: TryAddingEntryFromInputFields
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
