@@ -8,7 +8,7 @@ namespace CalorieCounter.MealEntries {
     public class MealDropdown : MonoBehaviour {
 
         [SerializeField]
-        private AbstractMeals.MealType _mealType;
+        private AbstractMeals.MealType _mealType = default;
 
         public Meal SelectedMeal { get; private set; }
         

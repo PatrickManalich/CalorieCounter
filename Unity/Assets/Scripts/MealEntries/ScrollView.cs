@@ -8,13 +8,13 @@ namespace CalorieCounter.MealEntries {
     public class ScrollView : MonoBehaviour {
 
         [SerializeField]
-        private GameObject _scrollViewTextPrefab;
+        private GameObject _scrollViewTextPrefab = default;
 
         [SerializeField]
-        private GameObject _deleteButtonContainerPrefab;
+        private GameObject _deleteButtonContainerPrefab = default;
 
         [SerializeField]
-        private Transform _contentTransform;
+        private Transform _contentTransform = default;
 
         [System.Serializable]
         public class MealEvent : UnityEvent<Meal> { }

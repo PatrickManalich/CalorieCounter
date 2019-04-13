@@ -7,13 +7,13 @@ namespace CalorieCounter.ScaleEntries {
     public class CancelButton : MonoBehaviour {
 
         [SerializeField]
-        private ScrollView _scrollView;
+        private ScrollView _scrollView = default;
 
         [SerializeField]
-        private Button _submitButton;
+        private Button _submitButton = default;
 
         [SerializeField]
-        private TextMeshProUGUI _errorText;
+        private TextMeshProUGUI _errorText = default;
 
         public void CancelAddingEntry() {
             _errorText.gameObject.SetActive(false);

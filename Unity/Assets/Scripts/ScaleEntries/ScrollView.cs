@@ -10,16 +10,16 @@ namespace CalorieCounter.ScaleEntries {
         public List<ScaleEntry> Entries { get; private set; } = new List<ScaleEntry>();
 
         [SerializeField]
-        private GameObject _scrollViewBlankPrefab;
+        private GameObject _scrollViewBlankPrefab = default;
 
         [SerializeField]
-        private GameObject _scrollViewInputFieldPrefab;
+        private GameObject _scrollViewInputFieldPrefab = default;
 
         [SerializeField]
-        private GameObject _scrollViewTextPrefab;
+        private GameObject _scrollViewTextPrefab = default;
 
         [SerializeField]
-        private GridLayoutGroup _content;
+        private GridLayoutGroup _content = default;
 
         private List<TMP_InputField> _inputFields = new List<TMP_InputField>();
 

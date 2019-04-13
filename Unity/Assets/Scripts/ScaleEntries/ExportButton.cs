@@ -6,10 +6,10 @@ namespace CalorieCounter.ScaleEntries {
     public class ExportButton : MonoBehaviour {
 
         [SerializeField]
-        private ScrollView _scrollView;
+        private ScrollView _scrollView = default;
 
         [SerializeField]
-        private TextMeshProUGUI _errorText;
+        private TextMeshProUGUI _errorText = default;
 
         public void TryExporting() {
             if (_scrollView.HasInputFields()) {

@@ -6,16 +6,16 @@ namespace CalorieCounter.MealEntries {
     public class SubmitButton : MonoBehaviour {
         
         [SerializeField]
-        private MealDropdown _mealDropdown;
+        private MealDropdown _mealDropdown = default;
 
         [SerializeField]
-        private ServingDropdown _amountDropdown;
+        private ServingDropdown _amountDropdown = default;
 
         [SerializeField]
-        private ScrollView _scrollView;
+        private ScrollView _scrollView = default;
 
         [SerializeField]
-        private TextMeshProUGUI _errorText;
+        private TextMeshProUGUI _errorText = default;
 
         public void TryAddingMeal() {
             if (_amountDropdown.SelectedServing <= 0) {

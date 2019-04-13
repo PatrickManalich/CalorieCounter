@@ -7,13 +7,13 @@ namespace CalorieCounter.ScaleEntries {
     public class SubmitButton : MonoBehaviour {
 
         [SerializeField]
-        private ScrollView _scrollView;
+        private ScrollView _scrollView = default;
 
         [SerializeField]
-        private Button _cancelButton;
+        private Button _cancelButton = default;
 
         [SerializeField]
-        private TextMeshProUGUI _errorText;
+        private TextMeshProUGUI _errorText = default;
 
         public void TryAddingEntryFromInputFields() {
             if (!_scrollView.AllInputFieldsFilled()) {

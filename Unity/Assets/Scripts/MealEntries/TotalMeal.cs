@@ -6,16 +6,16 @@ namespace CalorieCounter.MealEntries {
     public class TotalMeal : MonoBehaviour {
 
         [SerializeField]
-        private TextMeshProUGUI _fatText;
+        private TextMeshProUGUI _fatText = default;
 
         [SerializeField]
-        private TextMeshProUGUI _carbsText;
+        private TextMeshProUGUI _carbsText = default;
 
         [SerializeField]
-        private TextMeshProUGUI _proteinText;
+        private TextMeshProUGUI _proteinText = default;
 
         [SerializeField]
-        private TextMeshProUGUI _caloriesText;
+        private TextMeshProUGUI _caloriesText = default;
 
         private Meal _totalMeal = default;
 
