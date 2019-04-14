@@ -23,7 +23,7 @@ namespace CalorieCounter.ScaleEntries {
         }
 
         public override string ToString() {
-            return Date + ", [ Weight:" + Weight + ", BodyFat:" + BodyFat + ", BodyWater:" + BodyWater + ", MuscleMass:" + MuscleMass + ", BoneMass:" + BoneMass + ", Bmi:" + Bmi + " ]";
+            return Date.ToShortDateString() + ", [ Weight:" + Weight + ", BodyFat:" + BodyFat + ", BodyWater:" + BodyWater + ", MuscleMass:" + MuscleMass + ", BoneMass:" + BoneMass + ", Bmi:" + Bmi + " ]";
         }
 
         private static float Round(float number) {

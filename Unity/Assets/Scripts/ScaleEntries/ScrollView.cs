@@ -93,7 +93,7 @@ namespace CalorieCounter.ScaleEntries {
             GameObject boneMassText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject bmiText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-            dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Date.ToString("MM/dd/yyyy");
+            dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Date.ToShortDateString();
             weightText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Weight.ToString();
             bodyFatText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BodyFat.ToString();
             bodyWaterText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BodyWater.ToString();
