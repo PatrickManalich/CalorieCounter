@@ -1,12 +1,13 @@
 ﻿using System;
 
-namespace CalorieCounter {
+namespace CalorieCounter.TargetEntries {
 
     public struct TargetEntry {
 
+        public float Weight;
         public float CalorieMaintenanceLevel;
-        public float RestDayProteinGrams;
         public float RestDayCalories;
+        public float RestDayProteinGrams;
         public float RestDayFatGrams;
         public float RestDayCarbGrams;
         public float TrainingDayCalories;
@@ -27,15 +28,16 @@ namespace CalorieCounter {
 
 
         public TargetEntry(float weight) {
-            CalorieMaintenanceLevel = Round(((4.536f * weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
+            Weight = weight;
+            CalorieMaintenanceLevel = Round(((4.536f * Weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
 
             RestDayCalories = Round(CalorieMaintenanceLevel + RestDayCalorieSurplus);
-            RestDayProteinGrams = Round(weight * ProteinGramsPerPound);
+            RestDayProteinGrams = Round(Weight * ProteinGramsPerPound);
             RestDayFatGrams = Round(RestDayCalories * RestDayFatPercentage / 9);
             RestDayCarbGrams = Round((RestDayCalories - (RestDayProteinGrams * 4) - RestDayFatGrams * 9) / 4);
 
             TrainingDayCalories = Round(CalorieMaintenanceLevel + TrainingDayCalorieSurplus);
-            TrainingDayProteinGrams = Round(weight * ProteinGramsPerPound);
+            TrainingDayProteinGrams = Round(Weight * ProteinGramsPerPound);
             TrainingDayFatGrams = Round(TrainingDayCalories * TrainingDayFatPercentage / 9);
             TrainingDayCarbGrams = Round((TrainingDayCalories - (TrainingDayProteinGrams * 4) - TrainingDayFatGrams * 9) / 4);
         }
