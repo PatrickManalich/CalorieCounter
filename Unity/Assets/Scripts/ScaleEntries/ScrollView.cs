@@ -7,7 +7,7 @@ namespace CalorieCounter.ScaleEntries {
 
     public class ScrollView : MonoBehaviour {
 
-        public List<ScaleEntry> Entries { get; private set; } = new List<ScaleEntry>();
+        public List<ScaleEntry> ScaleEntries { get; private set; } = new List<ScaleEntry>();
 
         [SerializeField]
         private GameObject _scrollViewBlankPrefab = default;
@@ -43,18 +43,18 @@ namespace CalorieCounter.ScaleEntries {
 
         public void DeleteInputFields() {
             for (int i = 0; i < _content.constraintCount; i++) {
-                int childIndex = (Entries.Count * _content.constraintCount) + i;
+                int childIndex = (ScaleEntries.Count * _content.constraintCount) + i;
                 Destroy(_content.transform.GetChild(childIndex).gameObject);
             }
             _inputFields.Clear();
         }
 
-        public void AddEntryFromInputFields() {
-            ScaleEntry entry = new ScaleEntry(float.Parse(_inputFields[0].text), float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text),
+        public void AddScaleEntryFromInputFields() {
+            ScaleEntry scaleEntry = new ScaleEntry(float.Parse(_inputFields[0].text), float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text),
                 float.Parse(_inputFields[3].text), float.Parse(_inputFields[4].text), float.Parse(_inputFields[5].text));
 
             DeleteInputFields();
-            AddEntry(entry);
+            AddScaleEntry(scaleEntry);
         }
 
         public bool HasInputFields() {
@@ -76,13 +76,13 @@ namespace CalorieCounter.ScaleEntries {
         }
 
         private void Awake() {
-            List<ScaleEntry> importedEntries = JsonUtility.Import(Application.dataPath);
-            foreach(var entry in importedEntries) {
-                AddEntry(entry);
+            List<ScaleEntry> importedScaleEntries = JsonUtility.ImportScaleEntries(Application.dataPath);
+            foreach(var scaleEntry in importedScaleEntries) {
+                AddScaleEntry(scaleEntry);
             }
         }
 
-        private void AddEntry(ScaleEntry entry) {
+        private void AddScaleEntry(ScaleEntry scaleEntry) {
             GameObject dateText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject weightText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject bodyFatText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -91,15 +91,15 @@ namespace CalorieCounter.ScaleEntries {
             GameObject boneMassText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject bmiText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-            dateText.GetComponent<TextMeshProUGUI>().text = entry.Date.ToString("MM/dd/yyyy");
-            weightText.GetComponent<TextMeshProUGUI>().text = entry.Weight.ToString();
-            bodyFatText.GetComponent<TextMeshProUGUI>().text = entry.BodyFat.ToString();
-            bodyWaterText.GetComponent<TextMeshProUGUI>().text = entry.BodyWater.ToString();
-            muscleMassText.GetComponent<TextMeshProUGUI>().text = entry.MuscleMass.ToString();
-            boneMassText.GetComponent<TextMeshProUGUI>().text = entry.BoneMass.ToString();
-            bmiText.GetComponent<TextMeshProUGUI>().text = entry.Bmi.ToString();
+            dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Date.ToString("MM/dd/yyyy");
+            weightText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Weight.ToString();
+            bodyFatText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BodyFat.ToString();
+            bodyWaterText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BodyWater.ToString();
+            muscleMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.MuscleMass.ToString();
+            boneMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BoneMass.ToString();
+            bmiText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Bmi.ToString();
 
-            Entries.Add(entry);
+            ScaleEntries.Add(scaleEntry);
         }
     }
 }

@@ -18,7 +18,7 @@ namespace CalorieCounter {
             }
         }
 
-        public static List<ScaleEntry> Import(string dataPath) {
+        public static List<ScaleEntry> ImportScaleEntries(string dataPath) {
             string scaleEntriesFilePath = Path.Combine(GetJsonDirPath(dataPath), scaleEntriesFileName);
             List<ScaleEntry> scaleEntries = new List<ScaleEntry>();
 
@@ -28,7 +28,6 @@ namespace CalorieCounter {
                     scaleEntries = (List<ScaleEntry>)serializer.Deserialize(file, typeof(List<ScaleEntry>));
                 }
             }
-
             return scaleEntries;
         }
 

@@ -1258,7 +1258,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 497729718}
-        m_MethodName: CancelAddingEntry
+        m_MethodName: CancelAddingScaleEntry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3052,7 +3052,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1374171247}
-        m_MethodName: TryAddingEntryFromInputFields
+        m_MethodName: TryAddingScaleEntryFromInputFields
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

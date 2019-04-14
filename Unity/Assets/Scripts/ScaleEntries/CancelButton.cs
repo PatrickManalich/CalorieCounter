@@ -15,7 +15,7 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private TextMeshProUGUI _errorText = default;
 
-        public void CancelAddingEntry() {
+        public void CancelAddingScaleEntry() {
             _errorText.gameObject.SetActive(false);
             _scrollView.DeleteInputFields();
             gameObject.SetActive(false);
