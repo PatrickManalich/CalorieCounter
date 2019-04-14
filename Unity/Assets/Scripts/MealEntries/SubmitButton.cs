@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CalorieCounter.MealEntries {
 
@@ -13,6 +14,9 @@ namespace CalorieCounter.MealEntries {
 
         [SerializeField]
         private ScrollView _scrollView = default;
+
+        [SerializeField]
+        private Button _exportButton = default;
 
         [SerializeField]
         private TextMeshProUGUI _errorText = default;
@@ -30,6 +34,7 @@ namespace CalorieCounter.MealEntries {
 
             _errorText.gameObject.SetActive(false);
             _scrollView.AddMeal(_amountDropdown.SelectedServing, _mealDropdown.SelectedMeal);
+            _exportButton.gameObject.SetActive(true); 
             _mealDropdown.ResetDropdown();
             _amountDropdown.ResetDropdown();
         }

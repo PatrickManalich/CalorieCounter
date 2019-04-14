@@ -9,15 +9,15 @@ namespace CalorieCounter.MealEntries {
 
         private TextMeshProUGUI _text;
 
-        private DateTime _date = DateTime.Today;
+        public DateTime CurrentDate { get; private set; } = DateTime.Today;
 
         public void MoveBackward() {
-            _date = _date.AddDays(-1);
+            CurrentDate = CurrentDate.AddDays(-1);
             RefreshText();
         }
 
         public void MoveForward() {
-            _date = _date.AddDays(1);
+            CurrentDate = CurrentDate.AddDays(1);
             RefreshText();
         }
 
@@ -27,7 +27,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void RefreshText() {
-            _text.text = _date.ToShortDateString();
+            _text.text = CurrentDate.ToShortDateString();
         }
 
     }

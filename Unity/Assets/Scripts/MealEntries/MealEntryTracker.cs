@@ -1,9 +1,15 @@
-﻿using TMPro;
+﻿using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
     public class MealEntryTracker : MonoBehaviour {
+
+        public MealEntry CurrentMealEntry { get; private set; }
+
+        [SerializeField]
+        private Date _date = default;
 
         [SerializeField]
         private TextMeshProUGUI _fatText = default;
@@ -17,15 +23,20 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private TextMeshProUGUI _caloriesText = default;
 
+        private List<Meal> _mealProportions = new List<Meal>();
         private Meal _totalMeal = default;
 
         public void AddMealProportion(Meal mealProportion) {
+            _mealProportions.Add(mealProportion);
             _totalMeal += mealProportion;
+            CurrentMealEntry = new MealEntry(_date.CurrentDate, _totalMeal, _mealProportions);
             RefreshText();
         }
 
         public void SubtractMealProportion(Meal mealProportion) {
+            _mealProportions.Remove(mealProportion);
             _totalMeal -= mealProportion;
+            CurrentMealEntry = new MealEntry(_date.CurrentDate, _totalMeal, _mealProportions);
             RefreshText();
         }
 
