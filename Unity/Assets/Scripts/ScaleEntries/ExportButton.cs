@@ -28,6 +28,7 @@ namespace CalorieCounter.ScaleEntries {
             JsonUtility.ExportEntries(_scrollView.ScaleEntries, scaleEntriesFileName);
             _targetEntryHandler.RefreshTargetEntries();
             JsonUtility.ExportEntries(_targetEntryHandler.TargetEntries, targetEntriesFileName);
+            gameObject.SetActive(false);
         }
 
         private void Awake() {

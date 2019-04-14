@@ -10,6 +10,9 @@ namespace CalorieCounter.ScaleEntries {
         private ScrollView _scrollView = default;
 
         [SerializeField]
+        private Button _exportButton = default;
+
+        [SerializeField]
         private Button _cancelButton = default;
 
         [SerializeField]
@@ -24,6 +27,7 @@ namespace CalorieCounter.ScaleEntries {
 
             _errorText.gameObject.SetActive(false);
             _scrollView.AddScaleEntryFromInputFields();
+            _exportButton.gameObject.SetActive(true);
             gameObject.SetActive(false);
             _cancelButton.gameObject.SetActive(false);
         }        
