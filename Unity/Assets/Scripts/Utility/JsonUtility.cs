@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace CalorieCounter {
 
-    public static class JsonController {
+    public static class JsonUtility {
 
         private const string localJsonDirPath = @"../../Json";
         private const string scaleEntriesFileName = @"ScaleEntries.json";

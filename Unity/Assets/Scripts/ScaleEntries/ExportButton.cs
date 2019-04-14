@@ -19,7 +19,7 @@ namespace CalorieCounter.ScaleEntries {
             }
 
             _errorText.gameObject.SetActive(false);
-            JsonController.Export(Application.dataPath, _scrollView.Entries);
+            JsonUtility.Export(Application.dataPath, _scrollView.Entries);
         }
     }
 }

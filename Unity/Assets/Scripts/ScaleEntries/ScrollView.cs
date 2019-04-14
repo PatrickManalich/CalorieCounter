@@ -76,7 +76,7 @@ namespace CalorieCounter.ScaleEntries {
         }
 
         private void Awake() {
-            List<ScaleEntry> importedEntries = JsonController.Import(Application.dataPath);
+            List<ScaleEntry> importedEntries = JsonUtility.Import(Application.dataPath);
             foreach(var entry in importedEntries) {
                 AddEntry(entry);
             }
