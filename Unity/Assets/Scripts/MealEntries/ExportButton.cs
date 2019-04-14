@@ -7,10 +7,10 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private MealEntryTracker _mealEntryTracker = default;
 
-        private const string mealEntriesFileName = @"MealEntries.json";
+        private const string MealEntriesFileName = @"MealEntries.json";
 
         public void TryExporting() {
-            JsonUtility.ExportEntry(_mealEntryTracker.CurrentMealEntry, mealEntriesFileName);
+            JsonUtility.ExportEntry(_mealEntryTracker.CurrentMealEntry, MealEntriesFileName);
             gameObject.SetActive(false);
         }
     }

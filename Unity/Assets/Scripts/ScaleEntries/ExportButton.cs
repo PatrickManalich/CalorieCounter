@@ -12,8 +12,8 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private TextMeshProUGUI _errorText = default;
 
-        private const string scaleEntriesFileName = @"ScaleEntries.json";
-        private const string targetEntriesFileName = @"TargetEntries.json";
+        private const string ScaleEntriesFileName = @"ScaleEntries.json";
+        private const string TargetEntriesFileName = @"TargetEntries.json";
 
         TargetEntryHandler _targetEntryHandler;
 
@@ -25,9 +25,9 @@ namespace CalorieCounter.ScaleEntries {
             }
 
             _errorText.gameObject.SetActive(false);
-            JsonUtility.ExportEntries(_scrollView.ScaleEntries, scaleEntriesFileName);
+            JsonUtility.ExportEntries(_scrollView.ScaleEntries, ScaleEntriesFileName);
             _targetEntryHandler.RefreshTargetEntries();
-            JsonUtility.ExportEntries(_targetEntryHandler.TargetEntries, targetEntriesFileName);
+            JsonUtility.ExportEntries(_targetEntryHandler.TargetEntries, TargetEntriesFileName);
             gameObject.SetActive(false);
         }
 
