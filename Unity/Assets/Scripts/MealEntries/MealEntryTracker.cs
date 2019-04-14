@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    public class TotalMeal : MonoBehaviour {
+    public class MealEntryTracker : MonoBehaviour {
 
         [SerializeField]
         private TextMeshProUGUI _fatText = default;

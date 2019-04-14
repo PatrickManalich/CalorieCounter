@@ -8,7 +8,7 @@ namespace CalorieCounter.MealEntries {
 
         public Meal MealProportion;
 
-        private TotalMeal _totalMeal;
+        private MealEntryTracker _totalMeal;
 
         public void DeleteMeal() {
             _totalMeal.SubtractMealProportion(MealProportion);
@@ -19,7 +19,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void Start() {
-            _totalMeal = FindObjectOfType<TotalMeal>();
+            _totalMeal = FindObjectOfType<MealEntryTracker>();
         }
     }
 }
