@@ -8,6 +8,8 @@ namespace CalorieCounter.TargetEntries {
 
         public List<TargetEntry> TargetEntries { get; private set; } = new List<TargetEntry>();
 
+        private const string targetEntriesFileName = @"TargetEntries.json";
+
         private ScrollView _scrollView;
 
         public void RefreshTargetEntries() {
@@ -18,7 +20,7 @@ namespace CalorieCounter.TargetEntries {
         }
 
         private void Awake() {
-            TargetEntries = JsonUtility.ImportTargetEntries(Application.dataPath);
+            TargetEntries = JsonUtility.ImportEntries<TargetEntry>(targetEntriesFileName);
             _scrollView = FindObjectOfType<ScrollView>();
         }
     }

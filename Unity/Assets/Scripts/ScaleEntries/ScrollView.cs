@@ -21,6 +21,8 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private GridLayoutGroup _content = default;
 
+        private const string scaleEntriesFileName = @"ScaleEntries.json";
+
         private List<TMP_InputField> _inputFields = new List<TMP_InputField>();
 
         public void AddInputFields(Selectable lastSelectable) {
@@ -76,7 +78,7 @@ namespace CalorieCounter.ScaleEntries {
         }
 
         private void Awake() {
-            List<ScaleEntry> importedScaleEntries = JsonUtility.ImportScaleEntries(Application.dataPath);
+            List<ScaleEntry> importedScaleEntries = JsonUtility.ImportEntries<ScaleEntry>(scaleEntriesFileName);
             foreach(var scaleEntry in importedScaleEntries) {
                 AddScaleEntry(scaleEntry);
             }
