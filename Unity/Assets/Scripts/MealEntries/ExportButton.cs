@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
@@ -7,10 +8,16 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private MealEntryTracker _mealEntryTracker = default;
 
-        private const string MealEntriesFileName = @"MealEntries.json";
+        private const string MealEntriesDir = @"MealEntries";
+        private const string MealEntryFilePrefix = @"MealEntry";
+        private const string MealEntryFileExtension = @".json";
+
 
         public void TryExporting() {
-            JsonUtility.ExportEntry(_mealEntryTracker.CurrentMealEntry, MealEntriesFileName);
+            MealEntry currentMealEntry = _mealEntryTracker.CurrentMealEntry;
+            string mealEntryFileDate = "-" + currentMealEntry.Date.Year + "-" + currentMealEntry.Date.Month + "-" + currentMealEntry.Date.Day;
+            string mealEntryFileName = MealEntryFilePrefix + mealEntryFileDate + MealEntryFileExtension;
+            JsonUtility.ExportEntry(_mealEntryTracker.CurrentMealEntry, Path.Combine(MealEntriesDir, mealEntryFileName));
             gameObject.SetActive(false);
         }
     }

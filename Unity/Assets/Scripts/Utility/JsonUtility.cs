@@ -7,30 +7,30 @@ namespace CalorieCounter {
 
     public static class JsonUtility {
 
-        private const string localJsonDirPath = @"../../Json";
+        private const string JsonDirPath = @"../../Json";
 
-        public static void ExportEntry<T>(T entry, string entryFileName) {
-            string entryFilePath = Path.Combine(GetJsonDirPath(), entryFileName);
-            using (StreamWriter file = File.CreateText(entryFilePath)) {
+        public static void ExportEntry<T>(T entry, string entryFilePath) {
+            string fullFilePath = GetFullFilePath(entryFilePath);
+            using (StreamWriter file = File.CreateText(fullFilePath)) {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, entry);
             }
         }
 
-        public static void ExportEntries<T>(List<T> entries, string entriesFileName) {
-            string entriesFilePath = Path.Combine(GetJsonDirPath(), entriesFileName);
-            using (StreamWriter file = File.CreateText(entriesFilePath)) {
+        public static void ExportEntries<T>(List<T> entries, string entriesFilePath) {
+            string fullFilePath = GetFullFilePath(entriesFilePath);
+            using (StreamWriter file = File.CreateText(fullFilePath)) {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, entries);
             }
         }
 
-        public static List<T> ImportEntries<T>(string entriesFileName) {
-            string entriesFilePath = Path.Combine(GetJsonDirPath(), entriesFileName);
+        public static List<T> ImportEntries<T>(string entryFilePath) {
+            string fullFilePath = GetFullFilePath(entryFilePath);
             List<T> entries = new List<T>();
 
-            if (File.Exists(entriesFilePath)) {
-                using (StreamReader file = File.OpenText(entriesFilePath)) {
+            if (File.Exists(fullFilePath)) {
+                using (StreamReader file = File.OpenText(fullFilePath)) {
                     JsonSerializer serializer = new JsonSerializer();
                     entries = (List<T>)serializer.Deserialize(file, typeof(List<T>));
                 }
@@ -38,12 +38,14 @@ namespace CalorieCounter {
             return entries;
         }
 
-        private static string GetJsonDirPath() {
-            string jsonDirPath = Path.GetFullPath(Path.Combine(Application.dataPath, localJsonDirPath));
-            if (!Directory.Exists(jsonDirPath)) {
-                Directory.CreateDirectory(jsonDirPath);
+        private static string GetFullFilePath(string filePath) {
+            string fullFilePath = Path.GetFullPath(Path.Combine(Application.dataPath, JsonDirPath, filePath));
+            string fullFilePathDir = Path.GetDirectoryName(fullFilePath);
+
+            if (!Directory.Exists(fullFilePathDir)) {
+                Directory.CreateDirectory(fullFilePathDir);
             }
-            return jsonDirPath;
+            return fullFilePath;
         }
 
     }
