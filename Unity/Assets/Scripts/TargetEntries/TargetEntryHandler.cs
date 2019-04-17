@@ -20,7 +20,7 @@ namespace CalorieCounter.TargetEntries {
         }
 
         private void Awake() {
-            TargetEntries = JsonUtility.ImportEntries<TargetEntry>(TargetEntriesFileName);
+            TargetEntries = JsonUtility.Import<List<TargetEntry>>(TargetEntriesFileName);
             _scrollView = FindObjectOfType<ScrollView>();
         }
     }

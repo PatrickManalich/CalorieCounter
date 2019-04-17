@@ -17,7 +17,7 @@ namespace CalorieCounter.MealEntries {
             MealEntry currentMealEntry = _mealEntryTracker.CurrentMealEntry;
             string mealEntryFileDate = "-" + currentMealEntry.Date.Year + "-" + currentMealEntry.Date.Month + "-" + currentMealEntry.Date.Day;
             string mealEntryFileName = MealEntryFilePrefix + mealEntryFileDate + MealEntryFileExtension;
-            JsonUtility.ExportEntry(_mealEntryTracker.CurrentMealEntry, Path.Combine(MealEntriesDir, mealEntryFileName));
+            JsonUtility.Export(_mealEntryTracker.CurrentMealEntry, Path.Combine(MealEntriesDir, mealEntryFileName));
             gameObject.SetActive(false);
         }
     }
