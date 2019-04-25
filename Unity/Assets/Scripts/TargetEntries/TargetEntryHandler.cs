@@ -15,7 +15,7 @@ namespace CalorieCounter.TargetEntries {
         public void RefreshTargetEntries() {
             TargetEntries.Clear();
             foreach(var scaleEntry in _scrollView.ScaleEntries) {
-                TargetEntries.Add(new TargetEntry(scaleEntry.Weight));
+                TargetEntries.Add(new TargetEntry(scaleEntry.Date, scaleEntry.Weight));
             }
         }
 

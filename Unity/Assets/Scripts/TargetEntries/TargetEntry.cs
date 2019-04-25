@@ -4,6 +4,7 @@ namespace CalorieCounter.TargetEntries {
 
     public struct TargetEntry {
 
+        public DateTime Date;
         public float Weight;
         public float CalorieMaintenanceLevel;
         public float RestDayCalories;
@@ -27,7 +28,8 @@ namespace CalorieCounter.TargetEntries {
         private const float TrainingDayFatPercentage = 0.22f;
 
 
-        public TargetEntry(float weight) {
+        public TargetEntry(DateTime date, float weight) {
+            Date = date;
             Weight = weight;
             CalorieMaintenanceLevel = Round(((4.536f * Weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
 
