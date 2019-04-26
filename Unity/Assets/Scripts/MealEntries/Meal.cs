@@ -1,5 +1,4 @@
 ﻿using System;
-using static CalorieCounter.MealEntries.AbstractMeals;
 
 namespace CalorieCounter.MealEntries {
 

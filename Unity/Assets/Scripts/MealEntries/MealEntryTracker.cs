@@ -2,7 +2,6 @@
 using System.IO;
 using TMPro;
 using UnityEngine;
-using static CalorieCounter.MealEntries.AbstractMeals;
 
 namespace CalorieCounter.MealEntries {
 

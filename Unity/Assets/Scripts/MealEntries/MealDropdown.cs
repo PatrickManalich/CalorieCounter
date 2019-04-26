@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
-using static CalorieCounter.MealEntries.AbstractMeals;
 
 namespace CalorieCounter.MealEntries {
 
