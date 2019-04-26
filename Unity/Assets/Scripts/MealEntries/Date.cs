@@ -13,20 +13,20 @@ namespace CalorieCounter.MealEntries {
 
         public void MoveBackward() {
             CurrentDate = CurrentDate.AddDays(-1);
-            RefreshText();
+            Refresh();
         }
 
         public void MoveForward() {
             CurrentDate = CurrentDate.AddDays(1);
-            RefreshText();
+            Refresh();
         }
 
         private void Awake() {
             _text = GetComponent<TextMeshProUGUI>();
-            RefreshText();
+            Refresh();
         }
 
-        private void RefreshText() {
+        private void Refresh() {
             _text.text = CurrentDate.ToShortDateString();
         }
 

@@ -39,18 +39,21 @@ namespace CalorieCounter.MealEntries {
         public void AddMealProportion(Meal mealProportion) {
             _mealProportions.Add(mealProportion);
             _totalMeal += mealProportion;
-            CurrentMealEntry = new MealEntry(_date.CurrentDate, _totalMeal, _mealProportions);
-            RefreshText();
+            Refresh();
         }
 
         public void SubtractMealProportion(Meal mealProportion) {
             _mealProportions.Remove(mealProportion);
             _totalMeal -= mealProportion;
-            CurrentMealEntry = new MealEntry(_date.CurrentDate, _totalMeal, _mealProportions);
-            RefreshText();
+            Refresh();
         }
 
-        private void RefreshText() {
+        private void Awake() {
+            Refresh();
+        }
+
+        private void Refresh() {
+            CurrentMealEntry = new MealEntry(_date.CurrentDate, _totalMeal, _mealProportions);
             _fatText.text = _totalMeal.Fat.ToString() + "/0";
             _carbsText.text = _totalMeal.Carbs.ToString() + "/0";
             _proteinText.text = _totalMeal.Protein.ToString() + "/0";
