@@ -2,6 +2,7 @@
 using System.IO;
 using TMPro;
 using UnityEngine;
+using static CalorieCounter.MealEntries.AbstractMeals;
 
 namespace CalorieCounter.MealEntries {
 
@@ -27,7 +28,10 @@ namespace CalorieCounter.MealEntries {
         private const string MealEntriesDir = @"MealEntries";
         private const string MealEntryFilePrefix = @"MealEntry";
         private const string MealEntryFileExtension = @".json";
-        private List<Meal> _mealProportions = new List<Meal>();
+        private Dictionary<MealTypes, List<Meal>> _mealProportionsDict = new Dictionary<MealTypes, List<Meal>>() {
+            { MealTypes.Small, new List<Meal>() },
+            { MealTypes.Large, new List<Meal>() },
+        };
         private Meal _totalMeal = default;
 
         public string GetCurrentMealEntryPath() {
@@ -37,13 +41,13 @@ namespace CalorieCounter.MealEntries {
         }
 
         public void AddMealProportion(Meal mealProportion) {
-            _mealProportions.Add(mealProportion);
+            _mealProportionsDict[mealProportion.MealType].Add(mealProportion);
             _totalMeal += mealProportion;
             Refresh();
         }
 
         public void SubtractMealProportion(Meal mealProportion) {
-            _mealProportions.Remove(mealProportion);
+            _mealProportionsDict[mealProportion.MealType].Remove(mealProportion);
             _totalMeal -= mealProportion;
             Refresh();
         }
@@ -53,7 +57,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void Refresh() {
-            CurrentMealEntry = new MealEntry(_date.CurrentDate, _totalMeal, _mealProportions);
+            CurrentMealEntry = new MealEntry(_date.CurrentDate, _totalMeal, _mealProportionsDict);
             _fatText.text = _totalMeal.Fat.ToString() + "/0";
             _carbsText.text = _totalMeal.Carbs.ToString() + "/0";
             _proteinText.text = _totalMeal.Protein.ToString() + "/0";

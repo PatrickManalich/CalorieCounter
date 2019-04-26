@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using static CalorieCounter.MealEntries.AbstractMeals;
 
 namespace CalorieCounter.MealEntries {
 
@@ -7,12 +8,12 @@ namespace CalorieCounter.MealEntries {
 
         public DateTime Date;
         public Meal TotalMeal;
-        public List<Meal> MealProportions;
+        public Dictionary<MealTypes, List<Meal>> MealProportionsDict;
 
-        public MealEntry(DateTime date, Meal totalMeal, List<Meal> mealProportions) {
+        public MealEntry(DateTime date, Meal totalMeal, Dictionary<MealTypes, List<Meal>> mealProportionsDict) {
             Date = date;
             TotalMeal = totalMeal;
-            MealProportions = mealProportions;
+            MealProportionsDict = mealProportionsDict;
         }
 
         public static bool operator ==(MealEntry mealEntry1, MealEntry mealEntry2) {
