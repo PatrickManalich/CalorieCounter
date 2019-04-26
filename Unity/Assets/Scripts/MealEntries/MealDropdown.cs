@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using static CalorieCounter.MealEntries.AbstractMeals;
 
 namespace CalorieCounter.MealEntries {
 
@@ -8,7 +9,7 @@ namespace CalorieCounter.MealEntries {
     public class MealDropdown : MonoBehaviour {
 
         [SerializeField]
-        private AbstractMeals.MealType _mealType = default;
+        private MealTypes _mealType = default;
 
         public Meal SelectedMeal { get; private set; }
         
@@ -32,7 +33,7 @@ namespace CalorieCounter.MealEntries {
         private void Start() {
             _mealDropdown = GetComponent<TMP_Dropdown>();
 
-            if (_mealType == AbstractMeals.MealType.Small) {
+            if (_mealType == MealTypes.Small) {
                 _meals = new List<Meal>(new SmallMeals().Meals);
             } else {
                 _meals = new List<Meal>(new LargeMeals().Meals);

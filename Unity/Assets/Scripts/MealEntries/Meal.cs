@@ -1,4 +1,5 @@
 ﻿using System;
+using static CalorieCounter.MealEntries.AbstractMeals;
 
 namespace CalorieCounter.MealEntries {
 
@@ -11,6 +12,7 @@ namespace CalorieCounter.MealEntries {
         public float Protein;
         public float Calories;
         public string Description;
+        public MealTypes MealType;
 
         public Meal(float fat, float carbs, float protein) {
             Name = "";
@@ -20,9 +22,10 @@ namespace CalorieCounter.MealEntries {
             Protein = protein > 0 ? Round(protein) : 0;
             Calories = Round((fat * 9) + (carbs * 4) + (protein * 4));
             Description = "";
+            MealType = MealTypes.None;
         }
 
-        public Meal(string name, string servingSize, float fat, float carbs, float protein, string description) {
+        public Meal(string name, string servingSize, float fat, float carbs, float protein, string description, MealTypes mealType) {
             Name = name;
             ServingSize = servingSize;
             Fat = fat > 0 ? fat : 0;
@@ -30,6 +33,7 @@ namespace CalorieCounter.MealEntries {
             Protein = protein > 0 ? protein : 0;
             Calories = (fat * 9) + (carbs * 4) + (protein * 4);
             Description = description;
+            MealType = mealType;
         }
 
         public static Meal operator +(Meal meal1, Meal meal2) {
@@ -44,7 +48,7 @@ namespace CalorieCounter.MealEntries {
             float fatProportion = Round(meal.Fat * serving);
             float carbsProportion = Round(meal.Carbs * serving);
             float proteinProportion = Round(meal.Protein * serving);
-            return new Meal(meal.Name, meal.ServingSize, fatProportion, carbsProportion, proteinProportion, meal.Description);
+            return new Meal(meal.Name, meal.ServingSize, fatProportion, carbsProportion, proteinProportion, meal.Description, meal.MealType);
         }
 
         public static bool operator ==(Meal meal1, Meal meal2) {
@@ -63,7 +67,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         public override string ToString() {
-            return Name + " (per " + ServingSize + "), [ Fat:" + Fat + ", Carbs:" + Carbs + ", Protein:" + Protein + ", Calories:" + Calories + " ], " + Description;
+            return Name + " (per " + ServingSize + "), [ Fat:" + Fat + ", Carbs:" + Carbs + ", Protein:" + Protein + ", Calories:" + Calories + " ], Description:" + Description + ", Meal Type:" + MealType;
         }
 
         private static float Round(float number) {
