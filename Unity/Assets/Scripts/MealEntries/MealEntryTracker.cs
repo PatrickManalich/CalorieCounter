@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 
@@ -23,8 +24,17 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private TextMeshProUGUI _caloriesText = default;
 
+        private const string MealEntriesDir = @"MealEntries";
+        private const string MealEntryFilePrefix = @"MealEntry";
+        private const string MealEntryFileExtension = @".json";
         private List<Meal> _mealProportions = new List<Meal>();
         private Meal _totalMeal = default;
+
+        public string GetCurrentMealEntryPath() {
+            string mealEntryFileDate = "-" + CurrentMealEntry.Date.Year + "-" + CurrentMealEntry.Date.Month + "-" + CurrentMealEntry.Date.Day;
+            string mealEntryFileName = MealEntryFilePrefix + mealEntryFileDate + MealEntryFileExtension;
+            return Path.Combine(MealEntriesDir, mealEntryFileName);
+        }
 
         public void AddMealProportion(Meal mealProportion) {
             _mealProportions.Add(mealProportion);
