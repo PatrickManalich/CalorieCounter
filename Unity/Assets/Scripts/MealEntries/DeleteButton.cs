@@ -6,7 +6,7 @@ namespace CalorieCounter.MealEntries {
 
         public List<GameObject> RemovableGameObjects = new List<GameObject>();
 
-        public MealSource MealProportion;
+        public MealProportion MealProportion;
 
         private MealEntryTracker _mealEntryTracker;
 

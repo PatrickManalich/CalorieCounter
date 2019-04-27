@@ -10,9 +10,9 @@ namespace CalorieCounter.MealEntries {
         public float TotalCarbs;
         public float TotalProtein;
         public float TotalCalories;
-        public Dictionary<MealTypes, List<MealSource>> MealProportionsDict;
+        public Dictionary<MealTypes, List<MealProportion>> MealProportionsDict;
 
-        public MealEntry(DateTime date, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealTypes, List<MealSource>> mealProportionsDict) {
+        public MealEntry(DateTime date, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealTypes, List<MealProportion>> mealProportionsDict) {
             Date = date;
             TotalFat = totalFat;
             TotalCarbs = totalCarbs;

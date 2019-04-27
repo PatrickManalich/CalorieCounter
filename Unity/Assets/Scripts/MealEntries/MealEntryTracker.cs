@@ -30,9 +30,9 @@ namespace CalorieCounter.MealEntries {
         private float _totalCarbs = 0;
         private float _totalProtein = 0;
         private float _totalCalories = 0;
-        private Dictionary<MealTypes, List<MealSource>> _mealProportionsDict = new Dictionary<MealTypes, List<MealSource>>() {
-            { MealTypes.Small, new List<MealSource>() },
-            { MealTypes.Large, new List<MealSource>() },
+        private Dictionary<MealTypes, List<MealProportion>> _mealProportionsDict = new Dictionary<MealTypes, List<MealProportion>>() {
+            { MealTypes.Small, new List<MealProportion>() },
+            { MealTypes.Large, new List<MealProportion>() },
         };
 
         public MealEntry GetMealEntry() {
@@ -45,8 +45,8 @@ namespace CalorieCounter.MealEntries {
             return Path.Combine(MealEntriesDir, mealEntryFileName);
         }
 
-        public void AddMealProportion(MealSource mealProportion) {
-            _mealProportionsDict[mealProportion.MealType].Add(mealProportion);
+        public void AddMealProportion(MealProportion mealProportion) {
+            _mealProportionsDict[mealProportion.Source.MealType].Add(mealProportion);
             _totalFat += mealProportion.Fat;
             _totalCarbs += mealProportion.Carbs;
             _totalProtein += mealProportion.Protein;
@@ -54,8 +54,8 @@ namespace CalorieCounter.MealEntries {
             Refresh();
         }
 
-        public void SubtractMealProportion(MealSource mealProportion) {
-            _mealProportionsDict[mealProportion.MealType].Remove(mealProportion);
+        public void SubtractMealProportion(MealProportion mealProportion) {
+            _mealProportionsDict[mealProportion.Source.MealType].Remove(mealProportion);
             _totalFat -= mealProportion.Fat;
             _totalCarbs -= mealProportion.Carbs;
             _totalProtein -= mealProportion.Protein;

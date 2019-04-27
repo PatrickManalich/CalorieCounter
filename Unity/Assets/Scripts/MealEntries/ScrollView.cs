@@ -17,28 +17,28 @@ namespace CalorieCounter.MealEntries {
         private Transform _contentTransform = default;
 
         [System.Serializable]
-        public class MealProportionEvent : UnityEvent<MealSource> { }
+        public class MealProportionEvent : UnityEvent<MealProportion> { }
 
         public MealProportionEvent OnMealProportionSubmitted;
 
-        private List<MealSource> _mealProportions = new List<MealSource>();
+        private List<MealProportion> _mealProportions = new List<MealProportion>();
 
-        public void AddMealProportion(float serving, MealSource meal) {
-            GameObject amountText = Instantiate(_scrollViewTextPrefab, _contentTransform);
-            GameObject mealText = Instantiate(_scrollViewTextPrefab, _contentTransform);
+        public void AddMealProportion(float servingAmount, MealSource mealSource) {
+            GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _contentTransform);
+            GameObject nameText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject fatText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject carbText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject proteinText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _contentTransform);
 
-            MealSource mealProportion = MealSource.GetMealProportion(serving, meal);
+            MealProportion mealProportion = new MealProportion(servingAmount, mealSource);
 
             DeleteButton deleteButton = Instantiate(_deleteButtonContainerPrefab, _contentTransform).GetComponentInChildren<DeleteButton>();
-            deleteButton.RemovableGameObjects.InsertRange(0, new List<GameObject> { amountText, mealText, fatText, carbText, proteinText, calorieText });
+            deleteButton.RemovableGameObjects.InsertRange(0, new List<GameObject> { servingAmountText, nameText, fatText, carbText, proteinText, calorieText });
             deleteButton.MealProportion = mealProportion;
 
-            amountText.GetComponent<TextMeshProUGUI>().text = serving.ToString();
-            mealText.GetComponent<TextMeshProUGUI>().text = mealProportion.Name;
+            servingAmountText.GetComponent<TextMeshProUGUI>().text = servingAmount.ToString();
+            nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.Source.Name;
             fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();

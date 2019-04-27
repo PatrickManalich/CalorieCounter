@@ -13,17 +13,6 @@ namespace CalorieCounter.MealEntries {
         public string Description;
         public MealTypes MealType;
 
-        public MealSource(float fat, float carbs, float protein) {
-            Name = "";
-            ServingSize = "";
-            Fat = fat > 0 ? Round(fat) : 0;
-            Carbs = carbs > 0 ? Round(carbs) : 0;
-            Protein = protein > 0 ? Round(protein) : 0;
-            Calories = Round((fat * 9) + (carbs * 4) + (protein * 4));
-            Description = "";
-            MealType = MealTypes.None;
-        }
-
         public MealSource(string name, string servingSize, float fat, float carbs, float protein, string description, MealTypes mealType) {
             Name = name;
             ServingSize = servingSize;
@@ -33,21 +22,6 @@ namespace CalorieCounter.MealEntries {
             Calories = (fat * 9) + (carbs * 4) + (protein * 4);
             Description = description;
             MealType = mealType;
-        }
-
-        public static MealSource operator +(MealSource meal1, MealSource meal2) {
-            return new MealSource(meal1.Fat + meal2.Fat, meal1.Carbs + meal2.Carbs, meal1.Protein + meal2.Protein);
-        }
-
-        public static MealSource operator -(MealSource meal1, MealSource meal2) {
-            return new MealSource(meal1.Fat - meal2.Fat, meal1.Carbs - meal2.Carbs, meal1.Protein - meal2.Protein);
-        }
-
-        public static MealSource GetMealProportion(float serving, MealSource meal) {
-            float fatProportion = Round(meal.Fat * serving);
-            float carbsProportion = Round(meal.Carbs * serving);
-            float proteinProportion = Round(meal.Protein * serving);
-            return new MealSource(meal.Name, meal.ServingSize, fatProportion, carbsProportion, proteinProportion, meal.Description, meal.MealType);
         }
 
         public static bool operator ==(MealSource meal1, MealSource meal2) {
