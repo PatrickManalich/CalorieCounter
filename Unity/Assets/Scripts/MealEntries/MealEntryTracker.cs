@@ -27,11 +27,11 @@ namespace CalorieCounter.MealEntries {
         private const string MealEntriesDir = @"MealEntries";
         private const string MealEntryFilePrefix = @"MealEntry";
         private const string MealEntryFileExtension = @".json";
-        private Dictionary<MealTypes, List<Meal>> _mealProportionsDict = new Dictionary<MealTypes, List<Meal>>() {
-            { MealTypes.Small, new List<Meal>() },
-            { MealTypes.Large, new List<Meal>() },
+        private Dictionary<MealTypes, List<MealSource>> _mealProportionsDict = new Dictionary<MealTypes, List<MealSource>>() {
+            { MealTypes.Small, new List<MealSource>() },
+            { MealTypes.Large, new List<MealSource>() },
         };
-        private Meal _totalMeal = default;
+        private MealSource _totalMeal = default;
 
         public string GetCurrentMealEntryPath() {
             string mealEntryFileDate = "-" + CurrentMealEntry.Date.Year + "-" + CurrentMealEntry.Date.Month + "-" + CurrentMealEntry.Date.Day;
@@ -39,13 +39,13 @@ namespace CalorieCounter.MealEntries {
             return Path.Combine(MealEntriesDir, mealEntryFileName);
         }
 
-        public void AddMealProportion(Meal mealProportion) {
+        public void AddMealProportion(MealSource mealProportion) {
             _mealProportionsDict[mealProportion.MealType].Add(mealProportion);
             _totalMeal += mealProportion;
             Refresh();
         }
 
-        public void SubtractMealProportion(Meal mealProportion) {
+        public void SubtractMealProportion(MealSource mealProportion) {
             _mealProportionsDict[mealProportion.MealType].Remove(mealProportion);
             _totalMeal -= mealProportion;
             Refresh();

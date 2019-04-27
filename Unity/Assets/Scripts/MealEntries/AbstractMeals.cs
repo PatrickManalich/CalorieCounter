@@ -6,7 +6,7 @@ namespace CalorieCounter.MealEntries {
 
         public abstract MealTypes MealType { get; }
 
-        public abstract IReadOnlyList<Meal> Meals { get; }
+        public abstract IReadOnlyList<MealSource> Meals { get; }
 
     }
 }

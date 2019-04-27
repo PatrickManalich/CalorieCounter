@@ -10,10 +10,10 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private MealTypes _mealType = default;
 
-        public Meal SelectedMeal { get; private set; }
+        public MealSource SelectedMeal { get; private set; }
         
         private TMP_Dropdown _mealDropdown;
-        private List<Meal> _meals;
+        private List<MealSource> _meals;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
         public void RefreshSelectedMeal(int index) {
@@ -33,9 +33,9 @@ namespace CalorieCounter.MealEntries {
             _mealDropdown = GetComponent<TMP_Dropdown>();
 
             if (_mealType == MealTypes.Small) {
-                _meals = new List<Meal>(new SmallMeals().Meals);
+                _meals = new List<MealSource>(new SmallMeals().Meals);
             } else {
-                _meals = new List<Meal>(new LargeMeals().Meals);
+                _meals = new List<MealSource>(new LargeMeals().Meals);
             }
 
             _mealDropdown.ClearOptions();

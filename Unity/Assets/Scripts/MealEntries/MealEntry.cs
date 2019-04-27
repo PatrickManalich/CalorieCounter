@@ -6,10 +6,10 @@ namespace CalorieCounter.MealEntries {
     public struct MealEntry {
 
         public DateTime Date;
-        public Meal TotalMeal;
-        public Dictionary<MealTypes, List<Meal>> MealProportionsDict;
+        public MealSource TotalMeal;
+        public Dictionary<MealTypes, List<MealSource>> MealProportionsDict;
 
-        public MealEntry(DateTime date, Meal totalMeal, Dictionary<MealTypes, List<Meal>> mealProportionsDict) {
+        public MealEntry(DateTime date, MealSource totalMeal, Dictionary<MealTypes, List<MealSource>> mealProportionsDict) {
             Date = date;
             TotalMeal = totalMeal;
             MealProportionsDict = mealProportionsDict;

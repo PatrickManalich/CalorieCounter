@@ -17,13 +17,13 @@ namespace CalorieCounter.MealEntries {
         private Transform _contentTransform = default;
 
         [System.Serializable]
-        public class MealEvent : UnityEvent<Meal> { }
+        public class MealEvent : UnityEvent<MealSource> { }
 
         public MealEvent OnMealSubmitted;
 
-        private List<Meal> _mealProportions = new List<Meal>();
+        private List<MealSource> _mealProportions = new List<MealSource>();
 
-        public void AddMeal(float serving, Meal meal) {
+        public void AddMeal(float serving, MealSource meal) {
             GameObject amountText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject mealText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject fatText = Instantiate(_scrollViewTextPrefab, _contentTransform);
@@ -31,7 +31,7 @@ namespace CalorieCounter.MealEntries {
             GameObject proteinText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _contentTransform);
 
-            Meal mealProportion = Meal.GetMealProportion(serving, meal);
+            MealSource mealProportion = MealSource.GetMealProportion(serving, meal);
 
             DeleteButton deleteButton = Instantiate(_deleteButtonContainerPrefab, _contentTransform).GetComponentInChildren<DeleteButton>();
             deleteButton.RemovableGameObjects.InsertRange(0, new List<GameObject> { amountText, mealText, fatText, carbText, proteinText, calorieText });

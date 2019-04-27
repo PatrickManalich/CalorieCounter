@@ -2,7 +2,7 @@
 
 namespace CalorieCounter.MealEntries {
 
-    public struct Meal {
+    public struct MealSource {
 
         public string Name;
         public string ServingSize;
@@ -13,7 +13,7 @@ namespace CalorieCounter.MealEntries {
         public string Description;
         public MealTypes MealType;
 
-        public Meal(float fat, float carbs, float protein) {
+        public MealSource(float fat, float carbs, float protein) {
             Name = "";
             ServingSize = "";
             Fat = fat > 0 ? Round(fat) : 0;
@@ -24,7 +24,7 @@ namespace CalorieCounter.MealEntries {
             MealType = MealTypes.None;
         }
 
-        public Meal(string name, string servingSize, float fat, float carbs, float protein, string description, MealTypes mealType) {
+        public MealSource(string name, string servingSize, float fat, float carbs, float protein, string description, MealTypes mealType) {
             Name = name;
             ServingSize = servingSize;
             Fat = fat > 0 ? fat : 0;
@@ -35,26 +35,26 @@ namespace CalorieCounter.MealEntries {
             MealType = mealType;
         }
 
-        public static Meal operator +(Meal meal1, Meal meal2) {
-            return new Meal(meal1.Fat + meal2.Fat, meal1.Carbs + meal2.Carbs, meal1.Protein + meal2.Protein);
+        public static MealSource operator +(MealSource meal1, MealSource meal2) {
+            return new MealSource(meal1.Fat + meal2.Fat, meal1.Carbs + meal2.Carbs, meal1.Protein + meal2.Protein);
         }
 
-        public static Meal operator -(Meal meal1, Meal meal2) {
-            return new Meal(meal1.Fat - meal2.Fat, meal1.Carbs - meal2.Carbs, meal1.Protein - meal2.Protein);
+        public static MealSource operator -(MealSource meal1, MealSource meal2) {
+            return new MealSource(meal1.Fat - meal2.Fat, meal1.Carbs - meal2.Carbs, meal1.Protein - meal2.Protein);
         }
 
-        public static Meal GetMealProportion(float serving, Meal meal) {
+        public static MealSource GetMealProportion(float serving, MealSource meal) {
             float fatProportion = Round(meal.Fat * serving);
             float carbsProportion = Round(meal.Carbs * serving);
             float proteinProportion = Round(meal.Protein * serving);
-            return new Meal(meal.Name, meal.ServingSize, fatProportion, carbsProportion, proteinProportion, meal.Description, meal.MealType);
+            return new MealSource(meal.Name, meal.ServingSize, fatProportion, carbsProportion, proteinProportion, meal.Description, meal.MealType);
         }
 
-        public static bool operator ==(Meal meal1, Meal meal2) {
+        public static bool operator ==(MealSource meal1, MealSource meal2) {
             return meal1.Equals(meal2);
         }
 
-        public static bool operator !=(Meal meal1, Meal meal2) {
+        public static bool operator !=(MealSource meal1, MealSource meal2) {
             return !meal1.Equals(meal2);
         }
 
