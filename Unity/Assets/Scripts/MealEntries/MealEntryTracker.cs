@@ -7,8 +7,6 @@ namespace CalorieCounter.MealEntries {
 
     public class MealEntryTracker : MonoBehaviour {
 
-        public MealEntry CurrentMealEntry { get; private set; }
-
         [SerializeField]
         private Date _date = default;
 
@@ -27,27 +25,41 @@ namespace CalorieCounter.MealEntries {
         private const string MealEntriesDir = @"MealEntries";
         private const string MealEntryFilePrefix = @"MealEntry";
         private const string MealEntryFileExtension = @".json";
+
+        private float _totalFat = 0;
+        private float _totalCarbs = 0;
+        private float _totalProtein = 0;
+        private float _totalCalories = 0;
         private Dictionary<MealTypes, List<MealSource>> _mealProportionsDict = new Dictionary<MealTypes, List<MealSource>>() {
             { MealTypes.Small, new List<MealSource>() },
             { MealTypes.Large, new List<MealSource>() },
         };
-        private MealSource _totalMeal = default;
 
-        public string GetCurrentMealEntryPath() {
-            string mealEntryFileDate = "-" + CurrentMealEntry.Date.Year + "-" + CurrentMealEntry.Date.Month + "-" + CurrentMealEntry.Date.Day;
+        public MealEntry GetMealEntry() {
+            return new MealEntry(_date.CurrentDate, _totalFat, _totalCarbs, _totalProtein, _totalCalories, _mealProportionsDict);
+        }
+
+        public string GetMealEntryPath() {
+            string mealEntryFileDate = "-" + _date.CurrentDate.Year + "-" + _date.CurrentDate.Month + "-" + _date.CurrentDate.Day;
             string mealEntryFileName = MealEntryFilePrefix + mealEntryFileDate + MealEntryFileExtension;
             return Path.Combine(MealEntriesDir, mealEntryFileName);
         }
 
         public void AddMealProportion(MealSource mealProportion) {
             _mealProportionsDict[mealProportion.MealType].Add(mealProportion);
-            _totalMeal += mealProportion;
+            _totalFat += mealProportion.Fat;
+            _totalCarbs += mealProportion.Carbs;
+            _totalProtein += mealProportion.Protein;
+            _totalCalories += mealProportion.Calories;
             Refresh();
         }
 
         public void SubtractMealProportion(MealSource mealProportion) {
             _mealProportionsDict[mealProportion.MealType].Remove(mealProportion);
-            _totalMeal -= mealProportion;
+            _totalFat -= mealProportion.Fat;
+            _totalCarbs -= mealProportion.Carbs;
+            _totalProtein -= mealProportion.Protein;
+            _totalCalories -= mealProportion.Calories;
             Refresh();
         }
 
@@ -56,11 +68,10 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void Refresh() {
-            CurrentMealEntry = new MealEntry(_date.CurrentDate, _totalMeal, _mealProportionsDict);
-            _fatText.text = _totalMeal.Fat.ToString() + "/0";
-            _carbsText.text = _totalMeal.Carbs.ToString() + "/0";
-            _proteinText.text = _totalMeal.Protein.ToString() + "/0";
-            _caloriesText.text = _totalMeal.Calories.ToString() + "/0";
+            _fatText.text = _totalFat.ToString() + "/0";
+            _carbsText.text = _totalCarbs.ToString() + "/0";
+            _proteinText.text = _totalProtein.ToString() + "/0";
+            _caloriesText.text = _totalCalories.ToString() + "/0";
         }
     }
 }

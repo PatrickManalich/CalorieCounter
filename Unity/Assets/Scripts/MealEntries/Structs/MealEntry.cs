@@ -6,12 +6,18 @@ namespace CalorieCounter.MealEntries {
     public struct MealEntry {
 
         public DateTime Date;
-        public MealSource TotalMeal;
+        public float TotalFat;
+        public float TotalCarbs;
+        public float TotalProtein;
+        public float TotalCalories;
         public Dictionary<MealTypes, List<MealSource>> MealProportionsDict;
 
-        public MealEntry(DateTime date, MealSource totalMeal, Dictionary<MealTypes, List<MealSource>> mealProportionsDict) {
+        public MealEntry(DateTime date, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealTypes, List<MealSource>> mealProportionsDict) {
             Date = date;
-            TotalMeal = totalMeal;
+            TotalFat = totalFat;
+            TotalCarbs = totalCarbs;
+            TotalProtein = totalProtein;
+            TotalCalories = totalCalories;
             MealProportionsDict = mealProportionsDict;
         }
 
@@ -31,7 +37,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         public override string ToString() {
-            return Date.ToShortDateString() + ", TotalMeal:" + TotalMeal;
+            return Date.ToShortDateString() + ", Total Fat:" + TotalFat + ", Total Carbs:" + TotalCarbs + ", Total Protein:" + TotalProtein + ", Total Calories:" + TotalCalories;
         }
     }
 }
