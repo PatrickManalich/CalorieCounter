@@ -22,18 +22,18 @@ namespace CalorieCounter.MealEntries {
         private TextMeshProUGUI _errorText = default;
 
         public void TryAddingMealProportion() {
-            if (_servingAmountDropdown.SelectedServing <= 0) {
+            if (_servingAmountDropdown.SelectedServingAmount <= 0) {
                 _errorText.text = "Select Valid Amount";
                 _errorText.gameObject.SetActive(true);
                 return;
-            } else if (_mealSourceDropdown.SelectedMeal == default) {
+            } else if (_mealSourceDropdown.SelectedMealSource == default) {
                 _errorText.text = "Select Valid Meal";
                 _errorText.gameObject.SetActive(true);
                 return;
             }
 
             _errorText.gameObject.SetActive(false);
-            _scrollView.AddMealProportion(_servingAmountDropdown.SelectedServing, _mealSourceDropdown.SelectedMeal);
+            _scrollView.AddMealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
             _exportButton.gameObject.SetActive(true); 
             _mealSourceDropdown.ResetDropdown();
             _servingAmountDropdown.ResetDropdown();

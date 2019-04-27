@@ -4299,7 +4299,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 767946881}
-        m_MethodName: RefreshSelectedMeal
+        m_MethodName: RefreshSelectedMealSource
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9032,7 +9032,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1521270210}
-        m_MethodName: RefreshSelectedServing
+        m_MethodName: RefreshSelectedServingAmount
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9856,7 +9856,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1576245871}
-        m_MethodName: RefreshSelectedMeal
+        m_MethodName: RefreshSelectedMealSource
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10221,7 +10221,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1671688307}
-        m_MethodName: RefreshSelectedServing
+        m_MethodName: RefreshSelectedServingAmount
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

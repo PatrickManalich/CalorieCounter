@@ -10,43 +10,43 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private MealTypes _mealType = default;
 
-        public MealSource SelectedMeal { get; private set; }
+        public MealSource SelectedMealSource { get; private set; }
         
-        private TMP_Dropdown _mealDropdown;
-        private List<MealSource> _meals;
+        private TMP_Dropdown _dropdown;
+        private List<MealSource> _mealSources;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
-        public void RefreshSelectedMeal(int index) {
-            if (_meals.Exists(x => x.Name == _optionDataList[index].text)) {
-                SelectedMeal = _meals.Find(x => x.Name == _optionDataList[index].text);
+        public void RefreshSelectedMealSource(int index) {
+            if (_mealSources.Exists(x => x.Name == _optionDataList[index].text)) {
+                SelectedMealSource = _mealSources.Find(x => x.Name == _optionDataList[index].text);
             } else {
-                SelectedMeal = default;
+                SelectedMealSource = default;
             }
         }
 
         public void ResetDropdown() {
-            _mealDropdown.value = 0;
-            SelectedMeal = default;
+            _dropdown.value = 0;
+            SelectedMealSource = default;
         }
 
         private void Start() {
-            _mealDropdown = GetComponent<TMP_Dropdown>();
+            _dropdown = GetComponent<TMP_Dropdown>();
 
             if (_mealType == MealTypes.Small) {
-                _meals = new List<MealSource>(new SmallMeals().Meals);
+                _mealSources = new List<MealSource>(new SmallMeals().Meals);
             } else if (_mealType == MealTypes.Large) {
-                _meals = new List<MealSource>(new LargeMeals().Meals);
+                _mealSources = new List<MealSource>(new LargeMeals().Meals);
             } else {
-                _meals = new List<MealSource>();
+                _mealSources = new List<MealSource>();
             }
 
-            _mealDropdown.ClearOptions();
+            _dropdown.ClearOptions();
             _optionDataList.Add(new TMP_Dropdown.OptionData(""));
-            foreach (var meal in _meals) {
+            foreach (var meal in _mealSources) {
                 _optionDataList.Add(new TMP_Dropdown.OptionData(meal.Name));
             }
-            _mealDropdown.AddOptions(_optionDataList);
-            SelectedMeal = default;
+            _dropdown.AddOptions(_optionDataList);
+            SelectedMealSource = default;
         }
         
     }
