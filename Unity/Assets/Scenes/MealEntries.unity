@@ -331,7 +331,7 @@ MonoBehaviour:
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
     type: 3}
   _contentTransform: {fileID: 2136228770}
-  OnMealSubmitted:
+  OnMealProportionSubmitted:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1508925266}
@@ -345,7 +345,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: CalorieCounter.MealEntries.ScrollView+MealEvent, Assembly-CSharp,
+    m_TypeName: CalorieCounter.MealEntries.ScrollView+MealProportionEvent, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &24035605
 GameObject:
@@ -1002,7 +1002,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 127662987}
-        m_MethodName: TryAddingMeal
+        m_MethodName: TryAddingMealProportion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3856,7 +3856,7 @@ MonoBehaviour:
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
     type: 3}
   _contentTransform: {fileID: 1343613514}
-  OnMealSubmitted:
+  OnMealProportionSubmitted:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1508925266}
@@ -3870,7 +3870,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: CalorieCounter.MealEntries.ScrollView+MealEvent, Assembly-CSharp,
+    m_TypeName: CalorieCounter.MealEntries.ScrollView+MealProportionEvent, Assembly-CSharp,
       Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &688997044
 MonoBehaviour:
@@ -5766,7 +5766,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1128983969}
-        m_MethodName: TryAddingMeal
+        m_MethodName: TryAddingMealProportion
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

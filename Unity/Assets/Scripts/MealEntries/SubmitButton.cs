@@ -21,7 +21,7 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private TextMeshProUGUI _errorText = default;
 
-        public void TryAddingMeal() {
+        public void TryAddingMealProportion() {
             if (_amountDropdown.SelectedServing <= 0) {
                 _errorText.text = "Select Valid Amount";
                 _errorText.gameObject.SetActive(true);
@@ -33,7 +33,7 @@ namespace CalorieCounter.MealEntries {
             }
 
             _errorText.gameObject.SetActive(false);
-            _scrollView.AddMeal(_amountDropdown.SelectedServing, _mealDropdown.SelectedMeal);
+            _scrollView.AddMealProportion(_amountDropdown.SelectedServing, _mealDropdown.SelectedMeal);
             _exportButton.gameObject.SetActive(true); 
             _mealDropdown.ResetDropdown();
             _amountDropdown.ResetDropdown();
