@@ -34,8 +34,10 @@ namespace CalorieCounter.MealEntries {
 
             if (_mealType == MealTypes.Small) {
                 _meals = new List<MealSource>(new SmallMeals().Meals);
-            } else {
+            } else if (_mealType == MealTypes.Large) {
                 _meals = new List<MealSource>(new LargeMeals().Meals);
+            } else {
+                _meals = new List<MealSource>();
             }
 
             _mealDropdown.ClearOptions();
