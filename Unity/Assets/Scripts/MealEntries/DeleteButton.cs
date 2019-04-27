@@ -8,10 +8,10 @@ namespace CalorieCounter.MealEntries {
 
         public MealSource MealProportion;
 
-        private MealEntryTracker _totalMeal;
+        private MealEntryTracker _mealEntryTracker;
 
         public void DeleteMeal() {
-            _totalMeal.SubtractMealProportion(MealProportion);
+            _mealEntryTracker.SubtractMealProportion(MealProportion);
             foreach (var gameObject in RemovableGameObjects) {
                 Destroy(gameObject);
             }
@@ -19,7 +19,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void Start() {
-            _totalMeal = FindObjectOfType<MealEntryTracker>();
+            _mealEntryTracker = FindObjectOfType<MealEntryTracker>();
         }
     }
 }
