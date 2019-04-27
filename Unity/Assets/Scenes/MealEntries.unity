@@ -956,8 +956,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9452d0f8c786b3544bc0aff7c3e2417a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealDropdown: {fileID: 767946881}
-  _amountDropdown: {fileID: 1521270210}
+  _servingAmountDropdown: {fileID: 1521270210}
+  _mealSourceDropdown: {fileID: 767946881}
   _scrollView: {fileID: 688997043}
   _exportButton: {fileID: 1128983966}
   _errorText: {fileID: 1871739067}
@@ -4209,7 +4209,7 @@ GameObject:
   - component: {fileID: 767946882}
   - component: {fileID: 767946881}
   m_Layer: 5
-  m_Name: MealDropdown
+  m_Name: MealSourceDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4249,7 +4249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ad4da5d35a4a641a96516a65162e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealType: 1
+  _mealType: 2
 --- !u!114 &767946882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5827,8 +5827,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9452d0f8c786b3544bc0aff7c3e2417a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealDropdown: {fileID: 1576245871}
-  _amountDropdown: {fileID: 1671688307}
+  _servingAmountDropdown: {fileID: 1671688307}
+  _mealSourceDropdown: {fileID: 1576245871}
   _scrollView: {fileID: 19275662}
   _exportButton: {fileID: 1553792671}
   _errorText: {fileID: 319171211}
@@ -8943,7 +8943,7 @@ GameObject:
   - component: {fileID: 1521270211}
   - component: {fileID: 1521270210}
   m_Layer: 5
-  m_Name: ServingDropdown
+  m_Name: ServingAmountDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9779,7 +9779,7 @@ GameObject:
   - component: {fileID: 1576245868}
   - component: {fileID: 1576245871}
   m_Layer: 5
-  m_Name: MealDropdown
+  m_Name: MealSourceDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9917,7 +9917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ad4da5d35a4a641a96516a65162e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealType: 0
+  _mealType: 1
 --- !u!1 &1643071825
 GameObject:
   m_ObjectHideFlags: 0
@@ -10144,7 +10144,7 @@ GameObject:
   - component: {fileID: 1671688304}
   - component: {fileID: 1671688307}
   m_Layer: 5
-  m_Name: ServingDropdown
+  m_Name: ServingAmountDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

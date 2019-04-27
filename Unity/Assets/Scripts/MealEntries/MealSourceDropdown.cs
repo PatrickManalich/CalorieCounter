@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace CalorieCounter.MealEntries {
 
     [RequireComponent(typeof(TMP_Dropdown))]
-    public class MealDropdown : MonoBehaviour {
+    public class MealSourceDropdown : MonoBehaviour {
 
         [SerializeField]
         private MealTypes _mealType = default;
