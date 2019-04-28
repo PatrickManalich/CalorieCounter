@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using RotaryHeart.Lib.SerializableDictionary;
+using CalorieCounter.Globals;
 
 namespace CalorieCounter.MealEntries {
 

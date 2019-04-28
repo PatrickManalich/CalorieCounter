@@ -1,4 +1,4 @@
-﻿using System;
+﻿using CalorieCounter.Globals;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
@@ -23,10 +23,6 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private TextMeshProUGUI _caloriesText = default;
 
-        private const string MealEntriesDir = @"MealEntries";
-        private const string MealEntryFilePrefix = @"MealEntry";
-        private const string MealEntryFileExtension = @".json";
-
         private float _totalFat = 0;
         private float _totalCarbs = 0;
         private float _totalProtein = 0;
@@ -42,8 +38,8 @@ namespace CalorieCounter.MealEntries {
 
         public string GetMealEntryPath() {
             string mealEntryFileDate = "-" + _date.CurrentDate.Year + "-" + _date.CurrentDate.Month + "-" + _date.CurrentDate.Day;
-            string mealEntryFileName = MealEntryFilePrefix + mealEntryFileDate + MealEntryFileExtension;
-            return Path.Combine(MealEntriesDir, mealEntryFileName);
+            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.MealEntryFileExtension;
+            return Path.Combine(GlobalPaths.MealEntriesDir, mealEntryFileName);
         }
 
         public void AddMealProportion(MealProportion mealProportion) {
@@ -69,18 +65,14 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void Refresh() {
-            _totalFat = Round(_totalFat);
-            _totalCarbs = Round(_totalCarbs);
-            _totalProtein = Round(_totalProtein);
-            _totalCalories = Round(_totalCalories);
+            _totalFat = GlobalMethods.Round(_totalFat);
+            _totalCarbs = GlobalMethods.Round(_totalCarbs);
+            _totalProtein = GlobalMethods.Round(_totalProtein);
+            _totalCalories = GlobalMethods.Round(_totalCalories);
             _fatText.text = _totalFat.ToString() + "/0";
             _carbsText.text = _totalCarbs.ToString() + "/0";
             _proteinText.text = _totalProtein.ToString() + "/0";
             _caloriesText.text = _totalCalories.ToString() + "/0";
-        }
-
-        private static float Round(float number) {
-            return (float)Math.Round(number, 1);
         }
     }
 }

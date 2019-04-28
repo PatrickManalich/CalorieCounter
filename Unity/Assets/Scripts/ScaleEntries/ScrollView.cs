@@ -21,8 +21,6 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private GridLayoutGroup _content = default;
 
-        private const string ScaleEntriesFilePath = @"ScaleEntries.json";
-
         private List<TMP_InputField> _inputFields = new List<TMP_InputField>();
 
         public void AddInputFields(Selectable lastSelectable) {

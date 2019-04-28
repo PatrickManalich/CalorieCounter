@@ -2,12 +2,11 @@
 using Newtonsoft.Json;
 using UnityEngine;
 using System;
+using CalorieCounter.Globals;
 
 namespace CalorieCounter {
 
     public static class JsonUtility {
-
-        private const string JsonDirPath = @"../../Json";
 
         public static void Export<T>(T value, string filePath) {
             string fullFilePath = GetFullFilePath(filePath);
@@ -31,7 +30,7 @@ namespace CalorieCounter {
         }
 
         private static string GetFullFilePath(string filePath) {
-            string fullFilePath = Path.GetFullPath(Path.Combine(Application.dataPath, JsonDirPath, filePath));
+            string fullFilePath = Path.GetFullPath(Path.Combine(Application.dataPath, GlobalPaths.JsonDirPath, filePath));
             string fullFilePathDir = Path.GetDirectoryName(fullFilePath);
 
             if (!Directory.Exists(fullFilePathDir)) {

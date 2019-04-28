@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using CalorieCounter.Globals;
 
 namespace CalorieCounter.MealEntries {
 

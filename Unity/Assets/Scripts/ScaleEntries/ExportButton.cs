@@ -1,4 +1,5 @@
-﻿using CalorieCounter.TargetEntries;
+﻿using CalorieCounter.Globals;
+using CalorieCounter.TargetEntries;
 using TMPro;
 using UnityEngine;
 
@@ -12,9 +13,6 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private TextMeshProUGUI _errorText = default;
 
-        private const string ScaleEntriesFilePath = @"ScaleEntries.json";
-        private const string TargetEntriesFilePath = @"TargetEntries.json";
-
         TargetEntryHandler _targetEntryHandler;
 
         public void TryExporting() {
@@ -25,9 +23,9 @@ namespace CalorieCounter.ScaleEntries {
             }
 
             _errorText.gameObject.SetActive(false);
-            JsonUtility.Export(_scrollView.ScaleEntries, ScaleEntriesFilePath);
+            JsonUtility.Export(_scrollView.ScaleEntries, GlobalPaths.ScaleEntriesFilePath);
             _targetEntryHandler.RefreshTargetEntries();
-            JsonUtility.Export(_targetEntryHandler.TargetEntries, TargetEntriesFilePath);
+            JsonUtility.Export(_targetEntryHandler.TargetEntries, GlobalPaths.TargetEntriesFilePath);
             gameObject.SetActive(false);
         }
 

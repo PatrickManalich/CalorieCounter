@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CalorieCounter.Globals;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CalorieCounter.ScaleEntries {
@@ -8,10 +9,8 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private ScrollView _scrollView = default;
 
-        private const string ScaleEntriesFilePath = @"ScaleEntries.json";
-
         private void Start() {
-            List<ScaleEntry> importedScaleEntries = JsonUtility.Import<List<ScaleEntry>>(ScaleEntriesFilePath);
+            List<ScaleEntry> importedScaleEntries = JsonUtility.Import<List<ScaleEntry>>(GlobalPaths.ScaleEntriesFilePath);
             foreach (var scaleEntry in importedScaleEntries) {
                 _scrollView.AddScaleEntry(scaleEntry);
             }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CalorieCounter.Globals;
+using System.Collections.Generic;
 
 namespace CalorieCounter.MealEntries {
 

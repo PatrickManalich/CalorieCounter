@@ -1,4 +1,4 @@
-﻿using System;
+﻿using CalorieCounter.Globals;
 
 namespace CalorieCounter.MealEntries {
 
@@ -16,10 +16,10 @@ namespace CalorieCounter.MealEntries {
         public MealSource(string name, string servingSize, float fat, float carbs, float protein, string description, MealTypes mealType) {
             Name = name;
             ServingSize = servingSize;
-            Fat = fat > 0 ? Round(fat) : 0;
-            Carbs = carbs > 0 ? Round(carbs) : 0;
-            Protein = protein > 0 ? Round(protein) : 0;
-            Calories = Round((fat * 9) + (carbs * 4) + (protein * 4));
+            Fat = fat > 0 ? GlobalMethods.Round(fat) : 0;
+            Carbs = carbs > 0 ? GlobalMethods.Round(carbs) : 0;
+            Protein = protein > 0 ? GlobalMethods.Round(protein) : 0;
+            Calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
             Description = description;
             MealType = mealType;
         }
@@ -41,10 +41,6 @@ namespace CalorieCounter.MealEntries {
 
         public override string ToString() {
             return Name + " (per " + ServingSize + "), [ Fat:" + Fat + ", Carbs:" + Carbs + ", Protein:" + Protein + ", Calories:" + Calories + " ], Description:" + Description + ", Meal Type:" + MealType;
-        }
-
-        private static float Round(float number) {
-            return (float)Math.Round(number, 1);
         }
     }
 }

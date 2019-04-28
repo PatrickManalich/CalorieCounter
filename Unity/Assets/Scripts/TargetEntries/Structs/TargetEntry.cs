@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalorieCounter.Globals;
+using System;
 
 namespace CalorieCounter.TargetEntries {
 
@@ -31,27 +32,23 @@ namespace CalorieCounter.TargetEntries {
         public TargetEntry(DateTime date, float weight) {
             Date = date;
             Weight = weight;
-            CalorieMaintenanceLevel = Round(((4.536f * Weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
+            CalorieMaintenanceLevel = GlobalMethods.Round(((4.536f * Weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
 
-            RestDayCalories = Round(CalorieMaintenanceLevel + RestDayCalorieSurplus);
-            RestDayProteinGrams = Round(Weight * ProteinGramsPerPound);
-            RestDayFatGrams = Round(RestDayCalories * RestDayFatPercentage / 9);
-            RestDayCarbGrams = Round((RestDayCalories - (RestDayProteinGrams * 4) - RestDayFatGrams * 9) / 4);
+            RestDayCalories = GlobalMethods.Round(CalorieMaintenanceLevel + RestDayCalorieSurplus);
+            RestDayProteinGrams = GlobalMethods.Round(Weight * ProteinGramsPerPound);
+            RestDayFatGrams = GlobalMethods.Round(RestDayCalories * RestDayFatPercentage / 9);
+            RestDayCarbGrams = GlobalMethods.Round((RestDayCalories - (RestDayProteinGrams * 4) - RestDayFatGrams * 9) / 4);
 
-            TrainingDayCalories = Round(CalorieMaintenanceLevel + TrainingDayCalorieSurplus);
-            TrainingDayProteinGrams = Round(Weight * ProteinGramsPerPound);
-            TrainingDayFatGrams = Round(TrainingDayCalories * TrainingDayFatPercentage / 9);
-            TrainingDayCarbGrams = Round((TrainingDayCalories - (TrainingDayProteinGrams * 4) - TrainingDayFatGrams * 9) / 4);
+            TrainingDayCalories = GlobalMethods.Round(CalorieMaintenanceLevel + TrainingDayCalorieSurplus);
+            TrainingDayProteinGrams = GlobalMethods.Round(Weight * ProteinGramsPerPound);
+            TrainingDayFatGrams = GlobalMethods.Round(TrainingDayCalories * TrainingDayFatPercentage / 9);
+            TrainingDayCarbGrams = GlobalMethods.Round((TrainingDayCalories - (TrainingDayProteinGrams * 4) - TrainingDayFatGrams * 9) / 4);
         }
 
         public override string ToString() {
             return "CML:" + CalorieMaintenanceLevel + ", RestDay [ Calories:" + RestDayCalories + ", Fat: " + RestDayFatGrams + ", Carbs:" + RestDayCarbGrams +
                 ", Protein:" + RestDayProteinGrams + " ], TrainingDay [ Calories:" + TrainingDayCalories + ", Fat: " + TrainingDayFatGrams + ", Carbs:" + TrainingDayCarbGrams +
                 ", Protein:" + TrainingDayProteinGrams + " ]";
-        }
-
-        private static float Round(float number) {
-            return (float)Math.Round(number, 1);
         }
     }
 }
