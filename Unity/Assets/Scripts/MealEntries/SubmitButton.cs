@@ -33,7 +33,8 @@ namespace CalorieCounter.MealEntries {
             }
 
             _errorText.gameObject.SetActive(false);
-            _scrollView.AddMealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
+            MealProportion mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
+            _scrollView.AddMealProportion(mealProportion);
             _exportButton.gameObject.SetActive(true); 
             _mealSourceDropdown.ResetDropdown();
             _servingAmountDropdown.ResetDropdown();
