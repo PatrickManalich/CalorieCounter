@@ -14,10 +14,10 @@ namespace CalorieCounter.MealEntries {
 
         public MealEntry(DateTime date, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealTypes, List<MealProportion>> mealProportionsDict) {
             Date = date;
-            TotalFat = totalFat;
-            TotalCarbs = totalCarbs;
-            TotalProtein = totalProtein;
-            TotalCalories = totalCalories;
+            TotalFat = Round(totalFat);
+            TotalCarbs = Round(totalCarbs);
+            TotalProtein = Round(totalProtein);
+            TotalCalories = Round(totalCalories);
             MealProportionsDict = mealProportionsDict;
         }
 
@@ -38,6 +38,10 @@ namespace CalorieCounter.MealEntries {
 
         public override string ToString() {
             return Date.ToShortDateString() + ", Total Fat:" + TotalFat + ", Total Carbs:" + TotalCarbs + ", Total Protein:" + TotalProtein + ", Total Calories:" + TotalCalories;
+        }
+
+        private static float Round(float number) {
+            return (float)Math.Round(number, 1);
         }
     }
 }

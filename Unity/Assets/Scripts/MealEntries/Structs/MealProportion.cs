@@ -17,7 +17,7 @@ namespace CalorieCounter.MealEntries {
             Fat = Round(source.Fat * ServingAmount);
             Carbs = Round(source.Carbs * ServingAmount);
             Protein = Round(source.Protein * ServingAmount);
-            Calories = (Fat * 9) + (Carbs * 4) + (Protein * 4);
+            Calories = Round((Fat * 9) + (Carbs * 4) + (Protein * 4));
         }
 
         public static bool operator ==(MealProportion mealProportion1, MealProportion mealProportion2) {

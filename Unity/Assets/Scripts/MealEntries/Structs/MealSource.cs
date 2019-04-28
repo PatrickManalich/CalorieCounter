@@ -16,10 +16,10 @@ namespace CalorieCounter.MealEntries {
         public MealSource(string name, string servingSize, float fat, float carbs, float protein, string description, MealTypes mealType) {
             Name = name;
             ServingSize = servingSize;
-            Fat = fat > 0 ? fat : 0;
-            Carbs = carbs > 0 ? carbs : 0;
-            Protein = protein > 0 ? protein : 0;
-            Calories = (fat * 9) + (carbs * 4) + (protein * 4);
+            Fat = fat > 0 ? Round(fat) : 0;
+            Carbs = carbs > 0 ? Round(carbs) : 0;
+            Protein = protein > 0 ? Round(protein) : 0;
+            Calories = Round((fat * 9) + (carbs * 4) + (protein * 4));
             Description = description;
             MealType = mealType;
         }

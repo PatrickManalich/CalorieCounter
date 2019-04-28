@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
@@ -68,10 +69,18 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void Refresh() {
+            _totalFat = Round(_totalFat);
+            _totalCarbs = Round(_totalCarbs);
+            _totalProtein = Round(_totalProtein);
+            _totalCalories = Round(_totalCalories);
             _fatText.text = _totalFat.ToString() + "/0";
             _carbsText.text = _totalCarbs.ToString() + "/0";
             _proteinText.text = _totalProtein.ToString() + "/0";
             _caloriesText.text = _totalCalories.ToString() + "/0";
+        }
+
+        private static float Round(float number) {
+            return (float)Math.Round(number, 1);
         }
     }
 }
