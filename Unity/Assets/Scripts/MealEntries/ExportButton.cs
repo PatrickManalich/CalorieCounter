@@ -8,7 +8,7 @@ namespace CalorieCounter.MealEntries {
         private MealEntryHandler _mealEntryHandler = default;
 
         public void TryExporting() {
-            JsonUtility.Export(_mealEntryHandler.GetMealEntry(), _mealEntryHandler.GetMealEntryPath());
+            _mealEntryHandler.ExportMealEntry();
             gameObject.SetActive(false);
         }
     }

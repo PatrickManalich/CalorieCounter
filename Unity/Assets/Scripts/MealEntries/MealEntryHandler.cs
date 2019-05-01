@@ -1,4 +1,5 @@
 ﻿using CalorieCounter.Globals;
+using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
 using System.IO;
 using TMPro;
@@ -7,6 +8,9 @@ using UnityEngine;
 namespace CalorieCounter.MealEntries {
 
     public class MealEntryHandler : MonoBehaviour {
+
+        [System.Serializable]
+        private class ScrollViewDictionary : SerializableDictionaryBase<MealTypes, ScrollView> { }
 
         [SerializeField]
         private Date _date = default;
@@ -23,6 +27,9 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private TextMeshProUGUI _caloriesText = default;
 
+        [SerializeField]
+        private ScrollViewDictionary _scrollViewDict = default;
+
         private float _totalFat = 0;
         private float _totalCarbs = 0;
         private float _totalProtein = 0;
@@ -31,16 +38,6 @@ namespace CalorieCounter.MealEntries {
             { MealTypes.Small, new List<MealProportion>() },
             { MealTypes.Large, new List<MealProportion>() },
         };
-
-        public MealEntry GetMealEntry() {
-            return new MealEntry(_date.CurrentDate, _totalFat, _totalCarbs, _totalProtein, _totalCalories, _mealProportionsDict);
-        }
-
-        public string GetMealEntryPath() {
-            string mealEntryFileDate = "-" + _date.CurrentDate.Year + "-" + _date.CurrentDate.Month + "-" + _date.CurrentDate.Day;
-            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.MealEntryFileExtension;
-            return Path.Combine(GlobalPaths.MealEntriesDir, mealEntryFileName);
-        }
 
         public void AddMealProportion(MealProportion mealProportion) {
             _mealProportionsDict[mealProportion.Source.MealType].Add(mealProportion);
@@ -60,8 +57,25 @@ namespace CalorieCounter.MealEntries {
             Refresh();
         }
 
+        public void ExportMealEntry() {
+            MealEntry currentMealEntry = new MealEntry(_date.CurrentDate, _totalFat, _totalCarbs, _totalProtein, _totalCalories, _mealProportionsDict);
+            JsonUtility.Export(currentMealEntry, GetMealEntryPath());
+        }
+
         private void Awake() {
             Refresh();
+        }
+
+        private void Start() {
+            MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(GetMealEntryPath());
+            if (importedMealEntry != default) {
+                foreach (var key in importedMealEntry.MealProportionsDict.Keys) {
+                    ScrollView scrollView = _scrollViewDict[key];
+                    foreach (var mealProportion in importedMealEntry.MealProportionsDict[key]) {
+                        scrollView.AddMealProportion(mealProportion);
+                    }
+                }
+            }
         }
 
         private void Refresh() {
@@ -73,6 +87,12 @@ namespace CalorieCounter.MealEntries {
             _carbsText.text = _totalCarbs.ToString() + "/0";
             _proteinText.text = _totalProtein.ToString() + "/0";
             _caloriesText.text = _totalCalories.ToString() + "/0";
+        }
+
+        private string GetMealEntryPath() {
+            string mealEntryFileDate = "-" + _date.CurrentDate.Year + "-" + _date.CurrentDate.Month + "-" + _date.CurrentDate.Day;
+            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.MealEntryFileExtension;
+            return Path.Combine(GlobalPaths.MealEntriesDir, mealEntryFileName);
         }
     }
 }
