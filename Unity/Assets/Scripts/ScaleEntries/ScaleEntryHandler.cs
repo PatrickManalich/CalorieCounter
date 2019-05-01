@@ -9,6 +9,10 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private ScrollView _scrollView = default;
 
+        public void ExportScaleEntry() {
+            JsonUtility.Export(_scrollView.ScaleEntries, GlobalPaths.ScaleEntriesFilePath);
+        }
+
         private void Start() {
             List<ScaleEntry> importedScaleEntries = JsonUtility.Import<List<ScaleEntry>>(GlobalPaths.ScaleEntriesFilePath);
             foreach (var scaleEntry in importedScaleEntries) {

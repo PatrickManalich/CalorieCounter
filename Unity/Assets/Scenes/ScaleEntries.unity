@@ -2085,6 +2085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7578be203dc67045a2bd81c1b8f6eb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scaleEntryHandler: {fileID: 1840775928}
   _scrollView: {fileID: 19275662}
   _errorText: {fileID: 604758650}
 --- !u!114 &815858156

@@ -8,6 +8,9 @@ namespace CalorieCounter.ScaleEntries {
     public class ExportButton : MonoBehaviour {
 
         [SerializeField]
+        private ScaleEntryHandler _scaleEntryHandler = default;
+
+        [SerializeField]
         private ScrollView _scrollView = default;
 
         [SerializeField]
@@ -23,7 +26,7 @@ namespace CalorieCounter.ScaleEntries {
             }
 
             _errorText.gameObject.SetActive(false);
-            JsonUtility.Export(_scrollView.ScaleEntries, GlobalPaths.ScaleEntriesFilePath);
+            _scaleEntryHandler.ExportScaleEntry();
             _targetEntryHandler.RefreshTargetEntries();
             JsonUtility.Export(_targetEntryHandler.TargetEntries, GlobalPaths.TargetEntriesFilePath);
             gameObject.SetActive(false);
