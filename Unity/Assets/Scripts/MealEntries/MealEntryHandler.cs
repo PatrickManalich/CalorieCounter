@@ -1,4 +1,5 @@
 ﻿using CalorieCounter.Globals;
+using CalorieCounter.TargetEntries;
 using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
 using System.IO;
@@ -11,6 +12,9 @@ namespace CalorieCounter.MealEntries {
 
         [System.Serializable]
         private class ScrollViewDictionary : SerializableDictionaryBase<MealTypes, ScrollView> { }
+
+        [SerializeField]
+        private TargetEntryHandler _targetEntryHandler = default;
 
         [SerializeField]
         private Date _date = default;
@@ -34,6 +38,7 @@ namespace CalorieCounter.MealEntries {
         private float _totalCarbs = 0;
         private float _totalProtein = 0;
         private float _totalCalories = 0;
+        private TargetEntry _targetEntry;
         private Dictionary<MealTypes, List<MealProportion>> _mealProportionsDict = new Dictionary<MealTypes, List<MealProportion>>() {
             { MealTypes.Small, new List<MealProportion>() },
             { MealTypes.Large, new List<MealProportion>() },
@@ -62,10 +67,6 @@ namespace CalorieCounter.MealEntries {
             JsonUtility.Export(currentMealEntry, GetMealEntryPath());
         }
 
-        private void Awake() {
-            Refresh();
-        }
-
         private void Start() {
             MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(GetMealEntryPath());
             if (importedMealEntry != default) {
@@ -76,6 +77,8 @@ namespace CalorieCounter.MealEntries {
                     }
                 }
             }
+            _targetEntry = _targetEntryHandler.GetLatestTargetEntry(_date.CurrentDate);
+            Refresh();
         }
 
         private void Refresh() {
@@ -83,10 +86,10 @@ namespace CalorieCounter.MealEntries {
             _totalCarbs = GlobalMethods.Round(_totalCarbs);
             _totalProtein = GlobalMethods.Round(_totalProtein);
             _totalCalories = GlobalMethods.Round(_totalCalories);
-            _fatText.text = _totalFat.ToString() + "/0";
-            _carbsText.text = _totalCarbs.ToString() + "/0";
-            _proteinText.text = _totalProtein.ToString() + "/0";
-            _caloriesText.text = _totalCalories.ToString() + "/0";
+            _fatText.text = _totalFat.ToString() + " / " + _targetEntry.TrainingDayFatGrams;
+            _carbsText.text = _totalCarbs.ToString() + " / " + _targetEntry.TrainingDayCarbGrams;
+            _proteinText.text = _totalProtein.ToString() + " / " + _targetEntry.TrainingDayProteinGrams;
+            _caloriesText.text = _totalCalories.ToString() + " / " + _targetEntry.TrainingDayCalories;
         }
 
         private string GetMealEntryPath() {

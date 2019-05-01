@@ -28,7 +28,6 @@ namespace CalorieCounter.TargetEntries {
         private const float RestDayFatPercentage = 0.28f;
         private const float TrainingDayFatPercentage = 0.22f;
 
-
         public TargetEntry(DateTime date, float weight) {
             Date = date;
             Weight = weight;
@@ -45,8 +44,23 @@ namespace CalorieCounter.TargetEntries {
             TrainingDayCarbGrams = GlobalMethods.Round((TrainingDayCalories - (TrainingDayProteinGrams * 4) - TrainingDayFatGrams * 9) / 4);
         }
 
+        public static bool operator ==(TargetEntry targetEntry1, TargetEntry targetEntry2) {
+            return targetEntry1.Equals(targetEntry2);
+        }
+
+        public static bool operator !=(TargetEntry targetEntry1, TargetEntry targetEntry2) {
+            return !targetEntry1.Equals(targetEntry2);
+        }
+
+        public override bool Equals(object obj) {
+            return base.Equals(obj);
+        }
+        public override int GetHashCode() {
+            return base.GetHashCode();
+        }
+
         public override string ToString() {
-            return "CML:" + CalorieMaintenanceLevel + ", RestDay [ Calories:" + RestDayCalories + ", Fat: " + RestDayFatGrams + ", Carbs:" + RestDayCarbGrams +
+            return Date.ToShortDateString() + ", " + "CML:" + CalorieMaintenanceLevel + ", RestDay [ Calories:" + RestDayCalories + ", Fat: " + RestDayFatGrams + ", Carbs:" + RestDayCarbGrams +
                 ", Protein:" + RestDayProteinGrams + " ], TrainingDay [ Calories:" + TrainingDayCalories + ", Fat: " + TrainingDayFatGrams + ", Carbs:" + TrainingDayCarbGrams +
                 ", Protein:" + TrainingDayProteinGrams + " ]";
         }
