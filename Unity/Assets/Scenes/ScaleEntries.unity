@@ -3738,7 +3738,7 @@ GameObject:
   - component: {fileID: 1840775929}
   - component: {fileID: 1840775928}
   m_Layer: 0
-  m_Name: ScaleEntryImporter
+  m_Name: ScaleEntryHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

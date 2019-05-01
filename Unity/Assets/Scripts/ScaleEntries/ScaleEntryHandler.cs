@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CalorieCounter.ScaleEntries {
 
-    public class ScaleEntryImporter : MonoBehaviour {
+    public class ScaleEntryHandler : MonoBehaviour {
 
         [SerializeField]
         private ScrollView _scrollView = default;
