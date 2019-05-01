@@ -1,5 +1,5 @@
 ﻿using CalorieCounter.Globals;
-using CalorieCounter.ScaleEntries;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,20 +7,21 @@ namespace CalorieCounter.TargetEntries {
 
     public class TargetEntryHandler : MonoBehaviour {
 
-        public List<TargetEntry> TargetEntries { get; private set; } = new List<TargetEntry>();
+        private List<TargetEntry> _targetEntries = new List<TargetEntry>();
 
-        private ScrollView _scrollView;
+        public void AddTargetEntry(DateTime date, float weight) {
+            _targetEntries.Add(new TargetEntry(date, weight));
+        }
 
-        public void RefreshTargetEntries() {
-            TargetEntries.Clear();
-            foreach(var scaleEntry in _scrollView.ScaleEntries) {
-                TargetEntries.Add(new TargetEntry(scaleEntry.Date, scaleEntry.Weight));
-            }
+        public void ClearTargetEntries() {
+            _targetEntries.Clear();
+        }
+        public void ExportTargetEntry() {
+            JsonUtility.Export(_targetEntries, GlobalPaths.TargetEntriesFilePath);
         }
 
         private void Awake() {
-            TargetEntries = JsonUtility.Import<List<TargetEntry>>(GlobalPaths.TargetEntriesFilePath);
-            _scrollView = FindObjectOfType<ScrollView>();
+            _targetEntries = JsonUtility.Import<List<TargetEntry>>(GlobalPaths.TargetEntriesFilePath);
         }
     }
 }

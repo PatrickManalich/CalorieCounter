@@ -1,5 +1,4 @@
-﻿using CalorieCounter.Globals;
-using CalorieCounter.TargetEntries;
+﻿using CalorieCounter.TargetEntries;
 using TMPro;
 using UnityEngine;
 
@@ -11,12 +10,14 @@ namespace CalorieCounter.ScaleEntries {
         private ScaleEntryHandler _scaleEntryHandler = default;
 
         [SerializeField]
+        private TargetEntryHandler _targetEntryHandler = default;
+
+        [SerializeField]
         private ScrollView _scrollView = default;
 
         [SerializeField]
         private TextMeshProUGUI _errorText = default;
 
-        TargetEntryHandler _targetEntryHandler;
 
         public void TryExporting() {
             if (_scrollView.HasInputFields()) {
@@ -27,13 +28,12 @@ namespace CalorieCounter.ScaleEntries {
 
             _errorText.gameObject.SetActive(false);
             _scaleEntryHandler.ExportScaleEntry();
-            _targetEntryHandler.RefreshTargetEntries();
-            JsonUtility.Export(_targetEntryHandler.TargetEntries, GlobalPaths.TargetEntriesFilePath);
+            _targetEntryHandler.ClearTargetEntries();
+            foreach (var scaleEntry in _scrollView.ScaleEntries) {
+                _targetEntryHandler.AddTargetEntry(scaleEntry.Date, scaleEntry.Weight);
+            }
+            _targetEntryHandler.ExportTargetEntry();
             gameObject.SetActive(false);
-        }
-
-        private void Awake() {
-            _targetEntryHandler = FindObjectOfType<TargetEntryHandler>();
         }
     }
 }
