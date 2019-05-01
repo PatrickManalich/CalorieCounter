@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    public class MealEntryTracker : MonoBehaviour {
+    public class MealEntryHandler : MonoBehaviour {
 
         [SerializeField]
         private Date _date = default;

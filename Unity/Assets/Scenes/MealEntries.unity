@@ -2389,7 +2389,7 @@ MonoBehaviour:
     _values:
     - {fileID: 19275662}
     - {fileID: 688997043}
-  _mealEntryTracker: {fileID: 1508925266}
+  _mealEntryHandler: {fileID: 1508925266}
 --- !u!4 &416958792
 Transform:
   m_ObjectHideFlags: 0
@@ -8964,7 +8964,7 @@ GameObject:
   - component: {fileID: 1508925267}
   - component: {fileID: 1508925266}
   m_Layer: 0
-  m_Name: MealEntryTracker
+  m_Name: MealEntryHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9726,7 +9726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4595acf76f2fbf341b3d160fd38656c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealEntryTracker: {fileID: 1508925266}
+  _mealEntryHandler: {fileID: 1508925266}
 --- !u!1 &1567379143
 GameObject:
   m_ObjectHideFlags: 0

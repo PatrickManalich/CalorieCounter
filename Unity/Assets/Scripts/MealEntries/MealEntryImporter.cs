@@ -13,10 +13,10 @@ namespace CalorieCounter.MealEntries {
         private ScrollViewDictionary _scrollViewDict = default;
 
         [SerializeField]
-        private MealEntryTracker _mealEntryTracker = default;
+        private MealEntryHandler _mealEntryHandler = default;
 
         private void Start() {
-            MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(_mealEntryTracker.GetMealEntryPath());
+            MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(_mealEntryHandler.GetMealEntryPath());
             if (importedMealEntry != default) {
                 foreach (var key in importedMealEntry.MealProportionsDict.Keys) {
                     ScrollView scrollView = _scrollViewDict[key];

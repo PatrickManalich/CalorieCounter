@@ -5,10 +5,10 @@ namespace CalorieCounter.MealEntries {
     public class ExportButton : MonoBehaviour {
 
         [SerializeField]
-        private MealEntryTracker _mealEntryTracker = default;
+        private MealEntryHandler _mealEntryHandler = default;
 
         public void TryExporting() {
-            JsonUtility.Export(_mealEntryTracker.GetMealEntry(), _mealEntryTracker.GetMealEntryPath());
+            JsonUtility.Export(_mealEntryHandler.GetMealEntry(), _mealEntryHandler.GetMealEntryPath());
             gameObject.SetActive(false);
         }
     }
