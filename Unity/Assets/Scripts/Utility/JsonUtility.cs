@@ -11,7 +11,7 @@ namespace CalorieCounter {
         public static void Export<T>(T value, string filePath) {
             string fullFilePath = GetFullFilePath(filePath);
             using (StreamWriter file = File.CreateText(fullFilePath)) {
-                JsonSerializer serializer = new JsonSerializer();
+                JsonSerializer serializer = new JsonSerializer() { Formatting = Formatting.Indented };
                 serializer.Serialize(file, value);
             }
         }
