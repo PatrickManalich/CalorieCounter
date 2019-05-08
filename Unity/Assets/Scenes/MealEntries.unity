@@ -331,22 +331,6 @@ MonoBehaviour:
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
     type: 3}
   _contentTransform: {fileID: 2136228770}
-  OnMealProportionSubmitted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1508925266}
-        m_MethodName: AddMealProportion
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: CalorieCounter.MealEntries.ScrollView+MealProportionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &24035605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,6 +986,7 @@ MonoBehaviour:
   _servingAmountDropdown: {fileID: 1521270210}
   _mealSourceDropdown: {fileID: 767946881}
   _scrollView: {fileID: 688997043}
+  _mealEntryHandler: {fileID: 1508925266}
   _exportButton: {fileID: 1128983966}
   _errorText: {fileID: 1871739067}
 --- !u!114 &127662988
@@ -2466,7 +2451,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1508925266}
-        m_MethodName: Refresh
+        m_MethodName: RefreshMealAndTargetEntry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3910,22 +3895,6 @@ MonoBehaviour:
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
     type: 3}
   _contentTransform: {fileID: 1343613514}
-  OnMealProportionSubmitted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1508925266}
-        m_MethodName: AddMealProportion
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: CalorieCounter.MealEntries.ScrollView+MealProportionEvent, Assembly-CSharp,
-      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!114 &688997044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5884,6 +5853,7 @@ MonoBehaviour:
   _servingAmountDropdown: {fileID: 1671688307}
   _mealSourceDropdown: {fileID: 1576245871}
   _scrollView: {fileID: 19275662}
+  _mealEntryHandler: {fileID: 1508925266}
   _exportButton: {fileID: 1553792671}
   _errorText: {fileID: 319171211}
 --- !u!1 &1165763513
@@ -6247,7 +6217,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1508925266}
-        m_MethodName: Refresh
+        m_MethodName: RefreshMealAndTargetEntry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

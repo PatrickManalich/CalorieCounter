@@ -16,11 +16,6 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private Transform _contentTransform = default;
 
-        [System.Serializable]
-        public class MealProportionEvent : UnityEvent<MealProportion> { }
-
-        public MealProportionEvent OnMealProportionSubmitted;
-
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
         public void AddMealProportion(MealProportion mealProportion) {
@@ -43,7 +38,13 @@ namespace CalorieCounter.MealEntries {
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
 
             _mealProportions.Add(mealProportion);
-            OnMealProportionSubmitted.Invoke(mealProportion);
+        }
+
+        public void ClearMealProportions() {
+            foreach(Transform child in _contentTransform) {
+                Destroy(child.gameObject);
+            }
+            _mealProportions.Clear();
         }
     }
 }

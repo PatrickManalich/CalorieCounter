@@ -50,7 +50,7 @@ namespace CalorieCounter.MealEntries {
             _totalCarbs += mealProportion.Carbs;
             _totalProtein += mealProportion.Protein;
             _totalCalories += mealProportion.Calories;
-            Refresh();
+            RefreshTexts();
         }
 
         public void SubtractMealProportion(MealProportion mealProportion) {
@@ -59,7 +59,7 @@ namespace CalorieCounter.MealEntries {
             _totalCarbs -= mealProportion.Carbs;
             _totalProtein -= mealProportion.Protein;
             _totalCalories -= mealProportion.Calories;
-            Refresh();
+            RefreshTexts();
         }
 
         public void ExportMealEntry() {
@@ -67,9 +67,42 @@ namespace CalorieCounter.MealEntries {
             JsonUtility.Export(currentMealEntry, GetMealEntryPath());
         }
 
-        public void Refresh() {
-            _targetEntry = _targetEntryHandler.GetLatestTargetEntry(_date.CurrentDate);
+        public void RefreshMealAndTargetEntry() {
+            _totalFat = 0;
+            _totalCarbs = 0;
+            _totalProtein = 0;
+            _totalCalories = 0;
+            foreach (var key in _mealProportionsDict.Keys) {
+                _mealProportionsDict[key].Clear();
+                _scrollViewDict[key].ClearMealProportions();
+            }
 
+            MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(GetMealEntryPath());
+            if (importedMealEntry != default) {
+                foreach (var key in importedMealEntry.MealProportionsDict.Keys) {
+                    ScrollView scrollView = _scrollViewDict[key];
+                    foreach (var mealProportion in importedMealEntry.MealProportionsDict[key]) {
+                        AddMealProportion(mealProportion);
+                        scrollView.AddMealProportion(mealProportion);
+                    }
+                }
+            }
+
+            _targetEntry = _targetEntryHandler.GetLatestTargetEntry(_date.CurrentDate);
+            RefreshTexts();
+        }
+
+        private void Start() {
+            RefreshMealAndTargetEntry();
+        }
+
+        private string GetMealEntryPath() {
+            string mealEntryFileDate = "-" + _date.CurrentDate.Year + "-" + _date.CurrentDate.Month + "-" + _date.CurrentDate.Day;
+            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.MealEntryFileExtension;
+            return Path.Combine(GlobalPaths.MealEntriesDir, mealEntryFileName);
+        }
+
+        private void RefreshTexts() {
             _totalFat = GlobalMethods.Round(_totalFat);
             _totalCarbs = GlobalMethods.Round(_totalCarbs);
             _totalProtein = GlobalMethods.Round(_totalProtein);
@@ -79,25 +112,6 @@ namespace CalorieCounter.MealEntries {
             _carbsText.text = _totalCarbs.ToString() + " / " + _targetEntry.TrainingDayCarbGrams;
             _proteinText.text = _totalProtein.ToString() + " / " + _targetEntry.TrainingDayProteinGrams;
             _caloriesText.text = _totalCalories.ToString() + " / " + _targetEntry.TrainingDayCalories;
-        }
-
-        private void Start() {
-            MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(GetMealEntryPath());
-            if (importedMealEntry != default) {
-                foreach (var key in importedMealEntry.MealProportionsDict.Keys) {
-                    ScrollView scrollView = _scrollViewDict[key];
-                    foreach (var mealProportion in importedMealEntry.MealProportionsDict[key]) {
-                        scrollView.AddMealProportion(mealProportion);
-                    }
-                }
-            }
-            Refresh();
-        }
-
-        private string GetMealEntryPath() {
-            string mealEntryFileDate = "-" + _date.CurrentDate.Year + "-" + _date.CurrentDate.Month + "-" + _date.CurrentDate.Day;
-            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.MealEntryFileExtension;
-            return Path.Combine(GlobalPaths.MealEntriesDir, mealEntryFileName);
         }
     }
 }

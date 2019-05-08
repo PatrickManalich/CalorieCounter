@@ -16,6 +16,9 @@ namespace CalorieCounter.MealEntries {
         private ScrollView _scrollView = default;
 
         [SerializeField]
+        private MealEntryHandler _mealEntryHandler = default;
+
+        [SerializeField]
         private Button _exportButton = default;
 
         [SerializeField]
@@ -34,6 +37,7 @@ namespace CalorieCounter.MealEntries {
 
             _errorText.gameObject.SetActive(false);
             MealProportion mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
+            _mealEntryHandler.AddMealProportion(mealProportion);
             _scrollView.AddMealProportion(mealProportion);
             _exportButton.gameObject.SetActive(true); 
             _mealSourceDropdown.ResetDropdown();
