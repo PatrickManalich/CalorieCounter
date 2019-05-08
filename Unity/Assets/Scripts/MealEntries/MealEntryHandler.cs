@@ -67,6 +67,20 @@ namespace CalorieCounter.MealEntries {
             JsonUtility.Export(currentMealEntry, GetMealEntryPath());
         }
 
+        public void Refresh() {
+            _targetEntry = _targetEntryHandler.GetLatestTargetEntry(_date.CurrentDate);
+
+            _totalFat = GlobalMethods.Round(_totalFat);
+            _totalCarbs = GlobalMethods.Round(_totalCarbs);
+            _totalProtein = GlobalMethods.Round(_totalProtein);
+            _totalCalories = GlobalMethods.Round(_totalCalories);
+
+            _fatText.text = _totalFat.ToString() + " / " + _targetEntry.TrainingDayFatGrams;
+            _carbsText.text = _totalCarbs.ToString() + " / " + _targetEntry.TrainingDayCarbGrams;
+            _proteinText.text = _totalProtein.ToString() + " / " + _targetEntry.TrainingDayProteinGrams;
+            _caloriesText.text = _totalCalories.ToString() + " / " + _targetEntry.TrainingDayCalories;
+        }
+
         private void Start() {
             MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(GetMealEntryPath());
             if (importedMealEntry != default) {
@@ -77,19 +91,7 @@ namespace CalorieCounter.MealEntries {
                     }
                 }
             }
-            _targetEntry = _targetEntryHandler.GetLatestTargetEntry(_date.CurrentDate);
             Refresh();
-        }
-
-        private void Refresh() {
-            _totalFat = GlobalMethods.Round(_totalFat);
-            _totalCarbs = GlobalMethods.Round(_totalCarbs);
-            _totalProtein = GlobalMethods.Round(_totalProtein);
-            _totalCalories = GlobalMethods.Round(_totalCalories);
-            _fatText.text = _totalFat.ToString() + " / " + _targetEntry.TrainingDayFatGrams;
-            _carbsText.text = _totalCarbs.ToString() + " / " + _targetEntry.TrainingDayCarbGrams;
-            _proteinText.text = _totalProtein.ToString() + " / " + _targetEntry.TrainingDayProteinGrams;
-            _caloriesText.text = _totalCalories.ToString() + " / " + _targetEntry.TrainingDayCalories;
         }
 
         private string GetMealEntryPath() {
