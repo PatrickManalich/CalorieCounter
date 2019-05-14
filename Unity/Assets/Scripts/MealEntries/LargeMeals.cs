@@ -1,7 +1,7 @@
 ﻿using CalorieCounter.Globals;
 using System.Collections.Generic;
 
-namespace CalorieCounter.MealEntries {
+namespace CalorieCounter.MealEntries.CommonMeals {
 
     public class LargeMeals : AbstractMeals {
 

@@ -3,7 +3,7 @@ using TMPro;
 using System.Collections.Generic;
 using CalorieCounter.Globals;
 
-namespace CalorieCounter.MealEntries {
+namespace CalorieCounter.MealEntries.CommonMeals {
 
     [RequireComponent(typeof(TMP_Dropdown))]
     public class MealSourceDropdown : MonoBehaviour {

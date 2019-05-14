@@ -1,4 +1,5 @@
 ﻿using CalorieCounter.Globals;
+using CalorieCounter.MealEntries.CommonMeals;
 using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
 using System.IO;

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
-namespace CalorieCounter.MealEntries {
+namespace CalorieCounter.MealEntries.CommonMeals {
 
     public class ScrollView : MonoBehaviour {
 
