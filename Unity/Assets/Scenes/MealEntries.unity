@@ -2451,7 +2451,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1508925266}
-        m_MethodName: RefreshMealAndTargetEntry
+        m_MethodName: Refresh
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6217,7 +6217,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1508925266}
-        m_MethodName: RefreshMealAndTargetEntry
+        m_MethodName: Refresh
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6722,6 +6722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1247865278}
   - component: {fileID: 1247865280}
+  - component: {fileID: 1247865279}
   m_Layer: 5
   m_Name: Totals
   m_TagString: Untagged
@@ -6755,6 +6756,24 @@ RectTransform:
   m_AnchoredPosition: {x: -20, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1247865279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247865277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440cbf93c7f7b9b42be0ab58e8af7b54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetEntryHandler: {fileID: 35425279}
+  _date: {fileID: 593050228}
+  _fatText: {fileID: 24035607}
+  _carbsText: {fileID: 1407720790}
+  _proteinText: {fileID: 628394699}
+  _caloriesText: {fileID: 1839404431}
 --- !u!114 &1247865280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8945,12 +8964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557bab6fdc4c18b4e90a0d7388e8501c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetEntryHandler: {fileID: 35425279}
   _date: {fileID: 593050228}
-  _fatText: {fileID: 24035607}
-  _carbsText: {fileID: 1407720790}
-  _proteinText: {fileID: 628394699}
-  _caloriesText: {fileID: 1839404431}
   _scrollViewDict:
     reorderableList:
       canAdd: 1
@@ -8979,6 +8993,7 @@ MonoBehaviour:
     _values:
     - {fileID: 19275662}
     - {fileID: 688997043}
+  _totals: {fileID: 1247865279}
 --- !u!4 &1508925267
 Transform:
   m_ObjectHideFlags: 0
