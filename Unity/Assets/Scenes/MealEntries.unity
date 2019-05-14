@@ -1340,6 +1340,7 @@ GameObject:
   - component: {fileID: 209689746}
   - component: {fileID: 209689745}
   - component: {fileID: 209689744}
+  - component: {fileID: 209689747}
   m_Layer: 5
   m_Name: AddButton
   m_TagString: Untagged
@@ -1406,7 +1407,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 209689745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 209689747}
+        m_MethodName: TryAddingInputFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &209689745
@@ -1446,6 +1458,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209689742}
   m_CullTransparentMesh: 0
+--- !u!114 &209689747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209689742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c8795c06440d9e4091984046502621f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scrollView: {fileID: 920356582}
+  _errorText: {fileID: 584434727}
 --- !u!1 &218199825
 GameObject:
   m_ObjectHideFlags: 0
@@ -4603,7 +4629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &651122447
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6133,7 +6159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &853450532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6761,6 +6787,7 @@ GameObject:
   - component: {fileID: 920356585}
   - component: {fileID: 920356584}
   - component: {fileID: 920356583}
+  - component: {fileID: 920356582}
   m_Layer: 5
   m_Name: CustomMealsScrollView
   m_TagString: Untagged
@@ -6791,6 +6818,23 @@ RectTransform:
   m_AnchoredPosition: {x: -25, y: -820}
   m_SizeDelta: {x: 1595, y: 330}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &920356582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920356580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee10fd4a20d4c74496c23fe16e144da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scrollViewBlankPrefab: {fileID: 8046488516488573270, guid: 0c02643d85eedd844b560f71400724a9,
+    type: 3}
+  _scrollViewInputFieldPrefab: {fileID: 6791813578162674173, guid: b84f13cb516060d448aef7e2a6f6eaf9,
+    type: 3}
+  _content: {fileID: 2042110666}
 --- !u!114 &920356583
 MonoBehaviour:
   m_ObjectHideFlags: 0
