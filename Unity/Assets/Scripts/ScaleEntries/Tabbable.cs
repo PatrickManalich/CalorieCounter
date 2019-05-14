@@ -1,9 +1,8 @@
-﻿using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace CalorieCounter.ScaleEntries {
+namespace CalorieCounter {
 
     public class Tabbable : MonoBehaviour, IUpdateSelectedHandler {
 
