@@ -2,7 +2,7 @@
 
 namespace CalorieCounter.Globals {
 
-    public enum MealTypes { None, Small, Large }
+    public enum MealTypes { Small, Large, Custom }
 
     public static class GlobalPaths {
 
