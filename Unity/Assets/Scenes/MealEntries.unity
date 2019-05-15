@@ -330,7 +330,7 @@ MonoBehaviour:
     type: 3}
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
     type: 3}
-  _contentTransform: {fileID: 2136228770}
+  _content: {fileID: 2136228772}
 --- !u!1 &29919848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4976,7 +4976,7 @@ MonoBehaviour:
     type: 3}
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
     type: 3}
-  _contentTransform: {fileID: 1343613514}
+  _content: {fileID: 1343613516}
 --- !u!114 &688997044
 MonoBehaviour:
   m_ObjectHideFlags: 0

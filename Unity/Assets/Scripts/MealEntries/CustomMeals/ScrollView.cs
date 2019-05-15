@@ -68,7 +68,7 @@ namespace CalorieCounter.MealEntries.CustomMeals {
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
             DeleteButton deleteButton = Instantiate(_deleteButtonContainerPrefab, _content.transform).GetComponentInChildren<DeleteButton>();
-            deleteButton.RemovableGameObjects.InsertRange(0, new List<GameObject> { servingAmountText, nameText, fatText, carbText, proteinText, calorieText });
+            deleteButton.ScrollView = this;
             deleteButton.MealProportion = mealProportion;
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
@@ -79,6 +79,17 @@ namespace CalorieCounter.MealEntries.CustomMeals {
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
 
             _mealProportions.Add(mealProportion);
+        }
+
+        public override void SubtractMealProportion(MealProportion mealProportion) {
+            int mealProportionIndex = _mealProportions.FindIndex(x => x == mealProportion);
+            _mealProportions.RemoveAt(mealProportionIndex);
+
+            int childStartIndex = mealProportionIndex * _content.constraintCount;
+            for (int i = 0; i < _content.constraintCount; i++) {
+                int childIndex = childStartIndex + i;
+                Destroy(_content.transform.GetChild(childIndex).gameObject);
+            }
         }
 
         public override void ClearMealProportions() {

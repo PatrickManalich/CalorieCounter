@@ -6,6 +6,8 @@ namespace CalorieCounter.MealEntries {
 
         public abstract void AddMealProportion(MealProportion mealProportion);
 
+        public abstract void SubtractMealProportion(MealProportion mealProportion);
+
         public abstract void ClearMealProportions();
     }
 }
