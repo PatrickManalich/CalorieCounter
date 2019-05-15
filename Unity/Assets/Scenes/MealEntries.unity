@@ -1472,6 +1472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollView: {fileID: 920356582}
   _errorText: {fileID: 584434727}
+  _submitButton: {fileID: 853450533}
 --- !u!1 &218199825
 GameObject:
   m_ObjectHideFlags: 0
@@ -6153,6 +6154,7 @@ GameObject:
   - component: {fileID: 853450535}
   - component: {fileID: 853450534}
   - component: {fileID: 853450533}
+  - component: {fileID: 853450536}
   m_Layer: 5
   m_Name: SubmitButton
   m_TagString: Untagged
@@ -6219,7 +6221,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 853450534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 853450536}
+        m_MethodName: TryAddingMealProportionFromInputFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &853450534
@@ -6259,6 +6272,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853450531}
   m_CullTransparentMesh: 0
+--- !u!114 &853450536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853450531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b6b0da82fe0db94f8cb894a0d245a19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scrollView: {fileID: 920356582}
+  _exportButton: {fileID: 1553792671}
+  _errorText: {fileID: 584434727}
 --- !u!1 &863322314
 GameObject:
   m_ObjectHideFlags: 0
@@ -6833,6 +6861,10 @@ MonoBehaviour:
   _scrollViewBlankPrefab: {fileID: 8046488516488573270, guid: 0c02643d85eedd844b560f71400724a9,
     type: 3}
   _scrollViewInputFieldPrefab: {fileID: 6791813578162674173, guid: b84f13cb516060d448aef7e2a6f6eaf9,
+    type: 3}
+  _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
+    type: 3}
+  _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
     type: 3}
   _content: {fileID: 2042110666}
 --- !u!114 &920356583

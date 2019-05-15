@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CalorieCounter.MealEntries.CustomMeals {
 
@@ -11,6 +12,9 @@ namespace CalorieCounter.MealEntries.CustomMeals {
         [SerializeField]
         private TextMeshProUGUI _errorText = default;
 
+        [SerializeField]
+        private Button _submitButton = default;
+
         public void TryAddingInputFields() {
             if (_scrollView.HasInputFields()) {
                 _errorText.text = "Input Fields Already Active";
@@ -20,6 +24,7 @@ namespace CalorieCounter.MealEntries.CustomMeals {
 
             _errorText.gameObject.SetActive(false);
             _scrollView.AddInputFields();
+            _submitButton.gameObject.SetActive(true);
         }
     }
 }
