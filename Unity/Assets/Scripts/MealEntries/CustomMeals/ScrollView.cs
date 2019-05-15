@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace CalorieCounter.MealEntries.CustomMeals {
 
-    public class ScrollView : MonoBehaviour {
+    public class ScrollView : AbstractScrollView {
 
         [SerializeField]
         private GameObject _scrollViewBlankPrefab = default;
@@ -57,7 +57,7 @@ namespace CalorieCounter.MealEntries.CustomMeals {
             return new MealProportion(float.Parse(_inputFields[0].text), customMealSource);
         }
 
-        public void AddMealProportion(MealProportion customMealProportion) {
+        public override void AddMealProportion(MealProportion mealProportion) {
             DeleteInputFields();
 
             GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -69,16 +69,23 @@ namespace CalorieCounter.MealEntries.CustomMeals {
 
             DeleteButton deleteButton = Instantiate(_deleteButtonContainerPrefab, _content.transform).GetComponentInChildren<DeleteButton>();
             deleteButton.RemovableGameObjects.InsertRange(0, new List<GameObject> { servingAmountText, nameText, fatText, carbText, proteinText, calorieText });
-            deleteButton.MealProportion = customMealProportion;
+            deleteButton.MealProportion = mealProportion;
 
-            servingAmountText.GetComponent<TextMeshProUGUI>().text = customMealProportion.ServingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = customMealProportion.Source.Name;
-            fatText.GetComponent<TextMeshProUGUI>().text = customMealProportion.Fat.ToString();
-            carbText.GetComponent<TextMeshProUGUI>().text = customMealProportion.Carbs.ToString();
-            proteinText.GetComponent<TextMeshProUGUI>().text = customMealProportion.Protein.ToString();
-            calorieText.GetComponent<TextMeshProUGUI>().text = customMealProportion.Calories.ToString();
+            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
+            nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.Source.Name;
+            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
+            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
+            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
+            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
 
-            _mealProportions.Add(customMealProportion);
+            _mealProportions.Add(mealProportion);
+        }
+
+        public override void ClearMealProportions() {
+            foreach (Transform child in _content.transform) {
+                Destroy(child.gameObject);
+            }
+            _mealProportions.Clear();
         }
 
         public bool HasInputFields() {

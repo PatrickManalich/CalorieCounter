@@ -6313,6 +6313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scrollView: {fileID: 920356582}
+  _mealEntryHandler: {fileID: 1508925266}
   _exportButton: {fileID: 1553792671}
   _cancelButton: {fileID: 651122448}
   _errorText: {fileID: 584434727}
@@ -10548,11 +10549,12 @@ MonoBehaviour:
       elementIcon: {fileID: 0}
     reqReferences: {fileID: 0}
     isExpanded: 1
-    _keyValues: 0000000001000000
-    _keys: 0000000001000000
+    _keyValues: 000000000100000002000000
+    _keys: 000000000100000002000000
     _values:
     - {fileID: 19275662}
     - {fileID: 688997043}
+    - {fileID: 920356582}
   _totals: {fileID: 1566187486}
 --- !u!4 &1508925267
 Transform:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealEntries.CommonMeals {
 
-    public class ScrollView : MonoBehaviour {
+    public class ScrollView : AbstractScrollView {
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
@@ -17,7 +17,7 @@ namespace CalorieCounter.MealEntries.CommonMeals {
 
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
-        public void AddMealProportion(MealProportion mealProportion) {
+        public override void AddMealProportion(MealProportion mealProportion) {
             GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject nameText = Instantiate(_scrollViewTextPrefab, _contentTransform);
             GameObject fatText = Instantiate(_scrollViewTextPrefab, _contentTransform);
@@ -39,7 +39,7 @@ namespace CalorieCounter.MealEntries.CommonMeals {
             _mealProportions.Add(mealProportion);
         }
 
-        public void ClearMealProportions() {
+        public override void ClearMealProportions() {
             foreach(Transform child in _contentTransform) {
                 Destroy(child.gameObject);
             }

@@ -1,5 +1,4 @@
 ﻿using CalorieCounter.Globals;
-using CalorieCounter.MealEntries.CommonMeals;
 using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +9,7 @@ namespace CalorieCounter.MealEntries {
     public class MealEntryHandler : MonoBehaviour {
 
         [System.Serializable]
-        private class ScrollViewDictionary : SerializableDictionaryBase<MealTypes, ScrollView> { }
+        private class ScrollViewDictionary : SerializableDictionaryBase<MealTypes, AbstractScrollView> { }
 
         [SerializeField]
         private Date _date = default;
@@ -24,6 +23,7 @@ namespace CalorieCounter.MealEntries {
         private Dictionary<MealTypes, List<MealProportion>> _mealProportionsDict = new Dictionary<MealTypes, List<MealProportion>>() {
             { MealTypes.Small, new List<MealProportion>() },
             { MealTypes.Large, new List<MealProportion>() },
+            { MealTypes.Custom, new List<MealProportion>() },
         };
 
         public void AddMealProportion(MealProportion mealProportion) {
@@ -52,7 +52,7 @@ namespace CalorieCounter.MealEntries {
             MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(GetMealEntryPath());
             if (importedMealEntry != default) {
                 foreach (var key in importedMealEntry.MealProportionsDict.Keys) {
-                    ScrollView scrollView = _scrollViewDict[key];
+                    AbstractScrollView scrollView = _scrollViewDict[key];
                     foreach (var mealProportion in importedMealEntry.MealProportionsDict[key]) {
                         AddMealProportion(mealProportion);
                         scrollView.AddMealProportion(mealProportion);

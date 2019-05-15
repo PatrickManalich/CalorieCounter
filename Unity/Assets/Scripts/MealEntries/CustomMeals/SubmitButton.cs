@@ -10,6 +10,9 @@ namespace CalorieCounter.MealEntries.CustomMeals {
         private ScrollView _scrollView = default;
 
         [SerializeField]
+        private MealEntryHandler _mealEntryHandler = default;
+
+        [SerializeField]
         private Button _exportButton = default;
 
         [SerializeField]
@@ -27,6 +30,7 @@ namespace CalorieCounter.MealEntries.CustomMeals {
 
             _errorText.gameObject.SetActive(false);
             MealProportion customMealProportion = _scrollView.GetCustomMealProportionFromInputFields();
+            _mealEntryHandler.AddMealProportion(customMealProportion);
             _scrollView.AddMealProportion(customMealProportion);
             _exportButton.gameObject.SetActive(true);
             gameObject.SetActive(false);
