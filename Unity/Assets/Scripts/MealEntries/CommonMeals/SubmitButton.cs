@@ -43,9 +43,5 @@ namespace CalorieCounter.MealEntries.CommonMeals {
             _mealSourceDropdown.ResetDropdown();
             _servingAmountDropdown.ResetDropdown();
         }
-
-        private void Start() {
-            _errorText.gameObject.SetActive(false);
-        }
     }
 }
