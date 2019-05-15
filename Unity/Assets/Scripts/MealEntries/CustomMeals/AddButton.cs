@@ -15,6 +15,9 @@ namespace CalorieCounter.MealEntries.CustomMeals {
         [SerializeField]
         private Button _submitButton = default;
 
+        [SerializeField]
+        private Button _cancelButton = default;
+
         public void TryAddingInputFields() {
             if (_scrollView.HasInputFields()) {
                 _errorText.text = "Input Fields Already Active";
@@ -25,6 +28,7 @@ namespace CalorieCounter.MealEntries.CustomMeals {
             _errorText.gameObject.SetActive(false);
             _scrollView.AddInputFields();
             _submitButton.gameObject.SetActive(true);
+            _cancelButton.gameObject.SetActive(true);
         }
     }
 }

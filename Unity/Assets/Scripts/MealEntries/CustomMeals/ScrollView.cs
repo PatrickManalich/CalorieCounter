@@ -44,6 +44,14 @@ namespace CalorieCounter.MealEntries.CustomMeals {
             }
         }
 
+        public void DeleteInputFields() {
+            for (int i = 0; i < _content.constraintCount; i++) {
+                int childIndex = (_mealProportions.Count * _content.constraintCount) + i;
+                Destroy(_content.transform.GetChild(childIndex).gameObject);
+            }
+            _inputFields.Clear();
+        }
+
         public MealProportion GetCustomMealProportionFromInputFields() {
             MealSource customMealSource = MealSource.CreateCustomMealSource(float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text));
             return new MealProportion(float.Parse(_inputFields[0].text), customMealSource);
@@ -89,14 +97,6 @@ namespace CalorieCounter.MealEntries.CustomMeals {
                 }
             }
             return true;
-        }
-
-        private void DeleteInputFields() {
-            for (int i = 0; i < _content.constraintCount; i++) {
-                int childIndex = (_mealProportions.Count * _content.constraintCount) + i;
-                Destroy(_content.transform.GetChild(childIndex).gameObject);
-            }
-            _inputFields.Clear();
         }
     }
 }

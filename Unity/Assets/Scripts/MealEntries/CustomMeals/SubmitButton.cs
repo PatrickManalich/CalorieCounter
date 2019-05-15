@@ -13,6 +13,9 @@ namespace CalorieCounter.MealEntries.CustomMeals {
         private Button _exportButton = default;
 
         [SerializeField]
+        private Button _cancelButton = default;
+
+        [SerializeField]
         private TextMeshProUGUI _errorText = default;
 
         public void TryAddingMealProportionFromInputFields() {
@@ -27,6 +30,7 @@ namespace CalorieCounter.MealEntries.CustomMeals {
             _scrollView.AddMealProportion(customMealProportion);
             _exportButton.gameObject.SetActive(true);
             gameObject.SetActive(false);
+            _cancelButton.gameObject.SetActive(false);
         }
     }
 }
