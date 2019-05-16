@@ -58,7 +58,8 @@ namespace CalorieCounter.MealEntries.CustomMeals {
         }
 
         public override void AddMealProportion(MealProportion mealProportion) {
-            DeleteInputFields();
+            if(HasInputFields())
+                DeleteInputFields();
 
             GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject nameText = Instantiate(_scrollViewTextPrefab, _content.transform);
