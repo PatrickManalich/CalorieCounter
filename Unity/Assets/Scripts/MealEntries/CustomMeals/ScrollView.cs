@@ -26,7 +26,7 @@ namespace CalorieCounter.MealEntries.CustomMeals {
 
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
-        public void AddInputFields() {
+        public void AddInputFields(Selectable lastSelectable) {
             GameObject previous = null;
             for (int i = 0; i < _content.constraintCount; i++) {
                 if (i == 0) {
@@ -42,6 +42,7 @@ namespace CalorieCounter.MealEntries.CustomMeals {
                     Instantiate(_scrollViewBlankPrefab, _content.transform);
                 }
             }
+            _inputFields[_inputFields.Count - 1].GetComponent<Tabbable>().NextSelectable = lastSelectable;
         }
 
         public void DeleteInputFields() {
