@@ -1,6 +1,4 @@
-﻿using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 namespace CalorieCounter.MealEntries.CommonMeals {
 
@@ -18,28 +16,10 @@ namespace CalorieCounter.MealEntries.CommonMeals {
         [SerializeField]
         private MealEntryHandler _mealEntryHandler = default;
 
-        [SerializeField]
-        private Button _exportButton = default;
-
-        [SerializeField]
-        private TextMeshProUGUI _errorText = default;
-
         public void TryAddingMealProportion() {
-            if (_servingAmountDropdown.SelectedServingAmount <= 0) {
-                _errorText.text = "Select Valid Amount";
-                _errorText.gameObject.SetActive(true);
-                return;
-            } else if (_mealSourceDropdown.SelectedMealSource == default) {
-                _errorText.text = "Select Valid Meal";
-                _errorText.gameObject.SetActive(true);
-                return;
-            }
-
-            _errorText.gameObject.SetActive(false);
             MealProportion mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
             _mealEntryHandler.AddMealProportion(mealProportion);
             _scrollView.AddMealProportion(mealProportion);
-            _exportButton.gameObject.SetActive(true); 
             _mealSourceDropdown.ResetDropdown();
             _servingAmountDropdown.ResetDropdown();
         }

@@ -1,0 +1,38 @@
+﻿using RotaryHeart.Lib.SerializableDictionary;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace CalorieCounter {
+
+    public class ActiveHandler : MonoBehaviour {
+
+        [System.Serializable]
+        private class SerializableSourceDictionary : SerializableDictionaryBase<GameObject, SerializableSource> { }
+
+        [System.Serializable]
+        private class SerializableSource {
+            public bool SetSourceActive = default;
+            public List<SerializableTarget> Targets = default;
+        }
+
+        [System.Serializable]
+        private class SerializableTarget {
+            public GameObject Target = default;
+            public bool SetActive = default;
+        }
+
+        [SerializeField]
+        private SerializableSourceDictionary _serializedSourceDictionary = default;
+
+        public void Apply(GameObject source) {
+            if (!_serializedSourceDictionary.ContainsKey(source))
+                return;
+
+            var serializedSource = _serializedSourceDictionary[source];
+            source.SetActive(serializedSource.SetSourceActive);
+            foreach (var serializedTarget in serializedSource.Targets) {
+                serializedTarget.Target.SetActive(serializedTarget.SetActive);
+            }
+        }
+    }
+}

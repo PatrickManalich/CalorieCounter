@@ -1,5 +1,4 @@
 ﻿using CalorieCounter.TargetEntries;
-using TMPro;
 using UnityEngine;
 
 namespace CalorieCounter.ScaleEntries {
@@ -15,18 +14,7 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private ScrollView _scrollView = default;
 
-        [SerializeField]
-        private TextMeshProUGUI _errorText = default;
-
-
-        public void TryExporting() {
-            if (_scrollView.HasInputFields()) {
-                _errorText.text = "Input Fields Are Active";
-                _errorText.gameObject.SetActive(true);
-                return;
-            }
-
-            _errorText.gameObject.SetActive(false);
+        public void Export() {
             _scaleEntryHandler.ExportScaleEntry();
             _targetEntryHandler.ClearTargetEntries();
             foreach (var scaleEntry in _scrollView.ScaleEntries) {

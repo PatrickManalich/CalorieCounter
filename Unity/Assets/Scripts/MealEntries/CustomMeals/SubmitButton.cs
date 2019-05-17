@@ -1,6 +1,5 @@
 ﻿using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CalorieCounter.MealEntries.CustomMeals {
 
@@ -12,29 +11,10 @@ namespace CalorieCounter.MealEntries.CustomMeals {
         [SerializeField]
         private MealEntryHandler _mealEntryHandler = default;
 
-        [SerializeField]
-        private Button _exportButton = default;
-
-        [SerializeField]
-        private Button _cancelButton = default;
-
-        [SerializeField]
-        private TextMeshProUGUI _errorText = default;
-
         public void TryAddingMealProportionFromInputFields() {
-            if (!_scrollView.AllInputFieldsFilled()) {
-                _errorText.text = "Fill All Input Fields";
-                _errorText.gameObject.SetActive(true);
-                return;
-            }
-
-            _errorText.gameObject.SetActive(false);
             MealProportion customMealProportion = _scrollView.GetCustomMealProportionFromInputFields();
             _mealEntryHandler.AddMealProportion(customMealProportion);
             _scrollView.AddMealProportion(customMealProportion);
-            _exportButton.gameObject.SetActive(true);
-            gameObject.SetActive(false);
-            _cancelButton.gameObject.SetActive(false);
         }
     }
 }

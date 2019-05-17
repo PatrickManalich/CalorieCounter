@@ -85,14 +85,5 @@ namespace CalorieCounter.ScaleEntries {
             }
             return false;
         }
-
-        public bool AllInputFieldsFilled() {
-            foreach(var inputField in _inputFields) {
-                if(inputField.text == "") {
-                    return false;
-                }
-            }
-            return true;
-        }
     }
 }
