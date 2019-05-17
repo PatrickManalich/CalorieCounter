@@ -4,6 +4,8 @@ namespace CalorieCounter.Globals {
 
     public enum MealTypes { Small, Large, Custom }
 
+    public enum DayTypes { None, Rest, Workout }
+
     public static class GlobalPaths {
 
         public const string MealEntriesDir = @"MealEntries";

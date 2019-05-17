@@ -15,6 +15,9 @@ namespace CalorieCounter.MealEntries {
         private Date _date = default;
 
         [SerializeField]
+        private DayTypeDropdown _dayTypeDropdown = default;
+
+        [SerializeField]
         private Totals _totals = default;
 
         [SerializeField]
@@ -37,7 +40,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         public void ExportMealEntry() {
-            MealEntry currentMealEntry = new MealEntry(_date.CurrentDate, _totals.TotalFat, _totals.TotalCarbs, _totals.TotalProtein, 
+            MealEntry currentMealEntry = new MealEntry(_date.CurrentDate, _dayTypeDropdown.DayType, _totals.TotalFat, _totals.TotalCarbs, _totals.TotalProtein, 
                 _totals.TotalCalories, _mealProportionsDict);
             JsonUtility.Export(currentMealEntry, GetMealEntryPath());
         }
@@ -59,6 +62,7 @@ namespace CalorieCounter.MealEntries {
                     }
                 }
             }
+            _dayTypeDropdown.HardSetDayType(importedMealEntry.DayType);
         }
 
         private void Start() {
