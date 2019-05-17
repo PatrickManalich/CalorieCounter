@@ -15,10 +15,10 @@ namespace CalorieCounter.MealEntries {
         private Date _date = default;
 
         [SerializeField]
-        private ScrollViewDictionary _scrollViewDict = default;
+        private Totals _totals = default;
 
         [SerializeField]
-        private Totals _totals = default;
+        private ScrollViewDictionary _scrollViewDict = default;
 
         private Dictionary<MealTypes, List<MealProportion>> _mealProportionsDict = new Dictionary<MealTypes, List<MealProportion>>() {
             { MealTypes.Small, new List<MealProportion>() },
