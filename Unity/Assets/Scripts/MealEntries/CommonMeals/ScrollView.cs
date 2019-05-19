@@ -41,9 +41,9 @@ namespace CalorieCounter.MealEntries.CommonMeals {
             GameObject proteinText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-            DeleteButton deleteButton = Instantiate(_deleteButtonContainerPrefab, _content.transform).GetComponentInChildren<DeleteButton>();
-            deleteButton.ScrollView = this;
-            deleteButton.MealProportion = mealProportion;
+            Button deleteButton = Instantiate(_deleteButtonContainerPrefab, _content.transform).GetComponentInChildren<Button>();
+            deleteButton.onClick.AddListener(delegate { SubtractMealProportion(mealProportion); });
+            deleteButton.onClick.AddListener(delegate { _mealEntryHandler.SubtractMealProportion(mealProportion); });
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.Source.Name;

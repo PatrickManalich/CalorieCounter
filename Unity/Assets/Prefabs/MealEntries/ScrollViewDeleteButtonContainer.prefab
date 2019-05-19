@@ -213,7 +213,6 @@ GameObject:
   - component: {fileID: 1770043100917054598}
   - component: {fileID: 6023258418154431166}
   - component: {fileID: 9211053142153888247}
-  - component: {fileID: 6978045289123906599}
   m_Layer: 5
   m_Name: DeleteButton
   m_TagString: Untagged
@@ -321,33 +320,9 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6023258418154431166}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6978045289123906599}
-        m_MethodName: DeleteMeal
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &6978045289123906599
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8784922238096298548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24d1b51e1462c74aae458729410c5ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RemovableGameObjects: []
 --- !u!1001 &978371585020840987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -468,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 4152281114327285138, guid: 4ced30b2fffa89f4f92d204273b538ea,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4152281114327285138, guid: 4ced30b2fffa89f4f92d204273b538ea,
         type: 3}
