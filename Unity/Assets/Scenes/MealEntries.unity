@@ -6396,7 +6396,6 @@ GameObject:
   - component: {fileID: 853450535}
   - component: {fileID: 853450534}
   - component: {fileID: 853450533}
-  - component: {fileID: 853450536}
   - component: {fileID: 853450537}
   m_Layer: 5
   m_Name: SubmitButton
@@ -6465,8 +6464,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 853450536}
-        m_MethodName: TryAddingMealProportionFromInputFields
+      - m_Target: {fileID: 920356582}
+        m_MethodName: AddCustomMealFromInputFields
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6515,20 +6514,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853450531}
   m_CullTransparentMesh: 0
---- !u!114 &853450536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 853450531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b6b0da82fe0db94f8cb894a0d245a19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scrollView: {fileID: 920356582}
-  _mealEntryHandler: {fileID: 1508925266}
 --- !u!114 &853450537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7113,6 +7098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee10fd4a20d4c74496c23fe16e144da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealEntryHandler: {fileID: 1508925266}
   _scrollViewBlankPrefab: {fileID: 8046488516488573270, guid: 0c02643d85eedd844b560f71400724a9,
     type: 3}
   _scrollViewInputFieldPrefab: {fileID: 6791813578162674173, guid: b84f13cb516060d448aef7e2a6f6eaf9,

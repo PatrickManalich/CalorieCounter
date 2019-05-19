@@ -8,6 +8,9 @@ namespace CalorieCounter.MealEntries.CustomMeals {
     public class ScrollView : AbstractScrollView {
 
         [SerializeField]
+        private MealEntryHandler _mealEntryHandler = default;
+
+        [SerializeField]
         private GameObject _scrollViewBlankPrefab = default;
 
         [SerializeField]
@@ -53,14 +56,20 @@ namespace CalorieCounter.MealEntries.CustomMeals {
             _inputFields.Clear();
         }
 
-        public MealProportion GetCustomMealProportionFromInputFields() {
+        public void AddCustomMealFromInputFields() {
             MealSource customMealSource = MealSource.CreateCustomMealSource(float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text));
-            return new MealProportion(float.Parse(_inputFields[0].text), customMealSource);
+            MealProportion mealProportion = new MealProportion(float.Parse(_inputFields[0].text), customMealSource);
+            AddMealProportion(mealProportion);
+            _mealEntryHandler.AddMealProportion(mealProportion);
         }
 
         public override void AddMealProportion(MealProportion mealProportion) {
-            if(HasInputFields())
-                DeleteInputFields();
+            foreach (Transform child in _content.transform) {
+                if (child.GetComponent<TMP_InputField>() != null) {
+                    DeleteInputFields();
+                    continue;
+                }
+            }
 
             GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject nameText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -99,24 +108,6 @@ namespace CalorieCounter.MealEntries.CustomMeals {
                 Destroy(child.gameObject);
             }
             _mealProportions.Clear();
-        }
-
-        public bool HasInputFields() {
-            foreach (Transform child in _content.transform) {
-                if (child.GetComponent<TMP_InputField>() != null) {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool AllInputFieldsFilled() {
-            foreach (var inputField in _inputFields) {
-                if (inputField.text == "") {
-                    return false;
-                }
-            }
-            return true;
         }
     }
 }
