@@ -5135,14 +5135,28 @@ MonoBehaviour:
     reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
     isExpanded: 1
     _keyValues:
+    - {fileID: 1128983964}
+    - {fileID: 127662985}
     - {fileID: 209689742}
     - {fileID: 853450531}
     - {fileID: 651122446}
+    - {fileID: 1553792669}
     _keys:
+    - {fileID: 1128983964}
+    - {fileID: 127662985}
     - {fileID: 209689742}
     - {fileID: 853450531}
     - {fileID: 651122446}
+    - {fileID: 1553792669}
     _values:
+    - SetSourceActive: 0
+      Targets:
+      - Target: {fileID: 1553792669}
+        SetActive: 1
+    - SetSourceActive: 0
+      Targets:
+      - Target: {fileID: 1553792669}
+        SetActive: 1
     - SetSourceActive: 1
       Targets:
       - Target: {fileID: 853450531}
@@ -5151,12 +5165,16 @@ MonoBehaviour:
         SetActive: 1
     - SetSourceActive: 0
       Targets:
+      - Target: {fileID: 1553792669}
+        SetActive: 1
       - Target: {fileID: 651122446}
         SetActive: 0
     - SetSourceActive: 0
       Targets:
       - Target: {fileID: 853450531}
         SetActive: 0
+    - SetSourceActive: 0
+      Targets: []
 --- !u!4 &691686221
 Transform:
   m_ObjectHideFlags: 0
@@ -11676,7 +11694,6 @@ GameObject:
   - component: {fileID: 1553792673}
   - component: {fileID: 1553792672}
   - component: {fileID: 1553792671}
-  - component: {fileID: 1553792674}
   m_Layer: 5
   m_Name: ExportButton
   m_TagString: Untagged
@@ -11744,8 +11761,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1553792674}
-        m_MethodName: TryExporting
+      - m_Target: {fileID: 1508925266}
+        m_MethodName: ExportMealEntry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11794,21 +11811,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1553792669}
   m_CullTransparentMesh: 0
---- !u!114 &1553792674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1553792669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4595acf76f2fbf341b3d160fd38656c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _mealEntryHandler: {fileID: 1508925266}
-  _dayTypeDropdown: {fileID: 945032638}
-  _errorText: {fileID: 0}
 --- !u!1 &1566187484
 GameObject:
   m_ObjectHideFlags: 0
