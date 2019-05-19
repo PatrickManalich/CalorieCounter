@@ -12,14 +12,15 @@ namespace CalorieCounter {
 
         [System.Serializable]
         private class SerializableSource {
-            public bool SetSourceActive = default;
+            public bool StartInteractable = default;
+            public bool InteractableAfterInvoked = default;
             public List<SerializableTarget> Targets = default;
         }
 
         [System.Serializable]
         private class SerializableTarget {
             public GameObject Target = default;
-            public bool SetActive = default;
+            public bool InteractableAfterInvoked = default;
         }
 
         [SerializeField]
@@ -27,8 +28,21 @@ namespace CalorieCounter {
 
         private void Awake() {
             foreach(var source in _serializedSourceDictionary.Keys) {
+                if (source.GetComponent<Selectable>() == null) {
+                    Debug.LogError("All sources must have the Selectable component attached.");
+                    return;
+                }
+                var serializedSource = _serializedSourceDictionary[source];
+                foreach (var serializedTarget in serializedSource.Targets) {
+                    if (serializedTarget.Target.GetComponent<Selectable>() == null) {
+                        Debug.LogError("All targets must have the Selectable component attached.");
+                        return;
+                    }
+                }
+
                 if (source.GetComponent<Button>())
                     source.GetComponent<Button>().onClick.AddListener(delegate { OnSourceInvoked(source); });
+                source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].StartInteractable;
             }
         }
 
@@ -37,9 +51,9 @@ namespace CalorieCounter {
                 return;
 
             var serializedSource = _serializedSourceDictionary[source];
-            source.SetActive(serializedSource.SetSourceActive);
+            source.GetComponent<Selectable>().interactable = serializedSource.InteractableAfterInvoked;
             foreach (var serializedTarget in serializedSource.Targets) {
-                serializedTarget.Target.SetActive(serializedTarget.SetActive);
+                serializedTarget.Target.GetComponent<Selectable>().interactable = serializedTarget.InteractableAfterInvoked;
             }
         }
     }

@@ -4667,7 +4667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &651122447
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5149,31 +5149,37 @@ MonoBehaviour:
     - {fileID: 651122446}
     - {fileID: 1553792669}
     _values:
-    - SetSourceActive: 0
+    - StartInteractable: 1
+      InteractableAfterInvoked: 1
       Targets:
       - Target: {fileID: 1553792669}
-        SetActive: 1
-    - SetSourceActive: 0
+        InteractableAfterInvoked: 0
+    - StartInteractable: 1
+      InteractableAfterInvoked: 1
       Targets:
       - Target: {fileID: 1553792669}
-        SetActive: 1
-    - SetSourceActive: 1
+        InteractableAfterInvoked: 0
+    - StartInteractable: 1
+      InteractableAfterInvoked: 1
       Targets:
       - Target: {fileID: 853450531}
-        SetActive: 1
+        InteractableAfterInvoked: 1
       - Target: {fileID: 651122446}
-        SetActive: 1
-    - SetSourceActive: 0
+        InteractableAfterInvoked: 1
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
       Targets:
       - Target: {fileID: 1553792669}
-        SetActive: 1
+        InteractableAfterInvoked: 1
       - Target: {fileID: 651122446}
-        SetActive: 0
-    - SetSourceActive: 0
+        InteractableAfterInvoked: 0
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
       Targets:
       - Target: {fileID: 853450531}
-        SetActive: 0
-    - SetSourceActive: 0
+        InteractableAfterInvoked: 0
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
       Targets: []
 --- !u!4 &691686221
 Transform:
@@ -6406,7 +6412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &853450532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11699,7 +11705,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1553792670
 RectTransform:
   m_ObjectHideFlags: 0

@@ -467,7 +467,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -1264,7 +1264,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &497729717
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1874,7 +1874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &815858154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2302,7 +2302,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -2391,23 +2391,27 @@ MonoBehaviour:
     - {fileID: 497729716}
     - {fileID: 815858153}
     _values:
-    - SetSourceActive: 1
+    - StartInteractable: 1
+      InteractableAfterInvoked: 0
       Targets:
       - Target: {fileID: 1374171245}
-        SetActive: 1
+        InteractableAfterInvoked: 1
       - Target: {fileID: 497729716}
-        SetActive: 1
-    - SetSourceActive: 0
+        InteractableAfterInvoked: 1
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
       Targets:
       - Target: {fileID: 815858153}
-        SetActive: 1
+        InteractableAfterInvoked: 1
       - Target: {fileID: 497729716}
-        SetActive: 0
-    - SetSourceActive: 0
+        InteractableAfterInvoked: 0
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
       Targets:
       - Target: {fileID: 1374171245}
-        SetActive: 0
-    - SetSourceActive: 0
+        InteractableAfterInvoked: 0
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
       Targets: []
 --- !u!4 &1077719443
 Transform:
@@ -2964,7 +2968,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1374171246
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3492,7 +3496,7 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
