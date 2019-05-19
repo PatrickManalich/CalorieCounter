@@ -1,8 +1,10 @@
 ﻿using CalorieCounter.Globals;
+using CalorieCounter.MealEntries.CommonMeals;
 using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace CalorieCounter.MealEntries {
 
@@ -10,6 +12,9 @@ namespace CalorieCounter.MealEntries {
 
         [System.Serializable]
         private class ScrollViewDictionary : SerializableDictionaryBase<MealTypes, AbstractScrollView> { }
+
+        [System.Serializable]
+        public class MealEntryHandlerEvent : UnityEvent<ServingAmountDropdown, MealSourceDropdown> { }
 
         [SerializeField]
         private Date _date = default;

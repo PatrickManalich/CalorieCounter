@@ -8,6 +8,15 @@ namespace CalorieCounter.MealEntries.CommonMeals {
     public class ScrollView : AbstractScrollView {
 
         [SerializeField]
+        private MealEntryHandler _mealEntryHandler = default;
+
+        [SerializeField]
+        private ServingAmountDropdown _servingAmountDropdown = default;
+
+        [SerializeField]
+        private MealSourceDropdown _mealSourceDropdown = default;
+
+        [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
 
         [SerializeField]
@@ -17,6 +26,12 @@ namespace CalorieCounter.MealEntries.CommonMeals {
         private GridLayoutGroup _content = default;
 
         private List<MealProportion> _mealProportions = new List<MealProportion>();
+
+        public void AddCommonMealProportionFromDropdowns() {
+            var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
+            AddMealProportion(mealProportion);
+            _mealEntryHandler.AddMealProportion(mealProportion);
+        }
 
         public override void AddMealProportion(MealProportion mealProportion) {
             GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _content.transform);

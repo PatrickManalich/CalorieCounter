@@ -326,6 +326,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0a4501d0ccd64582d94fd25e7d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealEntryHandler: {fileID: 1508925266}
+  _servingAmountDropdown: {fileID: 1671688307}
+  _mealSourceDropdown: {fileID: 1576245871}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
@@ -783,7 +786,6 @@ GameObject:
   - component: {fileID: 127662990}
   - component: {fileID: 127662989}
   - component: {fileID: 127662988}
-  - component: {fileID: 127662987}
   m_Layer: 5
   m_Name: SubmitButton
   m_TagString: Untagged
@@ -811,22 +813,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -50}
   m_SizeDelta: {x: 250, y: 50}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &127662987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 127662985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9452d0f8c786b3544bc0aff7c3e2417a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _servingAmountDropdown: {fileID: 1521270210}
-  _mealSourceDropdown: {fileID: 767946881}
-  _scrollView: {fileID: 688997043}
-  _mealEntryHandler: {fileID: 1508925266}
 --- !u!114 &127662988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,8 +853,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 127662987}
-        m_MethodName: TryAddingMealProportion
+      - m_Target: {fileID: 688997043}
+        m_MethodName: AddCommonMealProportionFromDropdowns
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1521270210}
+        m_MethodName: ResetDropdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 767946881}
+        m_MethodName: ResetDropdown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5012,6 +5020,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0a4501d0ccd64582d94fd25e7d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealEntryHandler: {fileID: 1508925266}
+  _servingAmountDropdown: {fileID: 1521270210}
+  _mealSourceDropdown: {fileID: 767946881}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
   _deleteButtonContainerPrefab: {fileID: 6809785166203394849, guid: 015d4dd261f5fcf48a6e24a19b89e99c,
@@ -8140,7 +8151,6 @@ GameObject:
   - component: {fileID: 1128983968}
   - component: {fileID: 1128983967}
   - component: {fileID: 1128983966}
-  - component: {fileID: 1128983969}
   m_Layer: 5
   m_Name: SubmitButton
   m_TagString: Untagged
@@ -8208,8 +8218,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1128983969}
-        m_MethodName: TryAddingMealProportion
+      - m_Target: {fileID: 19275662}
+        m_MethodName: AddCommonMealProportionFromDropdowns
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1671688307}
+        m_MethodName: ResetDropdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1576245871}
+        m_MethodName: ResetDropdown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8258,22 +8290,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1128983964}
   m_CullTransparentMesh: 0
---- !u!114 &1128983969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128983964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9452d0f8c786b3544bc0aff7c3e2417a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _servingAmountDropdown: {fileID: 1671688307}
-  _mealSourceDropdown: {fileID: 1576245871}
-  _scrollView: {fileID: 19275662}
-  _mealEntryHandler: {fileID: 1508925266}
 --- !u!1 &1165763513
 GameObject:
   m_ObjectHideFlags: 0
