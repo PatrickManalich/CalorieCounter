@@ -10,51 +10,17 @@ namespace CalorieCounter.ScaleEntries {
         public List<ScaleEntry> ScaleEntries { get; private set; } = new List<ScaleEntry>();
 
         [SerializeField]
-        private GameObject _scrollViewBlankPrefab = default;
-
-        [SerializeField]
-        private GameObject _scrollViewInputFieldPrefab = default;
-
-        [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
 
         [SerializeField]
         private GridLayoutGroup _content = default;
 
-        private List<TMP_InputField> _inputFields = new List<TMP_InputField>();
+        [SerializeField]
+        private ScaleEntriesInputFields _scaleEntriesInputFields = default;
 
-        public void AddInputFields(Selectable lastSelectable) {
-            Instantiate(_scrollViewBlankPrefab, _content.transform);
-
-            GameObject previous = null;
-            for(int i = 0; i < _content.constraintCount - 1; i++) {
-                if(i == 0) {
-                    previous = Instantiate(_scrollViewInputFieldPrefab, _content.transform);
-                    previous.GetComponent<TMP_InputField>().ActivateInputField();
-                } else {
-                    GameObject current = Instantiate(_scrollViewInputFieldPrefab, _content.transform);
-                    previous.GetComponent<Tabbable>().NextSelectable = current.GetComponent<Selectable>();
-                    previous = current;
-                }
-                _inputFields.Add(previous.GetComponent<TMP_InputField>());
-            }
-            _inputFields[_inputFields.Count - 1].GetComponent<Tabbable>().NextSelectable = lastSelectable;
-        }
-
-        public void DeleteInputFields() {
-            for (int i = 0; i < _content.constraintCount; i++) {
-                int childIndex = (ScaleEntries.Count * _content.constraintCount) + i;
-                Destroy(_content.transform.GetChild(childIndex).gameObject);
-            }
-            _inputFields.Clear();
-        }
 
         public void AddScaleEntryFromInputFields() {
-            ScaleEntry scaleEntry = new ScaleEntry(float.Parse(_inputFields[0].text), float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text),
-                float.Parse(_inputFields[3].text), float.Parse(_inputFields[4].text), float.Parse(_inputFields[5].text));
-
-            DeleteInputFields();
-            AddScaleEntry(scaleEntry);
+            AddScaleEntry(_scaleEntriesInputFields.GetScaleEntryFromInputFields());
         }
 
         public void AddScaleEntry(ScaleEntry scaleEntry) {
