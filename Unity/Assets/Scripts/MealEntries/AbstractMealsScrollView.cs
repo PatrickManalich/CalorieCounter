@@ -2,7 +2,7 @@
 
 namespace CalorieCounter.MealEntries {
 
-    public abstract class AbstractScrollView : MonoBehaviour {
+    public abstract class AbstractMealsScrollView : MonoBehaviour {
 
         public abstract void AddMealProportion(MealProportion mealProportion);
 

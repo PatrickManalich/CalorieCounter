@@ -26,7 +26,7 @@ namespace CalorieCounter.TargetEntries {
             return latestTargetEntry;
         }
 
-        public void ExportTargetEntry(ScrollView scrollView) {
+        public void ExportTargetEntry(ScaleEntriesScrollView scrollView) {
             foreach (var scaleEntry in scrollView.ScaleEntries) {
                 _targetEntries.Add(new TargetEntry(scaleEntry.Date, scaleEntry.Weight));
             }

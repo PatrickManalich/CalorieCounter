@@ -3,18 +3,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.MealEntries.CommonMeals {
+namespace CalorieCounter.MealEntries.CustomMeals {
 
-    public class ScrollView : AbstractScrollView {
+    public class CustomMealsScrollView : AbstractMealsScrollView {
 
         [SerializeField]
         private MealEntryHandler _mealEntryHandler = default;
 
         [SerializeField]
-        private ServingAmountDropdown _servingAmountDropdown = default;
+        private GameObject _scrollViewBlankPrefab = default;
 
         [SerializeField]
-        private MealSourceDropdown _mealSourceDropdown = default;
+        private GameObject _scrollViewInputFieldPrefab = default;
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
@@ -25,15 +25,52 @@ namespace CalorieCounter.MealEntries.CommonMeals {
         [SerializeField]
         private GridLayoutGroup _content = default;
 
+        private List<TMP_InputField> _inputFields = new List<TMP_InputField>();
+
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
-        public void AddCommonMealProportionFromDropdowns() {
-            var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
+        public void AddInputFields(Selectable lastSelectable) {
+            GameObject previous = null;
+            for (int i = 0; i < _content.constraintCount; i++) {
+                if (i == 0) {
+                    previous = Instantiate(_scrollViewInputFieldPrefab, _content.transform);
+                    previous.GetComponent<TMP_InputField>().ActivateInputField();
+                    _inputFields.Add(previous.GetComponent<TMP_InputField>());
+                } else if(i >= 2 && i <= 4) {
+                    GameObject current = Instantiate(_scrollViewInputFieldPrefab, _content.transform);
+                    previous.GetComponent<Tabbable>().NextSelectable = current.GetComponent<Selectable>();
+                    previous = current;
+                    _inputFields.Add(previous.GetComponent<TMP_InputField>());
+                } else {
+                    Instantiate(_scrollViewBlankPrefab, _content.transform);
+                }
+            }
+            _inputFields[_inputFields.Count - 1].GetComponent<Tabbable>().NextSelectable = lastSelectable;
+        }
+
+        public void DeleteInputFields() {
+            for (int i = 0; i < _content.constraintCount; i++) {
+                int childIndex = (_mealProportions.Count * _content.constraintCount) + i;
+                Destroy(_content.transform.GetChild(childIndex).gameObject);
+            }
+            _inputFields.Clear();
+        }
+
+        public void AddCustomMealFromInputFields() {
+            MealSource customMealSource = MealSource.CreateCustomMealSource(float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text));
+            MealProportion mealProportion = new MealProportion(float.Parse(_inputFields[0].text), customMealSource);
             AddMealProportion(mealProportion);
             _mealEntryHandler.AddMealProportion(mealProportion);
         }
 
         public override void AddMealProportion(MealProportion mealProportion) {
+            foreach (Transform child in _content.transform) {
+                if (child.GetComponent<TMP_InputField>() != null) {
+                    DeleteInputFields();
+                    continue;
+                }
+            }
+
             GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject nameText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject fatText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -67,7 +104,7 @@ namespace CalorieCounter.MealEntries.CommonMeals {
         }
 
         public override void ClearMealProportions() {
-            foreach(Transform child in _content.transform) {
+            foreach (Transform child in _content.transform) {
                 Destroy(child.gameObject);
             }
             _mealProportions.Clear();

@@ -11,7 +11,7 @@ namespace CalorieCounter.MealEntries {
     public class MealEntryHandler : MonoBehaviour {
 
         [System.Serializable]
-        private class ScrollViewDictionary : SerializableDictionaryBase<MealTypes, AbstractScrollView> { }
+        private class ScrollViewDictionary : SerializableDictionaryBase<MealTypes, AbstractMealsScrollView> { }
 
         [System.Serializable]
         public class MealEntryHandlerEvent : UnityEvent<ServingAmountDropdown, MealSourceDropdown> { }
@@ -60,7 +60,7 @@ namespace CalorieCounter.MealEntries {
             MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(GetMealEntryPath());
             if (importedMealEntry != default) {
                 foreach (var key in importedMealEntry.MealProportionsDict.Keys) {
-                    AbstractScrollView scrollView = _scrollViewDict[key];
+                    AbstractMealsScrollView scrollView = _scrollViewDict[key];
                     foreach (var mealProportion in importedMealEntry.MealProportionsDict[key]) {
                         AddMealProportion(mealProportion);
                         scrollView.AddMealProportion(mealProportion);

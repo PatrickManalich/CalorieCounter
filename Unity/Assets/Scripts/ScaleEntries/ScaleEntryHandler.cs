@@ -7,7 +7,7 @@ namespace CalorieCounter.ScaleEntries {
     public class ScaleEntryHandler : MonoBehaviour {
 
         [SerializeField]
-        private ScrollView _scrollView = default;
+        private ScaleEntriesScrollView _scrollView = default;
 
         public void ExportScaleEntry() {
             JsonUtility.Export(_scrollView.ScaleEntries, GlobalPaths.ScaleEntriesFilePath);

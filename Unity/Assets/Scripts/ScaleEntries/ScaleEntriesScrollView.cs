@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace CalorieCounter.ScaleEntries {
 
-    public class ScrollView : MonoBehaviour {
+    public class ScaleEntriesScrollView : MonoBehaviour {
 
         public List<ScaleEntry> ScaleEntries { get; private set; } = new List<ScaleEntry>();
 
