@@ -5093,7 +5093,7 @@ GameObject:
   - component: {fileID: 691686221}
   - component: {fileID: 691686220}
   m_Layer: 0
-  m_Name: ActiveHandler
+  m_Name: InteractableHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

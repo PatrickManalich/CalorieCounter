@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace CalorieCounter {
 
-    public class ActiveHandler : MonoBehaviour {
+    public class InteractableHandler : MonoBehaviour {
 
         [System.Serializable]
         private class SerializableSourceDictionary : SerializableDictionaryBase<GameObject, SerializableSource> { }
