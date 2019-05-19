@@ -1,6 +1,7 @@
 ﻿using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CalorieCounter {
 
@@ -24,7 +25,14 @@ namespace CalorieCounter {
         [SerializeField]
         private SerializableSourceDictionary _serializedSourceDictionary = default;
 
-        public void Apply(GameObject source) {
+        private void Awake() {
+            foreach(var source in _serializedSourceDictionary.Keys) {
+                if (source.GetComponent<Button>())
+                    source.GetComponent<Button>().onClick.AddListener(delegate { OnSourceInvoked(source); });
+            }
+        }
+
+        private void OnSourceInvoked(GameObject source) {
             if (!_serializedSourceDictionary.ContainsKey(source))
                 return;
 
