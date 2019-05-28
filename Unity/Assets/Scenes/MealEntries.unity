@@ -5160,7 +5160,7 @@ MonoBehaviour:
       - Target: {fileID: 1553792669}
         InteractableAfterInvoked: 0
     - StartInteractable: 1
-      InteractableAfterInvoked: 1
+      InteractableAfterInvoked: 0
       Targets:
       - Target: {fileID: 853450531}
         InteractableAfterInvoked: 1
@@ -5171,11 +5171,15 @@ MonoBehaviour:
       Targets:
       - Target: {fileID: 1553792669}
         InteractableAfterInvoked: 1
+      - Target: {fileID: 209689742}
+        InteractableAfterInvoked: 1
       - Target: {fileID: 651122446}
         InteractableAfterInvoked: 0
     - StartInteractable: 0
       InteractableAfterInvoked: 0
       Targets:
+      - Target: {fileID: 209689742}
+        InteractableAfterInvoked: 1
       - Target: {fileID: 853450531}
         InteractableAfterInvoked: 0
     - StartInteractable: 0
