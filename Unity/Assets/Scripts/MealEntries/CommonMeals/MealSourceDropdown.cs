@@ -34,9 +34,9 @@ namespace CalorieCounter.MealEntries.CommonMeals {
             _dropdown = GetComponent<TMP_Dropdown>();
 
             if (_mealType == MealTypes.Small) {
-                _mealSources = new List<MealSource>(new SmallMeals().Meals);
+                _mealSources = new List<MealSource>(new SmallMeals().MealSources);
             } else if (_mealType == MealTypes.Large) {
-                _mealSources = new List<MealSource>(new LargeMeals().Meals);
+                _mealSources = new List<MealSource>(new LargeMeals().MealSources);
             } else {
                 _mealSources = new List<MealSource>();
             }
