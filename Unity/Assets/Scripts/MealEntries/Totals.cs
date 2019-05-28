@@ -14,6 +14,9 @@ namespace CalorieCounter.MealEntries {
         private Date _date = default;
 
         [SerializeField]
+        private DayTypeDropdown _dayTypeDropdown = default;
+
+        [SerializeField]
         private TextMeshProUGUI _fatText = default;
 
         [SerializeField]
@@ -63,10 +66,26 @@ namespace CalorieCounter.MealEntries {
             TotalProtein = GlobalMethods.Round(TotalProtein);
             TotalCalories = GlobalMethods.Round(TotalCalories);
 
-            _fatText.text = TotalFat.ToString() + " / " + _targetEntry.TrainingDayFat;
-            _carbsText.text = TotalCarbs.ToString() + " / " + _targetEntry.TrainingDayCarbs;
-            _proteinText.text = TotalProtein.ToString() + " / " + _targetEntry.TrainingDayProtein;
-            _caloriesText.text = TotalCalories.ToString() + " / " + _targetEntry.TrainingDayCalories;
+            float targetEntryFat = 0;
+            float targetEntryCarbs = 0;
+            float targetEntryProtein = 0;
+            float targetEntryCalories = 0;
+            if (_dayTypeDropdown.DayType == DayType.Rest) {
+                targetEntryFat = _targetEntry.RestDayFat;
+                targetEntryCarbs = _targetEntry.RestDayCarbs;
+                targetEntryProtein = _targetEntry.RestDayProtein;
+                targetEntryCalories = _targetEntry.RestDayCalories;
+            } else if (_dayTypeDropdown.DayType == DayType.Training) {
+                targetEntryFat = _targetEntry.TrainingDayFat;
+                targetEntryCarbs = _targetEntry.TrainingDayCarbs;
+                targetEntryProtein = _targetEntry.TrainingDayProtein;
+                targetEntryCalories = _targetEntry.TrainingDayCalories;
+            }
+
+            _fatText.text = TotalFat.ToString() + " / " + targetEntryFat;
+            _carbsText.text = TotalCarbs.ToString() + " / " + targetEntryCarbs;
+            _proteinText.text = TotalProtein.ToString() + " / " + targetEntryProtein;
+            _caloriesText.text = TotalCalories.ToString() + " / " + targetEntryCalories;
         }
     }
 }
