@@ -7,14 +7,14 @@ namespace CalorieCounter.MealEntries {
     public struct MealEntry {
 
         public DateTime Date;
-        public DayTypes DayType;
+        public DayType DayType;
         public float TotalFat;
         public float TotalCarbs;
         public float TotalProtein;
         public float TotalCalories;
-        public Dictionary<MealTypes, List<MealProportion>> MealProportionsDict;
+        public Dictionary<MealType, List<MealProportion>> MealProportionsDict;
 
-        public MealEntry(DateTime date, DayTypes dayType, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealTypes, List<MealProportion>> mealProportionsDict) {
+        public MealEntry(DateTime date, DayType dayType, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealType, List<MealProportion>> mealProportionsDict) {
             Date = date;
             DayType = dayType;
             TotalFat = GlobalMethods.Round(totalFat);

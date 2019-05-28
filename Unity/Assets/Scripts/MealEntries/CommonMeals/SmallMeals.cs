@@ -7,9 +7,9 @@ namespace CalorieCounter.MealEntries.CommonMeals {
 
         private List<MealSource> _mealSources = new List<MealSource>();
 
-        public override MealTypes MealType {
+        public override MealType MealType {
             get {
-                return MealTypes.Small;
+                return MealType.Small;
             }
         }
 

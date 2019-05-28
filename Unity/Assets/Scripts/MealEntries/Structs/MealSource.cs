@@ -11,9 +11,9 @@ namespace CalorieCounter.MealEntries {
         public float Protein;
         public float Calories;
         public string Description;
-        public MealTypes MealType;
+        public MealType MealType;
 
-        public MealSource(string name, string servingSize, float fat, float carbs, float protein, string description, MealTypes mealType) {
+        public MealSource(string name, string servingSize, float fat, float carbs, float protein, string description, MealType mealType) {
             Name = name;
             ServingSize = servingSize;
             Fat = fat > 0 ? GlobalMethods.Round(fat) : 0;
@@ -25,7 +25,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         public static MealSource CreateCustomMealSource(float fat, float carbs, float protein) {
-            return new MealSource("Custom Meal", "Meal", fat, carbs, protein, "", MealTypes.Custom);
+            return new MealSource("Custom Meal", "Meal", fat, carbs, protein, "", MealType.Custom);
         }
 
         public static bool operator ==(MealSource meal1, MealSource meal2) {
