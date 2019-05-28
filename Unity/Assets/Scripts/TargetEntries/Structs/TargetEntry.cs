@@ -8,14 +8,14 @@ namespace CalorieCounter.TargetEntries {
         public DateTime Date;
         public float Weight;
         public float CalorieMaintenanceLevel;
+        public float RestDayFat;
+        public float RestDayCarbs;
+        public float RestDayProtein;
         public float RestDayCalories;
-        public float RestDayProteinGrams;
-        public float RestDayFatGrams;
-        public float RestDayCarbGrams;
+        public float TrainingDayFat;
+        public float TrainingDayCarbs;
+        public float TrainingDayProtein;
         public float TrainingDayCalories;
-        public float TrainingDayProteinGrams;
-        public float TrainingDayFatGrams;
-        public float TrainingDayCarbGrams;
 
         private const float HeightInInches = 68;
         private const int AgeInYears = 23;
@@ -24,7 +24,7 @@ namespace CalorieCounter.TargetEntries {
         private const int TrainingDays = 3;
         private const int RestDayCalorieSurplus = 150;
         private const int TrainingDayCalorieSurplus = (WeeklyCalorieSurplus - ((7 - TrainingDays) * RestDayCalorieSurplus)) / TrainingDays;
-        private const float ProteinGramsPerPound = 1.15f;
+        private const float ProteinPerPound = 1.15f;
         private const float RestDayFatPercentage = 0.28f;
         private const float TrainingDayFatPercentage = 0.22f;
 
@@ -34,14 +34,14 @@ namespace CalorieCounter.TargetEntries {
             CalorieMaintenanceLevel = GlobalMethods.Round(((4.536f * Weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
 
             RestDayCalories = GlobalMethods.Round(CalorieMaintenanceLevel + RestDayCalorieSurplus);
-            RestDayProteinGrams = GlobalMethods.Round(Weight * ProteinGramsPerPound);
-            RestDayFatGrams = GlobalMethods.Round(RestDayCalories * RestDayFatPercentage / 9);
-            RestDayCarbGrams = GlobalMethods.Round((RestDayCalories - (RestDayProteinGrams * 4) - RestDayFatGrams * 9) / 4);
+            RestDayProtein = GlobalMethods.Round(Weight * ProteinPerPound);
+            RestDayFat = GlobalMethods.Round(RestDayCalories * RestDayFatPercentage / 9);
+            RestDayCarbs = GlobalMethods.Round((RestDayCalories - (RestDayProtein * 4) - RestDayFat * 9) / 4);
 
             TrainingDayCalories = GlobalMethods.Round(CalorieMaintenanceLevel + TrainingDayCalorieSurplus);
-            TrainingDayProteinGrams = GlobalMethods.Round(Weight * ProteinGramsPerPound);
-            TrainingDayFatGrams = GlobalMethods.Round(TrainingDayCalories * TrainingDayFatPercentage / 9);
-            TrainingDayCarbGrams = GlobalMethods.Round((TrainingDayCalories - (TrainingDayProteinGrams * 4) - TrainingDayFatGrams * 9) / 4);
+            TrainingDayProtein = GlobalMethods.Round(Weight * ProteinPerPound);
+            TrainingDayFat = GlobalMethods.Round(TrainingDayCalories * TrainingDayFatPercentage / 9);
+            TrainingDayCarbs = GlobalMethods.Round((TrainingDayCalories - (TrainingDayProtein * 4) - TrainingDayFat * 9) / 4);
         }
 
         public static bool operator ==(TargetEntry targetEntry1, TargetEntry targetEntry2) {
@@ -60,9 +60,9 @@ namespace CalorieCounter.TargetEntries {
         }
 
         public override string ToString() {
-            return Date.ToShortDateString() + ", " + "CML:" + CalorieMaintenanceLevel + ", RestDay [ Calories:" + RestDayCalories + ", Fat: " + RestDayFatGrams + ", Carbs:" + RestDayCarbGrams +
-                ", Protein:" + RestDayProteinGrams + " ], TrainingDay [ Calories:" + TrainingDayCalories + ", Fat: " + TrainingDayFatGrams + ", Carbs:" + TrainingDayCarbGrams +
-                ", Protein:" + TrainingDayProteinGrams + " ]";
+            return Date.ToShortDateString() + ", " + "CML:" + CalorieMaintenanceLevel + ", RestDay [ Calories:" + RestDayCalories + ", Fat: " + RestDayFat + ", Carbs:" + RestDayCarbs +
+                ", Protein:" + RestDayProtein + " ], TrainingDay [ Calories:" + TrainingDayCalories + ", Fat: " + TrainingDayFat + ", Carbs:" + TrainingDayCarbs +
+                ", Protein:" + TrainingDayProtein + " ]";
         }
     }
 }

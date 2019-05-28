@@ -63,9 +63,9 @@ namespace CalorieCounter.MealEntries {
             TotalProtein = GlobalMethods.Round(TotalProtein);
             TotalCalories = GlobalMethods.Round(TotalCalories);
 
-            _fatText.text = TotalFat.ToString() + " / " + _targetEntry.TrainingDayFatGrams;
-            _carbsText.text = TotalCarbs.ToString() + " / " + _targetEntry.TrainingDayCarbGrams;
-            _proteinText.text = TotalProtein.ToString() + " / " + _targetEntry.TrainingDayProteinGrams;
+            _fatText.text = TotalFat.ToString() + " / " + _targetEntry.TrainingDayFat;
+            _carbsText.text = TotalCarbs.ToString() + " / " + _targetEntry.TrainingDayCarbs;
+            _proteinText.text = TotalProtein.ToString() + " / " + _targetEntry.TrainingDayProtein;
             _caloriesText.text = TotalCalories.ToString() + " / " + _targetEntry.TrainingDayCalories;
         }
     }
