@@ -4,7 +4,7 @@ namespace CalorieCounter.Globals {
 
     public enum MealType { Small, Large, Custom }
 
-    public enum DayType { None, Rest, Training }
+    public enum DayType { None, Rest, Training, Vacation }
 
     public static class GlobalPaths {
 
