@@ -11,12 +11,12 @@ namespace CalorieCounter.MealEntries {
 
         public DateTime CurrentDate { get; private set; } = DateTime.Today;
 
-        public void MoveBackward() {
+        public void MoveBackwardOneDay() {
             CurrentDate = CurrentDate.AddDays(-1);
             Refresh();
         }
 
-        public void MoveForward() {
+        public void MoveForwardOneDay() {
             CurrentDate = CurrentDate.AddDays(1);
             Refresh();
         }
