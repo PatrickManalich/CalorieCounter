@@ -51,11 +51,14 @@ namespace CalorieCounter.MealEntries {
             UpdateTexts();
         }
 
-        public void Refresh() {
+        public void ResetTotals() {
             TotalFat = 0;
             TotalCarbs = 0;
             TotalProtein = 0;
             TotalCalories = 0;
+        }
+
+        public void Refresh() {
             _targetEntry = _targetEntryHandler.GetLatestTargetEntry(_date.CurrentDate);
             UpdateTexts();
         }
