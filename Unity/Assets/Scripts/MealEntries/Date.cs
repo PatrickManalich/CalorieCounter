@@ -21,6 +21,16 @@ namespace CalorieCounter.MealEntries {
             Refresh();
         }
 
+        public void MoveBackwardOneMonth() {
+            CurrentDate = CurrentDate.AddMonths(-1);
+            Refresh();
+        }
+
+        public void MoveForwardOneMonth() {
+            CurrentDate = CurrentDate.AddMonths(1);
+            Refresh();
+        }
+
         private void Awake() {
             _text = GetComponent<TextMeshProUGUI>();
             Refresh();
