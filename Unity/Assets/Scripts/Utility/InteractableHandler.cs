@@ -37,6 +37,15 @@ namespace CalorieCounter {
             }
         }
 
+        public void ResetTargetsInteractable(GameObject source) {
+            if (!_serializedSourceDictionary.ContainsKey(source))
+                return;
+
+            foreach (var serializedTarget in _serializedSourceDictionary[source].Targets) {
+                serializedTarget.Target.GetComponent<Selectable>().interactable = !serializedTarget.InteractableAfterInvoked;
+            }
+        }
+
         private void Awake() {
             foreach(var source in _serializedSourceDictionary.Keys) {
                 if (source.GetComponent<Selectable>() == null) {
