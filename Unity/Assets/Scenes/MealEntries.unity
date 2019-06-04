@@ -5421,6 +5421,7 @@ MonoBehaviour:
     - {fileID: 853450531}
     - {fileID: 651122446}
     - {fileID: 1553792669}
+    - {fileID: 945032636}
     _keys:
     - {fileID: 1128983964}
     - {fileID: 127662985}
@@ -5428,6 +5429,7 @@ MonoBehaviour:
     - {fileID: 853450531}
     - {fileID: 651122446}
     - {fileID: 1553792669}
+    - {fileID: 945032636}
     _values:
     - StartInteractable: 1
       InteractableAfterInvoked: 1
@@ -5465,6 +5467,11 @@ MonoBehaviour:
     - StartInteractable: 0
       InteractableAfterInvoked: 0
       Targets: []
+    - StartInteractable: 1
+      InteractableAfterInvoked: 1
+      Targets:
+      - Target: {fileID: 1553792669}
+        InteractableAfterInvoked: 1
 --- !u!4 &691686221
 Transform:
   m_ObjectHideFlags: 0

@@ -26,6 +26,17 @@ namespace CalorieCounter {
         [SerializeField]
         private SerializableSourceDictionary _serializedSourceDictionary = default;
 
+        public void OnSourceInvoked(GameObject source) {
+            if (!_serializedSourceDictionary.ContainsKey(source))
+                return;
+
+            var serializedSource = _serializedSourceDictionary[source];
+            source.GetComponent<Selectable>().interactable = serializedSource.InteractableAfterInvoked;
+            foreach (var serializedTarget in serializedSource.Targets) {
+                serializedTarget.Target.GetComponent<Selectable>().interactable = serializedTarget.InteractableAfterInvoked;
+            }
+        }
+
         private void Awake() {
             foreach(var source in _serializedSourceDictionary.Keys) {
                 if (source.GetComponent<Selectable>() == null) {
@@ -43,17 +54,6 @@ namespace CalorieCounter {
                 if (source.GetComponent<Button>())
                     source.GetComponent<Button>().onClick.AddListener(delegate { OnSourceInvoked(source); });
                 source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].StartInteractable;
-            }
-        }
-
-        private void OnSourceInvoked(GameObject source) {
-            if (!_serializedSourceDictionary.ContainsKey(source))
-                return;
-
-            var serializedSource = _serializedSourceDictionary[source];
-            source.GetComponent<Selectable>().interactable = serializedSource.InteractableAfterInvoked;
-            foreach (var serializedTarget in serializedSource.Targets) {
-                serializedTarget.Target.GetComponent<Selectable>().interactable = serializedTarget.InteractableAfterInvoked;
             }
         }
     }
