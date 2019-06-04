@@ -26,7 +26,7 @@ namespace CalorieCounter {
         [SerializeField]
         private SerializableSourceDictionary _serializedSourceDictionary = default;
 
-        public void OnSourceInvoked(GameObject source) {
+        public void SetSourceAndTargetsInteractable(GameObject source) {
             if (!_serializedSourceDictionary.ContainsKey(source))
                 return;
 
@@ -52,7 +52,7 @@ namespace CalorieCounter {
                 }
 
                 if (source.GetComponent<Button>())
-                    source.GetComponent<Button>().onClick.AddListener(delegate { OnSourceInvoked(source); });
+                    source.GetComponent<Button>().onClick.AddListener(delegate { SetSourceAndTargetsInteractable(source); });
                 source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].StartInteractable;
             }
         }
