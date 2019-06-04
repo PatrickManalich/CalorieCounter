@@ -15,8 +15,7 @@ namespace CalorieCounter.MealEntries.CommonMeals {
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
         public void RefreshSelectedServingAmount(int index) {
-            float parsedFloat;
-            if (float.TryParse(_optionDataList[index].text, out parsedFloat)) {
+            if (float.TryParse(_optionDataList[index].text, out float parsedFloat)) {
                 SelectedServingAmount = parsedFloat;
             } else {
                 SelectedServingAmount = 0;
