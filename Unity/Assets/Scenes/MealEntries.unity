@@ -5433,12 +5433,12 @@ MonoBehaviour:
       InteractableAfterInvoked: 1
       Targets:
       - Target: {fileID: 1553792669}
-        InteractableAfterInvoked: 0
+        InteractableAfterInvoked: 1
     - StartInteractable: 1
       InteractableAfterInvoked: 1
       Targets:
       - Target: {fileID: 1553792669}
-        InteractableAfterInvoked: 0
+        InteractableAfterInvoked: 1
     - StartInteractable: 1
       InteractableAfterInvoked: 0
       Targets:
