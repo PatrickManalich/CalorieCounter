@@ -5463,7 +5463,7 @@ MonoBehaviour:
       - Target: {fileID: 1128983964}
         InteractableAfterExecute: 1
     - InteractableAfterAwake: 0
-      InteractableAfterExecute: 1
+      InteractableAfterExecute: 0
       Targets:
       - Target: {fileID: 1553792669}
         InteractableAfterExecute: 1
@@ -5478,7 +5478,7 @@ MonoBehaviour:
       - Target: {fileID: 127662985}
         InteractableAfterExecute: 1
     - InteractableAfterAwake: 0
-      InteractableAfterExecute: 1
+      InteractableAfterExecute: 0
       Targets:
       - Target: {fileID: 1553792669}
         InteractableAfterExecute: 1
