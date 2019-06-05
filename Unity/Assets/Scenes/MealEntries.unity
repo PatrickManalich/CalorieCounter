@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 127662989}
   - component: {fileID: 127662988}
   m_Layer: 5
-  m_Name: SubmitButton
+  m_Name: LargeMealsSubmitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1337,7 +1337,7 @@ GameObject:
   - component: {fileID: 209689745}
   - component: {fileID: 209689744}
   m_Layer: 5
-  m_Name: AddButton
+  m_Name: CustomMealsAddButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4945,7 +4945,7 @@ GameObject:
   - component: {fileID: 651122448}
   - component: {fileID: 651122452}
   m_Layer: 5
-  m_Name: CancelButton
+  m_Name: CustomMealsCancelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5415,55 +5415,30 @@ MonoBehaviour:
     reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
     isExpanded: 1
     _keyValues:
+    - {fileID: 1553792669}
+    - {fileID: 945032636}
+    - {fileID: 1671688302}
     - {fileID: 1128983964}
+    - {fileID: 1576245866}
+    - {fileID: 1521270208}
     - {fileID: 127662985}
+    - {fileID: 767946879}
     - {fileID: 209689742}
     - {fileID: 853450531}
     - {fileID: 651122446}
-    - {fileID: 1553792669}
-    - {fileID: 945032636}
     _keys:
+    - {fileID: 1553792669}
+    - {fileID: 945032636}
+    - {fileID: 1671688302}
     - {fileID: 1128983964}
+    - {fileID: 1576245866}
+    - {fileID: 1521270208}
     - {fileID: 127662985}
+    - {fileID: 767946879}
     - {fileID: 209689742}
     - {fileID: 853450531}
     - {fileID: 651122446}
-    - {fileID: 1553792669}
-    - {fileID: 945032636}
     _values:
-    - StartInteractable: 1
-      InteractableAfterInvoked: 1
-      Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterInvoked: 1
-    - StartInteractable: 1
-      InteractableAfterInvoked: 1
-      Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterInvoked: 1
-    - StartInteractable: 1
-      InteractableAfterInvoked: 0
-      Targets:
-      - Target: {fileID: 853450531}
-        InteractableAfterInvoked: 1
-      - Target: {fileID: 651122446}
-        InteractableAfterInvoked: 1
-    - StartInteractable: 0
-      InteractableAfterInvoked: 0
-      Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterInvoked: 1
-      - Target: {fileID: 209689742}
-        InteractableAfterInvoked: 1
-      - Target: {fileID: 651122446}
-        InteractableAfterInvoked: 0
-    - StartInteractable: 0
-      InteractableAfterInvoked: 0
-      Targets:
-      - Target: {fileID: 209689742}
-        InteractableAfterInvoked: 1
-      - Target: {fileID: 853450531}
-        InteractableAfterInvoked: 0
     - StartInteractable: 0
       InteractableAfterInvoked: 0
       Targets: []
@@ -5472,6 +5447,61 @@ MonoBehaviour:
       Targets:
       - Target: {fileID: 1553792669}
         InteractableAfterInvoked: 1
+      - Target: {fileID: 1671688302}
+        InteractableAfterInvoked: 1
+      - Target: {fileID: 1576245866}
+        InteractableAfterInvoked: 1
+      - Target: {fileID: 1521270208}
+        InteractableAfterInvoked: 1
+      - Target: {fileID: 767946879}
+        InteractableAfterInvoked: 1
+      - Target: {fileID: 209689742}
+        InteractableAfterInvoked: 1
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
+      Targets: []
+    - StartInteractable: 0
+      InteractableAfterInvoked: 1
+      Targets:
+      - Target: {fileID: 1553792669}
+        InteractableAfterInvoked: 1
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
+      Targets: []
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
+      Targets: []
+    - StartInteractable: 0
+      InteractableAfterInvoked: 1
+      Targets:
+      - Target: {fileID: 1553792669}
+        InteractableAfterInvoked: 1
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
+      Targets: []
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
+      Targets:
+      - Target: {fileID: 853450531}
+        InteractableAfterInvoked: 1
+      - Target: {fileID: 651122446}
+        InteractableAfterInvoked: 1
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
+      Targets:
+      - Target: {fileID: 1553792669}
+        InteractableAfterInvoked: 1
+      - Target: {fileID: 209689742}
+        InteractableAfterInvoked: 1
+      - Target: {fileID: 651122446}
+        InteractableAfterInvoked: 0
+    - StartInteractable: 0
+      InteractableAfterInvoked: 0
+      Targets:
+      - Target: {fileID: 209689742}
+        InteractableAfterInvoked: 1
+      - Target: {fileID: 853450531}
+        InteractableAfterInvoked: 0
 --- !u!4 &691686221
 Transform:
   m_ObjectHideFlags: 0
@@ -5911,7 +5941,7 @@ GameObject:
   - component: {fileID: 767946882}
   - component: {fileID: 767946881}
   m_Layer: 5
-  m_Name: MealSourceDropdown
+  m_Name: LargeMealsMealSourceDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6689,7 +6719,7 @@ GameObject:
   - component: {fileID: 853450533}
   - component: {fileID: 853450537}
   m_Layer: 5
-  m_Name: SubmitButton
+  m_Name: CustomMealsSubmitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8425,7 +8455,7 @@ GameObject:
   - component: {fileID: 1128983967}
   - component: {fileID: 1128983966}
   m_Layer: 5
-  m_Name: SubmitButton
+  m_Name: SmallMealsSubmitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11691,7 +11721,7 @@ GameObject:
   - component: {fileID: 1521270211}
   - component: {fileID: 1521270210}
   m_Layer: 5
-  m_Name: ServingAmountDropdown
+  m_Name: LargeMealsServingAmountDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12597,7 +12627,7 @@ GameObject:
   - component: {fileID: 1576245868}
   - component: {fileID: 1576245871}
   m_Layer: 5
-  m_Name: MealSourceDropdown
+  m_Name: SmallMealsMealSourceDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13278,7 +13308,7 @@ GameObject:
   - component: {fileID: 1671688304}
   - component: {fileID: 1671688307}
   m_Layer: 5
-  m_Name: ServingAmountDropdown
+  m_Name: SmallMealsServingAmountDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

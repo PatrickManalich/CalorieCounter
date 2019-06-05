@@ -3003,23 +3003,19 @@ MonoBehaviour:
     reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
     isExpanded: 1
     _keyValues:
-    - {fileID: 1128983964}
+    - {fileID: 815858153}
     - {fileID: 1374171245}
     - {fileID: 497729716}
-    - {fileID: 815858153}
+    - {fileID: 1128983964}
     _keys:
-    - {fileID: 1128983964}
+    - {fileID: 815858153}
     - {fileID: 1374171245}
     - {fileID: 497729716}
-    - {fileID: 815858153}
+    - {fileID: 1128983964}
     _values:
-    - StartInteractable: 1
+    - StartInteractable: 0
       InteractableAfterInvoked: 0
-      Targets:
-      - Target: {fileID: 1374171245}
-        InteractableAfterInvoked: 1
-      - Target: {fileID: 497729716}
-        InteractableAfterInvoked: 1
+      Targets: []
     - StartInteractable: 0
       InteractableAfterInvoked: 0
       Targets:
@@ -3036,9 +3032,13 @@ MonoBehaviour:
         InteractableAfterInvoked: 0
       - Target: {fileID: 1128983964}
         InteractableAfterInvoked: 1
-    - StartInteractable: 0
+    - StartInteractable: 1
       InteractableAfterInvoked: 0
-      Targets: []
+      Targets:
+      - Target: {fileID: 1374171245}
+        InteractableAfterInvoked: 1
+      - Target: {fileID: 497729716}
+        InteractableAfterInvoked: 1
 --- !u!4 &1077719443
 Transform:
   m_ObjectHideFlags: 0
