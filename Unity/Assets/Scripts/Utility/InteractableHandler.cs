@@ -31,9 +31,12 @@ namespace CalorieCounter {
                 return;
 
             var serializedSource = _serializedSourceDictionary[source];
-            source.GetComponent<Selectable>().interactable = serializedSource.InteractableAfterExecute;
+            if (source.GetComponent<Selectable>() != null)
+                source.GetComponent<Selectable>().interactable = serializedSource.InteractableAfterExecute;
+
             foreach (var serializedTarget in serializedSource.Targets) {
-                serializedTarget.Target.GetComponent<Selectable>().interactable = serializedTarget.InteractableAfterExecute;
+                if (serializedTarget.Target.GetComponent<Selectable>() != null)
+                    serializedTarget.Target.GetComponent<Selectable>().interactable = serializedTarget.InteractableAfterExecute;
             }
         }
 
@@ -42,27 +45,18 @@ namespace CalorieCounter {
                 return;
 
             foreach (var serializedTarget in _serializedSourceDictionary[source].Targets) {
-                serializedTarget.Target.GetComponent<Selectable>().interactable = !serializedTarget.InteractableAfterExecute;
+                if (serializedTarget.Target.GetComponent<Selectable>() != null)
+                    serializedTarget.Target.GetComponent<Selectable>().interactable = !serializedTarget.InteractableAfterExecute;
             }
         }
 
         private void Awake() {
             foreach(var source in _serializedSourceDictionary.Keys) {
-                if (source.GetComponent<Selectable>() == null) {
-                    Debug.LogError("All sources must have the Selectable component attached.");
-                    return;
-                }
-                var serializedSource = _serializedSourceDictionary[source];
-                foreach (var serializedTarget in serializedSource.Targets) {
-                    if (serializedTarget.Target.GetComponent<Selectable>() == null) {
-                        Debug.LogError("All targets must have the Selectable component attached.");
-                        return;
-                    }
-                }
-
                 if (source.GetComponent<Button>())
                     source.GetComponent<Button>().onClick.AddListener(delegate { Execute(source); });
-                source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].InteractableAfterAwake;
+
+                if (source.GetComponent<Selectable>() != null)
+                    source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].InteractableAfterAwake;
             }
         }
     }
