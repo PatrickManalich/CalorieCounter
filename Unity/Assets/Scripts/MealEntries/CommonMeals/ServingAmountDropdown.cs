@@ -6,7 +6,10 @@ namespace CalorieCounter.MealEntries.CommonMeals {
 
     [RequireComponent(typeof(TMP_Dropdown))]
     public class ServingAmountDropdown : MonoBehaviour {
-        
+
+        [SerializeField]
+        private MealSourceDropdown _mealSourceDropdown = default;
+
         public float SelectedServingAmount { get; private set; }
         
         private static readonly float[] ServingAmounts = new float[] { 0.25f, 0.33f, 0.5f, 0.75f, 1, 1.5f, 2, 3, 4, 5 };
@@ -17,8 +20,11 @@ namespace CalorieCounter.MealEntries.CommonMeals {
         public void RefreshSelectedServingAmount(int index) {
             if (float.TryParse(_optionDataList[index].text, out float parsedFloat)) {
                 SelectedServingAmount = parsedFloat;
+                if (_mealSourceDropdown.SelectedMealSource != default)
+                    FindObjectOfType<InteractableHandler>()?.SetSourceAndTargetsInteractable(gameObject);
             } else {
                 SelectedServingAmount = 0;
+                FindObjectOfType<InteractableHandler>()?.ResetTargetsInteractable(gameObject);
             }
         }
 

@@ -11,6 +11,9 @@ namespace CalorieCounter.MealEntries.CommonMeals {
         [SerializeField]
         private MealType _mealType = default;
 
+        [SerializeField]
+        private ServingAmountDropdown _servingAmountDropdown = default;
+
         public MealSource SelectedMealSource { get; private set; }
         
         private TMP_Dropdown _dropdown;
@@ -20,8 +23,11 @@ namespace CalorieCounter.MealEntries.CommonMeals {
         public void RefreshSelectedMealSource(int index) {
             if (_mealSources.Exists(x => x.Name == _optionDataList[index].text)) {
                 SelectedMealSource = _mealSources.Find(x => x.Name == _optionDataList[index].text);
+                if (_servingAmountDropdown.SelectedServingAmount != 0)
+                    FindObjectOfType<InteractableHandler>()?.SetSourceAndTargetsInteractable(gameObject);
             } else {
                 SelectedMealSource = default;
+                FindObjectOfType<InteractableHandler>()?.ResetTargetsInteractable(gameObject);
             }
         }
 

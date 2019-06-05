@@ -5458,27 +5458,35 @@ MonoBehaviour:
       - Target: {fileID: 209689742}
         InteractableAfterInvoked: 1
     - StartInteractable: 0
-      InteractableAfterInvoked: 0
-      Targets: []
+      InteractableAfterInvoked: 1
+      Targets:
+      - Target: {fileID: 1128983964}
+        InteractableAfterInvoked: 1
     - StartInteractable: 0
       InteractableAfterInvoked: 1
       Targets:
       - Target: {fileID: 1553792669}
         InteractableAfterInvoked: 1
     - StartInteractable: 0
-      InteractableAfterInvoked: 0
-      Targets: []
+      InteractableAfterInvoked: 1
+      Targets:
+      - Target: {fileID: 1128983964}
+        InteractableAfterInvoked: 1
     - StartInteractable: 0
-      InteractableAfterInvoked: 0
-      Targets: []
+      InteractableAfterInvoked: 1
+      Targets:
+      - Target: {fileID: 127662985}
+        InteractableAfterInvoked: 1
     - StartInteractable: 0
       InteractableAfterInvoked: 1
       Targets:
       - Target: {fileID: 1553792669}
         InteractableAfterInvoked: 1
     - StartInteractable: 0
-      InteractableAfterInvoked: 0
-      Targets: []
+      InteractableAfterInvoked: 1
+      Targets:
+      - Target: {fileID: 127662985}
+        InteractableAfterInvoked: 1
     - StartInteractable: 0
       InteractableAfterInvoked: 0
       Targets:
@@ -5982,6 +5990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealType: 1
+  _servingAmountDropdown: {fileID: 1521270210}
 --- !u!114 &767946882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11761,6 +11770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d833e67c3fb0a614d97c232cebb4d9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealSourceDropdown: {fileID: 767946881}
 --- !u!114 &1521270211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12766,6 +12776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealType: 0
+  _servingAmountDropdown: {fileID: 1671688307}
 --- !u!1 &1585888870
 GameObject:
   m_ObjectHideFlags: 0
@@ -13446,6 +13457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d833e67c3fb0a614d97c232cebb4d9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealSourceDropdown: {fileID: 1576245871}
 --- !u!1 &1683140706
 GameObject:
   m_ObjectHideFlags: 0
