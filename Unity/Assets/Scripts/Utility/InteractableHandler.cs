@@ -12,37 +12,37 @@ namespace CalorieCounter {
 
         [System.Serializable]
         private class SerializableSource {
-            public bool StartInteractable = default;
-            public bool InteractableAfterInvoked = default;
+            public bool InteractableAfterAwake = default;
+            public bool InteractableAfterExecute = default;
             public List<SerializableTarget> Targets = default;
         }
 
         [System.Serializable]
         private class SerializableTarget {
             public GameObject Target = default;
-            public bool InteractableAfterInvoked = default;
+            public bool InteractableAfterExecute = default;
         }
 
         [SerializeField]
         private SerializableSourceDictionary _serializedSourceDictionary = default;
 
-        public void SetSourceAndTargetsInteractable(GameObject source) {
+        public void Execute(GameObject source) {
             if (!_serializedSourceDictionary.ContainsKey(source))
                 return;
 
             var serializedSource = _serializedSourceDictionary[source];
-            source.GetComponent<Selectable>().interactable = serializedSource.InteractableAfterInvoked;
+            source.GetComponent<Selectable>().interactable = serializedSource.InteractableAfterExecute;
             foreach (var serializedTarget in serializedSource.Targets) {
-                serializedTarget.Target.GetComponent<Selectable>().interactable = serializedTarget.InteractableAfterInvoked;
+                serializedTarget.Target.GetComponent<Selectable>().interactable = serializedTarget.InteractableAfterExecute;
             }
         }
 
-        public void ResetTargetsInteractable(GameObject source) {
+        public void UndoExecute(GameObject source) {
             if (!_serializedSourceDictionary.ContainsKey(source))
                 return;
 
             foreach (var serializedTarget in _serializedSourceDictionary[source].Targets) {
-                serializedTarget.Target.GetComponent<Selectable>().interactable = !serializedTarget.InteractableAfterInvoked;
+                serializedTarget.Target.GetComponent<Selectable>().interactable = !serializedTarget.InteractableAfterExecute;
             }
         }
 
@@ -61,8 +61,8 @@ namespace CalorieCounter {
                 }
 
                 if (source.GetComponent<Button>())
-                    source.GetComponent<Button>().onClick.AddListener(delegate { SetSourceAndTargetsInteractable(source); });
-                source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].StartInteractable;
+                    source.GetComponent<Button>().onClick.AddListener(delegate { Execute(source); });
+                source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].InteractableAfterAwake;
             }
         }
     }

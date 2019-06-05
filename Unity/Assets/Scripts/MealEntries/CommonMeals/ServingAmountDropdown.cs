@@ -21,10 +21,10 @@ namespace CalorieCounter.MealEntries.CommonMeals {
             if (float.TryParse(_optionDataList[index].text, out float parsedFloat)) {
                 SelectedServingAmount = parsedFloat;
                 if (_mealSourceDropdown.SelectedMealSource != default)
-                    FindObjectOfType<InteractableHandler>()?.SetSourceAndTargetsInteractable(gameObject);
+                    FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             } else {
                 SelectedServingAmount = 0;
-                FindObjectOfType<InteractableHandler>()?.ResetTargetsInteractable(gameObject);
+                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
             }
         }
 

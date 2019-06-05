@@ -18,9 +18,9 @@ namespace CalorieCounter.MealEntries {
         public void RefreshSelectedDayType(int index) {
             DayType = (DayType)index;
             if (DayType != DayType.None)
-                FindObjectOfType<InteractableHandler>()?.SetSourceAndTargetsInteractable(gameObject);
+                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             else
-                FindObjectOfType<InteractableHandler>()?.ResetTargetsInteractable(gameObject);
+                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
         }
 
         public void HardSetDayType(DayType dayType) {
