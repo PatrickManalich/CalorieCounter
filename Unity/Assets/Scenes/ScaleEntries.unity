@@ -4523,7 +4523,7 @@ GameObject:
   - component: {fileID: 1625267896}
   - component: {fileID: 1625267897}
   m_Layer: 5
-  m_Name: ScaleEntriesInputFields
+  m_Name: ScaleEntryInputFields
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,7 +16,7 @@ namespace CalorieCounter.ScaleEntries {
         private GridLayoutGroup _content = default;
 
         [SerializeField]
-        private ScaleEntriesInputFields _scaleEntriesInputFields = default;
+        private ScaleEntryInputFields _scaleEntriesInputFields = default;
 
 
         public void AddScaleEntryFromInputFields() {

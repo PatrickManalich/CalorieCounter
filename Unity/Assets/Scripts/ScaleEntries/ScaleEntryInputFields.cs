@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CalorieCounter.ScaleEntries {
 
-    public class ScaleEntriesInputFields : MonoBehaviour {
+    public class ScaleEntryInputFields : MonoBehaviour {
 
         [SerializeField]
         private List<TMP_InputField> _inputFields = default;
