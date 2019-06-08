@@ -43,6 +43,16 @@ namespace CalorieCounter.MealEntries.CustomMeals {
             }
         }
 
+        public void CheckIfInputFieldsAreFilled() {
+            foreach (var inputField in _inputFields) {
+                if (inputField.text == "") {
+                    FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+                    return;
+                }
+            }
+            FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
+        }
+
         public MealProportion GetCustomMealProportionFromInputFields() {
             MealSource customMealSource = MealSource.CreateCustomMealSource(float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text));
             return new MealProportion(float.Parse(_inputFields[0].text), customMealSource);
