@@ -22,10 +22,12 @@ namespace CalorieCounter.MealEntries.CustomMeals {
                     TMP_InputField inputField = i == 0 ? _inputFields[i] : _inputFields[i - 1];
                     inputField.transform.SetParent(_contentTransform);
                     inputField.gameObject.SetActive(true);
+                    inputField.transform.SetSiblingIndex(i);
                 } else {
                     GameObject blank = i == 1 ? _blanks[i - 1] : _blanks[i - 4];
                     blank.transform.SetParent(_contentTransform);
                     blank.SetActive(true);
+                    blank.transform.SetSiblingIndex(i);
                 }
             }
             _inputFields.First().ActivateInputField();
