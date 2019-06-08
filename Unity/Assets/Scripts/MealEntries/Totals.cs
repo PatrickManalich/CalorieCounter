@@ -40,7 +40,7 @@ namespace CalorieCounter.MealEntries {
             TotalCarbs += mealProportion.Carbs;
             TotalProtein += mealProportion.Protein;
             TotalCalories += mealProportion.Calories;
-            UpdateTexts();
+            RefreshTexts();
         }
 
         public void RemoveFromTotals(MealProportion mealProportion) {
@@ -48,7 +48,7 @@ namespace CalorieCounter.MealEntries {
             TotalCarbs -= mealProportion.Carbs;
             TotalProtein -= mealProportion.Protein;
             TotalCalories -= mealProportion.Calories;
-            UpdateTexts();
+            RefreshTexts();
         }
 
         public void ResetTotals() {
@@ -60,10 +60,10 @@ namespace CalorieCounter.MealEntries {
 
         public void Refresh() {
             _targetEntry = _targetEntryHandler.GetLatestTargetEntry(_date.CurrentDate);
-            UpdateTexts();
+            RefreshTexts();
         }
 
-        private void UpdateTexts() {
+        private void RefreshTexts() {
             TotalFat = GlobalMethods.Round(TotalFat);
             TotalCarbs = GlobalMethods.Round(TotalCarbs);
             TotalProtein = GlobalMethods.Round(TotalProtein);
