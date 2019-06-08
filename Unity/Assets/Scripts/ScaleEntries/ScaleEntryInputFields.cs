@@ -19,9 +19,12 @@ namespace CalorieCounter.ScaleEntries {
         public void ShowInputFields() {
             _blank.transform.SetParent(_contentTransform);
             _blank.SetActive(true);
-            foreach(var inputField in _inputFields) {
+            _blank.transform.SetSiblingIndex(0);
+            for(int i = 0; i < _inputFields.Count; i++) {
+                var inputField = _inputFields[i];
                 inputField.transform.SetParent(_contentTransform);
                 inputField.gameObject.SetActive(true);
+                inputField.transform.SetSiblingIndex(i + 1);
             }
             _inputFields.First().ActivateInputField();
         }
