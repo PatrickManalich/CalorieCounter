@@ -6091,7 +6091,9 @@ MonoBehaviour:
         InteractableAfterExecute: 1
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
-      Targets: []
+      Targets:
+      - Target: {fileID: 651122446}
+        InteractableAfterExecute: 1
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
       Targets:
@@ -6112,8 +6114,6 @@ MonoBehaviour:
       InteractableAfterExecute: 1
       Targets:
       - Target: {fileID: 853450531}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 651122446}
         InteractableAfterExecute: 1
 --- !u!4 &691686221
 Transform:
