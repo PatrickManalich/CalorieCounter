@@ -27,13 +27,13 @@ namespace CalorieCounter.ScaleEntries {
         }
 
         public void HideInputFields() {
-            _blank.SetActive(false);
-            _blank.transform.SetParent(transform);
             foreach (var inputField in _inputFields) {
                 inputField.text = "";
                 inputField.gameObject.SetActive(false);
                 inputField.transform.SetParent(transform);
             }
+            _blank.SetActive(false);
+            _blank.transform.SetParent(transform);
         }
 
         public void CheckIfInputFieldsAreFilled() {
