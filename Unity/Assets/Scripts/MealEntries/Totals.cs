@@ -85,10 +85,22 @@ namespace CalorieCounter.MealEntries {
                 targetEntryCalories = _targetEntry.TrainingDayCalories;
             }
 
-            _fatText.text = TotalFat.ToString() + " / " + targetEntryFat;
-            _carbsText.text = TotalCarbs.ToString() + " / " + targetEntryCarbs;
-            _proteinText.text = TotalProtein.ToString() + " / " + targetEntryProtein;
-            _caloriesText.text = TotalCalories.ToString() + " / " + targetEntryCalories;
+            RefreshText(_fatText, TotalFat, targetEntryFat);
+            RefreshText(_carbsText, TotalCarbs, targetEntryCarbs);
+            RefreshText(_proteinText, TotalProtein, targetEntryProtein);
+            RefreshText(_caloriesText, TotalCalories, targetEntryCalories);
+
+        }
+
+        private void RefreshText(TextMeshProUGUI text, float total, float target) {
+            if (target == 0) {
+                text.color = Color.black;
+            } else if(total < target) {
+                text.color = Color.red;
+            } else {
+                text.color = Color.green;
+            }
+            text.text = total + " / " + target;
         }
     }
 }
