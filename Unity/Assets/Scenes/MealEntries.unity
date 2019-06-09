@@ -13699,10 +13699,10 @@ MonoBehaviour:
   _targetEntryHandler: {fileID: 35425279}
   _date: {fileID: 593050228}
   _dayTypeDropdown: {fileID: 945032638}
-  _fatText: {fileID: 469253153}
-  _carbsText: {fileID: 527433130}
-  _proteinText: {fileID: 863322316}
-  _caloriesText: {fileID: 1622163062}
+  _fatTotalText: {fileID: 469253153}
+  _carbsTotalText: {fileID: 527433130}
+  _proteinTotalText: {fileID: 863322316}
+  _caloriesTotalText: {fileID: 1622163062}
 --- !u!114 &1566187487
 MonoBehaviour:
   m_ObjectHideFlags: 0

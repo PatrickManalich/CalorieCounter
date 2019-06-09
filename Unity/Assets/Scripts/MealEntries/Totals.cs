@@ -17,16 +17,16 @@ namespace CalorieCounter.MealEntries {
         private DayTypeDropdown _dayTypeDropdown = default;
 
         [SerializeField]
-        private TextMeshProUGUI _fatText = default;
+        private TextMeshProUGUI _fatTotalText = default;
 
         [SerializeField]
-        private TextMeshProUGUI _carbsText = default;
+        private TextMeshProUGUI _carbsTotalText = default;
 
         [SerializeField]
-        private TextMeshProUGUI _proteinText = default;
+        private TextMeshProUGUI _proteinTotalText = default;
 
         [SerializeField]
-        private TextMeshProUGUI _caloriesText = default;
+        private TextMeshProUGUI _caloriesTotalText = default;
 
         public float TotalFat { get; private set; } = 0;
         public float TotalCarbs { get; private set; } = 0;
@@ -85,10 +85,10 @@ namespace CalorieCounter.MealEntries {
                 targetEntryCalories = _targetEntry.TrainingDayCalories;
             }
 
-            RefreshText(_fatText, TotalFat, targetEntryFat);
-            RefreshText(_carbsText, TotalCarbs, targetEntryCarbs);
-            RefreshText(_proteinText, TotalProtein, targetEntryProtein);
-            RefreshText(_caloriesText, TotalCalories, targetEntryCalories);
+            RefreshText(_fatTotalText, TotalFat, targetEntryFat);
+            RefreshText(_carbsTotalText, TotalCarbs, targetEntryCarbs);
+            RefreshText(_proteinTotalText, TotalProtein, targetEntryProtein);
+            RefreshText(_caloriesTotalText, TotalCalories, targetEntryCalories);
 
         }
 
