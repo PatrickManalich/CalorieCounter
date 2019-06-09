@@ -52,7 +52,7 @@ namespace CalorieCounter.MealEntries.CustomMeals {
             deleteButtonContainer.transform.SetSiblingIndex(6);
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.Source.Name;
+            nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.MealSource.Name;
             fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();

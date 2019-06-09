@@ -30,12 +30,12 @@ namespace CalorieCounter.MealEntries {
         };
 
         public void AddMealProportion(MealProportion mealProportion) {
-            _mealProportionsDict[mealProportion.Source.MealType].Add(mealProportion);
+            _mealProportionsDict[mealProportion.MealSource.MealType].Add(mealProportion);
             _totals.AddToTotals(mealProportion);
         }
 
         public void SubtractMealProportion(MealProportion mealProportion) {
-            _mealProportionsDict[mealProportion.Source.MealType].Remove(mealProportion);
+            _mealProportionsDict[mealProportion.MealSource.MealType].Remove(mealProportion);
             _totals.RemoveFromTotals(mealProportion);
         }
 

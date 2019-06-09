@@ -5,18 +5,18 @@ namespace CalorieCounter.MealEntries {
     public struct MealProportion {
 
         public float ServingAmount;
-        public MealSource Source;
+        public MealSource MealSource;
         public float Fat;
         public float Carbs;
         public float Protein;
         public float Calories;
 
-        public MealProportion(float servingAmount, MealSource source) {
+        public MealProportion(float servingAmount, MealSource mealSource) {
             ServingAmount = servingAmount;
-            Source = source;
-            Fat = GlobalMethods.Round(source.Fat * ServingAmount);
-            Carbs = GlobalMethods.Round(source.Carbs * ServingAmount);
-            Protein = GlobalMethods.Round(source.Protein * ServingAmount);
+            MealSource = mealSource;
+            Fat = GlobalMethods.Round(mealSource.Fat * ServingAmount);
+            Carbs = GlobalMethods.Round(mealSource.Carbs * ServingAmount);
+            Protein = GlobalMethods.Round(mealSource.Protein * ServingAmount);
             Calories = GlobalMethods.Round((Fat * 9) + (Carbs * 4) + (Protein * 4));
         }
 
