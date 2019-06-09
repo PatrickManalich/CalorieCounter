@@ -13,9 +13,9 @@ namespace CalorieCounter.MealEntries {
         public float TotalCarbs;
         public float TotalProtein;
         public float TotalCalories;
-        public Dictionary<MealType, List<MealProportion>> MealProportionsDict;
+        public Dictionary<MealSourceType, List<MealProportion>> MealProportionsDict;
 
-        public MealEntry(DateTime date, DayType dayType, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealType, List<MealProportion>> mealProportionsDict) {
+        public MealEntry(DateTime date, DayType dayType, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDict) {
             Date = date;
             DayType = dayType;
             TotalFat = GlobalMethods.Round(totalFat);
@@ -43,8 +43,8 @@ namespace CalorieCounter.MealEntries {
         public override string ToString() {
             int mealProportionsDictCount = 0;
             if (MealProportionsDict != null) {
-                foreach(var mealType in Enum.GetValues(typeof(MealType)).Cast<MealType>().ToList()) {
-                    mealProportionsDictCount += MealProportionsDict[mealType].Count;
+                foreach(var mealSourceType in Enum.GetValues(typeof(MealSourceType)).Cast<MealSourceType>().ToList()) {
+                    mealProportionsDictCount += MealProportionsDict[mealSourceType].Count;
                 }
             }
             return string.Format("Date: {0}, Day Type: {1}, [ Total Fat: {2}, Total Carbs: {3}, Total Protein: {4}, Total Calories: {5} ], Meal Proportions Dict Count: {6}",

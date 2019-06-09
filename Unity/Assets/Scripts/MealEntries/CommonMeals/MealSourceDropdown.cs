@@ -9,7 +9,7 @@ namespace CalorieCounter.MealEntries.CommonMeals {
     public class MealSourceDropdown : MonoBehaviour {
 
         [SerializeField]
-        private MealType _mealType = default;
+        private MealSourceType _mealSourceType = default;
 
         [SerializeField]
         private ServingAmountDropdown _servingAmountDropdown = default;
@@ -39,10 +39,10 @@ namespace CalorieCounter.MealEntries.CommonMeals {
         private void Start() {
             _dropdown = GetComponent<TMP_Dropdown>();
 
-            if (_mealType == MealType.Small) {
-                _mealSources = new List<MealSource>(new SmallMeals().MealSources);
-            } else if (_mealType == MealType.Large) {
-                _mealSources = new List<MealSource>(new LargeMeals().MealSources);
+            if (_mealSourceType == MealSourceType.Small) {
+                _mealSources = new List<MealSource>(new SmallMealSources().MealSources);
+            } else if (_mealSourceType == MealSourceType.Large) {
+                _mealSources = new List<MealSource>(new LargeMealSources().MealSources);
             } else {
                 _mealSources = new List<MealSource>();
             }

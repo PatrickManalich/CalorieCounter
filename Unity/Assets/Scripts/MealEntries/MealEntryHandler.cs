@@ -9,7 +9,7 @@ namespace CalorieCounter.MealEntries {
     public class MealEntryHandler : MonoBehaviour {
 
         [System.Serializable]
-        private class ScrollViewDictionary : SerializableDictionaryBase<MealType, AbstractMealsScrollView> { }
+        private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, AbstractMealsScrollView> { }
 
         [SerializeField]
         private Date _date = default;
@@ -23,19 +23,19 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private ScrollViewDictionary _scrollViewDict = default;
 
-        private Dictionary<MealType, List<MealProportion>> _mealProportionsDict = new Dictionary<MealType, List<MealProportion>>() {
-            { MealType.Small, new List<MealProportion>() },
-            { MealType.Large, new List<MealProportion>() },
-            { MealType.Custom, new List<MealProportion>() },
+        private Dictionary<MealSourceType, List<MealProportion>> _mealProportionsDict = new Dictionary<MealSourceType, List<MealProportion>>() {
+            { MealSourceType.Small, new List<MealProportion>() },
+            { MealSourceType.Large, new List<MealProportion>() },
+            { MealSourceType.Custom, new List<MealProportion>() },
         };
 
         public void AddMealProportion(MealProportion mealProportion) {
-            _mealProportionsDict[mealProportion.MealSource.MealType].Add(mealProportion);
+            _mealProportionsDict[mealProportion.MealSource.MealSourceType].Add(mealProportion);
             _totals.AddToTotals(mealProportion);
         }
 
         public void SubtractMealProportion(MealProportion mealProportion) {
-            _mealProportionsDict[mealProportion.MealSource.MealType].Remove(mealProportion);
+            _mealProportionsDict[mealProportion.MealSource.MealSourceType].Remove(mealProportion);
             _totals.RemoveFromTotals(mealProportion);
         }
 

@@ -2,7 +2,7 @@
 
 namespace CalorieCounter.Globals {
 
-    public enum MealType { Small, Large, Custom }
+    public enum MealSourceType { Small, Large, Custom }
 
     public enum DayType { None, Rest, Training, Vacation }
 

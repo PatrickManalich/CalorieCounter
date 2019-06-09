@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace CalorieCounter.MealEntries {
 
-    public abstract class AbstractMeals {
+    public abstract class AbstractMealSources {
 
-        public abstract MealType MealType { get; }
+        public abstract MealSourceType MealSourceType { get; }
 
         public abstract IReadOnlyList<MealSource> MealSources { get; }
 
