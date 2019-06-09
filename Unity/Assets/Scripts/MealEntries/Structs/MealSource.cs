@@ -44,7 +44,8 @@ namespace CalorieCounter.MealEntries {
         }
 
         public override string ToString() {
-            return Name + " (per " + ServingSize + "), [ Fat:" + Fat + ", Carbs:" + Carbs + ", Protein:" + Protein + ", Calories:" + Calories + " ], Description:" + Description + ", Meal Type:" + MealType;
+            return string.Format("Name: {0}, Serving Size: {1}, [ Fat: {2}, Carbs: {3}, Protein: {4}, Calories: {5} ], Description: {6}, Meal Type: {7}",
+                Name, ServingSize , Fat, Carbs, Protein, Calories, Description, MealType);
         }
     }
 }

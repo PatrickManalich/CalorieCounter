@@ -1,6 +1,7 @@
 ﻿using CalorieCounter.Globals;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CalorieCounter.MealEntries {
 
@@ -40,7 +41,14 @@ namespace CalorieCounter.MealEntries {
         }
 
         public override string ToString() {
-            return Date.ToShortDateString() + ", Total Fat:" + TotalFat + ", Total Carbs:" + TotalCarbs + ", Total Protein:" + TotalProtein + ", Total Calories:" + TotalCalories;
+            int mealProportionsDictCount = 0;
+            if (MealProportionsDict != null) {
+                foreach(var mealType in Enum.GetValues(typeof(MealType)).Cast<MealType>().ToList()) {
+                    mealProportionsDictCount += MealProportionsDict[mealType].Count;
+                }
+            }
+            return string.Format("Date: {0}, Day Type: {1}, [ Total Fat: {2}, Total Carbs: {3}, Total Protein: {4}, Total Calories: {5} ], Meal Proportions Dict Count: {6}",
+                Date.ToShortDateString(), DayType, TotalFat, TotalCarbs, TotalProtein, TotalCalories, mealProportionsDictCount);
         }
     }
 }

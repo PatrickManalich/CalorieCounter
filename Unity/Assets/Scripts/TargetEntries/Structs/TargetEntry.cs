@@ -60,9 +60,8 @@ namespace CalorieCounter.TargetEntries {
         }
 
         public override string ToString() {
-            return Date.ToShortDateString() + ", " + "CML:" + CalorieMaintenanceLevel + ", RestDay [ Calories:" + RestDayCalories + ", Fat: " + RestDayFat + ", Carbs:" + RestDayCarbs +
-                ", Protein:" + RestDayProtein + " ], TrainingDay [ Calories:" + TrainingDayCalories + ", Fat: " + TrainingDayFat + ", Carbs:" + TrainingDayCarbs +
-                ", Protein:" + TrainingDayProtein + " ]";
+            return string.Format("Date: {0}, Weight: {1}, Calorie Maintenance Level:{2}, Rest Day: [ Fat: {3}, Carbs: {4}, Protein: {5}, Calories: {6} ], Training Day: [ Fat: {7}, Carbs: {8}, Protein: {9}, Calories: {10} ]",
+                Date.ToShortDateString(), Weight, CalorieMaintenanceLevel, RestDayFat, RestDayCarbs, RestDayProtein, RestDayCalories, TrainingDayFat, TrainingDayCarbs, TrainingDayProtein, TrainingDayCalories);
         }
     }
 }
