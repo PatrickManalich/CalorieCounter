@@ -42,7 +42,7 @@ namespace CalorieCounter.MealEntries {
         public void ExportMealEntry() {
             MealEntry currentMealEntry = new MealEntry(_date.CurrentDate, _dayTypeDropdown.DayType, _totals.TotalFat, _totals.TotalCarbs, _totals.TotalProtein, 
                 _totals.TotalCalories, _mealProportionsDict);
-            JsonUtility.Export(currentMealEntry, GetMealEntryPath());
+            JsonConverter.Export(currentMealEntry, GetMealEntryPath());
         }
 
         public void Refresh() {
@@ -52,7 +52,7 @@ namespace CalorieCounter.MealEntries {
             }
             _totals.Refresh();
 
-            MealEntry importedMealEntry = JsonUtility.Import<MealEntry>(GetMealEntryPath());
+            MealEntry importedMealEntry = JsonConverter.Import<MealEntry>(GetMealEntryPath());
             if (importedMealEntry != default) {
                 foreach (var key in importedMealEntry.MealProportionsDict.Keys) {
                     AbstractMealsScrollView scrollView = _scrollViewDict[key];

@@ -30,11 +30,11 @@ namespace CalorieCounter.TargetEntries {
             foreach (var scaleEntry in scrollView.ScaleEntries) {
                 _targetEntries.Add(new TargetEntry(scaleEntry.Date, scaleEntry.Weight));
             }
-            JsonUtility.Export(_targetEntries, GlobalPaths.TargetEntriesFilePath);
+            JsonConverter.Export(_targetEntries, GlobalPaths.TargetEntriesFilePath);
         }
 
         private void Awake() {
-            _targetEntries = JsonUtility.Import<List<TargetEntry>>(GlobalPaths.TargetEntriesFilePath);
+            _targetEntries = JsonConverter.Import<List<TargetEntry>>(GlobalPaths.TargetEntriesFilePath);
         }
     }
 }

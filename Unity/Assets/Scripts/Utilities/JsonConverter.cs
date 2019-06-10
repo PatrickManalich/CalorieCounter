@@ -6,7 +6,7 @@ using CalorieCounter.Globals;
 
 namespace CalorieCounter {
 
-    public static class JsonUtility {
+    public static class JsonConverter {
 
         public static void Export<T>(T value, string filePath) {
             string fullFilePath = GetFullFilePath(filePath);
