@@ -21,7 +21,7 @@ namespace CalorieCounter.MealSources {
         private GridLayoutGroup _content = default;
 
         [SerializeField]
-        private CustomMealInputFields _customMealInputFields = default;
+        private CustomMealProportionInputFields _customMealInputFields = default;
 
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 

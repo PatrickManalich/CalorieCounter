@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealSources {
 
-    public class CommonMealInputFields : MonoBehaviour {
+    public class MealSourceInputFields : MonoBehaviour {
 
         [SerializeField]
         private List<TMP_InputField> _inputFields = default;
