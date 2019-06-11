@@ -214,6 +214,7 @@ GameObject:
   - component: {fileID: 19275661}
   - component: {fileID: 19275660}
   - component: {fileID: 19275659}
+  - component: {fileID: 19275662}
   m_Layer: 5
   m_Name: SmallMealsScrollView
   m_TagString: Untagged
@@ -314,6 +315,22 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &19275662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19275657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f9df830763d244f8e468cb9d46f69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
+    type: 3}
+  _content: {fileID: 2136228772}
+  _mealSourceInputFields: {fileID: 2073791306}
 --- !u!1001 &55512132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3644,6 +3661,7 @@ GameObject:
   - component: {fileID: 688997046}
   - component: {fileID: 688997045}
   - component: {fileID: 688997044}
+  - component: {fileID: 688997043}
   m_Layer: 5
   m_Name: LargeMealsScrollView
   m_TagString: Untagged
@@ -3674,6 +3692,22 @@ RectTransform:
   m_AnchoredPosition: {x: -25, y: -670}
   m_SizeDelta: {x: 1595, y: 505}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &688997043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688997041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0f9df830763d244f8e468cb9d46f69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 8d0f0de8edbedd54281f0fc245b8c3b3,
+    type: 3}
+  _content: {fileID: 1343613516}
+  _mealSourceInputFields: {fileID: 2026784804}
 --- !u!114 &688997044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4296,7 +4330,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 853450534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 19275662}
+        m_MethodName: AddMealSourceFromInputFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2073791306}
+        m_MethodName: HideInputFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &853450534
@@ -4962,7 +5018,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1081389421}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 688997043}
+        m_MethodName: AddMealSourceFromInputFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2026784804}
+        m_MethodName: HideInputFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1081389421
@@ -8155,6 +8233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5bc8953e8ce4804c94528254b6d2164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MealSourceType: 1
   _inputFields:
   - {fileID: 970771248}
   - {fileID: 1427786727}
@@ -8219,6 +8298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5bc8953e8ce4804c94528254b6d2164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MealSourceType: 0
   _inputFields:
   - {fileID: 511724079}
   - {fileID: 253912620}

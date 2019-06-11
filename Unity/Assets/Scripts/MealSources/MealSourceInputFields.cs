@@ -8,6 +8,9 @@ namespace CalorieCounter.MealSources {
     public class MealSourceInputFields : MonoBehaviour {
 
         [SerializeField]
+        private MealSourceType MealSourceType = default;
+
+        [SerializeField]
         private List<TMP_InputField> _inputFields = default;
 
         [SerializeField]
@@ -29,6 +32,11 @@ namespace CalorieCounter.MealSources {
                 inputField.gameObject.SetActive(false);
                 inputField.transform.SetParent(transform);
             }
+        }
+
+        public MealSource GetMealSourceFromInputFields() {
+            return  new MealSource(_inputFields[0].text, _inputFields[1].text, float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text),
+                float.Parse(_inputFields[4].text), _inputFields[5].text, MealSourceType);
         }
     }
 }
