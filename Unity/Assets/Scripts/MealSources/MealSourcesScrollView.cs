@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class MealSourcesScrollView : MonoBehaviour
 {
+
+    [SerializeField]
+    private MealSourceHandler _mealSourceHandler = default;
+
     [SerializeField]
     private GameObject _scrollViewTextPrefab = default;
 
@@ -19,7 +23,11 @@ public class MealSourcesScrollView : MonoBehaviour
 
     public void AddMealSourceFromInputFields() {
         MealSource mealSource = _mealSourceInputFields.GetMealSourceFromInputFields();
+        AddMealSource(mealSource);
+        _mealSourceHandler.AddMealSource(mealSource);
+    }
 
+    public void AddMealSource(MealSource mealSource) {
         GameObject mealNameText = Instantiate(_scrollViewTextPrefab, _content.transform);
         GameObject servingSizeText = Instantiate(_scrollViewTextPrefab, _content.transform);
         GameObject fatText = Instantiate(_scrollViewTextPrefab, _content.transform);
