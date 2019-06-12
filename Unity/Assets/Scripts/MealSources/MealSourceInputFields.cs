@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CalorieCounter.Utilities;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -32,6 +33,16 @@ namespace CalorieCounter.MealSources {
                 inputField.gameObject.SetActive(false);
                 inputField.transform.SetParent(transform);
             }
+        }
+
+        public void CheckIfInputFieldsAreFilled() {
+            foreach (var inputField in _inputFields) {
+                if (inputField.text == "") {
+                    FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+                    return;
+                }
+            }
+            FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
         }
 
         public MealSource GetMealSourceFromInputFields() {
