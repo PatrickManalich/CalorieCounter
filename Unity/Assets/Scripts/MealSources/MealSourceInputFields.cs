@@ -15,14 +15,23 @@ namespace CalorieCounter.MealSources {
         private List<TMP_InputField> _inputFields = default;
 
         [SerializeField]
+        private GameObject _blank = default;
+
+        [SerializeField]
         private Transform _contentTransform = default;
 
         public void ShowInputFields() {
-            for (int i = 0; i < _inputFields.Count; i++) {
-                TMP_InputField inputField = _inputFields[i];
-                inputField.transform.SetParent(_contentTransform);
-                inputField.gameObject.SetActive(true);
-                inputField.transform.SetSiblingIndex(i);
+            for (int i = 0; i < _inputFields.Count + 1; i++) {
+                if (i >= 0 && i <= 4 || i == 6) {
+                    TMP_InputField inputField = i >= 0 && i <= 4 ? _inputFields[i] : _inputFields[i - 1];
+                    inputField.transform.SetParent(_contentTransform);
+                    inputField.gameObject.SetActive(true);
+                    inputField.transform.SetSiblingIndex(i);
+                } else {
+                    _blank.transform.SetParent(_contentTransform);
+                    _blank.SetActive(true);
+                    _blank.transform.SetSiblingIndex(i);
+                }
             }
             _inputFields.First().ActivateInputField();
         }
@@ -33,6 +42,8 @@ namespace CalorieCounter.MealSources {
                 inputField.gameObject.SetActive(false);
                 inputField.transform.SetParent(transform);
             }
+            _blank.SetActive(false);
+            _blank.transform.SetParent(transform);
         }
 
         public void CheckIfInputFieldsAreFilled() {
