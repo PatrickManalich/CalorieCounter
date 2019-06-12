@@ -33,7 +33,7 @@ namespace CalorieCounter.TargetEntries {
             JsonConverter.Export(_targetEntries, GlobalPaths.TargetEntriesFilePath);
         }
 
-        private void Awake() {
+        private void Start() {
             _targetEntries = JsonConverter.Import<List<TargetEntry>>(GlobalPaths.TargetEntriesFilePath);
         }
     }
