@@ -1,7 +1,6 @@
-﻿using CalorieCounter.Globals;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace CalorieCounter.MealEntries.CommonMeals {
+namespace CalorieCounter.MealSources {
 
     public class SmallMealSources : AbstractMealSources {
 

@@ -1,5 +1,5 @@
-﻿using CalorieCounter.Globals;
-using CalorieCounter.ScaleEntries;
+﻿using CalorieCounter.ScaleEntries;
+using CalorieCounter.Utilities;
 using System;
 using System.Collections.Generic;
 using UnityEngine;

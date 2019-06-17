@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
-using CalorieCounter.Globals;
+using CalorieCounter.Utilities;
 using System;
 using System.Linq;
 

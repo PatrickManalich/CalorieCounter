@@ -1,5 +1,4 @@
-﻿using CalorieCounter.Globals;
-using System;
+﻿using System;
 
 namespace CalorieCounter.TargetEntries {
 

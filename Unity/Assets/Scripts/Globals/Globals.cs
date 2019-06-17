@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CalorieCounter.Globals {
+namespace CalorieCounter {
 
     public enum MealSourceType { Small, Large, Custom }
 

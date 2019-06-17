@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using CalorieCounter.MealEntries;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.MealEntries.CustomMeals {
+namespace CalorieCounter.MealSources {
 
     public class CustomMealsScrollView : AbstractMealsScrollView {
 

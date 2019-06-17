@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.MealEntries.CommonMeals {
+namespace CalorieCounter.MealEntries {
 
     public class CommonMealsScrollView : AbstractMealsScrollView {
 

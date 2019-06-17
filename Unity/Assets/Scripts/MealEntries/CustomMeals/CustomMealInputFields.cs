@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using CalorieCounter.MealSources;
+using CalorieCounter.Utilities;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 
-namespace CalorieCounter.MealEntries.CustomMeals {
+namespace CalorieCounter.MealEntries {
 
     public class CustomMealInputFields : MonoBehaviour {
 

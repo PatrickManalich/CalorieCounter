@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using CalorieCounter.Utilities;
 
-namespace CalorieCounter.MealEntries.CommonMeals {
+namespace CalorieCounter.MealEntries {
 
     [RequireComponent(typeof(TMP_Dropdown))]
     public class ServingAmountDropdown : MonoBehaviour {

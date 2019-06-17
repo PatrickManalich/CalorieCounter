@@ -1,4 +1,4 @@
-﻿using CalorieCounter.Globals;
+﻿using CalorieCounter.Utilities;
 using System.Collections.Generic;
 using UnityEngine;
 

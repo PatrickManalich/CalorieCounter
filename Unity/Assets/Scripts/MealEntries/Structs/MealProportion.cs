@@ -1,4 +1,4 @@
-﻿using CalorieCounter.Globals;
+﻿using CalorieCounter.MealSources;
 
 namespace CalorieCounter.MealEntries {
 

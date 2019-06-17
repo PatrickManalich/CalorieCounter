@@ -1,5 +1,4 @@
-﻿using CalorieCounter.Globals;
-using CalorieCounter.TargetEntries;
+﻿using CalorieCounter.TargetEntries;
 using TMPro;
 using UnityEngine;
 

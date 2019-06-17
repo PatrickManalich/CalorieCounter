@@ -2,9 +2,8 @@
 using Newtonsoft.Json;
 using UnityEngine;
 using System;
-using CalorieCounter.Globals;
 
-namespace CalorieCounter {
+namespace CalorieCounter.Utilities {
 
     public static class JsonConverter {
 

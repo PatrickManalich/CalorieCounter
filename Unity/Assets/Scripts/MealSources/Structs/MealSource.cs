@@ -1,6 +1,4 @@
-﻿using CalorieCounter.Globals;
-
-namespace CalorieCounter.MealEntries {
+﻿namespace CalorieCounter.MealSources {
 
     public struct MealSource {
 

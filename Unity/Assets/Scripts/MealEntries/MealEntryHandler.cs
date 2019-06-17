@@ -1,4 +1,4 @@
-﻿using CalorieCounter.Globals;
+﻿using CalorieCounter.Utilities;
 using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
 using System.IO;
