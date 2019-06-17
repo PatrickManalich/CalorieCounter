@@ -19,7 +19,7 @@ public class MealSourcesScrollView : MonoBehaviour
     [SerializeField]
     private MealSourceInputFields _mealSourceInputFields = default;
 
-    private List<MealSource> _mealSources = new List<MealSource>();
+    private SortedList<string, MealSource> _mealSources = new SortedList<string, MealSource>();
 
     public void AddMealSourceFromInputFields() {
         MealSource mealSource = _mealSourceInputFields.GetMealSourceFromInputFields();
@@ -28,6 +28,8 @@ public class MealSourcesScrollView : MonoBehaviour
     }
 
     public void AddMealSource(MealSource mealSource) {
+        _mealSources.Add(mealSource.Name, mealSource);
+
         GameObject mealNameText = Instantiate(_scrollViewTextPrefab, _content.transform);
         GameObject servingSizeText = Instantiate(_scrollViewTextPrefab, _content.transform);
         GameObject fatText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -36,13 +38,14 @@ public class MealSourcesScrollView : MonoBehaviour
         GameObject calorieText = Instantiate(_scrollViewTextPrefab, _content.transform);
         GameObject descriptionText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-        mealNameText.transform.SetSiblingIndex(0);
-        servingSizeText.transform.SetSiblingIndex(1);
-        fatText.transform.SetSiblingIndex(2);
-        carbText.transform.SetSiblingIndex(3);
-        proteinText.transform.SetSiblingIndex(4);
-        calorieText.transform.SetSiblingIndex(5);
-        descriptionText.transform.SetSiblingIndex(6);
+        int siblingStartIndex = _mealSources.IndexOfKey(mealSource.Name) * _content.constraintCount;
+        mealNameText.transform.SetSiblingIndex(siblingStartIndex);
+        servingSizeText.transform.SetSiblingIndex(siblingStartIndex + 1);
+        fatText.transform.SetSiblingIndex(siblingStartIndex + 2);
+        carbText.transform.SetSiblingIndex(siblingStartIndex + 3);
+        proteinText.transform.SetSiblingIndex(siblingStartIndex + 4);
+        calorieText.transform.SetSiblingIndex(siblingStartIndex + 5);
+        descriptionText.transform.SetSiblingIndex(siblingStartIndex + 6);
 
         mealNameText.GetComponent<TextMeshProUGUI>().text = mealSource.Name;
         servingSizeText.GetComponent<TextMeshProUGUI>().text = mealSource.ServingSize;
@@ -51,6 +54,5 @@ public class MealSourcesScrollView : MonoBehaviour
         proteinText.GetComponent<TextMeshProUGUI>().text = mealSource.Protein.ToString();
         calorieText.GetComponent<TextMeshProUGUI>().text = mealSource.Calories.ToString();
         descriptionText.GetComponent<TextMeshProUGUI>().text = mealSource.Description;
-        _mealSources.Add(mealSource);
     }
 }

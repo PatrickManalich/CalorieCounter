@@ -13,9 +13,9 @@ public class MealSourceHandler : MonoBehaviour
     [SerializeField]
     private ScrollViewDictionary _scrollViewDict = default;
 
-    private Dictionary<MealSourceType, List<MealSource>> _mealSourcesDict = new Dictionary<MealSourceType, List<MealSource>>() {
-            { MealSourceType.Small, new List<MealSource>() },
-            { MealSourceType.Large, new List<MealSource>() },
+    private Dictionary<MealSourceType, SortedSet<MealSource>> _mealSourcesDict = new Dictionary<MealSourceType, SortedSet<MealSource>>() {
+            { MealSourceType.Small, new SortedSet<MealSource>() },
+            { MealSourceType.Large, new SortedSet<MealSource>() },
         };
 
     public void AddMealSource(MealSource mealSource) {
@@ -33,6 +33,8 @@ public class MealSourceHandler : MonoBehaviour
                 MealSourcesScrollView scrollView = _scrollViewDict[key];
                 foreach (var mealSource in importedMealSourcesDict[key]) {
                     AddMealSource(mealSource);
+                }
+                foreach (var mealSource in _mealSourcesDict[key]) {
                     scrollView.AddMealSource(mealSource);
                 }
             }

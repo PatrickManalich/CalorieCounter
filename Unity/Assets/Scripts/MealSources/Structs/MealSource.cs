@@ -1,6 +1,8 @@
-﻿namespace CalorieCounter.MealSources {
+﻿using System;
 
-    public struct MealSource {
+namespace CalorieCounter.MealSources {
+
+    public struct MealSource : IComparable<MealSource> {
 
         public string Name;
         public string ServingSize;
@@ -44,6 +46,10 @@
         public override string ToString() {
             return string.Format("Name: {0}, Serving Size: {1}, [ Fat: {2}, Carbs: {3}, Protein: {4}, Calories: {5} ], Description: {6}, Meal Type: {7}",
                 Name, ServingSize , Fat, Carbs, Protein, Calories, Description, MealSourceType);
+        }
+
+        public int CompareTo(MealSource mealSource) {
+            return string.Compare(Name, mealSource.Name);
         }
     }
 }
