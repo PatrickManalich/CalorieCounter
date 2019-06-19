@@ -7726,6 +7726,21 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_ContentType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1988324715942504262, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
       propertyPath: NextSelectable
@@ -8051,6 +8066,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_ContentType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_KeyboardType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_CharacterValidation
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1988324715942504262, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
