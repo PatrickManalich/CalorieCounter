@@ -50,6 +50,7 @@ namespace CalorieCounter.MealEntries {
                 _mealProportionsDict[key].Clear();
                 _scrollViewDict[key].ClearMealProportions();
             }
+            _totals.ResetTotals();
             _totals.Refresh();
 
             MealEntry importedMealEntry = JsonConverter.Import<MealEntry>(GetMealEntryPath());
