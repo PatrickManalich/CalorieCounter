@@ -328,7 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealSourceHandler: {fileID: 1982907307}
-  _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
+  _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 8d0f0de8edbedd54281f0fc245b8c3b3,
     type: 3}
   _content: {fileID: 2136228772}
   _mealSourceInputFields: {fileID: 2073791306}
