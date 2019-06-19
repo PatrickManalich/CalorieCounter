@@ -1545,6 +1545,16 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineLimit
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1988324715942504262, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
       propertyPath: NextSelectable
@@ -1569,6 +1579,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813576466737073, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6791813577058216743, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
@@ -3149,6 +3164,21 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_InputType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineLimit
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1988324715942504262, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
       propertyPath: NextSelectable
@@ -3173,6 +3203,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813576466737073, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6791813577058216743, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
@@ -5033,6 +5068,16 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineLimit
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1988324715942504262, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
       propertyPath: NextSelectable
@@ -6467,6 +6512,16 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineLimit
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1988324715942504262, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
       propertyPath: NextSelectable
@@ -7741,6 +7796,11 @@ PrefabInstance:
       propertyPath: m_CharacterValidation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1988324715942504262, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
       propertyPath: NextSelectable
@@ -8082,6 +8142,16 @@ PrefabInstance:
       propertyPath: m_CharacterValidation
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813578162674175, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_LineLimit
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1988324715942504262, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
       propertyPath: NextSelectable
@@ -8106,6 +8176,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6791813576466737073, guid: 73c760ceaac58eb41bf5e0713a5aca34,
+        type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6791813577058216743, guid: 73c760ceaac58eb41bf5e0713a5aca34,
         type: 3}
