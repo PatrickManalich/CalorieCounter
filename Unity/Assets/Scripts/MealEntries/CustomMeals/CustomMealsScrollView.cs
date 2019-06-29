@@ -41,8 +41,8 @@ namespace CalorieCounter.MealSources {
 
             GameObject deleteButtonContainer = Instantiate(_deleteButtonContainerPrefab, _content.transform);
             Button deleteButton = deleteButtonContainer.GetComponentInChildren<Button>();
-            deleteButton.onClick.AddListener(delegate { SubtractMealProportion(mealProportion); });
-            deleteButton.onClick.AddListener(delegate { _mealEntryHandler.SubtractMealProportion(mealProportion); });
+            deleteButton.onClick.AddListener(() => SubtractMealProportion(mealProportion));
+            deleteButton.onClick.AddListener(() => _mealEntryHandler.SubtractMealProportion(mealProportion));
 
             servingAmountText.transform.SetSiblingIndex(0);
             nameText.transform.SetSiblingIndex(1);
