@@ -9,6 +9,10 @@ namespace CalorieCounter.Managers {
 
         private KeyCode _menuKeyCode = KeyCode.Escape;
 
+        public void ShowMenu() {
+            _menuCanvas.SetActive(true);
+        }
+
         public void HideMenu() {
             _menuCanvas.SetActive(false);
         }

@@ -29,8 +29,8 @@ namespace CalorieCounter.Managers {
                 Destroy(gameObject);
             }
 
-            if (CustomSceneManager.CurrentScene != Scene.Menu) {
-                MenuManager.HideMenu();
+            if (CustomSceneManager.CurrentScene == Scene.Menu) {
+                MenuManager.ShowMenu();
             }
         }
 
