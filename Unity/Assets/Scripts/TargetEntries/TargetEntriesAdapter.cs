@@ -11,10 +11,14 @@ namespace CalorieCounter.TargetEntries {
         public TargetEntry LatestTargetEntry { get; private set; }
 
         [SerializeField]
+        private Scene _scene = default;
+
+        [DisplayBasedOnEnum("_scene", (int)Scene.MealEntries)]
+        [SerializeField]
         private Date _date = default;
 
         public void Refresh() {
-            if (GameManager.CustomSceneManager.CurrentScene == Scene.MealEntries) {
+            if (_scene == Scene.MealEntries) {
                 LatestTargetEntry = GameManager.TargetEntriesManager.GetLatestTargetEntry(_date.CurrentDate);
             }
         }

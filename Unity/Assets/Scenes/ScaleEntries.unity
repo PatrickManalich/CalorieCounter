@@ -1524,6 +1524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9ed6709f11ec942a6eb48bf2ba0c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scene: 3
   _date: {fileID: 0}
 --- !u!4 &435475411
 Transform:
