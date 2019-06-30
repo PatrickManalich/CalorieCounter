@@ -8,8 +8,13 @@ namespace CalorieCounter.Managers {
 
         public static CustomSceneManager CustomSceneManager { get { return Instance._customSceneManager; } }
 
+        public static MenuManager MenuManager { get { return Instance._menuManager; } }
+
         [SerializeField]
         private CustomSceneManager _customSceneManager = default;
+
+        [SerializeField]
+        private MenuManager _menuManager = default;
 
         private void Awake() {
             if (Instance == null) {

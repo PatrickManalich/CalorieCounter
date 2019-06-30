@@ -15,7 +15,9 @@ namespace CalorieCounter.Menu {
 
         private void Start() {
             foreach (var key in _sceneButtonDictionary.Keys) {
-                key.GetComponent<Button>().onClick.AddListener(() => GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[key]));
+                var button = key.GetComponent<Button>();
+                button.onClick.AddListener(() => GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[key]));
+                button.onClick.AddListener(() => GameManager.MenuManager.HideMenu());
             }
         }
     }
