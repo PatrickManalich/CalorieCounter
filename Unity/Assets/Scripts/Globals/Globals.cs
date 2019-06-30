@@ -6,6 +6,13 @@ namespace CalorieCounter {
 
     public enum DayType { None, Rest, Training, Vacation }
 
+    public enum Scene {
+        Menu = 0,
+        MealEntries = 1,
+        MealSources = 2,
+        ScaleEntries = 3,
+    }
+
     public static class GlobalPaths {
 
         public const string MealEntriesDir = @"MealEntries";
