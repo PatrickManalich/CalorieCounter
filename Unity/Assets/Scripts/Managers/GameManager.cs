@@ -23,6 +23,10 @@ namespace CalorieCounter.Managers {
             } else {
                 Destroy(gameObject);
             }
+
+            if (CustomSceneManager.CurrentScene != Scene.Menu) {
+                MenuManager.HideMenu();
+            }
         }
 
     }

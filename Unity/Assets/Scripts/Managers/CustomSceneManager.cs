@@ -6,6 +6,8 @@ namespace CalorieCounter.Managers {
 
     public class CustomSceneManager : MonoBehaviour {
 
+        public Scene CurrentScene { get { return (Scene)SceneManager.GetActiveScene().buildIndex; } }
+
         public void LoadScene(Scene scene) {
             StartCoroutine(LoadSceneAsync(scene));
         }
