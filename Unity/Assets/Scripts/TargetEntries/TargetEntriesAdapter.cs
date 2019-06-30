@@ -8,8 +8,6 @@ namespace CalorieCounter.TargetEntries {
 
     public class TargetEntriesAdapter : MonoBehaviour {
 
-        public TargetEntry LatestTargetEntry { get; private set; }
-
         [SerializeField]
         private Scene _scene = default;
 
@@ -17,10 +15,20 @@ namespace CalorieCounter.TargetEntries {
         [SerializeField]
         private Date _date = default;
 
-        public void Refresh() {
-            if (_scene == Scene.MealEntries) {
-                LatestTargetEntry = GameManager.TargetEntriesManager.GetLatestTargetEntry(_date.CurrentDate);
+        public TargetEntry GetLatestTargetEntry() {
+            if (_scene != Scene.MealEntries) {
+                return default;
             }
+
+            TargetEntry latestTargetEntry = default;
+            foreach (var targetEntry in GameManager.TargetEntriesManager.TargetEntries) {
+                if (targetEntry.Date <= _date.CurrentDate) {
+                    latestTargetEntry = targetEntry;
+                } else {
+                    break;
+                }
+            }
+            return latestTargetEntry;
         }
 
         public void ExportTargetEntries(ScaleEntriesScrollView scrollView) {
@@ -33,7 +41,6 @@ namespace CalorieCounter.TargetEntries {
 
         private void Awake() {
             GameManager.TargetEntriesManager.ImportTargetEntries();
-            Refresh();
         }
     }
 }

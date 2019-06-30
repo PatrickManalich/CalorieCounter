@@ -55,7 +55,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         public void Refresh() {
-            _targetEntry = _targetEntriesAdapter.LatestTargetEntry;
+            _targetEntry = _targetEntriesAdapter.GetLatestTargetEntry();
             RefreshTexts();
         }
 
