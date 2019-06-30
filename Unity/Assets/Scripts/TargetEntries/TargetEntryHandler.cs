@@ -10,10 +10,6 @@ namespace CalorieCounter.TargetEntries {
 
         private List<TargetEntry> _targetEntries = new List<TargetEntry>();
 
-        public void ClearTargetEntries() {
-            _targetEntries.Clear();
-        }
-
         public TargetEntry GetLatestTargetEntry(DateTime date) {
             TargetEntry latestTargetEntry = default;
             foreach(var targetEntry in _targetEntries) {
@@ -27,6 +23,7 @@ namespace CalorieCounter.TargetEntries {
         }
 
         public void ExportTargetEntry(ScaleEntriesScrollView scrollView) {
+            _targetEntries.Clear();
             foreach (var scaleEntry in scrollView.ScaleEntries) {
                 _targetEntries.Add(new TargetEntry(scaleEntry.Date, scaleEntry.Weight));
             }
