@@ -7,10 +7,7 @@ namespace CalorieCounter.MealEntries {
     public class Totals : MonoBehaviour {
 
         [SerializeField]
-        private TargetEntryHandler _targetEntryHandler = default;
-
-        [SerializeField]
-        private Date _date = default;
+        private TargetEntriesAdapter _targetEntriesAdapter = default;
 
         [SerializeField]
         private DayTypeDropdown _dayTypeDropdown = default;
@@ -58,7 +55,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         public void Refresh() {
-            _targetEntry = _targetEntryHandler.GetLatestTargetEntry(_date.CurrentDate);
+            _targetEntry = _targetEntriesAdapter.LatestTargetEntry;
             RefreshTexts();
         }
 

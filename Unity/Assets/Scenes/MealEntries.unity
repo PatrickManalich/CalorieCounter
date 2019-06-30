@@ -419,7 +419,7 @@ GameObject:
   - component: {fileID: 35425280}
   - component: {fileID: 35425279}
   m_Layer: 0
-  m_Name: TargetEntryHandler
+  m_Name: TargetEntriesAdapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -437,6 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9ed6709f11ec942a6eb48bf2ba0c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _date: {fileID: 593050228}
 --- !u!4 &35425280
 Transform:
   m_ObjectHideFlags: 0
@@ -3497,6 +3498,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 35425279}
+        m_MethodName: Refresh
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1508925266}
         m_MethodName: Refresh
         m_Mode: 1
@@ -4820,6 +4832,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1859382614}
         m_MethodName: HideInputFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 35425279}
+        m_MethodName: Refresh
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9919,6 +9942,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 35425279}
+        m_MethodName: Refresh
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1508925266}
         m_MethodName: Refresh
         m_Mode: 1
@@ -10979,6 +11013,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1859382614}
         m_MethodName: HideInputFields
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 35425279}
+        m_MethodName: Refresh
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13816,8 +13861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 440cbf93c7f7b9b42be0ab58e8af7b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetEntryHandler: {fileID: 35425279}
-  _date: {fileID: 593050228}
+  _targetEntriesAdapter: {fileID: 35425279}
   _dayTypeDropdown: {fileID: 945032638}
   _fatTotalText: {fileID: 469253153}
   _carbsTotalText: {fileID: 527433130}

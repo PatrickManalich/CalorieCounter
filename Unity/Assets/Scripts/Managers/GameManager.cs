@@ -10,11 +10,16 @@ namespace CalorieCounter.Managers {
 
         public static MenuManager MenuManager { get { return Instance._menuManager; } }
 
+        public static TargetEntriesManager TargetEntriesManager { get { return Instance._targetEntriesManager; } }
+
         [SerializeField]
         private CustomSceneManager _customSceneManager = default;
 
         [SerializeField]
         private MenuManager _menuManager = default;
+
+        [SerializeField]
+        private TargetEntriesManager _targetEntriesManager = default;
 
         private void Awake() {
             if (Instance == null) {
