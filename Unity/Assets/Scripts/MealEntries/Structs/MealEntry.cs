@@ -12,7 +12,7 @@ namespace CalorieCounter.MealEntries {
         public float TotalCarbs;
         public float TotalProtein;
         public float TotalCalories;
-        public Dictionary<MealSourceType, List<MealProportion>> MealProportionsDict;
+        public Dictionary<MealSourceType, List<MealProportion>> MealProportionsDictionary;
 
         public MealEntry(DateTime date, DayType dayType, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDict) {
             Date = date;
@@ -21,7 +21,7 @@ namespace CalorieCounter.MealEntries {
             TotalCarbs = GlobalMethods.Round(totalCarbs);
             TotalProtein = GlobalMethods.Round(totalProtein);
             TotalCalories = GlobalMethods.Round(totalCalories);
-            MealProportionsDict = mealProportionsDict;
+            MealProportionsDictionary = mealProportionsDict;
         }
 
         public static bool operator ==(MealEntry mealEntry1, MealEntry mealEntry2) {
@@ -41,9 +41,9 @@ namespace CalorieCounter.MealEntries {
 
         public override string ToString() {
             int mealProportionsDictCount = 0;
-            if (MealProportionsDict != null) {
+            if (MealProportionsDictionary != null) {
                 foreach(var mealSourceType in Enum.GetValues(typeof(MealSourceType)).Cast<MealSourceType>().ToList()) {
-                    mealProportionsDictCount += MealProportionsDict[mealSourceType].Count;
+                    mealProportionsDictCount += MealProportionsDictionary[mealSourceType].Count;
                 }
             }
             return string.Format("Date: {0}, Day Type: {1}, [ Total Fat: {2}, Total Carbs: {3}, Total Protein: {4}, Total Calories: {5} ], Meal Proportions Dict Count: {6}",

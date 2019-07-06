@@ -44,9 +44,9 @@ namespace CalorieCounter.MealEntries {
 
             MealEntry importedMealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDate);
             if (importedMealEntry != default) {
-                foreach (var key in importedMealEntry.MealProportionsDict.Keys) {
+                foreach (var key in importedMealEntry.MealProportionsDictionary.Keys) {
                     AbstractMealsScrollView scrollView = _scrollViewDictionary[key];
-                    foreach (var mealProportion in importedMealEntry.MealProportionsDict[key]) {
+                    foreach (var mealProportion in importedMealEntry.MealProportionsDictionary[key]) {
                         scrollView.AddMealProportion(mealProportion);
                         _totals.AddToTotals(mealProportion);
                     }
