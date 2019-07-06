@@ -9,7 +9,7 @@ namespace CalorieCounter.MealSources {
     public class CustomMealsScrollView : AbstractMealsScrollView {
 
         [SerializeField]
-        private MealEntryHandler _mealEntryHandler = default;
+        private MealEntriesAdapter _mealEntriesAdapter = default;
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
@@ -23,14 +23,18 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private CustomMealProportionInputFields _customMealInputFields = default;
 
-        private List<MealProportion> _mealProportions = new List<MealProportion>();
+        public List<MealProportion> _mealProportions { get; private set; } = new List<MealProportion>();
 
         public void AddCustomMealProportionFromInputFields() {
             MealProportion mealProportion = _customMealInputFields.GetCustomMealProportionFromInputFields();
             AddMealProportion(mealProportion);
-            _mealEntryHandler.AddMealProportion(mealProportion);
+            _mealEntriesAdapter.AddMealProportion(mealProportion);
         }
 
+        public override List<MealProportion> GetMealProportions()
+        {
+            return _mealProportions;
+        }
         public override void AddMealProportion(MealProportion mealProportion) {
             GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject nameText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -42,7 +46,7 @@ namespace CalorieCounter.MealSources {
             GameObject deleteButtonContainer = Instantiate(_deleteButtonContainerPrefab, _content.transform);
             Button deleteButton = deleteButtonContainer.GetComponentInChildren<Button>();
             deleteButton.onClick.AddListener(() => SubtractMealProportion(mealProportion));
-            deleteButton.onClick.AddListener(() => _mealEntryHandler.SubtractMealProportion(mealProportion));
+            deleteButton.onClick.AddListener(() => _mealEntriesAdapter.SubtractMealProportion(mealProportion));
 
             servingAmountText.transform.SetSiblingIndex(0);
             nameText.transform.SetSiblingIndex(1);

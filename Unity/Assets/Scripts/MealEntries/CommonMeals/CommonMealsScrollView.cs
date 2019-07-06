@@ -8,7 +8,7 @@ namespace CalorieCounter.MealEntries {
     public class CommonMealsScrollView : AbstractMealsScrollView {
 
         [SerializeField]
-        private MealEntryHandler _mealEntryHandler = default;
+        private MealEntriesAdapter _mealEntriesAdapter = default;
 
         [SerializeField]
         private ServingAmountDropdown _servingAmountDropdown = default;
@@ -30,9 +30,12 @@ namespace CalorieCounter.MealEntries {
         public void AddCommonMealProportionFromDropdowns() {
             var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
             AddMealProportion(mealProportion);
-            _mealEntryHandler.AddMealProportion(mealProportion);
+            _mealEntriesAdapter.AddMealProportion(mealProportion);
         }
-
+        public override List<MealProportion> GetMealProportions()
+        {
+            return _mealProportions;
+        }
         public override void AddMealProportion(MealProportion mealProportion) {
             GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject nameText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -43,7 +46,7 @@ namespace CalorieCounter.MealEntries {
 
             Button deleteButton = Instantiate(_deleteButtonContainerPrefab, _content.transform).GetComponentInChildren<Button>();
             deleteButton.onClick.AddListener(() => SubtractMealProportion(mealProportion));
-            deleteButton.onClick.AddListener(() => _mealEntryHandler.SubtractMealProportion(mealProportion));
+            deleteButton.onClick.AddListener(() => _mealEntriesAdapter.SubtractMealProportion(mealProportion));
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.MealSource.Name;
