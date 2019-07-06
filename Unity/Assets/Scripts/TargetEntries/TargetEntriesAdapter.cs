@@ -15,6 +15,9 @@ namespace CalorieCounter.TargetEntries {
         [SerializeField]
         private Date _date = default;
 
+        [SerializeField]
+        private ScaleEntriesScrollView _scaleEntriesScrollView = default;
+
         public TargetEntry GetLatestTargetEntry() {
             if (_scene != Scene.MealEntries) {
                 return default;
@@ -31,9 +34,9 @@ namespace CalorieCounter.TargetEntries {
             return latestTargetEntry;
         }
 
-        public void ExportTargetEntries(ScaleEntriesScrollView scrollView) {
+        public void ExportTargetEntries() {
             List<TargetEntry> targetEntries = new List<TargetEntry>();
-            foreach (var scaleEntry in scrollView.ScaleEntries) {
+            foreach (var scaleEntry in _scaleEntriesScrollView.ScaleEntries) {
                 targetEntries.Add(new TargetEntry(scaleEntry.Date, scaleEntry.Weight));
             }
             GameManager.TargetEntriesManager.ExportTargetEntries(targetEntries);
