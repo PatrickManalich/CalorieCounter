@@ -9,9 +9,6 @@ namespace CalorieCounter.MealSources {
     public class CustomMealsScrollView : AbstractMealsScrollView {
 
         [SerializeField]
-        private MealEntriesAdapter _mealEntriesAdapter = default;
-
-        [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
 
         [SerializeField]
@@ -23,12 +20,15 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private CustomMealProportionInputFields _customMealInputFields = default;
 
+        [SerializeField]
+        private Totals _totals = default;
+
         public List<MealProportion> _mealProportions { get; private set; } = new List<MealProportion>();
 
         public void AddCustomMealProportionFromInputFields() {
             MealProportion mealProportion = _customMealInputFields.GetCustomMealProportionFromInputFields();
             AddMealProportion(mealProportion);
-            _mealEntriesAdapter.AddMealProportion(mealProportion);
+            _totals.AddToTotals(mealProportion);
         }
 
         public override List<MealProportion> GetMealProportions()
@@ -46,7 +46,7 @@ namespace CalorieCounter.MealSources {
             GameObject deleteButtonContainer = Instantiate(_deleteButtonContainerPrefab, _content.transform);
             Button deleteButton = deleteButtonContainer.GetComponentInChildren<Button>();
             deleteButton.onClick.AddListener(() => SubtractMealProportion(mealProportion));
-            deleteButton.onClick.AddListener(() => _mealEntriesAdapter.SubtractMealProportion(mealProportion));
+            deleteButton.onClick.AddListener(() => _totals.RemoveFromTotals(mealProportion));
 
             servingAmountText.transform.SetSiblingIndex(0);
             nameText.transform.SetSiblingIndex(1);

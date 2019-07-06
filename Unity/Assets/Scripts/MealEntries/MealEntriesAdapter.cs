@@ -22,14 +22,6 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
-        public void AddMealProportion(MealProportion mealProportion) {
-            _totals.AddToTotals(mealProportion);
-        }
-
-        public void SubtractMealProportion(MealProportion mealProportion) {
-            _totals.RemoveFromTotals(mealProportion);
-        }
-
         public void ExportMealEntry() {
             var mealProportionsDictionary = new Dictionary<MealSourceType, List<MealProportion>>
             {
@@ -55,8 +47,8 @@ namespace CalorieCounter.MealEntries {
                 foreach (var key in importedMealEntry.MealProportionsDict.Keys) {
                     AbstractMealsScrollView scrollView = _scrollViewDictionary[key];
                     foreach (var mealProportion in importedMealEntry.MealProportionsDict[key]) {
-                        AddMealProportion(mealProportion);
                         scrollView.AddMealProportion(mealProportion);
+                        _totals.AddToTotals(mealProportion);
                     }
                 }
             }

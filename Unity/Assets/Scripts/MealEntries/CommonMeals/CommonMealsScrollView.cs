@@ -8,9 +8,6 @@ namespace CalorieCounter.MealEntries {
     public class CommonMealsScrollView : AbstractMealsScrollView {
 
         [SerializeField]
-        private MealEntriesAdapter _mealEntriesAdapter = default;
-
-        [SerializeField]
         private ServingAmountDropdown _servingAmountDropdown = default;
 
         [SerializeField]
@@ -25,12 +22,15 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private GridLayoutGroup _content = default;
 
+        [SerializeField]
+        private Totals _totals = default;
+
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
         public void AddCommonMealProportionFromDropdowns() {
             var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
             AddMealProportion(mealProportion);
-            _mealEntriesAdapter.AddMealProportion(mealProportion);
+            _totals.AddToTotals(mealProportion);
         }
         public override List<MealProportion> GetMealProportions()
         {
@@ -46,7 +46,7 @@ namespace CalorieCounter.MealEntries {
 
             Button deleteButton = Instantiate(_deleteButtonContainerPrefab, _content.transform).GetComponentInChildren<Button>();
             deleteButton.onClick.AddListener(() => SubtractMealProportion(mealProportion));
-            deleteButton.onClick.AddListener(() => _mealEntriesAdapter.SubtractMealProportion(mealProportion));
+            deleteButton.onClick.AddListener(() => _totals.RemoveFromTotals(mealProportion));
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.MealSource.Name;
