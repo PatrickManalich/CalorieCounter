@@ -7,7 +7,7 @@ namespace CalorieCounter.Managers {
 
     public class TargetEntriesManager : MonoBehaviour {
 
-        public List<TargetEntry> TargetEntries = new List<TargetEntry>();
+        public List<TargetEntry> TargetEntries { get; private set; }
 
         private bool _imported = false;
 
