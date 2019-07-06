@@ -8,9 +8,6 @@ public class MealSourcesScrollView : MonoBehaviour
 {
 
     [SerializeField]
-    private MealSourceHandler _mealSourceHandler = default;
-
-    [SerializeField]
     private GameObject _scrollViewTextPrefab = default;
 
     [SerializeField]
@@ -19,16 +16,14 @@ public class MealSourcesScrollView : MonoBehaviour
     [SerializeField]
     private MealSourceInputFields _mealSourceInputFields = default;
 
-    private SortedList<string, MealSource> _mealSources = new SortedList<string, MealSource>();
+    public SortedList<string, MealSource> MealSources { get; private set; } = new SortedList<string, MealSource>();
 
     public void AddMealSourceFromInputFields() {
-        MealSource mealSource = _mealSourceInputFields.GetMealSourceFromInputFields();
-        AddMealSource(mealSource);
-        _mealSourceHandler.AddMealSource(mealSource);
+        AddMealSource(_mealSourceInputFields.GetMealSourceFromInputFields());
     }
 
     public void AddMealSource(MealSource mealSource) {
-        _mealSources.Add(mealSource.Name, mealSource);
+        MealSources.Add(mealSource.Name, mealSource);
 
         GameObject mealNameText = Instantiate(_scrollViewTextPrefab, _content.transform);
         GameObject servingSizeText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -38,7 +33,7 @@ public class MealSourcesScrollView : MonoBehaviour
         GameObject calorieText = Instantiate(_scrollViewTextPrefab, _content.transform);
         GameObject descriptionText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-        int siblingStartIndex = _mealSources.IndexOfKey(mealSource.Name) * _content.constraintCount;
+        int siblingStartIndex = MealSources.IndexOfKey(mealSource.Name) * _content.constraintCount;
         mealNameText.transform.SetSiblingIndex(siblingStartIndex);
         servingSizeText.transform.SetSiblingIndex(siblingStartIndex + 1);
         fatText.transform.SetSiblingIndex(siblingStartIndex + 2);

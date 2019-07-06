@@ -327,7 +327,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f9df830763d244f8e468cb9d46f69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealSourceHandler: {fileID: 1982907307}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 8d0f0de8edbedd54281f0fc245b8c3b3,
     type: 3}
   _content: {fileID: 2136228772}
@@ -3950,7 +3949,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f9df830763d244f8e468cb9d46f69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealSourceHandler: {fileID: 1982907307}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 8d0f0de8edbedd54281f0fc245b8c3b3,
     type: 3}
   _content: {fileID: 1343613516}
@@ -7415,7 +7413,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1982907307}
-        m_MethodName: ExportMealSourcesDict
+        m_MethodName: ExportMealSourcesDictionary
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8688,7 +8686,7 @@ GameObject:
   - component: {fileID: 1982907308}
   - component: {fileID: 1982907307}
   m_Layer: 0
-  m_Name: MealSourceHandler
+  m_Name: MealSourcesAdapter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8706,7 +8704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5d68e459c689ac41b4e9dae04419967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scrollViewDict:
+  _scrollViewDictionary:
     reorderableList:
       canAdd: 1
       canRemove: 1

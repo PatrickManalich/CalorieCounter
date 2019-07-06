@@ -16,6 +16,8 @@ namespace CalorieCounter.Managers {
 
         public static MealEntriesManager MealEntriesManager { get { return Instance._mealEntriesManager; } }
 
+        public static MealSourcesManager MealSourcesManager { get { return Instance._mealSourcesManager; } }
+
         [SerializeField]
         private CustomSceneManager _customSceneManager = default;
 
@@ -31,6 +33,8 @@ namespace CalorieCounter.Managers {
         [SerializeField]
         private MealEntriesManager _mealEntriesManager = default;
 
+        [SerializeField]
+        private MealSourcesManager _mealSourcesManager = default;
         private void Awake() {
             if (Instance == null) {
                 Instance = this as GameManager;
