@@ -15,6 +15,7 @@ namespace CalorieCounter.TargetEntries {
         [SerializeField]
         private Date _date = default;
 
+        [DisplayBasedOnEnum("_scene", (int)Scene.ScaleEntries)]
         [SerializeField]
         private ScaleEntriesScrollView _scaleEntriesScrollView = default;
 
@@ -27,6 +28,11 @@ namespace CalorieCounter.TargetEntries {
         }
 
         public void ExportTargetEntries() {
+            if (_scene != Scene.ScaleEntries)
+            {
+                return;
+            }
+
             List<TargetEntry> targetEntries = new List<TargetEntry>();
             foreach (var scaleEntry in _scaleEntriesScrollView.ScaleEntries) {
                 targetEntries.Add(new TargetEntry(scaleEntry.Date, scaleEntry.Weight));
