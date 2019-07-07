@@ -6,7 +6,7 @@ namespace CalorieCounter.MealEntries {
 
     public struct MealEntry {
 
-        public DateTime Date;
+        public DateTime DateTime;
         public DayType DayType;
         public float TotalFat;
         public float TotalCarbs;
@@ -14,8 +14,8 @@ namespace CalorieCounter.MealEntries {
         public float TotalCalories;
         public Dictionary<MealSourceType, List<MealProportion>> MealProportionsDictionary;
 
-        public MealEntry(DateTime date, DayType dayType, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDict) {
-            Date = date;
+        public MealEntry(DateTime dateTime, DayType dayType, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDict) {
+            DateTime = dateTime;
             DayType = dayType;
             TotalFat = GlobalMethods.Round(totalFat);
             TotalCarbs = GlobalMethods.Round(totalCarbs);
@@ -47,7 +47,7 @@ namespace CalorieCounter.MealEntries {
                 }
             }
             return string.Format("Date: {0}, Day Type: {1}, [ Total Fat: {2}, Total Carbs: {3}, Total Protein: {4}, Total Calories: {5} ], Meal Proportions Dict Count: {6}",
-                Date.ToShortDateString(), DayType, TotalFat, TotalCarbs, TotalProtein, TotalCalories, mealProportionsDictCount);
+                DateTime.ToShortDateString(), DayType, TotalFat, TotalCarbs, TotalProtein, TotalCalories, mealProportionsDictCount);
         }
     }
 }
