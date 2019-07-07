@@ -1,18 +1,32 @@
 ﻿using CalorieCounter;
 using CalorieCounter.Managers;
 using CalorieCounter.MealSources;
-using CalorieCounter.Utilities;
 using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MealSourcesAdapter : MonoBehaviour
 {
+    [SerializeField]
+    private Scene _scene = default;
+
     [System.Serializable]
     private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealSourcesScrollView> { }
 
+    [DisplayBasedOnEnum("_scene", (int)Scene.MealSources)]
     [SerializeField]
     private ScrollViewDictionary _scrollViewDictionary = default;
+
+    public List<MealSource> GetMealSources(MealSourceType mealSourceType)
+    {
+        var importedMealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
+        var mealSources = new List<MealSource>();
+        foreach(var pair in importedMealSourcesDictionary[mealSourceType])
+        {
+            mealSources.Add(pair.Value);
+        }
+        return mealSources;
+    }
 
     public void ExportMealSourcesDictionary() {
         var mealSourcesDictionary = new Dictionary<MealSourceType, SortedList<string, MealSource>>() {
@@ -23,6 +37,11 @@ public class MealSourcesAdapter : MonoBehaviour
     }
 
     private void Start() {
+        if (_scene != Scene.MealSources)
+        {
+            return;
+        }
+
         var importedMealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
         if (importedMealSourcesDictionary != default) {
             foreach (var key in importedMealSourcesDictionary.Keys) {
