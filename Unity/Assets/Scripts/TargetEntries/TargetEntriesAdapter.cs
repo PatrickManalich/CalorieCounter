@@ -23,15 +23,7 @@ namespace CalorieCounter.TargetEntries {
                 return default;
             }
 
-            TargetEntry latestTargetEntry = default;
-            foreach (var targetEntry in GameManager.TargetEntriesManager.TargetEntries) {
-                if (targetEntry.Date <= _date.CurrentDate) {
-                    latestTargetEntry = targetEntry;
-                } else {
-                    break;
-                }
-            }
-            return latestTargetEntry;
+            return GameManager.TargetEntriesManager.ImportLatestTargetEntry(_date.CurrentDate);
         }
 
         public void ExportTargetEntries() {
@@ -40,10 +32,6 @@ namespace CalorieCounter.TargetEntries {
                 targetEntries.Add(new TargetEntry(scaleEntry.Date, scaleEntry.Weight));
             }
             GameManager.TargetEntriesManager.ExportTargetEntries(targetEntries);
-        }
-
-        private void Awake() {
-            GameManager.TargetEntriesManager.ImportTargetEntries();
         }
     }
 }

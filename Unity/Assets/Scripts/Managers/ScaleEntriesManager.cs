@@ -7,15 +7,16 @@ namespace CalorieCounter.Managers {
 
     public class ScaleEntriesManager : MonoBehaviour {
 
-        public List<ScaleEntry> ScaleEntries { get; private set; }
+        private List<ScaleEntry> _scaleEntries;
 
         private bool _imported = false;
 
-        public void ImportScaleEntries() {
+        public List<ScaleEntry> ImportScaleEntries() {
             if (!_imported) {
-                ScaleEntries = JsonConverter.Import<List<ScaleEntry>>(GlobalPaths.ScaleEntriesFilePath);
+                _scaleEntries = JsonConverter.Import<List<ScaleEntry>>(GlobalPaths.ScaleEntriesFilePath);
                 _imported = true;
             }
+            return _scaleEntries;
         }
 
         public void ExportScaleEntries(List<ScaleEntry> scaleEntries) {
