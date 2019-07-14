@@ -20,6 +20,11 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private Transform _contentTransform = default;
 
+        private static readonly char[] ValidSpecialChars = new char[]
+        {
+                    '-', '\'', '&', '.', ' ', '/', '%',
+        };
+
         public void ShowInputFields() {
             for (int i = 0; i < _inputFields.Count + 1; i++) {
                 if (i >= 0 && i <= 4 || i == 6) {
@@ -59,6 +64,21 @@ namespace CalorieCounter.MealSources {
         public MealSource GetMealSourceFromInputFields() {
             return  new MealSource(_inputFields[0].text, _inputFields[1].text, float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text),
                 float.Parse(_inputFields[4].text), _inputFields[5].text, MealSourceType);
+        }
+
+        private void Awake()
+        {
+            for (int i = 0; i < _inputFields.Count; i++) {
+                if (i == 0 || i == 1 || i == 5)
+                {
+                    _inputFields[i].onValidateInput = ValidateNonDecimalInput;
+                }
+            }
+        }
+
+        private static char ValidateNonDecimalInput(string text, int charIndex, char addedChar)
+        {
+            return char.IsLetterOrDigit(addedChar) || ValidSpecialChars.Contains(addedChar) ? addedChar : '\0';
         }
     }
 }
