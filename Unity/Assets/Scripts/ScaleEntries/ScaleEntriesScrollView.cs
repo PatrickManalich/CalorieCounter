@@ -18,6 +18,8 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private ScaleEntryInputFields _scaleEntriesInputFields = default;
 
+        [SerializeField]
+        private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
         public void AddScaleEntryFromInputFields() {
             AddScaleEntry(_scaleEntriesInputFields.GetScaleEntryFromInputFields());
@@ -39,6 +41,15 @@ namespace CalorieCounter.ScaleEntries {
             muscleMassText.transform.SetSiblingIndex(4);
             boneMassText.transform.SetSiblingIndex(5);
             bmiText.transform.SetSiblingIndex(6);
+
+            _scrollViewRowHighlighter.AddScrollViewText(dateText.GetComponent<ScrollViewText>());
+            _scrollViewRowHighlighter.AddScrollViewText(weightText.GetComponent<ScrollViewText>());
+            _scrollViewRowHighlighter.AddScrollViewText(bodyFatText.GetComponent<ScrollViewText>());
+            _scrollViewRowHighlighter.AddScrollViewText(bodyWaterText.GetComponent<ScrollViewText>());
+            _scrollViewRowHighlighter.AddScrollViewText(muscleMassText.GetComponent<ScrollViewText>());
+            _scrollViewRowHighlighter.AddScrollViewText(boneMassText.GetComponent<ScrollViewText>());
+            _scrollViewRowHighlighter.AddScrollViewText(bmiText.GetComponent<ScrollViewText>());
+
 
             dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Date.ToShortDateString();
             weightText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Weight.ToString();

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7777738268654225153}
   - component: {fileID: 7790752774634084602}
   - component: {fileID: 8931373295024438272}
+  - component: {fileID: 2297293454417654422}
   m_Layer: 5
   m_Name: ScrollViewText
   m_TagString: Untagged
@@ -157,3 +158,15 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2297293454417654422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4638125472956906485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1466c14bff7dc18419b17b82247d68bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
