@@ -44,7 +44,8 @@ namespace CalorieCounter
             if (e.HighlightEventType == HighlightEventType.Enter)
             {
                 _canvasGroup.alpha = 1;
-                _rectTransform.anchoredPosition = new Vector2(0, rowIndex * _content.cellSize.y * -1);
+                var contentOffset = _content.GetComponent<RectTransform>().anchoredPosition.y;
+                _rectTransform.anchoredPosition = new Vector2(0, (rowIndex * _content.cellSize.y * -1) + contentOffset);
             } else if(e.HighlightEventType == HighlightEventType.Exit)
             {
                 _canvasGroup.alpha = 0;
