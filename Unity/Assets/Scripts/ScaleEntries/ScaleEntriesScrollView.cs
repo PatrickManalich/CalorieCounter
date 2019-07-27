@@ -6,10 +6,15 @@ using UnityEngine.UI;
 namespace CalorieCounter.ScaleEntries
 {
 
-    public class ScaleEntriesScrollView : MonoBehaviour
+    public class ScaleEntriesScrollView : AbstractScrollView
     {
-
         public List<ScaleEntry> ScaleEntries { get; private set; } = new List<ScaleEntry>();
+
+        public override event TextAddedEventHandler TextAddedEvent;
+
+        protected override GridLayoutGroup Content { get { return _content; } }
+
+        protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
@@ -46,13 +51,13 @@ namespace CalorieCounter.ScaleEntries
             boneMassText.transform.SetSiblingIndex(5);
             bmiText.transform.SetSiblingIndex(6);
 
-            _scrollViewRowHighlighter.AddScrollViewText(dateText.GetComponent<ScrollViewText>());
-            _scrollViewRowHighlighter.AddScrollViewText(weightText.GetComponent<ScrollViewText>());
-            _scrollViewRowHighlighter.AddScrollViewText(bodyFatText.GetComponent<ScrollViewText>());
-            _scrollViewRowHighlighter.AddScrollViewText(bodyWaterText.GetComponent<ScrollViewText>());
-            _scrollViewRowHighlighter.AddScrollViewText(muscleMassText.GetComponent<ScrollViewText>());
-            _scrollViewRowHighlighter.AddScrollViewText(boneMassText.GetComponent<ScrollViewText>());
-            _scrollViewRowHighlighter.AddScrollViewText(bmiText.GetComponent<ScrollViewText>());
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(dateText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(weightText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(bodyFatText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(bodyWaterText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(muscleMassText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(boneMassText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(bmiText.GetComponent<ScrollViewText>()));
 
             dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Date.ToShortDateString();
             weightText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Weight.ToString();
@@ -65,29 +70,7 @@ namespace CalorieCounter.ScaleEntries
             ScaleEntries.Add(scaleEntry);
         }
 
-        public bool HasInputFields()
-        {
-            foreach (Transform child in _content.transform)
-            {
-                if (child.GetComponent<TMP_InputField>() != null)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private void Awake()
-        {
-            _scrollViewRowHighlighter.RowDestroyedEvent += OnRowDestroyedEvent;
-        }
-
-        private void OnDestroy()
-        {
-            _scrollViewRowHighlighter.RowDestroyedEvent -= OnRowDestroyedEvent;
-        }
-
-        private void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
+        protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
         {
             ScaleEntries.RemoveAt(e.DestroyedRowIndex);
         }

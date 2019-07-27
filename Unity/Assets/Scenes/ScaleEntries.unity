@@ -2743,7 +2743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deleteKeyCode: 127
   _content: {fileID: 2136228772}
-  _scrollView: {fileID: 0}
+  _scrollView: {fileID: 19275662}
 --- !u!225 &1013467832
 CanvasGroup:
   m_ObjectHideFlags: 0

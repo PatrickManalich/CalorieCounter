@@ -28,23 +28,21 @@ namespace CalorieCounter
         [SerializeField]
         private GridLayoutGroup _content = default;
 
+        [SerializeField]
+        private AbstractScrollView _scrollView = default;
+
         private List<ScrollViewText> _scrollViewTexts = new List<ScrollViewText>();
 
         private CanvasGroup _canvasGroup;
         private RectTransform _rectTransform;
         private int _highlightedRowIndex = -1;
 
-        public void AddScrollViewText(ScrollViewText scrollViewText)
-        {
-            scrollViewText.HighlightedEvent += OnHighlightedEvent;
-            _scrollViewTexts.Add(scrollViewText);
-        }
-
         private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
             _rectTransform = GetComponent<RectTransform>();
             _canvasGroup.alpha = 0;
+            _scrollView.TextAddedEvent += OnTextAddedEvent;
         }
 
         private void Update()
@@ -69,8 +67,14 @@ namespace CalorieCounter
             {
                 scrollViewText.HighlightedEvent -= OnHighlightedEvent;
             }
+            _scrollView.TextAddedEvent -= OnTextAddedEvent;
         }
 
+        private void OnTextAddedEvent(object sender, AbstractScrollView.TextAddedEventArgs e)
+        {
+            e.ScrollViewText.HighlightedEvent += OnHighlightedEvent;
+            _scrollViewTexts.Add(e.ScrollViewText);
+        }
 
         private void OnHighlightedEvent(object sender, ScrollViewText.HighlightedEventArgs e)
         {
@@ -86,5 +90,6 @@ namespace CalorieCounter
                 _canvasGroup.alpha = 0;
             }
         }
-}
+
+    }
 }
