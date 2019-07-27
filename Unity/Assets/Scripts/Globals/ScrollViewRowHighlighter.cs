@@ -36,7 +36,7 @@ namespace CalorieCounter
 
         public void AddScrollViewText(ScrollViewText scrollViewText)
         {
-            scrollViewText.HighlightEvent += OnHighlightEvent;
+            scrollViewText.HighlightedEvent += OnHighlightedEvent;
             _scrollViewTexts.Add(scrollViewText);
         }
 
@@ -67,20 +67,20 @@ namespace CalorieCounter
         {
             foreach(var scrollViewText in _scrollViewTexts)
             {
-                scrollViewText.HighlightEvent -= OnHighlightEvent;
+                scrollViewText.HighlightedEvent -= OnHighlightedEvent;
             }
         }
 
 
-        private void OnHighlightEvent(object sender, ScrollViewText.HighlightEventArgs e)
+        private void OnHighlightedEvent(object sender, ScrollViewText.HighlightedEventArgs e)
         {
-            if (e.HighlightEventType == HighlightEventType.Enter)
+            if (e.HighlightedEventType == HighlightedEventType.Enter)
             {
                 _highlightedRowIndex = e.SiblingIndex / _content.constraintCount;
                 _canvasGroup.alpha = 1;
                 var contentOffset = _content.GetComponent<RectTransform>().anchoredPosition.y;
                 _rectTransform.anchoredPosition = new Vector2(0, (_highlightedRowIndex * _content.cellSize.y * -1) + contentOffset);
-            } else if(e.HighlightEventType == HighlightEventType.Exit)
+            } else if(e.HighlightedEventType == HighlightedEventType.Exit)
             {
                 _highlightedRowIndex = -1;
                 _canvasGroup.alpha = 0;
