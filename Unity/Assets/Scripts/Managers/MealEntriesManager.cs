@@ -21,6 +21,8 @@ namespace CalorieCounter.Managers {
 
         public void ExportMealEntry(MealEntry mealEntry, DateTime dateTime) {
             JsonConverter.Export(mealEntry, GetMealEntryPath(dateTime));
+            _importedMealEntries.Remove(dateTime);
+            ImportMealEntry(dateTime);
         }
 
         private string GetMealEntryPath(DateTime dateTime) {

@@ -21,6 +21,8 @@ namespace CalorieCounter.Managers {
 
         public void ExportScaleEntries(List<ScaleEntry> scaleEntries) {
             JsonConverter.Export(scaleEntries, GlobalPaths.ScaleEntriesFilePath);
+            _imported = false;
+            ImportScaleEntries();
         }
     }
 }

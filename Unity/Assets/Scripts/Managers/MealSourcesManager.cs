@@ -26,6 +26,8 @@ namespace CalorieCounter.Managers
         public void ExportMealSourcesDictionary(Dictionary<MealSourceType, SortedList<string, MealSource>> mealSourcesDictionary)
         {
             JsonConverter.Export(mealSourcesDictionary, GlobalPaths.MealSourcesFilePath);
+            _imported = false;
+            ImportMealSourcesDictionary();
         }
     }
 }

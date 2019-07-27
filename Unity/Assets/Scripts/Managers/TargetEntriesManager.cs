@@ -35,6 +35,8 @@ namespace CalorieCounter.Managers {
 
         public void ExportTargetEntries(List<TargetEntry> targetEntries) {
             JsonConverter.Export(targetEntries, GlobalPaths.TargetEntriesFilePath);
+            _imported = false;
+            ImportLatestTargetEntry(DateTime.Now);
         }
     }
 }
