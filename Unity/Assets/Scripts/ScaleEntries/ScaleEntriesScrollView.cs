@@ -3,9 +3,11 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.ScaleEntries {
+namespace CalorieCounter.ScaleEntries
+{
 
-    public class ScaleEntriesScrollView : MonoBehaviour {
+    public class ScaleEntriesScrollView : MonoBehaviour
+    {
 
         public List<ScaleEntry> ScaleEntries { get; private set; } = new List<ScaleEntry>();
 
@@ -21,11 +23,13 @@ namespace CalorieCounter.ScaleEntries {
         [SerializeField]
         private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
-        public void AddScaleEntryFromInputFields() {
+        public void AddScaleEntryFromInputFields()
+        {
             AddScaleEntry(_scaleEntriesInputFields.GetScaleEntryFromInputFields());
         }
 
-        public void AddScaleEntry(ScaleEntry scaleEntry) {
+        public void AddScaleEntry(ScaleEntry scaleEntry)
+        {
             GameObject dateText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject weightText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject bodyFatText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -50,7 +54,6 @@ namespace CalorieCounter.ScaleEntries {
             _scrollViewRowHighlighter.AddScrollViewText(boneMassText.GetComponent<ScrollViewText>());
             _scrollViewRowHighlighter.AddScrollViewText(bmiText.GetComponent<ScrollViewText>());
 
-
             dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Date.ToShortDateString();
             weightText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Weight.ToString();
             bodyFatText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BodyFat.ToString();
@@ -62,13 +65,31 @@ namespace CalorieCounter.ScaleEntries {
             ScaleEntries.Add(scaleEntry);
         }
 
-        public bool HasInputFields() {
-            foreach (Transform child in _content.transform) {
-                if (child.GetComponent<TMP_InputField>() != null) {
+        public bool HasInputFields()
+        {
+            foreach (Transform child in _content.transform)
+            {
+                if (child.GetComponent<TMP_InputField>() != null)
+                {
                     return true;
                 }
             }
             return false;
+        }
+
+        private void Awake()
+        {
+            _scrollViewRowHighlighter.RowDestroyedEvent += OnRowDestroyedEvent;
+        }
+
+        private void OnDestroy()
+        {
+            _scrollViewRowHighlighter.RowDestroyedEvent -= OnRowDestroyedEvent;
+        }
+
+        private void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
+        {
+            ScaleEntries.RemoveAt(e.DestroyedRowIndex);
         }
     }
 }

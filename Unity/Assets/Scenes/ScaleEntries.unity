@@ -3151,6 +3151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9318f9e9a402d4593cd0c4af47534e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _deleteKeyCode: 127
   _content: {fileID: 2136228772}
 --- !u!225 &1013467832
 CanvasGroup:
@@ -3222,12 +3223,14 @@ MonoBehaviour:
     - {fileID: 497729716}
     - {fileID: 1128983964}
     - {fileID: 1625267895}
+    - {fileID: 1013467827}
     _keys:
     - {fileID: 815858153}
     - {fileID: 1374171245}
     - {fileID: 497729716}
     - {fileID: 1128983964}
     - {fileID: 1625267895}
+    - {fileID: 1013467827}
     _values:
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
@@ -3257,6 +3260,11 @@ MonoBehaviour:
       InteractableAfterExecute: 1
       Targets:
       - Target: {fileID: 1374171245}
+        InteractableAfterExecute: 1
+    - InteractableAfterAwake: 1
+      InteractableAfterExecute: 1
+      Targets:
+      - Target: {fileID: 815858153}
         InteractableAfterExecute: 1
 --- !u!4 &1077719443
 Transform:
