@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    public abstract class AbstractMealsScrollView : MonoBehaviour {
+    public abstract class AbstractMealsScrollView : AbstractScrollView {
 
         public abstract List<MealProportion> GetMealProportions();
         public abstract void AddMealProportion(MealProportion mealProportion);

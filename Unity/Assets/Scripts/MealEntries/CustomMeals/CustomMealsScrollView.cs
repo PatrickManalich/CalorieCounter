@@ -8,11 +8,14 @@ namespace CalorieCounter.MealSources {
 
     public class CustomMealsScrollView : AbstractMealsScrollView {
 
-        [SerializeField]
-        private GameObject _scrollViewTextPrefab = default;
+        public override event TextAddedEventHandler TextAddedEvent;
+
+        protected override GridLayoutGroup Content { get { return _content; } }
+
+        protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
 
         [SerializeField]
-        private GameObject _deleteButtonContainerPrefab = default;
+        private GameObject _scrollViewTextPrefab = default;
 
         [SerializeField]
         private GridLayoutGroup _content = default;
@@ -22,6 +25,9 @@ namespace CalorieCounter.MealSources {
 
         [SerializeField]
         private Totals _totals = default;
+
+        [SerializeField]
+        private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
         public List<MealProportion> _mealProportions { get; private set; } = new List<MealProportion>();
 
@@ -43,18 +49,12 @@ namespace CalorieCounter.MealSources {
             GameObject proteinText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-            GameObject deleteButtonContainer = Instantiate(_deleteButtonContainerPrefab, _content.transform);
-            Button deleteButton = deleteButtonContainer.GetComponentInChildren<Button>();
-            deleteButton.onClick.AddListener(() => SubtractMealProportion(mealProportion));
-            deleteButton.onClick.AddListener(() => _totals.RemoveFromTotals(mealProportion));
-
-            servingAmountText.transform.SetSiblingIndex(0);
-            nameText.transform.SetSiblingIndex(1);
-            fatText.transform.SetSiblingIndex(2);
-            carbText.transform.SetSiblingIndex(3);
-            proteinText.transform.SetSiblingIndex(4);
-            calorieText.transform.SetSiblingIndex(5);
-            deleteButtonContainer.transform.SetSiblingIndex(6);
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(servingAmountText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(nameText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(fatText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(carbText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(proteinText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(calorieText.GetComponent<ScrollViewText>()));
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.MealSource.Name;
@@ -82,6 +82,13 @@ namespace CalorieCounter.MealSources {
                 Destroy(child.gameObject);
             }
             _mealProportions.Clear();
+        }
+
+        protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
+        {
+            var destroyedMealProportion = _mealProportions[e.DestroyedRowIndex];
+            SubtractMealProportion(destroyedMealProportion);
+            _totals.RemoveFromTotals(destroyedMealProportion);
         }
     }
 }

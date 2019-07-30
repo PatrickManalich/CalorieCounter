@@ -35,29 +35,37 @@ namespace CalorieCounter
 
         private CanvasGroup _canvasGroup;
         private RectTransform _rectTransform;
-        private int _highlightedRowIndex = -1;
+        private RectTransform _contentRectTransform;
+        private int _highlightedRowIndex;
 
         private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
             _rectTransform = GetComponent<RectTransform>();
-            _canvasGroup.alpha = 0;
+            _contentRectTransform = _content.GetComponent<RectTransform>();
+            ExitHighlightRow();
             _scrollView.TextAddedEvent += OnTextAddedEvent;
         }
 
         private void Update()
         {
-            if (Input.GetKeyDown(_deleteKeyCode) && _highlightedRowIndex != -1)
+            if (Input.GetKeyDown(_deleteKeyCode) && _highlightedRowIndex != -1 && _contentRectTransform.childCount > 0)
             {
                 int childStartIndex = _highlightedRowIndex * _content.constraintCount;
                 for (int i = _content.constraintCount - 1; i >= 0 ; i--)
                 {
                     int childIndex = childStartIndex + i;
                     _scrollViewTexts.RemoveAt(childIndex);
-                    Destroy(_content.transform.GetChild(childIndex).gameObject);
+                    Destroy(_contentRectTransform.GetChild(childIndex).gameObject);
                 }
                 FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
                 RowDestroyedEvent?.Invoke(this, new RowDestroyedEventArgs(_highlightedRowIndex));
+
+                if (_scrollViewTexts.Count == 0 || _highlightedRowIndex >= _scrollViewTexts.Count / _content.constraintCount)
+                {
+                    ExitHighlightRow();
+                }
+
             }
         }
 
@@ -80,15 +88,25 @@ namespace CalorieCounter
         {
             if (e.HighlightedEventType == HighlightedEventType.Enter)
             {
-                _highlightedRowIndex = e.SiblingIndex / _content.constraintCount;
-                _canvasGroup.alpha = 1;
-                var contentOffset = _content.GetComponent<RectTransform>().anchoredPosition.y;
-                _rectTransform.anchoredPosition = new Vector2(0, (_highlightedRowIndex * _content.cellSize.y * -1) + contentOffset);
+                EnterHighlightRow(e.SiblingIndex);
             } else if(e.HighlightedEventType == HighlightedEventType.Exit)
             {
-                _highlightedRowIndex = -1;
-                _canvasGroup.alpha = 0;
+                ExitHighlightRow();
             }
+        }
+
+        private void EnterHighlightRow(int siblingIndex)
+        {
+            _highlightedRowIndex = siblingIndex / _content.constraintCount;
+            _canvasGroup.alpha = 1;
+            var contentOffset = _contentRectTransform.anchoredPosition.y;
+            _rectTransform.anchoredPosition = new Vector2(0, (_highlightedRowIndex * _content.cellSize.y * -1) + contentOffset);
+        }
+
+        private void ExitHighlightRow()
+        {
+            _highlightedRowIndex = -1;
+            _canvasGroup.alpha = 0;
         }
 
     }
