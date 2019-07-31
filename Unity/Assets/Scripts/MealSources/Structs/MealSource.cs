@@ -12,6 +12,7 @@ namespace CalorieCounter.MealSources {
         public float Calories;
         public string Description;
         public MealSourceType MealSourceType;
+        public bool Archived;
 
         public MealSource(string name, string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType) {
             Name = name;
@@ -22,6 +23,7 @@ namespace CalorieCounter.MealSources {
             Calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
             Description = description;
             MealSourceType = mealSourceType;
+            Archived = false;
         }
 
         public static MealSource CreateCustomMealSource(float fat, float carbs, float protein) {
@@ -44,8 +46,8 @@ namespace CalorieCounter.MealSources {
         }
 
         public override string ToString() {
-            return string.Format("Name: {0}, Serving Size: {1}, [ Fat: {2}, Carbs: {3}, Protein: {4}, Calories: {5} ], Description: {6}, Meal Type: {7}",
-                Name, ServingSize , Fat, Carbs, Protein, Calories, Description, MealSourceType);
+            return string.Format("Name: {0}, Serving Size: {1}, [ Fat: {2}, Carbs: {3}, Protein: {4}, Calories: {5} ], Description: {6}, Meal Type: {7}, Archived: {8}",
+                Name, ServingSize , Fat, Carbs, Protein, Calories, Description, MealSourceType, Archived);
         }
     }
 }

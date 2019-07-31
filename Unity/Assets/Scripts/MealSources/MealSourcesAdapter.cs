@@ -31,8 +31,8 @@ namespace CalorieCounter.MealSources {
         public void ExportMealSourcesDictionary()
         {
             var mealSourcesDictionary = new Dictionary<MealSourceType, SortedList<string, MealSource>>() {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSources },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSources },
+                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].ArchivedMealSources },
+                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].ArchivedMealSources },
             };
             GameManager.MealSourcesManager.ExportMealSourcesDictionary(mealSourcesDictionary);
         }

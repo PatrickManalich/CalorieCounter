@@ -7,7 +7,7 @@ namespace CalorieCounter.MealSources {
 
     public class MealSourcesScrollView : AbstractScrollView
     {
-        public SortedList<string, MealSource> MealSources { get; private set; } = new SortedList<string, MealSource>();
+        public SortedList<string, MealSource> ArchivedMealSources { get; private set; } = new SortedList<string, MealSource>();
 
         public override event TextAddedEventHandler TextAddedEvent;
 
@@ -27,6 +27,8 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
+        private SortedList<string, MealSource> _nonArchivedMealSources = new SortedList<string, MealSource>();
+
         public void AddMealSourceFromInputFields()
         {
             AddMealSource(_mealSourceInputFields.GetMealSourceFromInputFields());
@@ -34,7 +36,13 @@ namespace CalorieCounter.MealSources {
 
         public void AddMealSource(MealSource mealSource)
         {
-            MealSources.Add(mealSource.Name, mealSource);
+            ArchivedMealSources.Add(mealSource.Name, mealSource);
+
+            if (mealSource.Archived)
+            {
+                return;
+            }
+            _nonArchivedMealSources.Add(mealSource.Name, mealSource);
 
             GameObject mealNameText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject servingSizeText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -44,7 +52,7 @@ namespace CalorieCounter.MealSources {
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject descriptionText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-            int siblingStartIndex = MealSources.IndexOfKey(mealSource.Name) * _content.constraintCount;
+            int siblingStartIndex = _nonArchivedMealSources.IndexOfKey(mealSource.Name) * _content.constraintCount;
             mealNameText.transform.SetSiblingIndex(siblingStartIndex);
             servingSizeText.transform.SetSiblingIndex(siblingStartIndex + 1);
             fatText.transform.SetSiblingIndex(siblingStartIndex + 2);
@@ -72,7 +80,11 @@ namespace CalorieCounter.MealSources {
 
         protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
         {
-            MealSources.RemoveAt(e.DestroyedRowIndex);
+            var archivedMealSource = _nonArchivedMealSources.Values[e.DestroyedRowIndex];
+            archivedMealSource.Archived = true;
+            ArchivedMealSources.RemoveAt(ArchivedMealSources.IndexOfKey(archivedMealSource.Name));
+            ArchivedMealSources.Add(archivedMealSource.Name, archivedMealSource);
+            _nonArchivedMealSources.RemoveAt(e.DestroyedRowIndex);
         }
     }
 }
