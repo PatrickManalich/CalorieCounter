@@ -5,8 +5,15 @@ using UnityEngine.UI;
 
 namespace CalorieCounter.MealSources {
 
-    public class MealSourcesScrollView : MonoBehaviour
+    public class MealSourcesScrollView : AbstractScrollView
     {
+        public SortedList<string, MealSource> MealSources { get; private set; } = new SortedList<string, MealSource>();
+
+        public override event TextAddedEventHandler TextAddedEvent;
+
+        protected override GridLayoutGroup Content { get { return _content; } }
+
+        protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
@@ -17,7 +24,8 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private MealSourceInputFields _mealSourceInputFields = default;
 
-        public SortedList<string, MealSource> MealSources { get; private set; } = new SortedList<string, MealSource>();
+        [SerializeField]
+        private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
         public void AddMealSourceFromInputFields()
         {
@@ -45,6 +53,14 @@ namespace CalorieCounter.MealSources {
             calorieText.transform.SetSiblingIndex(siblingStartIndex + 5);
             descriptionText.transform.SetSiblingIndex(siblingStartIndex + 6);
 
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(mealNameText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(servingSizeText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(fatText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(carbText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(proteinText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(calorieText.GetComponent<ScrollViewText>()));
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(descriptionText.GetComponent<ScrollViewText>()));
+
             mealNameText.GetComponent<TextMeshProUGUI>().text = mealSource.Name;
             servingSizeText.GetComponent<TextMeshProUGUI>().text = mealSource.ServingSize;
             fatText.GetComponent<TextMeshProUGUI>().text = mealSource.Fat.ToString();
@@ -52,6 +68,11 @@ namespace CalorieCounter.MealSources {
             proteinText.GetComponent<TextMeshProUGUI>().text = mealSource.Protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealSource.Calories.ToString();
             descriptionText.GetComponent<TextMeshProUGUI>().text = mealSource.Description;
+        }
+
+        protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
+        {
+            MealSources.RemoveAt(e.DestroyedRowIndex);
         }
     }
 }
