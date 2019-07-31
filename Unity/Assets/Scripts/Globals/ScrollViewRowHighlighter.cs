@@ -43,6 +43,8 @@ namespace CalorieCounter
             _canvasGroup = GetComponent<CanvasGroup>();
             _rectTransform = GetComponent<RectTransform>();
             _contentRectTransform = _content.GetComponent<RectTransform>();
+
+            _rectTransform.sizeDelta = new Vector2(0, _content.cellSize.y);
             ExitHighlightRow();
             _scrollView.TextAddedEvent += OnTextAddedEvent;
         }
