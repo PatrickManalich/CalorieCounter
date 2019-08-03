@@ -42,6 +42,8 @@ namespace CalorieCounter.MealSources {
             return _mealProportions;
         }
         public override void AddMealProportion(MealProportion mealProportion) {
+            _mealProportions.Add(mealProportion);
+
             GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject nameText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject fatText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -62,8 +64,6 @@ namespace CalorieCounter.MealSources {
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
-
-            _mealProportions.Add(mealProportion);
         }
 
         public override void SubtractMealProportion(MealProportion mealProportion) {
