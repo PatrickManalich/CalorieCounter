@@ -1,6 +1,7 @@
 ﻿using CalorieCounter.Managers;
 using CalorieCounter.MealEntries;
 using CalorieCounter.ScaleEntries;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,9 +34,10 @@ namespace CalorieCounter.TargetEntries {
                 return;
             }
 
-            List<TargetEntry> targetEntries = new List<TargetEntry>();
-            foreach (var scaleEntry in _scaleEntriesScrollView.ScaleEntries) {
-                targetEntries.Add(new TargetEntry(scaleEntry.Date, scaleEntry.Weight));
+            SortedList<DateTime, TargetEntry> targetEntries = new SortedList<DateTime, TargetEntry>();
+            foreach (var scaleEntry in _scaleEntriesScrollView.ScaleEntries.Values) {
+                var targetEntry = new TargetEntry(scaleEntry.Date, scaleEntry.Weight);
+                targetEntries.Add(targetEntry.Date, targetEntry);
             }
             GameManager.TargetEntriesManager.ExportTargetEntries(targetEntries);
         }

@@ -1,4 +1,5 @@
 ﻿using CalorieCounter.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -51,7 +52,7 @@ namespace CalorieCounter.ScaleEntries {
         }
 
         public ScaleEntry GetScaleEntryFromInputFields() {
-            return new ScaleEntry(float.Parse(_inputFields[0].text), float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text),
+            return new ScaleEntry(DateTime.Today, float.Parse(_inputFields[0].text), float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text),
                 float.Parse(_inputFields[3].text), float.Parse(_inputFields[4].text), float.Parse(_inputFields[5].text));     
         }
     }

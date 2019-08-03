@@ -8,35 +8,28 @@ namespace CalorieCounter.Managers {
 
     public class TargetEntriesManager : MonoBehaviour {
 
-        public List<TargetEntry> _targetEntries;
+        public SortedList<DateTime, TargetEntry> _targetEntries;
 
         private bool _imported = false;
 
         public TargetEntry ImportLatestTargetEntry(DateTime dateTime) {
             if (!_imported) {
-                _targetEntries = JsonConverter.Import<List<TargetEntry>>(GlobalPaths.TargetEntriesFilePath);
+                _targetEntries = JsonConverter.Import<SortedList<DateTime, TargetEntry>>(GlobalPaths.TargetEntriesFilePath);
                 _imported = true;
             }
 
-            TargetEntry latestTargetEntry = default;
-            foreach (var targetEntry in _targetEntries)
+            DateTime latestTargetEntryKey = dateTime;
+            while (!_targetEntries.ContainsKey(latestTargetEntryKey))
             {
-                if (targetEntry.Date <= dateTime)
-                {
-                    latestTargetEntry = targetEntry;
-                }
-                else
-                {
-                    break;
-                }
+                latestTargetEntryKey = latestTargetEntryKey.AddDays(-1);
             }
-            return latestTargetEntry;
+            return _targetEntries[latestTargetEntryKey];
         }
 
-        public void ExportTargetEntries(List<TargetEntry> targetEntries) {
+        public void ExportTargetEntries(SortedList<DateTime, TargetEntry> targetEntries) {
             JsonConverter.Export(targetEntries, GlobalPaths.TargetEntriesFilePath);
             _imported = false;
-            ImportLatestTargetEntry(DateTime.Now);
+            ImportLatestTargetEntry(DateTime.Today);
         }
     }
 }

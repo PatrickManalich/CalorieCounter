@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,7 +9,7 @@ namespace CalorieCounter.ScaleEntries
 
     public class ScaleEntriesScrollView : AbstractScrollView
     {
-        public List<ScaleEntry> ScaleEntries { get; private set; } = new List<ScaleEntry>();
+        public SortedList<DateTime, ScaleEntry> ScaleEntries { get; private set; } = new SortedList<DateTime, ScaleEntry>();
 
         public override event TextAddedEventHandler TextAddedEvent;
 
@@ -35,6 +36,8 @@ namespace CalorieCounter.ScaleEntries
 
         public void AddScaleEntry(ScaleEntry scaleEntry)
         {
+            ScaleEntries.Add(scaleEntry.Date, scaleEntry);
+
             GameObject dateText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject weightText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject bodyFatText = Instantiate(_scrollViewTextPrefab, _content.transform);
@@ -43,13 +46,14 @@ namespace CalorieCounter.ScaleEntries
             GameObject boneMassText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject bmiText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-            dateText.transform.SetSiblingIndex(0);
-            weightText.transform.SetSiblingIndex(1);
-            bodyFatText.transform.SetSiblingIndex(2);
-            bodyWaterText.transform.SetSiblingIndex(3);
-            muscleMassText.transform.SetSiblingIndex(4);
-            boneMassText.transform.SetSiblingIndex(5);
-            bmiText.transform.SetSiblingIndex(6);
+            int siblingStartIndex = (ScaleEntries.IndexOfKey(scaleEntry.Date) * _content.constraintCount) + _content.constraintCount;
+            dateText.transform.SetSiblingIndex(siblingStartIndex);
+            weightText.transform.SetSiblingIndex(siblingStartIndex + 1);
+            bodyFatText.transform.SetSiblingIndex(siblingStartIndex + 2);
+            bodyWaterText.transform.SetSiblingIndex(siblingStartIndex + 3);
+            muscleMassText.transform.SetSiblingIndex(siblingStartIndex + 4);
+            boneMassText.transform.SetSiblingIndex(siblingStartIndex + 5);
+            bmiText.transform.SetSiblingIndex(siblingStartIndex + 6);
 
             TextAddedEvent?.Invoke(this, new TextAddedEventArgs(dateText.GetComponent<ScrollViewText>()));
             TextAddedEvent?.Invoke(this, new TextAddedEventArgs(weightText.GetComponent<ScrollViewText>()));
@@ -66,8 +70,6 @@ namespace CalorieCounter.ScaleEntries
             muscleMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.MuscleMass.ToString();
             boneMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BoneMass.ToString();
             bmiText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Bmi.ToString();
-
-            ScaleEntries.Add(scaleEntry);
         }
 
         protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)

@@ -12,8 +12,8 @@ namespace CalorieCounter.ScaleEntries {
         public float BoneMass;
         public float Bmi;
 
-        public ScaleEntry(float weight, float bodyFat, float bodyWater, float muscleMass, float boneMass, float bmi) {
-            Date = DateTime.Today;
+        public ScaleEntry(DateTime date, float weight, float bodyFat, float bodyWater, float muscleMass, float boneMass, float bmi) {
+            Date = date;
             Weight = weight > 0 ? GlobalMethods.Round(weight) : 0;
             BodyFat = bodyFat > 0 ? GlobalMethods.Round(bodyFat) : 0;
             BodyWater = bodyWater > 0 ? GlobalMethods.Round(bodyWater) : 0;
