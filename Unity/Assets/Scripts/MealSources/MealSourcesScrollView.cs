@@ -52,7 +52,7 @@ namespace CalorieCounter.MealSources {
             GameObject calorieText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject descriptionText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-            int siblingStartIndex = _nonArchivedMealSources.IndexOfKey(mealSource.Name) * _content.constraintCount;
+            int siblingStartIndex = (_nonArchivedMealSources.IndexOfKey(mealSource.Name) * _content.constraintCount) + _content.constraintCount;
             mealNameText.transform.SetSiblingIndex(siblingStartIndex);
             servingSizeText.transform.SetSiblingIndex(siblingStartIndex + 1);
             fatText.transform.SetSiblingIndex(siblingStartIndex + 2);
