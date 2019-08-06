@@ -4181,7 +4181,7 @@ MonoBehaviour:
   - {fileID: 1562177498}
   - {fileID: 1764773832}
   _blank: {fileID: 909936373}
-  _contentTransform: {fileID: 2136228770}
+  _scrollRect: {fileID: 19275661}
 --- !u!1 &1660813124
 GameObject:
   m_ObjectHideFlags: 0
