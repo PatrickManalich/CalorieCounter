@@ -9,7 +9,7 @@ namespace CalorieCounter.MealSources {
     public class MealSourceInputFields : MonoBehaviour {
 
         [SerializeField]
-        private MealSourceType MealSourceType = default;
+        private MealSourceType _mealSourceType = default;
 
         [SerializeField]
         private List<TMP_InputField> _inputFields = default;
@@ -63,7 +63,7 @@ namespace CalorieCounter.MealSources {
 
         public MealSource GetMealSourceFromInputFields() {
             return  new MealSource(_inputFields[0].text, _inputFields[1].text, float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text),
-                float.Parse(_inputFields[4].text), _inputFields[5].text, MealSourceType);
+                float.Parse(_inputFields[4].text), _inputFields[5].text, _mealSourceType);
         }
 
         private void Awake()

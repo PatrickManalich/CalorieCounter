@@ -330,7 +330,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _content: {fileID: 2136228772}
   _mealSourceInputFields: {fileID: 2073791306}
   _scrollViewRowHighlighter: {fileID: 263654378}
 --- !u!1 &58786824
@@ -4225,7 +4224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _content: {fileID: 1343613516}
   _mealSourceInputFields: {fileID: 2026784804}
   _scrollViewRowHighlighter: {fileID: 1831500781}
 --- !u!114 &688997044
@@ -8972,7 +8970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5bc8953e8ce4804c94528254b6d2164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MealSourceType: 1
+  _mealSourceType: 1
   _inputFields:
   - {fileID: 227585105}
   - {fileID: 2123009864}
@@ -9037,7 +9035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5bc8953e8ce4804c94528254b6d2164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MealSourceType: 0
+  _mealSourceType: 0
   _inputFields:
   - {fileID: 1080882261}
   - {fileID: 390356435}
