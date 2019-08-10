@@ -70,6 +70,9 @@ namespace CalorieCounter.MealSources {
             proteinText.GetComponent<TextMeshProUGUI>().text = mealSource.Protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealSource.Calories.ToString();
             descriptionText.GetComponent<TextMeshProUGUI>().text = mealSource.Description;
+
+            var percent = 1 - (_nonArchivedMealSources.IndexOfKey(mealSource.Name) / (float) (_nonArchivedMealSources.Count - 1));
+            ScrollToPercent(percent);
         }
 
         protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)

@@ -41,7 +41,12 @@ namespace CalorieCounter
 
         public void ScrollToBottom()
         {
-            StartCoroutine(ScrollToBottomCoroutine());
+            StartCoroutine(ScrollToPercentCoroutine(0));
+        }
+
+        public void ScrollToPercent(float percent)
+        {
+            StartCoroutine(ScrollToPercentCoroutine(percent));
         }
 
         public void AddToScrollView(Transform transform)
@@ -67,10 +72,10 @@ namespace CalorieCounter
             ScrollViewRowHighlighter.RowDestroyedEvent -= OnRowDestroyedEvent;
         }
 
-        private IEnumerator ScrollToBottomCoroutine()
+        private IEnumerator ScrollToPercentCoroutine (float percent)
         {
             yield return new WaitForEndOfFrame();
-            _scrollRect.verticalNormalizedPosition = 0;
+            _scrollRect.verticalNormalizedPosition = Mathf.Clamp01(percent);
         }
     }
 }

@@ -64,6 +64,9 @@ namespace CalorieCounter.ScaleEntries
             muscleMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.MuscleMass.ToString();
             boneMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BoneMass.ToString();
             bmiText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Bmi.ToString();
+
+            var percent = 1 - (ScaleEntries.IndexOfKey(scaleEntry.Date) / (float)(ScaleEntries.Count - 1));
+            ScrollToPercent(percent);
         }
 
         protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
