@@ -39,6 +39,11 @@ namespace CalorieCounter
             return false;
         }
 
+        public void ScrollToTop()
+        {
+            StartCoroutine(ScrollToPercentCoroutine(1));
+        }
+
         public void ScrollToBottom()
         {
             StartCoroutine(ScrollToPercentCoroutine(0));

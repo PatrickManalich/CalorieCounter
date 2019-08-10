@@ -16,6 +16,7 @@ namespace CalorieCounter.ScaleEntries {
             foreach (var scaleEntry in GameManager.ScaleEntriesManager.ImportScaleEntries().Values) {
                 _scaleEntriesScrollView.AddScaleEntry(scaleEntry);
             }
+            _scaleEntriesScrollView.ScrollToTop();
         }
     }
 }

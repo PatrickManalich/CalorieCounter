@@ -50,6 +50,7 @@ namespace CalorieCounter.MealEntries {
                         scrollView.AddMealProportion(mealProportion);
                         _totals.AddToTotals(mealProportion);
                     }
+                    scrollView.ScrollToTop();
                 }
             }
             _dayTypeDropdown.HardSetDayType(importedMealEntry.DayType);
