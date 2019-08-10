@@ -18,7 +18,7 @@ namespace CalorieCounter.MealSources {
         private GameObject _blank = default;
 
         [SerializeField]
-        private Transform _contentTransform = default;
+        private MealSourcesScrollView _mealSourcesScrollView = default;
 
         private static readonly char[] ValidSpecialChars = new char[]
         {
@@ -29,16 +29,17 @@ namespace CalorieCounter.MealSources {
             for (int i = 0; i < _inputFields.Count + 1; i++) {
                 if (i >= 0 && i <= 4 || i == 6) {
                     TMP_InputField inputField = i >= 0 && i <= 4 ? _inputFields[i] : _inputFields[i - 1];
-                    inputField.transform.SetParent(_contentTransform);
+                    _mealSourcesScrollView.AddToScrollView(inputField.transform);
                     inputField.gameObject.SetActive(true);
-                    inputField.transform.SetSiblingIndex(i);
+                    inputField.transform.SetAsLastSibling();
                 } else {
-                    _blank.transform.SetParent(_contentTransform);
+                    _mealSourcesScrollView.AddToScrollView(_blank.transform);
                     _blank.SetActive(true);
-                    _blank.transform.SetSiblingIndex(i);
+                    _blank.transform.SetAsLastSibling();
                 }
             }
             _inputFields.First().ActivateInputField();
+            _mealSourcesScrollView.ScrollToBottom();
         }
 
         public void HideInputFields() {
