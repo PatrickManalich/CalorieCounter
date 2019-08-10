@@ -40,7 +40,7 @@ namespace CalorieCounter.ScaleEntries
             GameObject boneMassText = Instantiate(_scrollViewTextPrefab, _content.transform);
             GameObject bmiText = Instantiate(_scrollViewTextPrefab, _content.transform);
 
-            int siblingStartIndex = (ScaleEntries.IndexOfKey(scaleEntry.Date) * _content.constraintCount) + _content.constraintCount;
+            int siblingStartIndex = (ScaleEntries.IndexOfKey(scaleEntry.Date) * _content.constraintCount);
             dateText.transform.SetSiblingIndex(siblingStartIndex);
             weightText.transform.SetSiblingIndex(siblingStartIndex + 1);
             bodyFatText.transform.SetSiblingIndex(siblingStartIndex + 2);
