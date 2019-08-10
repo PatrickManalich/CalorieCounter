@@ -15558,7 +15558,7 @@ MonoBehaviour:
   _blanks:
   - {fileID: 1777160920}
   - {fileID: 1831986350}
-  _contentTransform: {fileID: 2042110664}
+  _scrollRect: {fileID: 920356585}
 --- !u!1001 &1880863079
 PrefabInstance:
   m_ObjectHideFlags: 0
