@@ -27,15 +27,15 @@ namespace CalorieCounter.MealSources {
 
         public void ShowInputFields() {
             for (int i = 0; i < _inputFields.Count + 1; i++) {
-                if (i >= 0 && i <= 4 || i == 6) {
-                    TMP_InputField inputField = i >= 0 && i <= 4 ? _inputFields[i] : _inputFields[i - 1];
-                    _mealSourcesScrollView.AddToScrollView(inputField.transform);
-                    inputField.gameObject.SetActive(true);
-                    inputField.transform.SetAsLastSibling();
-                } else {
+                if (i == 5) {
                     _mealSourcesScrollView.AddToScrollView(_blank.transform);
                     _blank.SetActive(true);
                     _blank.transform.SetAsLastSibling();
+                } else {
+                    TMP_InputField inputField = i == 6 ? _inputFields[i - 1] : _inputFields[i];
+                    _mealSourcesScrollView.AddToScrollView(inputField.transform);
+                    inputField.gameObject.SetActive(true);
+                    inputField.transform.SetAsLastSibling();
                 }
             }
             _inputFields.First().ActivateInputField();
