@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 namespace CalorieCounter
 {
+    [RequireComponent(typeof(ScrollRect))]
     public abstract class AbstractScrollView : MonoBehaviour
     {
         public class TextAddedEventArgs : EventArgs
@@ -20,13 +21,14 @@ namespace CalorieCounter
         public delegate void TextAddedEventHandler(object sender, TextAddedEventArgs e);
         public abstract event TextAddedEventHandler TextAddedEvent;
 
-        protected abstract GridLayoutGroup Content { get; }
-
         protected abstract ScrollViewRowHighlighter ScrollViewRowHighlighter { get; }
+
+        protected ScrollRect _scrollRect;
+        protected GridLayoutGroup _content;
 
         public bool HasInputFields()
         {
-            foreach (Transform child in Content.transform)
+            foreach (Transform child in _content.transform)
             {
                 if (child.GetComponent<TMP_InputField>() != null)
                 {
@@ -41,6 +43,12 @@ namespace CalorieCounter
         private void Awake()
         {
             ScrollViewRowHighlighter.RowDestroyedEvent += OnRowDestroyedEvent;
+        }
+
+        private void Start()
+        {
+            _scrollRect = GetComponent<ScrollRect>();
+            _content = _scrollRect.content.GetComponent<GridLayoutGroup>();
         }
 
         private void OnDestroy()

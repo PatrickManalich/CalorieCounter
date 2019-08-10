@@ -1,15 +1,12 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CalorieCounter.MealEntries {
 
     public class CommonMealsScrollView : AbstractMealsScrollView {
 
         public override event TextAddedEventHandler TextAddedEvent;
-
-        protected override GridLayoutGroup Content { get { return _content; } }
 
         protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
 
@@ -21,9 +18,6 @@ namespace CalorieCounter.MealEntries {
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
-
-        [SerializeField]
-        private GridLayoutGroup _content = default;
 
         [SerializeField]
         private Totals _totals = default;

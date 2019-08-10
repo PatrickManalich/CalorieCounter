@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CalorieCounter.ScaleEntries
 {
@@ -13,15 +12,10 @@ namespace CalorieCounter.ScaleEntries
 
         public override event TextAddedEventHandler TextAddedEvent;
 
-        protected override GridLayoutGroup Content { get { return _content; } }
-
         protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
-
-        [SerializeField]
-        private GridLayoutGroup _content = default;
 
         [SerializeField]
         private ScaleEntryInputFields _scaleEntriesInputFields = default;

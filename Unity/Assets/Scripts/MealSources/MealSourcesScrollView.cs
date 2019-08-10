@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CalorieCounter.MealSources {
 
@@ -11,15 +10,10 @@ namespace CalorieCounter.MealSources {
 
         public override event TextAddedEventHandler TextAddedEvent;
 
-        protected override GridLayoutGroup Content { get { return _content; } }
-
         protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
-
-        [SerializeField]
-        private GridLayoutGroup _content = default;
 
         [SerializeField]
         private MealSourceInputFields _mealSourceInputFields = default;
