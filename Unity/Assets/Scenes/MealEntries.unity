@@ -337,7 +337,6 @@ MonoBehaviour:
   _mealSourceDropdown: {fileID: 1576245871}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _content: {fileID: 2136228772}
   _totals: {fileID: 1566187486}
   _scrollViewRowHighlighter: {fileID: 760202851}
 --- !u!1 &29919848
@@ -5735,7 +5734,6 @@ MonoBehaviour:
   _mealSourceDropdown: {fileID: 767946881}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _content: {fileID: 1343613516}
   _totals: {fileID: 1566187486}
   _scrollViewRowHighlighter: {fileID: 1300792026}
 --- !u!114 &688997044
@@ -7920,7 +7918,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _content: {fileID: 2042110666}
   _customMealInputFields: {fileID: 1859382614}
   _totals: {fileID: 1566187486}
   _scrollViewRowHighlighter: {fileID: 842551116}
@@ -15558,7 +15555,7 @@ MonoBehaviour:
   _blanks:
   - {fileID: 1777160920}
   - {fileID: 1831986350}
-  _scrollRect: {fileID: 920356585}
+  _customMealScrollView: {fileID: 920356582}
 --- !u!1001 &1880863079
 PrefabInstance:
   m_ObjectHideFlags: 0

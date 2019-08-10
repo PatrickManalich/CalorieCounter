@@ -1,11 +1,9 @@
 ﻿using CalorieCounter.MealSources;
 using CalorieCounter.Utilities;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace CalorieCounter.MealEntries {
 
@@ -18,24 +16,24 @@ namespace CalorieCounter.MealEntries {
         private List<GameObject> _blanks = default;
 
         [SerializeField]
-        private ScrollRect _scrollRect = default;
+        private CustomMealsScrollView _customMealScrollView = default;
 
         public void ShowInputFields() {
             for (int i = 0; i < _inputFields.Count + _blanks.Count; i++) {
                 if (i == 0 || i >= 2 && i <= 4) {
                     TMP_InputField inputField = i == 0 ? _inputFields[i] : _inputFields[i - 1];
-                    inputField.transform.SetParent(_scrollRect.content.transform);
+                    _customMealScrollView.AddToScrollView(inputField.transform);
                     inputField.gameObject.SetActive(true);
-                    inputField.transform.SetAsLastSibling(); ;
+                    inputField.transform.SetAsLastSibling();
                 } else {
                     GameObject blank = i == 1 ? _blanks[i - 1] : _blanks[i - 4];
-                    blank.transform.SetParent(_scrollRect.content.transform);
+                    _customMealScrollView.AddToScrollView(blank.transform);
                     blank.SetActive(true);
-                    blank.transform.SetAsLastSibling(); ;
+                    blank.transform.SetAsLastSibling();
                 }
             }
             _inputFields.First().ActivateInputField();
-            StartCoroutine(ScrollToBottom());
+            _customMealScrollView.ScrollToBottom();
         }
 
         public void HideInputFields() {
@@ -63,12 +61,6 @@ namespace CalorieCounter.MealEntries {
         public MealProportion GetCustomMealProportionFromInputFields() {
             MealSource customMealSource = MealSource.CreateCustomMealSource(float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text));
             return new MealProportion(float.Parse(_inputFields[0].text), customMealSource);
-        }
-
-        private IEnumerator ScrollToBottom()
-        {
-            yield return new WaitForEndOfFrame();
-            _scrollRect.verticalNormalizedPosition = 0;
         }
     }
 }

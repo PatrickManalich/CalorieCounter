@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,6 +39,16 @@ namespace CalorieCounter
             return false;
         }
 
+        public void ScrollToBottom()
+        {
+            StartCoroutine(ScrollToBottomCoroutine());
+        }
+
+        public void AddToScrollView(Transform transform)
+        {
+            transform.SetParent(_content.transform);
+        }
+
         protected abstract void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e);
 
         private void Awake()
@@ -54,6 +65,12 @@ namespace CalorieCounter
         private void OnDestroy()
         {
             ScrollViewRowHighlighter.RowDestroyedEvent -= OnRowDestroyedEvent;
+        }
+
+        private IEnumerator ScrollToBottomCoroutine()
+        {
+            yield return new WaitForEndOfFrame();
+            _scrollRect.verticalNormalizedPosition = 0;
         }
     }
 }

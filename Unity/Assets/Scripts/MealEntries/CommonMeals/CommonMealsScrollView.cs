@@ -59,6 +59,8 @@ namespace CalorieCounter.MealEntries {
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
+
+            ScrollToBottom();
         }
 
         public override void SubtractMealProportion(MealProportion mealProportion) {

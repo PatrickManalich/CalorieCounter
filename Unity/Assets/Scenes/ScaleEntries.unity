@@ -330,7 +330,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _content: {fileID: 2136228772}
   _scaleEntriesInputFields: {fileID: 1625267897}
   _scrollViewRowHighlighter: {fileID: 1013467831}
 --- !u!1 &84359845
@@ -4181,7 +4180,7 @@ MonoBehaviour:
   - {fileID: 1562177498}
   - {fileID: 1764773832}
   _blank: {fileID: 909936373}
-  _scrollRect: {fileID: 19275661}
+  _scaleEntriesScrollView: {fileID: 19275662}
 --- !u!1 &1660813124
 GameObject:
   m_ObjectHideFlags: 0
