@@ -25,8 +25,8 @@ namespace CalorieCounter.MealEntries {
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
         public void RefreshSelectedMealSource(int index) {
-            if (_mealSources.Exists(x => x.Name == _optionDataList[index].text)) {
-                SelectedMealSource = _mealSources.Find(x => x.Name == _optionDataList[index].text);
+            if (index > 0) {
+                SelectedMealSource = _mealSources[index-1];
                 if (_servingAmountDropdown.SelectedServingAmount != 0)
                     FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             } else {
@@ -46,10 +46,10 @@ namespace CalorieCounter.MealEntries {
             _dropdown.ClearOptions();
             _optionDataList.Add(new TMP_Dropdown.OptionData(""));
             foreach (var meal in _mealSources) {
-                _optionDataList.Add(new TMP_Dropdown.OptionData(meal.Name));
+                _optionDataList.Add(new TMP_Dropdown.OptionData($"{meal.Name} (per {meal.ServingSize.ToLower()})"));
             }
             _dropdown.AddOptions(_optionDataList);
             SelectedMealSource = default;
-        }        
+        }
     }
 }
