@@ -29,7 +29,7 @@ namespace CalorieCounter.Utilities {
         }
 
         private static string GetFullFilePath(string filePath) {
-            string fullFilePath = Path.GetFullPath(Path.Combine(Application.dataPath, GlobalPaths.JsonDirPath, filePath));
+            string fullFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirPath, filePath));
             string fullFilePathDir = Path.GetDirectoryName(fullFilePath);
 
             if (!Directory.Exists(fullFilePathDir)) {
