@@ -1,0 +1,14 @@
+Calorie Counter Release Notes
+
+Release 1.0.0 (8/24/2019)
+ -Initialization of Unity project with 2018.3.6f1
+ -Import plugin TextMesh Pro
+ -Implement MealEntries scene
+ -Implement ScaleEntries scene
+ -Import plugin JSON.Net for Unity
+ -Import plugin Serialized Dictionary
+ -Implement MealSources scene
+ -Update plugin TextMesh pro
+ -Update Unity project to 2018.4.1f1
+ -Import plugin Beautifier
+ -Implement Menu scene
