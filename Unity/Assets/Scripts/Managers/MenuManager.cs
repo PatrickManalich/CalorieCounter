@@ -35,11 +35,7 @@ namespace CalorieCounter.Managers {
         private void Start()
         {
             foreach (var key in _sceneButtonDictionary.Keys)
-            {
-                var button = key.GetComponent<Button>();
-                button.onClick.AddListener(() => GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[key]));
-                button.onClick.AddListener(() => GameManager.MenuManager.HideMenu());
-            }
+                key.GetComponent<Button>().onClick.AddListener(() => OnSceneButtonClicked(key));
             _quitButton.onClick.AddListener(() => OnQuitButtonClicked());
             _versionText.text = Application.version;
         }
@@ -48,6 +44,12 @@ namespace CalorieCounter.Managers {
             if (Input.GetKeyDown(_menuKeyCode)) {
                 _menuCanvas.SetActive(!_menuCanvas.activeSelf);
             }
+        }
+
+        private void OnSceneButtonClicked(GameObject key)
+        {
+            GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[key]);
+            GameManager.MenuManager.HideMenu();
         }
 
         private void OnQuitButtonClicked()
