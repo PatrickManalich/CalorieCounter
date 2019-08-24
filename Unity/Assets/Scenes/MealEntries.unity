@@ -3233,7 +3233,7 @@ GameObject:
   - component: {fileID: 420960636}
   - component: {fileID: 420960635}
   m_Layer: 5
-  m_Name: OneDayBackwardArrow
+  m_Name: OneDayBackwardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4564,7 +4564,7 @@ GameObject:
   - component: {fileID: 596088353}
   - component: {fileID: 596088352}
   m_Layer: 5
-  m_Name: OneMonthBackwardArrow
+  m_Name: OneMonthBackwardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9374,7 +9374,7 @@ GameObject:
   - component: {fileID: 1181234751}
   - component: {fileID: 1181234750}
   m_Layer: 5
-  m_Name: OneDayForwardArrow
+  m_Name: OneDayForwardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10444,7 +10444,7 @@ GameObject:
   - component: {fileID: 1256246581}
   - component: {fileID: 1256246580}
   m_Layer: 5
-  m_Name: OneMonthForwardArrow
+  m_Name: OneMonthForwardButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
