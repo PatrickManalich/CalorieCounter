@@ -21,9 +21,10 @@ namespace CalorieCounter.MealSources {
         {
             var importedMealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
             var mealSources = new List<MealSource>();
-            foreach (var pair in importedMealSourcesDictionary[mealSourceType])
+            if(importedMealSourcesDictionary.Count != 0)
             {
-                mealSources.Add(pair.Value);
+                foreach (var pair in importedMealSourcesDictionary[mealSourceType])
+                    mealSources.Add(pair.Value);
             }
             return mealSources;
         }

@@ -18,10 +18,13 @@ namespace CalorieCounter.Managers {
                 _imported = true;
             }
 
-            DateTime latestTargetEntryKey = dateTime;
+            var latestTargetEntryKey = dateTime;
+            var terminationDate = dateTime.AddYears(-1);
             while (!_targetEntries.ContainsKey(latestTargetEntryKey))
             {
                 latestTargetEntryKey = latestTargetEntryKey.AddDays(-1);
+                if (latestTargetEntryKey < terminationDate)
+                    return default;
             }
             return _targetEntries[latestTargetEntryKey];
         }
