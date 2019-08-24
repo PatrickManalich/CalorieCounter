@@ -17,6 +17,9 @@ namespace CalorieCounter.Managers {
         private TextMeshProUGUI _versionText = default;
 
         [SerializeField]
+        private Button _quitButton = default;
+
+        [SerializeField]
         private SceneButtonDictionary _sceneButtonDictionary = default;
 
         private static readonly KeyCode _menuKeyCode = KeyCode.Escape;
@@ -37,6 +40,7 @@ namespace CalorieCounter.Managers {
                 button.onClick.AddListener(() => GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[key]));
                 button.onClick.AddListener(() => GameManager.MenuManager.HideMenu());
             }
+            _quitButton.onClick.AddListener(() => OnQuitButtonClicked());
             _versionText.text = Application.version;
         }
 
@@ -44,6 +48,16 @@ namespace CalorieCounter.Managers {
             if (Input.GetKeyDown(_menuKeyCode)) {
                 _menuCanvas.SetActive(!_menuCanvas.activeSelf);
             }
+        }
+
+        private void OnQuitButtonClicked()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#else
+         Application.Quit();
+#endif
+
         }
     }
 }
