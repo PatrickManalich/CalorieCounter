@@ -63,8 +63,13 @@ namespace CalorieCounter.MealSources {
         }
 
         public MealSource GetMealSourceFromInputFields() {
-            return  new MealSource(_inputFields[0].text, _inputFields[1].text, float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text),
-                float.Parse(_inputFields[4].text), _inputFields[5].text, _mealSourceType);
+            var name = _inputFields[0].text;
+            var servingSize = _inputFields[1].text;
+            var fat = float.Parse(_inputFields[2].text);
+            var carbs = float.Parse(_inputFields[3].text);
+            var protein = float.Parse(_inputFields[4].text);
+            var description = _inputFields[5].text;
+            return new MealSource(name, servingSize, fat, carbs, protein, description, _mealSourceType);
         }
 
         private void Awake()

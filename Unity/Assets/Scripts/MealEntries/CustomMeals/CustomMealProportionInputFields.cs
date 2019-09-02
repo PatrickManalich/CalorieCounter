@@ -59,8 +59,12 @@ namespace CalorieCounter.MealEntries {
         }
 
         public MealProportion GetCustomMealProportionFromInputFields() {
-            MealSource customMealSource = MealSource.CreateCustomMealSource(float.Parse(_inputFields[1].text), float.Parse(_inputFields[2].text), float.Parse(_inputFields[3].text));
-            return new MealProportion(float.Parse(_inputFields[0].text), customMealSource);
+            var servingAmount = float.Parse(_inputFields[0].text);
+            var fat = float.Parse(_inputFields[1].text);
+            var carbs = float.Parse(_inputFields[2].text);
+            var protein = float.Parse(_inputFields[3].text);
+            MealSource customMealSource = MealSource.CreateCustomMealSource(fat, carbs, protein);
+            return new MealProportion(servingAmount, customMealSource);
         }
     }
 }
