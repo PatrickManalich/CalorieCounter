@@ -1,9 +1,9 @@
-﻿using System;
-
+﻿
 namespace CalorieCounter.MealSources {
 
     public struct MealSource {
 
+        public string Id;
         public string Name;
         public string ServingSize;
         public float Fat;
@@ -14,7 +14,8 @@ namespace CalorieCounter.MealSources {
         public MealSourceType MealSourceType;
         public bool Archived;
 
-        public MealSource(string name, string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType) {
+        public MealSource(int mealSourcesCount, string name, string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType) {
+            Id = mealSourceType.ToString() + mealSourcesCount;
             Name = name;
             ServingSize = servingSize;
             Fat = fat > 0 ? GlobalMethods.Round(fat) : 0;
@@ -27,7 +28,7 @@ namespace CalorieCounter.MealSources {
         }
 
         public static MealSource CreateCustomMealSource(float fat, float carbs, float protein) {
-            return new MealSource("Custom Meal", "Meal", fat, carbs, protein, "", MealSourceType.Custom);
+            return new MealSource(0, "Custom Meal", "Meal", fat, carbs, protein, "", MealSourceType.Custom);
         }
 
         public static bool operator ==(MealSource meal1, MealSource meal2) {
@@ -46,8 +47,8 @@ namespace CalorieCounter.MealSources {
         }
 
         public override string ToString() {
-            return string.Format("Name: {0}, Serving Size: {1}, [ Fat: {2}, Carbs: {3}, Protein: {4}, Calories: {5} ], Description: {6}, Meal Type: {7}, Archived: {8}",
-                Name, ServingSize , Fat, Carbs, Protein, Calories, Description, MealSourceType, Archived);
+            return string.Format("ID: {0}, Name: {1}, Serving Size: {2}, [ Fat: {3}, Carbs: {4}, Protein: {5}, Calories: {6} ], Description: {7}, Meal Type: {8}, Archived: {9}",
+                Id, Name, ServingSize , Fat, Carbs, Protein, Calories, Description, MealSourceType, Archived);
         }
     }
 }

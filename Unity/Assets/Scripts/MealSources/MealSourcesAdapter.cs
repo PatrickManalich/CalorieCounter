@@ -38,6 +38,12 @@ namespace CalorieCounter.MealSources {
             GameManager.MealSourcesManager.ExportMealSourcesDictionary(mealSourcesDictionary);
         }
 
+        public int GetMealSourcesCount(MealSourceType mealSourceType)
+        {
+            var importedMealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
+            return importedMealSourcesDictionary[mealSourceType].Count;
+        }
+
         private void Start()
         {
             if (_scene != Scene.MealSources)

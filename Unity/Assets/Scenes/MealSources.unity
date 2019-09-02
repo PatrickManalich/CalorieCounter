@@ -2706,6 +2706,7 @@ MonoBehaviour:
   - {fileID: 2003070152}
   _blank: {fileID: 97517023}
   _mealSourcesScrollView: {fileID: 688997043}
+  _mealSourcesAdapter: {fileID: 1982907307}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -9063,6 +9064,7 @@ MonoBehaviour:
   - {fileID: 230520804}
   _blank: {fileID: 1127292458}
   _mealSourcesScrollView: {fileID: 19275662}
+  _mealSourcesAdapter: {fileID: 1982907307}
 --- !u!1 &2122742855
 GameObject:
   m_ObjectHideFlags: 0
