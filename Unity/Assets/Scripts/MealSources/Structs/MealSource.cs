@@ -31,12 +31,12 @@ namespace CalorieCounter.MealSources {
             return new MealSource(0, "Custom Meal", "Meal", fat, carbs, protein, "", MealSourceType.Custom);
         }
 
-        public static bool operator ==(MealSource meal1, MealSource meal2) {
-            return meal1.Equals(meal2);
+        public static bool operator ==(MealSource mealSource1, MealSource mealSource2) {
+            return mealSource1.Equals(mealSource2);
         }
 
-        public static bool operator !=(MealSource meal1, MealSource meal2) {
-            return !meal1.Equals(meal2);
+        public static bool operator !=(MealSource mealSource1, MealSource mealSource2) {
+            return !mealSource1.Equals(mealSource2);
         }
 
         public override bool Equals(object obj) {
