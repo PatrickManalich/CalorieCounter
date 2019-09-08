@@ -6450,7 +6450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ad4da5d35a4a641a96516a65162e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealSourceAdapter: {fileID: 1906813654}
+  _mealSourcesAdapter: {fileID: 1906813654}
   _mealSourceType: 1
   _servingAmountDropdown: {fileID: 1521270210}
 --- !u!114 &767946882
@@ -13968,7 +13968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ad4da5d35a4a641a96516a65162e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealSourceAdapter: {fileID: 1906813654}
+  _mealSourcesAdapter: {fileID: 1906813654}
   _mealSourceType: 0
   _servingAmountDropdown: {fileID: 1671688307}
 --- !u!1 &1585888870
