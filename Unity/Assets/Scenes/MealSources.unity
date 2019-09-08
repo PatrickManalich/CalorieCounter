@@ -4316,7 +4316,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 19275662}
-        m_MethodName: AddMealSourceFromInputFields
+        m_MethodName: AddNamedMealSourceFromInputFields
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5334,7 +5334,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 688997043}
-        m_MethodName: AddMealSourceFromInputFields
+        m_MethodName: AddNamedMealSourceFromInputFields
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7770,7 +7770,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1982907307}
-        m_MethodName: ExportMealSourcesDictionary
+        m_MethodName: ExportDictionaries
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

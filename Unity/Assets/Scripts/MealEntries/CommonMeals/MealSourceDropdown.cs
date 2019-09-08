@@ -18,38 +18,38 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private ServingAmountDropdown _servingAmountDropdown = default;
 
-        public MealSource SelectedMealSource { get; private set; }
+        public NamedMealSource SelectedNamedMealSource { get; private set; }
         
         private TMP_Dropdown _dropdown;
-        private List<MealSource> _mealSources;
+        private List<NamedMealSource> _namedMealSources;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
         public void RefreshSelectedMealSource(int index) {
             if (index > 0) {
-                SelectedMealSource = _mealSources[index-1];
+                SelectedNamedMealSource = _namedMealSources[index-1];
                 if (_servingAmountDropdown.SelectedServingAmount != 0)
                     FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             } else {
-                SelectedMealSource = default;
+                SelectedNamedMealSource = default;
                 FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
             }
         }
 
         public void ResetDropdown() {
             _dropdown.value = 0;
-            SelectedMealSource = default;
+            SelectedNamedMealSource = default;
         }
 
         private void Start() {
             _dropdown = GetComponent<TMP_Dropdown>();
-            _mealSources = _mealSourceAdapter.GetMealSources(_mealSourceType);
+            _namedMealSources = _mealSourceAdapter.GetNamedMealSources(_mealSourceType);
             _dropdown.ClearOptions();
             _optionDataList.Add(new TMP_Dropdown.OptionData(""));
-            foreach (var meal in _mealSources) {
-                _optionDataList.Add(new TMP_Dropdown.OptionData($"{meal.Name} (per {meal.ServingSize.ToLower()})"));
+            foreach (var namedMealSource in _namedMealSources) {
+                _optionDataList.Add(new TMP_Dropdown.OptionData($"{namedMealSource.Name} (per {namedMealSource.MealSource.ServingSize.ToLower()})"));
             }
             _dropdown.AddOptions(_optionDataList);
-            SelectedMealSource = default;
+            SelectedNamedMealSource = default;
         }
     }
 }

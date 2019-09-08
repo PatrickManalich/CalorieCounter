@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0a4501d0ccd64582d94fd25e7d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealSourcesAdapter: {fileID: 1906813654}
   _servingAmountDropdown: {fileID: 1671688307}
   _mealSourceDropdown: {fileID: 1576245871}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
@@ -5730,6 +5731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0a4501d0ccd64582d94fd25e7d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealSourcesAdapter: {fileID: 1906813654}
   _servingAmountDropdown: {fileID: 1521270210}
   _mealSourceDropdown: {fileID: 767946881}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,

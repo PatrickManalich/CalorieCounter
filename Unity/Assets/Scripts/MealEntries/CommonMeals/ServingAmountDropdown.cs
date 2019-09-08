@@ -21,7 +21,7 @@ namespace CalorieCounter.MealEntries {
         public void RefreshSelectedServingAmount(int index) {
             if (float.TryParse(_optionDataList[index].text, out float parsedFloat)) {
                 SelectedServingAmount = parsedFloat;
-                if (_mealSourceDropdown.SelectedMealSource != default)
+                if (_mealSourceDropdown.SelectedNamedMealSource != default)
                     FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             } else {
                 SelectedServingAmount = 0;

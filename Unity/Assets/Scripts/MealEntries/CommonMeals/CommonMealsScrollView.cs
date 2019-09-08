@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CalorieCounter.MealSources;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,9 @@ namespace CalorieCounter.MealEntries {
         public override event TextAddedEventHandler TextAddedEvent;
 
         protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
+
+        [SerializeField]
+        private MealSourcesAdapter _mealSourcesAdapter = default; 
 
         [SerializeField]
         private ServingAmountDropdown _servingAmountDropdown = default;
@@ -28,7 +32,7 @@ namespace CalorieCounter.MealEntries {
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
         public void AddCommonMealProportionFromDropdowns() {
-            var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedMealSource);
+            var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedNamedMealSource.MealSource);
             AddMealProportion(mealProportion);
             _totals.AddToTotals(mealProportion);
         }
@@ -36,6 +40,7 @@ namespace CalorieCounter.MealEntries {
         {
             return _mealProportions;
         }
+
         public override void AddMealProportion(MealProportion mealProportion) {
             _mealProportions.Add(mealProportion);
 
@@ -54,7 +59,7 @@ namespace CalorieCounter.MealEntries {
             TextAddedEvent?.Invoke(this, new TextAddedEventArgs(calorieText.GetComponent<ScrollViewText>()));
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.MealSource.Name;
+            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourcesAdapter.GetMealSourceName(mealProportion.MealSource);
             fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();

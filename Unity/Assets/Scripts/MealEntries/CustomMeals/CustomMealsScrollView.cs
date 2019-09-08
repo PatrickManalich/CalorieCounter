@@ -23,6 +23,8 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
+        private const string CustomMealSourceName = "Custom Meal";
+
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
         public void AddCustomMealProportionFromInputFields() {
@@ -53,7 +55,7 @@ namespace CalorieCounter.MealSources {
             TextAddedEvent?.Invoke(this, new TextAddedEventArgs(calorieText.GetComponent<ScrollViewText>()));
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = mealProportion.MealSource.Name;
+            nameText.GetComponent<TextMeshProUGUI>().text = CustomMealSourceName;
             fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();

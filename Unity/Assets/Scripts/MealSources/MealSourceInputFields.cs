@@ -20,9 +20,6 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private MealSourcesScrollView _mealSourcesScrollView = default;
 
-        [SerializeField]
-        private MealSourcesAdapter _mealSourcesAdapter = default;
-
         private static readonly char[] ValidSpecialChars = new char[]
         {
                     '-', '\'', '&', '.', ' ', '/', '%',
@@ -65,15 +62,16 @@ namespace CalorieCounter.MealSources {
             FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
         }
 
-        public MealSource GetMealSourceFromInputFields() {
-            var mealSourceCount = _mealSourcesAdapter.GetMealSourcesCount(_mealSourceType);
+        public NamedMealSource GetNamedMealSourceFromInputFields() {
+            var mealSourceCount = _mealSourcesScrollView.MealSources.Count;
             var name = _inputFields[0].text;
             var servingSize = _inputFields[1].text;
             var fat = float.Parse(_inputFields[2].text);
             var carbs = float.Parse(_inputFields[3].text);
             var protein = float.Parse(_inputFields[4].text);
             var description = _inputFields[5].text;
-            return new MealSource(mealSourceCount, name, servingSize, fat, carbs, protein, description, _mealSourceType);
+            var mealSource = new MealSource(mealSourceCount, servingSize, fat, carbs, protein, description, _mealSourceType);
+            return new NamedMealSource(name, mealSource);
         }
 
         private void Awake()

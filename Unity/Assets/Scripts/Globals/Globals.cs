@@ -23,6 +23,7 @@ namespace CalorieCounter {
         public const string ScaleEntriesFilePath = @"ScaleEntries.json";
         public const string TargetEntriesFilePath = @"TargetEntries.json";
         public const string MealSourcesFilePath = @"MealSources.json";
+        public const string MealSourceNamesFilePath = @"MealSourceNames.json";
         public const string JsonDirPath = @"Json";
 
     }

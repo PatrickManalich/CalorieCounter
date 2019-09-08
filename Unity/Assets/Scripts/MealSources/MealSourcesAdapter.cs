@@ -1,6 +1,7 @@
 ﻿using CalorieCounter.Managers;
 using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace CalorieCounter.MealSources {
@@ -17,31 +18,37 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
-        public List<MealSource> GetMealSources(MealSourceType mealSourceType)
+        private const int MealSourcesCountStartIndex = 0;
+
+        public string GetMealSourceName(MealSource mealSource)
         {
-            var importedMealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
-            var mealSources = new List<MealSource>();
-            if(importedMealSourcesDictionary.Count != 0)
-            {
-                foreach (var pair in importedMealSourcesDictionary[mealSourceType])
-                    mealSources.Add(pair.Value);
-            }
-            return mealSources;
+            var mealSourceNamesDictionary = GameManager.MealSourcesManager.ImportMealSourceNamesDictionary();
+            var mealSourceNames = mealSourceNamesDictionary[mealSource.MealSourceType];
+            return mealSourceNames[mealSource.Id];
         }
 
-        public void ExportMealSourcesDictionary()
+        public List<NamedMealSource> GetNamedMealSources(MealSourceType mealSourceType)
+        {
+            var namedMealSourcesDictionary = GameManager.MealSourcesManager.ImportNamedMealSourcesDictionary();
+            var namedMealSources = new List<NamedMealSource>();
+            if(namedMealSourcesDictionary.Count > 0)
+            {
+                namedMealSources = namedMealSourcesDictionary[mealSourceType].Values.ToList();
+            }
+            return namedMealSources;
+        }
+
+        public void ExportDictionaries()
         {
             var mealSourcesDictionary = new Dictionary<MealSourceType, SortedList<string, MealSource>>() {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].ArchivedMealSources },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].ArchivedMealSources },
+                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSources },
+                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSources },
             };
-            GameManager.MealSourcesManager.ExportMealSourcesDictionary(mealSourcesDictionary);
-        }
-
-        public int GetMealSourcesCount(MealSourceType mealSourceType)
-        {
-            var importedMealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
-            return importedMealSourcesDictionary[mealSourceType].Count;
+            var mealSourceNamesDictionary = new Dictionary<MealSourceType, SortedList<string, string>>() {
+                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSourceNames },
+                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSourceNames },
+            };
+            GameManager.MealSourcesManager.ExportDictionaries(mealSourcesDictionary, mealSourceNamesDictionary);
         }
 
         private void Start()
@@ -51,16 +58,16 @@ namespace CalorieCounter.MealSources {
                 return;
             }
 
-            var importedMealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
-            if (importedMealSourcesDictionary != default)
+            var namedMealSourcesDictionary = GameManager.MealSourcesManager.ImportNamedMealSourcesDictionary();
+            if (namedMealSourcesDictionary != default)
             {
-                foreach (var key in importedMealSourcesDictionary.Keys)
+                foreach (var mealSourceType in namedMealSourcesDictionary.Keys)
                 {
-                    var mealSourcesScrollView = _scrollViewDictionary[key];
-                    var importedMealSources = importedMealSourcesDictionary[key];
-                    foreach (var mealSource in importedMealSources.Values)
+                    var mealSourcesScrollView = _scrollViewDictionary[mealSourceType];
+                    var namedMealSources = namedMealSourcesDictionary[mealSourceType];
+                    foreach (var namedMealSource in namedMealSources.Values)
                     {
-                        mealSourcesScrollView.AddMealSource(mealSource);
+                        mealSourcesScrollView.AddNamedMealSource(namedMealSource);
                     }
                     mealSourcesScrollView.ScrollToTop();
                 }
