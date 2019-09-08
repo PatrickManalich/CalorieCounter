@@ -23,7 +23,7 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
-        public List<MealProportion> _mealProportions { get; private set; } = new List<MealProportion>();
+        private List<MealProportion> _mealProportions = new List<MealProportion>();
 
         public void AddCustomMealProportionFromInputFields() {
             MealProportion mealProportion = _customMealInputFields.GetCustomMealProportionFromInputFields();
