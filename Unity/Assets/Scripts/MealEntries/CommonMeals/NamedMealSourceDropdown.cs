@@ -7,7 +7,7 @@ using CalorieCounter.Utilities;
 namespace CalorieCounter.MealEntries {
 
     [RequireComponent(typeof(TMP_Dropdown))]
-    public class MealSourceDropdown : MonoBehaviour {
+    public class NamedMealSourceDropdown : MonoBehaviour {
 
         [SerializeField]
         private MealSourcesAdapter _mealSourceAdapter = default;

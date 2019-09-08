@@ -9,7 +9,7 @@ namespace CalorieCounter.MealEntries {
     public class ServingAmountDropdown : MonoBehaviour {
 
         [SerializeField]
-        private MealSourceDropdown _mealSourceDropdown = default;
+        private NamedMealSourceDropdown _namedMealSourceDropdown = default;
 
         public float SelectedServingAmount { get; private set; }
         
@@ -21,7 +21,7 @@ namespace CalorieCounter.MealEntries {
         public void RefreshSelectedServingAmount(int index) {
             if (float.TryParse(_optionDataList[index].text, out float parsedFloat)) {
                 SelectedServingAmount = parsedFloat;
-                if (_mealSourceDropdown.SelectedNamedMealSource != default)
+                if (_namedMealSourceDropdown.SelectedNamedMealSource != default)
                     FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             } else {
                 SelectedServingAmount = 0;

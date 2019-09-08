@@ -335,7 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mealSourcesAdapter: {fileID: 1906813654}
   _servingAmountDropdown: {fileID: 1671688307}
-  _mealSourceDropdown: {fileID: 1576245871}
+  _namedMealSourceDropdown: {fileID: 1576245871}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
   _totals: {fileID: 1566187486}
@@ -5733,7 +5733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mealSourcesAdapter: {fileID: 1906813654}
   _servingAmountDropdown: {fileID: 1521270210}
-  _mealSourceDropdown: {fileID: 767946881}
+  _namedMealSourceDropdown: {fileID: 767946881}
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
   _totals: {fileID: 1566187486}
@@ -6410,7 +6410,7 @@ GameObject:
   - component: {fileID: 767946882}
   - component: {fileID: 767946881}
   m_Layer: 5
-  m_Name: LargeMealsMealSourceDropdown
+  m_Name: LargeMealsNamedMealSourceDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12712,7 +12712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d833e67c3fb0a614d97c232cebb4d9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealSourceDropdown: {fileID: 767946881}
+  _namedMealSourceDropdown: {fileID: 767946881}
 --- !u!114 &1521270211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13830,7 +13830,7 @@ GameObject:
   - component: {fileID: 1576245868}
   - component: {fileID: 1576245871}
   m_Layer: 5
-  m_Name: SmallMealsMealSourceDropdown
+  m_Name: SmallMealsNamedMealSourceDropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14651,7 +14651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d833e67c3fb0a614d97c232cebb4d9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealSourceDropdown: {fileID: 1576245871}
+  _namedMealSourceDropdown: {fileID: 1576245871}
 --- !u!1 &1683140706
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ namespace CalorieCounter.MealEntries {
         private ServingAmountDropdown _servingAmountDropdown = default;
 
         [SerializeField]
-        private MealSourceDropdown _mealSourceDropdown = default;
+        private NamedMealSourceDropdown _namedMealSourceDropdown = default;
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
@@ -32,7 +32,7 @@ namespace CalorieCounter.MealEntries {
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
         public void AddCommonMealProportionFromDropdowns() {
-            var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedNamedMealSource.mealSource);
+            var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _namedMealSourceDropdown.SelectedNamedMealSource.mealSource);
             AddMealProportion(mealProportion);
             _totals.AddToTotals(mealProportion);
         }
