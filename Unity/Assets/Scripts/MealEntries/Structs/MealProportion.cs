@@ -4,20 +4,20 @@ namespace CalorieCounter.MealEntries {
 
     public struct MealProportion {
 
-        public float ServingAmount;
-        public MealSource MealSource;
-        public float Fat;
-        public float Carbs;
-        public float Protein;
-        public float Calories;
+        public float servingAmount;
+        public MealSource mealSource;
+        public float fat;
+        public float carbs;
+        public float protein;
+        public float calories;
 
         public MealProportion(float servingAmount, MealSource mealSource) {
-            ServingAmount = servingAmount;
-            MealSource = mealSource;
-            Fat = GlobalMethods.Round(mealSource.Fat * ServingAmount);
-            Carbs = GlobalMethods.Round(mealSource.Carbs * ServingAmount);
-            Protein = GlobalMethods.Round(mealSource.Protein * ServingAmount);
-            Calories = GlobalMethods.Round((Fat * 9) + (Carbs * 4) + (Protein * 4));
+            this.servingAmount = servingAmount;
+            this.mealSource = mealSource;
+            fat = GlobalMethods.Round(mealSource.fat * this.servingAmount);
+            carbs = GlobalMethods.Round(mealSource.carbs * this.servingAmount);
+            protein = GlobalMethods.Round(mealSource.protein * this.servingAmount);
+            calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
         }
 
         public static bool operator ==(MealProportion mealProportion1, MealProportion mealProportion2) {
@@ -37,7 +37,7 @@ namespace CalorieCounter.MealEntries {
 
         public override string ToString() {
             return string.Format("Serving Amount: {0}, Meal Source Name: {1}, [ Fat: {2}, Carbs: {3}, Protein: {4}, Calories: {5} ]",
-                ServingAmount, MealSource.Id, Fat, Carbs, Protein, Calories);
+                servingAmount, mealSource.id, fat, carbs, protein, calories);
         }
     }
 }

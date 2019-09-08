@@ -32,18 +32,18 @@ namespace CalorieCounter.MealEntries {
         private TargetEntry _targetEntry;
 
         public void AddToTotals(MealProportion mealProportion) {
-            TotalFat += mealProportion.Fat;
-            TotalCarbs += mealProportion.Carbs;
-            TotalProtein += mealProportion.Protein;
-            TotalCalories += mealProportion.Calories;
+            TotalFat += mealProportion.fat;
+            TotalCarbs += mealProportion.carbs;
+            TotalProtein += mealProportion.protein;
+            TotalCalories += mealProportion.calories;
             RefreshTexts();
         }
 
         public void RemoveFromTotals(MealProportion mealProportion) {
-            TotalFat -= mealProportion.Fat;
-            TotalCarbs -= mealProportion.Carbs;
-            TotalProtein -= mealProportion.Protein;
-            TotalCalories -= mealProportion.Calories;
+            TotalFat -= mealProportion.fat;
+            TotalCarbs -= mealProportion.carbs;
+            TotalProtein -= mealProportion.protein;
+            TotalCalories -= mealProportion.calories;
             RefreshTexts();
         }
 
@@ -70,15 +70,15 @@ namespace CalorieCounter.MealEntries {
             float targetEntryProtein = 0;
             float targetEntryCalories = 0;
             if (_dayTypeDropdown.DayType == DayType.Rest) {
-                targetEntryFat = _targetEntry.RestDayFat;
-                targetEntryCarbs = _targetEntry.RestDayCarbs;
-                targetEntryProtein = _targetEntry.RestDayProtein;
-                targetEntryCalories = _targetEntry.RestDayCalories;
+                targetEntryFat = _targetEntry.restDayFat;
+                targetEntryCarbs = _targetEntry.restDayCarbs;
+                targetEntryProtein = _targetEntry.restDayProtein;
+                targetEntryCalories = _targetEntry.restDayCalories;
             } else if (_dayTypeDropdown.DayType == DayType.Training) {
-                targetEntryFat = _targetEntry.TrainingDayFat;
-                targetEntryCarbs = _targetEntry.TrainingDayCarbs;
-                targetEntryProtein = _targetEntry.TrainingDayProtein;
-                targetEntryCalories = _targetEntry.TrainingDayCalories;
+                targetEntryFat = _targetEntry.trainingDayFat;
+                targetEntryCarbs = _targetEntry.trainingDayCarbs;
+                targetEntryProtein = _targetEntry.trainingDayProtein;
+                targetEntryCalories = _targetEntry.trainingDayCalories;
             }
 
             RefreshText(_fatTotalText, TotalFat, targetEntryFat);

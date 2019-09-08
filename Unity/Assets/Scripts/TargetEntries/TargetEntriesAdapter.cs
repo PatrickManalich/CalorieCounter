@@ -36,8 +36,8 @@ namespace CalorieCounter.TargetEntries {
 
             SortedList<DateTime, TargetEntry> targetEntries = new SortedList<DateTime, TargetEntry>();
             foreach (var scaleEntry in _scaleEntriesScrollView.ScaleEntries.Values) {
-                var targetEntry = new TargetEntry(scaleEntry.Date, scaleEntry.Weight);
-                targetEntries.Add(targetEntry.Date, targetEntry);
+                var targetEntry = new TargetEntry(scaleEntry.date, scaleEntry.weight);
+                targetEntries.Add(targetEntry.date, targetEntry);
             }
             GameManager.TargetEntriesManager.ExportTargetEntries(targetEntries);
         }

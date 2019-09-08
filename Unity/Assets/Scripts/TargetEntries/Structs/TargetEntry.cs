@@ -4,17 +4,17 @@ namespace CalorieCounter.TargetEntries {
 
     public struct TargetEntry {
 
-        public DateTime Date;
-        public float Weight;
-        public float CalorieMaintenanceLevel;
-        public float RestDayFat;
-        public float RestDayCarbs;
-        public float RestDayProtein;
-        public float RestDayCalories;
-        public float TrainingDayFat;
-        public float TrainingDayCarbs;
-        public float TrainingDayProtein;
-        public float TrainingDayCalories;
+        public DateTime date;
+        public float weight;
+        public float calorieMaintenanceLevel;
+        public float restDayFat;
+        public float restDayCarbs;
+        public float restDayProtein;
+        public float restDayCalories;
+        public float trainingDayFat;
+        public float trainingDayCarbs;
+        public float trainingDayProtein;
+        public float trainingDayCalories;
 
         private const float HeightInInches = 68;
         private const int AgeInYears = 23;
@@ -28,19 +28,19 @@ namespace CalorieCounter.TargetEntries {
         private const float TrainingDayFatPercentage = 0.22f;
 
         public TargetEntry(DateTime date, float weight) {
-            Date = date;
-            Weight = weight;
-            CalorieMaintenanceLevel = GlobalMethods.Round(((4.536f * Weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
+            this.date = date;
+            this.weight = weight;
+            calorieMaintenanceLevel = GlobalMethods.Round(((4.536f * this.weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
 
-            RestDayCalories = GlobalMethods.Round(CalorieMaintenanceLevel + RestDayCalorieSurplus);
-            RestDayProtein = GlobalMethods.Round(Weight * ProteinPerPound);
-            RestDayFat = GlobalMethods.Round(RestDayCalories * RestDayFatPercentage / 9);
-            RestDayCarbs = GlobalMethods.Round((RestDayCalories - (RestDayProtein * 4) - RestDayFat * 9) / 4);
+            restDayCalories = GlobalMethods.Round(calorieMaintenanceLevel + RestDayCalorieSurplus);
+            restDayProtein = GlobalMethods.Round(this.weight * ProteinPerPound);
+            restDayFat = GlobalMethods.Round(restDayCalories * RestDayFatPercentage / 9);
+            restDayCarbs = GlobalMethods.Round((restDayCalories - (restDayProtein * 4) - restDayFat * 9) / 4);
 
-            TrainingDayCalories = GlobalMethods.Round(CalorieMaintenanceLevel + TrainingDayCalorieSurplus);
-            TrainingDayProtein = GlobalMethods.Round(Weight * ProteinPerPound);
-            TrainingDayFat = GlobalMethods.Round(TrainingDayCalories * TrainingDayFatPercentage / 9);
-            TrainingDayCarbs = GlobalMethods.Round((TrainingDayCalories - (TrainingDayProtein * 4) - TrainingDayFat * 9) / 4);
+            trainingDayCalories = GlobalMethods.Round(calorieMaintenanceLevel + TrainingDayCalorieSurplus);
+            trainingDayProtein = GlobalMethods.Round(this.weight * ProteinPerPound);
+            trainingDayFat = GlobalMethods.Round(trainingDayCalories * TrainingDayFatPercentage / 9);
+            trainingDayCarbs = GlobalMethods.Round((trainingDayCalories - (trainingDayProtein * 4) - trainingDayFat * 9) / 4);
         }
 
         public static bool operator ==(TargetEntry targetEntry1, TargetEntry targetEntry2) {
@@ -60,7 +60,7 @@ namespace CalorieCounter.TargetEntries {
 
         public override string ToString() {
             return string.Format("Date: {0}, Weight: {1}, Calorie Maintenance Level:{2}, Rest Day: [ Fat: {3}, Carbs: {4}, Protein: {5}, Calories: {6} ], Training Day: [ Fat: {7}, Carbs: {8}, Protein: {9}, Calories: {10} ]",
-                Date.ToShortDateString(), Weight, CalorieMaintenanceLevel, RestDayFat, RestDayCarbs, RestDayProtein, RestDayCalories, TrainingDayFat, TrainingDayCarbs, TrainingDayProtein, TrainingDayCalories);
+                date.ToShortDateString(), weight, calorieMaintenanceLevel, restDayFat, restDayCarbs, restDayProtein, restDayCalories, trainingDayFat, trainingDayCarbs, trainingDayProtein, trainingDayCalories);
         }
     }
 }

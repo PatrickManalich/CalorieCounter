@@ -32,7 +32,7 @@ namespace CalorieCounter.MealEntries {
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
         public void AddCommonMealProportionFromDropdowns() {
-            var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedNamedMealSource.MealSource);
+            var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _mealSourceDropdown.SelectedNamedMealSource.mealSource);
             AddMealProportion(mealProportion);
             _totals.AddToTotals(mealProportion);
         }
@@ -58,12 +58,12 @@ namespace CalorieCounter.MealEntries {
             TextAddedEvent?.Invoke(this, new TextAddedEventArgs(proteinText.GetComponent<ScrollViewText>()));
             TextAddedEvent?.Invoke(this, new TextAddedEventArgs(calorieText.GetComponent<ScrollViewText>()));
 
-            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourcesAdapter.GetMealSourceName(mealProportion.MealSource);
-            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
-            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
-            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
-            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
+            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
+            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourcesAdapter.GetMealSourceName(mealProportion.mealSource);
+            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.fat.ToString();
+            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.carbs.ToString();
+            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
+            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
 
             ScrollToBottom();
         }

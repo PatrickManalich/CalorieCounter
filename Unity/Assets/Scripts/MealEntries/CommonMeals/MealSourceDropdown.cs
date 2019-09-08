@@ -46,7 +46,7 @@ namespace CalorieCounter.MealEntries {
             _dropdown.ClearOptions();
             _optionDataList.Add(new TMP_Dropdown.OptionData(""));
             foreach (var namedMealSource in _namedMealSources) {
-                _optionDataList.Add(new TMP_Dropdown.OptionData($"{namedMealSource.Name} (per {namedMealSource.MealSource.ServingSize.ToLower()})"));
+                _optionDataList.Add(new TMP_Dropdown.OptionData($"{namedMealSource.name} (per {namedMealSource.mealSource.servingSize.ToLower()})"));
             }
             _dropdown.AddOptions(_optionDataList);
             SelectedNamedMealSource = default;

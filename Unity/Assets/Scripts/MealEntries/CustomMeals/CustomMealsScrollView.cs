@@ -54,12 +54,12 @@ namespace CalorieCounter.MealSources {
             TextAddedEvent?.Invoke(this, new TextAddedEventArgs(proteinText.GetComponent<ScrollViewText>()));
             TextAddedEvent?.Invoke(this, new TextAddedEventArgs(calorieText.GetComponent<ScrollViewText>()));
 
-            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
+            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = CustomMealSourceName;
-            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
-            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
-            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
-            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
+            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.fat.ToString();
+            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.carbs.ToString();
+            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
+            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
         }
 
         public override void SubtractMealProportion(MealProportion mealProportion) {

@@ -3,28 +3,28 @@ namespace CalorieCounter.MealSources {
 
     public struct MealSource {
 
-        public string Id;
-        public string ServingSize;
-        public float Fat;
-        public float Carbs;
-        public float Protein;
-        public float Calories;
-        public string Description;
-        public MealSourceType MealSourceType;
-        public bool Archived;
+        public string id;
+        public string servingSize;
+        public float fat;
+        public float carbs;
+        public float protein;
+        public float calories;
+        public string description;
+        public MealSourceType mealSourceType;
+        public bool archived;
 
         private const string CustomMealSourceServingSize = "Meal";
 
         public MealSource(int mealSourcesCount, string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType) {
-            Id = mealSourceType.ToString() + mealSourcesCount;
-            ServingSize = servingSize;
-            Fat = fat > 0 ? GlobalMethods.Round(fat) : 0;
-            Carbs = carbs > 0 ? GlobalMethods.Round(carbs) : 0;
-            Protein = protein > 0 ? GlobalMethods.Round(protein) : 0;
-            Calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
-            Description = description;
-            MealSourceType = mealSourceType;
-            Archived = false;
+            id = mealSourceType.ToString() + mealSourcesCount;
+            this.servingSize = servingSize;
+            this.fat = fat > 0 ? GlobalMethods.Round(fat) : 0;
+            this.carbs = carbs > 0 ? GlobalMethods.Round(carbs) : 0;
+            this.protein = protein > 0 ? GlobalMethods.Round(protein) : 0;
+            calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
+            this.description = description;
+            this.mealSourceType = mealSourceType;
+            archived = false;
         }
 
         public static MealSource CreateCustomMealSource(float fat, float carbs, float protein) {
@@ -48,7 +48,7 @@ namespace CalorieCounter.MealSources {
 
         public override string ToString() {
             return string.Format("ID: {0}, Serving Size: {1}, [ Fat: {2}, Carbs: {3}, Protein: {4}, Calories: {5} ], Description: {6}, Meal Type: {7}, Archived: {8}",
-                Id, ServingSize , Fat, Carbs, Protein, Calories, Description, MealSourceType, Archived);
+                id, servingSize , fat, carbs, protein, calories, description, mealSourceType, archived);
         }
     }
 }
