@@ -61,15 +61,11 @@ namespace CalorieCounter
 
         protected abstract void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e);
 
-        private void Awake()
-        {
-            ScrollViewRowHighlighter.RowDestroyedEvent += OnRowDestroyedEvent;
-        }
-
         private void Start()
         {
             _scrollRect = GetComponent<ScrollRect>();
             _content = _scrollRect.content.GetComponent<GridLayoutGroup>();
+            ScrollViewRowHighlighter.RowDestroyedEvent += OnRowDestroyedEvent;
         }
 
         private void OnDestroy()
