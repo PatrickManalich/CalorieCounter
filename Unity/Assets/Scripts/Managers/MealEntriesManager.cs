@@ -9,19 +9,19 @@ namespace CalorieCounter.Managers {
 
     public class MealEntriesManager : MonoBehaviour {
 
-        private SortedList<DateTime, MealEntry> _importedMealEntries = new SortedList<DateTime, MealEntry>();
+        private SortedList<DateTime, MealEntry> _mealEntries = new SortedList<DateTime, MealEntry>();
 
         public MealEntry ImportMealEntry(DateTime dateTime) {
-            if (!_importedMealEntries.ContainsKey(dateTime)) {
-                MealEntry importedMealEntry = JsonConverter.Import<MealEntry>(GetMealEntryPath(dateTime));
-                _importedMealEntries.Add(dateTime, importedMealEntry);
+            if (!_mealEntries.ContainsKey(dateTime)) {
+                MealEntry mealEntry = JsonConverter.Import<MealEntry>(GetMealEntryPath(dateTime));
+                _mealEntries.Add(dateTime, mealEntry);
             }
-            return _importedMealEntries[dateTime];
+            return _mealEntries[dateTime];
         }
 
         public void ExportMealEntry(MealEntry mealEntry, DateTime dateTime) {
             JsonConverter.Export(mealEntry, GetMealEntryPath(dateTime));
-            _importedMealEntries.Remove(dateTime);
+            _mealEntries.Remove(dateTime);
             ImportMealEntry(dateTime);
         }
 

@@ -42,18 +42,18 @@ namespace CalorieCounter.MealEntries {
             _totals.ResetTotals();
             _totals.Refresh();
 
-            MealEntry importedMealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDate);
-            if (importedMealEntry != default) {
-                foreach (var key in importedMealEntry.mealProportionsDictionary.Keys) {
+            MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDate);
+            if (mealEntry != default) {
+                foreach (var key in mealEntry.mealProportionsDictionary.Keys) {
                     AbstractMealsScrollView scrollView = _scrollViewDictionary[key];
-                    foreach (var mealProportion in importedMealEntry.mealProportionsDictionary[key]) {
+                    foreach (var mealProportion in mealEntry.mealProportionsDictionary[key]) {
                         scrollView.AddMealProportion(mealProportion);
                         _totals.AddToTotals(mealProportion);
                     }
                     scrollView.ScrollToTop();
                 }
             }
-            _dayTypeDropdown.HardSetDayType(importedMealEntry.dayType);
+            _dayTypeDropdown.HardSetDayType(mealEntry.dayType);
         }
 
         private void Start() {
