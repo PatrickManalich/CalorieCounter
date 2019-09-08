@@ -15,6 +15,8 @@ namespace CalorieCounter {
         ScaleEntries = 3,
     }
 
+    public enum InputKeyCode { ToggleMenu, DeleteRow }
+
     public static class GlobalPaths {
 
         public const string MealEntriesDir = @"MealEntries";

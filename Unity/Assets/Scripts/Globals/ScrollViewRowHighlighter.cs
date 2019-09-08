@@ -1,4 +1,5 @@
-﻿using CalorieCounter.Utilities;
+﻿using CalorieCounter.Managers;
+using CalorieCounter.Utilities;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,9 +24,6 @@ namespace CalorieCounter
         public event RowDestroyedEventHandler RowDestroyedEvent;
 
         [SerializeField]
-        private KeyCode _deleteKeyCode = default;
-
-        [SerializeField]
         private GridLayoutGroup _content = default;
 
         [SerializeField]
@@ -46,29 +44,12 @@ namespace CalorieCounter
 
             _rectTransform.sizeDelta = new Vector2(0, _content.cellSize.y);
             ExitHighlightRow();
-            _scrollView.TextAddedEvent += OnTextAddedEvent;
         }
 
-        private void Update()
+        private void Start()
         {
-            if (Input.GetKeyDown(_deleteKeyCode) && _highlightedRowIndex != -1 && _contentRectTransform.childCount > 0)
-            {
-                int childStartIndex = _highlightedRowIndex * _content.constraintCount;
-                for (int i = _content.constraintCount - 1; i >= 0 ; i--)
-                {
-                    int childIndex = childStartIndex + i;
-                    _scrollViewTexts.RemoveAt(childIndex);
-                    Destroy(_contentRectTransform.GetChild(childIndex).gameObject);
-                }
-                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-                RowDestroyedEvent?.Invoke(this, new RowDestroyedEventArgs(_highlightedRowIndex));
-
-                if (_scrollViewTexts.Count == 0 || _highlightedRowIndex >= _scrollViewTexts.Count / _content.constraintCount)
-                {
-                    ExitHighlightRow();
-                }
-
-            }
+            _scrollView.TextAddedEvent += OnTextAddedEvent;
+            GameManager.InputKeyManager.InputKeyPressedEvent += OnInputKeyPressed;
         }
 
         private void OnDestroy()
@@ -77,6 +58,7 @@ namespace CalorieCounter
             {
                 scrollViewText.HighlightedEvent -= OnHighlightedEvent;
             }
+            GameManager.InputKeyManager.InputKeyPressedEvent -= OnInputKeyPressed;
             _scrollView.TextAddedEvent -= OnTextAddedEvent;
         }
 
@@ -94,6 +76,30 @@ namespace CalorieCounter
             } else if(e.HighlightedEventType == HighlightedEventType.Exit)
             {
                 ExitHighlightRow();
+            }
+        }
+
+        private void OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
+        {
+            if (e.InputKeyCode == InputKeyCode.DeleteRow)
+            {
+                if (_highlightedRowIndex != -1 && _contentRectTransform.childCount > 0)
+                {
+                    int childStartIndex = _highlightedRowIndex * _content.constraintCount;
+                    for (int i = _content.constraintCount - 1; i >= 0; i--)
+                    {
+                        int childIndex = childStartIndex + i;
+                        _scrollViewTexts.RemoveAt(childIndex);
+                        Destroy(_contentRectTransform.GetChild(childIndex).gameObject);
+                    }
+                    FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
+                    RowDestroyedEvent?.Invoke(this, new RowDestroyedEventArgs(_highlightedRowIndex));
+
+                    if (_scrollViewTexts.Count == 0 || _highlightedRowIndex >= _scrollViewTexts.Count / _content.constraintCount)
+                    {
+                        ExitHighlightRow();
+                    }
+                }
             }
         }
 

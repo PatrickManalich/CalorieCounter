@@ -20,6 +20,8 @@ namespace CalorieCounter.Managers {
 
         public static LogMessageManager LogMessageManager { get { return Instance._logMessageManager; } }
 
+        public static InputKeyManager InputKeyManager { get { return Instance._inputKeyManager; } }
+
         [SerializeField]
         private CustomSceneManager _customSceneManager = default;
 
@@ -40,6 +42,10 @@ namespace CalorieCounter.Managers {
 
         [SerializeField]
         private LogMessageManager _logMessageManager = default;
+
+        [SerializeField]
+        private InputKeyManager _inputKeyManager = default;
+
         private void Awake() {
             if (Instance == null) {
                 Instance = this as GameManager;

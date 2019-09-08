@@ -22,8 +22,6 @@ namespace CalorieCounter.Managers {
         [SerializeField]
         private SceneButtonDictionary _sceneButtonDictionary = default;
 
-        private static readonly KeyCode _menuKeyCode = KeyCode.Escape;
-
         public void ShowMenu() {
             _menuCanvas.SetActive(true);
         }
@@ -35,15 +33,17 @@ namespace CalorieCounter.Managers {
         private void Start()
         {
             foreach (var key in _sceneButtonDictionary.Keys)
+            {
                 key.GetComponent<Button>().onClick.AddListener(() => OnSceneButtonClicked(key));
+            }
             _quitButton.onClick.AddListener(() => OnQuitButtonClicked());
+            GameManager.InputKeyManager.InputKeyPressedEvent += OnInputKeyPressed;
             _versionText.text = Application.version;
         }
 
-        private void Update() {
-            if (Input.GetKeyDown(_menuKeyCode)) {
-                _menuCanvas.SetActive(!_menuCanvas.activeSelf);
-            }
+        private void OnDestroy()
+        {
+            GameManager.InputKeyManager.InputKeyPressedEvent -= OnInputKeyPressed;
         }
 
         private void OnSceneButtonClicked(GameObject key)
@@ -59,7 +59,14 @@ namespace CalorieCounter.Managers {
 #else
          Application.Quit();
 #endif
+        }
 
+        private void OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
+        {
+            if (e.InputKeyCode == InputKeyCode.ToggleMenu)
+            {
+                _menuCanvas.SetActive(!_menuCanvas.activeSelf);
+            }
         }
     }
 }
