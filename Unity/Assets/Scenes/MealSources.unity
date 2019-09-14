@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 19275659}
   - component: {fileID: 19275662}
   m_Layer: 5
-  m_Name: SmallMealsScrollView
+  m_Name: Small_MealSourcesScrollView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -667,7 +667,7 @@ PrefabInstance:
     - target: {fileID: 3171886516535720999, guid: a0f78cd6079b1c54780cc0096ba8a898,
         type: 3}
       propertyPath: m_Name
-      value: LargeMealsRowHighlighter
+      value: Large_ScrollViewRowHighlighter
       objectReference: {fileID: 0}
     - target: {fileID: 3171886516535720992, guid: a0f78cd6079b1c54780cc0096ba8a898,
         type: 3}
@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 209689745}
   - component: {fileID: 209689744}
   m_Layer: 5
-  m_Name: SmallMealsAddButton
+  m_Name: Small_AddButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2639,7 +2639,7 @@ GameObject:
   - component: {fileID: 516241995}
   - component: {fileID: 516241996}
   m_Layer: 5
-  m_Name: LargeMealsInputFields
+  m_Name: Large_MealSourceInputFields
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3066,7 +3066,7 @@ GameObject:
   - component: {fileID: 651122448}
   - component: {fileID: 651122452}
   m_Layer: 5
-  m_Name: SmallMealsCancelButton
+  m_Name: Small_CancelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3366,7 +3366,7 @@ GameObject:
   - component: {fileID: 688997044}
   - component: {fileID: 688997043}
   m_Layer: 5
-  m_Name: LargeMealsScrollView
+  m_Name: Large_MealSourcesScrollView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4234,7 +4234,7 @@ GameObject:
   - component: {fileID: 853450533}
   - component: {fileID: 853450537}
   m_Layer: 5
-  m_Name: SmallMealsSubmitButton
+  m_Name: Small_SubmitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4697,7 +4697,7 @@ PrefabInstance:
     - target: {fileID: 3171886516535720999, guid: a0f78cd6079b1c54780cc0096ba8a898,
         type: 3}
       propertyPath: m_Name
-      value: SmallMealsRowHighlighter
+      value: Small_ScrollViewRowHighlighter
       objectReference: {fileID: 0}
     - target: {fileID: 3171886516535720992, guid: a0f78cd6079b1c54780cc0096ba8a898,
         type: 3}
@@ -5239,7 +5239,7 @@ GameObject:
   - component: {fileID: 1081389420}
   - component: {fileID: 1081389419}
   m_Layer: 5
-  m_Name: LargeMealsSubmitButton
+  m_Name: Large_SubmitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6777,7 +6777,7 @@ GameObject:
   - component: {fileID: 1405250083}
   - component: {fileID: 1405250082}
   m_Layer: 5
-  m_Name: SmallMealsHeader
+  m_Name: Small_MealSourcesHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7141,7 +7141,7 @@ GameObject:
   - component: {fileID: 1471410826}
   - component: {fileID: 1471410825}
   m_Layer: 5
-  m_Name: LargeMealsHeader
+  m_Name: Large_MealSourcesHeader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8623,7 +8623,7 @@ GameObject:
   - component: {fileID: 1972170844}
   - component: {fileID: 1972170843}
   m_Layer: 5
-  m_Name: LargeMealsAddButton
+  m_Name: Large_AddButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8843,7 +8843,7 @@ GameObject:
   - component: {fileID: 2019564309}
   - component: {fileID: 2019564308}
   m_Layer: 5
-  m_Name: LargeMealsCancelButton
+  m_Name: Large_CancelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8983,7 +8983,7 @@ GameObject:
   - component: {fileID: 2073791305}
   - component: {fileID: 2073791306}
   m_Layer: 5
-  m_Name: SmallMealsInputFields
+  m_Name: Small_MealSourceInputFields
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
