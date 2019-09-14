@@ -11,13 +11,13 @@ namespace CalorieCounter
     {
         public class TextModifiedEventArgs : EventArgs
         {
-            public TextModifiedEventType TextModifiedEventType { get; private set; }
+            public TextModifiedType TextModifiedType { get; private set; }
 
             public ScrollViewText ScrollViewText { get; private set; }
 
-            public TextModifiedEventArgs(TextModifiedEventType textModifiedEventType, ScrollViewText scrollViewText)
+            public TextModifiedEventArgs(TextModifiedType textModifiedType, ScrollViewText scrollViewText)
             {
-                TextModifiedEventType = textModifiedEventType;
+                TextModifiedType = textModifiedType;
                 ScrollViewText = scrollViewText;
             }
         }
@@ -47,7 +47,7 @@ namespace CalorieCounter
         {
             GameObject scrollViewText = Instantiate(_scrollViewTextPrefab);
             AddToScrollView(scrollViewText.transform);
-            TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedEventType.Instantiated, scrollViewText.GetComponent<ScrollViewText>()));
+            TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText.GetComponent<ScrollViewText>()));
             return scrollViewText;
         }
 
@@ -88,7 +88,7 @@ namespace CalorieCounter
             var child = _content.transform.GetChild(childIndex).gameObject;
             if (child.GetComponent<ScrollViewText>())
             {
-                TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedEventType.Destroying, child.GetComponent<ScrollViewText>()));
+                TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, child.GetComponent<ScrollViewText>()));
             }
             Destroy(child);
         }

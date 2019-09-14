@@ -9,27 +9,27 @@ namespace CalorieCounter
 
         public class HighlightedEventArgs : EventArgs
         {
-            public HighlightedEventType HighlightedEventType { get; private set; }
+            public HighlightedType HighlightedType { get; private set; }
             public int SiblingIndex { get; private set; }
 
-            public HighlightedEventArgs(HighlightedEventType highlightedEventType, int siblingIndex)
+            public HighlightedEventArgs(HighlightedType highlightedType, int siblingIndex)
             {
-                HighlightedEventType = highlightedEventType;
+                HighlightedType = highlightedType;
                 SiblingIndex = siblingIndex;
             }
         }
 
         public delegate void HighlightedEventHandler(object sender, HighlightedEventArgs e);
-        public event HighlightedEventHandler HighlightedEvent;
+        public event HighlightedEventHandler Highlighted;
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            HighlightedEvent?.Invoke(this, new HighlightedEventArgs(HighlightedEventType.Enter, transform.GetSiblingIndex()));
+            Highlighted?.Invoke(this, new HighlightedEventArgs(HighlightedType.Enter, transform.GetSiblingIndex()));
         }
 
         public void OnPointerExit(PointerEventData pointerEventData)
         {
-            HighlightedEvent?.Invoke(this, new HighlightedEventArgs(HighlightedEventType.Exit, transform.GetSiblingIndex()));
+            Highlighted?.Invoke(this, new HighlightedEventArgs(HighlightedType.Exit, transform.GetSiblingIndex()));
         }
     }
 }

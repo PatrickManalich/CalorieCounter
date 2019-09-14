@@ -35,39 +35,39 @@ namespace CalorieCounter
         private void Start()
         {
             _scrollView.TextModified += OnTextModified;
-            GameManager.InputKeyManager.InputKeyPressedEvent += OnInputKeyPressed;
+            GameManager.InputKeyManager.InputKeyPressed += OnInputKeyPressed;
         }
 
         private void OnDestroy()
         {
             foreach(var scrollViewText in _scrollViewTexts)
             {
-                scrollViewText.HighlightedEvent -= OnHighlightedEvent;
+                scrollViewText.Highlighted -= OnHighlighted;
             }
-            GameManager.InputKeyManager.InputKeyPressedEvent -= OnInputKeyPressed;
+            GameManager.InputKeyManager.InputKeyPressed -= OnInputKeyPressed;
             _scrollView.TextModified -= OnTextModified;
         }
 
         private void OnTextModified(object sender, AbstractScrollView.TextModifiedEventArgs e)
         {
-            if (e.TextModifiedEventType == TextModifiedEventType.Instantiated)
+            if (e.TextModifiedType == TextModifiedType.Instantiated)
             {
-                e.ScrollViewText.HighlightedEvent += OnHighlightedEvent;
+                e.ScrollViewText.Highlighted += OnHighlighted;
                 _scrollViewTexts.Add(e.ScrollViewText);
             }
-            else if (e.TextModifiedEventType == TextModifiedEventType.Destroying)
+            else if (e.TextModifiedType == TextModifiedType.Destroying)
             {
-                e.ScrollViewText.HighlightedEvent -= OnHighlightedEvent;
+                e.ScrollViewText.Highlighted -= OnHighlighted;
                 _scrollViewTexts.RemoveAt(_scrollViewTexts.IndexOf(e.ScrollViewText));
             }
         }
 
-        private void OnHighlightedEvent(object sender, ScrollViewText.HighlightedEventArgs e)
+        private void OnHighlighted(object sender, ScrollViewText.HighlightedEventArgs e)
         {
-            if (e.HighlightedEventType == HighlightedEventType.Enter)
+            if (e.HighlightedType == HighlightedType.Enter)
             {
                 EnterHighlightRow(e.SiblingIndex);
-            } else if(e.HighlightedEventType == HighlightedEventType.Exit)
+            } else if(e.HighlightedType == HighlightedType.Exit)
             {
                 ExitHighlightRow();
             }

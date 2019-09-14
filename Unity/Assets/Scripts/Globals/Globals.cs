@@ -6,9 +6,9 @@ namespace CalorieCounter {
 
     public enum DayType { None, Rest, Training, Vacation }
 
-    public enum HighlightedEventType { Enter, Exit }
+    public enum HighlightedType { Enter, Exit }
 
-    public enum TextModifiedEventType { Instantiated, Destroying }
+    public enum TextModifiedType { Instantiated, Destroying }
 
     public enum Scene {
         Menu = 0,

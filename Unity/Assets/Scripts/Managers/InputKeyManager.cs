@@ -18,7 +18,7 @@ namespace CalorieCounter.Managers
         }
 
         public delegate void InputKeyPressedEventHandler(object sender, InputKeyPressedEventArgs e);
-        public event InputKeyPressedEventHandler InputKeyPressedEvent;
+        public event InputKeyPressedEventHandler InputKeyPressed;
 
 
         [Serializable]
@@ -34,7 +34,7 @@ namespace CalorieCounter.Managers
                 if (Input.GetKeyDown(keyCode))
                 {
                     var inputKeyCode = _inputKeyCodeDictionary[keyCode];
-                    InputKeyPressedEvent?.Invoke(this, new InputKeyPressedEventArgs(inputKeyCode));
+                    InputKeyPressed?.Invoke(this, new InputKeyPressedEventArgs(inputKeyCode));
                 }
             }
         }
