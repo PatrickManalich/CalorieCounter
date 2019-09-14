@@ -1,5 +1,4 @@
 ﻿using CalorieCounter.Utilities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -36,10 +35,10 @@ namespace CalorieCounter.ScaleEntries {
             foreach (var inputField in _inputFields) {
                 inputField.text = "";
                 inputField.gameObject.SetActive(false);
-                inputField.transform.SetParent(transform);
+                inputField.transform.SetParent(transform, false);
             }
             _scaleEntryDateField.gameObject.SetActive(false);
-            _scaleEntryDateField.transform.SetParent(transform);
+            _scaleEntryDateField.transform.SetParent(transform, false);
         }
 
         public void CheckIfInputFieldsAreFilled() {

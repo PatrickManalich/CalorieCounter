@@ -46,10 +46,10 @@ namespace CalorieCounter.MealSources {
             foreach (var inputField in _inputFields) {
                 inputField.text = "";
                 inputField.gameObject.SetActive(false);
-                inputField.transform.SetParent(transform);
+                inputField.transform.SetParent(transform, false);
             }
             _blank.SetActive(false);
-            _blank.transform.SetParent(transform);
+            _blank.transform.SetParent(transform, false);
         }
 
         public void CheckIfInputFieldsAreFilled() {

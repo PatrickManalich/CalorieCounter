@@ -40,11 +40,11 @@ namespace CalorieCounter.MealEntries {
             foreach (var inputField in _inputFields) {
                 inputField.text = "";
                 inputField.gameObject.SetActive(false);
-                inputField.transform.SetParent(transform);
+                inputField.transform.SetParent(transform, false);
             }
             foreach (var blank in _blanks) {
                 blank.SetActive(false);
-                blank.transform.SetParent(transform);
+                blank.transform.SetParent(transform, false);
             }
         }
 

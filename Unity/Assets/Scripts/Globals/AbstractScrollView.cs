@@ -53,7 +53,7 @@ namespace CalorieCounter
 
         public void AddToScrollView(Transform transform)
         {
-            transform.SetParent(_content.transform);
+            transform.SetParent(_content.transform, false);
         }
 
         public bool HasInputFields()
