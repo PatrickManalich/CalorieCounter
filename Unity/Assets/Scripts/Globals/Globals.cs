@@ -8,6 +8,8 @@ namespace CalorieCounter {
 
     public enum HighlightedEventType { Enter, Exit }
 
+    public enum TextModifiedEventType { Instantiated, Destroying }
+
     public enum Scene {
         Menu = 0,
         MealEntries = 1,

@@ -7,16 +7,11 @@ namespace CalorieCounter.MealSources {
 
     public class CustomMealsScrollView : AbstractMealsScrollView {
 
-        protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
-
         [SerializeField]
         private CustomMealProportionInputFields _customMealInputFields = default;
 
         [SerializeField]
         private Totals _totals = default;
-
-        [SerializeField]
-        private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
         private const string CustomMealSourceName = "Custom Meal";
 
@@ -68,11 +63,12 @@ namespace CalorieCounter.MealSources {
             _mealProportions.Clear();
         }
 
-        protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
+        public override void DeleteRow(int rowIndex)
         {
-            var destroyedMealProportion = _mealProportions[e.DestroyedRowIndex];
+            var destroyedMealProportion = _mealProportions[rowIndex];
             SubtractMealProportion(destroyedMealProportion);
             _totals.RemoveFromTotals(destroyedMealProportion);
+            base.DeleteRow(rowIndex);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using CalorieCounter.Managers;
 using CalorieCounter.Utilities;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,19 +9,6 @@ namespace CalorieCounter
     [RequireComponent(typeof(CanvasGroup))]
     public class ScrollViewRowHighlighter : MonoBehaviour
     {
-        public class RowDestroyedEventArgs : EventArgs
-        {
-            public int DestroyedRowIndex { get; private set; }
-
-            public RowDestroyedEventArgs(int destroyedRowIndex)
-            {
-                DestroyedRowIndex = destroyedRowIndex;
-            }
-        }
-
-        public delegate void RowDestroyedEventHandler(object sender, RowDestroyedEventArgs e);
-        public event RowDestroyedEventHandler RowDestroyedEvent;
-
         [SerializeField]
         private GridLayoutGroup _content = default;
 
@@ -48,7 +34,7 @@ namespace CalorieCounter
 
         private void Start()
         {
-            _scrollView.TextAddedEvent += OnTextAddedEvent;
+            _scrollView.TextModified += OnTextModified;
             GameManager.InputKeyManager.InputKeyPressedEvent += OnInputKeyPressed;
         }
 
@@ -59,13 +45,21 @@ namespace CalorieCounter
                 scrollViewText.HighlightedEvent -= OnHighlightedEvent;
             }
             GameManager.InputKeyManager.InputKeyPressedEvent -= OnInputKeyPressed;
-            _scrollView.TextAddedEvent -= OnTextAddedEvent;
+            _scrollView.TextModified -= OnTextModified;
         }
 
-        private void OnTextAddedEvent(object sender, AbstractScrollView.TextAddedEventArgs e)
+        private void OnTextModified(object sender, AbstractScrollView.TextModifiedEventArgs e)
         {
-            e.ScrollViewText.HighlightedEvent += OnHighlightedEvent;
-            _scrollViewTexts.Add(e.ScrollViewText);
+            if (e.TextModifiedEventType == TextModifiedEventType.Instantiated)
+            {
+                e.ScrollViewText.HighlightedEvent += OnHighlightedEvent;
+                _scrollViewTexts.Add(e.ScrollViewText);
+            }
+            else if (e.TextModifiedEventType == TextModifiedEventType.Destroying)
+            {
+                e.ScrollViewText.HighlightedEvent -= OnHighlightedEvent;
+                _scrollViewTexts.RemoveAt(_scrollViewTexts.IndexOf(e.ScrollViewText));
+            }
         }
 
         private void OnHighlightedEvent(object sender, ScrollViewText.HighlightedEventArgs e)
@@ -85,16 +79,8 @@ namespace CalorieCounter
             {
                 if (_highlightedRowIndex != -1 && _contentRectTransform.childCount > 0)
                 {
-                    int childStartIndex = _highlightedRowIndex * _content.constraintCount;
-                    for (int i = _content.constraintCount - 1; i >= 0; i--)
-                    {
-                        int childIndex = childStartIndex + i;
-                        _scrollViewTexts.RemoveAt(childIndex);
-                        Destroy(_contentRectTransform.GetChild(childIndex).gameObject);
-                    }
+                    _scrollView.DeleteRow(_highlightedRowIndex);
                     FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-                    RowDestroyedEvent?.Invoke(this, new RowDestroyedEventArgs(_highlightedRowIndex));
-
                     if (_scrollViewTexts.Count == 0 || _highlightedRowIndex >= _scrollViewTexts.Count / _content.constraintCount)
                     {
                         ExitHighlightRow();

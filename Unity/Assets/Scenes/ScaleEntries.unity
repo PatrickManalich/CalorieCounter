@@ -488,7 +488,6 @@ MonoBehaviour:
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
   _scaleEntriesInputFields: {fileID: 1625267897}
-  _scrollViewRowHighlighter: {fileID: 1013467831}
 --- !u!224 &62301969 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6791813578162674174, guid: b84f13cb516060d448aef7e2a6f6eaf9,
@@ -2978,18 +2977,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3171886515523303060}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1013467831 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
-    type: 3}
-  m_PrefabInstance: {fileID: 3171886515523303060}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013467827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d9318f9e9a402d4593cd0c4af47534e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1077719441
 GameObject:
   m_ObjectHideFlags: 0

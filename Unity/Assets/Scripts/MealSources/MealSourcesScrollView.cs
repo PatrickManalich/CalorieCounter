@@ -10,13 +10,8 @@ namespace CalorieCounter.MealSources {
 
         public SortedList<string, string> MealSourceNames { get; private set; } = new SortedList<string, string>();
 
-        protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
-
         [SerializeField]
         private MealSourceInputFields _mealSourceInputFields = default;
-
-        [SerializeField]
-        private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
         private SortedList<string, NamedMealSource> _namedMealSources = new SortedList<string, NamedMealSource>();
 
@@ -65,13 +60,15 @@ namespace CalorieCounter.MealSources {
             ScrollToPercent(percent);
         }
 
-        protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
+        public override void DeleteRow(int rowIndex)
         {
-            var archivedMealSource = _namedMealSources.Values[e.DestroyedRowIndex].mealSource;
+            var archivedMealSource = _namedMealSources.Values[rowIndex].mealSource;
             archivedMealSource.archived = true;
             MealSources.RemoveAt(MealSources.IndexOfKey(archivedMealSource.id));
             MealSources.Add(archivedMealSource.id, archivedMealSource);
-            _namedMealSources.RemoveAt(e.DestroyedRowIndex);
+            _namedMealSources.RemoveAt(rowIndex);
+            base.DeleteRow(rowIndex);
         }
+
     }
 }

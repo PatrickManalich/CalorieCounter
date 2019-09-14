@@ -10,13 +10,8 @@ namespace CalorieCounter.ScaleEntries
     {
         public SortedList<DateTime, ScaleEntry> ScaleEntries { get; private set; } = new SortedList<DateTime, ScaleEntry>();
 
-        protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
-
         [SerializeField]
         private ScaleEntryInputFields _scaleEntriesInputFields = default;
-
-        [SerializeField]
-        private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
 
         public void AddScaleEntryFromInputFields()
         {
@@ -56,9 +51,10 @@ namespace CalorieCounter.ScaleEntries
             ScrollToPercent(percent);
         }
 
-        protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
+        public override void DeleteRow(int rowIndex)
         {
-            ScaleEntries.RemoveAt(e.DestroyedRowIndex);
+            ScaleEntries.RemoveAt(rowIndex);
+            base.DeleteRow(rowIndex);
         }
     }
 }

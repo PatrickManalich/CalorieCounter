@@ -7,8 +7,6 @@ namespace CalorieCounter.MealEntries {
 
     public class CommonMealsScrollView : AbstractMealsScrollView {
 
-        protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
-
         [SerializeField]
         private MealSourcesAdapter _mealSourcesAdapter = default; 
 
@@ -21,9 +19,6 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private Totals _totals = default;
 
-        [SerializeField]
-        private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
-
         private List<MealProportion> _mealProportions = new List<MealProportion>();
 
         public void AddCommonMealProportionFromDropdowns() {
@@ -31,6 +26,7 @@ namespace CalorieCounter.MealEntries {
             AddMealProportion(mealProportion);
             _totals.AddToTotals(mealProportion);
         }
+
         public override List<MealProportion> GetMealProportions()
         {
             return _mealProportions;
@@ -74,11 +70,12 @@ namespace CalorieCounter.MealEntries {
             _mealProportions.Clear();
         }
 
-        protected override void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e)
+        public override void DeleteRow(int rowIndex)
         {
-            var destroyedMealProportion = _mealProportions[e.DestroyedRowIndex];
+            var destroyedMealProportion = _mealProportions[rowIndex];
             SubtractMealProportion(destroyedMealProportion);
             _totals.RemoveFromTotals(destroyedMealProportion);
+            base.DeleteRow(rowIndex);
         }
     }
 }
