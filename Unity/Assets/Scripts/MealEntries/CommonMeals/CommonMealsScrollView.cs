@@ -7,8 +7,6 @@ namespace CalorieCounter.MealEntries {
 
     public class CommonMealsScrollView : AbstractMealsScrollView {
 
-        public override event TextAddedEventHandler TextAddedEvent;
-
         protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
 
         [SerializeField]
@@ -19,9 +17,6 @@ namespace CalorieCounter.MealEntries {
 
         [SerializeField]
         private NamedMealSourceDropdown _namedMealSourceDropdown = default;
-
-        [SerializeField]
-        private GameObject _scrollViewTextPrefab = default;
 
         [SerializeField]
         private Totals _totals = default;
@@ -44,19 +39,12 @@ namespace CalorieCounter.MealEntries {
         public override void AddMealProportion(MealProportion mealProportion) {
             _mealProportions.Add(mealProportion);
 
-            GameObject servingAmountText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject nameText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject fatText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject carbText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject proteinText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject calorieText = Instantiate(_scrollViewTextPrefab, _content.transform);
-
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(servingAmountText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(nameText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(fatText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(carbText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(proteinText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(calorieText.GetComponent<ScrollViewText>()));
+            GameObject servingAmountText = InstantiateScrollViewText();
+            GameObject nameText = InstantiateScrollViewText();
+            GameObject fatText = InstantiateScrollViewText();
+            GameObject carbText = InstantiateScrollViewText();
+            GameObject proteinText = InstantiateScrollViewText();
+            GameObject calorieText = InstantiateScrollViewText();
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = _mealSourcesAdapter.GetMealSourceName(mealProportion.mealSource);

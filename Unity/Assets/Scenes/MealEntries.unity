@@ -333,11 +333,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0a4501d0ccd64582d94fd25e7d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
+    type: 3}
   _mealSourcesAdapter: {fileID: 1906813654}
   _servingAmountDropdown: {fileID: 1671688307}
   _namedMealSourceDropdown: {fileID: 1576245871}
-  _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
-    type: 3}
   _totals: {fileID: 1566187486}
   _scrollViewRowHighlighter: {fileID: 760202851}
 --- !u!1 &29919848
@@ -5731,11 +5731,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e0a4501d0ccd64582d94fd25e7d40c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
+    type: 3}
   _mealSourcesAdapter: {fileID: 1906813654}
   _servingAmountDropdown: {fileID: 1521270210}
   _namedMealSourceDropdown: {fileID: 767946881}
-  _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
-    type: 3}
   _totals: {fileID: 1566187486}
   _scrollViewRowHighlighter: {fileID: 1300792026}
 --- !u!114 &688997044

@@ -20,12 +20,29 @@ namespace CalorieCounter
         }
 
         public delegate void TextAddedEventHandler(object sender, TextAddedEventArgs e);
-        public abstract event TextAddedEventHandler TextAddedEvent;
+        public event TextAddedEventHandler TextAddedEvent;
 
         protected abstract ScrollViewRowHighlighter ScrollViewRowHighlighter { get; }
 
+
+        [SerializeField]
+        private GameObject _scrollViewTextPrefab = default;
+
         protected ScrollRect _scrollRect;
         protected GridLayoutGroup _content;
+
+        public GameObject InstantiateScrollViewText()
+        {
+            GameObject scrollViewText = Instantiate(_scrollViewTextPrefab);
+            AddToScrollView(scrollViewText.transform);
+            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(scrollViewText.GetComponent<ScrollViewText>()));
+            return scrollViewText;
+        }
+
+        public void AddToScrollView(Transform transform)
+        {
+            transform.SetParent(_content.transform);
+        }
 
         public bool HasInputFields()
         {
@@ -52,11 +69,6 @@ namespace CalorieCounter
         public void ScrollToPercent(float percent)
         {
             StartCoroutine(ScrollToPercentCoroutine(percent));
-        }
-
-        public void AddToScrollView(Transform transform)
-        {
-            transform.SetParent(_content.transform);
         }
 
         protected abstract void OnRowDestroyedEvent(object sender, ScrollViewRowHighlighter.RowDestroyedEventArgs e);

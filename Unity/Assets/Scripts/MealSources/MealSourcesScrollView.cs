@@ -10,12 +10,7 @@ namespace CalorieCounter.MealSources {
 
         public SortedList<string, string> MealSourceNames { get; private set; } = new SortedList<string, string>();
 
-        public override event TextAddedEventHandler TextAddedEvent;
-
         protected override ScrollViewRowHighlighter ScrollViewRowHighlighter { get { return _scrollViewRowHighlighter; } }
-
-        [SerializeField]
-        private GameObject _scrollViewTextPrefab = default;
 
         [SerializeField]
         private MealSourceInputFields _mealSourceInputFields = default;
@@ -41,13 +36,13 @@ namespace CalorieCounter.MealSources {
 
             _namedMealSources.Add(namedMealSource.name, namedMealSource);
 
-            GameObject mealNameText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject servingSizeText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject fatText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject carbText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject proteinText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject calorieText = Instantiate(_scrollViewTextPrefab, _content.transform);
-            GameObject descriptionText = Instantiate(_scrollViewTextPrefab, _content.transform);
+            GameObject mealNameText = InstantiateScrollViewText();
+            GameObject servingSizeText = InstantiateScrollViewText();
+            GameObject fatText = InstantiateScrollViewText();
+            GameObject carbText = InstantiateScrollViewText();
+            GameObject proteinText = InstantiateScrollViewText();
+            GameObject calorieText = InstantiateScrollViewText();
+            GameObject descriptionText = InstantiateScrollViewText();
 
             int siblingStartIndex = _namedMealSources.IndexOfKey(namedMealSource.name) * _content.constraintCount;
             mealNameText.transform.SetSiblingIndex(siblingStartIndex);
@@ -57,14 +52,6 @@ namespace CalorieCounter.MealSources {
             proteinText.transform.SetSiblingIndex(siblingStartIndex + 4);
             calorieText.transform.SetSiblingIndex(siblingStartIndex + 5);
             descriptionText.transform.SetSiblingIndex(siblingStartIndex + 6);
-
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(mealNameText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(servingSizeText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(fatText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(carbText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(proteinText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(calorieText.GetComponent<ScrollViewText>()));
-            TextAddedEvent?.Invoke(this, new TextAddedEventArgs(descriptionText.GetComponent<ScrollViewText>()));
 
             mealNameText.GetComponent<TextMeshProUGUI>().text = namedMealSource.name;
             servingSizeText.GetComponent<TextMeshProUGUI>().text = mealSource.servingSize;
