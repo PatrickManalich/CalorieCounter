@@ -13,6 +13,9 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private MealSourceInputFields _mealSourceInputFields = default;
 
+        [SerializeField]
+        private MealSourceRenameField _mealSourceRenameField = default;
+
         private SortedList<string, NamedMealSource> _namedMealSources = new SortedList<string, NamedMealSource>();
 
         public void AddNamedMealSourceFromInputFields()
@@ -58,6 +61,13 @@ namespace CalorieCounter.MealSources {
 
             var percent = 1 - (_namedMealSources.IndexOfKey(namedMealSource.name) / (float) (_namedMealSources.Count - 1));
             ScrollToPercent(percent);
+        }
+
+        public override void RenameRow(int rowIndex)
+        {
+            var parentTransform = _content.transform.GetChild(rowIndex * _content.constraintCount);
+            var oldNameText = _namedMealSources.Values[rowIndex].name;
+            _mealSourceRenameField.ShowRenameField(parentTransform, oldNameText);
         }
 
         public override void DeleteRow(int rowIndex)

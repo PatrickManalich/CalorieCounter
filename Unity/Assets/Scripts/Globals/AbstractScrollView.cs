@@ -31,6 +31,8 @@ namespace CalorieCounter
         protected ScrollRect _scrollRect;
         protected GridLayoutGroup _content;
 
+        public virtual void RenameRow(int rowIndex) { }
+
         public virtual void DeleteRow(int rowIndex)
         {
             var childStartIndex = rowIndex * _content.constraintCount;
@@ -39,16 +41,6 @@ namespace CalorieCounter
                 var childIndex = childStartIndex + i;
                 DestroyFromScrollView(childIndex);
             }
-        }
-
-        public void DestroyFromScrollView(int childIndex)
-        {
-            var child = _content.transform.GetChild(childIndex).gameObject;
-            if (child.GetComponent<ScrollViewText>())
-            {
-                TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedEventType.Destroying, child.GetComponent<ScrollViewText>()));
-            }
-            Destroy(child);
         }
 
         public GameObject InstantiateScrollViewText()
@@ -89,6 +81,16 @@ namespace CalorieCounter
         public void ScrollToPercent(float percent)
         {
             StartCoroutine(ScrollToPercentCoroutine(percent));
+        }
+
+        protected void DestroyFromScrollView(int childIndex)
+        {
+            var child = _content.transform.GetChild(childIndex).gameObject;
+            if (child.GetComponent<ScrollViewText>())
+            {
+                TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedEventType.Destroying, child.GetComponent<ScrollViewText>()));
+            }
+            Destroy(child);
         }
 
         private void Start()

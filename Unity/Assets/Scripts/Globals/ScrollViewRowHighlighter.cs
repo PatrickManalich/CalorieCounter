@@ -75,18 +75,24 @@ namespace CalorieCounter
 
         private void OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
         {
+            if (_highlightedRowIndex == -1 || _contentRectTransform.childCount <= 0)
+                return;
+
             if (e.InputKeyCode == InputKeyCode.DeleteRow)
             {
-                if (_highlightedRowIndex != -1 && _contentRectTransform.childCount > 0)
+                _scrollView.DeleteRow(_highlightedRowIndex);
+                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
+                if (_scrollViewTexts.Count == 0 || _highlightedRowIndex >= _scrollViewTexts.Count / _content.constraintCount)
                 {
-                    _scrollView.DeleteRow(_highlightedRowIndex);
-                    FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-                    if (_scrollViewTexts.Count == 0 || _highlightedRowIndex >= _scrollViewTexts.Count / _content.constraintCount)
-                    {
-                        ExitHighlightRow();
-                    }
+                    ExitHighlightRow();
                 }
             }
+            else if (e.InputKeyCode == InputKeyCode.RenameRow)
+            {
+                _scrollView.RenameRow(_highlightedRowIndex);
+                ExitHighlightRow();
+            }
+
         }
 
         private void EnterHighlightRow(int siblingIndex)

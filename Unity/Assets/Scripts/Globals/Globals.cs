@@ -17,7 +17,7 @@ namespace CalorieCounter {
         ScaleEntries = 3,
     }
 
-    public enum InputKeyCode { ToggleMenu, DeleteRow }
+    public enum InputKeyCode { ToggleMenu, DeleteRow, RenameRow }
 
     public static class GlobalPaths {
 
