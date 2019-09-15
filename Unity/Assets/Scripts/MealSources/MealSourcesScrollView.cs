@@ -11,17 +11,9 @@ namespace CalorieCounter.MealSources {
         public SortedList<string, string> MealSourceNames { get; private set; } = new SortedList<string, string>();
 
         [SerializeField]
-        private MealSourceInputFields _mealSourceInputFields = default;
-
-        [SerializeField]
         private MealSourceRenameField _mealSourceRenameField = default;
 
         private SortedList<string, NamedMealSource> _namedMealSources = new SortedList<string, NamedMealSource>();
-
-        public void AddNamedMealSourceFromInputFields()
-        {
-            AddNamedMealSource(_mealSourceInputFields.GetNamedMealSourceFromInputFields());
-        }
 
         public void AddNamedMealSource(NamedMealSource namedMealSource)
         {

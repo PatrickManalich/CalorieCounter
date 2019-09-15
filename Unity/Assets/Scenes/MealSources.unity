@@ -331,7 +331,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _mealSourceInputFields: {fileID: 2073791306}
   _mealSourceRenameField: {fileID: 109278363}
 --- !u!1 &58786824
 GameObject:
@@ -922,18 +921,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 209689745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2073791306}
-        m_MethodName: ShowInputFields
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &209689745
@@ -3183,18 +3171,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 651122449}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2073791306}
-        m_MethodName: HideInputFields
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &651122449
@@ -3680,7 +3657,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _mealSourceInputFields: {fileID: 516241996}
   _mealSourceRenameField: {fileID: 1123050181}
 --- !u!114 &688997044
 MonoBehaviour:
@@ -4571,29 +4547,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 853450534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 19275662}
-        m_MethodName: AddNamedMealSourceFromInputFields
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2073791306}
-        m_MethodName: HideInputFields
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &853450534
@@ -5589,29 +5543,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1081389421}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 688997043}
-        m_MethodName: AddNamedMealSourceFromInputFields
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 516241996}
-        m_MethodName: HideInputFields
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1081389421
@@ -7098,6 +7030,7 @@ GameObject:
   - component: {fileID: 1405250081}
   - component: {fileID: 1405250083}
   - component: {fileID: 1405250082}
+  - component: {fileID: 1405250084}
   m_Layer: 5
   m_Name: Small_MealSourcesHeader
   m_TagString: Untagged
@@ -7247,6 +7180,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405250080}
   m_CullTransparentMesh: 0
+--- !u!114 &1405250084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1405250080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d765b414f927d674cb8b8350cb47f4e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addButton: {fileID: 209689744}
+  _submitButton: {fileID: 853450533}
+  _cancelButton: {fileID: 651122448}
+  _mealSourcesScrollView: {fileID: 19275662}
+  _mealSourceInputFields: {fileID: 2073791306}
 --- !u!1001 &1451594083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7462,6 +7412,7 @@ GameObject:
   - component: {fileID: 1471410824}
   - component: {fileID: 1471410826}
   - component: {fileID: 1471410825}
+  - component: {fileID: 1471410827}
   m_Layer: 5
   m_Name: Large_MealSourcesHeader
   m_TagString: Untagged
@@ -7611,6 +7562,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1471410823}
   m_CullTransparentMesh: 0
+--- !u!114 &1471410827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471410823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d765b414f927d674cb8b8350cb47f4e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addButton: {fileID: 1972170843}
+  _submitButton: {fileID: 1081389420}
+  _cancelButton: {fileID: 2019564309}
+  _mealSourcesScrollView: {fileID: 688997043}
+  _mealSourceInputFields: {fileID: 516241996}
 --- !u!1 &1522375256
 GameObject:
   m_ObjectHideFlags: 0
@@ -9208,18 +9176,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1972170844}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 516241996}
-        m_MethodName: ShowInputFields
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1972170844
@@ -9461,18 +9418,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2019564310}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 516241996}
-        m_MethodName: HideInputFields
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2019564310
