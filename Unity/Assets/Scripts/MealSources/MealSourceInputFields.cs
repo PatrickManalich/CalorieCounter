@@ -22,7 +22,7 @@ namespace CalorieCounter.MealSources {
 
         private static readonly char[] ValidSpecialChars = new char[]
         {
-                    '-', '\'', '&', '.', ' ', '/', '%',
+            '-', '\'', '&', '.', ' ', '/', '%',
         };
 
         public void ShowInputFields() {
@@ -63,14 +63,14 @@ namespace CalorieCounter.MealSources {
         }
 
         public NamedMealSource GetNamedMealSourceFromInputFields() {
-            var mealSourceCount = _mealSourcesScrollView.MealSources.Count;
+            var id = _mealSourceType.ToString() + _mealSourcesScrollView.MealSources.Count;
             var name = _inputFields[0].text;
             var servingSize = _inputFields[1].text;
             var fat = float.Parse(_inputFields[2].text);
             var carbs = float.Parse(_inputFields[3].text);
             var protein = float.Parse(_inputFields[4].text);
             var description = _inputFields[5].text;
-            var mealSource = new MealSource(mealSourceCount, servingSize, fat, carbs, protein, description, _mealSourceType);
+            var mealSource = new MealSource(id, servingSize, fat, carbs, protein, description, _mealSourceType);
             return new NamedMealSource(name, mealSource);
         }
 
