@@ -46,7 +46,7 @@ namespace CalorieCounter.MealSources
         {
             if (_mealSourceInputFields.Shown)
             {
-                _mealSourcesScrollView.AddNamedMealSource(_mealSourceInputFields.GetNamedMealSourceFromInputFields());
+                _mealSourcesScrollView.AddNamedMealSource(_mealSourceInputFields.NamedMealSource);
                 _mealSourceInputFields.HideInputFields();
             }
             if(_mealSourceRenameField.Shown)

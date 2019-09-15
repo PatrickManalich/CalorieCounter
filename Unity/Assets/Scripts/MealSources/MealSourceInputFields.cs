@@ -10,6 +10,20 @@ namespace CalorieCounter.MealSources {
 
         public bool Shown { get; private set; } = false;
 
+        public NamedMealSource NamedMealSource {
+            get {
+                var id = _mealSourceType.ToString() + _mealSourcesScrollView.MealSources.Count;
+                var name = _inputFields[0].text;
+                var servingSize = _inputFields[1].text;
+                var fat = float.Parse(_inputFields[2].text);
+                var carbs = float.Parse(_inputFields[3].text);
+                var protein = float.Parse(_inputFields[4].text);
+                var description = _inputFields[5].text;
+                var mealSource = new MealSource(id, servingSize, fat, carbs, protein, description, _mealSourceType);
+                return new NamedMealSource(name, mealSource);
+            }
+        }
+
         [SerializeField]
         private MealSourceType _mealSourceType = default;
 
@@ -64,18 +78,6 @@ namespace CalorieCounter.MealSources {
                 }
             }
             FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-        }
-
-        public NamedMealSource GetNamedMealSourceFromInputFields() {
-            var id = _mealSourceType.ToString() + _mealSourcesScrollView.MealSources.Count;
-            var name = _inputFields[0].text;
-            var servingSize = _inputFields[1].text;
-            var fat = float.Parse(_inputFields[2].text);
-            var carbs = float.Parse(_inputFields[3].text);
-            var protein = float.Parse(_inputFields[4].text);
-            var description = _inputFields[5].text;
-            var mealSource = new MealSource(id, servingSize, fat, carbs, protein, description, _mealSourceType);
-            return new NamedMealSource(name, mealSource);
         }
 
         private void Awake()
