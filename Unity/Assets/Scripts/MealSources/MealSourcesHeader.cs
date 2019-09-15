@@ -39,7 +39,7 @@ namespace CalorieCounter.MealSources
 
         private void OnAddButtonClicked()
         {
-            _mealSourceInputFields.ShowInputFields();
+            _mealSourceInputFields.Show();
         }
 
         private void OnSubmitButtonClicked()
@@ -47,12 +47,12 @@ namespace CalorieCounter.MealSources
             if (_mealSourceInputFields.Shown)
             {
                 _mealSourcesScrollView.AddNamedMealSource(_mealSourceInputFields.NamedMealSource);
-                _mealSourceInputFields.HideInputFields();
+                _mealSourceInputFields.Hide();
             }
             if(_mealSourceRenameField.Shown)
             {
                 _mealSourcesScrollView.RenameNamedMealSource(_mealSourceRenameField.OldNamedMealSource, _mealSourceRenameField.NewNamedMealSource);
-                _mealSourceRenameField.HideRenameField();
+                _mealSourceRenameField.Hide();
             }
         }
 
@@ -60,11 +60,11 @@ namespace CalorieCounter.MealSources
         {
             if (_mealSourceInputFields.Shown)
             {
-                _mealSourceInputFields.HideInputFields();
+                _mealSourceInputFields.Hide();
             }
             if (_mealSourceRenameField.Shown)
             {
-                _mealSourceRenameField.HideRenameField();
+                _mealSourceRenameField.Hide();
             }
         }
 

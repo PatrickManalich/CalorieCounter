@@ -41,7 +41,7 @@ namespace CalorieCounter.MealSources {
             '-', '\'', '&', '.', ' ', '/', '%',
         };
 
-        public void ShowInputFields() {
+        public void Show() {
             for (int i = 0; i < _inputFields.Count + 1; i++) {
                 if (i == 5) {
                     _mealSourcesScrollView.AddToScrollView(_blank.transform);
@@ -59,7 +59,7 @@ namespace CalorieCounter.MealSources {
             Shown = true;
         }
 
-        public void HideInputFields() {
+        public void Hide() {
             foreach (var inputField in _inputFields) {
                 inputField.text = "";
                 inputField.gameObject.SetActive(false);

@@ -69,7 +69,7 @@ namespace CalorieCounter.MealSources {
         {
             var parentTransform = _content.transform.GetChild(rowIndex * _content.constraintCount);
             var oldNamedMealSource = _namedMealSources.Values[rowIndex];
-            _mealSourceRenameField.ShowRenameField(parentTransform, oldNamedMealSource);
+            _mealSourceRenameField.Show(parentTransform, oldNamedMealSource);
         }
 
         public override void DeleteRow(int rowIndex)

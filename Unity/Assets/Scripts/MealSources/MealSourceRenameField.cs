@@ -23,7 +23,7 @@ namespace CalorieCounter.MealSources
         private TMP_InputField _inputField = default;
 
 
-        public void ShowRenameField(Transform parentTransform, NamedMealSource oldNamedMealSource)
+        public void Show(Transform parentTransform, NamedMealSource oldNamedMealSource)
         {
             OldNamedMealSource = oldNamedMealSource;
             _inputField.transform.SetParent(parentTransform, false);
@@ -34,7 +34,7 @@ namespace CalorieCounter.MealSources
             Shown = true;
         }
 
-        public void HideRenameField()
+        public void Hide()
         {
             _inputField.text = "";
             _inputField.gameObject.SetActive(false);
