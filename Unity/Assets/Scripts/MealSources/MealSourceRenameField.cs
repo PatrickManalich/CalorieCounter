@@ -1,26 +1,46 @@
-﻿using TMPro;
+﻿using CalorieCounter.Utilities;
+using TMPro;
 using UnityEngine;
 
 namespace CalorieCounter.MealSources
 {
     public class MealSourceRenameField : MonoBehaviour
     {
+        public bool Shown { get; private set; } = false;
+
+        public NamedMealSource OldNamedMealSource { get; private set; } = default;
+
+        public NamedMealSource NewNamedMealSource {
+            get 
+            {
+                var newNamedMealSource = OldNamedMealSource;
+                newNamedMealSource.name = _inputField.text == "" ? OldNamedMealSource.name : _inputField.text;
+                return newNamedMealSource;
+            }
+        }
 
         [SerializeField]
         private TMP_InputField _inputField = default;
 
-        private bool _renaming = false;
 
-        public void ShowRenameField(Transform parentTransform, string oldNameText)
+        public void ShowRenameField(Transform parentTransform, NamedMealSource oldNamedMealSource)
         {
-            if (!_renaming)
-            {
-                _inputField.transform.SetParent(parentTransform, false);
-                _inputField.gameObject.SetActive(true);
-                _inputField.text = oldNameText;
-                _inputField.Select();
-                _renaming = true;
-            }
+            OldNamedMealSource = oldNamedMealSource;
+            _inputField.transform.SetParent(parentTransform, false);
+            _inputField.gameObject.SetActive(true);
+            _inputField.text = OldNamedMealSource.name;
+            _inputField.Select();
+            FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
+            Shown = true;
+        }
+
+        public void HideRenameField()
+        {
+            _inputField.text = "";
+            _inputField.gameObject.SetActive(false);
+            _inputField.transform.SetParent(transform, false);
+            OldNamedMealSource = default;
+            Shown = false;
         }
     }
 }

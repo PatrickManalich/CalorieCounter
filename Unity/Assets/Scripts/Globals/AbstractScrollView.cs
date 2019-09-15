@@ -31,7 +31,7 @@ namespace CalorieCounter
         protected ScrollRect _scrollRect;
         protected GridLayoutGroup _content;
 
-        public virtual void RenameRow(int rowIndex) { }
+        public virtual void ShowRenameField(int rowIndex) { }
 
         public virtual void DeleteRow(int rowIndex)
         {

@@ -89,7 +89,7 @@ namespace CalorieCounter
             }
             else if (e.InputKeyCode == InputKeyCode.RenameRow)
             {
-                _scrollView.RenameRow(_highlightedRowIndex);
+                _scrollView.ShowRenameField(_highlightedRowIndex);
                 ExitHighlightRow();
             }
 

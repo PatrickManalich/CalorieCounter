@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace CalorieCounter.MealSources
@@ -21,6 +19,9 @@ namespace CalorieCounter.MealSources
 
         [SerializeField]
         private MealSourceInputFields _mealSourceInputFields = default;
+
+        [SerializeField]
+        private MealSourceRenameField _mealSourceRenameField = default;
 
         private void Start()
         {
@@ -43,13 +44,28 @@ namespace CalorieCounter.MealSources
 
         private void OnSubmitButtonClicked()
         {
-            _mealSourcesScrollView.AddNamedMealSource(_mealSourceInputFields.GetNamedMealSourceFromInputFields());
-            _mealSourceInputFields.HideInputFields();
+            if (_mealSourceInputFields.Shown)
+            {
+                _mealSourcesScrollView.AddNamedMealSource(_mealSourceInputFields.GetNamedMealSourceFromInputFields());
+                _mealSourceInputFields.HideInputFields();
+            }
+            if(_mealSourceRenameField.Shown)
+            {
+                _mealSourcesScrollView.RenameNamedMealSource(_mealSourceRenameField.OldNamedMealSource, _mealSourceRenameField.NewNamedMealSource);
+                _mealSourceRenameField.HideRenameField();
+            }
         }
 
         private void OnCancelButtonClicked()
         {
-            _mealSourceInputFields.HideInputFields();
+            if (_mealSourceInputFields.Shown)
+            {
+                _mealSourceInputFields.HideInputFields();
+            }
+            if (_mealSourceRenameField.Shown)
+            {
+                _mealSourceRenameField.HideRenameField();
+            }
         }
 
     }

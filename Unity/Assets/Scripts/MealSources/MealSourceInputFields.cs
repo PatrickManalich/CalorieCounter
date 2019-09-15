@@ -8,6 +8,8 @@ namespace CalorieCounter.MealSources {
 
     public class MealSourceInputFields : MonoBehaviour {
 
+        public bool Shown { get; private set; } = false;
+
         [SerializeField]
         private MealSourceType _mealSourceType = default;
 
@@ -40,6 +42,7 @@ namespace CalorieCounter.MealSources {
             }
             _inputFields.First().ActivateInputField();
             _mealSourcesScrollView.ScrollToBottom();
+            Shown = true;
         }
 
         public void HideInputFields() {
@@ -50,6 +53,7 @@ namespace CalorieCounter.MealSources {
             }
             _blank.SetActive(false);
             _blank.transform.SetParent(transform, false);
+            Shown = false;
         }
 
         public void CheckIfInputFieldsAreFilled() {

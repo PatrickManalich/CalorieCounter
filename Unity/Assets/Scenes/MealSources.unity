@@ -4658,24 +4658,28 @@ MonoBehaviour:
     - {fileID: 853450531}
     - {fileID: 651122446}
     - {fileID: 2073791304}
+    - {fileID: 109278361}
     - {fileID: 916258392}
     - {fileID: 1972170842}
     - {fileID: 1081389417}
     - {fileID: 2019564306}
     - {fileID: 516241994}
     - {fileID: 208960723}
+    - {fileID: 1123050179}
     _keys:
     - {fileID: 1553792669}
     - {fileID: 209689742}
     - {fileID: 853450531}
     - {fileID: 651122446}
     - {fileID: 2073791304}
+    - {fileID: 109278361}
     - {fileID: 916258392}
     - {fileID: 1972170842}
     - {fileID: 1081389417}
     - {fileID: 2019564306}
     - {fileID: 516241994}
     - {fileID: 208960723}
+    - {fileID: 1123050179}
     _values:
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
@@ -4709,6 +4713,15 @@ MonoBehaviour:
     - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
       Targets:
+      - Target: {fileID: 209689742}
+        InteractableAfterExecute: 0
+      - Target: {fileID: 853450531}
+        InteractableAfterExecute: 1
+      - Target: {fileID: 651122446}
+        InteractableAfterExecute: 1
+    - InteractableAfterAwake: 1
+      InteractableAfterExecute: 1
+      Targets:
       - Target: {fileID: 1553792669}
         InteractableAfterExecute: 1
     - InteractableAfterAwake: 1
@@ -4741,6 +4754,15 @@ MonoBehaviour:
       InteractableAfterExecute: 1
       Targets:
       - Target: {fileID: 1553792669}
+        InteractableAfterExecute: 1
+    - InteractableAfterAwake: 1
+      InteractableAfterExecute: 1
+      Targets:
+      - Target: {fileID: 1972170842}
+        InteractableAfterExecute: 0
+      - Target: {fileID: 1081389417}
+        InteractableAfterExecute: 1
+      - Target: {fileID: 2019564306}
         InteractableAfterExecute: 1
 --- !u!4 &880397506
 Transform:
@@ -7197,6 +7219,7 @@ MonoBehaviour:
   _cancelButton: {fileID: 651122448}
   _mealSourcesScrollView: {fileID: 19275662}
   _mealSourceInputFields: {fileID: 2073791306}
+  _mealSourceRenameField: {fileID: 109278363}
 --- !u!1001 &1451594083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7579,6 +7602,7 @@ MonoBehaviour:
   _cancelButton: {fileID: 2019564309}
   _mealSourcesScrollView: {fileID: 688997043}
   _mealSourceInputFields: {fileID: 516241996}
+  _mealSourceRenameField: {fileID: 1123050181}
 --- !u!1 &1522375256
 GameObject:
   m_ObjectHideFlags: 0

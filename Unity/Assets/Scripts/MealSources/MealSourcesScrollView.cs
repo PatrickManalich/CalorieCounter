@@ -55,11 +55,21 @@ namespace CalorieCounter.MealSources {
             ScrollToPercent(percent);
         }
 
-        public override void RenameRow(int rowIndex)
+
+        public void RenameNamedMealSource(NamedMealSource oldNamedMealSource, NamedMealSource newNamedMealSource)
+        {
+            MealSources.Remove(oldNamedMealSource.mealSource.id);
+            MealSourceNames.Remove(oldNamedMealSource.mealSource.id);
+            base.DeleteRow(_namedMealSources.IndexOfKey(oldNamedMealSource.name));
+            _namedMealSources.Remove(oldNamedMealSource.name);
+            AddNamedMealSource(newNamedMealSource);
+        }
+
+        public override void ShowRenameField(int rowIndex)
         {
             var parentTransform = _content.transform.GetChild(rowIndex * _content.constraintCount);
-            var oldNameText = _namedMealSources.Values[rowIndex].name;
-            _mealSourceRenameField.ShowRenameField(parentTransform, oldNameText);
+            var oldNamedMealSource = _namedMealSources.Values[rowIndex];
+            _mealSourceRenameField.ShowRenameField(parentTransform, oldNamedMealSource);
         }
 
         public override void DeleteRow(int rowIndex)
