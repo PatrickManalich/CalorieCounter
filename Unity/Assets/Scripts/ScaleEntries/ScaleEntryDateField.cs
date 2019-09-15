@@ -19,10 +19,16 @@ namespace CalorieCounter.ScaleEntries
         [SerializeField]
         private Button _oneDayForwardButton = default;
 
-         void Start()
+        private void Start()
         {
             _oneDayBackwardButton.onClick.AddListener(() => OnDayButtonClicked(-1));
             _oneDayForwardButton.onClick.AddListener(() => OnDayButtonClicked(1));
+        }
+
+        private void OnDestroy()
+        {
+            _oneDayForwardButton.onClick.RemoveAllListeners();
+            _oneDayBackwardButton.onClick.RemoveAllListeners();
         }
 
         public void OnDayButtonClicked(int days)
