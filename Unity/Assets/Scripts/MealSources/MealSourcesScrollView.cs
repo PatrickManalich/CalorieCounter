@@ -6,9 +6,9 @@ namespace CalorieCounter.MealSources {
 
     public class MealSourcesScrollView : AbstractScrollView
     {
-        public SortedList<string, MealSource> MealSources { get; private set; } = new SortedList<string, MealSource>();
+        public Dictionary<string, MealSource> MealSources { get; private set; } = new Dictionary<string, MealSource>();
 
-        public SortedList<string, string> MealSourceNames { get; private set; } = new SortedList<string, string>();
+        public Dictionary<string, string> MealSourceNames { get; private set; } = new Dictionary<string, string>();
 
         [SerializeField]
         private MealSourceRenameField _mealSourceRenameField = default;
@@ -76,8 +76,7 @@ namespace CalorieCounter.MealSources {
         {
             var archivedMealSource = _namedMealSources.Values[rowIndex].mealSource;
             archivedMealSource.archived = true;
-            MealSources.RemoveAt(MealSources.IndexOfKey(archivedMealSource.id));
-            MealSources.Add(archivedMealSource.id, archivedMealSource);
+            MealSources[archivedMealSource.id] = archivedMealSource;
             _namedMealSources.RemoveAt(rowIndex);
             base.DeleteRow(rowIndex);
         }

@@ -9,9 +9,9 @@ namespace CalorieCounter.Managers
     public class MealSourcesManager : MonoBehaviour
     {
 
-        private Dictionary<MealSourceType, SortedList<string, MealSource>> _mealSourcesDictionary = default;
+        private Dictionary<MealSourceType, Dictionary<string, MealSource>> _mealSourcesDictionary = default;
 
-        private Dictionary<MealSourceType, SortedList<string, string>> _mealSourceNamesDictionary = default;
+        private Dictionary<MealSourceType, Dictionary<string, string>> _mealSourceNamesDictionary = default;
 
         private Dictionary<MealSourceType, SortedList<string, NamedMealSource>> _namedMealSourcesDictionary = default;
 
@@ -19,21 +19,21 @@ namespace CalorieCounter.Managers
         private bool _mealSourceNamesDictionaryImported = false;
         private bool _namedMealSourcesDictionaryImported = false;
 
-        public Dictionary<MealSourceType, SortedList<string, MealSource>> ImportMealSourcesDictionary()
+        public Dictionary<MealSourceType, Dictionary<string, MealSource>> ImportMealSourcesDictionary()
         {
             if (!_mealSourcesDictionaryImported)
             {
-                _mealSourcesDictionary = JsonConverter.Import<Dictionary<MealSourceType, SortedList<string, MealSource>>>(GlobalPaths.MealSourcesFilePath);
+                _mealSourcesDictionary = JsonConverter.Import<Dictionary<MealSourceType, Dictionary<string, MealSource>>>(GlobalPaths.MealSourcesFilePath);
                 _mealSourcesDictionaryImported = true;
             }
             return _mealSourcesDictionary;
         }
 
-        public Dictionary<MealSourceType, SortedList<string, string>> ImportMealSourceNamesDictionary()
+        public Dictionary<MealSourceType, Dictionary<string, string>> ImportMealSourceNamesDictionary()
         {
             if (!_mealSourceNamesDictionaryImported)
             {
-                _mealSourceNamesDictionary = JsonConverter.Import<Dictionary<MealSourceType, SortedList<string, string>>>(GlobalPaths.MealSourceNamesFilePath);
+                _mealSourceNamesDictionary = JsonConverter.Import<Dictionary<MealSourceType, Dictionary<string, string>>>(GlobalPaths.MealSourceNamesFilePath);
                 _mealSourceNamesDictionaryImported = true;
             }
             return _mealSourceNamesDictionary;
@@ -71,7 +71,7 @@ namespace CalorieCounter.Managers
         }
 
 
-        public void ExportDictionaries(Dictionary<MealSourceType, SortedList<string, MealSource>> mealSourcesDictionary, Dictionary<MealSourceType, SortedList<string, string>> mealSourceNamesDictionary)
+        public void ExportDictionaries(Dictionary<MealSourceType, Dictionary<string, MealSource>> mealSourcesDictionary, Dictionary<MealSourceType, Dictionary<string, string>> mealSourceNamesDictionary)
         {
             JsonConverter.Export(mealSourcesDictionary, GlobalPaths.MealSourcesFilePath);
             JsonConverter.Export(mealSourceNamesDictionary, GlobalPaths.MealSourceNamesFilePath);

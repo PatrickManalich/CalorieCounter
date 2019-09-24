@@ -40,11 +40,11 @@ namespace CalorieCounter.MealSources {
 
         public void ExportDictionaries()
         {
-            var mealSourcesDictionary = new Dictionary<MealSourceType, SortedList<string, MealSource>>() {
+            var mealSourcesDictionary = new Dictionary<MealSourceType, Dictionary<string, MealSource>>() {
                 { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSources },
                 { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSources },
             };
-            var mealSourceNamesDictionary = new Dictionary<MealSourceType, SortedList<string, string>>() {
+            var mealSourceNamesDictionary = new Dictionary<MealSourceType, Dictionary<string, string>>() {
                 { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSourceNames },
                 { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSourceNames },
             };
