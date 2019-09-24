@@ -18,8 +18,6 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private CustomMealsScrollView _customMealScrollView = default;
 
-        private static readonly string CustomMealId = MealSourceType.Custom.ToString() + "0";
-
         public void ShowInputFields() {
             for (int i = 0; i < _inputFields.Count + _blanks.Count; i++) {
                 if (i == 0 || i >= 2 && i <= 4) {
@@ -61,12 +59,11 @@ namespace CalorieCounter.MealEntries {
         }
 
         public MealProportion GetCustomMealProportionFromInputFields() {
-            var id = CustomMealId;
             var servingAmount = float.Parse(_inputFields[0].text);
             var fat = float.Parse(_inputFields[1].text);
             var carbs = float.Parse(_inputFields[2].text);
             var protein = float.Parse(_inputFields[3].text);
-            MealSource customMealSource = MealSource.CreateCustomMealSource(id, fat, carbs, protein);
+            MealSource customMealSource = MealSource.CreateCustomMealSource(fat, carbs, protein);
             return new MealProportion(servingAmount, customMealSource);
         }
     }

@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace CalorieCounter.MealSources {
 
     public struct MealSource {
@@ -15,9 +17,9 @@ namespace CalorieCounter.MealSources {
 
         private const string CustomMealSourceServingSize = "Meal";
 
-        public MealSource(string id, string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType)
+        public MealSource(string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType)
         {
-            this.id = id;
+            id = Guid.NewGuid().ToString();
             this.servingSize = servingSize;
             this.fat = fat > 0 ? GlobalMethods.Round(fat) : 0;
             this.carbs = carbs > 0 ? GlobalMethods.Round(carbs) : 0;
@@ -28,8 +30,8 @@ namespace CalorieCounter.MealSources {
             archived = false;
         }
 
-        public static MealSource CreateCustomMealSource(string id, float fat, float carbs, float protein) {
-            return new MealSource(id, CustomMealSourceServingSize, fat, carbs, protein, "", MealSourceType.Custom);
+        public static MealSource CreateCustomMealSource(float fat, float carbs, float protein) {
+            return new MealSource(CustomMealSourceServingSize, fat, carbs, protein, "", MealSourceType.Custom);
         }
 
         public static bool operator ==(MealSource mealSource1, MealSource mealSource2) {
