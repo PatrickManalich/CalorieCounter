@@ -3,6 +3,7 @@ using TMPro;
 using System.Collections.Generic;
 using CalorieCounter.MealSources;
 using CalorieCounter.Utilities;
+using System.Linq;
 
 namespace CalorieCounter.MealEntries {
 
@@ -21,12 +22,12 @@ namespace CalorieCounter.MealEntries {
         public NamedMealSource SelectedNamedMealSource { get; private set; }
         
         private TMP_Dropdown _dropdown;
-        private List<NamedMealSource> _namedMealSources;
+        private List<NamedMealSource> _nonarchivedNamedMealSources;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
         public void RefreshSelectedMealSource(int index) {
             if (index > 0) {
-                SelectedNamedMealSource = _namedMealSources[index-1];
+                SelectedNamedMealSource = _nonarchivedNamedMealSources[index-1];
                 if (_servingAmountDropdown.SelectedServingAmount != 0)
                     FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             } else {
@@ -42,11 +43,11 @@ namespace CalorieCounter.MealEntries {
 
         private void Start() {
             _dropdown = GetComponent<TMP_Dropdown>();
-            _namedMealSources = _mealSourcesAdapter.GetNamedMealSources(_mealSourceType);
+            _nonarchivedNamedMealSources = _mealSourcesAdapter.GetNamedMealSources(_mealSourceType).Where(n => !n.mealSource.archived).ToList();
             _dropdown.ClearOptions();
             _optionDataList.Add(new TMP_Dropdown.OptionData(""));
-            foreach (var namedMealSource in _namedMealSources) {
-                _optionDataList.Add(new TMP_Dropdown.OptionData($"{namedMealSource.name} (per {namedMealSource.mealSource.servingSize.ToLower()})"));
+            foreach (var nonarchivedNamedMealSource in _nonarchivedNamedMealSources) {
+                _optionDataList.Add(new TMP_Dropdown.OptionData($"{nonarchivedNamedMealSource.name} (per {nonarchivedNamedMealSource.mealSource.servingSize.ToLower()})"));
             }
             _dropdown.AddOptions(_optionDataList);
             SelectedNamedMealSource = default;
