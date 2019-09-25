@@ -14,7 +14,7 @@ namespace CalorieCounter.MealEntries {
         private ServingAmountDropdown _servingAmountDropdown = default;
 
         [SerializeField]
-        private NamedMealSourceDropdown _namedMealSourceDropdown = default;
+        private NonarchivedNamedMealSourceDropdown _namedMealSourceDropdown = default;
 
         [SerializeField]
         private Totals _totals = default;

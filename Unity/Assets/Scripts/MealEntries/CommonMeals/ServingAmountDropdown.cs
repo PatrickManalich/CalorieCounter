@@ -9,7 +9,7 @@ namespace CalorieCounter.MealEntries {
     public class ServingAmountDropdown : MonoBehaviour {
 
         [SerializeField]
-        private NamedMealSourceDropdown _namedMealSourceDropdown = default;
+        private NonarchivedNamedMealSourceDropdown _namedMealSourceDropdown = default;
 
         public float SelectedServingAmount { get; private set; }
         
