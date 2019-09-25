@@ -50,9 +50,9 @@ namespace CalorieCounter.Managers
                 {
                     _namedMealSourcesDictionary.Add(mealSourceType, new SortedList<string, NamedMealSource>());
                     var mealSources = _mealSourcesDictionary[mealSourceType];
+                    var mealSourceNames = _mealSourceNamesDictionary[mealSourceType];
                     foreach (var mealSource in mealSources.Values)
                     {
-                        var mealSourceNames = _mealSourceNamesDictionary[mealSourceType];
                         if (mealSourceNames.ContainsKey(mealSource.id))
                         {
                             var mealSourceName = mealSourceNames[mealSource.id];
