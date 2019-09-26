@@ -3371,6 +3371,11 @@ PrefabInstance:
       propertyPath: m_LineLimit
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1988324715942504262, guid: b84f13cb516060d448aef7e2a6f6eaf9,
+        type: 3}
+      propertyPath: NextSelectable
+      value: 
+      objectReference: {fileID: 853450533}
     - target: {fileID: 6791813576466737073, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3421,8 +3426,7 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1988324715942504262, guid: b84f13cb516060d448aef7e2a6f6eaf9, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84f13cb516060d448aef7e2a6f6eaf9, type: 3}
 --- !u!224 &651145887 stripped
 RectTransform:
@@ -8680,6 +8684,11 @@ PrefabInstance:
       propertyPath: m_LineLimit
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1988324715942504262, guid: b84f13cb516060d448aef7e2a6f6eaf9,
+        type: 3}
+      propertyPath: NextSelectable
+      value: 
+      objectReference: {fileID: 1081389420}
     - target: {fileID: 6791813576466737073, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -8730,8 +8739,7 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1988324715942504262, guid: b84f13cb516060d448aef7e2a6f6eaf9, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84f13cb516060d448aef7e2a6f6eaf9, type: 3}
 --- !u!224 &1711856144 stripped
 RectTransform:
