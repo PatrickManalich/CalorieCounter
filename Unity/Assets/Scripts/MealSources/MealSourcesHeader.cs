@@ -51,8 +51,10 @@ namespace CalorieCounter.MealSources
             }
             if(_mealSourceRenameField.Shown)
             {
-                _mealSourcesScrollView.RenameNamedMealSource(_mealSourceRenameField.OldNamedMealSource, _mealSourceRenameField.NewNamedMealSource);
+                var oldNamedMealSource = _mealSourceRenameField.OldNamedMealSource;
+                var newNamedMealSource = _mealSourceRenameField.NewNamedMealSource;
                 _mealSourceRenameField.Hide();
+                _mealSourcesScrollView.RenameNamedMealSource(oldNamedMealSource, newNamedMealSource);
             }
         }
 
