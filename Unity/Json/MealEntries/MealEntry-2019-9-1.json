@@ -1,0 +1,123 @@
+{
+  "DateTime": "2019-09-01T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 96.0,
+  "TotalCarbs": 266.5,
+  "TotalProtein": 76.0,
+  "TotalCalories": 2234.0,
+  "MealProportionsDictionary": {
+    "Small": [],
+    "Large": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Powerade",
+          "ServingSize": "Bottle",
+          "Fat": 0.0,
+          "Carbs": 55.0,
+          "Protein": 0.0,
+          "Calories": 220.0,
+          "Description": "Powerade orange 32 oz",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 27.5,
+        "Protein": 0.0,
+        "Calories": 110.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Soda-Can",
+          "ServingSize": "Can",
+          "Fat": 0.0,
+          "Carbs": 39.0,
+          "Protein": 0.0,
+          "Calories": 156.0,
+          "Description": "Coca-Cola 12 oz can",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 39.0,
+        "Protein": 0.0,
+        "Calories": 156.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 33.0,
+          "Carbs": 40.0,
+          "Protein": 33.0,
+          "Calories": 589.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 33.0,
+        "Carbs": 40.0,
+        "Protein": 33.0,
+        "Calories": 589.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 32.0,
+          "Carbs": 84.0,
+          "Protein": 13.0,
+          "Calories": 676.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 32.0,
+        "Carbs": 84.0,
+        "Protein": 13.0,
+        "Calories": 676.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 13.0,
+          "Carbs": 26.0,
+          "Protein": 12.0,
+          "Calories": 269.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 26.0,
+        "Carbs": 52.0,
+        "Protein": 24.0,
+        "Calories": 538.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 2.5,
+          "Carbs": 12.0,
+          "Protein": 3.0,
+          "Calories": 82.5,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 5.0,
+        "Carbs": 24.0,
+        "Protein": 6.0,
+        "Calories": 165.0
+      }
+    ]
+  }
+}

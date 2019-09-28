@@ -1,0 +1,202 @@
+{
+  "DateTime": "2019-06-08T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 62.3,
+  "TotalCarbs": 256.7,
+  "TotalProtein": 120.5,
+  "TotalCalories": 2069.5,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Egg",
+          "ServingSize": "Egg",
+          "Fat": 4.8,
+          "Carbs": 0.4,
+          "Protein": 6.3,
+          "Calories": 70.0,
+          "Description": "General egg",
+          "MealSourceType": 0
+        },
+        "Fat": 4.8,
+        "Carbs": 0.4,
+        "Protein": 6.3,
+        "Calories": 70.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Bacon",
+          "ServingSize": "Strip",
+          "Fat": 4.0,
+          "Carbs": 0.2,
+          "Protein": 4.0,
+          "Calories": 52.8,
+          "Description": "General bacon",
+          "MealSourceType": 0
+        },
+        "Fat": 8.0,
+        "Carbs": 0.4,
+        "Protein": 8.0,
+        "Calories": 105.6
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Bread-White",
+          "ServingSize": "Two Slices",
+          "Fat": 1.5,
+          "Carbs": 23.0,
+          "Protein": 6.0,
+          "Calories": 129.5,
+          "Description": "Two slices of Nature's Own whitewheat healthy white bread",
+          "MealSourceType": 0
+        },
+        "Fat": 3.0,
+        "Carbs": 46.0,
+        "Protein": 12.0,
+        "Calories": 259.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "",
+          "MealSourceType": 0
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Bread-White",
+          "ServingSize": "Two Slices",
+          "Fat": 1.5,
+          "Carbs": 23.0,
+          "Protein": 6.0,
+          "Calories": 129.5,
+          "Description": "Two slices of Nature's Own whitewheat healthy white bread",
+          "MealSourceType": 0
+        },
+        "Fat": 3.0,
+        "Carbs": 46.0,
+        "Protein": 12.0,
+        "Calories": 259.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Jelly",
+          "ServingSize": "Sandwich",
+          "Fat": 0.0,
+          "Carbs": 26.0,
+          "Protein": 0.0,
+          "Calories": 104.0,
+          "Description": "Two tbsp. of Welch's concord grape jelly",
+          "MealSourceType": 0
+        },
+        "Fat": 0.0,
+        "Carbs": 52.0,
+        "Protein": 0.0,
+        "Calories": 208.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Peanut Butter",
+          "ServingSize": "Sandwich",
+          "Fat": 16.0,
+          "Carbs": 8.0,
+          "Protein": 7.0,
+          "Calories": 204.0,
+          "Description": "Two tbsp. of Jif creamy peanut butter",
+          "MealSourceType": 0
+        },
+        "Fat": 32.0,
+        "Carbs": 16.0,
+        "Protein": 14.0,
+        "Calories": 408.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Egg",
+          "ServingSize": "Egg",
+          "Fat": 4.8,
+          "Carbs": 0.4,
+          "Protein": 6.3,
+          "Calories": 70.0,
+          "Description": "General egg",
+          "MealSourceType": 1
+        },
+        "Fat": 4.8,
+        "Carbs": 0.4,
+        "Protein": 6.3,
+        "Calories": 70.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Peas and Carrots",
+          "ServingSize": "Half Cup",
+          "Fat": 0.3,
+          "Carbs": 8.1,
+          "Protein": 2.5,
+          "Calories": 45.1,
+          "Description": "General peas and carrots",
+          "MealSourceType": 1
+        },
+        "Fat": 0.3,
+        "Carbs": 8.1,
+        "Protein": 2.5,
+        "Calories": 45.1
+      },
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1
+        },
+        "Fat": 0.0,
+        "Carbs": 27.0,
+        "Protein": 2.2,
+        "Calories": 116.8
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Chicken Breast",
+          "ServingSize": "Breast",
+          "Fat": 1.0,
+          "Carbs": 0.0,
+          "Protein": 25.0,
+          "Calories": 109.0,
+          "Description": "Simple Truth natural chicken breast",
+          "MealSourceType": 1
+        },
+        "Fat": 1.0,
+        "Carbs": 0.0,
+        "Protein": 25.0,
+        "Calories": 109.0
+      }
+    ],
+    "Custom": []
+  }
+}

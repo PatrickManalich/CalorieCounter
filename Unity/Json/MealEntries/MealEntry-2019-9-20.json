@@ -1,0 +1,178 @@
+{
+  "DateTime": "2019-09-20T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 96.0,
+  "TotalCarbs": 225.0,
+  "TotalProtein": 119.5,
+  "TotalCalories": 2242.0,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Sprite-Medium",
+          "ServingSize": "Container",
+          "Fat": 0.0,
+          "Carbs": 44.0,
+          "Protein": 0.0,
+          "Calories": 176.0,
+          "Description": "Chic-fil-A medium sprite",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 44.0,
+        "Protein": 0.0,
+        "Calories": 176.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Chicken Breast",
+          "ServingSize": "Breast",
+          "Fat": 1.0,
+          "Carbs": 0.0,
+          "Protein": 25.0,
+          "Calories": 109.0,
+          "Description": "Simple Truth natural chicken breast",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 1.0,
+        "Carbs": 0.0,
+        "Protein": 25.0,
+        "Calories": 109.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Tortilla",
+          "ServingSize": "Tortilla",
+          "Fat": 3.0,
+          "Carbs": 26.0,
+          "Protein": 4.0,
+          "Calories": 147.0,
+          "Description": "Mission flour tortillas soft taco",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 3.0,
+        "Carbs": 26.0,
+        "Protein": 4.0,
+        "Calories": 147.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Shredded",
+          "ServingSize": "Half Cup",
+          "Fat": 16.0,
+          "Carbs": 2.0,
+          "Protein": 14.0,
+          "Calories": 208.0,
+          "Description": "Kroger queso quesadilla finely shredded cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 16.0,
+        "Carbs": 2.0,
+        "Protein": 14.0,
+        "Calories": 208.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 18.0,
+        "Protein": 1.5,
+        "Calories": 78.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 24.0,
+          "Carbs": 38.0,
+          "Protein": 38.0,
+          "Calories": 520.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 24.0,
+        "Carbs": 38.0,
+        "Protein": 38.0,
+        "Calories": 520.0
+      },
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 23.0,
+          "Carbs": 64.0,
+          "Protein": 5.3,
+          "Calories": 484.2,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 17.2,
+        "Carbs": 48.0,
+        "Protein": 4.0,
+        "Calories": 362.8
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 14.8,
+          "Carbs": 40.0,
+          "Protein": 3.0,
+          "Calories": 305.2,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 14.8,
+        "Carbs": 40.0,
+        "Protein": 3.0,
+        "Calories": 305.2
+      }
+    ]
+  }
+}

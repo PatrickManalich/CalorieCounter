@@ -1,0 +1,178 @@
+{
+  "DateTime": "2019-09-07T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 86.2,
+  "TotalCarbs": 209.6,
+  "TotalProtein": 149.6,
+  "TotalCalories": 2212.6,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "The Classic protein smoothie",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Egg",
+          "ServingSize": "Egg",
+          "Fat": 4.8,
+          "Carbs": 0.4,
+          "Protein": 6.3,
+          "Calories": 70.0,
+          "Description": "General egg",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 19.2,
+        "Carbs": 1.6,
+        "Protein": 25.2,
+        "Calories": 280.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Shredded",
+          "ServingSize": "Half Cup",
+          "Fat": 16.0,
+          "Carbs": 2.0,
+          "Protein": 14.0,
+          "Calories": 208.0,
+          "Description": "Kroger queso quesadilla finely shredded cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 16.0,
+        "Carbs": 2.0,
+        "Protein": 14.0,
+        "Calories": 208.0
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Ham",
+          "ServingSize": "Bag",
+          "Fat": 12.6,
+          "Carbs": 2.7,
+          "Protein": 55.8,
+          "Calories": 347.4,
+          "Description": "Kroger bag of 0.8 lb of sliced ham",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 3.2,
+        "Carbs": 0.7,
+        "Protein": 13.9,
+        "Calories": 87.2
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Turkey",
+          "ServingSize": "Bag",
+          "Fat": 7.6,
+          "Carbs": 19.8,
+          "Protein": 34.6,
+          "Calories": 286.0,
+          "Description": "Kroger bag of 0.8 lb of sliced turkey",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 1.9,
+        "Carbs": 4.9,
+        "Protein": 8.6,
+        "Calories": 71.1
+      },
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 27.0,
+        "Protein": 2.2,
+        "Calories": 116.8
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Chicken Sandwich",
+          "ServingSize": "Sandwich",
+          "Fat": 19.0,
+          "Carbs": 40.0,
+          "Protein": 28.0,
+          "Calories": 443.0,
+          "Description": "Chic-fil-A chicken sandwich",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 19.0,
+        "Carbs": 40.0,
+        "Protein": 28.0,
+        "Calories": 443.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "CFA Shake-Large",
+          "ServingSize": "Shake",
+          "Fat": 25.0,
+          "Carbs": 86.0,
+          "Protein": 15.0,
+          "Calories": 629.0,
+          "Description": "Chic-fil-A large vanilla shake",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 12.5,
+        "Carbs": 43.0,
+        "Protein": 7.5,
+        "Calories": 314.5
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 18.0,
+          "Carbs": 60.0,
+          "Protein": 36.0,
+          "Calories": 546.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 9.0,
+        "Carbs": 30.0,
+        "Protein": 18.0,
+        "Calories": 273.0
+      }
+    ]
+  }
+}

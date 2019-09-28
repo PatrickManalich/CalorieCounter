@@ -1,0 +1,142 @@
+{
+  "DateTime": "2019-09-08T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 90.3,
+  "TotalCarbs": 248.7,
+  "TotalProtein": 87.4,
+  "TotalCalories": 2157.1,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Bagel",
+          "ServingSize": "Bagel",
+          "Fat": 3.5,
+          "Carbs": 53.0,
+          "Protein": 9.0,
+          "Calories": 279.5,
+          "Description": "Thomas everything bagel",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 3.5,
+        "Carbs": 53.0,
+        "Protein": 9.0,
+        "Calories": 279.5
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cream Cheese",
+          "ServingSize": "Bagel",
+          "Fat": 20.0,
+          "Carbs": 3.2,
+          "Protein": 3.6,
+          "Calories": 207.2,
+          "Description": "Philadelphia cream cheese original",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 3.2,
+        "Protein": 3.6,
+        "Calories": 207.2
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ground Beef-85/15",
+          "ServingSize": "Container",
+          "Fat": 68.0,
+          "Carbs": 0.0,
+          "Protein": 84.0,
+          "Calories": 948.0,
+          "Description": "Kroger ground beef 85% lean meat and 15% fat",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 34.0,
+        "Carbs": 0.0,
+        "Protein": 42.0,
+        "Calories": 474.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Pasta Sauce-Medium",
+          "ServingSize": "Jar",
+          "Fat": 7.5,
+          "Carbs": 65.0,
+          "Protein": 10.0,
+          "Calories": 367.5,
+          "Description": "Prego italian sauce traditional 24 oz jar",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 3.8,
+        "Carbs": 32.5,
+        "Protein": 5.0,
+        "Calories": 184.2
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Pasta",
+          "ServingSize": "Box",
+          "Fat": 8.0,
+          "Carbs": 336.0,
+          "Protein": 56.0,
+          "Calories": 1640.0,
+          "Description": "Barilla farfalle box",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 2.0,
+        "Carbs": 84.0,
+        "Protein": 14.0,
+        "Calories": 410.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Garlic Knots",
+          "ServingSize": "Knot",
+          "Fat": 4.0,
+          "Carbs": 19.0,
+          "Protein": 3.0,
+          "Calories": 124.0,
+          "Description": "New York Bakery garlic knot with real garlic",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 8.0,
+        "Carbs": 38.0,
+        "Protein": 6.0,
+        "Calories": 248.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 19.0,
+          "Carbs": 38.0,
+          "Protein": 7.8,
+          "Calories": 354.2,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 19.0,
+        "Carbs": 38.0,
+        "Protein": 7.8,
+        "Calories": 354.2
+      }
+    ]
+  }
+}

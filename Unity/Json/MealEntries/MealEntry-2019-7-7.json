@@ -1,0 +1,202 @@
+{
+  "DateTime": "2019-07-07T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 103.0,
+  "TotalCarbs": 263.5,
+  "TotalProtein": 105.0,
+  "TotalCalories": 2401.0,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Apple",
+          "ServingSize": "Fruit",
+          "Fat": 0.3,
+          "Carbs": 25.0,
+          "Protein": 0.5,
+          "Calories": 104.7,
+          "Description": "General apple",
+          "MealSourceType": 0
+        },
+        "Fat": 0.3,
+        "Carbs": 25.0,
+        "Protein": 0.5,
+        "Calories": 104.7
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Bagel",
+          "ServingSize": "Bagel",
+          "Fat": 3.5,
+          "Carbs": 53.0,
+          "Protein": 9.0,
+          "Calories": 279.5,
+          "Description": "Thomas everything bagel",
+          "MealSourceType": 0
+        },
+        "Fat": 3.5,
+        "Carbs": 53.0,
+        "Protein": 9.0,
+        "Calories": 279.5
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cream Cheese",
+          "ServingSize": "Bagel",
+          "Fat": 20.0,
+          "Carbs": 3.2,
+          "Protein": 3.6,
+          "Calories": 207.2,
+          "Description": "Philadelphia cream cheese original",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 3.2,
+        "Protein": 3.6,
+        "Calories": 207.2
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Powerade-Medium",
+          "ServingSize": "Cup",
+          "Fat": 0.3,
+          "Carbs": 52.3,
+          "Protein": 0.0,
+          "Calories": 211.9,
+          "Description": "Firehouse Powerade sports drink orange 22 fl oz",
+          "MealSourceType": 1
+        },
+        "Fat": 0.3,
+        "Carbs": 52.3,
+        "Protein": 0.0,
+        "Calories": 211.9
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Roast Beef-Medium",
+          "ServingSize": "Sandwich",
+          "Fat": 14.0,
+          "Carbs": 44.0,
+          "Protein": 39.0,
+          "Calories": 458.0,
+          "Description": "Firehouse medium roast beef sandwich on white bread with only provolone cheese",
+          "MealSourceType": 1
+        },
+        "Fat": 14.0,
+        "Carbs": 44.0,
+        "Protein": 39.0,
+        "Calories": 458.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Chips",
+          "ServingSize": "Bag",
+          "Fat": 8.0,
+          "Carbs": 20.0,
+          "Protein": 2.0,
+          "Calories": 160.0,
+          "Description": "Firehouse Funyuns onion flavored rings",
+          "MealSourceType": 1
+        },
+        "Fat": 8.0,
+        "Carbs": 20.0,
+        "Protein": 2.0,
+        "Calories": 160.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1
+        },
+        "Fat": 0.0,
+        "Carbs": 18.0,
+        "Protein": 1.5,
+        "Calories": 78.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Bell Pepper",
+          "ServingSize": "Pepper",
+          "Fat": 0.2,
+          "Carbs": 7.6,
+          "Protein": 1.0,
+          "Calories": 36.2,
+          "Description": "General green bell pepper",
+          "MealSourceType": 1
+        },
+        "Fat": 0.1,
+        "Carbs": 3.8,
+        "Protein": 0.5,
+        "Calories": 18.1
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ground Beef-85/15",
+          "ServingSize": "Container",
+          "Fat": 68.0,
+          "Carbs": 0.0,
+          "Protein": 84.0,
+          "Calories": 948.0,
+          "Description": "Kroger ground beef 85% lean meat and 15% fat",
+          "MealSourceType": 1
+        },
+        "Fat": 34.0,
+        "Carbs": 0.0,
+        "Protein": 42.0,
+        "Calories": 474.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Tomato Sauce",
+          "ServingSize": "Can",
+          "Fat": 4.0,
+          "Carbs": 0.0,
+          "Protein": 1.0,
+          "Calories": 40.0,
+          "Description": "Goya tomato sauce spanish style",
+          "MealSourceType": 1
+        },
+        "Fat": 4.0,
+        "Carbs": 0.0,
+        "Protein": 1.0,
+        "Calories": 40.0
+      },
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Ice Cream",
+          "ServingSize": "Container\t",
+          "Fat": 57.0,
+          "Carbs": 134.0,
+          "Protein": 18.0,
+          "Calories": 1121.0,
+          "Description": "Ben & Jerry's half baked\t",
+          "MealSourceType": 1
+        },
+        "Fat": 18.8,
+        "Carbs": 44.2,
+        "Protein": 5.9,
+        "Calories": 369.6
+      }
+    ],
+    "Custom": []
+  }
+}

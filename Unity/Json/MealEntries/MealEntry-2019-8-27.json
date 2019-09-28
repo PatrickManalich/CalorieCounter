@@ -1,0 +1,141 @@
+{
+  "DateTime": "2019-08-27T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 70.5,
+  "TotalCarbs": 119.4,
+  "TotalProtein": 156.4,
+  "TotalCalories": 1737.7,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Apple",
+          "ServingSize": "Fruit",
+          "Fat": 0.3,
+          "Carbs": 25.0,
+          "Protein": 0.5,
+          "Calories": 104.7,
+          "Description": "General apple",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 0.3,
+        "Carbs": 25.0,
+        "Protein": 0.5,
+        "Calories": 104.7
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Hawaiian Roll",
+          "ServingSize": "Roll",
+          "Fat": 2.5,
+          "Carbs": 14.0,
+          "Protein": 3.0,
+          "Calories": 90.5,
+          "Description": "King's Hawaiian savory butter roll",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 5.0,
+        "Carbs": 28.0,
+        "Protein": 6.0,
+        "Calories": 181.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Cheese-Sliced",
+          "ServingSize": "Slice",
+          "Fat": 5.0,
+          "Carbs": 0.0,
+          "Protein": 5.0,
+          "Calories": 65.0,
+          "Description": "Sargento provolone cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 2.5,
+        "Carbs": 0.0,
+        "Protein": 2.5,
+        "Calories": 32.5
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ham",
+          "ServingSize": "Bag",
+          "Fat": 12.6,
+          "Carbs": 2.7,
+          "Protein": 55.8,
+          "Calories": 347.4,
+          "Description": "Kroger bag of 0.8 lb of sliced ham",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 6.3,
+        "Carbs": 1.4,
+        "Protein": 27.9,
+        "Calories": 173.9
+      },
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Pork Loin",
+          "ServingSize": "Roast",
+          "Fat": 80.0,
+          "Carbs": 0.0,
+          "Protein": 234.7,
+          "Calories": 1658.8,
+          "Description": "Simple Truth natural pork 32 oz",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 26.4,
+        "Carbs": 0.0,
+        "Protein": 77.5,
+        "Calories": 547.6
+      },
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Hawaiian Roll",
+          "ServingSize": "Roll",
+          "Fat": 2.5,
+          "Carbs": 14.0,
+          "Protein": 3.0,
+          "Calories": 90.5,
+          "Description": "King's Hawaiian savory butter roll",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 10.0,
+        "Carbs": 56.0,
+        "Protein": 12.0,
+        "Calories": 362.0
+      }
+    ],
+    "Custom": []
+  }
+}

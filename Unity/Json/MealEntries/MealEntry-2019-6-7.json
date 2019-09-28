@@ -1,0 +1,84 @@
+{
+  "DateTime": "2019-06-07T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 87.0,
+  "TotalCarbs": 104.5,
+  "TotalProtein": 201.0,
+  "TotalCalories": 2005.0,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 10.0,
+        "Carbs": 4.5,
+        "Protein": 15.0,
+        "Calories": 168.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Pizza-Pepperoni",
+          "ServingSize": "Pizza",
+          "Fat": 100.0,
+          "Carbs": 120.0,
+          "Protein": 70.0,
+          "Calories": 1660.0,
+          "Description": "Screamin' Sicilian holy pepperoni pizza",
+          "MealSourceType": 1
+        },
+        "Fat": 50.0,
+        "Carbs": 60.0,
+        "Protein": 35.0,
+        "Calories": 830.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 27.0,
+          "Carbs": 40.0,
+          "Protein": 34.0,
+          "Calories": 539.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 27.0,
+        "Carbs": 40.0,
+        "Protein": 34.0,
+        "Calories": 539.0
+      },
+      {
+        "ServingAmount": 3.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 0.0,
+          "Carbs": 0.0,
+          "Protein": 39.0,
+          "Calories": 156.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 0.0,
+        "Carbs": 0.0,
+        "Protein": 117.0,
+        "Calories": 468.0
+      }
+    ]
+  }
+}

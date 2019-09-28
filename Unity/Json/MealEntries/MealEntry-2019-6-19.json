@@ -1,0 +1,118 @@
+{
+  "DateTime": "2019-06-19T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 71.5,
+  "TotalCarbs": 197.7,
+  "TotalProtein": 89.6,
+  "TotalCalories": 1792.7,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Bagel",
+          "ServingSize": "Bagel",
+          "Fat": 3.5,
+          "Carbs": 53.0,
+          "Protein": 9.0,
+          "Calories": 279.5,
+          "Description": "Thomas everything bagel",
+          "MealSourceType": 0
+        },
+        "Fat": 3.5,
+        "Carbs": 53.0,
+        "Protein": 9.0,
+        "Calories": 279.5
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cream Cheese",
+          "ServingSize": "Bagel",
+          "Fat": 20.0,
+          "Carbs": 3.2,
+          "Protein": 3.6,
+          "Calories": 207.2,
+          "Description": "Philadelphia cream cheese original",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 3.2,
+        "Protein": 3.6,
+        "Calories": 207.2
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Nuggets-12 Count",
+          "ServingSize": "Container",
+          "Fat": 18.0,
+          "Carbs": 13.5,
+          "Protein": 42.0,
+          "Calories": 384.0,
+          "Description": "Chic-fil-A twelve count nuggets",
+          "MealSourceType": 1
+        },
+        "Fat": 18.0,
+        "Carbs": 13.5,
+        "Protein": 42.0,
+        "Calories": 384.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Fries-Medium",
+          "ServingSize": "Container",
+          "Fat": 18.0,
+          "Carbs": 43.0,
+          "Protein": 5.0,
+          "Calories": 354.0,
+          "Description": "Chic-fil-A medium fries",
+          "MealSourceType": 1
+        },
+        "Fat": 18.0,
+        "Carbs": 43.0,
+        "Protein": 5.0,
+        "Calories": 354.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Sprite-Medium",
+          "ServingSize": "Container",
+          "Fat": 0.0,
+          "Carbs": 44.0,
+          "Protein": 0.0,
+          "Calories": 176.0,
+          "Description": "Chic-fil-A medium sprite",
+          "MealSourceType": 1
+        },
+        "Fat": 0.0,
+        "Carbs": 44.0,
+        "Protein": 0.0,
+        "Calories": 176.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 12.0,
+          "Carbs": 41.0,
+          "Protein": 30.0,
+          "Calories": 392.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 12.0,
+        "Carbs": 41.0,
+        "Protein": 30.0,
+        "Calories": 392.0
+      }
+    ]
+  }
+}

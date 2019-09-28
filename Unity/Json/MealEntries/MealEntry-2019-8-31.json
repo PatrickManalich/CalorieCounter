@@ -1,0 +1,142 @@
+{
+  "DateTime": "2019-08-31T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 94.6,
+  "TotalCarbs": 333.2,
+  "TotalProtein": 122.1,
+  "TotalCalories": 2672.6,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "The Classic protein smoothie",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Bread-White",
+          "ServingSize": "Slice",
+          "Fat": 0.8,
+          "Carbs": 11.5,
+          "Protein": 3.0,
+          "Calories": 65.2,
+          "Description": "One slice of Nature's Own whitewheat healthy white bread",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 0.8,
+        "Carbs": 11.5,
+        "Protein": 3.0,
+        "Calories": 65.2
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Chicken Breast",
+          "ServingSize": "Breast",
+          "Fat": 1.0,
+          "Carbs": 0.0,
+          "Protein": 25.0,
+          "Calories": 109.0,
+          "Description": "Simple Truth natural chicken breast",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 1.0,
+        "Carbs": 0.0,
+        "Protein": 25.0,
+        "Calories": 109.0
+      },
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Soda-Can",
+          "ServingSize": "Can",
+          "Fat": 0.0,
+          "Carbs": 39.0,
+          "Protein": 0.0,
+          "Calories": 156.0,
+          "Description": "Coca-Cola 12 oz can",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 156.0,
+        "Protein": 0.0,
+        "Calories": 624.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.5,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 40.0,
+          "Carbs": 4.2,
+          "Protein": 33.0,
+          "Calories": 508.8,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 60.0,
+        "Carbs": 6.3,
+        "Protein": 49.5,
+        "Calories": 763.2
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 17.6,
+          "Carbs": 72.0,
+          "Protein": 8.2,
+          "Calories": 479.2,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 17.6,
+        "Carbs": 72.0,
+        "Protein": 8.2,
+        "Calories": 479.2
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 9.8,
+          "Carbs": 27.0,
+          "Protein": 4.2,
+          "Calories": 213.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 9.8,
+        "Carbs": 27.0,
+        "Protein": 4.2,
+        "Calories": 213.0
+      }
+    ]
+  }
+}

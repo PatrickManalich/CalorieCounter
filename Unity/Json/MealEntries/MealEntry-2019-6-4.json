@@ -1,0 +1,118 @@
+{
+  "DateTime": "2019-06-04T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 83.1,
+  "TotalCarbs": 178.5,
+  "TotalProtein": 150.3,
+  "TotalCalories": 2063.1,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Banana",
+          "ServingSize": "Fruit",
+          "Fat": 0.4,
+          "Carbs": 27.0,
+          "Protein": 1.3,
+          "Calories": 116.8,
+          "Description": "General banana",
+          "MealSourceType": 0
+        },
+        "Fat": 0.4,
+        "Carbs": 27.0,
+        "Protein": 1.3,
+        "Calories": 116.8
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 10.0,
+        "Carbs": 4.5,
+        "Protein": 15.0,
+        "Calories": 168.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Apple",
+          "ServingSize": "Fruit",
+          "Fat": 0.3,
+          "Carbs": 25.0,
+          "Protein": 0.5,
+          "Calories": 104.7,
+          "Description": "General apple",
+          "MealSourceType": 0
+        },
+        "Fat": 0.3,
+        "Carbs": 25.0,
+        "Protein": 0.5,
+        "Calories": 104.7
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Hawaiian Roll",
+          "ServingSize": "Roll",
+          "Fat": 2.5,
+          "Carbs": 14.0,
+          "Protein": 3.0,
+          "Calories": 90.5,
+          "Description": "King's Hawaiian savory butter roll",
+          "MealSourceType": 1
+        },
+        "Fat": 10.0,
+        "Carbs": 56.0,
+        "Protein": 12.0,
+        "Calories": 362.0
+      },
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Pork Loin",
+          "ServingSize": "Roast",
+          "Fat": 80.0,
+          "Carbs": 0.0,
+          "Protein": 234.7,
+          "Calories": 1658.8,
+          "Description": "Simple Truth natural pork 32 oz",
+          "MealSourceType": 1
+        },
+        "Fat": 26.4,
+        "Carbs": 0.0,
+        "Protein": 77.5,
+        "Calories": 547.6
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 18.0,
+          "Carbs": 33.0,
+          "Protein": 22.0,
+          "Calories": 382.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 36.0,
+        "Carbs": 66.0,
+        "Protein": 44.0,
+        "Calories": 764.0
+      }
+    ]
+  }
+}

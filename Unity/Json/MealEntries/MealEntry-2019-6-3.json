@@ -1,0 +1,134 @@
+{
+  "DateTime": "2019-06-03T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 87.7,
+  "TotalCarbs": 215.7,
+  "TotalProtein": 143.2,
+  "TotalCalories": 2224.9,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "",
+          "MealSourceType": 0
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Chips",
+          "ServingSize": "Bag",
+          "Fat": 8.0,
+          "Carbs": 20.0,
+          "Protein": 2.0,
+          "Calories": 160.0,
+          "Description": "Firehouse Funyuns onion flavored rings",
+          "MealSourceType": 1
+        },
+        "Fat": 8.0,
+        "Carbs": 20.0,
+        "Protein": 2.0,
+        "Calories": 160.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Roast Beef-Medium",
+          "ServingSize": "Sandwich",
+          "Fat": 14.0,
+          "Carbs": 44.0,
+          "Protein": 39.0,
+          "Calories": 458.0,
+          "Description": "Firehouse medium roast beef sandwich on white bread with only provolone cheese",
+          "MealSourceType": 1
+        },
+        "Fat": 14.0,
+        "Carbs": 44.0,
+        "Protein": 39.0,
+        "Calories": 458.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Powerade-Medium",
+          "ServingSize": "Cup",
+          "Fat": 0.3,
+          "Carbs": 52.3,
+          "Protein": 0.0,
+          "Calories": 211.9,
+          "Description": "Firehouse Powerade sports drink orange 22 fl oz",
+          "MealSourceType": 1
+        },
+        "Fat": 0.3,
+        "Carbs": 52.3,
+        "Protein": 0.0,
+        "Calories": 211.9
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Caesar Salad Kit",
+          "ServingSize": "Bag",
+          "Fat": 39.0,
+          "Carbs": 30.0,
+          "Protein": 15.0,
+          "Calories": 531.0,
+          "Description": "Dole premium kit ultimate caesar",
+          "MealSourceType": 1
+        },
+        "Fat": 39.0,
+        "Carbs": 30.0,
+        "Protein": 15.0,
+        "Calories": 531.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Chicken Breast",
+          "ServingSize": "Breast",
+          "Fat": 1.0,
+          "Carbs": 0.0,
+          "Protein": 25.0,
+          "Calories": 109.0,
+          "Description": "Simple Truth natural chicken breast",
+          "MealSourceType": 1
+        },
+        "Fat": 1.0,
+        "Carbs": 0.0,
+        "Protein": 25.0,
+        "Calories": 109.0
+      }
+    ],
+    "Custom": []
+  }
+}

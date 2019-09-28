@@ -1,0 +1,142 @@
+{
+  "DateTime": "2019-07-04T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 89.8,
+  "TotalCarbs": 299.3,
+  "TotalProtein": 158.5,
+  "TotalCalories": 2639.4,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Turkey",
+          "ServingSize": "Bag",
+          "Fat": 7.6,
+          "Carbs": 19.8,
+          "Protein": 34.6,
+          "Calories": 286.0,
+          "Description": "Kroger bag of 0.8 lb of sliced turkey",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 3.8,
+        "Carbs": 9.9,
+        "Protein": 17.3,
+        "Calories": 143.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Sliced",
+          "ServingSize": "Slice",
+          "Fat": 5.0,
+          "Carbs": 0.0,
+          "Protein": 5.0,
+          "Calories": 65.0,
+          "Description": "Sargento provolone cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 5.0,
+        "Carbs": 0.0,
+        "Protein": 5.0,
+        "Calories": 65.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Bread-White",
+          "ServingSize": "Slice",
+          "Fat": 0.8,
+          "Carbs": 11.5,
+          "Protein": 3.0,
+          "Calories": 65.2,
+          "Description": "One slice of Nature's Own whitewheat healthy white bread",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 1.6,
+        "Carbs": 23.0,
+        "Protein": 6.0,
+        "Calories": 130.4
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 27.0,
+          "Carbs": 40.0,
+          "Protein": 34.0,
+          "Calories": 539.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 54.0,
+        "Carbs": 80.0,
+        "Protein": 68.0,
+        "Calories": 1078.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 0.0,
+          "Carbs": 117.0,
+          "Protein": 0.0,
+          "Calories": 468.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 117.0,
+        "Protein": 0.0,
+        "Calories": 468.0
+      }
+    ]
+  }
+}

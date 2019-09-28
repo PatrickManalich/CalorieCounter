@@ -1,0 +1,178 @@
+{
+  "DateTime": "2019-09-04T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 128.0,
+  "TotalCarbs": 294.9,
+  "TotalProtein": 170.2,
+  "TotalCalories": 3012.4,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "The Classic protein smoothie",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Nuggets-12 Count",
+          "ServingSize": "Container",
+          "Fat": 18.0,
+          "Carbs": 13.5,
+          "Protein": 42.0,
+          "Calories": 384.0,
+          "Description": "Chic-fil-A twelve count nuggets",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 18.0,
+        "Carbs": 13.5,
+        "Protein": 42.0,
+        "Calories": 384.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Shake-Large",
+          "ServingSize": "Shake",
+          "Fat": 25.0,
+          "Carbs": 86.0,
+          "Protein": 15.0,
+          "Calories": 629.0,
+          "Description": "Chic-fil-A large vanilla shake",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 25.0,
+        "Carbs": 86.0,
+        "Protein": 15.0,
+        "Calories": 629.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Fries-Medium",
+          "ServingSize": "Container",
+          "Fat": 18.0,
+          "Carbs": 43.0,
+          "Protein": 5.0,
+          "Calories": 354.0,
+          "Description": "Chic-fil-A medium fries",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 18.0,
+        "Carbs": 43.0,
+        "Protein": 5.0,
+        "Calories": 354.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Chicken Breast",
+          "ServingSize": "Breast",
+          "Fat": 1.0,
+          "Carbs": 0.0,
+          "Protein": 25.0,
+          "Calories": 109.0,
+          "Description": "Simple Truth natural chicken breast",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 1.0,
+        "Carbs": 0.0,
+        "Protein": 25.0,
+        "Calories": 109.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Caesar Salad Kit",
+          "ServingSize": "Bag",
+          "Fat": 39.0,
+          "Carbs": 30.0,
+          "Protein": 15.0,
+          "Calories": 531.0,
+          "Description": "Dole premium kit ultimate caesar",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 39.0,
+        "Carbs": 30.0,
+        "Protein": 15.0,
+        "Calories": 531.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Bread-White",
+          "ServingSize": "Slice",
+          "Fat": 0.8,
+          "Carbs": 11.5,
+          "Protein": 3.0,
+          "Calories": 65.2,
+          "Description": "One slice of Nature's Own whitewheat healthy white bread",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 1.6,
+        "Carbs": 23.0,
+        "Protein": 6.0,
+        "Calories": 130.4
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 0.0,
+          "Carbs": 30.0,
+          "Protein": 0.0,
+          "Calories": 120.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 30.0,
+        "Protein": 0.0,
+        "Calories": 120.0
+      }
+    ]
+  }
+}

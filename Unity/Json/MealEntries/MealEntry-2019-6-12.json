@@ -1,0 +1,151 @@
+{
+  "DateTime": "2019-06-12T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 89.7,
+  "TotalCarbs": 189.8,
+  "TotalProtein": 123.0,
+  "TotalCalories": 2058.5,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Banana",
+          "ServingSize": "Fruit",
+          "Fat": 0.4,
+          "Carbs": 27.0,
+          "Protein": 1.3,
+          "Calories": 116.8,
+          "Description": "General banana",
+          "MealSourceType": 0
+        },
+        "Fat": 0.4,
+        "Carbs": 27.0,
+        "Protein": 1.3,
+        "Calories": 116.8
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Shake-Large",
+          "ServingSize": "Shake",
+          "Fat": 25.0,
+          "Carbs": 86.0,
+          "Protein": 15.0,
+          "Calories": 629.0,
+          "Description": "Chic-fil-A large vanilla shake",
+          "MealSourceType": 1
+        },
+        "Fat": 25.0,
+        "Carbs": 86.0,
+        "Protein": 15.0,
+        "Calories": 629.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Nuggets-12 Count",
+          "ServingSize": "Container",
+          "Fat": 18.0,
+          "Carbs": 13.5,
+          "Protein": 42.0,
+          "Calories": 384.0,
+          "Description": "Chic-fil-A twelve count nuggets",
+          "MealSourceType": 1
+        },
+        "Fat": 18.0,
+        "Carbs": 13.5,
+        "Protein": 42.0,
+        "Calories": 384.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Bell Pepper",
+          "ServingSize": "Pepper",
+          "Fat": 0.2,
+          "Carbs": 7.6,
+          "Protein": 1.0,
+          "Calories": 36.2,
+          "Description": "General green bell pepper",
+          "MealSourceType": 1
+        },
+        "Fat": 0.1,
+        "Carbs": 3.8,
+        "Protein": 0.5,
+        "Calories": 18.1
+      },
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Ground Beef-85/15",
+          "ServingSize": "Container",
+          "Fat": 68.0,
+          "Carbs": 0.0,
+          "Protein": 84.0,
+          "Calories": 948.0,
+          "Description": "Kroger ground beef 85% lean meat and 15% fat",
+          "MealSourceType": 1
+        },
+        "Fat": 22.4,
+        "Carbs": 0.0,
+        "Protein": 27.7,
+        "Calories": 312.4
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1
+        },
+        "Fat": 0.0,
+        "Carbs": 18.0,
+        "Protein": 1.5,
+        "Calories": 78.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Pasta Sauce-Medium",
+          "ServingSize": "Jar",
+          "Fat": 7.5,
+          "Carbs": 65.0,
+          "Protein": 10.0,
+          "Calories": 367.5,
+          "Description": "Prego italian sauce traditional 24 oz jar",
+          "MealSourceType": 1
+        },
+        "Fat": 3.8,
+        "Carbs": 32.5,
+        "Protein": 5.0,
+        "Calories": 184.2
+      }
+    ],
+    "Custom": []
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "DateTime": "2019-07-31T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 98.6,
+  "TotalCarbs": 255.8,
+  "TotalProtein": 112.0,
+  "TotalCalories": 2358.6,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Shake-Large",
+          "ServingSize": "Shake",
+          "Fat": 25.0,
+          "Carbs": 86.0,
+          "Protein": 15.0,
+          "Calories": 629.0,
+          "Description": "Chic-fil-A large vanilla shake",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 25.0,
+        "Carbs": 86.0,
+        "Protein": 15.0,
+        "Calories": 629.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Nuggets-12 Count",
+          "ServingSize": "Container",
+          "Fat": 18.0,
+          "Carbs": 13.5,
+          "Protein": 42.0,
+          "Calories": 384.0,
+          "Description": "Chic-fil-A twelve count nuggets",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 18.0,
+        "Carbs": 13.5,
+        "Protein": 42.0,
+        "Calories": 384.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Soda-Can",
+          "ServingSize": "Can",
+          "Fat": 0.0,
+          "Carbs": 39.0,
+          "Protein": 0.0,
+          "Calories": 156.0,
+          "Description": "Coca-Cola 12 oz can",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 78.0,
+        "Protein": 0.0,
+        "Calories": 312.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 3.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 6.2,
+          "Carbs": 7.1,
+          "Protein": 7.0,
+          "Calories": 112.2,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 18.6,
+        "Carbs": 21.3,
+        "Protein": 21.0,
+        "Calories": 336.6
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 17.0,
+          "Carbs": 48.0,
+          "Protein": 4.0,
+          "Calories": 361.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 17.0,
+        "Carbs": 48.0,
+        "Protein": 4.0,
+        "Calories": 361.0
+      }
+    ]
+  }
+}

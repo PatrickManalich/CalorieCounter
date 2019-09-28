@@ -1,0 +1,135 @@
+{
+  "DateTime": "2019-07-16T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 112.2,
+  "TotalCarbs": 223.4,
+  "TotalProtein": 188.0,
+  "TotalCalories": 2655.4,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Banana",
+          "ServingSize": "Fruit",
+          "Fat": 0.4,
+          "Carbs": 27.0,
+          "Protein": 1.3,
+          "Calories": 116.8,
+          "Description": "General banana",
+          "MealSourceType": 0
+        },
+        "Fat": 0.4,
+        "Carbs": 27.0,
+        "Protein": 1.3,
+        "Calories": 116.8
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "The Classic protein smoothie",
+          "MealSourceType": 0
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Pork Loin",
+          "ServingSize": "Roast",
+          "Fat": 80.0,
+          "Carbs": 0.0,
+          "Protein": 234.7,
+          "Calories": 1658.8,
+          "Description": "Simple Truth natural pork 32 oz",
+          "MealSourceType": 1
+        },
+        "Fat": 26.4,
+        "Carbs": 0.0,
+        "Protein": 77.5,
+        "Calories": 547.6
+      },
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Hawaiian Roll",
+          "ServingSize": "Roll",
+          "Fat": 2.5,
+          "Carbs": 14.0,
+          "Protein": 3.0,
+          "Calories": 90.5,
+          "Description": "King's Hawaiian savory butter roll",
+          "MealSourceType": 1
+        },
+        "Fat": 10.0,
+        "Carbs": 56.0,
+        "Protein": 12.0,
+        "Calories": 362.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Pizza-Pepperoni",
+          "ServingSize": "Pizza",
+          "Fat": 100.0,
+          "Carbs": 120.0,
+          "Protein": 70.0,
+          "Calories": 1660.0,
+          "Description": "Screamin' Sicilian holy pepperoni pizza",
+          "MealSourceType": 1
+        },
+        "Fat": 50.0,
+        "Carbs": 60.0,
+        "Protein": 35.0,
+        "Calories": 830.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 0.0,
+          "Carbs": 11.0,
+          "Protein": 0.0,
+          "Calories": 44.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 0.0,
+        "Carbs": 11.0,
+        "Protein": 0.0,
+        "Calories": 44.0
+      }
+    ]
+  }
+}

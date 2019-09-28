@@ -1,0 +1,67 @@
+{
+  "DateTime": "2019-06-02T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 49.4,
+  "TotalCarbs": 128.4,
+  "TotalProtein": 57.5,
+  "TotalCalories": 1188.2,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "",
+          "MealSourceType": 0
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Pizza-Pepperoni",
+          "ServingSize": "Pizza",
+          "Fat": 100.0,
+          "Carbs": 120.0,
+          "Protein": 70.0,
+          "Calories": 1660.0,
+          "Description": "Screamin' Sicilian holy pepperoni pizza",
+          "MealSourceType": 1
+        },
+        "Fat": 25.0,
+        "Carbs": 30.0,
+        "Protein": 17.5,
+        "Calories": 415.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 19.0,
+          "Carbs": 38.0,
+          "Protein": 7.8,
+          "Calories": 354.2,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 19.0,
+        "Carbs": 38.0,
+        "Protein": 7.8,
+        "Calories": 354.2
+      }
+    ]
+  }
+}

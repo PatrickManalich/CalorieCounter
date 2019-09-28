@@ -1,0 +1,151 @@
+{
+  "DateTime": "2019-06-09T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 73.5,
+  "TotalCarbs": 225.9,
+  "TotalProtein": 112.5,
+  "TotalCalories": 2015.1,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Egg",
+          "ServingSize": "Egg",
+          "Fat": 4.8,
+          "Carbs": 0.4,
+          "Protein": 6.3,
+          "Calories": 70.0,
+          "Description": "General egg",
+          "MealSourceType": 1
+        },
+        "Fat": 4.8,
+        "Carbs": 0.4,
+        "Protein": 6.3,
+        "Calories": 70.0
+      },
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1
+        },
+        "Fat": 0.0,
+        "Carbs": 27.0,
+        "Protein": 2.2,
+        "Calories": 116.8
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Peas and Carrots",
+          "ServingSize": "Half Cup",
+          "Fat": 0.3,
+          "Carbs": 8.1,
+          "Protein": 2.5,
+          "Calories": 45.1,
+          "Description": "General peas and carrots",
+          "MealSourceType": 1
+        },
+        "Fat": 0.3,
+        "Carbs": 8.1,
+        "Protein": 2.5,
+        "Calories": 45.1
+      },
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Pasta",
+          "ServingSize": "Box",
+          "Fat": 8.0,
+          "Carbs": 336.0,
+          "Protein": 56.0,
+          "Calories": 1640.0,
+          "Description": "Barilla farfalle box",
+          "MealSourceType": 1
+        },
+        "Fat": 2.6,
+        "Carbs": 110.9,
+        "Protein": 18.5,
+        "Calories": 541.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Pasta Sauce-Medium",
+          "ServingSize": "Jar",
+          "Fat": 7.5,
+          "Carbs": 65.0,
+          "Protein": 10.0,
+          "Calories": 367.5,
+          "Description": "Prego italian sauce traditional 24 oz jar",
+          "MealSourceType": 1
+        },
+        "Fat": 3.8,
+        "Carbs": 32.5,
+        "Protein": 5.0,
+        "Calories": 184.2
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Garlic Knots",
+          "ServingSize": "Knot",
+          "Fat": 4.0,
+          "Carbs": 19.0,
+          "Protein": 3.0,
+          "Calories": 124.0,
+          "Description": "New York Bakery garlic knot with real garlic",
+          "MealSourceType": 1
+        },
+        "Fat": 8.0,
+        "Carbs": 38.0,
+        "Protein": 6.0,
+        "Calories": 248.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ground Beef-85/15",
+          "ServingSize": "Container",
+          "Fat": 68.0,
+          "Carbs": 0.0,
+          "Protein": 84.0,
+          "Calories": 948.0,
+          "Description": "Kroger ground beef 85% lean meat and 15% fat",
+          "MealSourceType": 1
+        },
+        "Fat": 34.0,
+        "Carbs": 0.0,
+        "Protein": 42.0,
+        "Calories": 474.0
+      }
+    ],
+    "Custom": []
+  }
+}

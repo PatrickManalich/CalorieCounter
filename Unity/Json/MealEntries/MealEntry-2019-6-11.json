@@ -1,0 +1,135 @@
+{
+  "DateTime": "2019-06-11T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 76.7,
+  "TotalCarbs": 250.4,
+  "TotalProtein": 111.2,
+  "TotalCalories": 2136.7,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Banana",
+          "ServingSize": "Fruit",
+          "Fat": 0.4,
+          "Carbs": 27.0,
+          "Protein": 1.3,
+          "Calories": 116.8,
+          "Description": "General banana",
+          "MealSourceType": 0
+        },
+        "Fat": 0.4,
+        "Carbs": 27.0,
+        "Protein": 1.3,
+        "Calories": 116.8
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Chips",
+          "ServingSize": "Bag",
+          "Fat": 8.0,
+          "Carbs": 20.0,
+          "Protein": 2.0,
+          "Calories": 160.0,
+          "Description": "Firehouse Funyuns onion flavored rings",
+          "MealSourceType": 1
+        },
+        "Fat": 8.0,
+        "Carbs": 20.0,
+        "Protein": 2.0,
+        "Calories": 160.0
+      },
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Hawaiian Roll",
+          "ServingSize": "Roll",
+          "Fat": 2.5,
+          "Carbs": 14.0,
+          "Protein": 3.0,
+          "Calories": 90.5,
+          "Description": "King's Hawaiian savory butter roll",
+          "MealSourceType": 1
+        },
+        "Fat": 10.0,
+        "Carbs": 56.0,
+        "Protein": 12.0,
+        "Calories": 362.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ham",
+          "ServingSize": "Bag",
+          "Fat": 12.6,
+          "Carbs": 2.7,
+          "Protein": 55.8,
+          "Calories": 347.4,
+          "Description": "Kroger bag of 0.8 lb of sliced ham",
+          "MealSourceType": 1
+        },
+        "Fat": 6.3,
+        "Carbs": 1.4,
+        "Protein": 27.9,
+        "Calories": 173.9
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 14.0,
+          "Carbs": 27.0,
+          "Protein": 22.0,
+          "Calories": 322.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 14.0,
+        "Carbs": 27.0,
+        "Protein": 22.0,
+        "Calories": 322.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 18.0,
+          "Carbs": 110.0,
+          "Protein": 16.0,
+          "Calories": 666.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 18.0,
+        "Carbs": 110.0,
+        "Protein": 16.0,
+        "Calories": 666.0
+      }
+    ]
+  }
+}

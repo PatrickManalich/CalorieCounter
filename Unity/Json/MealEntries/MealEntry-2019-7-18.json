@@ -1,0 +1,151 @@
+{
+  "DateTime": "2019-07-18T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 84.7,
+  "TotalCarbs": 185.4,
+  "TotalProtein": 156.3,
+  "TotalCalories": 2129.1,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Banana",
+          "ServingSize": "Fruit",
+          "Fat": 0.4,
+          "Carbs": 27.0,
+          "Protein": 1.3,
+          "Calories": 116.8,
+          "Description": "General banana",
+          "MealSourceType": 0
+        },
+        "Fat": 0.4,
+        "Carbs": 27.0,
+        "Protein": 1.3,
+        "Calories": 116.8
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "The Classic protein smoothie",
+          "MealSourceType": 0
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Pizza-Pepperoni",
+          "ServingSize": "Pizza",
+          "Fat": 100.0,
+          "Carbs": 120.0,
+          "Protein": 70.0,
+          "Calories": 1660.0,
+          "Description": "Screamin' Sicilian holy pepperoni pizza",
+          "MealSourceType": 1
+        },
+        "Fat": 50.0,
+        "Carbs": 60.0,
+        "Protein": 35.0,
+        "Calories": 830.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Shrimp",
+          "ServingSize": "Bag",
+          "Fat": 7.5,
+          "Carbs": 5.0,
+          "Protein": 95.0,
+          "Calories": 467.5,
+          "Description": "Kroger cooked shrimp tail on peeled and deveined extra large",
+          "MealSourceType": 1
+        },
+        "Fat": 3.8,
+        "Carbs": 2.5,
+        "Protein": 47.5,
+        "Calories": 234.2
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1
+        },
+        "Fat": 0.0,
+        "Carbs": 18.0,
+        "Protein": 1.5,
+        "Calories": 78.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Egg",
+          "ServingSize": "Egg",
+          "Fat": 4.8,
+          "Carbs": 0.4,
+          "Protein": 6.3,
+          "Calories": 70.0,
+          "Description": "General egg",
+          "MealSourceType": 1
+        },
+        "Fat": 4.8,
+        "Carbs": 0.4,
+        "Protein": 6.3,
+        "Calories": 70.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Peas and Carrots",
+          "ServingSize": "Half Cup",
+          "Fat": 0.3,
+          "Carbs": 8.1,
+          "Protein": 2.5,
+          "Calories": 45.1,
+          "Description": "General peas and carrots",
+          "MealSourceType": 1
+        },
+        "Fat": 0.3,
+        "Carbs": 8.1,
+        "Protein": 2.5,
+        "Calories": 45.1
+      }
+    ],
+    "Custom": []
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "DateTime": "2019-08-03T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 108.1,
+  "TotalCarbs": 144.0,
+  "TotalProtein": 121.2,
+  "TotalCalories": 2033.7,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Egg",
+          "ServingSize": "Egg",
+          "Fat": 4.8,
+          "Carbs": 0.4,
+          "Protein": 6.3,
+          "Calories": 70.0,
+          "Description": "General egg",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 9.6,
+        "Carbs": 0.8,
+        "Protein": 12.6,
+        "Calories": 140.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "The Classic protein smoothie",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 18.0,
+        "Protein": 1.5,
+        "Calories": 78.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ground Beef-80/20",
+          "ServingSize": "Container",
+          "Fat": 92.0,
+          "Carbs": 0.0,
+          "Protein": 76.0,
+          "Calories": 1132.0,
+          "Description": "Kroger ground beef 80% lean meat and 20% fat",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 46.0,
+        "Carbs": 0.0,
+        "Protein": 38.0,
+        "Calories": 566.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Bell Pepper",
+          "ServingSize": "Pepper",
+          "Fat": 0.2,
+          "Carbs": 7.6,
+          "Protein": 1.0,
+          "Calories": 36.2,
+          "Description": "General green bell pepper",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.1,
+        "Carbs": 3.8,
+        "Protein": 0.5,
+        "Calories": 18.1
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Tomato Sauce",
+          "ServingSize": "Can",
+          "Fat": 4.0,
+          "Carbs": 0.0,
+          "Protein": 1.0,
+          "Calories": 40.0,
+          "Description": "Goya tomato sauce spanish style",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 4.0,
+        "Carbs": 0.0,
+        "Protein": 1.0,
+        "Calories": 40.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 11.0,
+          "Carbs": 25.0,
+          "Protein": 6.0,
+          "Calories": 223.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 11.0,
+        "Carbs": 25.0,
+        "Protein": 6.0,
+        "Calories": 223.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 9.0,
+          "Carbs": 15.0,
+          "Protein": 1.4,
+          "Calories": 146.6,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 9.0,
+        "Carbs": 15.0,
+        "Protein": 1.4,
+        "Calories": 146.6
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 23.0,
+          "Carbs": 21.0,
+          "Protein": 28.0,
+          "Calories": 403.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 23.0,
+        "Carbs": 21.0,
+        "Protein": 28.0,
+        "Calories": 403.0
+      }
+    ]
+  }
+}

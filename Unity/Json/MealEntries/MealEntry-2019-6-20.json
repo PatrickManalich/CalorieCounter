@@ -1,0 +1,151 @@
+{
+  "DateTime": "2019-06-20T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 78.5,
+  "TotalCarbs": 291.3,
+  "TotalProtein": 147.1,
+  "TotalCalories": 2460.1,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "",
+          "MealSourceType": 0
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Hawaiian Roll",
+          "ServingSize": "Roll",
+          "Fat": 2.5,
+          "Carbs": 14.0,
+          "Protein": 3.0,
+          "Calories": 90.5,
+          "Description": "King's Hawaiian savory butter roll",
+          "MealSourceType": 1
+        },
+        "Fat": 10.0,
+        "Carbs": 56.0,
+        "Protein": 12.0,
+        "Calories": 362.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Sliced",
+          "ServingSize": "Slice",
+          "Fat": 5.0,
+          "Carbs": 0.0,
+          "Protein": 5.0,
+          "Calories": 65.0,
+          "Description": "Sargento provolone cheese",
+          "MealSourceType": 1
+        },
+        "Fat": 5.0,
+        "Carbs": 0.0,
+        "Protein": 5.0,
+        "Calories": 65.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ham",
+          "ServingSize": "Bag",
+          "Fat": 12.6,
+          "Carbs": 2.7,
+          "Protein": 55.8,
+          "Calories": 347.4,
+          "Description": "Kroger bag of 0.8 lb of sliced ham",
+          "MealSourceType": 1
+        },
+        "Fat": 6.3,
+        "Carbs": 1.4,
+        "Protein": 27.9,
+        "Calories": 173.9
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Pasta",
+          "ServingSize": "Box",
+          "Fat": 8.0,
+          "Carbs": 336.0,
+          "Protein": 56.0,
+          "Calories": 1640.0,
+          "Description": "Barilla farfalle",
+          "MealSourceType": 1
+        },
+        "Fat": 2.0,
+        "Carbs": 84.0,
+        "Protein": 14.0,
+        "Calories": 410.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Pasta Sauce-Medium",
+          "ServingSize": "Jar",
+          "Fat": 7.5,
+          "Carbs": 65.0,
+          "Protein": 10.0,
+          "Calories": 367.5,
+          "Description": "Prego italian sauce traditional 24 oz jar",
+          "MealSourceType": 1
+        },
+        "Fat": 3.8,
+        "Carbs": 32.5,
+        "Protein": 5.0,
+        "Calories": 184.2
+      },
+      {
+        "ServingAmount": 3.0,
+        "MealSource": {
+          "Name": "Garlic Knots",
+          "ServingSize": "Knot",
+          "Fat": 4.0,
+          "Carbs": 19.0,
+          "Protein": 3.0,
+          "Calories": 124.0,
+          "Description": "New York Bakery garlic knot with real garlic",
+          "MealSourceType": 1
+        },
+        "Fat": 12.0,
+        "Carbs": 57.0,
+        "Protein": 9.0,
+        "Calories": 372.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ground Beef-85/15",
+          "ServingSize": "Container",
+          "Fat": 68.0,
+          "Carbs": 0.0,
+          "Protein": 84.0,
+          "Calories": 948.0,
+          "Description": "Kroger ground beef 85% lean meat and 15% fat",
+          "MealSourceType": 1
+        },
+        "Fat": 34.0,
+        "Carbs": 0.0,
+        "Protein": 42.0,
+        "Calories": 474.0
+      }
+    ],
+    "Custom": []
+  }
+}

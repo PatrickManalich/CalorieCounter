@@ -1,0 +1,195 @@
+{
+  "DateTime": "2019-08-20T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 61.4,
+  "TotalCarbs": 137.8,
+  "TotalProtein": 182.9,
+  "TotalCalories": 1835.4,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "The Classic protein smoothie",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Apple",
+          "ServingSize": "Fruit",
+          "Fat": 0.3,
+          "Carbs": 25.0,
+          "Protein": 0.5,
+          "Calories": 104.7,
+          "Description": "General apple",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 0.3,
+        "Carbs": 25.0,
+        "Protein": 0.5,
+        "Calories": 104.7
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Chicken Breast",
+          "ServingSize": "Breast",
+          "Fat": 1.0,
+          "Carbs": 0.0,
+          "Protein": 25.0,
+          "Calories": 109.0,
+          "Description": "Simple Truth natural chicken breast",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.8,
+        "Carbs": 0.0,
+        "Protein": 18.8,
+        "Calories": 82.4
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Shrimp",
+          "ServingSize": "Bag",
+          "Fat": 7.5,
+          "Carbs": 5.0,
+          "Protein": 95.0,
+          "Calories": 467.5,
+          "Description": "Kroger cooked shrimp tail on peeled and deveined extra large",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 3.8,
+        "Carbs": 2.5,
+        "Protein": 47.5,
+        "Calories": 234.2
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Tortilla",
+          "ServingSize": "Tortilla",
+          "Fat": 3.0,
+          "Carbs": 26.0,
+          "Protein": 4.0,
+          "Calories": 147.0,
+          "Description": "Mission flour tortillas soft taco",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 3.0,
+        "Carbs": 26.0,
+        "Protein": 4.0,
+        "Calories": 147.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Shredded",
+          "ServingSize": "Half Cup",
+          "Fat": 16.0,
+          "Carbs": 2.0,
+          "Protein": 14.0,
+          "Calories": 208.0,
+          "Description": "Kroger queso quesadilla finely shredded cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 16.0,
+        "Carbs": 2.0,
+        "Protein": 14.0,
+        "Calories": 208.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ham",
+          "ServingSize": "Bag",
+          "Fat": 12.6,
+          "Carbs": 2.7,
+          "Protein": 55.8,
+          "Calories": 347.4,
+          "Description": "Kroger bag of 0.8 lb of sliced ham",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 6.3,
+        "Carbs": 1.4,
+        "Protein": 27.9,
+        "Calories": 173.9
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Sliced",
+          "ServingSize": "Slice",
+          "Fat": 5.0,
+          "Carbs": 0.0,
+          "Protein": 5.0,
+          "Calories": 65.0,
+          "Description": "Sargento provolone cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 5.0,
+        "Carbs": 0.0,
+        "Protein": 5.0,
+        "Calories": 65.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Bread-White",
+          "ServingSize": "Slice",
+          "Fat": 0.8,
+          "Carbs": 11.5,
+          "Protein": 3.0,
+          "Calories": 65.2,
+          "Description": "One slice of Nature's Own whitewheat healthy white bread",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 0.8,
+        "Carbs": 11.5,
+        "Protein": 3.0,
+        "Calories": 65.2
+      }
+    ],
+    "Custom": []
+  }
+}

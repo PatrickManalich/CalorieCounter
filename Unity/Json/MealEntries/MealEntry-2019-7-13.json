@@ -1,0 +1,117 @@
+{
+  "DateTime": "2019-07-13T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 76.5,
+  "TotalCarbs": 216.0,
+  "TotalProtein": 138.5,
+  "TotalCalories": 2106.5,
+  "MealProportionsDictionary": {
+    "Small": [],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Chicken Biscuit",
+          "ServingSize": "Biscuit",
+          "Fat": 20.0,
+          "Carbs": 16.0,
+          "Protein": 48.0,
+          "Calories": 436.0,
+          "Description": "Chic-fil-A chicken biscuit",
+          "MealSourceType": 1
+        },
+        "Fat": 20.0,
+        "Carbs": 16.0,
+        "Protein": 48.0,
+        "Calories": 436.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Fries-Medium",
+          "ServingSize": "Container",
+          "Fat": 18.0,
+          "Carbs": 43.0,
+          "Protein": 5.0,
+          "Calories": 354.0,
+          "Description": "Chic-fil-A medium fries",
+          "MealSourceType": 1
+        },
+        "Fat": 18.0,
+        "Carbs": 43.0,
+        "Protein": 5.0,
+        "Calories": 354.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Chicken Breast",
+          "ServingSize": "Breast",
+          "Fat": 1.0,
+          "Carbs": 0.0,
+          "Protein": 25.0,
+          "Calories": 109.0,
+          "Description": "Simple Truth natural chicken breast",
+          "MealSourceType": 1
+        },
+        "Fat": 1.0,
+        "Carbs": 0.0,
+        "Protein": 25.0,
+        "Calories": 109.0
+      },
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Hawaiian Roll",
+          "ServingSize": "Roll",
+          "Fat": 2.5,
+          "Carbs": 14.0,
+          "Protein": 3.0,
+          "Calories": 90.5,
+          "Description": "King's Hawaiian savory butter roll",
+          "MealSourceType": 1
+        },
+        "Fat": 10.0,
+        "Carbs": 56.0,
+        "Protein": 12.0,
+        "Calories": 362.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Soda-Can",
+          "ServingSize": "Can",
+          "Fat": 0.0,
+          "Carbs": 39.0,
+          "Protein": 0.0,
+          "Calories": 156.0,
+          "Description": "Coca-Cola 12 oz can",
+          "MealSourceType": 1
+        },
+        "Fat": 0.0,
+        "Carbs": 39.0,
+        "Protein": 0.0,
+        "Calories": 156.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 55.0,
+          "Carbs": 124.0,
+          "Protein": 97.0,
+          "Calories": 1379.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 27.5,
+        "Carbs": 62.0,
+        "Protein": 48.5,
+        "Calories": 689.5
+      }
+    ]
+  }
+}

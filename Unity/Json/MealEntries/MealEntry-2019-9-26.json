@@ -1,0 +1,196 @@
+{
+  "DateTime": "2019-09-26T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 116.3,
+  "TotalCarbs": 350.5,
+  "TotalProtein": 122.7,
+  "TotalCalories": 2939.5,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Banana",
+          "ServingSize": "Fruit",
+          "Fat": 0.4,
+          "Carbs": 27.0,
+          "Protein": 1.3,
+          "Calories": 116.8,
+          "Description": "General banana",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 0.4,
+        "Carbs": 27.0,
+        "Protein": 1.3,
+        "Calories": 116.8
+      },
+      {
+        "ServingAmount": 3.0,
+        "MealSource": {
+          "Name": "Bread-White",
+          "ServingSize": "Slice",
+          "Fat": 0.8,
+          "Carbs": 11.5,
+          "Protein": 3.0,
+          "Calories": 65.2,
+          "Description": "One slice of Nature's Own whitewheat healthy white bread",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 2.4,
+        "Carbs": 34.5,
+        "Protein": 9.0,
+        "Calories": 195.6
+      },
+      {
+        "ServingAmount": 3.0,
+        "MealSource": {
+          "Name": "Bread-White",
+          "ServingSize": "Slice",
+          "Fat": 0.8,
+          "Carbs": 11.5,
+          "Protein": 3.0,
+          "Calories": 65.2,
+          "Description": "One slice of Nature's Own whitewheat healthy white bread",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 2.4,
+        "Carbs": 34.5,
+        "Protein": 9.0,
+        "Calories": 195.6
+      },
+      {
+        "ServingAmount": 3.0,
+        "MealSource": {
+          "Name": "Peanut Butter",
+          "ServingSize": "Sandwich",
+          "Fat": 16.0,
+          "Carbs": 8.0,
+          "Protein": 7.0,
+          "Calories": 204.0,
+          "Description": "Two tbsp. of Jif creamy peanut butter",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 48.0,
+        "Carbs": 24.0,
+        "Protein": 21.0,
+        "Calories": 612.0
+      },
+      {
+        "ServingAmount": 3.0,
+        "MealSource": {
+          "Name": "Jelly",
+          "ServingSize": "Sandwich",
+          "Fat": 0.0,
+          "Carbs": 26.0,
+          "Protein": 0.0,
+          "Calories": 104.0,
+          "Description": "Two tbsp. of Welch's concord grape jelly",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 78.0,
+        "Protein": 0.0,
+        "Calories": 312.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.5,
+        "MealSource": {
+          "Name": "Chicken Breast",
+          "ServingSize": "Breast",
+          "Fat": 1.0,
+          "Carbs": 0.0,
+          "Protein": 25.0,
+          "Calories": 109.0,
+          "Description": "Simple Truth natural chicken breast",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 1.5,
+        "Carbs": 0.0,
+        "Protein": 37.5,
+        "Calories": 163.5
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Ice Cream",
+          "ServingSize": "Container",
+          "Fat": 57.0,
+          "Carbs": 134.0,
+          "Protein": 18.0,
+          "Calories": 1121.0,
+          "Description": "Ben & Jerry's half baked",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 14.2,
+        "Carbs": 33.5,
+        "Protein": 4.5,
+        "Calories": 279.8
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 8.8,
+          "Carbs": 36.0,
+          "Protein": 4.1,
+          "Calories": 239.6,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 17.6,
+        "Carbs": 72.0,
+        "Protein": 8.2,
+        "Calories": 479.2
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 4.9,
+          "Carbs": 19.0,
+          "Protein": 1.1,
+          "Calories": 124.5,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 9.8,
+        "Carbs": 38.0,
+        "Protein": 2.2,
+        "Calories": 249.0
+      }
+    ]
+  }
+}

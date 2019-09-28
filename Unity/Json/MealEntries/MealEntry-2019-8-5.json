@@ -1,0 +1,142 @@
+{
+  "DateTime": "2019-08-05T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 99.9,
+  "TotalCarbs": 150.9,
+  "TotalProtein": 129.2,
+  "TotalCalories": 2019.5,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Roast Beef-Medium",
+          "ServingSize": "Sandwich",
+          "Fat": 14.0,
+          "Carbs": 44.0,
+          "Protein": 39.0,
+          "Calories": 458.0,
+          "Description": "Firehouse medium roast beef sandwich on white bread with only provolone cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 14.0,
+        "Carbs": 44.0,
+        "Protein": 39.0,
+        "Calories": 458.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Powerade-Medium",
+          "ServingSize": "Cup",
+          "Fat": 0.3,
+          "Carbs": 52.3,
+          "Protein": 0.0,
+          "Calories": 211.9,
+          "Description": "Firehouse Powerade sports drink orange 22 fl oz",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.3,
+        "Carbs": 52.3,
+        "Protein": 0.0,
+        "Calories": 211.9
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "FH Chips",
+          "ServingSize": "Bag",
+          "Fat": 8.0,
+          "Carbs": 20.0,
+          "Protein": 2.0,
+          "Calories": 160.0,
+          "Description": "Firehouse Funyuns onion flavored rings",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 4.0,
+        "Carbs": 10.0,
+        "Protein": 1.0,
+        "Calories": 80.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ground Beef-85/15",
+          "ServingSize": "Container",
+          "Fat": 68.0,
+          "Carbs": 0.0,
+          "Protein": 84.0,
+          "Calories": 948.0,
+          "Description": "Kroger ground beef 85% lean meat and 15% fat",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 34.0,
+        "Carbs": 0.0,
+        "Protein": 42.0,
+        "Calories": 474.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Shredded",
+          "ServingSize": "Half Cup",
+          "Fat": 16.0,
+          "Carbs": 2.0,
+          "Protein": 14.0,
+          "Calories": 208.0,
+          "Description": "Kroger queso quesadilla finely shredded cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 16.0,
+        "Carbs": 2.0,
+        "Protein": 14.0,
+        "Calories": 208.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 2.9,
+          "Carbs": 8.4,
+          "Protein": 0.8,
+          "Calories": 62.9,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 11.6,
+        "Carbs": 33.6,
+        "Protein": 3.2,
+        "Calories": 251.6
+      }
+    ]
+  }
+}

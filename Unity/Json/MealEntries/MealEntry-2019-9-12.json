@@ -1,0 +1,123 @@
+{
+  "DateTime": "2019-09-12T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 69.9,
+  "TotalCarbs": 162.8,
+  "TotalProtein": 103.8,
+  "TotalCalories": 1695.5,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      }
+    ],
+    "Large": [],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 20.0,
+          "Carbs": 0.0,
+          "Protein": 31.0,
+          "Calories": 304.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 0.0,
+        "Protein": 31.0,
+        "Calories": 304.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 0.2,
+          "Carbs": 37.0,
+          "Protein": 4.3,
+          "Calories": 167.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 0.2,
+        "Carbs": 37.0,
+        "Protein": 4.3,
+        "Calories": 167.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 0.1,
+          "Carbs": 3.8,
+          "Protein": 0.3,
+          "Calories": 17.3,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 0.1,
+        "Carbs": 3.8,
+        "Protein": 0.3,
+        "Calories": 17.3
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 12.0,
+          "Carbs": 41.0,
+          "Protein": 30.0,
+          "Calories": 392.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 12.0,
+        "Carbs": 41.0,
+        "Protein": 30.0,
+        "Calories": 392.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 8.8,
+          "Carbs": 36.0,
+          "Protein": 4.1,
+          "Calories": 239.6,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 17.6,
+        "Carbs": 72.0,
+        "Protein": 8.2,
+        "Calories": 479.2
+      }
+    ]
+  }
+}

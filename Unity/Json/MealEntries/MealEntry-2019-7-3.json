@@ -1,0 +1,168 @@
+{
+  "DateTime": "2019-07-03T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 106.0,
+  "TotalCarbs": 307.3,
+  "TotalProtein": 147.8,
+  "TotalCalories": 2774.4,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Banana",
+          "ServingSize": "Fruit",
+          "Fat": 0.4,
+          "Carbs": 27.0,
+          "Protein": 1.3,
+          "Calories": 116.8,
+          "Description": "General banana",
+          "MealSourceType": 0
+        },
+        "Fat": 0.4,
+        "Carbs": 27.0,
+        "Protein": 1.3,
+        "Calories": 116.8
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Fries-Medium",
+          "ServingSize": "Container",
+          "Fat": 18.0,
+          "Carbs": 43.0,
+          "Protein": 5.0,
+          "Calories": 354.0,
+          "Description": "Chic-fil-A medium fries",
+          "MealSourceType": 1
+        },
+        "Fat": 18.0,
+        "Carbs": 43.0,
+        "Protein": 5.0,
+        "Calories": 354.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Nuggets-12 Count",
+          "ServingSize": "Container",
+          "Fat": 18.0,
+          "Carbs": 13.5,
+          "Protein": 42.0,
+          "Calories": 384.0,
+          "Description": "Chic-fil-A twelve count nuggets",
+          "MealSourceType": 1
+        },
+        "Fat": 18.0,
+        "Carbs": 13.5,
+        "Protein": 42.0,
+        "Calories": 384.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "CFA Sprite-Medium",
+          "ServingSize": "Container",
+          "Fat": 0.0,
+          "Carbs": 44.0,
+          "Protein": 0.0,
+          "Calories": 176.0,
+          "Description": "Chic-fil-A medium sprite",
+          "MealSourceType": 1
+        },
+        "Fat": 0.0,
+        "Carbs": 44.0,
+        "Protein": 0.0,
+        "Calories": 176.0
+      },
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Pasta Sauce-Medium",
+          "ServingSize": "Jar",
+          "Fat": 7.5,
+          "Carbs": 65.0,
+          "Protein": 10.0,
+          "Calories": 367.5,
+          "Description": "Prego italian sauce traditional 24 oz jar",
+          "MealSourceType": 1
+        },
+        "Fat": 5.6,
+        "Carbs": 48.8,
+        "Protein": 7.5,
+        "Calories": 275.6
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Ground Beef-85/15",
+          "ServingSize": "Container",
+          "Fat": 68.0,
+          "Carbs": 0.0,
+          "Protein": 84.0,
+          "Calories": 948.0,
+          "Description": "Kroger ground beef 85% lean meat and 15% fat",
+          "MealSourceType": 1
+        },
+        "Fat": 34.0,
+        "Carbs": 0.0,
+        "Protein": 42.0,
+        "Calories": 474.0
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Garlic Knots",
+          "ServingSize": "Knot",
+          "Fat": 4.0,
+          "Carbs": 19.0,
+          "Protein": 3.0,
+          "Calories": 124.0,
+          "Description": "New York Bakery garlic knot with real garlic",
+          "MealSourceType": 1
+        },
+        "Fat": 8.0,
+        "Carbs": 38.0,
+        "Protein": 6.0,
+        "Calories": 248.0
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Pasta",
+          "ServingSize": "Box",
+          "Fat": 8.0,
+          "Carbs": 336.0,
+          "Protein": 56.0,
+          "Calories": 1640.0,
+          "Description": "Barilla farfalle",
+          "MealSourceType": 1
+        },
+        "Fat": 2.0,
+        "Carbs": 84.0,
+        "Protein": 14.0,
+        "Calories": 410.0
+      }
+    ],
+    "Custom": []
+  }
+}

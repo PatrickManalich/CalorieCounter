@@ -1,0 +1,152 @@
+{
+  "DateTime": "2019-07-06T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 64.5,
+  "TotalCarbs": 208.4,
+  "TotalProtein": 113.6,
+  "TotalCalories": 1868.5,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "",
+          "MealSourceType": 0
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 3.0,
+        "MealSource": {
+          "Name": "Egg",
+          "ServingSize": "Egg",
+          "Fat": 4.8,
+          "Carbs": 0.4,
+          "Protein": 6.3,
+          "Calories": 70.0,
+          "Description": "General egg",
+          "MealSourceType": 1
+        },
+        "Fat": 14.4,
+        "Carbs": 1.2,
+        "Protein": 18.9,
+        "Calories": 210.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Sliced",
+          "ServingSize": "Slice",
+          "Fat": 5.0,
+          "Carbs": 0.0,
+          "Protein": 5.0,
+          "Calories": 65.0,
+          "Description": "Sargento provolone cheese",
+          "MealSourceType": 1
+        },
+        "Fat": 5.0,
+        "Carbs": 0.0,
+        "Protein": 5.0,
+        "Calories": 65.0
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Turkey",
+          "ServingSize": "Bag",
+          "Fat": 7.6,
+          "Carbs": 19.8,
+          "Protein": 34.6,
+          "Calories": 286.0,
+          "Description": "Kroger bag of 0.8 lb of sliced turkey",
+          "MealSourceType": 1
+        },
+        "Fat": 1.9,
+        "Carbs": 4.9,
+        "Protein": 8.6,
+        "Calories": 71.1
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 21.0,
+          "Carbs": 4.4,
+          "Protein": 40.0,
+          "Calories": 366.6,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 21.0,
+        "Carbs": 4.4,
+        "Protein": 40.0,
+        "Calories": 366.6
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 8.8,
+          "Carbs": 36.0,
+          "Protein": 4.1,
+          "Calories": 239.6,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 8.8,
+        "Carbs": 36.0,
+        "Protein": 4.1,
+        "Calories": 239.6
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 16.0,
+          "Carbs": 47.0,
+          "Protein": 9.7,
+          "Calories": 370.8,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 8.0,
+        "Carbs": 23.5,
+        "Protein": 4.8,
+        "Calories": 185.2
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 0.0,
+          "Carbs": 39.0,
+          "Protein": 0.0,
+          "Calories": 156.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 0.0,
+        "Carbs": 78.0,
+        "Protein": 0.0,
+        "Calories": 312.0
+      }
+    ]
+  }
+}

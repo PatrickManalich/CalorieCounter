@@ -1,0 +1,117 @@
+{
+  "DateTime": "2019-07-12T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 115.5,
+  "TotalCarbs": 190.2,
+  "TotalProtein": 108.5,
+  "TotalCalories": 2234.3,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cream Cheese",
+          "ServingSize": "Bagel",
+          "Fat": 20.0,
+          "Carbs": 3.2,
+          "Protein": 3.6,
+          "Calories": 207.2,
+          "Description": "Philadelphia cream cheese original",
+          "MealSourceType": 0
+        },
+        "Fat": 20.0,
+        "Carbs": 3.2,
+        "Protein": 3.6,
+        "Calories": 207.2
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Bagel",
+          "ServingSize": "Bagel",
+          "Fat": 3.5,
+          "Carbs": 53.0,
+          "Protein": 9.0,
+          "Calories": 279.5,
+          "Description": "Thomas everything bagel",
+          "MealSourceType": 0
+        },
+        "Fat": 3.5,
+        "Carbs": 53.0,
+        "Protein": 9.0,
+        "Calories": 279.5
+      }
+    ],
+    "Large": [],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 16.0,
+          "Carbs": 56.0,
+          "Protein": 17.0,
+          "Calories": 436.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 16.0,
+        "Carbs": 56.0,
+        "Protein": 17.0,
+        "Calories": 436.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 45.0,
+          "Carbs": 40.0,
+          "Protein": 47.0,
+          "Calories": 753.0,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 45.0,
+        "Carbs": 40.0,
+        "Protein": 47.0,
+        "Calories": 753.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 22.0,
+          "Carbs": 58.0,
+          "Protein": 3.8,
+          "Calories": 445.2,
+          "Description": "",
+          "MealSourceType": 2
+        },
+        "Fat": 11.0,
+        "Carbs": 29.0,
+        "Protein": 1.9,
+        "Calories": 222.6
+      }
+    ]
+  }
+}

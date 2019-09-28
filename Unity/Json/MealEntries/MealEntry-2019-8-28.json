@@ -1,0 +1,142 @@
+{
+  "DateTime": "2019-08-28T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 107.7,
+  "TotalCarbs": 153.4,
+  "TotalProtein": 124.8,
+  "TotalCalories": 2082.1,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.5,
+        "MealSource": {
+          "Name": "Bell Pepper",
+          "ServingSize": "Pepper",
+          "Fat": 0.2,
+          "Carbs": 7.6,
+          "Protein": 1.0,
+          "Calories": 36.2,
+          "Description": "General green bell pepper",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.3,
+        "Carbs": 11.4,
+        "Protein": 1.5,
+        "Calories": 54.3
+      },
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Ground Beef-85/15",
+          "ServingSize": "Container",
+          "Fat": 68.0,
+          "Carbs": 0.0,
+          "Protein": 84.0,
+          "Calories": 948.0,
+          "Description": "Kroger ground beef 85% lean meat and 15% fat",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 22.4,
+        "Carbs": 0.0,
+        "Protein": 27.7,
+        "Calories": 312.4
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 9.0,
+        "Protein": 0.8,
+        "Calories": 39.2
+      },
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Tomato Sauce",
+          "ServingSize": "Can",
+          "Fat": 4.0,
+          "Carbs": 0.0,
+          "Protein": 1.0,
+          "Calories": 40.0,
+          "Description": "Goya tomato sauce spanish style",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 3.0,
+        "Carbs": 0.0,
+        "Protein": 0.8,
+        "Calories": 30.2
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Shredded",
+          "ServingSize": "Half Cup",
+          "Fat": 16.0,
+          "Carbs": 2.0,
+          "Protein": 14.0,
+          "Calories": 208.0,
+          "Description": "Kroger queso quesadilla finely shredded cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 16.0,
+        "Carbs": 2.0,
+        "Protein": 14.0,
+        "Calories": 208.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 23.0,
+          "Carbs": 61.0,
+          "Protein": 25.0,
+          "Calories": 551.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 46.0,
+        "Carbs": 122.0,
+        "Protein": 50.0,
+        "Calories": 1102.0
+      }
+    ]
+  }
+}

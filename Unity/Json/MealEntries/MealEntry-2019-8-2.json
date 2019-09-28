@@ -1,0 +1,88 @@
+{
+  "DateTime": "2019-08-02T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 142.0,
+  "TotalCarbs": 158.0,
+  "TotalProtein": 116.0,
+  "TotalCalories": 2374.0,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Pizza-Pepperoni",
+          "ServingSize": "Pizza",
+          "Fat": 100.0,
+          "Carbs": 120.0,
+          "Protein": 70.0,
+          "Calories": 1660.0,
+          "Description": "Screamin' Sicilian holy pepperoni pizza",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 50.0,
+        "Carbs": 60.0,
+        "Protein": 35.0,
+        "Calories": 830.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 54.0,
+          "Carbs": 48.0,
+          "Protein": 24.0,
+          "Calories": 774.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 54.0,
+        "Carbs": 48.0,
+        "Protein": 24.0,
+        "Calories": 774.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 18.0,
+          "Carbs": 41.0,
+          "Protein": 27.0,
+          "Calories": 434.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 18.0,
+        "Carbs": 41.0,
+        "Protein": 27.0,
+        "Calories": 434.0
+      }
+    ]
+  }
+}

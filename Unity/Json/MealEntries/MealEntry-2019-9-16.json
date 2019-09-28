@@ -1,0 +1,213 @@
+{
+  "DateTime": "2019-09-16T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 96.2,
+  "TotalCarbs": 228.5,
+  "TotalProtein": 118.7,
+  "TotalCalories": 2254.6,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Bagel",
+          "ServingSize": "Bagel",
+          "Fat": 3.5,
+          "Carbs": 53.0,
+          "Protein": 9.0,
+          "Calories": 279.5,
+          "Description": "Thomas everything bagel",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 3.5,
+        "Carbs": 53.0,
+        "Protein": 9.0,
+        "Calories": 279.5
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Peanut Butter",
+          "ServingSize": "Sandwich",
+          "Fat": 16.0,
+          "Carbs": 8.0,
+          "Protein": 7.0,
+          "Calories": 204.0,
+          "Description": "Two tbsp. of Jif creamy peanut butter",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 16.0,
+        "Carbs": 8.0,
+        "Protein": 7.0,
+        "Calories": 204.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Roast Beef-Medium",
+          "ServingSize": "Sandwich",
+          "Fat": 14.0,
+          "Carbs": 44.0,
+          "Protein": 39.0,
+          "Calories": 458.0,
+          "Description": "Firehouse medium roast beef sandwich on white bread with only provolone cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 14.0,
+        "Carbs": 44.0,
+        "Protein": 39.0,
+        "Calories": 458.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Chips",
+          "ServingSize": "Bag",
+          "Fat": 8.0,
+          "Carbs": 20.0,
+          "Protein": 2.0,
+          "Calories": 160.0,
+          "Description": "Firehouse Funyuns onion flavored rings",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 8.0,
+        "Carbs": 20.0,
+        "Protein": 2.0,
+        "Calories": 160.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "FH Powerade-Large",
+          "ServingSize": "Cup",
+          "Fat": 0.5,
+          "Carbs": 76.0,
+          "Protein": 0.0,
+          "Calories": 308.5,
+          "Description": "Firehouse Powerade sports drink orange 20 fl oz",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.2,
+        "Carbs": 38.0,
+        "Protein": 0.0,
+        "Calories": 153.8
+      },
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 27.0,
+        "Protein": 2.2,
+        "Calories": 116.8
+      },
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Ground Beef-85/15",
+          "ServingSize": "Container",
+          "Fat": 68.0,
+          "Carbs": 0.0,
+          "Protein": 84.0,
+          "Calories": 948.0,
+          "Description": "Kroger ground beef 85% lean meat and 15% fat",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 22.4,
+        "Carbs": 0.0,
+        "Protein": 27.7,
+        "Calories": 312.4
+      },
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Bell Pepper",
+          "ServingSize": "Pepper",
+          "Fat": 0.2,
+          "Carbs": 7.6,
+          "Protein": 1.0,
+          "Calories": 36.2,
+          "Description": "General green bell pepper",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.1,
+        "Carbs": 2.5,
+        "Protein": 0.3,
+        "Calories": 12.1
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Tomato Sauce",
+          "ServingSize": "Can",
+          "Fat": 4.0,
+          "Carbs": 0.0,
+          "Protein": 1.0,
+          "Calories": 40.0,
+          "Description": "Goya tomato sauce spanish style",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 2.0,
+        "Carbs": 0.0,
+        "Protein": 0.5,
+        "Calories": 20.0
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Plantains",
+          "ServingSize": "Container",
+          "Fat": 40.0,
+          "Carbs": 108.0,
+          "Protein": 4.0,
+          "Calories": 808.0,
+          "Description": "Kroger salted plantain chips",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 10.0,
+        "Carbs": 27.0,
+        "Protein": 1.0,
+        "Calories": 202.0
+      }
+    ],
+    "Custom": []
+  }
+}

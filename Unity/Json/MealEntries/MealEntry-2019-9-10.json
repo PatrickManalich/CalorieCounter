@@ -1,0 +1,195 @@
+{
+  "DateTime": "2019-09-10T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 104.4,
+  "TotalCarbs": 295.3,
+  "TotalProtein": 139.0,
+  "TotalCalories": 2676.8,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Bagel",
+          "ServingSize": "Bagel",
+          "Fat": 3.5,
+          "Carbs": 53.0,
+          "Protein": 9.0,
+          "Calories": 279.5,
+          "Description": "Thomas everything bagel",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 3.5,
+        "Carbs": 53.0,
+        "Protein": 9.0,
+        "Calories": 279.5
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Peanut Butter",
+          "ServingSize": "Sandwich",
+          "Fat": 16.0,
+          "Carbs": 8.0,
+          "Protein": 7.0,
+          "Calories": 204.0,
+          "Description": "Two tbsp. of Jif creamy peanut butter",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 16.0,
+        "Carbs": 8.0,
+        "Protein": 7.0,
+        "Calories": 204.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 4.0,
+        "MealSource": {
+          "Name": "Hawaiian Roll",
+          "ServingSize": "Roll",
+          "Fat": 2.5,
+          "Carbs": 14.0,
+          "Protein": 3.0,
+          "Calories": 90.5,
+          "Description": "King's Hawaiian savory butter roll",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 10.0,
+        "Carbs": 56.0,
+        "Protein": 12.0,
+        "Calories": 362.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Cheese-Sliced",
+          "ServingSize": "Slice",
+          "Fat": 5.0,
+          "Carbs": 0.0,
+          "Protein": 5.0,
+          "Calories": 65.0,
+          "Description": "Sargento provolone cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 5.0,
+        "Carbs": 0.0,
+        "Protein": 5.0,
+        "Calories": 65.0
+      },
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Turkey",
+          "ServingSize": "Bag",
+          "Fat": 7.6,
+          "Carbs": 19.8,
+          "Protein": 34.6,
+          "Calories": 286.0,
+          "Description": "Kroger bag of 0.8 lb of sliced turkey",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 5.7,
+        "Carbs": 14.8,
+        "Protein": 25.9,
+        "Calories": 214.1
+      },
+      {
+        "ServingAmount": 0.25,
+        "MealSource": {
+          "Name": "Pasta",
+          "ServingSize": "Box",
+          "Fat": 8.0,
+          "Carbs": 336.0,
+          "Protein": 56.0,
+          "Calories": 1640.0,
+          "Description": "Barilla farfalle box",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 2.0,
+        "Carbs": 84.0,
+        "Protein": 14.0,
+        "Calories": 410.0
+      },
+      {
+        "ServingAmount": 0.33,
+        "MealSource": {
+          "Name": "Ground Beef-80/20",
+          "ServingSize": "Container",
+          "Fat": 92.0,
+          "Carbs": 0.0,
+          "Protein": 76.0,
+          "Calories": 1132.0,
+          "Description": "Kroger ground beef 80% lean meat and 20% fat",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 30.4,
+        "Carbs": 0.0,
+        "Protein": 25.1,
+        "Calories": 374.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Pasta Sauce-Medium",
+          "ServingSize": "Jar",
+          "Fat": 7.5,
+          "Carbs": 65.0,
+          "Protein": 10.0,
+          "Calories": 367.5,
+          "Description": "Prego italian sauce traditional 24 oz jar",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 3.8,
+        "Carbs": 32.5,
+        "Protein": 5.0,
+        "Calories": 184.2
+      },
+      {
+        "ServingAmount": 2.0,
+        "MealSource": {
+          "Name": "Garlic Knots",
+          "ServingSize": "Knot",
+          "Fat": 4.0,
+          "Carbs": 19.0,
+          "Protein": 3.0,
+          "Calories": 124.0,
+          "Description": "New York Bakery garlic knot with real garlic",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 8.0,
+        "Carbs": 38.0,
+        "Protein": 6.0,
+        "Calories": 248.0
+      }
+    ],
+    "Custom": []
+  }
+}

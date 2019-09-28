@@ -1,0 +1,123 @@
+{
+  "DateTime": "2019-08-26T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 43.2,
+  "TotalCarbs": 170.4,
+  "TotalProtein": 150.9,
+  "TotalCalories": 1674.0,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 20.0,
+        "Carbs": 9.0,
+        "Protein": 30.0,
+        "Calories": 336.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "The Classic protein smoothie",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Roast Beef-Medium",
+          "ServingSize": "Sandwich",
+          "Fat": 14.0,
+          "Carbs": 44.0,
+          "Protein": 39.0,
+          "Calories": 458.0,
+          "Description": "Firehouse medium roast beef sandwich on white bread with only provolone cheese",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 14.0,
+        "Carbs": 44.0,
+        "Protein": 39.0,
+        "Calories": 458.0
+      },
+      {
+        "ServingAmount": 0.75,
+        "MealSource": {
+          "Name": "Rice-White",
+          "ServingSize": "Cup",
+          "Fat": 0.0,
+          "Carbs": 36.0,
+          "Protein": 3.0,
+          "Calories": 156.0,
+          "Description": "Mahatma extra long enriched rice",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 27.0,
+        "Protein": 2.2,
+        "Calories": 116.8
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Shrimp",
+          "ServingSize": "Bag",
+          "Fat": 7.5,
+          "Carbs": 5.0,
+          "Protein": 95.0,
+          "Calories": 467.5,
+          "Description": "Kroger cooked shrimp tail on peeled and deveined extra large",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 3.8,
+        "Carbs": 2.5,
+        "Protein": 47.5,
+        "Calories": 234.2
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Powerade",
+          "ServingSize": "Bottle",
+          "Fat": 0.0,
+          "Carbs": 55.0,
+          "Protein": 0.0,
+          "Calories": 220.0,
+          "Description": "Powerade orange 32 oz",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 27.5,
+        "Protein": 0.0,
+        "Calories": 110.0
+      }
+    ],
+    "Custom": []
+  }
+}

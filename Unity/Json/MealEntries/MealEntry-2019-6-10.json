@@ -1,0 +1,134 @@
+{
+  "DateTime": "2019-06-10T00:00:00-04:00",
+  "DayType": 2,
+  "TotalFat": 85.4,
+  "TotalCarbs": 285.9,
+  "TotalProtein": 156.2,
+  "TotalCalories": 2537.0,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Protein Bar",
+          "ServingSize": "Bar",
+          "Fat": 20.0,
+          "Carbs": 9.0,
+          "Protein": 30.0,
+          "Calories": 336.0,
+          "Description": "Clif builder's protein bar chocolate mint",
+          "MealSourceType": 0
+        },
+        "Fat": 10.0,
+        "Carbs": 4.5,
+        "Protein": 15.0,
+        "Calories": 168.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Protein Smoothie",
+          "ServingSize": "Smoothie",
+          "Fat": 5.4,
+          "Carbs": 60.4,
+          "Protein": 32.2,
+          "Calories": 419.0,
+          "Description": "",
+          "MealSourceType": 0
+        },
+        "Fat": 5.4,
+        "Carbs": 60.4,
+        "Protein": 32.2,
+        "Calories": 419.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Roast Beef-Large",
+          "ServingSize": "Sandwich",
+          "Fat": 22.0,
+          "Carbs": 73.0,
+          "Protein": 60.0,
+          "Calories": 730.0,
+          "Description": "Firehouse large roast beef sandwich on white bread with only provolone cheese",
+          "MealSourceType": 1
+        },
+        "Fat": 22.0,
+        "Carbs": 73.0,
+        "Protein": 60.0,
+        "Calories": 730.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "FH Powerade-Large",
+          "ServingSize": "Cup",
+          "Fat": 0.5,
+          "Carbs": 76.0,
+          "Protein": 0.0,
+          "Calories": 308.5,
+          "Description": "Firehouse Powerade sports drink orange 20 fl oz",
+          "MealSourceType": 1
+        },
+        "Fat": 0.5,
+        "Carbs": 76.0,
+        "Protein": 0.0,
+        "Calories": 308.5
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Caesar Salad Kit",
+          "ServingSize": "Bag",
+          "Fat": 39.0,
+          "Carbs": 30.0,
+          "Protein": 15.0,
+          "Calories": 531.0,
+          "Description": "Dole premium kit ultimate caesar",
+          "MealSourceType": 1
+        },
+        "Fat": 39.0,
+        "Carbs": 30.0,
+        "Protein": 15.0,
+        "Calories": 531.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Chicken Breast",
+          "ServingSize": "Breast",
+          "Fat": 1.0,
+          "Carbs": 0.0,
+          "Protein": 25.0,
+          "Calories": 109.0,
+          "Description": "Simple Truth natural chicken breast",
+          "MealSourceType": 1
+        },
+        "Fat": 1.0,
+        "Carbs": 0.0,
+        "Protein": 25.0,
+        "Calories": 109.0
+      },
+      {
+        "ServingAmount": 3.0,
+        "MealSource": {
+          "Name": "Hawaiian Roll",
+          "ServingSize": "Roll",
+          "Fat": 2.5,
+          "Carbs": 14.0,
+          "Protein": 3.0,
+          "Calories": 90.5,
+          "Description": "King's Hawaiian savory butter roll",
+          "MealSourceType": 1
+        },
+        "Fat": 7.5,
+        "Carbs": 42.0,
+        "Protein": 9.0,
+        "Calories": 271.5
+      }
+    ],
+    "Custom": []
+  }
+}

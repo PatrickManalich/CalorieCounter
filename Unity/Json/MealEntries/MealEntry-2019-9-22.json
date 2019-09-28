@@ -1,0 +1,142 @@
+{
+  "DateTime": "2019-09-22T00:00:00-04:00",
+  "DayType": 1,
+  "TotalFat": 125.9,
+  "TotalCarbs": 372.7,
+  "TotalProtein": 116.2,
+  "TotalCalories": 3088.7,
+  "MealProportionsDictionary": {
+    "Small": [
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Bagel",
+          "ServingSize": "Bagel",
+          "Fat": 3.5,
+          "Carbs": 53.0,
+          "Protein": 9.0,
+          "Calories": 279.5,
+          "Description": "Thomas everything bagel",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 1.8,
+        "Carbs": 26.5,
+        "Protein": 4.5,
+        "Calories": 140.2
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Peanut Butter",
+          "ServingSize": "Sandwich",
+          "Fat": 16.0,
+          "Carbs": 8.0,
+          "Protein": 7.0,
+          "Calories": 204.0,
+          "Description": "Two tbsp. of Jif creamy peanut butter",
+          "MealSourceType": 0,
+          "Archived": false
+        },
+        "Fat": 8.0,
+        "Carbs": 4.0,
+        "Protein": 3.5,
+        "Calories": 102.0
+      }
+    ],
+    "Large": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Soda-Can",
+          "ServingSize": "Can",
+          "Fat": 0.0,
+          "Carbs": 39.0,
+          "Protein": 0.0,
+          "Calories": 156.0,
+          "Description": "Coca-Cola 12 oz can",
+          "MealSourceType": 1,
+          "Archived": false
+        },
+        "Fat": 0.0,
+        "Carbs": 39.0,
+        "Protein": 0.0,
+        "Calories": 156.0
+      }
+    ],
+    "Custom": [
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 28.6,
+          "Carbs": 39.2,
+          "Protein": 30.2,
+          "Calories": 535.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 28.6,
+        "Carbs": 39.2,
+        "Protein": 30.2,
+        "Calories": 535.0
+      },
+      {
+        "ServingAmount": 0.5,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 23.0,
+          "Carbs": 72.0,
+          "Protein": 8.0,
+          "Calories": 527.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 11.5,
+        "Carbs": 36.0,
+        "Protein": 4.0,
+        "Calories": 263.5
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 12.0,
+          "Carbs": 96.0,
+          "Protein": 14.0,
+          "Calories": 548.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 12.0,
+        "Carbs": 96.0,
+        "Protein": 14.0,
+        "Calories": 548.0
+      },
+      {
+        "ServingAmount": 1.0,
+        "MealSource": {
+          "Name": "Custom Meal",
+          "ServingSize": "Meal",
+          "Fat": 64.0,
+          "Carbs": 132.0,
+          "Protein": 60.0,
+          "Calories": 1344.0,
+          "Description": "",
+          "MealSourceType": 2,
+          "Archived": false
+        },
+        "Fat": 64.0,
+        "Carbs": 132.0,
+        "Protein": 60.0,
+        "Calories": 1344.0
+      }
+    ]
+  }
+}
