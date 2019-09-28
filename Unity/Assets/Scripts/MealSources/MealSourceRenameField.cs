@@ -1,4 +1,5 @@
 ﻿using CalorieCounter.Utilities;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -41,6 +42,16 @@ namespace CalorieCounter.MealSources
             _inputField.transform.SetParent(transform, false);
             OldNamedMealSource = default;
             Shown = false;
+        }
+
+        private void Awake()
+        {
+            _inputField.onValidateInput = ValidateNonDecimalInput;
+        }
+
+        private static char ValidateNonDecimalInput(string text, int charIndex, char addedChar)
+        {
+            return char.IsLetterOrDigit(addedChar) || GlobalConsts.ValidSpecialChars.Contains(addedChar) ? addedChar : '\0';
         }
     }
 }

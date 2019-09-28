@@ -35,11 +35,6 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private MealSourcesScrollView _mealSourcesScrollView = default;
 
-        private static readonly char[] ValidSpecialChars = new char[]
-        {
-            '-', '\'', '&', '.', ' ', '/', '%',
-        };
-
         public void Show() {
             for (int i = 0; i < _inputFields.Count + 1; i++) {
                 if (i == 5) {
@@ -91,7 +86,7 @@ namespace CalorieCounter.MealSources {
 
         private static char ValidateNonDecimalInput(string text, int charIndex, char addedChar)
         {
-            return char.IsLetterOrDigit(addedChar) || ValidSpecialChars.Contains(addedChar) ? addedChar : '\0';
+            return char.IsLetterOrDigit(addedChar) || GlobalConsts.ValidSpecialChars.Contains(addedChar) ? addedChar : '\0';
         }
     }
 }

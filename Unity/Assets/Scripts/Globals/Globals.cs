@@ -19,6 +19,16 @@ namespace CalorieCounter {
 
     public enum InputKeyCode { ToggleMenu, DeleteRow, RenameRow }
 
+    public static class GlobalConsts
+    {
+
+        public static readonly char[] ValidSpecialChars = new char[]
+        {
+                '-', '\'', '&', '.', ' ', '/', '%',
+        };
+
+    }
+
     public static class GlobalPaths {
 
         public const string MealEntriesDir = @"MealEntries";
