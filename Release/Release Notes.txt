@@ -12,3 +12,11 @@ Release 1.0.0 (8/24/2019)
  -Update Unity project to 2018.4.1f1
  -Import plugin Beautifier
  -Implement Menu scene
+ 
+Release 1.1.0 (9/28/2019)
+ -Add to EditorExtensions
+ -Small bug fixes
+ -Ability to rename MealSources with F2
+ -Add 0.1 and 6 as serving amount options
+ -Used JsonUpdater to update all entries
+ 
