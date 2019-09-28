@@ -1,86 +1,86 @@
 {
-  "DateTime": "2019-09-14T00:00:00-04:00",
-  "DayType": 1,
-  "TotalFat": 151.0,
-  "TotalCarbs": 266.0,
-  "TotalProtein": 107.9,
-  "TotalCalories": 2854.6,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-09-14T00:00:00-04:00",
+  "dayType": 1,
+  "totalFat": 151.0,
+  "totalCarbs": 266.0,
+  "totalProtein": 107.9,
+  "totalCalories": 2854.6,
+  "mealProportionsDictionary": {
     "Small": [],
     "Large": [
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Pizza-Pepperoni",
-          "ServingSize": "Pizza",
-          "Fat": 100.0,
-          "Carbs": 120.0,
-          "Protein": 70.0,
-          "Calories": 1660.0,
-          "Description": "Screamin' Sicilian holy pepperoni pizza",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "591e1757-d988-487e-984f-e20a865f91f2",
+          "servingSize": "Pizza",
+          "fat": 100.0,
+          "carbs": 120.0,
+          "protein": 70.0,
+          "calories": 1660.0,
+          "description": "Screamin' Sicilian holy pepperoni pizza",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 50.0,
-        "Carbs": 60.0,
-        "Protein": 35.0,
-        "Calories": 830.0
+        "fat": 50.0,
+        "carbs": 60.0,
+        "protein": 35.0,
+        "calories": 830.0
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 12.0,
-          "Carbs": 71.0,
-          "Protein": 42.0,
-          "Calories": 560.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "1f565fbb-8119-47e2-9004-f515de118f9c",
+          "servingSize": "Meal",
+          "fat": 12.0,
+          "carbs": 71.0,
+          "protein": 42.0,
+          "calories": 560.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 12.0,
-        "Carbs": 71.0,
-        "Protein": 42.0,
-        "Calories": 560.0
+        "fat": 12.0,
+        "carbs": 71.0,
+        "protein": 42.0,
+        "calories": 560.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 33.0,
-          "Carbs": 87.0,
-          "Protein": 6.9,
-          "Calories": 672.6,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2751621a-d068-474e-85e5-3699f9e003c7",
+          "servingSize": "Meal",
+          "fat": 33.0,
+          "carbs": 87.0,
+          "protein": 6.9,
+          "calories": 672.6,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 33.0,
-        "Carbs": 87.0,
-        "Protein": 6.9,
-        "Calories": 672.6
+        "fat": 33.0,
+        "carbs": 87.0,
+        "protein": 6.9,
+        "calories": 672.6
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 56.0,
-          "Carbs": 48.0,
-          "Protein": 24.0,
-          "Calories": 792.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "ae1c3a1d-e4e8-4ca6-88b4-3d38cc29d0a9",
+          "servingSize": "Meal",
+          "fat": 56.0,
+          "carbs": 48.0,
+          "protein": 24.0,
+          "calories": 792.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 56.0,
-        "Carbs": 48.0,
-        "Protein": 24.0,
-        "Calories": 792.0
+        "fat": 56.0,
+        "carbs": 48.0,
+        "protein": 24.0,
+        "calories": 792.0
       }
     ]
   }

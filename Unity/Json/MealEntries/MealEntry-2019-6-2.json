@@ -1,66 +1,69 @@
 {
-  "DateTime": "2019-06-02T00:00:00-04:00",
-  "DayType": 1,
-  "TotalFat": 49.4,
-  "TotalCarbs": 128.4,
-  "TotalProtein": 57.5,
-  "TotalCalories": 1188.2,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-06-02T00:00:00-04:00",
+  "dayType": 1,
+  "totalFat": 49.4,
+  "totalCarbs": 128.4,
+  "totalProtein": 57.5,
+  "totalCalories": 1188.2,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Smoothie",
-          "ServingSize": "Smoothie",
-          "Fat": 5.4,
-          "Carbs": 60.4,
-          "Protein": 32.2,
-          "Calories": 419.0,
-          "Description": "",
-          "MealSourceType": 0
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a927f188-780c-459a-a546-fb5b01b5b033",
+          "servingSize": "Smoothie",
+          "fat": 5.4,
+          "carbs": 60.4,
+          "protein": 32.2,
+          "calories": 419.0,
+          "description": "The Classic protein smoothie",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 5.4,
-        "Carbs": 60.4,
-        "Protein": 32.2,
-        "Calories": 419.0
+        "fat": 5.4,
+        "carbs": 60.4,
+        "protein": 32.2,
+        "calories": 419.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 0.25,
-        "MealSource": {
-          "Name": "Pizza-Pepperoni",
-          "ServingSize": "Pizza",
-          "Fat": 100.0,
-          "Carbs": 120.0,
-          "Protein": 70.0,
-          "Calories": 1660.0,
-          "Description": "Screamin' Sicilian holy pepperoni pizza",
-          "MealSourceType": 1
+        "servingAmount": 0.25,
+        "mealSource": {
+          "id": "591e1757-d988-487e-984f-e20a865f91f2",
+          "servingSize": "Pizza",
+          "fat": 100.0,
+          "carbs": 120.0,
+          "protein": 70.0,
+          "calories": 1660.0,
+          "description": "Screamin' Sicilian holy pepperoni pizza",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 25.0,
-        "Carbs": 30.0,
-        "Protein": 17.5,
-        "Calories": 415.0
+        "fat": 25.0,
+        "carbs": 30.0,
+        "protein": 17.5,
+        "calories": 415.0
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 19.0,
-          "Carbs": 38.0,
-          "Protein": 7.8,
-          "Calories": 354.2,
-          "Description": "",
-          "MealSourceType": 2
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "615a6b1f-c2b6-4d31-960f-1d303c4f8f5c",
+          "servingSize": "Meal",
+          "fat": 19.0,
+          "carbs": 38.0,
+          "protein": 7.8,
+          "calories": 354.2,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 19.0,
-        "Carbs": 38.0,
-        "Protein": 7.8,
-        "Calories": 354.2
+        "fat": 19.0,
+        "carbs": 38.0,
+        "protein": 7.8,
+        "calories": 354.2
       }
     ]
   }

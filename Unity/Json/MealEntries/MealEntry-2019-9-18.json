@@ -1,141 +1,141 @@
 {
-  "DateTime": "2019-09-18T00:00:00-04:00",
-  "DayType": 1,
-  "TotalFat": 116.6,
-  "TotalCarbs": 262.0,
-  "TotalProtein": 114.5,
-  "TotalCalories": 2555.4,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-09-18T00:00:00-04:00",
+  "dayType": 1,
+  "totalFat": 116.6,
+  "totalCarbs": 262.0,
+  "totalProtein": 114.5,
+  "totalCalories": 2555.4,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Apple",
-          "ServingSize": "Fruit",
-          "Fat": 0.3,
-          "Carbs": 25.0,
-          "Protein": 0.5,
-          "Calories": 104.7,
-          "Description": "General apple",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "db074714-05dd-44f0-a5fe-11ecba8a208b",
+          "servingSize": "Fruit",
+          "fat": 0.3,
+          "carbs": 25.0,
+          "protein": 0.5,
+          "calories": 104.7,
+          "description": "General apple",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 0.3,
-        "Carbs": 25.0,
-        "Protein": 0.5,
-        "Calories": 104.7
+        "fat": 0.3,
+        "carbs": 25.0,
+        "protein": 0.5,
+        "calories": 104.7
       }
     ],
     "Large": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "CFA Chicken Sandwich",
-          "ServingSize": "Sandwich",
-          "Fat": 19.0,
-          "Carbs": 40.0,
-          "Protein": 28.0,
-          "Calories": 443.0,
-          "Description": "Chic-fil-A chicken sandwich",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "21c41625-15f4-4efe-8ee8-ca437e6c3b16",
+          "servingSize": "Sandwich",
+          "fat": 19.0,
+          "carbs": 40.0,
+          "protein": 28.0,
+          "calories": 443.0,
+          "description": "Chic-fil-A chicken sandwich",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 19.0,
-        "Carbs": 40.0,
-        "Protein": 28.0,
-        "Calories": 443.0
+        "fat": 19.0,
+        "carbs": 40.0,
+        "protein": 28.0,
+        "calories": 443.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "CFA Fries-Medium",
-          "ServingSize": "Container",
-          "Fat": 18.0,
-          "Carbs": 43.0,
-          "Protein": 5.0,
-          "Calories": 354.0,
-          "Description": "Chic-fil-A medium fries",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "1f7d8135-8164-4c38-bfc8-644981d2f1ad",
+          "servingSize": "Container",
+          "fat": 18.0,
+          "carbs": 43.0,
+          "protein": 5.0,
+          "calories": 354.0,
+          "description": "Chic-fil-A medium fries",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 18.0,
-        "Carbs": 43.0,
-        "Protein": 5.0,
-        "Calories": 354.0
+        "fat": 18.0,
+        "carbs": 43.0,
+        "protein": 5.0,
+        "calories": 354.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "CFA Shake-Large",
-          "ServingSize": "Shake",
-          "Fat": 25.0,
-          "Carbs": 86.0,
-          "Protein": 15.0,
-          "Calories": 629.0,
-          "Description": "Chic-fil-A large vanilla shake",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "f632ab19-b9f2-487c-bfb3-5466da9a186d",
+          "servingSize": "Shake",
+          "fat": 25.0,
+          "carbs": 86.0,
+          "protein": 15.0,
+          "calories": 629.0,
+          "description": "Chic-fil-A large vanilla shake",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 25.0,
-        "Carbs": 86.0,
-        "Protein": 15.0,
-        "Calories": 629.0
+        "fat": 25.0,
+        "carbs": 86.0,
+        "protein": 15.0,
+        "calories": 629.0
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 33.0,
-          "Carbs": 40.0,
-          "Protein": 33.0,
-          "Calories": 589.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "b356d5f9-f2f5-423a-b9b5-89a7664f6e67",
+          "servingSize": "Meal",
+          "fat": 33.0,
+          "carbs": 40.0,
+          "protein": 33.0,
+          "calories": 589.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 33.0,
-        "Carbs": 40.0,
-        "Protein": 33.0,
-        "Calories": 589.0
+        "fat": 33.0,
+        "carbs": 40.0,
+        "protein": 33.0,
+        "calories": 589.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 1.3,
-          "Carbs": 19.0,
-          "Protein": 3.0,
-          "Calories": 99.7,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "953802e0-349e-4177-8e96-ebb2512bdfc8",
+          "servingSize": "Meal",
+          "fat": 1.3,
+          "carbs": 19.0,
+          "protein": 3.0,
+          "calories": 99.7,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 1.3,
-        "Carbs": 19.0,
-        "Protein": 3.0,
-        "Calories": 99.7
+        "fat": 1.3,
+        "carbs": 19.0,
+        "protein": 3.0,
+        "calories": 99.7
       }
     ]
   }

@@ -1,140 +1,140 @@
 {
-  "DateTime": "2019-08-25T00:00:00-04:00",
-  "DayType": 1,
-  "TotalFat": 62.8,
-  "TotalCarbs": 145.1,
-  "TotalProtein": 101.8,
-  "TotalCalories": 1552.8,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-08-25T00:00:00-04:00",
+  "dayType": 1,
+  "totalFat": 62.8,
+  "totalCarbs": 145.1,
+  "totalProtein": 101.8,
+  "totalCalories": 1552.8,
+  "mealProportionsDictionary": {
     "Small": [],
     "Large": [
       {
-        "ServingAmount": 0.33,
-        "MealSource": {
-          "Name": "Rice-White",
-          "ServingSize": "Cup",
-          "Fat": 0.0,
-          "Carbs": 36.0,
-          "Protein": 3.0,
-          "Calories": 156.0,
-          "Description": "Mahatma extra long enriched rice",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.33,
+        "mealSource": {
+          "id": "43ff7c5d-b870-40f9-90a8-c55a7afa3305",
+          "servingSize": "Cup",
+          "fat": 0.0,
+          "carbs": 36.0,
+          "protein": 3.0,
+          "calories": 156.0,
+          "description": "Mahatma extra long enriched rice",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 11.9,
-        "Protein": 1.0,
-        "Calories": 51.6
+        "fat": 0.0,
+        "carbs": 11.9,
+        "protein": 1.0,
+        "calories": 51.6
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Chicken Breast",
-          "ServingSize": "Breast",
-          "Fat": 1.0,
-          "Carbs": 0.0,
-          "Protein": 25.0,
-          "Calories": 109.0,
-          "Description": "Simple Truth natural chicken breast",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "7fa8d2da-933b-498c-b1c8-655a603d7da6",
+          "servingSize": "Breast",
+          "fat": 1.0,
+          "carbs": 0.0,
+          "protein": 25.0,
+          "calories": 109.0,
+          "description": "Simple Truth natural chicken breast",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 1.0,
-        "Carbs": 0.0,
-        "Protein": 25.0,
-        "Calories": 109.0
+        "fat": 1.0,
+        "carbs": 0.0,
+        "protein": 25.0,
+        "calories": 109.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Asparagus",
-          "ServingSize": "Ten Spears",
-          "Fat": 0.3,
-          "Carbs": 6.2,
-          "Protein": 3.6,
-          "Calories": 41.9,
-          "Description": "Ten spears of general asparagus",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "c6b7bfad-3f0f-4d83-abec-1c80777c9cd8",
+          "servingSize": "Ten Spears",
+          "fat": 0.3,
+          "carbs": 6.2,
+          "protein": 3.6,
+          "calories": 41.9,
+          "description": "Ten spears of general asparagus",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.3,
-        "Carbs": 6.2,
-        "Protein": 3.6,
-        "Calories": 41.9
+        "fat": 0.3,
+        "carbs": 6.2,
+        "protein": 3.6,
+        "calories": 41.9
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 1.5,
-          "Carbs": 27.0,
-          "Protein": 8.8,
-          "Calories": 156.7,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "70bd271a-fbc5-4073-9dd3-82f0dcfff2d4",
+          "servingSize": "Meal",
+          "fat": 1.5,
+          "carbs": 27.0,
+          "protein": 8.8,
+          "calories": 156.7,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 1.5,
-        "Carbs": 27.0,
-        "Protein": 8.8,
-        "Calories": 156.7
+        "fat": 1.5,
+        "carbs": 27.0,
+        "protein": 8.8,
+        "calories": 156.7
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 17.5,
-          "Carbs": 24.0,
-          "Protein": 3.8,
-          "Calories": 268.7,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "f4ceab07-602e-437f-93d9-b141354a3f1c",
+          "servingSize": "Meal",
+          "fat": 17.5,
+          "carbs": 24.0,
+          "protein": 3.8,
+          "calories": 268.7,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 17.5,
-        "Carbs": 24.0,
-        "Protein": 3.8,
-        "Calories": 268.7
+        "fat": 17.5,
+        "carbs": 24.0,
+        "protein": 3.8,
+        "calories": 268.7
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 38.0,
-          "Carbs": 76.0,
-          "Protein": 15.6,
-          "Calories": 708.4,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "7fb460bf-14ff-4727-811e-af9aeb985f8a",
+          "servingSize": "Meal",
+          "fat": 38.0,
+          "carbs": 76.0,
+          "protein": 15.6,
+          "calories": 708.4,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 38.0,
-        "Carbs": 76.0,
-        "Protein": 15.6,
-        "Calories": 708.4
+        "fat": 38.0,
+        "carbs": 76.0,
+        "protein": 15.6,
+        "calories": 708.4
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 4.5,
-          "Carbs": 0.0,
-          "Protein": 44.0,
-          "Calories": 216.5,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "4a1340b8-2ba8-45f9-9d63-0d626f9e9757",
+          "servingSize": "Meal",
+          "fat": 4.5,
+          "carbs": 0.0,
+          "protein": 44.0,
+          "calories": 216.5,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 4.5,
-        "Carbs": 0.0,
-        "Protein": 44.0,
-        "Calories": 216.5
+        "fat": 4.5,
+        "carbs": 0.0,
+        "protein": 44.0,
+        "calories": 216.5
       }
     ]
   }

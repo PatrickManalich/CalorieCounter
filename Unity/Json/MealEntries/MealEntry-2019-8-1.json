@@ -1,177 +1,177 @@
 {
-  "DateTime": "2019-08-01T00:00:00-04:00",
-  "DayType": 2,
-  "TotalFat": 155.3,
-  "TotalCarbs": 238.8,
-  "TotalProtein": 170.6,
-  "TotalCalories": 3035.3,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-08-01T00:00:00-04:00",
+  "dayType": 2,
+  "totalFat": 155.3,
+  "totalCarbs": 238.8,
+  "totalProtein": 170.6,
+  "totalCalories": 3035.3,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Bagel",
-          "ServingSize": "Bagel",
-          "Fat": 3.5,
-          "Carbs": 53.0,
-          "Protein": 9.0,
-          "Calories": 279.5,
-          "Description": "Thomas everything bagel",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "c721f1a1-ebd0-477b-9ffd-f25856d14eae",
+          "servingSize": "Bagel",
+          "fat": 3.5,
+          "carbs": 53.0,
+          "protein": 9.0,
+          "calories": 279.5,
+          "description": "Thomas everything bagel",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 3.5,
-        "Carbs": 53.0,
-        "Protein": 9.0,
-        "Calories": 279.5
+        "fat": 3.5,
+        "carbs": 53.0,
+        "protein": 9.0,
+        "calories": 279.5
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Cream Cheese",
-          "ServingSize": "Bagel",
-          "Fat": 20.0,
-          "Carbs": 3.2,
-          "Protein": 3.6,
-          "Calories": 207.2,
-          "Description": "Philadelphia cream cheese original",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "ec544bd0-c811-4627-a440-bad70cbe477f",
+          "servingSize": "Bagel",
+          "fat": 20.0,
+          "carbs": 3.2,
+          "protein": 3.6,
+          "calories": 207.2,
+          "description": "Philadelphia cream cheese original",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 3.2,
-        "Protein": 3.6,
-        "Calories": 207.2
+        "fat": 20.0,
+        "carbs": 3.2,
+        "protein": 3.6,
+        "calories": 207.2
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Smoothie",
-          "ServingSize": "Smoothie",
-          "Fat": 5.4,
-          "Carbs": 60.4,
-          "Protein": 32.2,
-          "Calories": 419.0,
-          "Description": "The Classic protein smoothie",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a927f188-780c-459a-a546-fb5b01b5b033",
+          "servingSize": "Smoothie",
+          "fat": 5.4,
+          "carbs": 60.4,
+          "protein": 32.2,
+          "calories": 419.0,
+          "description": "The Classic protein smoothie",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 5.4,
-        "Carbs": 60.4,
-        "Protein": 32.2,
-        "Calories": 419.0
+        "fat": 5.4,
+        "carbs": 60.4,
+        "protein": 32.2,
+        "calories": 419.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 2.0,
-        "MealSource": {
-          "Name": "Bell Pepper",
-          "ServingSize": "Pepper",
-          "Fat": 0.2,
-          "Carbs": 7.6,
-          "Protein": 1.0,
-          "Calories": 36.2,
-          "Description": "General green bell pepper",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 2.0,
+        "mealSource": {
+          "id": "081a7278-7a38-4117-aaec-e575cd8a8c0b",
+          "servingSize": "Pepper",
+          "fat": 0.2,
+          "carbs": 7.6,
+          "protein": 1.0,
+          "calories": 36.2,
+          "description": "General green bell pepper",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.4,
-        "Carbs": 15.2,
-        "Protein": 2.0,
-        "Calories": 72.4
+        "fat": 0.4,
+        "carbs": 15.2,
+        "protein": 2.0,
+        "calories": 72.4
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Ground Beef-85/15",
-          "ServingSize": "Container",
-          "Fat": 68.0,
-          "Carbs": 0.0,
-          "Protein": 84.0,
-          "Calories": 948.0,
-          "Description": "Kroger ground beef 85% lean meat and 15% fat",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "2f21067d-6cc5-4376-a06e-671a6f1304bf",
+          "servingSize": "Container",
+          "fat": 68.0,
+          "carbs": 0.0,
+          "protein": 84.0,
+          "calories": 948.0,
+          "description": "Kroger ground beef 85% lean meat and 15% fat",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 34.0,
-        "Carbs": 0.0,
-        "Protein": 42.0,
-        "Calories": 474.0
+        "fat": 34.0,
+        "carbs": 0.0,
+        "protein": 42.0,
+        "calories": 474.0
       },
       {
-        "ServingAmount": 0.25,
-        "MealSource": {
-          "Name": "Rice-White",
-          "ServingSize": "Cup",
-          "Fat": 0.0,
-          "Carbs": 36.0,
-          "Protein": 3.0,
-          "Calories": 156.0,
-          "Description": "Mahatma extra long enriched rice",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.25,
+        "mealSource": {
+          "id": "43ff7c5d-b870-40f9-90a8-c55a7afa3305",
+          "servingSize": "Cup",
+          "fat": 0.0,
+          "carbs": 36.0,
+          "protein": 3.0,
+          "calories": 156.0,
+          "description": "Mahatma extra long enriched rice",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 9.0,
-        "Protein": 0.8,
-        "Calories": 39.2
+        "fat": 0.0,
+        "carbs": 9.0,
+        "protein": 0.8,
+        "calories": 39.2
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 18.0,
-          "Carbs": 41.0,
-          "Protein": 27.0,
-          "Calories": 434.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a38822f9-b980-497f-b06f-5aaa157a5a70",
+          "servingSize": "Meal",
+          "fat": 18.0,
+          "carbs": 41.0,
+          "protein": 27.0,
+          "calories": 434.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 18.0,
-        "Carbs": 41.0,
-        "Protein": 27.0,
-        "Calories": 434.0
+        "fat": 18.0,
+        "carbs": 41.0,
+        "protein": 27.0,
+        "calories": 434.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 54.0,
-          "Carbs": 48.0,
-          "Protein": 24.0,
-          "Calories": 774.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "88f4531f-156d-4cb4-8d78-7de2009e2ecf",
+          "servingSize": "Meal",
+          "fat": 54.0,
+          "carbs": 48.0,
+          "protein": 24.0,
+          "calories": 774.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 54.0,
-        "Carbs": 48.0,
-        "Protein": 24.0,
-        "Calories": 774.0
+        "fat": 54.0,
+        "carbs": 48.0,
+        "protein": 24.0,
+        "calories": 774.0
       }
     ]
   }

@@ -1,117 +1,123 @@
 {
-  "DateTime": "2019-07-15T00:00:00-04:00",
-  "DayType": 1,
-  "TotalFat": 115.2,
-  "TotalCarbs": 210.8,
-  "TotalProtein": 182.1,
-  "TotalCalories": 2608.4,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-07-15T00:00:00-04:00",
+  "dayType": 1,
+  "totalFat": 115.2,
+  "totalCarbs": 210.8,
+  "totalProtein": 182.1,
+  "totalCalories": 2608.4,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 2.0,
-        "MealSource": {
-          "Name": "Banana",
-          "ServingSize": "Fruit",
-          "Fat": 0.4,
-          "Carbs": 27.0,
-          "Protein": 1.3,
-          "Calories": 116.8,
-          "Description": "General banana",
-          "MealSourceType": 0
+        "servingAmount": 2.0,
+        "mealSource": {
+          "id": "0625b9d1-57ce-465c-82f0-76953090a50a",
+          "servingSize": "Fruit",
+          "fat": 0.4,
+          "carbs": 27.0,
+          "protein": 1.3,
+          "calories": 116.8,
+          "description": "General banana",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 0.8,
-        "Carbs": 54.0,
-        "Protein": 2.6,
-        "Calories": 233.6
+        "fat": 0.8,
+        "carbs": 54.0,
+        "protein": 2.6,
+        "calories": 233.6
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 4.0,
-        "MealSource": {
-          "Name": "Hawaiian Roll",
-          "ServingSize": "Roll",
-          "Fat": 2.5,
-          "Carbs": 14.0,
-          "Protein": 3.0,
-          "Calories": 90.5,
-          "Description": "King's Hawaiian savory butter roll",
-          "MealSourceType": 1
+        "servingAmount": 4.0,
+        "mealSource": {
+          "id": "5a1fbfbf-e62f-47a6-aed8-a2a370cd9d67",
+          "servingSize": "Roll",
+          "fat": 2.5,
+          "carbs": 14.0,
+          "protein": 3.0,
+          "calories": 90.5,
+          "description": "King's Hawaiian savory butter roll",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 10.0,
-        "Carbs": 56.0,
-        "Protein": 12.0,
-        "Calories": 362.0
+        "fat": 10.0,
+        "carbs": 56.0,
+        "protein": 12.0,
+        "calories": 362.0
       },
       {
-        "ServingAmount": 0.33,
-        "MealSource": {
-          "Name": "Pork Loin",
-          "ServingSize": "Roast",
-          "Fat": 80.0,
-          "Carbs": 0.0,
-          "Protein": 234.7,
-          "Calories": 1658.8,
-          "Description": "Simple Truth natural pork 32 oz",
-          "MealSourceType": 1
+        "servingAmount": 0.33,
+        "mealSource": {
+          "id": "5a2126a3-3177-4ee6-8399-cf035226c216",
+          "servingSize": "Roast",
+          "fat": 80.0,
+          "carbs": 0.0,
+          "protein": 234.7,
+          "calories": 1658.8,
+          "description": "Simple Truth natural pork 32 oz",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 26.4,
-        "Carbs": 0.0,
-        "Protein": 77.5,
-        "Calories": 547.6
+        "fat": 26.4,
+        "carbs": 0.0,
+        "protein": 77.5,
+        "calories": 547.6
       },
       {
-        "ServingAmount": 0.25,
-        "MealSource": {
-          "Name": "Powerade",
-          "ServingSize": "Bottle",
-          "Fat": 0.0,
-          "Carbs": 55.0,
-          "Protein": 0.0,
-          "Calories": 220.0,
-          "Description": "Powerade orange 32 oz",
-          "MealSourceType": 1
+        "servingAmount": 0.25,
+        "mealSource": {
+          "id": "759b2675-7fb5-4b55-ba47-fceda113f599",
+          "servingSize": "Bottle",
+          "fat": 0.0,
+          "carbs": 55.0,
+          "protein": 0.0,
+          "calories": 220.0,
+          "description": "Powerade orange 32 oz",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 13.8,
-        "Protein": 0.0,
-        "Calories": 55.2
+        "fat": 0.0,
+        "carbs": 13.8,
+        "protein": 0.0,
+        "calories": 55.2
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 58.0,
-          "Carbs": 78.0,
-          "Protein": 60.0,
-          "Calories": 1074.0,
-          "Description": "",
-          "MealSourceType": 2
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "defc4648-4f8a-448a-be1f-45f2ae3f91c1",
+          "servingSize": "Meal",
+          "fat": 58.0,
+          "carbs": 78.0,
+          "protein": 60.0,
+          "calories": 1074.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 58.0,
-        "Carbs": 78.0,
-        "Protein": 60.0,
-        "Calories": 1074.0
+        "fat": 58.0,
+        "carbs": 78.0,
+        "protein": 60.0,
+        "calories": 1074.0
       }
     ]
   }

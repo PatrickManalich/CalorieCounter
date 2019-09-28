@@ -1,121 +1,121 @@
 {
-  "DateTime": "2019-08-26T00:00:00-04:00",
-  "DayType": 2,
-  "TotalFat": 43.2,
-  "TotalCarbs": 170.4,
-  "TotalProtein": 150.9,
-  "TotalCalories": 1674.0,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-08-26T00:00:00-04:00",
+  "dayType": 2,
+  "totalFat": 43.2,
+  "totalCarbs": 170.4,
+  "totalProtein": 150.9,
+  "totalCalories": 1674.0,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Smoothie",
-          "ServingSize": "Smoothie",
-          "Fat": 5.4,
-          "Carbs": 60.4,
-          "Protein": 32.2,
-          "Calories": 419.0,
-          "Description": "The Classic protein smoothie",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a927f188-780c-459a-a546-fb5b01b5b033",
+          "servingSize": "Smoothie",
+          "fat": 5.4,
+          "carbs": 60.4,
+          "protein": 32.2,
+          "calories": 419.0,
+          "description": "The Classic protein smoothie",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 5.4,
-        "Carbs": 60.4,
-        "Protein": 32.2,
-        "Calories": 419.0
+        "fat": 5.4,
+        "carbs": 60.4,
+        "protein": 32.2,
+        "calories": 419.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "FH Roast Beef-Medium",
-          "ServingSize": "Sandwich",
-          "Fat": 14.0,
-          "Carbs": 44.0,
-          "Protein": 39.0,
-          "Calories": 458.0,
-          "Description": "Firehouse medium roast beef sandwich on white bread with only provolone cheese",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "1c45dec9-91d7-4929-9feb-38a270caa8f5",
+          "servingSize": "Sandwich",
+          "fat": 14.0,
+          "carbs": 44.0,
+          "protein": 39.0,
+          "calories": 458.0,
+          "description": "Firehouse medium roast beef sandwich on white bread with only provolone cheese",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 14.0,
-        "Carbs": 44.0,
-        "Protein": 39.0,
-        "Calories": 458.0
+        "fat": 14.0,
+        "carbs": 44.0,
+        "protein": 39.0,
+        "calories": 458.0
       },
       {
-        "ServingAmount": 0.75,
-        "MealSource": {
-          "Name": "Rice-White",
-          "ServingSize": "Cup",
-          "Fat": 0.0,
-          "Carbs": 36.0,
-          "Protein": 3.0,
-          "Calories": 156.0,
-          "Description": "Mahatma extra long enriched rice",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.75,
+        "mealSource": {
+          "id": "43ff7c5d-b870-40f9-90a8-c55a7afa3305",
+          "servingSize": "Cup",
+          "fat": 0.0,
+          "carbs": 36.0,
+          "protein": 3.0,
+          "calories": 156.0,
+          "description": "Mahatma extra long enriched rice",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 27.0,
-        "Protein": 2.2,
-        "Calories": 116.8
+        "fat": 0.0,
+        "carbs": 27.0,
+        "protein": 2.2,
+        "calories": 116.8
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Shrimp",
-          "ServingSize": "Bag",
-          "Fat": 7.5,
-          "Carbs": 5.0,
-          "Protein": 95.0,
-          "Calories": 467.5,
-          "Description": "Kroger cooked shrimp tail on peeled and deveined extra large",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "e8889cbd-2f83-4d90-b2cd-d4256fcad4c4",
+          "servingSize": "Bag",
+          "fat": 7.5,
+          "carbs": 5.0,
+          "protein": 95.0,
+          "calories": 467.5,
+          "description": "Kroger cooked shrimp tail on peeled and deveined extra large",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 3.8,
-        "Carbs": 2.5,
-        "Protein": 47.5,
-        "Calories": 234.2
+        "fat": 3.8,
+        "carbs": 2.5,
+        "protein": 47.5,
+        "calories": 234.2
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Powerade",
-          "ServingSize": "Bottle",
-          "Fat": 0.0,
-          "Carbs": 55.0,
-          "Protein": 0.0,
-          "Calories": 220.0,
-          "Description": "Powerade orange 32 oz",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "759b2675-7fb5-4b55-ba47-fceda113f599",
+          "servingSize": "Bottle",
+          "fat": 0.0,
+          "carbs": 55.0,
+          "protein": 0.0,
+          "calories": 220.0,
+          "description": "Powerade orange 32 oz",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 27.5,
-        "Protein": 0.0,
-        "Calories": 110.0
+        "fat": 0.0,
+        "carbs": 27.5,
+        "protein": 0.0,
+        "calories": 110.0
       }
     ],
     "Custom": []

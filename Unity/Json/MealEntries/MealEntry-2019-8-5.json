@@ -1,141 +1,141 @@
 {
-  "DateTime": "2019-08-05T00:00:00-04:00",
-  "DayType": 1,
-  "TotalFat": 99.9,
-  "TotalCarbs": 150.9,
-  "TotalProtein": 129.2,
-  "TotalCalories": 2019.5,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-08-05T00:00:00-04:00",
+  "dayType": 1,
+  "totalFat": 99.9,
+  "totalCarbs": 150.9,
+  "totalProtein": 129.2,
+  "totalCalories": 2019.5,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "FH Roast Beef-Medium",
-          "ServingSize": "Sandwich",
-          "Fat": 14.0,
-          "Carbs": 44.0,
-          "Protein": 39.0,
-          "Calories": 458.0,
-          "Description": "Firehouse medium roast beef sandwich on white bread with only provolone cheese",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "1c45dec9-91d7-4929-9feb-38a270caa8f5",
+          "servingSize": "Sandwich",
+          "fat": 14.0,
+          "carbs": 44.0,
+          "protein": 39.0,
+          "calories": 458.0,
+          "description": "Firehouse medium roast beef sandwich on white bread with only provolone cheese",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 14.0,
-        "Carbs": 44.0,
-        "Protein": 39.0,
-        "Calories": 458.0
+        "fat": 14.0,
+        "carbs": 44.0,
+        "protein": 39.0,
+        "calories": 458.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "FH Powerade-Medium",
-          "ServingSize": "Cup",
-          "Fat": 0.3,
-          "Carbs": 52.3,
-          "Protein": 0.0,
-          "Calories": 211.9,
-          "Description": "Firehouse Powerade sports drink orange 22 fl oz",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "08c49000-aa7c-4b56-b9f7-1f382aec76d4",
+          "servingSize": "Cup",
+          "fat": 0.3,
+          "carbs": 52.3,
+          "protein": 0.0,
+          "calories": 211.9,
+          "description": "Firehouse Powerade sports drink orange 22 fl oz",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.3,
-        "Carbs": 52.3,
-        "Protein": 0.0,
-        "Calories": 211.9
+        "fat": 0.3,
+        "carbs": 52.3,
+        "protein": 0.0,
+        "calories": 211.9
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "FH Chips",
-          "ServingSize": "Bag",
-          "Fat": 8.0,
-          "Carbs": 20.0,
-          "Protein": 2.0,
-          "Calories": 160.0,
-          "Description": "Firehouse Funyuns onion flavored rings",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "f088eb64-762a-4dd2-8e28-a520efd07ce7",
+          "servingSize": "Bag",
+          "fat": 8.0,
+          "carbs": 20.0,
+          "protein": 2.0,
+          "calories": 160.0,
+          "description": "Firehouse Funyuns onion flavored rings",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 4.0,
-        "Carbs": 10.0,
-        "Protein": 1.0,
-        "Calories": 80.0
+        "fat": 4.0,
+        "carbs": 10.0,
+        "protein": 1.0,
+        "calories": 80.0
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Ground Beef-85/15",
-          "ServingSize": "Container",
-          "Fat": 68.0,
-          "Carbs": 0.0,
-          "Protein": 84.0,
-          "Calories": 948.0,
-          "Description": "Kroger ground beef 85% lean meat and 15% fat",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "2f21067d-6cc5-4376-a06e-671a6f1304bf",
+          "servingSize": "Container",
+          "fat": 68.0,
+          "carbs": 0.0,
+          "protein": 84.0,
+          "calories": 948.0,
+          "description": "Kroger ground beef 85% lean meat and 15% fat",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 34.0,
-        "Carbs": 0.0,
-        "Protein": 42.0,
-        "Calories": 474.0
+        "fat": 34.0,
+        "carbs": 0.0,
+        "protein": 42.0,
+        "calories": 474.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Cheese-Shredded",
-          "ServingSize": "Half Cup",
-          "Fat": 16.0,
-          "Carbs": 2.0,
-          "Protein": 14.0,
-          "Calories": 208.0,
-          "Description": "Kroger queso quesadilla finely shredded cheese",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "4ecd1b91-4118-4df7-9777-26557f63340c",
+          "servingSize": "Half Cup",
+          "fat": 16.0,
+          "carbs": 2.0,
+          "protein": 14.0,
+          "calories": 208.0,
+          "description": "Kroger queso quesadilla finely shredded cheese",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 16.0,
-        "Carbs": 2.0,
-        "Protein": 14.0,
-        "Calories": 208.0
+        "fat": 16.0,
+        "carbs": 2.0,
+        "protein": 14.0,
+        "calories": 208.0
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 4.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 2.9,
-          "Carbs": 8.4,
-          "Protein": 0.8,
-          "Calories": 62.9,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 4.0,
+        "mealSource": {
+          "id": "1f531fc8-ef87-4f73-83a9-7c628fc6c5f5",
+          "servingSize": "Meal",
+          "fat": 2.9,
+          "carbs": 8.4,
+          "protein": 0.8,
+          "calories": 62.9,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 11.6,
-        "Carbs": 33.6,
-        "Protein": 3.2,
-        "Calories": 251.6
+        "fat": 11.6,
+        "carbs": 33.6,
+        "protein": 3.2,
+        "calories": 251.6
       }
     ]
   }

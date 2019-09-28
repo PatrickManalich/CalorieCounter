@@ -1,117 +1,123 @@
 {
-  "DateTime": "2019-07-26T00:00:00-04:00",
-  "DayType": 2,
-  "TotalFat": 99.5,
-  "TotalCarbs": 200.9,
-  "TotalProtein": 131.7,
-  "TotalCalories": 2225.9,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-07-26T00:00:00-04:00",
+  "dayType": 2,
+  "totalFat": 99.5,
+  "totalCarbs": 200.9,
+  "totalProtein": 131.7,
+  "totalCalories": 2225.9,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Smoothie",
-          "ServingSize": "Smoothie",
-          "Fat": 5.4,
-          "Carbs": 60.4,
-          "Protein": 32.2,
-          "Calories": 419.0,
-          "Description": "The Classic protein smoothie",
-          "MealSourceType": 0
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a927f188-780c-459a-a546-fb5b01b5b033",
+          "servingSize": "Smoothie",
+          "fat": 5.4,
+          "carbs": 60.4,
+          "protein": 32.2,
+          "calories": 419.0,
+          "description": "The Classic protein smoothie",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 5.4,
-        "Carbs": 60.4,
-        "Protein": 32.2,
-        "Calories": 419.0
+        "fat": 5.4,
+        "carbs": 60.4,
+        "protein": 32.2,
+        "calories": 419.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Chicken Breast",
-          "ServingSize": "Breast",
-          "Fat": 1.0,
-          "Carbs": 0.0,
-          "Protein": 25.0,
-          "Calories": 109.0,
-          "Description": "Simple Truth natural chicken breast",
-          "MealSourceType": 1
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "7fa8d2da-933b-498c-b1c8-655a603d7da6",
+          "servingSize": "Breast",
+          "fat": 1.0,
+          "carbs": 0.0,
+          "protein": 25.0,
+          "calories": 109.0,
+          "description": "Simple Truth natural chicken breast",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 1.0,
-        "Carbs": 0.0,
-        "Protein": 25.0,
-        "Calories": 109.0
+        "fat": 1.0,
+        "carbs": 0.0,
+        "protein": 25.0,
+        "calories": 109.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Caesar Salad Kit",
-          "ServingSize": "Bag",
-          "Fat": 39.0,
-          "Carbs": 30.0,
-          "Protein": 15.0,
-          "Calories": 531.0,
-          "Description": "Dole premium kit ultimate caesar",
-          "MealSourceType": 1
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "1be10e3d-4020-4245-acf3-d318bcef6823",
+          "servingSize": "Bag",
+          "fat": 39.0,
+          "carbs": 30.0,
+          "protein": 15.0,
+          "calories": 531.0,
+          "description": "Dole premium kit ultimate caesar",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 39.0,
-        "Carbs": 30.0,
-        "Protein": 15.0,
-        "Calories": 531.0
+        "fat": 39.0,
+        "carbs": 30.0,
+        "protein": 15.0,
+        "calories": 531.0
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 30.0,
-          "Carbs": 56.5,
-          "Protein": 24.0,
-          "Calories": 592.0,
-          "Description": "",
-          "MealSourceType": 2
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "944309ee-4636-4449-939d-dfb5eec1399d",
+          "servingSize": "Meal",
+          "fat": 30.0,
+          "carbs": 56.5,
+          "protein": 24.0,
+          "calories": 592.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 30.0,
-        "Carbs": 56.5,
-        "Protein": 24.0,
-        "Calories": 592.0
+        "fat": 30.0,
+        "carbs": 56.5,
+        "protein": 24.0,
+        "calories": 592.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 4.1,
-          "Carbs": 45.0,
-          "Protein": 5.5,
-          "Calories": 238.9,
-          "Description": "",
-          "MealSourceType": 2
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a3787574-e4d6-4fd7-832d-53a20729b683",
+          "servingSize": "Meal",
+          "fat": 4.1,
+          "carbs": 45.0,
+          "protein": 5.5,
+          "calories": 238.9,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 4.1,
-        "Carbs": 45.0,
-        "Protein": 5.5,
-        "Calories": 238.9
+        "fat": 4.1,
+        "carbs": 45.0,
+        "protein": 5.5,
+        "calories": 238.9
       }
     ]
   }

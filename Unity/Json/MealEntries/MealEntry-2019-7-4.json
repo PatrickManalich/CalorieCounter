@@ -1,141 +1,141 @@
 {
-  "DateTime": "2019-07-04T00:00:00-04:00",
-  "DayType": 2,
-  "TotalFat": 89.8,
-  "TotalCarbs": 299.3,
-  "TotalProtein": 158.5,
-  "TotalCalories": 2639.4,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-07-04T00:00:00-04:00",
+  "dayType": 2,
+  "totalFat": 89.8,
+  "totalCarbs": 299.3,
+  "totalProtein": 158.5,
+  "totalCalories": 2639.4,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Smoothie",
-          "ServingSize": "Smoothie",
-          "Fat": 5.4,
-          "Carbs": 60.4,
-          "Protein": 32.2,
-          "Calories": 419.0,
-          "Description": "",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a927f188-780c-459a-a546-fb5b01b5b033",
+          "servingSize": "Smoothie",
+          "fat": 5.4,
+          "carbs": 60.4,
+          "protein": 32.2,
+          "calories": 419.0,
+          "description": "The Classic protein smoothie",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 5.4,
-        "Carbs": 60.4,
-        "Protein": 32.2,
-        "Calories": 419.0
+        "fat": 5.4,
+        "carbs": 60.4,
+        "protein": 32.2,
+        "calories": 419.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Turkey",
-          "ServingSize": "Bag",
-          "Fat": 7.6,
-          "Carbs": 19.8,
-          "Protein": 34.6,
-          "Calories": 286.0,
-          "Description": "Kroger bag of 0.8 lb of sliced turkey",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "711a8c1e-fdca-44f7-9dce-d811b3dda085",
+          "servingSize": "Bag",
+          "fat": 7.6,
+          "carbs": 19.8,
+          "protein": 34.6,
+          "calories": 286.0,
+          "description": "Kroger bag of 0.8 lb of sliced turkey",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 3.8,
-        "Carbs": 9.9,
-        "Protein": 17.3,
-        "Calories": 143.0
+        "fat": 3.8,
+        "carbs": 9.9,
+        "protein": 17.3,
+        "calories": 143.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Cheese-Sliced",
-          "ServingSize": "Slice",
-          "Fat": 5.0,
-          "Carbs": 0.0,
-          "Protein": 5.0,
-          "Calories": 65.0,
-          "Description": "Sargento provolone cheese",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "30d473b1-e992-4085-8142-e35d6b1b99e5",
+          "servingSize": "Slice",
+          "fat": 5.0,
+          "carbs": 0.0,
+          "protein": 5.0,
+          "calories": 65.0,
+          "description": "Sargento provolone cheese",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 5.0,
-        "Carbs": 0.0,
-        "Protein": 5.0,
-        "Calories": 65.0
+        "fat": 5.0,
+        "carbs": 0.0,
+        "protein": 5.0,
+        "calories": 65.0
       },
       {
-        "ServingAmount": 2.0,
-        "MealSource": {
-          "Name": "Bread-White",
-          "ServingSize": "Slice",
-          "Fat": 0.8,
-          "Carbs": 11.5,
-          "Protein": 3.0,
-          "Calories": 65.2,
-          "Description": "One slice of Nature's Own whitewheat healthy white bread",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 2.0,
+        "mealSource": {
+          "id": "5c8c3da7-ce95-4ca2-beae-e67861cebbc4",
+          "servingSize": "Slice",
+          "fat": 0.8,
+          "carbs": 11.5,
+          "protein": 3.0,
+          "calories": 65.2,
+          "description": "One slice of Nature's Own whitewheat healthy white bread",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 1.6,
-        "Carbs": 23.0,
-        "Protein": 6.0,
-        "Calories": 130.4
+        "fat": 1.6,
+        "carbs": 23.0,
+        "protein": 6.0,
+        "calories": 130.4
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 2.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 27.0,
-          "Carbs": 40.0,
-          "Protein": 34.0,
-          "Calories": 539.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 2.0,
+        "mealSource": {
+          "id": "8c396495-085a-41b1-9bda-7d73c2160658",
+          "servingSize": "Meal",
+          "fat": 27.0,
+          "carbs": 40.0,
+          "protein": 34.0,
+          "calories": 539.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 54.0,
-        "Carbs": 80.0,
-        "Protein": 68.0,
-        "Calories": 1078.0
+        "fat": 54.0,
+        "carbs": 80.0,
+        "protein": 68.0,
+        "calories": 1078.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 0.0,
-          "Carbs": 117.0,
-          "Protein": 0.0,
-          "Calories": 468.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "95e582ff-7232-4df3-9132-6cbfd35e3191",
+          "servingSize": "Meal",
+          "fat": 0.0,
+          "carbs": 117.0,
+          "protein": 0.0,
+          "calories": 468.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 117.0,
-        "Protein": 0.0,
-        "Calories": 468.0
+        "fat": 0.0,
+        "carbs": 117.0,
+        "protein": 0.0,
+        "calories": 468.0
       }
     ]
   }

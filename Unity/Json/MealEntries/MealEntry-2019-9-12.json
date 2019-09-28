@@ -1,122 +1,122 @@
 {
-  "DateTime": "2019-09-12T00:00:00-04:00",
-  "DayType": 2,
-  "TotalFat": 69.9,
-  "TotalCarbs": 162.8,
-  "TotalProtein": 103.8,
-  "TotalCalories": 1695.5,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-09-12T00:00:00-04:00",
+  "dayType": 2,
+  "totalFat": 69.9,
+  "totalCarbs": 162.8,
+  "totalProtein": 103.8,
+  "totalCalories": 1695.5,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       }
     ],
     "Large": [],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 20.0,
-          "Carbs": 0.0,
-          "Protein": 31.0,
-          "Calories": 304.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "951a4013-7508-42e3-bde6-9fd8507705ac",
+          "servingSize": "Meal",
+          "fat": 20.0,
+          "carbs": 0.0,
+          "protein": 31.0,
+          "calories": 304.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 0.0,
-        "Protein": 31.0,
-        "Calories": 304.0
+        "fat": 20.0,
+        "carbs": 0.0,
+        "protein": 31.0,
+        "calories": 304.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 0.2,
-          "Carbs": 37.0,
-          "Protein": 4.3,
-          "Calories": 167.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "451e0b49-2ec8-4393-a954-3872eb45f12f",
+          "servingSize": "Meal",
+          "fat": 0.2,
+          "carbs": 37.0,
+          "protein": 4.3,
+          "calories": 167.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 0.2,
-        "Carbs": 37.0,
-        "Protein": 4.3,
-        "Calories": 167.0
+        "fat": 0.2,
+        "carbs": 37.0,
+        "protein": 4.3,
+        "calories": 167.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 0.1,
-          "Carbs": 3.8,
-          "Protein": 0.3,
-          "Calories": 17.3,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "5f7b4295-19a2-48a5-b591-5bb6eb6fa3e9",
+          "servingSize": "Meal",
+          "fat": 0.1,
+          "carbs": 3.8,
+          "protein": 0.3,
+          "calories": 17.3,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 0.1,
-        "Carbs": 3.8,
-        "Protein": 0.3,
-        "Calories": 17.3
+        "fat": 0.1,
+        "carbs": 3.8,
+        "protein": 0.3,
+        "calories": 17.3
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 12.0,
-          "Carbs": 41.0,
-          "Protein": 30.0,
-          "Calories": 392.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "9d76d50b-7b61-4161-8e0c-b6875ab0e0ba",
+          "servingSize": "Meal",
+          "fat": 12.0,
+          "carbs": 41.0,
+          "protein": 30.0,
+          "calories": 392.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 12.0,
-        "Carbs": 41.0,
-        "Protein": 30.0,
-        "Calories": 392.0
+        "fat": 12.0,
+        "carbs": 41.0,
+        "protein": 30.0,
+        "calories": 392.0
       },
       {
-        "ServingAmount": 2.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 8.8,
-          "Carbs": 36.0,
-          "Protein": 4.1,
-          "Calories": 239.6,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 2.0,
+        "mealSource": {
+          "id": "649a7025-d56f-423e-ad68-0979c7439820",
+          "servingSize": "Meal",
+          "fat": 8.8,
+          "carbs": 36.0,
+          "protein": 4.1,
+          "calories": 239.6,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 17.6,
-        "Carbs": 72.0,
-        "Protein": 8.2,
-        "Calories": 479.2
+        "fat": 17.6,
+        "carbs": 72.0,
+        "protein": 8.2,
+        "calories": 479.2
       }
     ]
   }

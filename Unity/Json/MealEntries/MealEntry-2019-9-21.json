@@ -1,105 +1,105 @@
 {
-  "DateTime": "2019-09-21T00:00:00-04:00",
-  "DayType": 2,
-  "TotalFat": 116.9,
-  "TotalCarbs": 354.6,
-  "TotalProtein": 93.8,
-  "TotalCalories": 2845.7,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-09-21T00:00:00-04:00",
+  "dayType": 2,
+  "totalFat": 116.9,
+  "totalCarbs": 354.6,
+  "totalProtein": 93.8,
+  "totalCalories": 2845.7,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Smoothie",
-          "ServingSize": "Smoothie",
-          "Fat": 5.4,
-          "Carbs": 60.4,
-          "Protein": 32.2,
-          "Calories": 419.0,
-          "Description": "The Classic protein smoothie",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a927f188-780c-459a-a546-fb5b01b5b033",
+          "servingSize": "Smoothie",
+          "fat": 5.4,
+          "carbs": 60.4,
+          "protein": 32.2,
+          "calories": 419.0,
+          "description": "The Classic protein smoothie",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 5.4,
-        "Carbs": 60.4,
-        "Protein": 32.2,
-        "Calories": 419.0
+        "fat": 5.4,
+        "carbs": 60.4,
+        "protein": 32.2,
+        "calories": 419.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Bagel",
-          "ServingSize": "Bagel",
-          "Fat": 3.5,
-          "Carbs": 53.0,
-          "Protein": 9.0,
-          "Calories": 279.5,
-          "Description": "Thomas everything bagel",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "c721f1a1-ebd0-477b-9ffd-f25856d14eae",
+          "servingSize": "Bagel",
+          "fat": 3.5,
+          "carbs": 53.0,
+          "protein": 9.0,
+          "calories": 279.5,
+          "description": "Thomas everything bagel",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 3.5,
-        "Carbs": 53.0,
-        "Protein": 9.0,
-        "Calories": 279.5
+        "fat": 3.5,
+        "carbs": 53.0,
+        "protein": 9.0,
+        "calories": 279.5
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Cream Cheese",
-          "ServingSize": "Bagel",
-          "Fat": 20.0,
-          "Carbs": 3.2,
-          "Protein": 3.6,
-          "Calories": 207.2,
-          "Description": "Philadelphia cream cheese original",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "ec544bd0-c811-4627-a440-bad70cbe477f",
+          "servingSize": "Bagel",
+          "fat": 20.0,
+          "carbs": 3.2,
+          "protein": 3.6,
+          "calories": 207.2,
+          "description": "Philadelphia cream cheese original",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 3.2,
-        "Protein": 3.6,
-        "Calories": 207.2
+        "fat": 20.0,
+        "carbs": 3.2,
+        "protein": 3.6,
+        "calories": 207.2
       }
     ],
     "Large": [
       {
-        "ServingAmount": 3.0,
-        "MealSource": {
-          "Name": "Soda-Can",
-          "ServingSize": "Can",
-          "Fat": 0.0,
-          "Carbs": 39.0,
-          "Protein": 0.0,
-          "Calories": 156.0,
-          "Description": "Coca-Cola 12 oz can",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 3.0,
+        "mealSource": {
+          "id": "59f049d2-7d70-4e21-b133-48849a56dfd2",
+          "servingSize": "Can",
+          "fat": 0.0,
+          "carbs": 39.0,
+          "protein": 0.0,
+          "calories": 156.0,
+          "description": "Coca-Cola 12 oz can",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 117.0,
-        "Protein": 0.0,
-        "Calories": 468.0
+        "fat": 0.0,
+        "carbs": 117.0,
+        "protein": 0.0,
+        "calories": 468.0
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 88.0,
-          "Carbs": 121.0,
-          "Protein": 49.0,
-          "Calories": 1472.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "6e47252a-de8f-41c9-a975-c1c19d0fc7d4",
+          "servingSize": "Meal",
+          "fat": 88.0,
+          "carbs": 121.0,
+          "protein": 49.0,
+          "calories": 1472.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 88.0,
-        "Carbs": 121.0,
-        "Protein": 49.0,
-        "Calories": 1472.0
+        "fat": 88.0,
+        "carbs": 121.0,
+        "protein": 49.0,
+        "calories": 1472.0
       }
     ]
   }

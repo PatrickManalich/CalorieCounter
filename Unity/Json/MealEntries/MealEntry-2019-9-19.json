@@ -1,123 +1,123 @@
 {
-  "DateTime": "2019-09-19T00:00:00-04:00",
-  "DayType": 2,
-  "TotalFat": 38.0,
-  "TotalCarbs": 132.3,
-  "TotalProtein": 129.3,
-  "TotalCalories": 1388.4,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-09-19T00:00:00-04:00",
+  "dayType": 2,
+  "totalFat": 38.0,
+  "totalCarbs": 132.3,
+  "totalProtein": 129.3,
+  "totalCalories": 1388.4,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Smoothie",
-          "ServingSize": "Smoothie",
-          "Fat": 5.4,
-          "Carbs": 60.4,
-          "Protein": 32.2,
-          "Calories": 419.0,
-          "Description": "The Classic protein smoothie",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a927f188-780c-459a-a546-fb5b01b5b033",
+          "servingSize": "Smoothie",
+          "fat": 5.4,
+          "carbs": 60.4,
+          "protein": 32.2,
+          "calories": 419.0,
+          "description": "The Classic protein smoothie",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 5.4,
-        "Carbs": 60.4,
-        "Protein": 32.2,
-        "Calories": 419.0
+        "fat": 5.4,
+        "carbs": 60.4,
+        "protein": 32.2,
+        "calories": 419.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 0.75,
-        "MealSource": {
-          "Name": "Rice-White",
-          "ServingSize": "Cup",
-          "Fat": 0.0,
-          "Carbs": 36.0,
-          "Protein": 3.0,
-          "Calories": 156.0,
-          "Description": "Mahatma extra long enriched rice",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.75,
+        "mealSource": {
+          "id": "43ff7c5d-b870-40f9-90a8-c55a7afa3305",
+          "servingSize": "Cup",
+          "fat": 0.0,
+          "carbs": 36.0,
+          "protein": 3.0,
+          "calories": 156.0,
+          "description": "Mahatma extra long enriched rice",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 27.0,
-        "Protein": 2.2,
-        "Calories": 116.8
+        "fat": 0.0,
+        "carbs": 27.0,
+        "protein": 2.2,
+        "calories": 116.8
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Shrimp",
-          "ServingSize": "Bag",
-          "Fat": 7.5,
-          "Carbs": 5.0,
-          "Protein": 95.0,
-          "Calories": 467.5,
-          "Description": "Kroger cooked shrimp tail on peeled and deveined extra large",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "e8889cbd-2f83-4d90-b2cd-d4256fcad4c4",
+          "servingSize": "Bag",
+          "fat": 7.5,
+          "carbs": 5.0,
+          "protein": 95.0,
+          "calories": 467.5,
+          "description": "Kroger cooked shrimp tail on peeled and deveined extra large",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 3.8,
-        "Carbs": 2.5,
-        "Protein": 47.5,
-        "Calories": 234.2
+        "fat": 3.8,
+        "carbs": 2.5,
+        "protein": 47.5,
+        "calories": 234.2
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 0.75,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 11.0,
-          "Carbs": 23.0,
-          "Protein": 16.0,
-          "Calories": 255.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 0.75,
+        "mealSource": {
+          "id": "733cec97-3d6d-47f2-bdd5-7a084a421c14",
+          "servingSize": "Meal",
+          "fat": 11.0,
+          "carbs": 23.0,
+          "protein": 16.0,
+          "calories": 255.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 8.2,
-        "Carbs": 17.2,
-        "Protein": 12.0,
-        "Calories": 190.6
+        "fat": 8.2,
+        "carbs": 17.2,
+        "protein": 12.0,
+        "calories": 190.6
       },
       {
-        "ServingAmount": 6.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 0.1,
-          "Carbs": 2.7,
-          "Protein": 0.9,
-          "Calories": 15.3,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 6.0,
+        "mealSource": {
+          "id": "f9d3678f-5f28-4e33-992e-b0f4d0e40f20",
+          "servingSize": "Meal",
+          "fat": 0.1,
+          "carbs": 2.7,
+          "protein": 0.9,
+          "calories": 15.3,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 0.6,
-        "Carbs": 16.2,
-        "Protein": 5.4,
-        "Calories": 91.8
+        "fat": 0.6,
+        "carbs": 16.2,
+        "protein": 5.4,
+        "calories": 91.8
       }
     ]
   }

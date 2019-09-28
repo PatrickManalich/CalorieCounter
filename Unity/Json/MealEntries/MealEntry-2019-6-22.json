@@ -1,11 +1,11 @@
 {
-  "DateTime": "2019-06-22T00:00:00-04:00",
-  "DayType": 3,
-  "TotalFat": 0.0,
-  "TotalCarbs": 0.0,
-  "TotalProtein": 0.0,
-  "TotalCalories": 0.0,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-06-22T00:00:00-04:00",
+  "dayType": 3,
+  "totalFat": 0.0,
+  "totalCarbs": 0.0,
+  "totalProtein": 0.0,
+  "totalCalories": 0.0,
+  "mealProportionsDictionary": {
     "Small": [],
     "Large": [],
     "Custom": []

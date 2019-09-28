@@ -1,100 +1,105 @@
 {
-  "DateTime": "2019-06-18T00:00:00-04:00",
-  "DayType": 1,
-  "TotalFat": 55.3,
-  "TotalCarbs": 68.5,
-  "TotalProtein": 110.3,
-  "TotalCalories": 1212.9,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-06-18T00:00:00-04:00",
+  "dayType": 1,
+  "totalFat": 55.3,
+  "totalCarbs": 68.5,
+  "totalProtein": 110.3,
+  "totalCalories": 1212.9,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Shrimp",
-          "ServingSize": "Bag",
-          "Fat": 7.5,
-          "Carbs": 5.0,
-          "Protein": 95.0,
-          "Calories": 467.5,
-          "Description": "Kroger cooked shrimp tail on peeled and deveined extra large",
-          "MealSourceType": 1
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "e8889cbd-2f83-4d90-b2cd-d4256fcad4c4",
+          "servingSize": "Bag",
+          "fat": 7.5,
+          "carbs": 5.0,
+          "protein": 95.0,
+          "calories": 467.5,
+          "description": "Kroger cooked shrimp tail on peeled and deveined extra large",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 3.8,
-        "Carbs": 2.5,
-        "Protein": 47.5,
-        "Calories": 234.2
+        "fat": 3.8,
+        "carbs": 2.5,
+        "protein": 47.5,
+        "calories": 234.2
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 11.0,
-          "Carbs": 28.0,
-          "Protein": 20.0,
-          "Calories": 291.0,
-          "Description": "",
-          "MealSourceType": 2
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "21f4e9d7-d044-40d4-b179-7d4f10817b85",
+          "servingSize": "Meal",
+          "fat": 11.0,
+          "carbs": 28.0,
+          "protein": 20.0,
+          "calories": 291.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 11.0,
-        "Carbs": 28.0,
-        "Protein": 20.0,
-        "Calories": 291.0
+        "fat": 11.0,
+        "carbs": 28.0,
+        "protein": 20.0,
+        "calories": 291.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 19.0,
-          "Carbs": 2.0,
-          "Protein": 4.0,
-          "Calories": 195.0,
-          "Description": "",
-          "MealSourceType": 2
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a6e07c7b-5e2f-4351-9091-3304b20149b4",
+          "servingSize": "Meal",
+          "fat": 19.0,
+          "carbs": 2.0,
+          "protein": 4.0,
+          "calories": 195.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 19.0,
-        "Carbs": 2.0,
-        "Protein": 4.0,
-        "Calories": 195.0
+        "fat": 19.0,
+        "carbs": 2.0,
+        "protein": 4.0,
+        "calories": 195.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 1.5,
-          "Carbs": 27.0,
-          "Protein": 8.8,
-          "Calories": 156.7,
-          "Description": "",
-          "MealSourceType": 2
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "9c5b4d84-816c-48b8-8a9a-a9c02e480a2c",
+          "servingSize": "Meal",
+          "fat": 1.5,
+          "carbs": 27.0,
+          "protein": 8.8,
+          "calories": 156.7,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 1.5,
-        "Carbs": 27.0,
-        "Protein": 8.8,
-        "Calories": 156.7
+        "fat": 1.5,
+        "carbs": 27.0,
+        "protein": 8.8,
+        "calories": 156.7
       }
     ]
   }

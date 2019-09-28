@@ -1,166 +1,175 @@
 {
-  "DateTime": "2019-07-17T00:00:00-04:00",
-  "DayType": 1,
-  "TotalFat": 81.3,
-  "TotalCarbs": 195.0,
-  "TotalProtein": 149.3,
-  "TotalCalories": 2108.9,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-07-17T00:00:00-04:00",
+  "dayType": 1,
+  "totalFat": 81.3,
+  "totalCarbs": 195.0,
+  "totalProtein": 149.3,
+  "totalCalories": 2108.9,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Banana",
-          "ServingSize": "Fruit",
-          "Fat": 0.4,
-          "Carbs": 27.0,
-          "Protein": 1.3,
-          "Calories": 116.8,
-          "Description": "General banana",
-          "MealSourceType": 0
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "0625b9d1-57ce-465c-82f0-76953090a50a",
+          "servingSize": "Fruit",
+          "fat": 0.4,
+          "carbs": 27.0,
+          "protein": 1.3,
+          "calories": 116.8,
+          "description": "General banana",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 0.4,
-        "Carbs": 27.0,
-        "Protein": 1.3,
-        "Calories": 116.8
+        "fat": 0.4,
+        "carbs": 27.0,
+        "protein": 1.3,
+        "calories": 116.8
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "CFA Nuggets-12 Count",
-          "ServingSize": "Container",
-          "Fat": 18.0,
-          "Carbs": 13.5,
-          "Protein": 42.0,
-          "Calories": 384.0,
-          "Description": "Chic-fil-A twelve count nuggets",
-          "MealSourceType": 1
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "6e095bf4-7439-4bce-8946-4a6434bed151",
+          "servingSize": "Container",
+          "fat": 18.0,
+          "carbs": 13.5,
+          "protein": 42.0,
+          "calories": 384.0,
+          "description": "Chic-fil-A twelve count nuggets",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 18.0,
-        "Carbs": 13.5,
-        "Protein": 42.0,
-        "Calories": 384.0
+        "fat": 18.0,
+        "carbs": 13.5,
+        "protein": 42.0,
+        "calories": 384.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "CFA Shake-Large",
-          "ServingSize": "Shake",
-          "Fat": 25.0,
-          "Carbs": 86.0,
-          "Protein": 15.0,
-          "Calories": 629.0,
-          "Description": "Chic-fil-A large vanilla shake",
-          "MealSourceType": 1
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "f632ab19-b9f2-487c-bfb3-5466da9a186d",
+          "servingSize": "Shake",
+          "fat": 25.0,
+          "carbs": 86.0,
+          "protein": 15.0,
+          "calories": 629.0,
+          "description": "Chic-fil-A large vanilla shake",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 25.0,
-        "Carbs": 86.0,
-        "Protein": 15.0,
-        "Calories": 629.0
+        "fat": 25.0,
+        "carbs": 86.0,
+        "protein": 15.0,
+        "calories": 629.0
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "CFA Fries-Medium",
-          "ServingSize": "Container",
-          "Fat": 18.0,
-          "Carbs": 43.0,
-          "Protein": 5.0,
-          "Calories": 354.0,
-          "Description": "Chic-fil-A medium fries",
-          "MealSourceType": 1
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "1f7d8135-8164-4c38-bfc8-644981d2f1ad",
+          "servingSize": "Container",
+          "fat": 18.0,
+          "carbs": 43.0,
+          "protein": 5.0,
+          "calories": 354.0,
+          "description": "Chic-fil-A medium fries",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 9.0,
-        "Carbs": 21.5,
-        "Protein": 2.5,
-        "Calories": 177.0
+        "fat": 9.0,
+        "carbs": 21.5,
+        "protein": 2.5,
+        "calories": 177.0
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Shrimp",
-          "ServingSize": "Bag",
-          "Fat": 7.5,
-          "Carbs": 5.0,
-          "Protein": 95.0,
-          "Calories": 467.5,
-          "Description": "Kroger cooked shrimp tail on peeled and deveined extra large",
-          "MealSourceType": 1
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "e8889cbd-2f83-4d90-b2cd-d4256fcad4c4",
+          "servingSize": "Bag",
+          "fat": 7.5,
+          "carbs": 5.0,
+          "protein": 95.0,
+          "calories": 467.5,
+          "description": "Kroger cooked shrimp tail on peeled and deveined extra large",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 3.8,
-        "Carbs": 2.5,
-        "Protein": 47.5,
-        "Calories": 234.2
+        "fat": 3.8,
+        "carbs": 2.5,
+        "protein": 47.5,
+        "calories": 234.2
       },
       {
-        "ServingAmount": 0.75,
-        "MealSource": {
-          "Name": "Rice-White",
-          "ServingSize": "Cup",
-          "Fat": 0.0,
-          "Carbs": 36.0,
-          "Protein": 3.0,
-          "Calories": 156.0,
-          "Description": "Mahatma extra long enriched rice",
-          "MealSourceType": 1
+        "servingAmount": 0.75,
+        "mealSource": {
+          "id": "43ff7c5d-b870-40f9-90a8-c55a7afa3305",
+          "servingSize": "Cup",
+          "fat": 0.0,
+          "carbs": 36.0,
+          "protein": 3.0,
+          "calories": 156.0,
+          "description": "Mahatma extra long enriched rice",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 27.0,
-        "Protein": 2.2,
-        "Calories": 116.8
+        "fat": 0.0,
+        "carbs": 27.0,
+        "protein": 2.2,
+        "calories": 116.8
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Peas and Carrots",
-          "ServingSize": "Half Cup",
-          "Fat": 0.3,
-          "Carbs": 8.1,
-          "Protein": 2.5,
-          "Calories": 45.1,
-          "Description": "General peas and carrots",
-          "MealSourceType": 1
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "e579ae7b-faa0-4cd8-a868-0d88f6282a4d",
+          "servingSize": "Half Cup",
+          "fat": 0.3,
+          "carbs": 8.1,
+          "protein": 2.5,
+          "calories": 45.1,
+          "description": "General peas and carrots",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.3,
-        "Carbs": 8.1,
-        "Protein": 2.5,
-        "Calories": 45.1
+        "fat": 0.3,
+        "carbs": 8.1,
+        "protein": 2.5,
+        "calories": 45.1
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Egg",
-          "ServingSize": "Egg",
-          "Fat": 4.8,
-          "Carbs": 0.4,
-          "Protein": 6.3,
-          "Calories": 70.0,
-          "Description": "General egg",
-          "MealSourceType": 1
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "f5680fb4-10b8-4c9e-967f-37253c7fd98f",
+          "servingSize": "Egg",
+          "fat": 4.8,
+          "carbs": 0.4,
+          "protein": 6.3,
+          "calories": 70.0,
+          "description": "General egg",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 4.8,
-        "Carbs": 0.4,
-        "Protein": 6.3,
-        "Calories": 70.0
+        "fat": 4.8,
+        "carbs": 0.4,
+        "protein": 6.3,
+        "calories": 70.0
       }
     ],
     "Custom": []

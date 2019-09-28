@@ -1,141 +1,141 @@
 {
-  "DateTime": "2019-08-04T00:00:00-04:00",
-  "DayType": 2,
-  "TotalFat": 133.5,
-  "TotalCarbs": 167.2,
-  "TotalProtein": 136.4,
-  "TotalCalories": 2415.9,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-08-04T00:00:00-04:00",
+  "dayType": 2,
+  "totalFat": 133.5,
+  "totalCarbs": 167.2,
+  "totalProtein": 136.4,
+  "totalCalories": 2415.9,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Smoothie",
-          "ServingSize": "Smoothie",
-          "Fat": 5.4,
-          "Carbs": 60.4,
-          "Protein": 32.2,
-          "Calories": 419.0,
-          "Description": "The Classic protein smoothie",
-          "MealSourceType": 0,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "a927f188-780c-459a-a546-fb5b01b5b033",
+          "servingSize": "Smoothie",
+          "fat": 5.4,
+          "carbs": 60.4,
+          "protein": 32.2,
+          "calories": 419.0,
+          "description": "The Classic protein smoothie",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 5.4,
-        "Carbs": 60.4,
-        "Protein": 32.2,
-        "Calories": 419.0
+        "fat": 5.4,
+        "carbs": 60.4,
+        "protein": 32.2,
+        "calories": 419.0
       }
     ],
     "Large": [
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Ground Beef-80/20",
-          "ServingSize": "Container",
-          "Fat": 92.0,
-          "Carbs": 0.0,
-          "Protein": 76.0,
-          "Calories": 1132.0,
-          "Description": "Kroger ground beef 80% lean meat and 20% fat",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "84258f6d-800a-4473-9db0-13412b864cc8",
+          "servingSize": "Container",
+          "fat": 92.0,
+          "carbs": 0.0,
+          "protein": 76.0,
+          "calories": 1132.0,
+          "description": "Kroger ground beef 80% lean meat and 20% fat",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 46.0,
-        "Carbs": 0.0,
-        "Protein": 38.0,
-        "Calories": 566.0
+        "fat": 46.0,
+        "carbs": 0.0,
+        "protein": 38.0,
+        "calories": 566.0
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Rice-White",
-          "ServingSize": "Cup",
-          "Fat": 0.0,
-          "Carbs": 36.0,
-          "Protein": 3.0,
-          "Calories": 156.0,
-          "Description": "Mahatma extra long enriched rice",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "43ff7c5d-b870-40f9-90a8-c55a7afa3305",
+          "servingSize": "Cup",
+          "fat": 0.0,
+          "carbs": 36.0,
+          "protein": 3.0,
+          "calories": 156.0,
+          "description": "Mahatma extra long enriched rice",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 18.0,
-        "Protein": 1.5,
-        "Calories": 78.0
+        "fat": 0.0,
+        "carbs": 18.0,
+        "protein": 1.5,
+        "calories": 78.0
       },
       {
-        "ServingAmount": 0.5,
-        "MealSource": {
-          "Name": "Bell Pepper",
-          "ServingSize": "Pepper",
-          "Fat": 0.2,
-          "Carbs": 7.6,
-          "Protein": 1.0,
-          "Calories": 36.2,
-          "Description": "General green bell pepper",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 0.5,
+        "mealSource": {
+          "id": "081a7278-7a38-4117-aaec-e575cd8a8c0b",
+          "servingSize": "Pepper",
+          "fat": 0.2,
+          "carbs": 7.6,
+          "protein": 1.0,
+          "calories": 36.2,
+          "description": "General green bell pepper",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.1,
-        "Carbs": 3.8,
-        "Protein": 0.5,
-        "Calories": 18.1
+        "fat": 0.1,
+        "carbs": 3.8,
+        "protein": 0.5,
+        "calories": 18.1
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Tomato Sauce",
-          "ServingSize": "Can",
-          "Fat": 4.0,
-          "Carbs": 0.0,
-          "Protein": 1.0,
-          "Calories": 40.0,
-          "Description": "Goya tomato sauce spanish style",
-          "MealSourceType": 1,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "60a634a6-e431-4cde-8a19-63c50747c4ee",
+          "servingSize": "Can",
+          "fat": 4.0,
+          "carbs": 0.0,
+          "protein": 1.0,
+          "calories": 40.0,
+          "description": "Goya tomato sauce spanish style",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 4.0,
-        "Carbs": 0.0,
-        "Protein": 1.0,
-        "Calories": 40.0
+        "fat": 4.0,
+        "carbs": 0.0,
+        "protein": 1.0,
+        "calories": 40.0
       }
     ],
     "Custom": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 62.0,
-          "Carbs": 40.0,
-          "Protein": 59.0,
-          "Calories": 954.0,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "50e7cae0-7c88-4b00-a0a3-51e8cb7995a8",
+          "servingSize": "Meal",
+          "fat": 62.0,
+          "carbs": 40.0,
+          "protein": 59.0,
+          "calories": 954.0,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 62.0,
-        "Carbs": 40.0,
-        "Protein": 59.0,
-        "Calories": 954.0
+        "fat": 62.0,
+        "carbs": 40.0,
+        "protein": 59.0,
+        "calories": 954.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Custom Meal",
-          "ServingSize": "Meal",
-          "Fat": 16.0,
-          "Carbs": 45.0,
-          "Protein": 4.2,
-          "Calories": 340.8,
-          "Description": "",
-          "MealSourceType": 2,
-          "Archived": false
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "8fe7544a-cc60-4366-ad5d-949dfd9764bf",
+          "servingSize": "Meal",
+          "fat": 16.0,
+          "carbs": 45.0,
+          "protein": 4.2,
+          "calories": 340.8,
+          "description": "",
+          "mealSourceType": 2,
+          "archived": false
         },
-        "Fat": 16.0,
-        "Carbs": 45.0,
-        "Protein": 4.2,
-        "Calories": 340.8
+        "fat": 16.0,
+        "carbs": 45.0,
+        "protein": 4.2,
+        "calories": 340.8
       }
     ]
   }

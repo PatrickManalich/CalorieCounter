@@ -1,132 +1,139 @@
 {
-  "DateTime": "2019-07-24T00:00:00-04:00",
-  "DayType": 1,
-  "TotalFat": 92.8,
-  "TotalCarbs": 213.5,
-  "TotalProtein": 167.8,
-  "TotalCalories": 2360.4,
-  "MealProportionsDictionary": {
+  "dateTime": "2019-07-24T00:00:00-04:00",
+  "dayType": 1,
+  "totalFat": 92.8,
+  "totalCarbs": 213.5,
+  "totalProtein": 167.8,
+  "totalCalories": 2360.4,
+  "mealProportionsDictionary": {
     "Small": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Protein Bar",
-          "ServingSize": "Bar",
-          "Fat": 20.0,
-          "Carbs": 9.0,
-          "Protein": 30.0,
-          "Calories": 336.0,
-          "Description": "Clif builder's protein bar chocolate mint",
-          "MealSourceType": 0
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "2db5d992-e797-43c8-b6f5-a6c2aec3396b",
+          "servingSize": "Bar",
+          "fat": 20.0,
+          "carbs": 9.0,
+          "protein": 30.0,
+          "calories": 336.0,
+          "description": "Clif builder's protein bar chocolate mint",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 20.0,
-        "Carbs": 9.0,
-        "Protein": 30.0,
-        "Calories": 336.0
+        "fat": 20.0,
+        "carbs": 9.0,
+        "protein": 30.0,
+        "calories": 336.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "Banana",
-          "ServingSize": "Fruit",
-          "Fat": 0.4,
-          "Carbs": 27.0,
-          "Protein": 1.3,
-          "Calories": 116.8,
-          "Description": "General banana",
-          "MealSourceType": 0
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "0625b9d1-57ce-465c-82f0-76953090a50a",
+          "servingSize": "Fruit",
+          "fat": 0.4,
+          "carbs": 27.0,
+          "protein": 1.3,
+          "calories": 116.8,
+          "description": "General banana",
+          "mealSourceType": 0,
+          "archived": false
         },
-        "Fat": 0.4,
-        "Carbs": 27.0,
-        "Protein": 1.3,
-        "Calories": 116.8
+        "fat": 0.4,
+        "carbs": 27.0,
+        "protein": 1.3,
+        "calories": 116.8
       }
     ],
     "Large": [
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "CFA Fries-Medium",
-          "ServingSize": "Container",
-          "Fat": 18.0,
-          "Carbs": 43.0,
-          "Protein": 5.0,
-          "Calories": 354.0,
-          "Description": "Chic-fil-A medium fries",
-          "MealSourceType": 1
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "1f7d8135-8164-4c38-bfc8-644981d2f1ad",
+          "servingSize": "Container",
+          "fat": 18.0,
+          "carbs": 43.0,
+          "protein": 5.0,
+          "calories": 354.0,
+          "description": "Chic-fil-A medium fries",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 18.0,
-        "Carbs": 43.0,
-        "Protein": 5.0,
-        "Calories": 354.0
+        "fat": 18.0,
+        "carbs": 43.0,
+        "protein": 5.0,
+        "calories": 354.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "CFA Sprite-Large",
-          "ServingSize": "Container",
-          "Fat": 0.0,
-          "Carbs": 65.0,
-          "Protein": 0.0,
-          "Calories": 260.0,
-          "Description": "Chic-fil-A large sprite",
-          "MealSourceType": 1
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "fd754c99-f117-4cac-a695-e13089db36ab",
+          "servingSize": "Container",
+          "fat": 0.0,
+          "carbs": 65.0,
+          "protein": 0.0,
+          "calories": 260.0,
+          "description": "Chic-fil-A large sprite",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 0.0,
-        "Carbs": 65.0,
-        "Protein": 0.0,
-        "Calories": 260.0
+        "fat": 0.0,
+        "carbs": 65.0,
+        "protein": 0.0,
+        "calories": 260.0
       },
       {
-        "ServingAmount": 1.0,
-        "MealSource": {
-          "Name": "CFA Nuggets-12 Count",
-          "ServingSize": "Container",
-          "Fat": 18.0,
-          "Carbs": 13.5,
-          "Protein": 42.0,
-          "Calories": 384.0,
-          "Description": "Chic-fil-A twelve count nuggets",
-          "MealSourceType": 1
+        "servingAmount": 1.0,
+        "mealSource": {
+          "id": "6e095bf4-7439-4bce-8946-4a6434bed151",
+          "servingSize": "Container",
+          "fat": 18.0,
+          "carbs": 13.5,
+          "protein": 42.0,
+          "calories": 384.0,
+          "description": "Chic-fil-A twelve count nuggets",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 18.0,
-        "Carbs": 13.5,
-        "Protein": 42.0,
-        "Calories": 384.0
+        "fat": 18.0,
+        "carbs": 13.5,
+        "protein": 42.0,
+        "calories": 384.0
       },
       {
-        "ServingAmount": 0.33,
-        "MealSource": {
-          "Name": "Pork Loin",
-          "ServingSize": "Roast",
-          "Fat": 80.0,
-          "Carbs": 0.0,
-          "Protein": 234.7,
-          "Calories": 1658.8,
-          "Description": "Simple Truth natural pork 32 oz",
-          "MealSourceType": 1
+        "servingAmount": 0.33,
+        "mealSource": {
+          "id": "5a2126a3-3177-4ee6-8399-cf035226c216",
+          "servingSize": "Roast",
+          "fat": 80.0,
+          "carbs": 0.0,
+          "protein": 234.7,
+          "calories": 1658.8,
+          "description": "Simple Truth natural pork 32 oz",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 26.4,
-        "Carbs": 0.0,
-        "Protein": 77.5,
-        "Calories": 547.6
+        "fat": 26.4,
+        "carbs": 0.0,
+        "protein": 77.5,
+        "calories": 547.6
       },
       {
-        "ServingAmount": 4.0,
-        "MealSource": {
-          "Name": "Hawaiian Roll",
-          "ServingSize": "Roll",
-          "Fat": 2.5,
-          "Carbs": 14.0,
-          "Protein": 3.0,
-          "Calories": 90.5,
-          "Description": "King's Hawaiian savory butter roll",
-          "MealSourceType": 1
+        "servingAmount": 4.0,
+        "mealSource": {
+          "id": "5a1fbfbf-e62f-47a6-aed8-a2a370cd9d67",
+          "servingSize": "Roll",
+          "fat": 2.5,
+          "carbs": 14.0,
+          "protein": 3.0,
+          "calories": 90.5,
+          "description": "King's Hawaiian savory butter roll",
+          "mealSourceType": 1,
+          "archived": false
         },
-        "Fat": 10.0,
-        "Carbs": 56.0,
-        "Protein": 12.0,
-        "Calories": 362.0
+        "fat": 10.0,
+        "carbs": 56.0,
+        "protein": 12.0,
+        "calories": 362.0
       }
     ],
     "Custom": []
