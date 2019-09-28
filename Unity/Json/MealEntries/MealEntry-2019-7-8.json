@@ -114,13 +114,13 @@
       {
         "ServingAmount": 0.33,
         "MealSource": {
-          "Name": "Powerade\t",
-          "ServingSize": "Bottle\t",
+          "Name": "Powerade",
+          "ServingSize": "Bottle",
           "Fat": 0.0,
           "Carbs": 55.0,
           "Protein": 0.0,
           "Calories": 220.0,
-          "Description": "Powerade orange 32 oz.\t",
+          "Description": "Powerade orange 32 oz.",
           "MealSourceType": 1
         },
         "Fat": 0.0,

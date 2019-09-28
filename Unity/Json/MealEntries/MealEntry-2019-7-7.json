@@ -183,12 +183,12 @@
         "ServingAmount": 0.33,
         "MealSource": {
           "Name": "Ice Cream",
-          "ServingSize": "Container\t",
+          "ServingSize": "Container",
           "Fat": 57.0,
           "Carbs": 134.0,
           "Protein": 18.0,
           "Calories": 1121.0,
-          "Description": "Ben & Jerry's half baked\t",
+          "Description": "Ben & Jerry's half baked",
           "MealSourceType": 1
         },
         "Fat": 18.8,
