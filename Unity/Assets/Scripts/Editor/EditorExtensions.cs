@@ -1,12 +1,6 @@
-﻿using CalorieCounter.Utilities;
-using System;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using System.IO;
-using CalorieCounter.TargetEntries;
-using CalorieCounter.ScaleEntries;
 
 namespace CalorieCounter
 {
@@ -32,10 +26,7 @@ namespace CalorieCounter
             if (Application.isPlaying)
                 return;
 
-            var targetEntries = JsonConverter.Import<SortedList<DateTime, TargetEntry>>(GlobalPaths.TargetEntriesFilePath);
-            var scaleEntries = JsonConverter.Import<SortedList<DateTime, ScaleEntry>>(GlobalPaths.ScaleEntriesFilePath);
-            JsonConverter.Export(targetEntries, GlobalPaths.TargetEntriesFilePath);
-            JsonConverter.Export(scaleEntries, GlobalPaths.ScaleEntriesFilePath);
+            Debug.LogError("JSON Updater hasn't been implemented");
         }
     }
 }
