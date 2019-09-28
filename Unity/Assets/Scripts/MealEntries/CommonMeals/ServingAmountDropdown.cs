@@ -13,7 +13,7 @@ namespace CalorieCounter.MealEntries {
 
         public float SelectedServingAmount { get; private set; }
         
-        private static readonly float[] ServingAmounts = new float[] { 0.25f, 0.33f, 0.5f, 0.75f, 1, 1.5f, 2, 3, 4, 5 };
+        private static readonly float[] ServingAmounts = new float[] { 0.1f, 0.25f, 0.33f, 0.5f, 0.75f, 1, 1.5f, 2, 3, 4, 5, 6 };
 
         private TMP_Dropdown _dropdown;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
