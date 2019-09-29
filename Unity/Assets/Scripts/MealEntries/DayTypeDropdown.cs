@@ -12,16 +12,11 @@ namespace CalorieCounter.MealEntries {
 
         public DayType DayType { get; private set; }
 
+        [SerializeField]
+        private Totals _totals = default;
+
         private TMP_Dropdown _dropdown;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
-
-        public void RefreshSelectedDayType(int index) {
-            DayType = (DayType)index;
-            if (DayType != DayType.None)
-                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-            else
-                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
-        }
 
         public void HardSetDayType(DayType dayType) {
             _dropdown.value = (int)dayType;
@@ -30,7 +25,6 @@ namespace CalorieCounter.MealEntries {
 
         private void Start() {
             _dropdown = GetComponent<TMP_Dropdown>();
-
             _dropdown.ClearOptions();
             List<string> dayTypeList = Enum.GetValues(typeof(DayType)).Cast<DayType>().Select(v => v.ToString()).ToList();
             foreach (var dayType in dayTypeList) {
@@ -42,6 +36,22 @@ namespace CalorieCounter.MealEntries {
             }
             _dropdown.AddOptions(_optionDataList);
             DayType = default;
+            _dropdown.onValueChanged.AddListener(i => Refresh(i));
+        }
+
+        private void OnDestroy()
+        {
+            _dropdown.onValueChanged.RemoveListener(i => Refresh(i));
+        }
+
+        public void Refresh(int index)
+        {
+            DayType = (DayType)index;
+            if (DayType != DayType.None)
+                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
+            else
+                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+            _totals.Refresh();
         }
 
     }
