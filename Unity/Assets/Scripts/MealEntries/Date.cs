@@ -7,9 +7,9 @@ namespace CalorieCounter.MealEntries {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class Date : MonoBehaviour {
 
-        private TextMeshProUGUI _text;
-
         public DateTime CurrentDate { get; private set; } = DateTime.Today;
+
+        private TextMeshProUGUI _text;
 
         public void MoveBackwardOneDay() {
             CurrentDate = CurrentDate.AddDays(-1);
