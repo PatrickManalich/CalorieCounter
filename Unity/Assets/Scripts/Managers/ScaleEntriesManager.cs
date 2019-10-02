@@ -14,14 +14,14 @@ namespace CalorieCounter.Managers {
 
         public SortedList<DateTime, ScaleEntry> ImportScaleEntries() {
             if (!_imported) {
-                _scaleEntries = JsonConverter.Import<SortedList<DateTime, ScaleEntry>>(GlobalPaths.ScaleEntriesFilePath);
+                _scaleEntries = JsonConverter.Import<SortedList<DateTime, ScaleEntry>>(GlobalPaths.JsonScaleEntriesFileName);
                 _imported = true;
             }
             return _scaleEntries;
         }
 
         public void ExportScaleEntries(SortedList<DateTime, ScaleEntry> scaleEntries) {
-            JsonConverter.Export(scaleEntries, GlobalPaths.ScaleEntriesFilePath);
+            JsonConverter.Export(scaleEntries, GlobalPaths.JsonScaleEntriesFileName);
             _imported = false;
             ImportScaleEntries();
         }

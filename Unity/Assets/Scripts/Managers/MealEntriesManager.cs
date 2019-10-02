@@ -27,8 +27,8 @@ namespace CalorieCounter.Managers {
 
         private string GetMealEntryPath(DateTime dateTime) {
             string mealEntryFileDate = "-" + dateTime.Year + "-" + dateTime.Month + "-" + dateTime.Day;
-            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.MealEntryFileExtension;
-            return Path.Combine(GlobalPaths.MealEntriesDir, mealEntryFileName);
+            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.JsonFileExtension;
+            return Path.Combine(GlobalPaths.MealEntriesDirectoryName, mealEntryFileName);
         }
     }
 }

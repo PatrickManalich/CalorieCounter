@@ -14,7 +14,7 @@ namespace CalorieCounter.Managers {
 
         public TargetEntry ImportLatestTargetEntry(DateTime dateTime) {
             if (!_imported) {
-                _targetEntries = JsonConverter.Import<SortedList<DateTime, TargetEntry>>(GlobalPaths.TargetEntriesFilePath);
+                _targetEntries = JsonConverter.Import<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName);
                 _imported = true;
             }
 
@@ -30,7 +30,7 @@ namespace CalorieCounter.Managers {
         }
 
         public void ExportTargetEntries(SortedList<DateTime, TargetEntry> targetEntries) {
-            JsonConverter.Export(targetEntries, GlobalPaths.TargetEntriesFilePath);
+            JsonConverter.Export(targetEntries, GlobalPaths.JsonTargetEntriesFileName);
             _imported = false;
             ImportLatestTargetEntry(DateTime.Today);
         }

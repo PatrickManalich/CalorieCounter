@@ -31,14 +31,21 @@ namespace CalorieCounter {
 
     public static class GlobalPaths {
 
-        public const string MealEntriesDir = @"MealEntries";
         public const string MealEntryFilePrefix = @"MealEntry";
-        public const string MealEntryFileExtension = @".json";
-        public const string ScaleEntriesFilePath = @"ScaleEntries.json";
-        public const string TargetEntriesFilePath = @"TargetEntries.json";
-        public const string MealSourcesFilePath = @"MealSources.json";
-        public const string MealSourceNamesFilePath = @"MealSourceNames.json";
-        public const string JsonDirPath = @"Json";
+        public const string ScaleEntriesFilePrefix = @"ScaleEntries";
+        public const string TargetEntriesFilePrefix = @"TargetEntries";
+        public const string MealSourcesFilePrefix = @"MealSources";
+        public const string MealSourceNamesFilePrefix = @"MealSourceNames";
+
+        public const string JsonFileExtension = @".json";
+
+        public const string JsonScaleEntriesFileName = ScaleEntriesFilePrefix + JsonFileExtension;
+        public const string JsonTargetEntriesFileName = TargetEntriesFilePrefix + JsonFileExtension;
+        public const string JsonMealSourcesFileName = MealSourcesFilePrefix + JsonFileExtension;
+        public const string JsonMealSourceNamesFileName = MealSourceNamesFilePrefix + JsonFileExtension;
+
+        public const string MealEntriesDirectoryName = @"MealEntries";
+        public const string JsonDirectoryName = @"Json";
 
     }
 

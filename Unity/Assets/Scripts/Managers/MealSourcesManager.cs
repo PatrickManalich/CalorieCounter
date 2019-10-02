@@ -23,7 +23,7 @@ namespace CalorieCounter.Managers
         {
             if (!_mealSourcesDictionaryImported)
             {
-                _mealSourcesDictionary = JsonConverter.Import<Dictionary<MealSourceType, Dictionary<string, MealSource>>>(GlobalPaths.MealSourcesFilePath);
+                _mealSourcesDictionary = JsonConverter.Import<Dictionary<MealSourceType, Dictionary<string, MealSource>>>(GlobalPaths.JsonMealSourcesFileName);
                 _mealSourcesDictionaryImported = true;
             }
             return _mealSourcesDictionary;
@@ -33,7 +33,7 @@ namespace CalorieCounter.Managers
         {
             if (!_mealSourceNamesDictionaryImported)
             {
-                _mealSourceNamesDictionary = JsonConverter.Import<Dictionary<MealSourceType, Dictionary<string, string>>>(GlobalPaths.MealSourceNamesFilePath);
+                _mealSourceNamesDictionary = JsonConverter.Import<Dictionary<MealSourceType, Dictionary<string, string>>>(GlobalPaths.JsonMealSourceNamesFileName);
                 _mealSourceNamesDictionaryImported = true;
             }
             return _mealSourceNamesDictionary;
@@ -73,8 +73,8 @@ namespace CalorieCounter.Managers
 
         public void ExportDictionaries(Dictionary<MealSourceType, Dictionary<string, MealSource>> mealSourcesDictionary, Dictionary<MealSourceType, Dictionary<string, string>> mealSourceNamesDictionary)
         {
-            JsonConverter.Export(mealSourcesDictionary, GlobalPaths.MealSourcesFilePath);
-            JsonConverter.Export(mealSourceNamesDictionary, GlobalPaths.MealSourceNamesFilePath);
+            JsonConverter.Export(mealSourcesDictionary, GlobalPaths.JsonMealSourcesFileName);
+            JsonConverter.Export(mealSourceNamesDictionary, GlobalPaths.JsonMealSourceNamesFileName);
             _mealSourcesDictionaryImported = false;
             _mealSourceNamesDictionaryImported = false;
             _namedMealSourcesDictionaryImported = false;
