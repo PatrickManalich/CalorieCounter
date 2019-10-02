@@ -38,14 +38,20 @@ namespace CalorieCounter {
         public const string MealSourceNamesFilePrefix = @"MealSourceNames";
 
         public const string JsonFileExtension = @".json";
+        public const string CsvFileExtension = @".csv";
 
         public const string JsonScaleEntriesFileName = ScaleEntriesFilePrefix + JsonFileExtension;
         public const string JsonTargetEntriesFileName = TargetEntriesFilePrefix + JsonFileExtension;
         public const string JsonMealSourcesFileName = MealSourcesFilePrefix + JsonFileExtension;
         public const string JsonMealSourceNamesFileName = MealSourceNamesFilePrefix + JsonFileExtension;
+        public const string CsvScaleEntriesFileName = ScaleEntriesFilePrefix + CsvFileExtension;
+        public const string CsvTargetEntriesFileName = TargetEntriesFilePrefix + CsvFileExtension;
+        public const string CsvMealSourcesFileName = MealSourcesFilePrefix + CsvFileExtension;
+        public const string CsvMealSourceNamesFileName = MealSourceNamesFilePrefix + CsvFileExtension;
 
         public const string MealEntriesDirectoryName = @"MealEntries";
         public const string JsonDirectoryName = @"Json";
+        public const string CsvDirectoryName = @"Csv";
 
     }
 
