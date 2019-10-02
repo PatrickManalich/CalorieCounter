@@ -1,6 +1,5 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
-using UnityEngine;
 using System;
 
 namespace CalorieCounter.Utilities {
@@ -8,7 +7,7 @@ namespace CalorieCounter.Utilities {
     public static class JsonConverter {
 
         public static void Export<T>(T value, string filePath) {
-            string fullFilePath = GetFullFilePath(filePath);
+            string fullFilePath = GetFullJsonFilePath(filePath);
             using (StreamWriter file = File.CreateText(fullFilePath)) {
                 JsonSerializer serializer = new JsonSerializer() { Formatting = Formatting.Indented };
                 serializer.Serialize(file, value);
@@ -16,7 +15,7 @@ namespace CalorieCounter.Utilities {
         }
 
         public static T Import<T>(string filePath) {
-            string fullFilePath = GetFullFilePath(filePath);
+            string fullFilePath = GetFullJsonFilePath(filePath);
             T value = Activator.CreateInstance<T>();
 
             if (File.Exists(fullFilePath)) {
@@ -28,14 +27,14 @@ namespace CalorieCounter.Utilities {
             return value;
         }
 
-        private static string GetFullFilePath(string filePath) {
-            string fullFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirPath, filePath));
-            string fullFilePathDir = Path.GetDirectoryName(fullFilePath);
+        private static string GetFullJsonFilePath(string filePath) {
+            string fullJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, filePath));
+            string fullJsonFilePathDir = Path.GetDirectoryName(fullJsonFilePath);
 
-            if (!Directory.Exists(fullFilePathDir)) {
-                Directory.CreateDirectory(fullFilePathDir);
+            if (!Directory.Exists(fullJsonFilePathDir)) {
+                Directory.CreateDirectory(fullJsonFilePathDir);
             }
-            return fullFilePath;
+            return fullJsonFilePath;
         }
 
     }
