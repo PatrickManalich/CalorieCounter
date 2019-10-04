@@ -6,16 +6,16 @@ namespace CalorieCounter.Utilities {
 
     public static class JsonConverter {
 
-        public static void Export<T>(T value, string filePath) {
-            string fullFilePath = GetFullJsonFilePath(filePath);
+        public static void Export<T>(T value, string filePath, bool releasePath = false) {
+            string fullFilePath = GetFullJsonFilePath(filePath, releasePath);
             using (StreamWriter file = File.CreateText(fullFilePath)) {
                 JsonSerializer serializer = new JsonSerializer() { Formatting = Formatting.Indented };
                 serializer.Serialize(file, value);
             }
         }
 
-        public static T Import<T>(string filePath) {
-            string fullFilePath = GetFullJsonFilePath(filePath);
+        public static T Import<T>(string filePath, bool releasePath = false) {
+            string fullFilePath = GetFullJsonFilePath(filePath, releasePath);
             T value = Activator.CreateInstance<T>();
 
             if (File.Exists(fullFilePath)) {
@@ -27,8 +27,12 @@ namespace CalorieCounter.Utilities {
             return value;
         }
 
-        private static string GetFullJsonFilePath(string filePath) {
-            string fullJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, filePath));
+        private static string GetFullJsonFilePath(string filePath, bool releasePath = false) {
+            var fullEditorJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, filePath));
+            var fullReleaseJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
+                    GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, filePath));
+
+            string fullJsonFilePath = releasePath ? fullReleaseJsonFilePath : fullEditorJsonFilePath;
             string fullJsonFilePathDir = Path.GetDirectoryName(fullJsonFilePath);
 
             if (!Directory.Exists(fullJsonFilePathDir)) {

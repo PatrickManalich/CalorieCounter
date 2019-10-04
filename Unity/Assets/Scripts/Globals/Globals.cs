@@ -52,6 +52,8 @@ namespace CalorieCounter {
         public const string MealEntriesDirectoryName = @"MealEntries";
         public const string JsonDirectoryName = @"Json";
         public const string CsvDirectoryName = @"Csv";
+        public const string ReleaseDirectoryName = @"Release";
+        public const string CalorieCounterReleaseDirectoryName = @"CalorieCounterRelease";
 
     }
 
