@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CalorieCounter
 {
-    public static class EditorExtensions
+    public static class MiscellaneousEditorExtensions
     {
 
         [MenuItem("Calorie Counter/Dirty Save Active Scene %#d")]
