@@ -2,7 +2,7 @@
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace CalorieCounter
+namespace CalorieCounter.EditorExtensions
 {
     public static class MiscellaneousEditorExtensions
     {
