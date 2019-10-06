@@ -7,7 +7,9 @@ namespace CalorieCounter.EditorExtensions
     public static class MiscellaneousEditorExtensions
     {
 
-        [MenuItem("Calorie Counter/Dirty Save Active Scene %#d")]
+        private const string MenuItemDirectory = @"Calorie Counter/";
+
+        [MenuItem(MenuItemDirectory + "Dirty Save Active Scene %#d")]
         public static void DirtySaveAllOpenScenes()
         {
             if (Application.isPlaying)
@@ -20,7 +22,7 @@ namespace CalorieCounter.EditorExtensions
             }
         }
 
-        [MenuItem("Calorie Counter/JSON Updater %#j")]
+        [MenuItem(MenuItemDirectory + "JSON Updater %#j")]
         public static void JsonUpdater()
         {
             if (Application.isPlaying)
