@@ -13,7 +13,7 @@ namespace CalorieCounter.Managers {
 
         public MealEntry ImportMealEntry(DateTime dateTime) {
             if (!_mealEntries.ContainsKey(dateTime)) {
-                MealEntry mealEntry = JsonConverter.Import<MealEntry>(GetMealEntryPath(dateTime));
+                var mealEntry = JsonConverter.Import<MealEntry>(GetMealEntryPath(dateTime));
                 _mealEntries.Add(dateTime, mealEntry);
             }
             return _mealEntries[dateTime];
