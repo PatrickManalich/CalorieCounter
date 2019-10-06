@@ -1,4 +1,5 @@
 ﻿using CalorieCounter.ScaleEntries;
+using CalorieCounter.TargetEntries;
 using CalorieCounter.Utilities;
 using CsvHelper;
 using System;
@@ -26,8 +27,26 @@ namespace CalorieCounter.EditorExtensions
             {
                 records.Add(new ScaleEntryRecord(scaleEntry));
             }
+            WriteRecords(records, GlobalPaths.CsvScaleEntriesFileName);
+        }
 
-            var filePath = GetFullCsvFilePath(GlobalPaths.CsvScaleEntriesFileName);
+        [MenuItem(MenuItemDirectory + "Target Entries")]
+        public static void ExportCsvTargetEntries()
+        {
+            if (Application.isPlaying)
+                return;
+
+            var targetEntries = JsonConverter.Import<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName, true);
+            var records = new List<TargetEntryRecord>();
+            foreach (var targetEntry in targetEntries.Values)
+            {
+                records.Add(new TargetEntryRecord(targetEntry));
+            }
+            WriteRecords(records, GlobalPaths.CsvTargetEntriesFileName);
+        }
+
+        private static void WriteRecords<T>(IEnumerable<T> records, string fileName){
+            var filePath = GetFullCsvFilePath(fileName);
             File.WriteAllText(filePath, string.Empty);
 
             using (var writer = new StreamWriter(filePath))
