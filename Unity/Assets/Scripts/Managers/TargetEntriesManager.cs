@@ -18,15 +18,15 @@ namespace CalorieCounter.Managers {
                 _imported = true;
             }
 
-            var latestTargetEntryKey = dateTime;
-            var terminationDate = dateTime.AddYears(-1);
-            while (!_targetEntries.ContainsKey(latestTargetEntryKey))
+            var firstDateTimeFound = dateTime;
+            var terminationDateTime = dateTime.AddYears(-1);
+            while (!_targetEntries.ContainsKey(firstDateTimeFound))
             {
-                latestTargetEntryKey = latestTargetEntryKey.AddDays(-1);
-                if (latestTargetEntryKey < terminationDate)
+                firstDateTimeFound = firstDateTimeFound.AddDays(-1);
+                if (firstDateTimeFound < terminationDateTime)
                     return default;
             }
-            return _targetEntries[latestTargetEntryKey];
+            return _targetEntries[firstDateTimeFound];
         }
 
         public void ExportTargetEntries(SortedList<DateTime, TargetEntry> targetEntries) {
