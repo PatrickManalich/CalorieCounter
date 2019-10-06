@@ -36,6 +36,7 @@ namespace CalorieCounter {
         public const string TargetEntriesFilePrefix = @"TargetEntries";
         public const string MealSourcesFilePrefix = @"MealSources";
         public const string MealSourceNamesFilePrefix = @"MealSourceNames";
+        public const string ResultsFilePrefix = @"Results";
 
         public const string JsonFileExtension = @".json";
         public const string CsvFileExtension = @".csv";
@@ -46,6 +47,7 @@ namespace CalorieCounter {
         public const string JsonMealSourceNamesFileName = MealSourceNamesFilePrefix + JsonFileExtension;
         public const string CsvScaleEntriesFileName = ScaleEntriesFilePrefix + CsvFileExtension;
         public const string CsvTargetEntriesFileName = TargetEntriesFilePrefix + CsvFileExtension;
+        public const string CsvResultsFileName = ResultsFilePrefix + CsvFileExtension;
 
         public const string MealEntriesDirectoryName = @"MealEntries";
         public const string JsonDirectoryName = @"Json";
