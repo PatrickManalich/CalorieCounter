@@ -12,14 +12,14 @@ namespace CalorieCounter.Managers {
 
         public MealEntry ImportMealEntry(DateTime dateTime) {
             if (!_mealEntries.ContainsKey(dateTime)) {
-                var mealEntry = JsonConverter.Import<MealEntry>(JsonConverter.GetMealEntryPath(dateTime));
+                var mealEntry = JsonConverter.ImportFile<MealEntry>(JsonConverter.GetMealEntryPath(dateTime));
                 _mealEntries.Add(dateTime, mealEntry);
             }
             return _mealEntries[dateTime];
         }
 
         public void ExportMealEntry(MealEntry mealEntry, DateTime dateTime) {
-            JsonConverter.Export(mealEntry, JsonConverter.GetMealEntryPath(dateTime));
+            JsonConverter.ExportFile(mealEntry, JsonConverter.GetMealEntryPath(dateTime));
             _mealEntries.Remove(dateTime);
             ImportMealEntry(dateTime);
         }

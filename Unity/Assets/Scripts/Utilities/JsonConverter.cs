@@ -6,7 +6,7 @@ namespace CalorieCounter.Utilities {
 
     public static class JsonConverter {
 
-        public static void Export<T>(T value, string filePath, bool releasePath = false) {
+        public static void ExportFile<T>(T value, string filePath, bool releasePath = false) {
             string fullFilePath = GetFullJsonFilePath(filePath, releasePath);
             using (StreamWriter file = File.CreateText(fullFilePath)) {
                 JsonSerializer serializer = new JsonSerializer() { Formatting = Formatting.Indented };
@@ -14,7 +14,7 @@ namespace CalorieCounter.Utilities {
             }
         }
 
-        public static T Import<T>(string filePath, bool releasePath = false) {
+        public static T ImportFile<T>(string filePath, bool releasePath = false) {
             string fullFilePath = GetFullJsonFilePath(filePath, releasePath);
             T value = Activator.CreateInstance<T>();
 
