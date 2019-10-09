@@ -40,10 +40,10 @@ namespace CalorieCounter.Utilities {
                     GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, fileName));
 
             string fullJsonFilePath = useReleasePath ? fullReleaseJsonFilePath : fullEditorJsonFilePath;
-            string fullJsonFilePathDir = Path.GetDirectoryName(fullJsonFilePath);
+            string fullJsonFilePathDirectory = Path.GetDirectoryName(fullJsonFilePath);
 
-            if (!Directory.Exists(fullJsonFilePathDir)) {
-                Directory.CreateDirectory(fullJsonFilePathDir);
+            if (!Directory.Exists(fullJsonFilePathDirectory)) {
+                Directory.CreateDirectory(fullJsonFilePathDirectory);
             }
             return fullJsonFilePath;
         }
