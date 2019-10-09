@@ -2,7 +2,6 @@
 using CalorieCounter.Utilities;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 
 namespace CalorieCounter.Managers {
@@ -13,22 +12,16 @@ namespace CalorieCounter.Managers {
 
         public MealEntry ImportMealEntry(DateTime dateTime) {
             if (!_mealEntries.ContainsKey(dateTime)) {
-                var mealEntry = JsonConverter.Import<MealEntry>(GetMealEntryPath(dateTime));
+                var mealEntry = JsonConverter.Import<MealEntry>(JsonConverter.GetMealEntryPath(dateTime));
                 _mealEntries.Add(dateTime, mealEntry);
             }
             return _mealEntries[dateTime];
         }
 
         public void ExportMealEntry(MealEntry mealEntry, DateTime dateTime) {
-            JsonConverter.Export(mealEntry, GetMealEntryPath(dateTime));
+            JsonConverter.Export(mealEntry, JsonConverter.GetMealEntryPath(dateTime));
             _mealEntries.Remove(dateTime);
             ImportMealEntry(dateTime);
-        }
-
-        private string GetMealEntryPath(DateTime dateTime) {
-            string mealEntryFileDate = "-" + dateTime.Year + "-" + dateTime.Month + "-" + dateTime.Day;
-            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.JsonFileExtension;
-            return Path.Combine(GlobalPaths.MealEntriesDirectoryName, mealEntryFileName);
         }
     }
 }

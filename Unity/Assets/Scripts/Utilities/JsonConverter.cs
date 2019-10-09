@@ -27,6 +27,13 @@ namespace CalorieCounter.Utilities {
             return value;
         }
 
+        public static string GetMealEntryPath(DateTime dateTime)
+        {
+            string mealEntryFileDate = "-" + dateTime.Year + "-" + dateTime.Month + "-" + dateTime.Day;
+            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.JsonFileExtension;
+            return Path.Combine(GlobalPaths.MealEntriesDirectoryName, mealEntryFileName);
+        }
+
         private static string GetFullJsonFilePath(string filePath, bool releasePath = false) {
             var fullEditorJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, filePath));
             var fullReleaseJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
