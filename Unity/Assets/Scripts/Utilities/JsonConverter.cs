@@ -6,16 +6,16 @@ namespace CalorieCounter.Utilities {
 
     public static class JsonConverter {
 
-        public static void ExportFile<T>(T value, string filePath, bool releasePath = false) {
-            string fullFilePath = GetFullJsonFilePath(filePath, releasePath);
+        public static void ExportFile<T>(T value, string fileName, bool intoRelease = false) {
+            string fullFilePath = GetFullJsonFilePath(fileName, intoRelease);
             using (StreamWriter file = File.CreateText(fullFilePath)) {
                 JsonSerializer serializer = new JsonSerializer() { Formatting = Formatting.Indented };
                 serializer.Serialize(file, value);
             }
         }
 
-        public static T ImportFile<T>(string filePath, bool releasePath = false) {
-            string fullFilePath = GetFullJsonFilePath(filePath, releasePath);
+        public static T ImportFile<T>(string fileName, bool fromRelease = false) {
+            string fullFilePath = GetFullJsonFilePath(fileName, fromRelease);
             T value = Activator.CreateInstance<T>();
 
             if (File.Exists(fullFilePath)) {
@@ -34,12 +34,12 @@ namespace CalorieCounter.Utilities {
             return Path.Combine(GlobalPaths.MealEntriesDirectoryName, mealEntryFileName);
         }
 
-        private static string GetFullJsonFilePath(string filePath, bool releasePath = false) {
-            var fullEditorJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, filePath));
+        private static string GetFullJsonFilePath(string fileName, bool useReleasePath = false) {
+            var fullEditorJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, fileName));
             var fullReleaseJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
-                    GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, filePath));
+                    GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, fileName));
 
-            string fullJsonFilePath = releasePath ? fullReleaseJsonFilePath : fullEditorJsonFilePath;
+            string fullJsonFilePath = useReleasePath ? fullReleaseJsonFilePath : fullEditorJsonFilePath;
             string fullJsonFilePathDir = Path.GetDirectoryName(fullJsonFilePath);
 
             if (!Directory.Exists(fullJsonFilePathDir)) {
