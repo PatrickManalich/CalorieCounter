@@ -20,3 +20,10 @@ Release 1.1.0 (9/28/2019)
  -Add 0.1 and 6 as serving amount options
  -Used JsonUpdater to update all entries
  
+Release 1.1.1 (10/12/2019)
+ -Add NutritionixButton
+ -Implement ability to export CSV files
+ -Change default icon
+ -Fix bug where Rice-White meal source was incorrect
+ -Update JSON field names to match
+ 
