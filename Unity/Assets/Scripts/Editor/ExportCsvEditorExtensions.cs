@@ -78,6 +78,17 @@ namespace CalorieCounter.EditorExtensions
             WriteRecords(records, GlobalPaths.CsvResultsFileName);
         }
 
+        [MenuItem(MenuItemDirectory + "All")]
+        public static void ExportCsvAll()
+        {
+            if (Application.isPlaying)
+                return;
+
+            ExportCsvScaleEntries();
+            ExportCsvTargetEntries();
+            ExportCsvResults();
+        }
+
         private static void WriteRecords<T>(IEnumerable<T> records, string fileName){
             var filePath = GetCsvFilePath(fileName);
             File.WriteAllText(filePath, string.Empty);
