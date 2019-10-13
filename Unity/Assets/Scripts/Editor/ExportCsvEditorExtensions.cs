@@ -53,18 +53,8 @@ namespace CalorieCounter.EditorExtensions
             if (Application.isPlaying)
                 return;
 
-            var fullReleaseMealEntriesFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
-                GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, GlobalPaths.MealEntriesDirectoryName));
-            var directoryInfo = new DirectoryInfo(fullReleaseMealEntriesFilePath);
-            var mealEntries = new SortedList<DateTime, MealEntry>();
-            foreach(var fileInfo in directoryInfo.GetFiles())
-            {
-                var mealEntryPath = Path.Combine(GlobalPaths.MealEntriesDirectoryName, fileInfo.Name);
-                var mealEntry = JsonConverter.ImportFile<MealEntry>(mealEntryPath, true);
-                mealEntries.Add(mealEntry.dateTime, mealEntry);
-            }
+            var mealEntries = JsonConverter.ImportMealEntries(true);
             var targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName, true);
-
             var records = new List<ResultRecord>();
             foreach (var mealEntry in mealEntries.Values)
             {

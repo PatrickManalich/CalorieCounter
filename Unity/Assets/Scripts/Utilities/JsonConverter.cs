@@ -1,6 +1,8 @@
 ﻿using System.IO;
 using Newtonsoft.Json;
 using System;
+using CalorieCounter.MealEntries;
+using System.Collections.Generic;
 
 namespace CalorieCounter.Utilities {
 
@@ -27,6 +29,20 @@ namespace CalorieCounter.Utilities {
             return value;
         }
 
+        public static SortedList<DateTime, MealEntry> ImportMealEntries(bool fromRelease = false)
+        {
+            string fullDirectoryPath = GetFullJsonDirectoryPath(GlobalPaths.MealEntriesDirectoryName, fromRelease);
+            var mealEntries = new SortedList<DateTime, MealEntry>();
+            var directoryInfo = new DirectoryInfo(fullDirectoryPath);
+            foreach (var fileInfo in directoryInfo.GetFiles())
+            {
+                var mealEntryPath = Path.Combine(GlobalPaths.MealEntriesDirectoryName, fileInfo.Name);
+                var mealEntry = ImportFile<MealEntry>(mealEntryPath, true);
+                mealEntries.Add(mealEntry.dateTime, mealEntry);
+            }
+            return mealEntries;
+        }
+
         public static string GetMealEntryPath(DateTime dateTime)
         {
             string mealEntryFileDate = "-" + dateTime.Year + "-" + dateTime.Month + "-" + dateTime.Day;
@@ -48,5 +64,14 @@ namespace CalorieCounter.Utilities {
             return fullJsonFilePath;
         }
 
+        private static string GetFullJsonDirectoryPath(string directoryName, bool useReleasePath = false)
+        {
+            var fullEditorJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, directoryName));
+            var fullReleaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
+                    GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, directoryName));
+
+            string fullJsonDirectoryPath = useReleasePath ? fullReleaseJsonDirectoryPath : fullEditorJsonDirectoryPath;
+            return fullJsonDirectoryPath;
+        }
     }
 }
