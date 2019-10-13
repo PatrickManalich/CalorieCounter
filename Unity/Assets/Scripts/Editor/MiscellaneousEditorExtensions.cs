@@ -1,12 +1,14 @@
-﻿using CalorieCounter.MealEntries;
-using CalorieCounter.MealSources;
-using CalorieCounter.Utilities;
+﻿using CalorieCounter.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using OldScaleEntries = CalorieCounterOld.ScaleEntries;
+using NewScaleEntries = CalorieCounter.ScaleEntries;
+using OldTargetEntries = CalorieCounterOld.TargetEntries;
+using NewTargetEntries = CalorieCounter.TargetEntries;
+
 
 namespace CalorieCounter.EditorExtensions
 {
@@ -34,43 +36,25 @@ namespace CalorieCounter.EditorExtensions
             if (Application.isPlaying)
                 return;
 
-            var riceWhiteId = "43ff7c5d-b870-40f9-90a8-c55a7afa3305";
-            var newFat = 0f;
-            var newCarbs = 144f;
-            var newProtein = 12f;
-
-            var mealEntries = JsonConverter.ImportMealEntries(true);
-            foreach(var mealEntry in mealEntries.Values)
+            var oldScaleEntries = JsonConverter.ImportFile<SortedList<DateTime, OldScaleEntries.ScaleEntry>>(GlobalPaths.JsonScaleEntriesFileName, true);
+            var newScaleEntries = new SortedList<DateTime, NewScaleEntries.ScaleEntry>();
+            foreach (var oldScaleEntry in oldScaleEntries.Values)
             {
-                var mealProportionsDictionary = mealEntry.mealProportionsDictionary;
-                foreach (MealSourceType mealSourceType in Enum.GetValues(typeof(MealSourceType)))
-                {
-                    if (!mealProportionsDictionary.ContainsKey(mealSourceType))
-                        continue;
-
-                    var oldMealProportions = mealProportionsDictionary[mealSourceType];
-                    var newMealProportions = new List<MealProportion>();
-                    foreach(var oldMealProportion in oldMealProportions)
-                    {
-                        var oldMealSource = oldMealProportion.mealSource;
-                        if(oldMealSource.id == riceWhiteId)
-                        {
-                            var newMealSource = new MealSource(oldMealSource.servingSize, newFat, newCarbs, newProtein, oldMealSource.description, oldMealSource.mealSourceType)
-                            {
-                                id = oldMealSource.id
-                            };
-                            var newMealProportion = new MealProportion(oldMealProportion.servingAmount, newMealSource);
-                            newMealProportions.Add(newMealProportion);
-                        }
-                        else
-                        {
-                            newMealProportions.Add(oldMealProportion);
-                        }
-                    }
-                    mealEntry.mealProportionsDictionary[mealSourceType] = newMealProportions;
-                    JsonConverter.ExportFile(mealEntry, JsonConverter.GetMealEntryPath(mealEntry.dateTime), true);
-                }
+                var newScaleEntry = new NewScaleEntries.ScaleEntry(oldScaleEntry.date, oldScaleEntry.weight, oldScaleEntry.bodyFat,
+                    oldScaleEntry.bodyWater, oldScaleEntry.muscleMass, oldScaleEntry.boneMass, oldScaleEntry.bmi);
+                newScaleEntries.Add(newScaleEntry.dateTime, newScaleEntry);
             }
+            JsonConverter.ExportFile(newScaleEntries, GlobalPaths.JsonScaleEntriesFileName, true);
+
+
+            var oldTargetEntries = JsonConverter.ImportFile<SortedList<DateTime, OldTargetEntries.TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName, true);
+            var newTargetEntries = new SortedList<DateTime, NewTargetEntries.TargetEntry>();
+            foreach (var oldTargetEntry in oldTargetEntries.Values)
+            {
+                var newTargetEntry = new NewTargetEntries.TargetEntry(oldTargetEntry.date, oldTargetEntry.weight);
+                newTargetEntries.Add(newTargetEntry.dateTime, newTargetEntry);
+            }
+            JsonConverter.ExportFile(newTargetEntries, GlobalPaths.JsonTargetEntriesFileName, true);
             Debug.Log("JSON Updater ran successfully");
         }
     }
