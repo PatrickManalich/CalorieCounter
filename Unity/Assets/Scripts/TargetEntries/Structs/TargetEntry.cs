@@ -4,7 +4,7 @@ namespace CalorieCounter.TargetEntries {
 
     public struct TargetEntry {
 
-        public DateTime date;
+        public DateTime dateTime;
         public float weight;
         public float calorieMaintenanceLevel;
         public float restDayFat;
@@ -27,8 +27,8 @@ namespace CalorieCounter.TargetEntries {
         private const float RestDayFatPercentage = 0.28f;
         private const float TrainingDayFatPercentage = 0.22f;
 
-        public TargetEntry(DateTime date, float weight) {
-            this.date = date;
+        public TargetEntry(DateTime dateTime, float weight) {
+            this.dateTime = dateTime;
             this.weight = weight;
             calorieMaintenanceLevel = GlobalMethods.Round(((4.536f * this.weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
 
@@ -60,7 +60,7 @@ namespace CalorieCounter.TargetEntries {
 
         public override string ToString() {
             return string.Format("Date: {0}, Weight: {1}, Calorie Maintenance Level:{2}, Rest Day: [ Fat: {3}, Carbs: {4}, Protein: {5}, Calories: {6} ], Training Day: [ Fat: {7}, Carbs: {8}, Protein: {9}, Calories: {10} ]",
-                date.ToShortDateString(), weight, calorieMaintenanceLevel, restDayFat, restDayCarbs, restDayProtein, restDayCalories, trainingDayFat, trainingDayCarbs, trainingDayProtein, trainingDayCalories);
+                dateTime.ToShortDateString(), weight, calorieMaintenanceLevel, restDayFat, restDayCarbs, restDayProtein, restDayCalories, trainingDayFat, trainingDayCarbs, trainingDayProtein, trainingDayCalories);
         }
     }
 }

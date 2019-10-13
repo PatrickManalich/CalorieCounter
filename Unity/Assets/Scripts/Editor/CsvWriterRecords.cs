@@ -18,7 +18,7 @@ namespace CalorieCounter.EditorExtensions
 
         public ScaleEntryRecord(ScaleEntry scaleEntry)
         {
-            Date = scaleEntry.date.ToShortDateString();
+            Date = scaleEntry.dateTime.ToShortDateString();
             Weight = scaleEntry.weight;
             BodyFat = scaleEntry.bodyFat;
             BodyWater = scaleEntry.bodyWater;
@@ -45,7 +45,7 @@ namespace CalorieCounter.EditorExtensions
 
         public TargetEntryRecord(TargetEntry targetEntry)
         {
-            Date = targetEntry.date.ToShortDateString();
+            Date = targetEntry.dateTime.ToShortDateString();
             Weight = targetEntry.weight;
             CalorieMaintenanceLevel = targetEntry.calorieMaintenanceLevel;
             RestDayFat = targetEntry.restDayFat;
