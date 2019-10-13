@@ -79,7 +79,7 @@ namespace CalorieCounter.EditorExtensions
         }
 
         private static void WriteRecords<T>(IEnumerable<T> records, string fileName){
-            var filePath = GetFullCsvFilePath(fileName);
+            var filePath = GetCsvFilePath(fileName);
             File.WriteAllText(filePath, string.Empty);
 
             using (var writer = new StreamWriter(filePath))
@@ -90,16 +90,16 @@ namespace CalorieCounter.EditorExtensions
             Debug.Log($"New records written to {filePath}");
         }
 
-        private static string GetFullCsvFilePath(string filePath)
+        private static string GetCsvFilePath(string filePath)
         {
-            string fullCsvFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.CsvDirectoryName, filePath));
-            string fullCsvFilePathDir = Path.GetDirectoryName(fullCsvFilePath);
+            string csvFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.CsvDirectoryName, filePath));
+            string csvFilePathDir = Path.GetDirectoryName(csvFilePath);
 
-            if (!Directory.Exists(fullCsvFilePathDir))
+            if (!Directory.Exists(csvFilePathDir))
             {
-                Directory.CreateDirectory(fullCsvFilePathDir);
+                Directory.CreateDirectory(csvFilePathDir);
             }
-            return fullCsvFilePath;
+            return csvFilePath;
         }
     }
 }

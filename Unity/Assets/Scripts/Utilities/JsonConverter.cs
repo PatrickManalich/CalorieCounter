@@ -9,19 +9,19 @@ namespace CalorieCounter.Utilities {
     public static class JsonConverter {
 
         public static void ExportFile<T>(T value, string fileName, bool intoRelease = false) {
-            string fullFilePath = GetFullJsonFilePath(fileName, intoRelease);
-            using (StreamWriter file = File.CreateText(fullFilePath)) {
+            string filePath = GetJsonFilePath(fileName, intoRelease);
+            using (StreamWriter file = File.CreateText(filePath)) {
                 JsonSerializer serializer = new JsonSerializer() { Formatting = Formatting.Indented };
                 serializer.Serialize(file, value);
             }
         }
 
         public static T ImportFile<T>(string fileName, bool fromRelease = false) {
-            string fullFilePath = GetFullJsonFilePath(fileName, fromRelease);
+            string filePath = GetJsonFilePath(fileName, fromRelease);
             T value = Activator.CreateInstance<T>();
 
-            if (File.Exists(fullFilePath)) {
-                using (StreamReader file = File.OpenText(fullFilePath)) {
+            if (File.Exists(filePath)) {
+                using (StreamReader file = File.OpenText(filePath)) {
                     JsonSerializer serializer = new JsonSerializer();
                     value = (T)serializer.Deserialize(file, typeof(T));
                 }
@@ -31,9 +31,9 @@ namespace CalorieCounter.Utilities {
 
         public static SortedList<DateTime, MealEntry> ImportMealEntries(bool fromRelease = false)
         {
-            string fullDirectoryPath = GetFullJsonDirectoryPath(GlobalPaths.MealEntriesDirectoryName, fromRelease);
+            string directoryPath = GetJsonDirectoryPath(GlobalPaths.MealEntriesDirectoryName, fromRelease);
             var mealEntries = new SortedList<DateTime, MealEntry>();
-            var directoryInfo = new DirectoryInfo(fullDirectoryPath);
+            var directoryInfo = new DirectoryInfo(directoryPath);
             foreach (var fileInfo in directoryInfo.GetFiles())
             {
                 var mealEntryPath = Path.Combine(GlobalPaths.MealEntriesDirectoryName, fileInfo.Name);
@@ -50,28 +50,28 @@ namespace CalorieCounter.Utilities {
             return Path.Combine(GlobalPaths.MealEntriesDirectoryName, mealEntryFileName);
         }
 
-        private static string GetFullJsonFilePath(string fileName, bool useReleasePath = false) {
-            var fullEditorJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, fileName));
-            var fullReleaseJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
+        private static string GetJsonFilePath(string fileName, bool useReleasePath = false) {
+            var editorJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, fileName));
+            var releaseJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
                     GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, fileName));
 
-            string fullJsonFilePath = useReleasePath ? fullReleaseJsonFilePath : fullEditorJsonFilePath;
-            string fullJsonFilePathDirectory = Path.GetDirectoryName(fullJsonFilePath);
+            string jsonFilePath = useReleasePath ? releaseJsonFilePath : editorJsonFilePath;
+            string jsonFilePathDirectory = Path.GetDirectoryName(jsonFilePath);
 
-            if (!Directory.Exists(fullJsonFilePathDirectory)) {
-                Directory.CreateDirectory(fullJsonFilePathDirectory);
+            if (!Directory.Exists(jsonFilePathDirectory)) {
+                Directory.CreateDirectory(jsonFilePathDirectory);
             }
-            return fullJsonFilePath;
+            return jsonFilePath;
         }
 
-        private static string GetFullJsonDirectoryPath(string directoryName, bool useReleasePath = false)
+        private static string GetJsonDirectoryPath(string directoryName, bool useReleasePath = false)
         {
-            var fullEditorJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, directoryName));
-            var fullReleaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
+            var editorJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, directoryName));
+            var releaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
                     GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, directoryName));
 
-            string fullJsonDirectoryPath = useReleasePath ? fullReleaseJsonDirectoryPath : fullEditorJsonDirectoryPath;
-            return fullJsonDirectoryPath;
+            string jsonDirectoryPath = useReleasePath ? releaseJsonDirectoryPath : editorJsonDirectoryPath;
+            return jsonDirectoryPath;
         }
     }
 }
