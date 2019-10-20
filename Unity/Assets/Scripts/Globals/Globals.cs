@@ -17,6 +17,19 @@ namespace CalorieCounter {
         ScaleEntries = 3,
     }
 
+    [Flags]
+    public enum DaysOfTheWeek
+    {
+        // Don't use 0 because EnumFlagDrawer defines that value as 'Nothing/Everything'
+        Sunday = 1,
+        Monday = 2,
+        Tuesday = 4,
+        Wednesday = 8,
+        Thursday = 16,
+        Friday = 32,
+        Saturday = 64
+    }
+
     public enum InputKeyCode { ToggleMenu, DeleteRow, RenameRow }
 
     public static class GlobalConsts
