@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealSources {
 
-    public class MealSourcesAdapter : MonoBehaviour {
+    public class MealSourcesAdapter : AbstractAdapter {
 
         [SerializeField]
         private Scene _scene = default;
@@ -38,7 +38,7 @@ namespace CalorieCounter.MealSources {
             return namedMealSources;
         }
 
-        public void ExportDictionaries()
+        public override void Export()
         {
             var mealSourcesDictionary = new Dictionary<MealSourceType, Dictionary<string, MealSource>>() {
                 { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSources },

@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace CalorieCounter.TargetEntries {
 
-    public class TargetEntriesAdapter : MonoBehaviour {
+    public class TargetEntriesAdapter : AbstractAdapter {
 
         [SerializeField]
         private Scene _scene = default;
@@ -28,7 +28,7 @@ namespace CalorieCounter.TargetEntries {
             return GameManager.TargetEntriesManager.ImportLatestTargetEntry(_date.CurrentDate);
         }
 
-        public void ExportTargetEntries() {
+        public override void Export() {
             if (_scene != Scene.ScaleEntries)
             {
                 return;

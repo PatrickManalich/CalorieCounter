@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    public class MealEntriesAdapter : MonoBehaviour {
+    public class MealEntriesAdapter : AbstractAdapter {
 
         [System.Serializable]
         private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, AbstractMealsScrollView> { }
@@ -22,7 +22,7 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
-        public void ExportMealEntry() {
+        public override void Export() {
             var mealProportionsDictionary = new Dictionary<MealSourceType, List<MealProportion>>
             {
                 { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].GetMealProportions() },

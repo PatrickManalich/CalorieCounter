@@ -3,12 +3,12 @@ using UnityEngine;
 
 namespace CalorieCounter.ScaleEntries {
 
-    public class ScaleEntriesAdapter : MonoBehaviour {
+    public class ScaleEntriesAdapter : AbstractAdapter {
 
         [SerializeField]
         private ScaleEntriesScrollView _scaleEntriesScrollView = default;
 
-        public void ExportScaleEntry() {
+        public override void Export() {
             GameManager.ScaleEntriesManager.ExportScaleEntries(_scaleEntriesScrollView.ScaleEntries);
         }
 
