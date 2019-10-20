@@ -7,27 +7,27 @@ namespace CalorieCounter.MealEntries {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class Date : MonoBehaviour {
 
-        public DateTime CurrentDate { get; private set; } = DateTime.Today;
+        public DateTime CurrentDateTime { get; private set; } = DateTime.Today;
 
         private TextMeshProUGUI _text;
 
         public void MoveBackwardOneDay() {
-            CurrentDate = CurrentDate.AddDays(-1);
+            CurrentDateTime = CurrentDateTime.AddDays(-1);
             Refresh();
         }
 
         public void MoveForwardOneDay() {
-            CurrentDate = CurrentDate.AddDays(1);
+            CurrentDateTime = CurrentDateTime.AddDays(1);
             Refresh();
         }
 
         public void MoveBackwardOneMonth() {
-            CurrentDate = CurrentDate.AddMonths(-1);
+            CurrentDateTime = CurrentDateTime.AddMonths(-1);
             Refresh();
         }
 
         public void MoveForwardOneMonth() {
-            CurrentDate = CurrentDate.AddMonths(1);
+            CurrentDateTime = CurrentDateTime.AddMonths(1);
             Refresh();
         }
 
@@ -37,7 +37,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void Refresh() {
-            _text.text = CurrentDate.ToShortDateString();
+            _text.text = CurrentDateTime.ToShortDateString();
         }
 
     }

@@ -25,7 +25,7 @@ namespace CalorieCounter.TargetEntries {
                 return default;
             }
 
-            return GameManager.TargetEntriesManager.ImportLatestTargetEntry(_date.CurrentDate);
+            return GameManager.TargetEntriesManager.ImportLatestTargetEntry(_date.CurrentDateTime);
         }
 
         public override void Export() {

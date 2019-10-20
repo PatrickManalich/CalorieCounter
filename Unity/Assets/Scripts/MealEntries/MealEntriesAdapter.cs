@@ -30,9 +30,9 @@ namespace CalorieCounter.MealEntries {
                 { MealSourceType.Custom, _scrollViewDictionary[MealSourceType.Custom].GetMealProportions() }
             };
 
-            MealEntry currentMealEntry = new MealEntry(_date.CurrentDate, _dayTypeDropdown.DayType, _totals.TotalFat, _totals.TotalCarbs, _totals.TotalProtein, 
+            MealEntry currentMealEntry = new MealEntry(_date.CurrentDateTime, _dayTypeDropdown.DayType, _totals.TotalFat, _totals.TotalCarbs, _totals.TotalProtein, 
                 _totals.TotalCalories, mealProportionsDictionary);
-            GameManager.MealEntriesManager.ExportMealEntry(currentMealEntry, _date.CurrentDate);
+            GameManager.MealEntriesManager.ExportMealEntry(currentMealEntry, _date.CurrentDateTime);
         }
 
         public void Refresh() {
@@ -42,7 +42,7 @@ namespace CalorieCounter.MealEntries {
             _totals.ResetTotals();
             _totals.Refresh();
 
-            MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDate);
+            MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
             if (mealEntry != default) {
                 foreach (var key in mealEntry.mealProportionsDictionary.Keys) {
                     AbstractMealsScrollView scrollView = _scrollViewDictionary[key];
