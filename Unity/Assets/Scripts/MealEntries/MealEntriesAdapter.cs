@@ -25,9 +25,9 @@ namespace CalorieCounter.MealEntries {
         public override void Export() {
             var mealProportionsDictionary = new Dictionary<MealSourceType, List<MealProportion>>
             {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].GetMealProportions() },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].GetMealProportions() },
-                { MealSourceType.Custom, _scrollViewDictionary[MealSourceType.Custom].GetMealProportions() }
+                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealProportions },
+                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealProportions },
+                { MealSourceType.Custom, _scrollViewDictionary[MealSourceType.Custom].MealProportions }
             };
 
             MealEntry currentMealEntry = new MealEntry(_date.CurrentDateTime, _dayTypeDropdown.DayType, _totals.TotalFat, _totals.TotalCarbs, _totals.TotalProtein, 
