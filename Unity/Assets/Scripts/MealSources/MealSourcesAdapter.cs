@@ -1,5 +1,6 @@
 ﻿using CalorieCounter.Managers;
 using RotaryHeart.Lib.SerializableDictionary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,7 +12,7 @@ namespace CalorieCounter.MealSources {
         [SerializeField]
         private Scene _scene = default;
 
-        [System.Serializable]
+        [Serializable]
         private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealSourcesScrollView> { }
 
         [DisplayBasedOnEnum("_scene", (int)Scene.MealSources)]
