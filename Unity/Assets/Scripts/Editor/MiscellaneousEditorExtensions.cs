@@ -21,6 +21,7 @@ namespace CalorieCounter.EditorExtensions
                 EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetSceneAt(i));
                 EditorSceneManager.SaveScene(EditorSceneManager.GetSceneAt(i));
             }
+            Debug.Log("Active scene dirty saved");
         }
 
         [MenuItem(MenuItemDirectory + "JSON Updater %#j")]
