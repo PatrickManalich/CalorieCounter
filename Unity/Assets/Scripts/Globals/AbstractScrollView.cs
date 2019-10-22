@@ -39,7 +39,12 @@ namespace CalorieCounter
             for (var i = _content.constraintCount - 1; i >= 0; i--)
             {
                 var childIndex = childStartIndex + i;
-                DestroyFromScrollView(childIndex);
+                var child = _content.transform.GetChild(childIndex).gameObject;
+                if (child.GetComponent<ScrollViewText>())
+                {
+                    TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, child.GetComponent<ScrollViewText>()));
+                }
+                Destroy(child);
             }
         }
 
@@ -81,16 +86,6 @@ namespace CalorieCounter
         public void ScrollToPercent(float percent)
         {
             StartCoroutine(ScrollToPercentCoroutine(percent));
-        }
-
-        protected void DestroyFromScrollView(int childIndex)
-        {
-            var child = _content.transform.GetChild(childIndex).gameObject;
-            if (child.GetComponent<ScrollViewText>())
-            {
-                TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, child.GetComponent<ScrollViewText>()));
-            }
-            Destroy(child);
         }
 
         private void Awake()
