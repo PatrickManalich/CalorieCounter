@@ -50,7 +50,12 @@ namespace CalorieCounter
 
         public GameObject InstantiateScrollViewText()
         {
-            GameObject scrollViewText = Instantiate(_scrollViewTextPrefab);
+            return InstantiateScrollViewText(_scrollViewTextPrefab);
+        }
+
+        public GameObject InstantiateScrollViewText(GameObject scrollViewTextPrefab)
+        {
+            GameObject scrollViewText = Instantiate(scrollViewTextPrefab);
             AddToScrollView(scrollViewText.transform);
             TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText.GetComponent<ScrollViewText>()));
             return scrollViewText;

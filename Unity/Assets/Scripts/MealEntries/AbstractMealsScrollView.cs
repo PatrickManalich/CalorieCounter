@@ -10,6 +10,9 @@ namespace CalorieCounter.MealEntries {
         public List<MealProportion> MealProportions { get; private set; } = new List<MealProportion>();
 
         [SerializeField]
+        private GameObject _suggestionScrollViewTextPrefab = default;
+
+        [SerializeField]
         protected Totals _totals = default;
 
         protected abstract string GetMealSourceName(MealProportion mealProportion);
@@ -43,12 +46,12 @@ namespace CalorieCounter.MealEntries {
 
         public void AddMealSuggestion(MealProportion mealSuggestion)
         {
-            GameObject servingAmountText = InstantiateScrollViewText();
-            GameObject nameText = InstantiateScrollViewText();
-            GameObject fatText = InstantiateScrollViewText();
-            GameObject carbText = InstantiateScrollViewText();
-            GameObject proteinText = InstantiateScrollViewText();
-            GameObject calorieText = InstantiateScrollViewText();
+            GameObject servingAmountText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
+            GameObject nameText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
+            GameObject fatText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
+            GameObject carbText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
+            GameObject proteinText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
+            GameObject calorieText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.servingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = GetMealSourceName(mealSuggestion);
