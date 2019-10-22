@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ namespace CalorieCounter.MealEntries {
         protected Totals _totals = default;
 
         protected abstract string GetMealSourceName(MealProportion mealProportion);
+
+        private List<List<GameObject>> _mealProportionRows = new List<List<GameObject>>();
 
         public void AddMealProportion(MealProportion mealProportion)
         {
@@ -31,36 +34,26 @@ namespace CalorieCounter.MealEntries {
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
 
+            var mealProportionRow = new List<GameObject>() { servingAmountText, nameText, fatText, carbText, proteinText, calorieText };
+            _mealProportionRows.Add(mealProportionRow);
             ScrollToBottom();
-        }
-
-        public void SubtractMealProportion(MealProportion mealProportion)
-        {
-            int mealProportionIndex = MealProportions.FindIndex(x => x == mealProportion);
-            MealProportions.RemoveAt(mealProportionIndex);
-
-            int childStartIndex = mealProportionIndex * _content.constraintCount;
-            for (int i = 0; i < _content.constraintCount; i++)
-            {
-                int childIndex = childStartIndex + i;
-                Destroy(_content.transform.GetChild(childIndex).gameObject);
-            }
         }
 
         public void ClearMealProportions()
         {
-            foreach (Transform child in _content.transform)
-            {
-                Destroy(child.gameObject);
-            }
             MealProportions.Clear();
+            foreach(var scrollViewText in _mealProportionRows.SelectMany(r => r))
+            {
+                Destroy(scrollViewText);
+            }
+            _mealProportionRows.Clear();
         }
 
         public override void DeleteRow(int rowIndex)
         {
-            var destroyedMealProportion = MealProportions[rowIndex];
-            SubtractMealProportion(destroyedMealProportion);
-            _totals.RemoveFromTotals(destroyedMealProportion);
+            _totals.RemoveFromTotals(MealProportions[rowIndex]);
+            MealProportions.RemoveAt(rowIndex);
+            _mealProportionRows.RemoveAt(rowIndex);
             base.DeleteRow(rowIndex);
         }
     }
