@@ -93,7 +93,7 @@ namespace CalorieCounter
             Destroy(child);
         }
 
-        private void Start()
+        private void Awake()
         {
             _scrollRect = GetComponent<ScrollRect>();
             _content = _scrollRect.content.GetComponent<GridLayoutGroup>();
