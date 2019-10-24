@@ -335,10 +335,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
+  _totals: {fileID: 1566187486}
   _mealSourcesAdapter: {fileID: 1906813654}
   _servingAmountDropdown: {fileID: 1671688307}
   _namedMealSourceDropdown: {fileID: 1576245871}
-  _totals: {fileID: 1566187486}
 --- !u!1 &29919848
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +586,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &70939738
 GameObject:
@@ -5050,7 +5050,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &615837458
 GameObject:
@@ -5937,10 +5937,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
+  _totals: {fileID: 1566187486}
   _mealSourcesAdapter: {fileID: 1906813654}
   _servingAmountDropdown: {fileID: 1521270210}
   _namedMealSourceDropdown: {fileID: 767946881}
-  _totals: {fileID: 1566187486}
 --- !u!114 &688997044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7226,6 +7226,82 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817317092}
   m_CullTransparentMesh: 0
+--- !u!1 &838689300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 838689302}
+  - component: {fileID: 838689301}
+  m_Layer: 0
+  m_Name: MealPatternHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &838689301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838689300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ebd219012ff4043a29af4c0958eccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mealSourcesAdapter: {fileID: 1906813654}
+  _date: {fileID: 593050228}
+  _dayMealPatterns:
+  - {fileID: 11400000, guid: c8b2a6f63ff60584ea9eebd5205d4d2b, type: 2}
+  _scrollViewDictionary:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues: 000000000100000002000000
+    _keys: 000000000100000002000000
+    _values:
+    - {fileID: 19275662}
+    - {fileID: 688997043}
+    - {fileID: 920356582}
+--- !u!4 &838689302
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838689300}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &842551120 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3171886516535720992, guid: a0f78cd6079b1c54780cc0096ba8a898,
@@ -8099,8 +8175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _customMealInputFields: {fileID: 1859382614}
   _totals: {fileID: 1566187486}
+  _customMealInputFields: {fileID: 1859382614}
 --- !u!114 &920356583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12802,7 +12878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521270208
 GameObject:
@@ -15384,7 +15460,7 @@ RectTransform:
   - {fileID: 144035501}
   - {fileID: 920356581}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -16260,7 +16336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1923807137
 GameObject:

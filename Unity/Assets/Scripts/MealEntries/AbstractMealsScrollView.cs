@@ -16,6 +16,8 @@ namespace CalorieCounter.MealEntries {
 
         private List<List<GameObject>> _mealProportionRows = new List<List<GameObject>>();
 
+        private List<List<GameObject>> _mealSuggestionRows = new List<List<GameObject>>();
+
         public void AddMealProportion(MealProportion mealProportion)
         {
             MealProportions.Add(mealProportion);
@@ -39,6 +41,26 @@ namespace CalorieCounter.MealEntries {
             ScrollToBottom();
         }
 
+        public void AddMealSuggestion(MealProportion mealSuggestion)
+        {
+            GameObject servingAmountText = InstantiateScrollViewText();
+            GameObject nameText = InstantiateScrollViewText();
+            GameObject fatText = InstantiateScrollViewText();
+            GameObject carbText = InstantiateScrollViewText();
+            GameObject proteinText = InstantiateScrollViewText();
+            GameObject calorieText = InstantiateScrollViewText();
+
+            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.servingAmount.ToString();
+            nameText.GetComponent<TextMeshProUGUI>().text = GetMealSourceName(mealSuggestion);
+            fatText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.fat.ToString();
+            carbText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.carbs.ToString();
+            proteinText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.protein.ToString();
+            calorieText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.calories.ToString();
+
+            var mealSuggestionRow = new List<GameObject>() { servingAmountText, nameText, fatText, carbText, proteinText, calorieText };
+            _mealSuggestionRows.Add(mealSuggestionRow);
+        }
+
         public void ClearMealProportions()
         {
             MealProportions.Clear();
@@ -49,6 +71,15 @@ namespace CalorieCounter.MealEntries {
             _mealProportionRows.Clear();
         }
 
+        public void ClearMealSuggestions()
+        {
+            foreach (var scrollViewText in _mealSuggestionRows.SelectMany(r => r))
+            {
+                Destroy(scrollViewText);
+            }
+            _mealSuggestionRows.Clear();
+        }
+
         public override void DeleteRow(int rowIndex)
         {
             _totals.RemoveFromTotals(MealProportions[rowIndex]);
@@ -56,5 +87,6 @@ namespace CalorieCounter.MealEntries {
             _mealProportionRows.RemoveAt(rowIndex);
             base.DeleteRow(rowIndex);
         }
+
     }
 }
