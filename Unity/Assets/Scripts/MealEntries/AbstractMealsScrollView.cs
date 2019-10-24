@@ -25,12 +25,13 @@ namespace CalorieCounter.MealEntries {
         {
             MealProportions.Add(mealProportion);
 
-            GameObject servingAmountText = InstantiateScrollViewText();
-            GameObject nameText = InstantiateScrollViewText();
-            GameObject fatText = InstantiateScrollViewText();
-            GameObject carbText = InstantiateScrollViewText();
-            GameObject proteinText = InstantiateScrollViewText();
-            GameObject calorieText = InstantiateScrollViewText();
+            int siblingStartIndex = _mealProportionRows.Count * _content.constraintCount;
+            GameObject servingAmountText = InstantiateScrollViewText(siblingStartIndex);
+            GameObject nameText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject fatText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject carbText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject proteinText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject calorieText = InstantiateScrollViewText(++siblingStartIndex);
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = GetMealSourceName(mealProportion);
@@ -46,12 +47,13 @@ namespace CalorieCounter.MealEntries {
 
         public void AddMealSuggestion(MealProportion mealSuggestion)
         {
-            GameObject servingAmountText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
-            GameObject nameText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
-            GameObject fatText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
-            GameObject carbText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
-            GameObject proteinText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
-            GameObject calorieText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab);
+            int siblingStartIndex = (_mealProportionRows.Count + _mealSuggestionRows.Count) * _content.constraintCount;
+            GameObject servingAmountText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, siblingStartIndex);
+            GameObject nameText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
+            GameObject fatText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
+            GameObject carbText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
+            GameObject proteinText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
+            GameObject calorieText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.servingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = GetMealSourceName(mealSuggestion);

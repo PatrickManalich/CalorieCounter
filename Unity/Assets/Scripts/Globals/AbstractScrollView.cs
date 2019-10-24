@@ -50,13 +50,21 @@ namespace CalorieCounter
 
         public GameObject InstantiateScrollViewText()
         {
-            return InstantiateScrollViewText(_scrollViewTextPrefab);
+            GameObject scrollViewText = Instantiate(_scrollViewTextPrefab);
+            AddToScrollView(scrollViewText.transform);
+            TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText.GetComponent<ScrollViewText>()));
+            return scrollViewText;
         }
 
-        public GameObject InstantiateScrollViewText(GameObject scrollViewTextPrefab)
+        public GameObject InstantiateScrollViewText(int siblingIndex)
+        {
+            return InstantiateScrollViewText(_scrollViewTextPrefab, siblingIndex);
+        }
+
+        public GameObject InstantiateScrollViewText(GameObject scrollViewTextPrefab, int siblingIndex)
         {
             GameObject scrollViewText = Instantiate(scrollViewTextPrefab);
-            AddToScrollView(scrollViewText.transform);
+            AddToScrollView(scrollViewText.transform, siblingIndex);
             TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText.GetComponent<ScrollViewText>()));
             return scrollViewText;
         }
@@ -64,6 +72,12 @@ namespace CalorieCounter
         public void AddToScrollView(Transform transform)
         {
             transform.SetParent(_content.transform, false);
+        }
+
+        public void AddToScrollView(Transform transform, int siblingIndex)
+        {
+            AddToScrollView(transform);
+            transform.SetSiblingIndex(siblingIndex);
         }
 
         public bool HasInputFields()
