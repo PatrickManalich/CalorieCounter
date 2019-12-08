@@ -58,7 +58,7 @@ namespace CalorieCounter
             else if (e.TextModifiedType == TextModifiedType.Destroying)
             {
                 e.ScrollViewText.Highlighted -= OnHighlighted;
-                _scrollViewTexts.RemoveAt(_scrollViewTexts.IndexOf(e.ScrollViewText));
+                _scrollViewTexts.Remove(e.ScrollViewText);
             }
         }
 
