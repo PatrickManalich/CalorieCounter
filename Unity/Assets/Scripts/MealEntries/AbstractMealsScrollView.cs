@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -17,15 +16,13 @@ namespace CalorieCounter.MealEntries {
 
         protected abstract string GetMealSourceName(MealProportion mealProportion);
 
-        private List<List<GameObject>> _mealProportionRows = new List<List<GameObject>>();
-
-        private List<List<GameObject>> _mealSuggestionRows = new List<List<GameObject>>();
+        private List<MealProportion> _mealSuggestions = new List<MealProportion>();
 
         public void AddMealProportion(MealProportion mealProportion)
         {
             MealProportions.Add(mealProportion);
 
-            int siblingStartIndex = _mealProportionRows.Count * _content.constraintCount;
+            int siblingStartIndex = MealProportions.IndexOf(mealProportion) * _content.constraintCount;
             GameObject servingAmountText = InstantiateScrollViewText(siblingStartIndex);
             GameObject nameText = InstantiateScrollViewText(++siblingStartIndex);
             GameObject fatText = InstantiateScrollViewText(++siblingStartIndex);
@@ -40,14 +37,14 @@ namespace CalorieCounter.MealEntries {
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
 
-            var mealProportionRow = new List<GameObject>() { servingAmountText, nameText, fatText, carbText, proteinText, calorieText };
-            _mealProportionRows.Add(mealProportionRow);
             ScrollToBottom();
         }
 
         public void AddMealSuggestion(MealProportion mealSuggestion)
         {
-            int siblingStartIndex = (_mealProportionRows.Count + _mealSuggestionRows.Count) * _content.constraintCount;
+            _mealSuggestions.Add(mealSuggestion);
+
+            int siblingStartIndex = (MealProportions.Count + _mealSuggestions.Count - 1) * _content.constraintCount;
             GameObject servingAmountText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, siblingStartIndex);
             GameObject nameText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
             GameObject fatText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
@@ -61,35 +58,28 @@ namespace CalorieCounter.MealEntries {
             carbText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.calories.ToString();
-
-            var mealSuggestionRow = new List<GameObject>() { servingAmountText, nameText, fatText, carbText, proteinText, calorieText };
-            _mealSuggestionRows.Add(mealSuggestionRow);
         }
 
-        public void ClearMealProportions()
+        public void ClearMealProportionsAndSuggestions()
         {
-            MealProportions.Clear();
-            foreach(var scrollViewText in _mealProportionRows.SelectMany(r => r))
+            var mealProportionsAndSuggestionsCount = MealProportions.Count + _mealSuggestions.Count;
+            for (int i = 0; i < mealProportionsAndSuggestionsCount; i++)
             {
-                Destroy(scrollViewText);
+                DeleteRow(0);
             }
-            _mealProportionRows.Clear();
-        }
-
-        public void ClearMealSuggestions()
-        {
-            foreach (var scrollViewText in _mealSuggestionRows.SelectMany(r => r))
-            {
-                Destroy(scrollViewText);
-            }
-            _mealSuggestionRows.Clear();
         }
 
         public override void DeleteRow(int rowIndex)
         {
-            _totals.RemoveFromTotals(MealProportions[rowIndex]);
-            MealProportions.RemoveAt(rowIndex);
-            _mealProportionRows.RemoveAt(rowIndex);
+            if (MealProportions.Count > 0 && rowIndex < MealProportions.Count)
+            {
+                _totals.RemoveFromTotals(MealProportions[rowIndex]);
+                MealProportions.RemoveAt(rowIndex);
+            }
+            else if (_mealSuggestions.Count > 0 && rowIndex >= MealProportions.Count)
+            {
+                _mealSuggestions.RemoveAt(rowIndex - MealProportions.Count);
+            }
             base.DeleteRow(rowIndex);
         }
 

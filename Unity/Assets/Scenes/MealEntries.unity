@@ -12843,6 +12843,7 @@ MonoBehaviour:
   _date: {fileID: 593050228}
   _dayTypeDropdown: {fileID: 945032638}
   _totals: {fileID: 1566187486}
+  _mealPatternHandler: {fileID: 838689301}
   _scrollViewDictionary:
     reorderableList:
       canAdd: 1

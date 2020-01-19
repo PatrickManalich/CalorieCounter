@@ -27,24 +27,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
-        private void Awake()
+        public void AddMealSuggestions()
         {
-            _date.DateChanged += OnDateChanged;
-        }
-
-        private void OnDestroy()
-        {
-            _date.DateChanged -= OnDateChanged;
-        }
-
-        private void OnDateChanged(object sender, Date.DateChangedEvent e)
-        {
-            foreach(var scrollView in _scrollViewDictionary.Values)
-            {
-                scrollView.ClearMealSuggestions();
-            }
-
-            var dayOfTheWeek = (DaysOfTheWeek)Enum.Parse(typeof(DaysOfTheWeek), e.CurrentDateTime.DayOfWeek.ToString());
+            var dayOfTheWeek = (DaysOfTheWeek)Enum.Parse(typeof(DaysOfTheWeek), _date.CurrentDateTime.DayOfWeek.ToString());
             foreach(var dayMealPattern in _dayMealPatterns)
             {
                 if (dayMealPattern.daysOfTheWeek.HasFlag(dayOfTheWeek))
