@@ -22,22 +22,14 @@ namespace CalorieCounter.ScaleEntries
         {
             ScaleEntries.Add(scaleEntry.dateTime, scaleEntry);
 
-            GameObject dateText = InstantiateScrollViewText();
-            GameObject weightText = InstantiateScrollViewText();
-            GameObject bodyFatText = InstantiateScrollViewText();
-            GameObject bodyWaterText = InstantiateScrollViewText();
-            GameObject muscleMassText = InstantiateScrollViewText();
-            GameObject boneMassText = InstantiateScrollViewText();
-            GameObject bmiText = InstantiateScrollViewText();
-
             int siblingStartIndex = ScaleEntries.IndexOfKey(scaleEntry.dateTime) * _content.constraintCount;
-            dateText.transform.SetSiblingIndex(siblingStartIndex);
-            weightText.transform.SetSiblingIndex(siblingStartIndex + 1);
-            bodyFatText.transform.SetSiblingIndex(siblingStartIndex + 2);
-            bodyWaterText.transform.SetSiblingIndex(siblingStartIndex + 3);
-            muscleMassText.transform.SetSiblingIndex(siblingStartIndex + 4);
-            boneMassText.transform.SetSiblingIndex(siblingStartIndex + 5);
-            bmiText.transform.SetSiblingIndex(siblingStartIndex + 6);
+            GameObject dateText = InstantiateScrollViewText(siblingStartIndex);
+            GameObject weightText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject bodyFatText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject bodyWaterText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject muscleMassText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject boneMassText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject bmiText = InstantiateScrollViewText(++siblingStartIndex);
 
             dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.dateTime.ToShortDateString();
             weightText.GetComponent<TextMeshProUGUI>().text = scaleEntry.weight.ToString();

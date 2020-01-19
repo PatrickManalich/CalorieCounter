@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,6 +32,10 @@ namespace CalorieCounter
         protected ScrollRect _scrollRect;
         protected GridLayoutGroup _content;
 
+        // We need to manually keep track of content children because calling Destroy() takes a frame to update,
+        // so using GetChild() won't return the expected results.
+        protected List<GameObject> _contentChildren = new List<GameObject>();
+
         public virtual void ShowRenameField(int rowIndex) { }
 
         public virtual void DeleteRow(int rowIndex)
@@ -39,12 +44,13 @@ namespace CalorieCounter
             for (var i = _content.constraintCount - 1; i >= 0; i--)
             {
                 var childIndex = childStartIndex + i;
-                var child = _content.transform.GetChild(childIndex).gameObject;
+                var child = _contentChildren[childIndex];
                 if (child.GetComponent<ScrollViewText>())
                 {
                     TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, child.GetComponent<ScrollViewText>()));
                 }
                 Destroy(child);
+                _contentChildren.Remove(child);
             }
         }
 
@@ -72,12 +78,14 @@ namespace CalorieCounter
         public void AddToScrollView(Transform transform)
         {
             transform.SetParent(_content.transform, false);
+            _contentChildren.Add(transform.gameObject);
         }
 
         public void AddToScrollView(Transform transform, int siblingIndex)
         {
-            AddToScrollView(transform);
+            transform.SetParent(_content.transform, false);
             transform.SetSiblingIndex(siblingIndex);
+            _contentChildren.Insert(siblingIndex, transform.gameObject);
         }
 
         public bool HasInputFields()

@@ -20,12 +20,10 @@ namespace CalorieCounter.ScaleEntries {
         public void ShowInputFields() {
             _scaleEntriesScrollView.AddToScrollView(_scaleEntryDateField.transform);
             _scaleEntryDateField.gameObject.SetActive(true);
-            _scaleEntryDateField.transform.SetAsLastSibling();
             for(int i = 0; i < _inputFields.Count; i++) {
                 var inputField = _inputFields[i];
                 _scaleEntriesScrollView.AddToScrollView(inputField.transform);
                 inputField.gameObject.SetActive(true);
-                inputField.transform.SetAsLastSibling();
             }
             _inputFields.First().ActivateInputField();
             _scaleEntriesScrollView.ScrollToBottom();

@@ -26,22 +26,14 @@ namespace CalorieCounter.MealSources {
 
             _nonarchivedNamedMealSources.Add(namedMealSource.name, namedMealSource);
 
-            GameObject mealNameText = InstantiateScrollViewText();
-            GameObject servingSizeText = InstantiateScrollViewText();
-            GameObject fatText = InstantiateScrollViewText();
-            GameObject carbText = InstantiateScrollViewText();
-            GameObject proteinText = InstantiateScrollViewText();
-            GameObject calorieText = InstantiateScrollViewText();
-            GameObject descriptionText = InstantiateScrollViewText();
-
             int siblingStartIndex = _nonarchivedNamedMealSources.IndexOfKey(namedMealSource.name) * _content.constraintCount;
-            mealNameText.transform.SetSiblingIndex(siblingStartIndex);
-            servingSizeText.transform.SetSiblingIndex(siblingStartIndex + 1);
-            fatText.transform.SetSiblingIndex(siblingStartIndex + 2);
-            carbText.transform.SetSiblingIndex(siblingStartIndex + 3);
-            proteinText.transform.SetSiblingIndex(siblingStartIndex + 4);
-            calorieText.transform.SetSiblingIndex(siblingStartIndex + 5);
-            descriptionText.transform.SetSiblingIndex(siblingStartIndex + 6);
+            GameObject mealNameText = InstantiateScrollViewText(siblingStartIndex);
+            GameObject servingSizeText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject fatText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject carbText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject proteinText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject calorieText = InstantiateScrollViewText(++siblingStartIndex);
+            GameObject descriptionText = InstantiateScrollViewText(++siblingStartIndex);
 
             mealNameText.GetComponent<TextMeshProUGUI>().text = namedMealSource.name;
             servingSizeText.GetComponent<TextMeshProUGUI>().text = mealSource.servingSize;
@@ -67,7 +59,7 @@ namespace CalorieCounter.MealSources {
 
         public override void ShowRenameField(int rowIndex)
         {
-            var parentTransform = _content.transform.GetChild(rowIndex * _content.constraintCount);
+            var parentTransform = _contentChildren[rowIndex * _content.constraintCount].transform;
             var oldNamedMealSource = _nonarchivedNamedMealSources.Values[rowIndex];
             _mealSourceRenameField.Show(parentTransform, oldNamedMealSource);
         }

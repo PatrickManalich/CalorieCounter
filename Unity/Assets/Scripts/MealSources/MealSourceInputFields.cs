@@ -40,12 +40,10 @@ namespace CalorieCounter.MealSources {
                 if (i == 5) {
                     _mealSourcesScrollView.AddToScrollView(_blank.transform);
                     _blank.SetActive(true);
-                    _blank.transform.SetAsLastSibling();
                 } else {
                     TMP_InputField inputField = i == 6 ? _inputFields[i - 1] : _inputFields[i];
                     _mealSourcesScrollView.AddToScrollView(inputField.transform);
                     inputField.gameObject.SetActive(true);
-                    inputField.transform.SetAsLastSibling();
                 }
             }
             _inputFields.First().ActivateInputField();

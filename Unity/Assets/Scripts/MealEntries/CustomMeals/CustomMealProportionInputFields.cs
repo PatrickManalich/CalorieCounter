@@ -24,12 +24,10 @@ namespace CalorieCounter.MealEntries {
                     TMP_InputField inputField = i == 0 ? _inputFields[i] : _inputFields[i - 1];
                     _customMealScrollView.AddToScrollView(inputField.transform);
                     inputField.gameObject.SetActive(true);
-                    inputField.transform.SetAsLastSibling();
                 } else {
                     GameObject blank = i == 1 ? _blanks[i - 1] : _blanks[i - 4];
                     _customMealScrollView.AddToScrollView(blank.transform);
                     blank.SetActive(true);
-                    blank.transform.SetAsLastSibling();
                 }
             }
             _inputFields.First().ActivateInputField();
