@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5adb47b4bd9974c45b39afe48e31235b, type: 3}
+  m_Name: CfaSpriteMedium
+  m_EditorClassIdentifier: 
+  daysOfTheWeek: 8
+  mealSourceType: 1
+  servingAmount: 1
+  mealSourceId: dfecb953-6351-4621-a98e-b65c5de371b7
