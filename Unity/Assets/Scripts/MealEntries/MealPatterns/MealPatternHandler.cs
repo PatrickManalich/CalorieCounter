@@ -13,14 +13,12 @@ namespace CalorieCounter.MealEntries.MealPatterns
         [Serializable]
         private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, AbstractMealsScrollView> { }
 
-        [Header("Miscellaneous")]
         [SerializeField]
         private MealSourcesAdapter _mealSourcesAdapter = default;
 
         [SerializeField]
         private Date _date = default;
 
-        [Header("Scroll View Dictionary")]
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
