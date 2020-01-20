@@ -1,5 +1,4 @@
 ﻿using CalorieCounter.Managers;
-using CalorieCounter.MealEntries.MealPatterns;
 using RotaryHeart.Lib.SerializableDictionary;
 using System;
 using System.Collections.Generic;
@@ -20,9 +19,6 @@ namespace CalorieCounter.MealEntries {
 
         [SerializeField]
         private Totals _totals = default;
-
-        [SerializeField]
-        private MealPatternHandler _mealPatternHandler = default;
 
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
@@ -56,7 +52,6 @@ namespace CalorieCounter.MealEntries {
                     scrollView.ScrollToTop();
                 }
             }
-            _mealPatternHandler.AddMealSuggestions();
             _dayTypeDropdown.HardSetDayType(mealEntry.dayType);
         }
 

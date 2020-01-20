@@ -20,11 +20,16 @@ namespace CalorieCounter.MealEntries.MealPatterns
         private Date _date = default;
 
         [SerializeField]
+        private DayTypeDropdown _dayTypeDropdown = default;
+
+        [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
         private const string DayMealPatternsPath = "ScriptableObjects/DayMealPatterns";
+        private const string DayTypeMealPatternsPath = "ScriptableObjects/DayTypeMealPatterns";
 
         private List<DayMealPattern> _dayMealPatterns = default;
+        private List<DayTypeMealPattern> _dayTypeMealPatterns = default;
 
         public void AddMealSuggestions()
         {
@@ -46,11 +51,30 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
                 }
             }
+
+            foreach (var dayTypeMealPattern in _dayTypeMealPatterns)
+            {
+                if (dayTypeMealPattern.dayType == _dayTypeDropdown.DayType)
+                {
+                    try
+                    {
+                        var mealSource = _mealSourcesAdapter.GetMealSource(dayTypeMealPattern.mealSourceType, dayTypeMealPattern.mealSourceId);
+                        var mealSuggestion = new MealProportion(dayTypeMealPattern.servingAmount, mealSource);
+                        _scrollViewDictionary[dayTypeMealPattern.mealSourceType].AddMealSuggestion(mealSuggestion);
+                    }
+                    catch
+                    {
+                        Debug.LogWarning($"Error trying to add meal suggestion: {dayTypeMealPattern.name}");
+                    }
+
+                }
+            }
         }
 
         private void Start()
         {
             _dayMealPatterns = Resources.LoadAll(DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
+            _dayTypeMealPatterns = Resources.LoadAll(DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
         }
     }
 }

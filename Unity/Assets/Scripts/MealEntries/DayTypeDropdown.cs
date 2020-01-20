@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using CalorieCounter.Utilities;
 using System;
 using System.Linq;
+using CalorieCounter.MealEntries.MealPatterns;
 
 namespace CalorieCounter.MealEntries {
 
@@ -14,6 +15,9 @@ namespace CalorieCounter.MealEntries {
 
         [SerializeField]
         private Totals _totals = default;
+
+        [SerializeField]
+        private MealPatternHandler _mealPatternHandler = default;
 
         private TMP_Dropdown _dropdown;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
@@ -48,9 +52,14 @@ namespace CalorieCounter.MealEntries {
         {
             DayType = (DayType)index;
             if (DayType != DayType.None)
+            {
                 FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
+                _mealPatternHandler.AddMealSuggestions();
+            }
             else
+            {
                 FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+            }
             _totals.Refresh();
         }
 

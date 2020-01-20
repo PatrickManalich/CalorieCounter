@@ -7261,6 +7261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mealSourcesAdapter: {fileID: 1906813654}
   _date: {fileID: 593050228}
+  _dayTypeDropdown: {fileID: 945032638}
   _scrollViewDictionary:
     reorderableList:
       canAdd: 1
@@ -8513,6 +8514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totals: {fileID: 1566187486}
+  _mealPatternHandler: {fileID: 838689301}
 --- !u!114 &945032639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12841,7 +12843,6 @@ MonoBehaviour:
   _date: {fileID: 593050228}
   _dayTypeDropdown: {fileID: 945032638}
   _totals: {fileID: 1566187486}
-  _mealPatternHandler: {fileID: 838689301}
   _scrollViewDictionary:
     reorderableList:
       canAdd: 1
