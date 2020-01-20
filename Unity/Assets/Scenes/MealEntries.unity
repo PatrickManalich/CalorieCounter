@@ -7261,8 +7261,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mealSourcesAdapter: {fileID: 1906813654}
   _date: {fileID: 593050228}
-  _dayMealPatterns:
-  - {fileID: 11400000, guid: c8b2a6f63ff60584ea9eebd5205d4d2b, type: 2}
   _scrollViewDictionary:
     reorderableList:
       canAdd: 1

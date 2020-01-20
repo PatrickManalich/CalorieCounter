@@ -2,6 +2,7 @@
 using RotaryHeart.Lib.SerializableDictionary;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace CalorieCounter.MealEntries.MealPatterns
@@ -19,13 +20,13 @@ namespace CalorieCounter.MealEntries.MealPatterns
         [SerializeField]
         private Date _date = default;
 
-        [Header("Meal Patterns")]
-        [SerializeField]
-        private List<DayMealPattern> _dayMealPatterns = default;
-
         [Header("Scroll View Dictionary")]
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
+
+        private const string DayMealPatternsPath = "ScriptableObjects/DayMealPatterns";
+
+        private List<DayMealPattern> _dayMealPatterns = default;
 
         public void AddMealSuggestions()
         {
@@ -39,6 +40,11 @@ namespace CalorieCounter.MealEntries.MealPatterns
                     _scrollViewDictionary[dayMealPattern.mealSourceType].AddMealSuggestion(mealSuggestion);
                 }
             }
+        }
+
+        private void Start()
+        {
+            _dayMealPatterns = Resources.LoadAll(DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
         }
     }
 }
