@@ -33,9 +33,17 @@ namespace CalorieCounter.MealEntries.MealPatterns
             {
                 if (dayMealPattern.daysOfTheWeek.HasFlag(dayOfTheWeek))
                 {
-                    var mealSource = _mealSourcesAdapter.GetMealSource(dayMealPattern.mealSourceType, dayMealPattern.mealSourceId);
-                    var mealSuggestion = new MealProportion(dayMealPattern.servingAmount, mealSource);
-                    _scrollViewDictionary[dayMealPattern.mealSourceType].AddMealSuggestion(mealSuggestion);
+                    try
+                    {
+                        var mealSource = _mealSourcesAdapter.GetMealSource(dayMealPattern.mealSourceType, dayMealPattern.mealSourceId);
+                        var mealSuggestion = new MealProportion(dayMealPattern.servingAmount, mealSource);
+                        _scrollViewDictionary[dayMealPattern.mealSourceType].AddMealSuggestion(mealSuggestion);
+                    }
+                    catch
+                    {
+                        Debug.LogWarning($"Error trying to add meal suggestion: {dayMealPattern.name}");
+                    }
+
                 }
             }
         }
