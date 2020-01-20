@@ -38,6 +38,8 @@ namespace CalorieCounter
 
         public virtual void ShowRenameField(int rowIndex) { }
 
+        public virtual void AcceptSuggestion(int rowIndex) { }
+
         public virtual void DeleteRow(int rowIndex)
         {
             var childStartIndex = rowIndex * _content.constraintCount;

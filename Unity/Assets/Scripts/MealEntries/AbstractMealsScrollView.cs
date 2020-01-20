@@ -69,6 +69,14 @@ namespace CalorieCounter.MealEntries {
             }
         }
 
+        public override void AcceptSuggestion(int rowIndex)
+        {
+            var mealSuggestion = _mealSuggestions[MealProportions.Count - rowIndex];
+            DeleteRow(rowIndex);
+            AddMealProportion(mealSuggestion);
+            _totals.AddToTotals(mealSuggestion);
+        }
+
         public override void DeleteRow(int rowIndex)
         {
             if (MealProportions.Count > 0 && rowIndex < MealProportions.Count)

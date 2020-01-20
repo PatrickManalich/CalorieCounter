@@ -89,6 +89,12 @@ namespace CalorieCounter
                 _scrollView.ShowRenameField(_highlightedRowIndex);
                 ExitHighlightRow();
             }
+            else if(e.InputKeyCode == InputKeyCode.AcceptSuggestion)
+            {
+                _scrollView.AcceptSuggestion(_highlightedRowIndex);
+                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
+                ExitHighlightRow();
+            }
 
         }
 
