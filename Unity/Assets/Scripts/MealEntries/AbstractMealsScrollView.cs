@@ -71,7 +71,7 @@ namespace CalorieCounter.MealEntries {
 
         public override void AcceptSuggestion(int rowIndex)
         {
-            var mealSuggestion = _mealSuggestions[MealProportions.Count - rowIndex];
+            var mealSuggestion = _mealSuggestions[rowIndex - MealProportions.Count];
             DeleteRow(rowIndex);
             AddMealProportion(mealSuggestion);
             _totals.AddToTotals(mealSuggestion);
