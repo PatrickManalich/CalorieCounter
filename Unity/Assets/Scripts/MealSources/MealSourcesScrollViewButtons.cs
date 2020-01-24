@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace CalorieCounter.MealSources
 {
-    public class MealSourcesHeader : MonoBehaviour
+    public class MealSourcesScrollViewButtons : MonoBehaviour
     {
         [SerializeField]
         private Button _addButton = default;

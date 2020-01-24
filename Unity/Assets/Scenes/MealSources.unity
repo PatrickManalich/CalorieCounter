@@ -7058,7 +7058,7 @@ GameObject:
   - component: {fileID: 1405250082}
   - component: {fileID: 1405250084}
   m_Layer: 5
-  m_Name: Small_MealSourcesHeader
+  m_Name: Small_MealSourcesScrollViewButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7441,7 +7441,7 @@ GameObject:
   - component: {fileID: 1471410825}
   - component: {fileID: 1471410827}
   m_Layer: 5
-  m_Name: Large_MealSourcesHeader
+  m_Name: Large_MealSourcesScrollViewButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
