@@ -10,14 +10,6 @@ namespace CalorieCounter.ScaleEntries
     {
         public SortedList<DateTime, ScaleEntry> ScaleEntries { get; private set; } = new SortedList<DateTime, ScaleEntry>();
 
-        [SerializeField]
-        private ScaleEntryInputFields _scaleEntriesInputFields = default;
-
-        public void AddScaleEntryFromInputFields()
-        {
-            AddScaleEntry(_scaleEntriesInputFields.GetScaleEntryFromInputFields());
-        }
-
         public void AddScaleEntry(ScaleEntry scaleEntry)
         {
             ScaleEntries.Add(scaleEntry.dateTime, scaleEntry);
