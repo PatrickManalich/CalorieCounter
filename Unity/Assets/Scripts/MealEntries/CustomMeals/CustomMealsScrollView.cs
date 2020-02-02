@@ -17,7 +17,6 @@ namespace CalorieCounter.MealEntries {
         public void AddCustomMealProportionFromInputFields() {
             MealProportion mealProportion = _customMealInputFields.GetCustomMealProportionFromInputFields();
             AddMealProportion(mealProportion);
-            _totals.AddToTotals(mealProportion);
         }
     }
 }

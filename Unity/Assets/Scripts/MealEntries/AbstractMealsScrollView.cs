@@ -12,7 +12,7 @@ namespace CalorieCounter.MealEntries {
         private GameObject _suggestionScrollViewTextPrefab = default;
 
         [SerializeField]
-        protected Totals _totals = default;
+        private Totals _totals = default;
 
         protected abstract string GetMealSourceName(MealProportion mealProportion);
 
@@ -21,6 +21,7 @@ namespace CalorieCounter.MealEntries {
         public void AddMealProportion(MealProportion mealProportion)
         {
             MealProportions.Add(mealProportion);
+            _totals.AddToTotals(mealProportion);
 
             int siblingStartIndex = MealProportions.IndexOf(mealProportion) * _content.constraintCount;
             GameObject servingAmountText = InstantiateScrollViewText(siblingStartIndex);

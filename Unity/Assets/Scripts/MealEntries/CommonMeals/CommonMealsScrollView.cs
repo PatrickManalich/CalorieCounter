@@ -22,7 +22,6 @@ namespace CalorieCounter.MealEntries {
         public void AddCommonMealProportionFromDropdowns() {
             var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, _namedMealSourceDropdown.SelectedNamedMealSource.mealSource);
             AddMealProportion(mealProportion);
-            _totals.AddToTotals(mealProportion);
         }
     }
 }

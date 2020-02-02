@@ -47,7 +47,6 @@ namespace CalorieCounter.MealEntries {
                     AbstractMealsScrollView scrollView = _scrollViewDictionary[key];
                     foreach (var mealProportion in mealEntry.mealProportionsDictionary[key]) {
                         scrollView.AddMealProportion(mealProportion);
-                        _totals.AddToTotals(mealProportion);
                     }
                     scrollView.ScrollToTop();
                 }
