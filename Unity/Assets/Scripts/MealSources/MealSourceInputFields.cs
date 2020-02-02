@@ -62,16 +62,6 @@ namespace CalorieCounter.MealSources {
             Shown = false;
         }
 
-        public void CheckIfInputFieldsAreFilled() {
-            foreach (var inputField in _inputFields) {
-                if (inputField.text == "") {
-                    FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
-                    return;
-                }
-            }
-            FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-        }
-
         private void Awake()
         {
             for (int i = 0; i < _inputFields.Count; i++) {
@@ -79,7 +69,29 @@ namespace CalorieCounter.MealSources {
                 {
                     _inputFields[i].onValidateInput = ValidateNonDecimalInput;
                 }
+                _inputFields[i].onValueChanged.AddListener(InputField_OnValueChanged);
             }
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var inputField in _inputFields)
+            {
+                inputField.onValueChanged.RemoveListener(InputField_OnValueChanged);
+            }
+        }
+
+        private void InputField_OnValueChanged(string value)
+        {
+            foreach (var inputField in _inputFields)
+            {
+                if (inputField.text == "")
+                {
+                    FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+                    return;
+                }
+            }
+            FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
         }
 
         private static char ValidateNonDecimalInput(string text, int charIndex, char addedChar)
