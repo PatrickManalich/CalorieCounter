@@ -1,5 +1,4 @@
 ﻿using CalorieCounter.MealSources;
-using CalorieCounter.Utilities;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -7,10 +6,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    public class CustomMealProportionInputFields : MonoBehaviour {
-
-        [SerializeField]
-        private List<TMP_InputField> _inputFields = default;
+    public class CustomMealProportionInputFields : InputFields {
 
         [SerializeField]
         private List<GameObject> _blanks = default;
@@ -18,7 +14,8 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private CustomMealsScrollView _customMealScrollView = default;
 
-        public void ShowInputFields() {
+        public override void Show() {
+            base.Show();
             for (int i = 0; i < _inputFields.Count + _blanks.Count; i++) {
                 if (i == 0 || i >= 2 && i <= 4) {
                     TMP_InputField inputField = i == 0 ? _inputFields[i] : _inputFields[i - 1];
@@ -34,7 +31,8 @@ namespace CalorieCounter.MealEntries {
             _customMealScrollView.ScrollToBottom();
         }
 
-        public void HideInputFields() {
+        public override void Hide() {
+            base.Hide();
             foreach (var inputField in _inputFields) {
                 inputField.text = "";
                 inputField.gameObject.SetActive(false);
@@ -44,16 +42,6 @@ namespace CalorieCounter.MealEntries {
                 blank.SetActive(false);
                 blank.transform.SetParent(transform, false);
             }
-        }
-
-        public void CheckIfInputFieldsAreFilled() {
-            foreach (var inputField in _inputFields) {
-                if (inputField.text == "") {
-                    FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
-                    return;
-                }
-            }
-            FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
         }
 
         public MealProportion GetCustomMealProportionFromInputFields() {
