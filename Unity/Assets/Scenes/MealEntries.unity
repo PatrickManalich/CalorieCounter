@@ -915,8 +915,9 @@ GameObject:
   - component: {fileID: 144035501}
   - component: {fileID: 144035503}
   - component: {fileID: 144035502}
+  - component: {fileID: 144035504}
   m_Layer: 5
-  m_Name: Custom_CustomMealProportionsHeader
+  m_Name: Custom_CustomMealProportionsScrollViewButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1064,6 +1065,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144035500}
   m_CullTransparentMesh: 0
+--- !u!114 &144035504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144035500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84fd2a4acf8f1434cada5b39a491d842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _addButton: {fileID: 209689744}
+  _submitButton: {fileID: 853450533}
+  _cancelButton: {fileID: 651122448}
+  _customMealsScrollView: {fileID: 920356582}
+  _customMealProportionInputFields: {fileID: 1859382614}
 --- !u!1001 &160281996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1585,18 +1603,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 209689745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1859382614}
-        m_MethodName: Show
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &209689745
@@ -5662,18 +5669,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 651122449}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1859382614}
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &651122449
@@ -7538,29 +7534,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 853450534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 920356582}
-        m_MethodName: AddCustomMealProportionFromInputFields
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1859382614}
-        m_MethodName: Hide
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &853450534
@@ -8181,7 +8155,6 @@ MonoBehaviour:
   _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
   _totals: {fileID: 1566187486}
-  _customMealInputFields: {fileID: 1859382614}
 --- !u!114 &920356583
 MonoBehaviour:
   m_ObjectHideFlags: 0

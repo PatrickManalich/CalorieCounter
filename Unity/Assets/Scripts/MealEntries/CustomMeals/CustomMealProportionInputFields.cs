@@ -8,6 +8,17 @@ namespace CalorieCounter.MealEntries {
 
     public class CustomMealProportionInputFields : InputFields {
 
+        public MealProportion CustomMealProportion {
+            get {
+                var servingAmount = float.Parse(_inputFields[0].text);
+                var fat = float.Parse(_inputFields[1].text);
+                var carbs = float.Parse(_inputFields[2].text);
+                var protein = float.Parse(_inputFields[3].text);
+                MealSource customMealSource = MealSource.CreateCustomMealSource(fat, carbs, protein);
+                return new MealProportion(servingAmount, customMealSource);
+            }
+        }
+
         [SerializeField]
         private List<GameObject> _blanks = default;
 
@@ -42,15 +53,6 @@ namespace CalorieCounter.MealEntries {
                 blank.SetActive(false);
                 blank.transform.SetParent(transform, false);
             }
-        }
-
-        public MealProportion GetCustomMealProportionFromInputFields() {
-            var servingAmount = float.Parse(_inputFields[0].text);
-            var fat = float.Parse(_inputFields[1].text);
-            var carbs = float.Parse(_inputFields[2].text);
-            var protein = float.Parse(_inputFields[3].text);
-            MealSource customMealSource = MealSource.CreateCustomMealSource(fat, carbs, protein);
-            return new MealProportion(servingAmount, customMealSource);
         }
     }
 }
