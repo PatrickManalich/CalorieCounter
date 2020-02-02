@@ -1490,7 +1490,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1625267897}
-        m_MethodName: HideInputFields
+        m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1677,7 +1677,7 @@ PrefabInstance:
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
@@ -3166,7 +3166,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1625267897}
-        m_MethodName: ShowInputFields
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3376,7 +3376,7 @@ PrefabInstance:
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
@@ -3901,7 +3901,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1625267897}
-        m_MethodName: HideInputFields
+        m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4758,7 +4758,7 @@ PrefabInstance:
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
@@ -5000,7 +5000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199554ad7ca45724aa31cdd011589928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scaleEntryDateField: {fileID: 1575891173}
   _inputFields:
   - {fileID: 521214548}
   - {fileID: 1742297901}
@@ -5008,6 +5007,7 @@ MonoBehaviour:
   - {fileID: 2073909792}
   - {fileID: 1562177498}
   - {fileID: 62301971}
+  _scaleEntryDateField: {fileID: 1575891173}
   _scaleEntriesScrollView: {fileID: 19275662}
 --- !u!1 &1660813124
 GameObject:
@@ -5291,7 +5291,7 @@ PrefabInstance:
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
@@ -5815,7 +5815,7 @@ PrefabInstance:
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
@@ -6037,7 +6037,7 @@ PrefabInstance:
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6791813578162674175, guid: b84f13cb516060d448aef7e2a6f6eaf9,
         type: 3}

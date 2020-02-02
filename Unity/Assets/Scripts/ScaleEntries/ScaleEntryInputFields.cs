@@ -1,23 +1,18 @@
-﻿using CalorieCounter.Utilities;
-using System.Collections.Generic;
-using System.Linq;
-using TMPro;
+﻿using System.Linq;
 using UnityEngine;
 
 namespace CalorieCounter.ScaleEntries {
 
-    public class ScaleEntryInputFields : MonoBehaviour {
+    public class ScaleEntryInputFields : InputFields {
 
         [SerializeField]
         private ScaleEntryDateField _scaleEntryDateField = default;
 
         [SerializeField]
-        private List<TMP_InputField> _inputFields = default;
-
-        [SerializeField]
         private ScaleEntriesScrollView _scaleEntriesScrollView = default;
 
-        public void ShowInputFields() {
+        public override void Show() {
+            base.Show();
             _scaleEntriesScrollView.AddToScrollView(_scaleEntryDateField.transform);
             _scaleEntryDateField.gameObject.SetActive(true);
             for(int i = 0; i < _inputFields.Count; i++) {
@@ -29,7 +24,8 @@ namespace CalorieCounter.ScaleEntries {
             _scaleEntriesScrollView.ScrollToBottom();
         }
 
-        public void HideInputFields() {
+        public override void Hide() {
+            base.Hide();
             foreach (var inputField in _inputFields) {
                 inputField.text = "";
                 inputField.gameObject.SetActive(false);
@@ -37,16 +33,6 @@ namespace CalorieCounter.ScaleEntries {
             }
             _scaleEntryDateField.gameObject.SetActive(false);
             _scaleEntryDateField.transform.SetParent(transform, false);
-        }
-
-        public void CheckIfInputFieldsAreFilled() {
-            foreach (var inputField in _inputFields) {
-                if (inputField.text == "") {
-                    FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
-                    return;
-                }
-            }
-            FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
         }
 
         public ScaleEntry GetScaleEntryFromInputFields() {
