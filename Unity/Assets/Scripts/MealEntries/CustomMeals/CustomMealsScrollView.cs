@@ -1,7 +1,6 @@
-﻿using CalorieCounter.MealEntries;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace CalorieCounter.MealSources {
+namespace CalorieCounter.MealEntries {
 
     public class CustomMealsScrollView : AbstractMealsScrollView {
 
