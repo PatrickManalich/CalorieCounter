@@ -34,35 +34,35 @@ namespace CalorieCounter
 
         private void Start()
         {
-            _scrollView.TextModified += OnTextModified;
-            GameManager.InputKeyManager.InputKeyPressed += OnInputKeyPressed;
+            _scrollView.TextModified += ScrollView_OnTextModified;
+            GameManager.InputKeyManager.InputKeyPressed += InputKeyManager_OnInputKeyPressed;
         }
 
         private void OnDestroy()
         {
             foreach(var scrollViewText in _scrollViewTexts)
             {
-                scrollViewText.Highlighted -= OnHighlighted;
+                scrollViewText.Highlighted -= ScrollViewText_OnHighlighted;
             }
-            GameManager.InputKeyManager.InputKeyPressed -= OnInputKeyPressed;
-            _scrollView.TextModified -= OnTextModified;
+            GameManager.InputKeyManager.InputKeyPressed -= InputKeyManager_OnInputKeyPressed;
+            _scrollView.TextModified -= ScrollView_OnTextModified;
         }
 
-        private void OnTextModified(object sender, AbstractScrollView.TextModifiedEventArgs e)
+        private void ScrollView_OnTextModified(object sender, AbstractScrollView.TextModifiedEventArgs e)
         {
             if (e.TextModifiedType == TextModifiedType.Instantiated)
             {
-                e.ScrollViewText.Highlighted += OnHighlighted;
+                e.ScrollViewText.Highlighted += ScrollViewText_OnHighlighted;
                 _scrollViewTexts.Add(e.ScrollViewText);
             }
             else if (e.TextModifiedType == TextModifiedType.Destroying)
             {
-                e.ScrollViewText.Highlighted -= OnHighlighted;
+                e.ScrollViewText.Highlighted -= ScrollViewText_OnHighlighted;
                 _scrollViewTexts.Remove(e.ScrollViewText);
             }
         }
 
-        private void OnHighlighted(object sender, ScrollViewText.HighlightedEventArgs e)
+        private void ScrollViewText_OnHighlighted(object sender, ScrollViewText.HighlightedEventArgs e)
         {
             if (e.HighlightedType == HighlightedType.Enter)
             {
@@ -73,7 +73,7 @@ namespace CalorieCounter
             }
         }
 
-        private void OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
+        private void InputKeyManager_OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
         {
             if (_highlightedRowIndex == -1 || _contentRectTransform.childCount <= 0)
                 return;

@@ -40,15 +40,15 @@ namespace CalorieCounter.MealEntries {
             }
             _dropdown.AddOptions(_optionDataList);
             DayType = default;
-            _dropdown.onValueChanged.AddListener(i => Refresh(i));
+            _dropdown.onValueChanged.AddListener(i => Dropdown_OnValueChanged(i));
         }
 
         private void OnDestroy()
         {
-            _dropdown.onValueChanged.RemoveListener(i => Refresh(i));
+            _dropdown.onValueChanged.RemoveListener(i => Dropdown_OnValueChanged(i));
         }
 
-        public void Refresh(int index)
+        public void Dropdown_OnValueChanged(int index)
         {
             DayType = (DayType)index;
             if (DayType != DayType.None)

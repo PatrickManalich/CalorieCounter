@@ -25,24 +25,24 @@ namespace CalorieCounter.MealSources
 
         private void Start()
         {
-            _addButton.onClick.AddListener(() => OnAddButtonClicked());
-            _submitButton.onClick.AddListener(() => OnSubmitButtonClicked());
-            _cancelButton.onClick.AddListener(() => OnCancelButtonClicked());
+            _addButton.onClick.AddListener(AddButton_OnClick);
+            _submitButton.onClick.AddListener(SubmitButton_OnClick);
+            _cancelButton.onClick.AddListener(CancelButton_OnClick);
         }
 
         private void OnDestroy()
         {
-            _cancelButton.onClick.RemoveAllListeners();
-            _submitButton.onClick.RemoveAllListeners();
-            _addButton.onClick.RemoveAllListeners();
+            _cancelButton.onClick.RemoveListener(CancelButton_OnClick);
+            _submitButton.onClick.RemoveListener(SubmitButton_OnClick);
+            _addButton.onClick.RemoveListener(AddButton_OnClick);
         }
 
-        private void OnAddButtonClicked()
+        private void AddButton_OnClick()
         {
             _mealSourceInputFields.Show();
         }
 
-        private void OnSubmitButtonClicked()
+        private void SubmitButton_OnClick()
         {
             if (_mealSourceInputFields.Shown)
             {
@@ -59,7 +59,7 @@ namespace CalorieCounter.MealSources
             }
         }
 
-        private void OnCancelButtonClicked()
+        private void CancelButton_OnClick()
         {
             if (_mealSourceInputFields.Shown)
             {

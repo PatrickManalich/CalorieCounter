@@ -21,17 +21,17 @@ namespace CalorieCounter.ScaleEntries
 
         private void Start()
         {
-            _oneDayBackwardButton.onClick.AddListener(() => OnDayButtonClicked(-1));
-            _oneDayForwardButton.onClick.AddListener(() => OnDayButtonClicked(1));
+            _oneDayBackwardButton.onClick.AddListener(() => AddDays(-1));
+            _oneDayForwardButton.onClick.AddListener(() => AddDays(1));
         }
 
         private void OnDestroy()
         {
-            _oneDayForwardButton.onClick.RemoveAllListeners();
-            _oneDayBackwardButton.onClick.RemoveAllListeners();
+            _oneDayForwardButton.onClick.RemoveListener(() => AddDays(1));
+            _oneDayBackwardButton.onClick.RemoveListener(() => AddDays(-1));
         }
 
-        public void OnDayButtonClicked(int days)
+        public void AddDays(int days)
         {
             CurrentDate = CurrentDate.AddDays(days);
             Refresh();

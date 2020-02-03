@@ -18,7 +18,7 @@ namespace CalorieCounter
             _button = GetComponent<Button>();
             foreach(var adapter in _adapters)
             {
-                _button.onClick.AddListener(() => adapter.Export());
+                _button.onClick.AddListener(adapter.Export);
             }
         }
 
@@ -26,7 +26,7 @@ namespace CalorieCounter
         {
             foreach (var adapter in _adapters)
             {
-                _button.onClick.RemoveListener(() => adapter.Export());
+                _button.onClick.RemoveListener(adapter.Export);
             }
         }
     }

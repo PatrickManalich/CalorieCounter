@@ -24,18 +24,18 @@ namespace CalorieCounter.Managers
 
         private void Awake()
         {
-            Application.logMessageReceived += OnLogMessageReceived;
-            _quitButton.onClick.AddListener(OnQuitButtonClick);
-            _continueButton.onClick.AddListener(OnContinueButtonClick);
+            Application.logMessageReceived += Application_OnLogMessageReceived;
+            _quitButton.onClick.AddListener(QuitButton_OnClick);
+            _continueButton.onClick.AddListener(ContinueButton_OnClick);
         }
 
         private void OnDestroy()
         {
-            _continueButton.onClick.RemoveListener(OnContinueButtonClick);
-            _quitButton.onClick.RemoveListener(OnQuitButtonClick);
+            _continueButton.onClick.RemoveListener(ContinueButton_OnClick);
+            _quitButton.onClick.RemoveListener(QuitButton_OnClick);
         }
 
-        private void OnLogMessageReceived(string message, string stackTrace, LogType type)
+        private void Application_OnLogMessageReceived(string message, string stackTrace, LogType type)
         {
             if (type == LogType.Log)
                 return;
@@ -45,12 +45,12 @@ namespace CalorieCounter.Managers
             _stackText.text = stackTrace;
         }
 
-        private void OnContinueButtonClick()
+        private void ContinueButton_OnClick()
         {
             _logMessageCanvas.SetActive(false);
         }
 
-        private void OnQuitButtonClick()
+        private void QuitButton_OnClick()
         {
             GUIUtility.systemCopyBuffer = _messageText.text + Environment.NewLine + Environment.NewLine + _stackText.text;
 

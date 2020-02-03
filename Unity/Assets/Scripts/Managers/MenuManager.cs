@@ -34,25 +34,25 @@ namespace CalorieCounter.Managers {
         {
             foreach (var key in _sceneButtonDictionary.Keys)
             {
-                key.GetComponent<Button>().onClick.AddListener(() => OnSceneButtonClicked(key));
+                key.GetComponent<Button>().onClick.AddListener(() => SceneButton_OnClick(key));
             }
-            _quitButton.onClick.AddListener(() => OnQuitButtonClicked());
-            GameManager.InputKeyManager.InputKeyPressed += OnInputKeyPressed;
+            _quitButton.onClick.AddListener(QuitButton_OnClick);
+            GameManager.InputKeyManager.InputKeyPressed += InputKeyManager_OnInputKeyPressed;
             _versionText.text = Application.version;
         }
 
         private void OnDestroy()
         {
-            GameManager.InputKeyManager.InputKeyPressed -= OnInputKeyPressed;
+            GameManager.InputKeyManager.InputKeyPressed -= InputKeyManager_OnInputKeyPressed;
         }
 
-        private void OnSceneButtonClicked(GameObject key)
+        private void SceneButton_OnClick(GameObject key)
         {
             GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[key]);
             GameManager.MenuManager.HideMenu();
         }
 
-        private void OnQuitButtonClicked()
+        private void QuitButton_OnClick()
         {
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
@@ -61,7 +61,7 @@ namespace CalorieCounter.Managers {
 #endif
         }
 
-        private void OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
+        private void InputKeyManager_OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
         {
             if (e.InputKeyCode == InputKeyCode.ToggleMenu)
             {

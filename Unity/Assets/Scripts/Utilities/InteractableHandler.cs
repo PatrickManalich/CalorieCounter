@@ -53,7 +53,7 @@ namespace CalorieCounter.Utilities {
         private void Awake() {
             foreach(var source in _serializedSourceDictionary.Keys) {
                 if (source.GetComponent<Button>())
-                    source.GetComponent<Button>().onClick.AddListener(delegate { Execute(source); });
+                    source.GetComponent<Button>().onClick.AddListener(() => Execute(source));
 
                 if (source.GetComponent<Selectable>() != null)
                     source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].InteractableAfterAwake;
