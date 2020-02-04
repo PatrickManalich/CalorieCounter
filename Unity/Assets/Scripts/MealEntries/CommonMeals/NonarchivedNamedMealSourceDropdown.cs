@@ -23,11 +23,10 @@ namespace CalorieCounter.MealEntries {
         
         private TMP_Dropdown _dropdown;
         private List<NamedMealSource> _nonarchivedNamedMealSources;
-        private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
         public void RefreshSelectedMealSource(int index) {
             if (index > 0) {
-                SelectedNamedMealSource = _nonarchivedNamedMealSources[index-1];
+                SelectedNamedMealSource = _nonarchivedNamedMealSources[index - 1];
                 if (_servingAmountDropdown.SelectedServingAmount != 0)
                     FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             } else {
@@ -45,11 +44,11 @@ namespace CalorieCounter.MealEntries {
             _dropdown = GetComponent<TMP_Dropdown>();
             _nonarchivedNamedMealSources = _mealSourcesAdapter.GetNamedMealSources(_mealSourceType).Where(n => !n.mealSource.archived).ToList();
             _dropdown.ClearOptions();
-            _optionDataList.Add(new TMP_Dropdown.OptionData(""));
+            var options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData("") };
             foreach (var nonarchivedNamedMealSource in _nonarchivedNamedMealSources) {
-                _optionDataList.Add(new TMP_Dropdown.OptionData($"{nonarchivedNamedMealSource.name} (per {nonarchivedNamedMealSource.mealSource.servingSize.ToLower()})"));
+                options.Add(new TMP_Dropdown.OptionData($"{nonarchivedNamedMealSource.name} (per {nonarchivedNamedMealSource.mealSource.servingSize.ToLower()})"));
             }
-            _dropdown.AddOptions(_optionDataList);
+            _dropdown.AddOptions(options);
             SelectedNamedMealSource = default;
         }
     }
