@@ -44,6 +44,7 @@ namespace CalorieCounter.Managers {
         private void OnDestroy()
         {
             GameManager.InputKeyManager.InputKeyPressed -= InputKeyManager_OnInputKeyPressed;
+            _quitButton.onClick.RemoveListener(QuitButton_OnClick);
         }
 
         private void SceneButton_OnClick(GameObject key)

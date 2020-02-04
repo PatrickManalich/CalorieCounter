@@ -59,5 +59,14 @@ namespace CalorieCounter.Utilities {
                     source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].InteractableAfterAwake;
             }
         }
+
+        private void OnDestroy()
+        {
+            foreach (var source in _serializedSourceDictionary.Keys)
+            {
+                if (source != null && source.GetComponent<Button>())
+                    source.GetComponent<Button>().onClick.RemoveListener(() => Execute(source));
+            }
+        }
     }
 }
