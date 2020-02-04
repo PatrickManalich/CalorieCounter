@@ -2,22 +2,23 @@
 using TMPro;
 using System.Collections.Generic;
 using CalorieCounter.MealSources;
-using CalorieCounter.Utilities;
 using System.Linq;
+using System;
 
 namespace CalorieCounter.MealEntries {
 
     [RequireComponent(typeof(TMP_Dropdown))]
     public class NonarchivedNamedMealSourceDropdown : MonoBehaviour {
 
+        public Action ValidityChanged;
+
+        public bool IsValid => SelectedNamedMealSource != default;
+
         [SerializeField]
         private MealSourcesAdapter _mealSourcesAdapter = default;
 
         [SerializeField]
         private MealSourceType _mealSourceType = default;
-
-        [SerializeField]
-        private ServingAmountDropdown _servingAmountDropdown = default;
 
         public NamedMealSource SelectedNamedMealSource { get; private set; }
         
@@ -49,16 +50,11 @@ namespace CalorieCounter.MealEntries {
 
         private void Dropdown_OnValueChanged(int value)
         {
-            if (value > 0)
+            var oldIsValid = IsValid;
+            SelectedNamedMealSource = value > 0 ? _nonarchivedNamedMealSources[value - 1] : default;
+            if(IsValid != oldIsValid)
             {
-                SelectedNamedMealSource = _nonarchivedNamedMealSources[value - 1];
-                if (_servingAmountDropdown.SelectedServingAmount != 0)
-                    FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-            }
-            else
-            {
-                SelectedNamedMealSource = default;
-                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+                ValidityChanged?.Invoke();
             }
         }
     }

@@ -1,15 +1,16 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
-using CalorieCounter.Utilities;
+using System;
 
 namespace CalorieCounter.MealEntries {
 
     [RequireComponent(typeof(TMP_Dropdown))]
     public class ServingAmountDropdown : MonoBehaviour {
 
-        [SerializeField]
-        private NonarchivedNamedMealSourceDropdown _namedMealSourceDropdown = default;
+        public Action ValidityChanged;
+
+        public bool IsValid => SelectedServingAmount != default;
 
         public float SelectedServingAmount { get; private set; }
         
@@ -19,7 +20,7 @@ namespace CalorieCounter.MealEntries {
 
         public void ResetDropdown() {
             _dropdown.value = 0;
-            SelectedServingAmount = 0;
+            SelectedServingAmount = default;
         }
 
         private void Start() {
@@ -31,7 +32,7 @@ namespace CalorieCounter.MealEntries {
                 options.Add(new TMP_Dropdown.OptionData(servingAmount.ToString()));
             }
             _dropdown.AddOptions(options);
-            SelectedServingAmount = 0;
+            SelectedServingAmount = default;
 
             _dropdown.onValueChanged.AddListener(Dropdown_OnValueChanged);
         }
@@ -43,16 +44,11 @@ namespace CalorieCounter.MealEntries {
 
         private void Dropdown_OnValueChanged(int value)
         {
-            if (value > 0)
+            var oldIsValid = IsValid;
+            SelectedServingAmount = value > 0 ? ServingAmounts[value - 1] : default;
+            if (IsValid != oldIsValid)
             {
-                SelectedServingAmount = ServingAmounts[value - 1];
-                if (_namedMealSourceDropdown.SelectedNamedMealSource != default)
-                    FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-            }
-            else
-            {
-                SelectedServingAmount = 0;
-                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+                ValidityChanged?.Invoke();
             }
         }
     }
