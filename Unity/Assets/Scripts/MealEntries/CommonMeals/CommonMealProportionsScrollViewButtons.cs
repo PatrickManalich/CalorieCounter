@@ -16,7 +16,7 @@ namespace CalorieCounter.MealEntries
         private NonarchivedNamedMealSourceDropdown _nonarchivedNamedMealSourceDropdown = default;
 
         [SerializeField]
-        private CommonMealsScrollView _commonMealsScrollView = default;
+        private MealProportionsScrollView _mealProportionsScrollView = default;
 
         private void Start()
         {
@@ -48,7 +48,7 @@ namespace CalorieCounter.MealEntries
         {
             var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, 
                 _nonarchivedNamedMealSourceDropdown.SelectedNamedMealSource.mealSource);
-            _commonMealsScrollView.AddMealProportion(mealProportion);
+            _mealProportionsScrollView.AddMealProportion(mealProportion);
 
             _servingAmountDropdown.Reset();
             _nonarchivedNamedMealSourceDropdown.Reset();

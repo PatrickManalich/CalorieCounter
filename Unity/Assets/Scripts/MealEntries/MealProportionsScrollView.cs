@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using CalorieCounter.MealSources;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    public abstract class AbstractMealsScrollView : AbstractScrollView {
+    public class MealProportionsScrollView : AbstractScrollView {
 
         public List<MealProportion> MealProportions { get; private set; } = new List<MealProportion>();
 
@@ -14,7 +15,14 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private Totals _totals = default;
 
-        protected abstract string GetMealSourceName(MealProportion mealProportion);
+        [SerializeField]
+        private bool _useCustomMealSourceName = default;
+
+        [DisplayBasedOnBool("_useCustomMealSourceName", false)]
+        [SerializeField]
+        private MealSourcesAdapter _mealSourcesAdapter = default;
+
+        private const string CustomMealSourceName = "Custom Meal";
 
         private List<MealProportion> _mealSuggestions = new List<MealProportion>();
 
@@ -32,7 +40,7 @@ namespace CalorieCounter.MealEntries {
             GameObject calorieText = InstantiateScrollViewText(++siblingStartIndex);
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = GetMealSourceName(mealProportion);
+            nameText.GetComponent<TextMeshProUGUI>().text = _useCustomMealSourceName ? CustomMealSourceName : _mealSourcesAdapter.GetMealSourceName(mealProportion.mealSource);
             fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.fat.ToString();
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
@@ -54,7 +62,7 @@ namespace CalorieCounter.MealEntries {
             GameObject calorieText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.servingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = GetMealSourceName(mealSuggestion);
+            nameText.GetComponent<TextMeshProUGUI>().text = _useCustomMealSourceName ? CustomMealSourceName : _mealSourcesAdapter.GetMealSourceName(mealSuggestion.mealSource);
             fatText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.fat.ToString();
             carbText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.protein.ToString();

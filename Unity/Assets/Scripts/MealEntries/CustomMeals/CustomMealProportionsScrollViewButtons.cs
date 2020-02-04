@@ -15,7 +15,7 @@ namespace CalorieCounter.MealEntries
         private Button _cancelButton = default;
 
         [SerializeField]
-        private CustomMealsScrollView _customMealsScrollView = default;
+        private MealProportionsScrollView _mealProportionsScrollView = default;
 
         [SerializeField]
         private CustomMealProportionInputFields _customMealProportionInputFields = default;
@@ -45,7 +45,7 @@ namespace CalorieCounter.MealEntries
             {
                 var customMealProportion = _customMealProportionInputFields.CustomMealProportion;
                 _customMealProportionInputFields.Hide();
-                _customMealsScrollView.AddMealProportion(customMealProportion);
+                _mealProportionsScrollView.AddMealProportion(customMealProportion);
             }
         }
 
