@@ -7,7 +7,7 @@ namespace CalorieCounter.MealSources
 {
     public class MealSourceRenameField : MonoBehaviour
     {
-        public bool Shown { get; private set; } = false;
+        public bool IsShown { get; private set; } = false;
 
         public NamedMealSource OldNamedMealSource { get; private set; } = default;
 
@@ -32,7 +32,7 @@ namespace CalorieCounter.MealSources
             _inputField.text = OldNamedMealSource.name;
             _inputField.Select();
             FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-            Shown = true;
+            IsShown = true;
         }
 
         public void Hide()
@@ -41,7 +41,7 @@ namespace CalorieCounter.MealSources
             _inputField.gameObject.SetActive(false);
             _inputField.transform.SetParent(transform, false);
             OldNamedMealSource = default;
-            Shown = false;
+            IsShown = false;
         }
 
         private void Awake()

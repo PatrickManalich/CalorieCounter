@@ -41,7 +41,7 @@ namespace CalorieCounter.MealEntries
 
         private void SubmitButton_OnClick()
         {
-            if (_customMealProportionInputFields.Shown)
+            if (_customMealProportionInputFields.IsShown)
             {
                 var customMealProportion = _customMealProportionInputFields.CustomMealProportion;
                 _customMealProportionInputFields.Hide();
@@ -51,7 +51,7 @@ namespace CalorieCounter.MealEntries
 
         private void CancelButton_OnClick()
         {
-            if (_customMealProportionInputFields.Shown)
+            if (_customMealProportionInputFields.IsShown)
             {
                 _customMealProportionInputFields.Hide();
             }

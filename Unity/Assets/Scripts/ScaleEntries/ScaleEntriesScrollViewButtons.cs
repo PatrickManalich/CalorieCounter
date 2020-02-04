@@ -41,7 +41,7 @@ namespace CalorieCounter.ScaleEntries
 
         private void SubmitButton_OnClick()
         {
-            if (_scaleEntryInputFields.Shown)
+            if (_scaleEntryInputFields.IsShown)
             {
                 var scaleEntry = _scaleEntryInputFields.ScaleEntry;
                 _scaleEntryInputFields.Hide();
@@ -51,7 +51,7 @@ namespace CalorieCounter.ScaleEntries
 
         private void CancelButton_OnClick()
         {
-            if (_scaleEntryInputFields.Shown)
+            if (_scaleEntryInputFields.IsShown)
             {
                 _scaleEntryInputFields.Hide();
             }

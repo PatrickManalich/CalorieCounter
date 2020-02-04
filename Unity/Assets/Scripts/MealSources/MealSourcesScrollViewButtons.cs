@@ -44,13 +44,13 @@ namespace CalorieCounter.MealSources
 
         private void SubmitButton_OnClick()
         {
-            if (_mealSourceInputFields.Shown)
+            if (_mealSourceInputFields.IsShown)
             {
                 var namedMealSource = _mealSourceInputFields.NamedMealSource;
                 _mealSourceInputFields.Hide();
                 _mealSourcesScrollView.AddNamedMealSource(namedMealSource);
             }
-            if(_mealSourceRenameField.Shown)
+            if(_mealSourceRenameField.IsShown)
             {
                 var oldNamedMealSource = _mealSourceRenameField.OldNamedMealSource;
                 var newNamedMealSource = _mealSourceRenameField.NewNamedMealSource;
@@ -61,11 +61,11 @@ namespace CalorieCounter.MealSources
 
         private void CancelButton_OnClick()
         {
-            if (_mealSourceInputFields.Shown)
+            if (_mealSourceInputFields.IsShown)
             {
                 _mealSourceInputFields.Hide();
             }
-            if (_mealSourceRenameField.Shown)
+            if (_mealSourceRenameField.IsShown)
             {
                 _mealSourceRenameField.Hide();
             }

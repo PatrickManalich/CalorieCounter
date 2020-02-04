@@ -7,19 +7,19 @@ namespace CalorieCounter
 {
     public class InputFields : MonoBehaviour
     {
-        public bool Shown { get; private set; } = false;
+        public bool IsShown { get; private set; } = false;
 
         [SerializeField]
         protected List<TMP_InputField> _inputFields = default;
 
         public virtual void Show()
         {
-            Shown = true;
+            IsShown = true;
         }
 
         public virtual void Hide()
         {
-            Shown = false;
+            IsShown = false;
         }
 
         protected virtual void Awake()
