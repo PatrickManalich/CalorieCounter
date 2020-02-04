@@ -1,10 +1,10 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CalorieCounter.MealEntries {
 
-    [RequireComponent(typeof(TextMeshProUGUI))]
     public class Date : MonoBehaviour {
 
         public class DateChangedEvent : EventArgs
@@ -22,34 +22,47 @@ namespace CalorieCounter.MealEntries {
 
         public DateTime CurrentDateTime { get; private set; } = DateTime.Today;
 
-        private TextMeshProUGUI _text;
+        [SerializeField]
+        private Button _oneMonthBackwardButton = default;
 
-        public void MoveBackwardOneDay() {
-            CurrentDateTime = CurrentDateTime.AddDays(-1);
-            Refresh();
-        }
+        [SerializeField]
+        private Button _oneDayBackwardButton = default;
 
-        public void MoveForwardOneDay() {
-            CurrentDateTime = CurrentDateTime.AddDays(1);
-            Refresh();
-        }
+        [SerializeField]
+        private TextMeshProUGUI _text = default;
 
-        public void MoveBackwardOneMonth() {
-            CurrentDateTime = CurrentDateTime.AddMonths(-1);
-            Refresh();
-        }
+        [SerializeField]
+        private Button _oneDayForwardButton = default;
 
-        public void MoveForwardOneMonth() {
-            CurrentDateTime = CurrentDateTime.AddMonths(1);
-            Refresh();
-        }
-
-        private void Awake() {
-            _text = GetComponent<TextMeshProUGUI>();
-        }
+        [SerializeField]
+        private Button _oneMonthForwardButton = default;
 
         private void Start()
         {
+            _oneMonthBackwardButton.onClick.AddListener(() => AddMonths(-1));
+            _oneDayBackwardButton.onClick.AddListener(() => AddDays(-1));
+            _oneDayForwardButton.onClick.AddListener(() => AddDays(1));
+            _oneMonthForwardButton.onClick.AddListener(() => AddMonths(1));
+            Refresh();
+        }
+
+        private void OnDestroy()
+        {
+            _oneMonthForwardButton.onClick.RemoveListener(() => AddMonths(1));
+            _oneDayForwardButton.onClick.RemoveListener(() => AddDays(1));
+            _oneDayBackwardButton.onClick.RemoveListener(() => AddDays(-1));
+            _oneMonthBackwardButton.onClick.RemoveListener(() => AddMonths(-1));
+        }
+
+        public void AddDays(int days)
+        {
+            CurrentDateTime = CurrentDateTime.AddDays(days);
+            Refresh();
+        }
+
+        public void AddMonths(int months)
+        {
+            CurrentDateTime = CurrentDateTime.AddMonths(months);
             Refresh();
         }
 
@@ -57,7 +70,5 @@ namespace CalorieCounter.MealEntries {
             _text.text = CurrentDateTime.ToShortDateString();
             DateChanged?.Invoke(this, new DateChangedEvent(CurrentDateTime));
         }
-
     }
-
 }
