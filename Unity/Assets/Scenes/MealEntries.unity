@@ -339,8 +339,6 @@ MonoBehaviour:
     type: 3}
   _totals: {fileID: 1566187486}
   _mealSourcesAdapter: {fileID: 1906813654}
-  _servingAmountDropdown: {fileID: 1671688307}
-  _namedMealSourceDropdown: {fileID: 1576245871}
 --- !u!1 &29919848
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,40 +829,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 127662989}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 688997043}
-        m_MethodName: AddCommonMealProportionFromDropdowns
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1521270210}
-        m_MethodName: ResetDropdown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 767946881}
-        m_MethodName: ResetDropdown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &127662989
@@ -5939,8 +5904,6 @@ MonoBehaviour:
     type: 3}
   _totals: {fileID: 1566187486}
   _mealSourcesAdapter: {fileID: 1906813654}
-  _servingAmountDropdown: {fileID: 1521270210}
-  _namedMealSourceDropdown: {fileID: 767946881}
 --- !u!114 &688997044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9209,40 +9172,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1128983967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 19275662}
-        m_MethodName: AddCommonMealProportionFromDropdowns
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1671688307}
-        m_MethodName: ResetDropdown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1576245871}
-        m_MethodName: ResetDropdown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1128983967
@@ -12105,7 +12035,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _servingAmountDropdown: {fileID: 1671688307}
+  _submitButton: {fileID: 1128983966}
   _nonarchivedNamedMealSourceDropdown: {fileID: 1576245871}
+  _commonMealsScrollView: {fileID: 19275662}
 --- !u!1 &1411289896
 GameObject:
   m_ObjectHideFlags: 0
@@ -12787,7 +12719,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _servingAmountDropdown: {fileID: 1521270210}
+  _submitButton: {fileID: 127662988}
   _nonarchivedNamedMealSourceDropdown: {fileID: 767946881}
+  _commonMealsScrollView: {fileID: 688997043}
 --- !u!1 &1508925265
 GameObject:
   m_ObjectHideFlags: 0

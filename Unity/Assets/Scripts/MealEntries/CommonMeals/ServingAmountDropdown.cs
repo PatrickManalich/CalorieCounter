@@ -18,7 +18,7 @@ namespace CalorieCounter.MealEntries {
 
         private TMP_Dropdown _dropdown;
 
-        public void ResetDropdown() {
+        public void Reset() {
             _dropdown.value = 0;
             SelectedServingAmount = default;
         }

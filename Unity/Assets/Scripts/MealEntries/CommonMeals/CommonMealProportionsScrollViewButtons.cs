@@ -1,5 +1,6 @@
 ﻿using CalorieCounter.Utilities;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CalorieCounter.MealEntries
 {
@@ -9,17 +10,25 @@ namespace CalorieCounter.MealEntries
         private ServingAmountDropdown _servingAmountDropdown = default;
 
         [SerializeField]
+        private Button _submitButton = default;
+
+        [SerializeField]
         private NonarchivedNamedMealSourceDropdown _nonarchivedNamedMealSourceDropdown = default;
+
+        [SerializeField]
+        private CommonMealsScrollView _commonMealsScrollView = default;
 
         private void Start()
         {
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
+            _submitButton.onClick.AddListener(SubmitButton_OnClick);
             _nonarchivedNamedMealSourceDropdown.ValidityChanged += Dropdown_OnValidityChanged;
         }
 
         private void OnDestroy()
         {
             _nonarchivedNamedMealSourceDropdown.ValidityChanged -= Dropdown_OnValidityChanged;
+            _submitButton.onClick.RemoveListener(SubmitButton_OnClick);
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
         }
 
@@ -33,6 +42,16 @@ namespace CalorieCounter.MealEntries
             {
                 FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
             }
+        }
+
+        private void SubmitButton_OnClick()
+        {
+            var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, 
+                _nonarchivedNamedMealSourceDropdown.SelectedNamedMealSource.mealSource);
+            _commonMealsScrollView.AddMealProportion(mealProportion);
+
+            _servingAmountDropdown.Reset();
+            _nonarchivedNamedMealSourceDropdown.Reset();
         }
     }
 }

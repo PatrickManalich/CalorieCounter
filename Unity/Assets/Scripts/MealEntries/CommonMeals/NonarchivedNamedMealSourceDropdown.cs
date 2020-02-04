@@ -25,7 +25,7 @@ namespace CalorieCounter.MealEntries {
         private TMP_Dropdown _dropdown;
         private List<NamedMealSource> _nonarchivedNamedMealSources;
 
-        public void ResetDropdown() {
+        public void Reset() {
             _dropdown.value = 0;
             SelectedNamedMealSource = default;
         }
