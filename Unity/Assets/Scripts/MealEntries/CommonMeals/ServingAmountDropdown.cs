@@ -16,14 +16,16 @@ namespace CalorieCounter.MealEntries {
         private static readonly float[] ServingAmounts = new float[] { 0.1f, 0.25f, 0.33f, 0.5f, 0.75f, 1, 1.5f, 2, 3, 4, 5, 6 };
 
         private TMP_Dropdown _dropdown;
-        private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
         public void RefreshSelectedServingAmount(int index) {
-            if (float.TryParse(_optionDataList[index].text, out float parsedFloat)) {
-                SelectedServingAmount = parsedFloat;
+            if (index > 0)
+            {
+                SelectedServingAmount = ServingAmounts[index - 1];
                 if (_namedMealSourceDropdown.SelectedNamedMealSource != default)
                     FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-            } else {
+            }
+            else
+            {
                 SelectedServingAmount = 0;
                 FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
             }
@@ -38,11 +40,11 @@ namespace CalorieCounter.MealEntries {
             _dropdown = GetComponent<TMP_Dropdown>();
 
             _dropdown.ClearOptions();
-            _optionDataList.Add(new TMP_Dropdown.OptionData(""));
-            foreach (var amount in ServingAmounts) {
-                _optionDataList.Add(new TMP_Dropdown.OptionData(amount.ToString()));
+            var options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData("") };
+            foreach (var servingAmount in ServingAmounts) {
+                options.Add(new TMP_Dropdown.OptionData(servingAmount.ToString()));
             }
-            _dropdown.AddOptions(_optionDataList);
+            _dropdown.AddOptions(options);
             SelectedServingAmount = 0;
         }
 
