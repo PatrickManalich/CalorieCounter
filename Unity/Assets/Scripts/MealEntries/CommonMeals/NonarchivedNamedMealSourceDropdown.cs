@@ -24,17 +24,6 @@ namespace CalorieCounter.MealEntries {
         private TMP_Dropdown _dropdown;
         private List<NamedMealSource> _nonarchivedNamedMealSources;
 
-        public void RefreshSelectedMealSource(int index) {
-            if (index > 0) {
-                SelectedNamedMealSource = _nonarchivedNamedMealSources[index - 1];
-                if (_servingAmountDropdown.SelectedServingAmount != 0)
-                    FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-            } else {
-                SelectedNamedMealSource = default;
-                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
-            }
-        }
-
         public void ResetDropdown() {
             _dropdown.value = 0;
             SelectedNamedMealSource = default;
@@ -50,6 +39,27 @@ namespace CalorieCounter.MealEntries {
             }
             _dropdown.AddOptions(options);
             SelectedNamedMealSource = default;
+            _dropdown.onValueChanged.AddListener(Dropdown_OnValueChanged);
+        }
+
+        private void OnDestroy()
+        {
+            _dropdown.onValueChanged.RemoveListener(Dropdown_OnValueChanged);
+        }
+
+        private void Dropdown_OnValueChanged(int value)
+        {
+            if (value > 0)
+            {
+                SelectedNamedMealSource = _nonarchivedNamedMealSources[value - 1];
+                if (_servingAmountDropdown.SelectedServingAmount != 0)
+                    FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
+            }
+            else
+            {
+                SelectedNamedMealSource = default;
+                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+            }
         }
     }
 }
