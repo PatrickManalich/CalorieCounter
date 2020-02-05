@@ -85,7 +85,6 @@ namespace CalorieCounter.MealEntries {
                 var mealSuggestion = _mealSuggestions[rowIndex - MealProportions.Count];
                 DeleteRow(rowIndex);
                 AddMealProportion(mealSuggestion);
-                _totals.AddToTotals(mealSuggestion);
             }
         }
 
