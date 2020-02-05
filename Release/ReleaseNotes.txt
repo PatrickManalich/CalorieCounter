@@ -1,39 +1,43 @@
 Calorie Counter Release Notes
 
-Release 1.0.0 (8/24/2019)
- -Initialization of Unity project with 2018.3.6f1
- -Import plugin TextMesh Pro
- -Implement meal entries scene
- -Implement scale entries scene
- -Import plugin JSON.Net for Unity
- -Import plugin Serialized Dictionary
- -Implement meal sources scene
- -Update plugin TextMesh pro
- -Update Unity project to 2018.4.1f1
- -Import plugin Beautifier
- -Implement menu scene
- 
-Release 1.1.0 (9/28/2019)
- -Add to editor extensions
- -Small bug fixes
- -Ability to rename meal sources with F2
- -Add 0.1 and 6 as serving amount options
- -Used JsonUpdater to update all entries
- 
-Release 1.1.1 (10/12/2019)
- -Add NutritionixButton
- -Implement ability to export CSV files
- -Change default icon
- -Fix bug where Rice-White meal source was incorrect
- -Update JSON field names to match
+Release 1.3.0 (2/4/2020)
+ -Add GoogleKeepUrlButton
+ -Fix bug where meal scroll view's contents weren't centered
+ -Fix bug where accepting meal proportions threw errors
+ -Fix bug where accepting certain suggestions threw errors
 
 Release 1.2.0 (1/20/2020)
- -Create CSV and excel files
- -Import plugin EnumFlagPropertyDrawer
- -Add to editor extensions
- -Ability to create meal suggestions
- -Implement day meal patterns and day type meal patterns
  -Fix bug where Bread-White meal source was incorrect
+ -Implement day meal patterns and day type meal patterns
+ -Ability to create meal suggestions
+ -Add to editor extensions
+ -Import plugin EnumFlagPropertyDrawer
+ -Create CSV and excel files
  
+Release 1.1.1 (10/12/2019)
+ -Update JSON field names to match
+ -Fix bug where Rice-White meal source was incorrect
+ -Change default icon
+ -Implement ability to export CSV files
+ -Add NutritionixButton
  
- 
+Release 1.1.0 (9/28/2019)
+ -Used JsonUpdater to update all entries
+ -Fix bug where deleting a row exits highlighting
+ -Add 0.1 and 6 as serving amount options
+ -Ability to rename meal sources with F2
+ -Fix bug where dropdowns were showing archived meal sources
+ -Add to editor extensions
+
+Release 1.0.0 (8/24/2019)
+ -Implement menu scene
+ -Import plugin Beautifier
+ -Update Unity project to 2018.4.1f1
+ -Update plugin TextMesh pro
+ -Implement meal sources scene
+ -Import plugin Serialized Dictionary
+ -Import plugin JSON.Net for Unity
+ -Implement scale entries scene
+ -Implement meal entries scene
+ -Import plugin TextMesh Pro
+ -Initialization of Unity project with 2018.3.6f1
