@@ -55,6 +55,16 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void Start() {
+            _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
+            Refresh();
+        }
+        private void OnDestroy()
+        {
+            _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
+        }
+
+        private void Date_OnCurrentDateTimeChanged()
+        {
             Refresh();
         }
     }

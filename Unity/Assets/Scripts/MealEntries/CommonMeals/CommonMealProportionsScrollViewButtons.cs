@@ -18,15 +18,20 @@ namespace CalorieCounter.MealEntries
         [SerializeField]
         private MealProportionsScrollView _mealProportionsScrollView = default;
 
+        [SerializeField]
+        private Date _date = default;
+
         private void Start()
         {
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
             _submitButton.onClick.AddListener(SubmitButton_OnClick);
             _nonarchivedNamedMealSourceDropdown.ValidityChanged += Dropdown_OnValidityChanged;
+            _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
         }
 
         private void OnDestroy()
         {
+            _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
             _nonarchivedNamedMealSourceDropdown.ValidityChanged -= Dropdown_OnValidityChanged;
             _submitButton.onClick.RemoveListener(SubmitButton_OnClick);
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
@@ -50,6 +55,16 @@ namespace CalorieCounter.MealEntries
                 _nonarchivedNamedMealSourceDropdown.SelectedNamedMealSource.mealSource);
             _mealProportionsScrollView.AddMealProportion(mealProportion);
 
+            ResetDropdowns();
+        }
+
+        private void Date_OnCurrentDateTimeChanged()
+        {
+            ResetDropdowns();
+        }
+
+        private void ResetDropdowns()
+        {
             _servingAmountDropdown.Reset();
             _nonarchivedNamedMealSourceDropdown.Reset();
         }

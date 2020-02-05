@@ -20,15 +20,20 @@ namespace CalorieCounter.MealEntries
         [SerializeField]
         private CustomMealProportionInputFields _customMealProportionInputFields = default;
 
+        [SerializeField]
+        private Date _date = default;
+
         private void Start()
         {
             _addButton.onClick.AddListener(AddButton_OnClick);
             _submitButton.onClick.AddListener(SubmitButton_OnClick);
             _cancelButton.onClick.AddListener(CancelButton_OnClick);
+            _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
         }
 
         private void OnDestroy()
         {
+            _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
             _cancelButton.onClick.RemoveListener(CancelButton_OnClick);
             _submitButton.onClick.RemoveListener(SubmitButton_OnClick);
             _addButton.onClick.RemoveListener(AddButton_OnClick);
@@ -57,5 +62,9 @@ namespace CalorieCounter.MealEntries
             }
         }
 
+        private void Date_OnCurrentDateTimeChanged()
+        {
+            _customMealProportionInputFields.Hide();
+        }
     }
 }
