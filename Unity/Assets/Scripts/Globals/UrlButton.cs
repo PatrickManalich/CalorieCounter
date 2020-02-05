@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.MealEntries
+namespace CalorieCounter
 {
 
     [RequireComponent(typeof(Button))]
-    public class NutritionixButton : MonoBehaviour
+    public class UrlButton : MonoBehaviour
     {
         [SerializeField]
         private string _Url = default;
