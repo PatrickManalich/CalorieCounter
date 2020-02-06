@@ -9,7 +9,18 @@ namespace CalorieCounter.MealEntries {
 
         public Action CurrentDateTimeChanged;
 
-        public DateTime CurrentDateTime { get; private set; } = DateTime.Today;
+        public DateTime CurrentDateTime {
+            get {
+                return _currentDateTime;
+            }
+            private set {
+                if (_currentDateTime != value)
+                {
+                    _currentDateTime = value;
+                    CurrentDateTimeChanged?.Invoke();
+                }
+            }
+        }
 
         [SerializeField]
         private Button _oneMonthBackwardButton = default;
@@ -25,6 +36,8 @@ namespace CalorieCounter.MealEntries {
 
         [SerializeField]
         private Button _oneMonthForwardButton = default;
+
+        private DateTime _currentDateTime = DateTime.Today;
 
         private void Start()
         {
@@ -57,7 +70,6 @@ namespace CalorieCounter.MealEntries {
 
         private void Refresh() {
             _text.text = CurrentDateTime.ToShortDateString();
-            CurrentDateTimeChanged?.Invoke();
         }
     }
 }
