@@ -31,10 +31,27 @@ namespace CalorieCounter.MealEntries.MealPatterns
         private List<DayMealPattern> _dayMealPatterns = default;
         private List<DayTypeMealPattern> _dayTypeMealPatterns = default;
 
-        public void AddMealSuggestions()
+        private void Start()
         {
+            _dayMealPatterns = Resources.LoadAll(DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
+            _dayTypeMealPatterns = Resources.LoadAll(DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
+            _dayTypeDropdown.DayTypeChanged += DayTypeDropdown_DayTypeChanged;
+        }
+
+        private void OnDestroy()
+        {
+            _dayTypeDropdown.DayTypeChanged -= DayTypeDropdown_DayTypeChanged;
+        }
+
+        private void DayTypeDropdown_DayTypeChanged() {
+            if (_dayTypeDropdown.DayType == DayType.None || _dayTypeDropdown.DayType == DayType.Vacation)
+            {
+                return;
+            }
+
+            // Handle day meal patterns
             var dayOfTheWeek = (DaysOfTheWeek)Enum.Parse(typeof(DaysOfTheWeek), _date.CurrentDateTime.DayOfWeek.ToString());
-            foreach(var dayMealPattern in _dayMealPatterns)
+            foreach (var dayMealPattern in _dayMealPatterns)
             {
                 if (dayMealPattern.daysOfTheWeek.HasFlag(dayOfTheWeek))
                 {
@@ -52,6 +69,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 }
             }
 
+            // Handle day type meal patterns
             foreach (var dayTypeMealPattern in _dayTypeMealPatterns)
             {
                 if (dayTypeMealPattern.dayType == _dayTypeDropdown.DayType)
@@ -69,12 +87,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
                 }
             }
-        }
-
-        private void Start()
-        {
-            _dayMealPatterns = Resources.LoadAll(DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
-            _dayTypeMealPatterns = Resources.LoadAll(DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
         }
     }
 }

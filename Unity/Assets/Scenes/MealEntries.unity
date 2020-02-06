@@ -8319,7 +8319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _totals: {fileID: 1566187486}
-  _mealPatternHandler: {fileID: 838689301}
 --- !u!114 &945032639
 MonoBehaviour:
   m_ObjectHideFlags: 0

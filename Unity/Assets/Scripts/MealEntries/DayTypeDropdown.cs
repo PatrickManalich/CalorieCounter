@@ -11,14 +11,25 @@ namespace CalorieCounter.MealEntries {
     [RequireComponent(typeof(TMP_Dropdown))]
     public class DayTypeDropdown : MonoBehaviour {
 
-        public DayType DayType { get; private set; }
+        public event Action DayTypeChanged;
+
+        public DayType DayType {
+            get {
+                return _dayType;
+            }
+            private set {
+                if (_dayType != value)
+                {
+                    _dayType = value;
+                    DayTypeChanged?.Invoke();
+                }
+            }
+        }
 
         [SerializeField]
         private Totals _totals = default;
 
-        [SerializeField]
-        private MealPatternHandler _mealPatternHandler = default;
-
+        private DayType _dayType;
         private TMP_Dropdown _dropdown;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
@@ -54,7 +65,6 @@ namespace CalorieCounter.MealEntries {
             if (DayType != DayType.None)
             {
                 FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-                _mealPatternHandler.AddMealSuggestions();
             }
             else
             {
@@ -62,6 +72,5 @@ namespace CalorieCounter.MealEntries {
             }
             _totals.Refresh();
         }
-
     }
 }
