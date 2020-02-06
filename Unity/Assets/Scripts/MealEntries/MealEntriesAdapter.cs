@@ -38,7 +38,7 @@ namespace CalorieCounter.MealEntries {
 
         public void Refresh() {
             foreach (var key in _scrollViewDictionary.Keys) {
-                _scrollViewDictionary[key].ClearMealProportionsAndSuggestions();
+                _scrollViewDictionary[key].ClearMealProportions();
             }
 
             MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);

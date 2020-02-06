@@ -69,10 +69,10 @@ namespace CalorieCounter.MealEntries {
             calorieText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.calories.ToString();
         }
 
-        public void ClearMealProportionsAndSuggestions()
+        public void ClearMealProportions()
         {
-            var mealProportionsAndSuggestionsCount = MealProportions.Count + _mealSuggestions.Count;
-            for (int i = 0; i < mealProportionsAndSuggestionsCount; i++)
+            var mealProportionsCount = MealProportions.Count;   // Cache since we're changing list
+            for (int i = 0; i < mealProportionsCount; i++)
             {
                 DeleteRow(0);
             }
@@ -85,6 +85,15 @@ namespace CalorieCounter.MealEntries {
                 var mealSuggestion = _mealSuggestions[rowIndex - MealProportions.Count];
                 DeleteRow(rowIndex);
                 AddMealProportion(mealSuggestion);
+            }
+        }
+
+        public void ClearMealSuggestions()
+        {
+            var mealSuggestionsCount = _mealSuggestions.Count;   // Cache since we're changing list
+            for (int i = 0; i < mealSuggestionsCount; i++)
+            {
+                DeleteRow(MealProportions.Count);
             }
         }
 
