@@ -23,8 +23,7 @@ namespace CalorieCounter
             }
         }
 
-        public delegate void TextModifiedEventHandler(object sender, TextModifiedEventArgs e);
-        public event TextModifiedEventHandler TextModified;
+        public event EventHandler<TextModifiedEventArgs> TextModified;
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;

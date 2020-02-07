@@ -19,8 +19,7 @@ namespace CalorieCounter
             }
         }
 
-        public delegate void HighlightedEventHandler(object sender, HighlightedEventArgs e);
-        public event HighlightedEventHandler Highlighted;
+        public event EventHandler<HighlightedEventArgs> Highlighted;
 
         public void OnPointerEnter(PointerEventData eventData)
         {

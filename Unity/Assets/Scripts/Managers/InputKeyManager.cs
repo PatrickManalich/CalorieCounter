@@ -17,9 +17,7 @@ namespace CalorieCounter.Managers
             }
         }
 
-        public delegate void InputKeyPressedEventHandler(object sender, InputKeyPressedEventArgs e);
-        public event InputKeyPressedEventHandler InputKeyPressed;
-
+        public event EventHandler<InputKeyPressedEventArgs> InputKeyPressed;
 
         [Serializable]
         private class InputKeyCodeDictionary : SerializableDictionaryBase<KeyCode, InputKeyCode> { }
