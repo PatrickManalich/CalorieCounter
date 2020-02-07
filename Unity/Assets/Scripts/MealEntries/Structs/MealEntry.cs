@@ -46,8 +46,9 @@ namespace CalorieCounter.MealEntries {
                     mealProportionsDictCount += mealProportionsDictionary[mealSourceType].Count;
                 }
             }
-            return string.Format("Date: {0}, Day Type: {1}, [ Total Fat: {2}, Total Carbs: {3}, Total Protein: {4}, Total Calories: {5} ], Meal Proportions Dict Count: {6}",
-                dateTime.ToShortDateString(), dayType, totalFat, totalCarbs, totalProtein, totalCalories, mealProportionsDictCount);
+            return $"Date: {dateTime.ToShortDateString()}, Day Type: {dayType}, [ Total Fat: {totalFat}, " +
+                $"Total Carbs: {totalCarbs}, Total Protein: {totalProtein}, Total Calories: {totalCalories} ], " +
+                $"Meal Proportions Dict Count: {mealProportionsDictCount}";
         }
     }
 }

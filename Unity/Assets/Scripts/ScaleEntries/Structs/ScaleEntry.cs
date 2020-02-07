@@ -23,8 +23,8 @@ namespace CalorieCounter.ScaleEntries {
         }
 
         public override string ToString() {
-            return string.Format("Date: {0}, Weight: {1}, Body Fat: {2}, Body Water: {3}, Muscle Mass: {4}, Bone Mass: {5}, BMI: {5}",
-                dateTime.ToShortDateString(), weight, bodyFat, bodyWater, muscleMass, boneMass, bmi);
+            return $"Date: {dateTime.ToShortDateString()}, Weight: {weight}, Body Fat: {bodyFat}, Body Water: {bodyWater}, " +
+                $"Muscle Mass: {muscleMass}, Bone Mass: {boneMass}, BMI: {bmi}";
         }
     }
 }

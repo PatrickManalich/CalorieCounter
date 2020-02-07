@@ -50,8 +50,8 @@ namespace CalorieCounter.MealSources {
         }
 
         public override string ToString() {
-            return string.Format("ID: {0}, Serving Size: {1}, [ Fat: {2}, Carbs: {3}, Protein: {4}, Calories: {5} ], Description: {6}, Meal Type: {7}, Archived: {8}",
-                id, servingSize , fat, carbs, protein, calories, description, mealSourceType, archived);
+            return $"ID: {id}, Serving Size: {servingSize}, [ Fat: {fat}, Carbs: {carbs}, Protein: {protein}, " +
+                $"Calories: {calories} ], Description: {description}, Meal Type: {mealSourceType}, Archived: {archived}";
         }
     }
 }

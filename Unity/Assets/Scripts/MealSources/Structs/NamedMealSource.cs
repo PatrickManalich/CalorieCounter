@@ -35,7 +35,7 @@ namespace CalorieCounter.MealSources
 
         public override string ToString()
         {
-            return string.Format("Name: {0}, Meal Source: {1}", name, mealSource);
+            return $"Name: {name}, Meal Source: {mealSource}";
         }
     }
 }
