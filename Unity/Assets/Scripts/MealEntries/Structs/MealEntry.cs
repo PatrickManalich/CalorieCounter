@@ -14,13 +14,27 @@ namespace CalorieCounter.MealEntries {
         public float totalCalories;
         public Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary;
 
-        public MealEntry(DateTime dateTime, DayType dayType, float totalFat, float totalCarbs, float totalProtein, float totalCalories, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary) {
+        public MealEntry(DateTime dateTime, DayType dayType, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary) {
             this.dateTime = dateTime;
             this.dayType = dayType;
-            this.totalFat = GlobalMethods.Round(totalFat);
-            this.totalCarbs = GlobalMethods.Round(totalCarbs);
-            this.totalProtein = GlobalMethods.Round(totalProtein);
-            this.totalCalories = GlobalMethods.Round(totalCalories);
+
+            totalFat = 0;
+            totalCarbs = 0;
+            totalProtein = 0;
+            foreach(var mealProportions in mealProportionsDictionary.Values)
+            {
+                foreach(var mealProportion in mealProportions)
+                {
+                    totalFat += mealProportion.fat;
+                    totalCarbs += mealProportion.carbs;
+                    totalProtein += mealProportion.protein;
+                }
+            }
+            totalFat = GlobalMethods.Round(totalFat);
+            totalCarbs = GlobalMethods.Round(totalCarbs);
+            totalProtein = GlobalMethods.Round(totalProtein);
+            totalCalories = GlobalMethods.Round((totalFat * 9) + (totalCarbs * 4) + (totalProtein * 4));
+
             this.mealProportionsDictionary = mealProportionsDictionary;
         }
 

@@ -18,9 +18,6 @@ namespace CalorieCounter.MealEntries {
         private DayTypeDropdown _dayTypeDropdown = default;
 
         [SerializeField]
-        private Totals _totals = default;
-
-        [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
         public override void Export() {
@@ -31,8 +28,7 @@ namespace CalorieCounter.MealEntries {
                 { MealSourceType.Custom, _scrollViewDictionary[MealSourceType.Custom].MealProportions }
             };
 
-            MealEntry currentMealEntry = new MealEntry(_date.CurrentDateTime, _dayTypeDropdown.DayType, _totals.TotalFat, _totals.TotalCarbs, _totals.TotalProtein, 
-                _totals.TotalCalories, mealProportionsDictionary);
+            MealEntry currentMealEntry = new MealEntry(_date.CurrentDateTime, _dayTypeDropdown.DayType, mealProportionsDictionary);
             GameManager.MealEntriesManager.ExportMealEntry(currentMealEntry, _date.CurrentDateTime);
         }
 

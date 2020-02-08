@@ -12253,7 +12253,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _date: {fileID: 1767589936}
   _dayTypeDropdown: {fileID: 945032638}
-  _totals: {fileID: 1566187486}
   _scrollViewDictionary:
     reorderableList:
       canAdd: 1
