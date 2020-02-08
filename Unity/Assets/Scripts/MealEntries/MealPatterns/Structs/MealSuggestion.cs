@@ -1,12 +1,18 @@
-﻿
+﻿using System;
+using UnityEngine;
+
 namespace CalorieCounter.MealEntries
 {
 
+    [Serializable]
     public struct MealSuggestion
     {
 
         public MealProportion mealProportion;
+
+        [HideInInspector]
         public MealPatternType mealPatternType;
+
         public int priority;
 
         public MealSuggestion(MealProportion mealProportion, MealPatternType mealPatternType, int priority)

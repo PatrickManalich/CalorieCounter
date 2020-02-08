@@ -2,14 +2,21 @@
 
 namespace CalorieCounter.ScaleEntries {
 
+    [Serializable]
     public struct ScaleEntry {
 
         public DateTime dateTime;
+
         public float weight;
+
         public float bodyFat;
+
         public float bodyWater;
+
         public float muscleMass;
+
         public float boneMass;
+
         public float bmi;
 
         public ScaleEntry(DateTime dateTime, float weight, float bodyFat, float bodyWater, float muscleMass, float boneMass, float bmi) {

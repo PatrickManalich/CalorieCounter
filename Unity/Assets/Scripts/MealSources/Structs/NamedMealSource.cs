@@ -1,11 +1,13 @@
-﻿
+﻿using System;
+
 namespace CalorieCounter.MealSources
 {
-
+    [Serializable]
     public struct NamedMealSource
     {
 
         public string name;
+
         public MealSource mealSource;
 
         public NamedMealSource(string name, MealSource mealSource)

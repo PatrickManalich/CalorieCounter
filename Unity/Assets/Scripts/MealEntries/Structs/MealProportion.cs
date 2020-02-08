@@ -1,14 +1,26 @@
 ﻿using CalorieCounter.MealSources;
+using System;
+using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
+    [Serializable]
     public struct MealProportion {
 
         public float servingAmount;
+
         public MealSource mealSource;
+
+        [HideInInspector]
         public float fat;
+
+        [HideInInspector]
         public float carbs;
+
+        [HideInInspector]
         public float protein;
+
+        [HideInInspector]
         public float calories;
 
         public MealProportion(float servingAmount, MealSource mealSource) {

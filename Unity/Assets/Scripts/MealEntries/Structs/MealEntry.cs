@@ -1,17 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
+    [Serializable]
     public struct MealEntry {
 
         public DateTime dateTime;
+
         public DayType dayType;
+
+        [HideInInspector]
         public float totalFat;
+
+        [HideInInspector]
         public float totalCarbs;
+
+        [HideInInspector]
         public float totalProtein;
+
+        [HideInInspector]
         public float totalCalories;
+
         public Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary;
 
         public MealEntry(DateTime dateTime, DayType dayType, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary) {
