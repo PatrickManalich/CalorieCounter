@@ -338,7 +338,7 @@ MonoBehaviour:
   _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
   _totals: {fileID: 1566187486}
-  _useCustomMealSourceName: 0
+  _mealSourceType: 0
   _mealSourcesAdapter: {fileID: 1906813654}
 --- !u!1 &29919848
 GameObject:
@@ -426,6 +426,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small_ScrollViewRowHighlighter
       objectReference: {fileID: 0}
+    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
+        type: 3}
+      propertyPath: _content
+      value: 
+      objectReference: {fileID: 2136228772}
+    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
+        type: 3}
+      propertyPath: _scrollView
+      value: 
+      objectReference: {fileID: 19275662}
     - target: {fileID: 3171886516535720992, guid: a0f78cd6079b1c54780cc0096ba8a898,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -531,16 +541,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
-        type: 3}
-      propertyPath: _content
-      value: 
-      objectReference: {fileID: 2136228772}
-    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 19275662}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f78cd6079b1c54780cc0096ba8a898, type: 3}
 --- !u!1 &35425278
@@ -5618,7 +5618,7 @@ MonoBehaviour:
   _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
   _totals: {fileID: 1566187486}
-  _useCustomMealSourceName: 0
+  _mealSourceType: 1
   _mealSourcesAdapter: {fileID: 1906813654}
 --- !u!114 &688997044
 MonoBehaviour:
@@ -5931,6 +5931,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Custom_ScrollViewRowHighlighter
       objectReference: {fileID: 0}
+    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
+        type: 3}
+      propertyPath: _content
+      value: 
+      objectReference: {fileID: 2042110666}
+    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
+        type: 3}
+      propertyPath: _scrollView
+      value: 
+      objectReference: {fileID: 920356582}
     - target: {fileID: 3171886516535720992, guid: a0f78cd6079b1c54780cc0096ba8a898,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6036,16 +6046,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
-        type: 3}
-      propertyPath: _content
-      value: 
-      objectReference: {fileID: 2042110666}
-    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 920356582}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f78cd6079b1c54780cc0096ba8a898, type: 3}
 --- !u!1 &710512436
@@ -7985,7 +7985,7 @@ MonoBehaviour:
   _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
   _totals: {fileID: 1566187486}
-  _useCustomMealSourceName: 1
+  _mealSourceType: 2
   _mealSourcesAdapter: {fileID: 0}
 --- !u!114 &920356583
 MonoBehaviour:
@@ -13001,6 +13001,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Large_ScrollViewRowHighlighter
       objectReference: {fileID: 0}
+    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
+        type: 3}
+      propertyPath: _content
+      value: 
+      objectReference: {fileID: 1343613516}
+    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
+        type: 3}
+      propertyPath: _scrollView
+      value: 
+      objectReference: {fileID: 688997043}
     - target: {fileID: 3171886516535720992, guid: a0f78cd6079b1c54780cc0096ba8a898,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -13106,16 +13116,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
-        type: 3}
-      propertyPath: _content
-      value: 
-      objectReference: {fileID: 1343613516}
-    - target: {fileID: 3171886516535720995, guid: a0f78cd6079b1c54780cc0096ba8a898,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 688997043}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a0f78cd6079b1c54780cc0096ba8a898, type: 3}
 --- !u!1 &1553792669
