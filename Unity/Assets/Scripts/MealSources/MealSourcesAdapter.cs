@@ -39,10 +39,19 @@ namespace CalorieCounter.MealSources {
             return namedMealSources;
         }
 
-        public MealSource GetMealSource(MealSourceType mealSourceType, string id)
+        public MealSource GetMealSource(string id)
         {
             var mealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
-            return mealSourcesDictionary[mealSourceType][id];
+            MealSource mealSource = default;
+            foreach (var mealSources in mealSourcesDictionary.Values)
+            {
+                if (mealSources.ContainsKey(id))
+                {
+                    mealSource = mealSources[id];
+                    break;
+                }
+            }
+            return mealSource;
         }
 
         public override void Export()

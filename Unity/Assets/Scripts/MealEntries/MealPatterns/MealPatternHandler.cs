@@ -61,7 +61,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 {
                     try
                     {
-                        var mealSource = _mealSourcesAdapter.GetMealSource(dayMealPattern.mealSourceType, dayMealPattern.mealSourceId);
+                        var mealSource = _mealSourcesAdapter.GetMealSource(dayMealPattern.mealSourceId);
                         var mealSuggestion = new MealProportion(dayMealPattern.servingAmount, mealSource);
                         _scrollViewDictionary[dayMealPattern.mealSourceType].AddMealSuggestion(mealSuggestion);
                     }
@@ -80,7 +80,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 {
                     try
                     {
-                        var mealSource = _mealSourcesAdapter.GetMealSource(dayTypeMealPattern.mealSourceType, dayTypeMealPattern.mealSourceId);
+                        var mealSource = _mealSourcesAdapter.GetMealSource(dayTypeMealPattern.mealSourceId);
                         var mealSuggestion = new MealProportion(dayTypeMealPattern.servingAmount, mealSource);
                         _scrollViewDictionary[dayTypeMealPattern.mealSourceType].AddMealSuggestion(mealSuggestion);
                     }
