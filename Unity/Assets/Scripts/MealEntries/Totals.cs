@@ -62,12 +62,12 @@ namespace CalorieCounter.MealEntries {
             float targetEntryCarbs = 0;
             float targetEntryProtein = 0;
             float targetEntryCalories = 0;
-            if (_dayTypeDropdown.DayType == DayType.Rest) {
+            if (_dayTypeDropdown.CurrentDayType == DayType.Rest) {
                 targetEntryFat = _targetEntry.restDayFat;
                 targetEntryCarbs = _targetEntry.restDayCarbs;
                 targetEntryProtein = _targetEntry.restDayProtein;
                 targetEntryCalories = _targetEntry.restDayCalories;
-            } else if (_dayTypeDropdown.DayType == DayType.Training) {
+            } else if (_dayTypeDropdown.CurrentDayType == DayType.Training) {
                 targetEntryFat = _targetEntry.trainingDayFat;
                 targetEntryCarbs = _targetEntry.trainingDayCarbs;
                 targetEntryProtein = _targetEntry.trainingDayProtein;

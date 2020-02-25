@@ -35,16 +35,16 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             _dayMealPatterns = Resources.LoadAll(DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
             _dayTypeMealPatterns = Resources.LoadAll(DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
-            _dayTypeDropdown.DayTypeChanged += DayTypeDropdown_DayTypeChanged;
+            _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_CurrentDayTypeChanged;
         }
 
         private void OnDestroy()
         {
-            _dayTypeDropdown.DayTypeChanged -= DayTypeDropdown_DayTypeChanged;
+            _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_CurrentDayTypeChanged;
         }
 
-        private void DayTypeDropdown_DayTypeChanged() {
-            if (_dayTypeDropdown.DayType == DayType.None || _dayTypeDropdown.DayType == DayType.Vacation)
+        private void DayTypeDropdown_CurrentDayTypeChanged() {
+            if (_dayTypeDropdown.CurrentDayType == DayType.None || _dayTypeDropdown.CurrentDayType == DayType.Vacation)
             {
                 foreach (var mealSource in _scrollViewDictionary.Keys)
                 {
@@ -76,7 +76,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             // Handle day type meal patterns
             foreach (var dayTypeMealPattern in _dayTypeMealPatterns)
             {
-                if (dayTypeMealPattern.dayType == _dayTypeDropdown.DayType)
+                if (dayTypeMealPattern.dayType == _dayTypeDropdown.CurrentDayType)
                 {
                     try
                     {

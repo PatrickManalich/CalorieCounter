@@ -4,16 +4,15 @@ using System.Collections.Generic;
 using CalorieCounter.Utilities;
 using System;
 using System.Linq;
-using CalorieCounter.MealEntries.MealPatterns;
 
 namespace CalorieCounter.MealEntries {
 
     [RequireComponent(typeof(TMP_Dropdown))]
     public class DayTypeDropdown : MonoBehaviour {
 
-        public event Action DayTypeChanged;
+        public event Action CurrentDayTypeChanged;
 
-        public DayType DayType {
+        public DayType CurrentDayType {
             get {
                 return _dayType;
             }
@@ -21,7 +20,7 @@ namespace CalorieCounter.MealEntries {
                 if (_dayType != value)
                 {
                     _dayType = value;
-                    DayTypeChanged?.Invoke();
+                    CurrentDayTypeChanged?.Invoke();
                 }
             }
         }
@@ -33,9 +32,9 @@ namespace CalorieCounter.MealEntries {
         private TMP_Dropdown _dropdown;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
 
-        public void HardSetDayType(DayType dayType) {
-            _dropdown.value = (int)dayType;
-            DayType = dayType;
+        public void HardSetCurrentDayType(DayType currentDayType) {
+            _dropdown.value = (int)currentDayType;
+            CurrentDayType = currentDayType;
         }
 
         private void Awake()
@@ -55,7 +54,7 @@ namespace CalorieCounter.MealEntries {
                 }
             }
             _dropdown.AddOptions(_optionDataList);
-            DayType = default;
+            CurrentDayType = default;
         }
 
         private void Start() {
@@ -69,8 +68,8 @@ namespace CalorieCounter.MealEntries {
 
         public void Dropdown_OnValueChanged(int index)
         {
-            DayType = (DayType)index;
-            if (DayType != DayType.None)
+            CurrentDayType = (DayType)index;
+            if (CurrentDayType != DayType.None)
             {
                 FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             }
