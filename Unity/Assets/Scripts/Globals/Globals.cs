@@ -70,6 +70,9 @@ namespace CalorieCounter {
         public const string ReleaseDirectoryName = @"Release";
         public const string CalorieCounterReleaseDirectoryName = @"CalorieCounterRelease";
 
+        public const string ScriptableObjectsDirectoryName = @"ScriptableObjects";
+        public const string DayMealPatternsDirectoryName = @"DayMealPatterns";
+        public const string DayTypeMealPatternsDirectoryName = @"DayTypeMealPatterns";
     }
 
     public static class GlobalMethods {

@@ -2,6 +2,7 @@
 using RotaryHeart.Lib.SerializableDictionary;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -25,16 +26,17 @@ namespace CalorieCounter.MealEntries.MealPatterns
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
-        private const string DayMealPatternsPath = "ScriptableObjects/DayMealPatterns";
-        private const string DayTypeMealPatternsPath = "ScriptableObjects/DayTypeMealPatterns";
-
         private List<DayMealPattern> _dayMealPatterns = default;
         private List<DayTypeMealPattern> _dayTypeMealPatterns = default;
 
         private void Start()
         {
-            _dayMealPatterns = Resources.LoadAll(DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
-            _dayTypeMealPatterns = Resources.LoadAll(DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
+            var dayMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayMealPatternsDirectoryName);
+            _dayMealPatterns = Resources.LoadAll(dayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
+
+            var dayTypeMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayTypeMealPatternsDirectoryName);
+            _dayTypeMealPatterns = Resources.LoadAll(dayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
+
             _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_CurrentDayTypeChanged;
         }
 
