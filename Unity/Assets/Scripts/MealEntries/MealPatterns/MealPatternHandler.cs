@@ -46,9 +46,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
         private void DayTypeDropdown_DayTypeChanged() {
             if (_dayTypeDropdown.DayType == DayType.None || _dayTypeDropdown.DayType == DayType.Vacation)
             {
-                foreach (var key in _scrollViewDictionary.Keys)
+                foreach (var mealSource in _scrollViewDictionary.Keys)
                 {
-                    _scrollViewDictionary[key].ClearMealSuggestions();
+                    _scrollViewDictionary[mealSource].ClearMealSuggestions();
                 }
                 return;
             }
