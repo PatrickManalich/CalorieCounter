@@ -60,9 +60,10 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 {
                     try
                     {
-                        var mealProportion = dayMealPattern.mealSuggestion.mealProportion;
+                        var mealSuggestion = dayMealPattern.mealSuggestion;
+                        var mealProportion = mealSuggestion.mealProportion;
                         var mealSourceType = mealProportion.mealSource.mealSourceType;
-                        _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealProportion);
+                        _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealSuggestion);
                     }
                     catch
                     {
@@ -79,9 +80,10 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 {
                     try
                     {
-                        var mealProportion = dayTypeMealPattern.mealSuggestion.mealProportion;
+                        var mealSuggestion = dayTypeMealPattern.mealSuggestion;
+                        var mealProportion = mealSuggestion.mealProportion;
                         var mealSourceType = mealProportion.mealSource.mealSourceType;
-                        _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealProportion);
+                        _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealSuggestion);
                     }
                     catch
                     {

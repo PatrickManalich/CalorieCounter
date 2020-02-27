@@ -24,7 +24,7 @@ namespace CalorieCounter.MealEntries {
 
         private const string CustomMealSourceName = "Custom Meal";
 
-        private List<MealProportion> _mealSuggestions = new List<MealProportion>();
+        private List<MealSuggestion> _mealSuggestions = new List<MealSuggestion>();
 
         public void AddMealProportion(MealProportion mealProportion)
         {
@@ -49,7 +49,7 @@ namespace CalorieCounter.MealEntries {
             ScrollToBottom();
         }
 
-        public void AddMealSuggestion(MealProportion mealSuggestion)
+        public void AddMealSuggestion(MealSuggestion mealSuggestion)
         {
             _mealSuggestions.Add(mealSuggestion);
 
@@ -61,12 +61,13 @@ namespace CalorieCounter.MealEntries {
             GameObject proteinText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
             GameObject calorieText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
 
-            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.servingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : _mealSourcesAdapter.GetMealSourceName(mealSuggestion.mealSource);
-            fatText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.fat.ToString();
-            carbText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.carbs.ToString();
-            proteinText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.protein.ToString();
-            calorieText.GetComponent<TextMeshProUGUI>().text = mealSuggestion.calories.ToString();
+            var mealProportion = mealSuggestion.mealProportion;
+            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
+            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : _mealSourcesAdapter.GetMealSourceName(mealProportion.mealSource);
+            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.fat.ToString();
+            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.carbs.ToString();
+            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
+            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
         }
 
         public void ClearMealProportions()
@@ -84,7 +85,7 @@ namespace CalorieCounter.MealEntries {
             {
                 var mealSuggestion = _mealSuggestions[rowIndex - MealProportions.Count];
                 DeleteRow(rowIndex);
-                AddMealProportion(mealSuggestion);
+                AddMealProportion(mealSuggestion.mealProportion);
             }
         }
 
