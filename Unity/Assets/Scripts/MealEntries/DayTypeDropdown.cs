@@ -38,19 +38,27 @@ namespace CalorieCounter.MealEntries {
             DayType = dayType;
         }
 
-        private void Start() {
+        private void Awake()
+        {
             _dropdown = GetComponent<TMP_Dropdown>();
             _dropdown.ClearOptions();
             List<string> dayTypeList = Enum.GetValues(typeof(DayType)).Cast<DayType>().Select(v => v.ToString()).ToList();
-            foreach (var dayType in dayTypeList) {
-                if (dayType == DayType.None.ToString()) {
+            foreach (var dayType in dayTypeList)
+            {
+                if (dayType == DayType.None.ToString())
+                {
                     _optionDataList.Add(new TMP_Dropdown.OptionData(""));
-                } else {
+                }
+                else
+                {
                     _optionDataList.Add(new TMP_Dropdown.OptionData(dayType));
                 }
             }
             _dropdown.AddOptions(_optionDataList);
             DayType = default;
+        }
+
+        private void Start() {
             _dropdown.onValueChanged.AddListener(i => Dropdown_OnValueChanged(i));
         }
 

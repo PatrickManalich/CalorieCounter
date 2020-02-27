@@ -30,16 +30,21 @@ namespace CalorieCounter.MealEntries {
             SelectedNamedMealSource = default;
         }
 
-        private void Start() {
+        private void Awake()
+        {
             _dropdown = GetComponent<TMP_Dropdown>();
             _nonarchivedNamedMealSources = _mealSourcesAdapter.GetNamedMealSources(_mealSourceType).Where(n => !n.mealSource.archived).ToList();
             _dropdown.ClearOptions();
             var options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData("") };
-            foreach (var nonarchivedNamedMealSource in _nonarchivedNamedMealSources) {
+            foreach (var nonarchivedNamedMealSource in _nonarchivedNamedMealSources)
+            {
                 options.Add(new TMP_Dropdown.OptionData($"{nonarchivedNamedMealSource.name} (per {nonarchivedNamedMealSource.mealSource.servingSize.ToLower()})"));
             }
             _dropdown.AddOptions(options);
             SelectedNamedMealSource = default;
+        }
+
+        private void Start() {
             _dropdown.onValueChanged.AddListener(Dropdown_OnValueChanged);
         }
 
