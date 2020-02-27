@@ -58,18 +58,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             {
                 if (dayMealPattern.daysOfTheWeek.HasFlag(dayOfTheWeek))
                 {
-                    try
-                    {
-                        var mealSuggestion = dayMealPattern.mealSuggestion;
-                        var mealProportion = mealSuggestion.mealProportion;
-                        var mealSourceType = mealProportion.mealSource.mealSourceType;
-                        _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealSuggestion);
-                    }
-                    catch
-                    {
-                        Debug.LogWarning($"Error trying to add meal suggestion: {dayMealPattern.name}");
-                    }
-
+                    AddMealSuggestionToScrollView(dayMealPattern.mealSuggestion);
                 }
             }
 
@@ -78,19 +67,22 @@ namespace CalorieCounter.MealEntries.MealPatterns
             {
                 if (dayTypeMealPattern.dayType == _dayTypeDropdown.CurrentDayType)
                 {
-                    try
-                    {
-                        var mealSuggestion = dayTypeMealPattern.mealSuggestion;
-                        var mealProportion = mealSuggestion.mealProportion;
-                        var mealSourceType = mealProportion.mealSource.mealSourceType;
-                        _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealSuggestion);
-                    }
-                    catch
-                    {
-                        Debug.LogWarning($"Error trying to add meal suggestion: {dayTypeMealPattern.name}");
-                    }
-
+                    AddMealSuggestionToScrollView(dayTypeMealPattern.mealSuggestion);
                 }
+            }
+        }
+
+        private void AddMealSuggestionToScrollView(MealSuggestion mealSuggestion)
+        {
+            try
+            {
+                var mealProportion = mealSuggestion.mealProportion;
+                var mealSourceType = mealProportion.mealSource.mealSourceType;
+                _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealSuggestion);
+            }
+            catch
+            {
+                Debug.LogWarning($"Error trying to add meal suggestion");
             }
         }
     }
