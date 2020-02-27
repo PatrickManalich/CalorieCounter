@@ -18,17 +18,17 @@ MonoBehaviour:
       servingAmount: 1
       mealSource:
         id: 1f7d8135-8164-4c38-bfc8-644981d2f1ad
-        servingSize: 
-        fat: 0
-        carbs: 0
-        protein: 0
-        calories: 0
-        description: 
-        mealSourceType: 0
+        servingSize: Container
+        fat: 18
+        carbs: 43
+        protein: 5
+        calories: 354
+        description: Chic-fil-A medium fries
+        mealSourceType: 1
         archived: 0
-      fat: 0
-      carbs: 0
-      protein: 0
-      calories: 0
+      fat: 18
+      carbs: 43
+      protein: 5
+      calories: 354
     mealPatternType: 0
     priority: 0

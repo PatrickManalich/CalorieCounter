@@ -18,17 +18,17 @@ MonoBehaviour:
       servingAmount: 1
       mealSource:
         id: f632ab19-b9f2-487c-bfb3-5466da9a186d
-        servingSize: 
-        fat: 0
-        carbs: 0
-        protein: 0
-        calories: 0
-        description: 
-        mealSourceType: 0
+        servingSize: Shake
+        fat: 25
+        carbs: 86
+        protein: 15
+        calories: 629
+        description: Chic-fil-A large vanilla shake
+        mealSourceType: 1
         archived: 0
-      fat: 0
-      carbs: 0
-      protein: 0
-      calories: 0
+      fat: 25
+      carbs: 86
+      protein: 15
+      calories: 629
     mealPatternType: 0
     priority: 0
