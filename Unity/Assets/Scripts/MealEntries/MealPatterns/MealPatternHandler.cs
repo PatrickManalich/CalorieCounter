@@ -42,12 +42,55 @@ namespace CalorieCounter.MealEntries.MealPatterns
             var dayTypeMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayTypeMealPatternsDirectoryName);
             _dayTypeMealPatterns = Resources.LoadAll(dayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
 
+            _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
             _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_CurrentDayTypeChanged;
         }
 
         private void OnDestroy()
         {
             _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_CurrentDayTypeChanged;
+            _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
+        }
+
+        private void Date_OnCurrentDateTimeChanged()
+        {
+            foreach (var mealSource in _scrollViewDictionary.Keys)
+            {
+                _scrollViewDictionary[mealSource].ClearMealSuggestions();
+            }
+
+            if (_dayTypeDropdown.CurrentDayType == DayType.None || _dayTypeDropdown.CurrentDayType == DayType.Vacation)
+            {
+                return;
+            }
+
+            foreach (var mealSourceType in _mealSuggestionsDictionary.Keys)
+            {
+                _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.Day);
+            }
+
+            // Add day meal patterns to lists
+            var dayOfTheWeek = (DaysOfTheWeek)Enum.Parse(typeof(DaysOfTheWeek), _date.CurrentDateTime.DayOfWeek.ToString());
+            foreach (var dayMealPattern in _dayMealPatterns)
+            {
+                if (dayMealPattern.daysOfTheWeek.HasFlag(dayOfTheWeek))
+                {
+                    AddMealSuggestionToList(dayMealPattern.mealSuggestion);
+                }
+            }
+
+            // Process all lists, up to meal suggestion limit
+            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            {
+                var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
+                var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
+                var mealSuggestionsAdded = 0;
+                while (mealSuggestionsAdded < MealSuggestionLimit && mealSuggestionsAdded < mealSuggestions.Count)
+                {
+                    mealProportionsScrollView.AddMealSuggestion(mealSuggestions[mealSuggestionsAdded]);
+                    mealSuggestionsAdded++;
+                }
+            }
         }
 
         private void DayTypeDropdown_CurrentDayTypeChanged()
@@ -65,16 +108,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
             foreach (var mealSourceType in _mealSuggestionsDictionary.Keys)
             {
                 _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.DayType);
-            }
-
-            // Add day meal patterns to lists
-            var dayOfTheWeek = (DaysOfTheWeek)Enum.Parse(typeof(DaysOfTheWeek), _date.CurrentDateTime.DayOfWeek.ToString());
-            foreach (var dayMealPattern in _dayMealPatterns)
-            {
-                if (dayMealPattern.daysOfTheWeek.HasFlag(dayOfTheWeek))
-                {
-                    AddMealSuggestionToList(dayMealPattern.mealSuggestion);
-                }
             }
 
             // Add day type meal patterns to lists
