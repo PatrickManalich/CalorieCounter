@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: ProteinBar
   m_EditorClassIdentifier: 
   daysOfTheWeek: 62
-  mealSourceType: 0
-  servingAmount: 1
-  mealSourceId: 2db5d992-e797-43c8-b6f5-a6c2aec3396b
+  mealSuggestion:
+    mealProportion:
+      servingAmount: 1
+      mealSource:
+        id: 2db5d992-e797-43c8-b6f5-a6c2aec3396b
+        servingSize: 
+        fat: 0
+        carbs: 0
+        protein: 0
+        calories: 0
+        description: 
+        mealSourceType: 0
+        archived: 0
+      fat: 0
+      carbs: 0
+      protein: 0
+      calories: 0
+    mealPatternType: 0
+    priority: 0

@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: CfaSpriteMedium
   m_EditorClassIdentifier: 
   daysOfTheWeek: 8
-  mealSourceType: 1
-  servingAmount: 1
-  mealSourceId: dfecb953-6351-4621-a98e-b65c5de371b7
+  mealSuggestion:
+    mealProportion:
+      servingAmount: 1
+      mealSource:
+        id: dfecb953-6351-4621-a98e-b65c5de371b7
+        servingSize: 
+        fat: 0
+        carbs: 0
+        protein: 0
+        calories: 0
+        description: 
+        mealSourceType: 0
+        archived: 0
+      fat: 0
+      carbs: 0
+      protein: 0
+      calories: 0
+    mealPatternType: 0
+    priority: 0

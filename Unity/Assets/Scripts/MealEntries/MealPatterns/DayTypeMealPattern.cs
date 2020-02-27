@@ -7,9 +7,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
     public class DayTypeMealPattern : ScriptableObject
     {
         public DayType dayType;
-        public MealSourceType mealSourceType;
-        public float servingAmount;
-        public string mealSourceId;
+        public MealSuggestion mealSuggestion;
     }
 }
 

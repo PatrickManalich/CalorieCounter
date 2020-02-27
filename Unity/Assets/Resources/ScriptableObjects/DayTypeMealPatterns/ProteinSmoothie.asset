@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: ProteinSmoothie
   m_EditorClassIdentifier: 
   dayType: 2
-  mealSourceType: 0
-  servingAmount: 1
-  mealSourceId: a927f188-780c-459a-a546-fb5b01b5b033
+  mealSuggestion:
+    mealProportion:
+      servingAmount: 1
+      mealSource:
+        id: a927f188-780c-459a-a546-fb5b01b5b033
+        servingSize: 
+        fat: 0
+        carbs: 0
+        protein: 0
+        calories: 0
+        description: 
+        mealSourceType: 0
+        archived: 0
+      fat: 0
+      carbs: 0
+      protein: 0
+      calories: 0
+    mealPatternType: 0
+    priority: 0

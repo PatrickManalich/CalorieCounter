@@ -7085,7 +7085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ebd219012ff4043a29af4c0958eccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealSourcesAdapter: {fileID: 1906813654}
   _date: {fileID: 1767589936}
   _dayTypeDropdown: {fileID: 945032638}
   _scrollViewDictionary:

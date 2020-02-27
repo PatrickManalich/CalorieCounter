@@ -15,9 +15,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
         private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealProportionsScrollView> { }
 
         [SerializeField]
-        private MealSourcesAdapter _mealSourcesAdapter = default;
-
-        [SerializeField]
         private Date _date = default;
 
         [SerializeField]
@@ -63,9 +60,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 {
                     try
                     {
-                        var mealSource = _mealSourcesAdapter.GetMealSource(dayMealPattern.mealSourceId);
-                        var mealSuggestion = new MealProportion(dayMealPattern.servingAmount, mealSource);
-                        _scrollViewDictionary[dayMealPattern.mealSourceType].AddMealSuggestion(mealSuggestion);
+                        var mealProportion = dayMealPattern.mealSuggestion.mealProportion;
+                        var mealSourceType = mealProportion.mealSource.mealSourceType;
+                        _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealProportion);
                     }
                     catch
                     {
@@ -82,9 +79,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 {
                     try
                     {
-                        var mealSource = _mealSourcesAdapter.GetMealSource(dayTypeMealPattern.mealSourceId);
-                        var mealSuggestion = new MealProportion(dayTypeMealPattern.servingAmount, mealSource);
-                        _scrollViewDictionary[dayTypeMealPattern.mealSourceType].AddMealSuggestion(mealSuggestion);
+                        var mealProportion = dayTypeMealPattern.mealSuggestion.mealProportion;
+                        var mealSourceType = mealProportion.mealSource.mealSourceType;
+                        _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealProportion);
                     }
                     catch
                     {

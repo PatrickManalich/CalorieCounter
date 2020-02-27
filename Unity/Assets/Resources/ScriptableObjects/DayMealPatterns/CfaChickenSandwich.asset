@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: CfaChickenSandwich
   m_EditorClassIdentifier: 
   daysOfTheWeek: 8
-  mealSourceType: 1
-  servingAmount: 1
-  mealSourceId: 21c41625-15f4-4efe-8ee8-ca437e6c3b16
+  mealSuggestion:
+    mealProportion:
+      servingAmount: 1
+      mealSource:
+        id: 21c41625-15f4-4efe-8ee8-ca437e6c3b16
+        servingSize: 
+        fat: 0
+        carbs: 0
+        protein: 0
+        calories: 0
+        description: 
+        mealSourceType: 0
+        archived: 0
+      fat: 0
+      carbs: 0
+      protein: 0
+      calories: 0
+    mealPatternType: 0
+    priority: 0

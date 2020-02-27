@@ -13,6 +13,22 @@ MonoBehaviour:
   m_Name: Banana
   m_EditorClassIdentifier: 
   daysOfTheWeek: 62
-  mealSourceType: 0
-  servingAmount: 1
-  mealSourceId: 0625b9d1-57ce-465c-82f0-76953090a50a
+  mealSuggestion:
+    mealProportion:
+      servingAmount: 1
+      mealSource:
+        id: 0625b9d1-57ce-465c-82f0-76953090a50a
+        servingSize: 
+        fat: 0
+        carbs: 0
+        protein: 0
+        calories: 0
+        description: 
+        mealSourceType: 0
+        archived: 0
+      fat: 0
+      carbs: 0
+      protein: 0
+      calories: 0
+    mealPatternType: 0
+    priority: 0

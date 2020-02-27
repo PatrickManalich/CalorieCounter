@@ -8,9 +8,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
     {
         [EnumFlag("Days Of The Week")]
         public DaysOfTheWeek daysOfTheWeek;
-        public MealSourceType mealSourceType;
-        public float servingAmount;
-        public string mealSourceId;
+        public MealSuggestion mealSuggestion;
     }
 }
 
