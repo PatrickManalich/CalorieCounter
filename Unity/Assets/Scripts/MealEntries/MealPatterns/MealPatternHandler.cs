@@ -23,11 +23,19 @@ namespace CalorieCounter.MealEntries.MealPatterns
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
+        private const int MealSuggestionLimit = 4;
+
+        private Dictionary<MealSourceType, List<MealSuggestion>> _mealSuggestionsDictionary = new Dictionary<MealSourceType, List<MealSuggestion>>();
         private List<DayMealPattern> _dayMealPatterns = default;
         private List<DayTypeMealPattern> _dayTypeMealPatterns = default;
 
         private void Start()
         {
+            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            {
+                _mealSuggestionsDictionary.Add(mealSourceType, new List<MealSuggestion>());
+            }
+
             var dayMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayMealPatternsDirectoryName);
             _dayMealPatterns = Resources.LoadAll(dayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
 
@@ -52,31 +60,50 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 return;
             }
 
-            // Handle day meal patterns
+            // Add day meal patterns to lists
             var dayOfTheWeek = (DaysOfTheWeek)Enum.Parse(typeof(DaysOfTheWeek), _date.CurrentDateTime.DayOfWeek.ToString());
             foreach (var dayMealPattern in _dayMealPatterns)
             {
                 if (dayMealPattern.daysOfTheWeek.HasFlag(dayOfTheWeek))
                 {
-                    AddMealSuggestionToScrollView(dayMealPattern.mealSuggestion);
+                    AddMealSuggestionToList(dayMealPattern.mealSuggestion);
                 }
             }
 
-            // Handle day type meal patterns
+            // Add day type meal patterns to lists
             foreach (var dayTypeMealPattern in _dayTypeMealPatterns)
             {
                 if (dayTypeMealPattern.dayType == _dayTypeDropdown.CurrentDayType)
                 {
-                    AddMealSuggestionToScrollView(dayTypeMealPattern.mealSuggestion);
+                    AddMealSuggestionToList(dayTypeMealPattern.mealSuggestion);
+                }
+            }
+
+            // Process all lists, up to meal suggestion limit
+            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            {
+                var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
+                var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
+                var mealSuggestionsAdded = 0;
+                while (mealSuggestionsAdded < MealSuggestionLimit && mealSuggestionsAdded < mealSuggestions.Count)
+                {
+                    mealProportionsScrollView.AddMealSuggestion(mealSuggestions[mealSuggestionsAdded]);
+                    mealSuggestionsAdded++;
                 }
             }
         }
 
-        private void AddMealSuggestionToScrollView(MealSuggestion mealSuggestion)
+        private void AddMealSuggestionToList(MealSuggestion mealSuggestion)
         {
             var mealProportion = mealSuggestion.mealProportion;
-            var mealSourceType = mealProportion.mealSource.mealSourceType;
-            _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealSuggestion);
+            var mealSource = mealProportion.mealSource;
+
+            var mealSuggestions = _mealSuggestionsDictionary[mealSource.mealSourceType];
+            var isUniqueMealSuggestion = !mealSuggestions.Exists(m => m.mealProportion.mealSource == mealSource);
+            if (isUniqueMealSuggestion)
+            {
+                mealSuggestions.Add(mealSuggestion);
+            }
         }
     }
 }
