@@ -74,16 +74,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private void AddMealSuggestionToScrollView(MealSuggestion mealSuggestion)
         {
-            try
-            {
-                var mealProportion = mealSuggestion.mealProportion;
-                var mealSourceType = mealProportion.mealSource.mealSourceType;
-                _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealSuggestion);
-            }
-            catch
-            {
-                Debug.LogWarning($"Error trying to add meal suggestion");
-            }
+            var mealProportion = mealSuggestion.mealProportion;
+            var mealSourceType = mealProportion.mealSource.mealSourceType;
+            _scrollViewDictionary[mealSourceType].AddMealSuggestion(mealSuggestion);
         }
     }
 }
