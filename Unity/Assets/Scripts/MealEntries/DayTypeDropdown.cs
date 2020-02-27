@@ -26,16 +26,17 @@ namespace CalorieCounter.MealEntries {
         }
 
         [SerializeField]
+        private MealEntriesAdapter _mealEntriesAdapter = default;
+
+        [SerializeField]
+        private Date _date = default;
+
+        [SerializeField]
         private Totals _totals = default;
 
         private DayType _dayType;
         private TMP_Dropdown _dropdown;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
-
-        public void HardSetCurrentDayType(DayType currentDayType) {
-            _dropdown.value = (int)currentDayType;
-            CurrentDayType = currentDayType;
-        }
 
         private void Awake()
         {
@@ -54,15 +55,17 @@ namespace CalorieCounter.MealEntries {
                 }
             }
             _dropdown.AddOptions(_optionDataList);
-            CurrentDayType = default;
+            Refresh();
         }
 
         private void Start() {
             _dropdown.onValueChanged.AddListener(i => Dropdown_OnValueChanged(i));
+            _date.CurrentDateTimeChanged += Refresh;
         }
 
         private void OnDestroy()
         {
+            _date.CurrentDateTimeChanged += Refresh;
             _dropdown.onValueChanged.RemoveListener(i => Dropdown_OnValueChanged(i));
         }
 
@@ -78,6 +81,13 @@ namespace CalorieCounter.MealEntries {
                 FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
             }
             _totals.Refresh();
+        }
+
+        private void Refresh()
+        {
+            var currentDayType = _mealEntriesAdapter.GetMealEntryDayType();
+            _dropdown.value = (int)currentDayType;
+            CurrentDayType = currentDayType;
         }
     }
 }

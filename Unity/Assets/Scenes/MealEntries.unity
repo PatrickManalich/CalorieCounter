@@ -8317,6 +8317,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a07db3b405d30c49a30950511ea2346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealEntriesAdapter: {fileID: 1508925266}
+  _date: {fileID: 1767589936}
   _totals: {fileID: 1566187486}
 --- !u!114 &945032639
 MonoBehaviour:

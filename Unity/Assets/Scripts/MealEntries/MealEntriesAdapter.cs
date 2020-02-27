@@ -32,6 +32,12 @@ namespace CalorieCounter.MealEntries {
             GameManager.MealEntriesManager.ExportMealEntry(currentMealEntry, _date.CurrentDateTime);
         }
 
+        public DayType GetMealEntryDayType()
+        {
+            MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
+            return mealEntry.dayType;
+        }
+
         public void Refresh() {
             foreach (var mealSourceType in _scrollViewDictionary.Keys) {
                 _scrollViewDictionary[mealSourceType].ClearMealProportions();
@@ -47,7 +53,6 @@ namespace CalorieCounter.MealEntries {
                     scrollView.ScrollToTop();
                 }
             }
-            _dayTypeDropdown.HardSetCurrentDayType(mealEntry.dayType);
         }
 
         private void Start() {
