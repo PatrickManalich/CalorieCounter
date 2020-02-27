@@ -97,9 +97,13 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             var mealProportion = mealSuggestion.mealProportion;
             var mealSource = mealProportion.mealSource;
+            var mealSourceType = mealSource.mealSourceType;
 
-            var mealSuggestions = _mealSuggestionsDictionary[mealSource.mealSourceType];
-            var isUniqueMealSuggestion = !mealSuggestions.Exists(m => m.mealProportion.mealSource == mealSource);
+            var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
+            var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
+            var isUniqueMealSuggestion = !mealProportionsScrollView.MealProportions.Exists(m => m.mealSource == mealSource) &&
+                !mealSuggestions.Exists(m => m.mealProportion.mealSource == mealSource);
+
             if (isUniqueMealSuggestion)
             {
                 mealSuggestions.Add(mealSuggestion);
