@@ -50,14 +50,21 @@ namespace CalorieCounter.MealEntries.MealPatterns
             _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_CurrentDayTypeChanged;
         }
 
-        private void DayTypeDropdown_CurrentDayTypeChanged() {
+        private void DayTypeDropdown_CurrentDayTypeChanged()
+        {
+            foreach (var mealSource in _scrollViewDictionary.Keys)
+            {
+                _scrollViewDictionary[mealSource].ClearMealSuggestions();
+            }
+
             if (_dayTypeDropdown.CurrentDayType == DayType.None || _dayTypeDropdown.CurrentDayType == DayType.Vacation)
             {
-                foreach (var mealSource in _scrollViewDictionary.Keys)
-                {
-                    _scrollViewDictionary[mealSource].ClearMealSuggestions();
-                }
                 return;
+            }
+
+            foreach (var mealSourceType in _mealSuggestionsDictionary.Keys)
+            {
+                _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.DayType);
             }
 
             // Add day meal patterns to lists
