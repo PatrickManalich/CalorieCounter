@@ -59,11 +59,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 _scrollViewDictionary[mealSource].ClearMealSuggestions();
             }
 
-            if (_dayTypeDropdown.CurrentDayType == DayType.None || _dayTypeDropdown.CurrentDayType == DayType.Vacation)
-            {
-                return;
-            }
-
             foreach (var mealSourceType in _mealSuggestionsDictionary.Keys)
             {
                 _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.Day);
@@ -79,16 +74,19 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 }
             }
 
-            // Process all lists, up to meal suggestion limit
-            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            if (_dayTypeDropdown.CurrentDayType != DayType.None && _dayTypeDropdown.CurrentDayType != DayType.Vacation)
             {
-                var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
-                var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
-                var mealSuggestionsAdded = 0;
-                while (mealSuggestionsAdded < MealSuggestionLimit && mealSuggestionsAdded < mealSuggestions.Count)
+                // Process all lists, up to meal suggestion limit
+                foreach (var mealSourceType in _scrollViewDictionary.Keys)
                 {
-                    mealProportionsScrollView.AddMealSuggestion(mealSuggestions[mealSuggestionsAdded]);
-                    mealSuggestionsAdded++;
+                    var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
+                    var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
+                    var mealSuggestionsAdded = 0;
+                    while (mealSuggestionsAdded < MealSuggestionLimit && mealSuggestionsAdded < mealSuggestions.Count)
+                    {
+                        mealProportionsScrollView.AddMealSuggestion(mealSuggestions[mealSuggestionsAdded]);
+                        mealSuggestionsAdded++;
+                    }
                 }
             }
         }
@@ -98,11 +96,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
             foreach (var mealSource in _scrollViewDictionary.Keys)
             {
                 _scrollViewDictionary[mealSource].ClearMealSuggestions();
-            }
-
-            if (_dayTypeDropdown.CurrentDayType == DayType.None || _dayTypeDropdown.CurrentDayType == DayType.Vacation)
-            {
-                return;
             }
 
             foreach (var mealSourceType in _mealSuggestionsDictionary.Keys)
@@ -119,16 +112,19 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 }
             }
 
-            // Process all lists, up to meal suggestion limit
-            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            if (_dayTypeDropdown.CurrentDayType != DayType.None && _dayTypeDropdown.CurrentDayType != DayType.Vacation)
             {
-                var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
-                var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
-                var mealSuggestionsAdded = 0;
-                while (mealSuggestionsAdded < MealSuggestionLimit && mealSuggestionsAdded < mealSuggestions.Count)
+                // Process all lists, up to meal suggestion limit
+                foreach (var mealSourceType in _scrollViewDictionary.Keys)
                 {
-                    mealProportionsScrollView.AddMealSuggestion(mealSuggestions[mealSuggestionsAdded]);
-                    mealSuggestionsAdded++;
+                    var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
+                    var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
+                    var mealSuggestionsAdded = 0;
+                    while (mealSuggestionsAdded < MealSuggestionLimit && mealSuggestionsAdded < mealSuggestions.Count)
+                    {
+                        mealProportionsScrollView.AddMealSuggestion(mealSuggestions[mealSuggestionsAdded]);
+                        mealSuggestionsAdded++;
+                    }
                 }
             }
         }
