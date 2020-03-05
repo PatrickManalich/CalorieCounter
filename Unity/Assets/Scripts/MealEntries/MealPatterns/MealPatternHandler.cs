@@ -45,14 +45,57 @@ namespace CalorieCounter.MealEntries.MealPatterns
             _date.CurrentDateTimeChanged += RefreshDayMealPatterns;
             _dayTypeDropdown.CurrentDayTypeChanged += RefreshDayTypeMealPatterns;
 
-            RefreshDayMealPatterns();
-            RefreshDayTypeMealPatterns();
+            RefreshAllMealPatterns();
         }
 
         private void OnDestroy()
         {
             _dayTypeDropdown.CurrentDayTypeChanged -= RefreshDayTypeMealPatterns;
             _date.CurrentDateTimeChanged -= RefreshDayMealPatterns;
+        }
+
+        private void RefreshAllMealPatterns()
+        {
+            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            {
+                _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
+                _mealSuggestionsDictionary[mealSourceType].Clear();
+            }
+
+            // Add day meal patterns to lists
+            var dayOfTheWeek = (DaysOfTheWeek)Enum.Parse(typeof(DaysOfTheWeek), _date.CurrentDateTime.DayOfWeek.ToString());
+            foreach (var dayMealPattern in _dayMealPatterns)
+            {
+                if (dayMealPattern.daysOfTheWeek.HasFlag(dayOfTheWeek))
+                {
+                    AddMealSuggestionToList(dayMealPattern.mealSuggestion);
+                }
+            }
+
+            // Add day type meal patterns to lists
+            foreach (var dayTypeMealPattern in _dayTypeMealPatterns)
+            {
+                if (dayTypeMealPattern.dayType == _dayTypeDropdown.CurrentDayType)
+                {
+                    AddMealSuggestionToList(dayTypeMealPattern.mealSuggestion);
+                }
+            }
+
+            if (_dayTypeDropdown.CurrentDayType != DayType.None && _dayTypeDropdown.CurrentDayType != DayType.Vacation)
+            {
+                // Process all lists, up to meal suggestion limit
+                foreach (var mealSourceType in _scrollViewDictionary.Keys)
+                {
+                    var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
+                    var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
+                    var mealSuggestionsAdded = 0;
+                    while (mealSuggestionsAdded < MealSuggestionLimit && mealSuggestionsAdded < mealSuggestions.Count)
+                    {
+                        mealProportionsScrollView.AddMealSuggestion(mealSuggestions[mealSuggestionsAdded]);
+                        mealSuggestionsAdded++;
+                    }
+                }
+            }
         }
 
         private void RefreshDayMealPatterns()
