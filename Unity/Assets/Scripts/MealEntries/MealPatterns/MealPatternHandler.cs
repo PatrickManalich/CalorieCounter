@@ -23,7 +23,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
-        private const int MealSuggestionLimit = 4;
+        private const int PrioritizedMealSuggestionLimit = 4;
 
         private Dictionary<MealSourceType, List<MealSuggestion>> _mealSuggestionsDictionary = new Dictionary<MealSourceType, List<MealSuggestion>>();
         private List<DayMealPattern> _dayMealPatterns = default;
@@ -128,13 +128,15 @@ namespace CalorieCounter.MealEntries.MealPatterns
             {
                 foreach (var mealSourceType in _scrollViewDictionary.Keys)
                 {
+                    // Meal suggestions with lower priority values will come before meal suggestions with higher priority values
                     var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
                     var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
-                    var mealSuggestionsAdded = 0;
-                    while (mealSuggestionsAdded < MealSuggestionLimit && mealSuggestionsAdded < mealSuggestions.Count)
+                    var count = Mathf.Min(PrioritizedMealSuggestionLimit, mealSuggestions.Count);
+                    var prioritizedMealSuggestions = mealSuggestions.OrderBy(m => m.priority).ToList().GetRange(0, count);
+
+                    foreach (var prioritizedMealSuggestion in prioritizedMealSuggestions)
                     {
-                        mealProportionsScrollView.AddMealSuggestion(mealSuggestions[mealSuggestionsAdded]);
-                        mealSuggestionsAdded++;
+                        mealProportionsScrollView.AddMealSuggestion(prioritizedMealSuggestion);
                     }
                 }
             }
