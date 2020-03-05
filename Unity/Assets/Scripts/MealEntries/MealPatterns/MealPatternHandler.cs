@@ -57,13 +57,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private void RefreshDayMealPatterns()
         {
-            foreach (var mealSource in _scrollViewDictionary.Keys)
+            foreach (var mealSourceType in _scrollViewDictionary.Keys)
             {
-                _scrollViewDictionary[mealSource].ClearMealSuggestions();
-            }
-
-            foreach (var mealSourceType in _mealSuggestionsDictionary.Keys)
-            {
+                _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
                 _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.Day);
             }
 
@@ -96,13 +92,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private void RefreshDayTypeMealPatterns()
         {
-            foreach (var mealSource in _scrollViewDictionary.Keys)
+            foreach (var mealSourceType in _scrollViewDictionary.Keys)
             {
-                _scrollViewDictionary[mealSource].ClearMealSuggestions();
-            }
-
-            foreach (var mealSourceType in _mealSuggestionsDictionary.Keys)
-            {
+                _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
                 _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.DayType);
             }
 
