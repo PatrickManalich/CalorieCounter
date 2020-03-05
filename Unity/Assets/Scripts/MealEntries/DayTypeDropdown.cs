@@ -10,7 +10,7 @@ namespace CalorieCounter.MealEntries {
     [RequireComponent(typeof(TMP_Dropdown))]
     public class DayTypeDropdown : MonoBehaviour {
 
-        public event Action CurrentDayTypeChanged;
+        public Action CurrentDayTypeChanged;
 
         public DayType CurrentDayType {
             get {
