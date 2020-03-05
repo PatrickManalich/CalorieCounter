@@ -42,17 +42,20 @@ namespace CalorieCounter.MealEntries.MealPatterns
             var dayTypeMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayTypeMealPatternsDirectoryName);
             _dayTypeMealPatterns = Resources.LoadAll(dayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
 
-            _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
-            _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_CurrentDayTypeChanged;
+            _date.CurrentDateTimeChanged += RefreshDayMealPatterns;
+            _dayTypeDropdown.CurrentDayTypeChanged += RefreshDayTypeMealPatterns;
+
+            RefreshDayMealPatterns();
+            RefreshDayTypeMealPatterns();
         }
 
         private void OnDestroy()
         {
-            _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_CurrentDayTypeChanged;
-            _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
+            _dayTypeDropdown.CurrentDayTypeChanged -= RefreshDayTypeMealPatterns;
+            _date.CurrentDateTimeChanged -= RefreshDayMealPatterns;
         }
 
-        private void Date_OnCurrentDateTimeChanged()
+        private void RefreshDayMealPatterns()
         {
             foreach (var mealSource in _scrollViewDictionary.Keys)
             {
@@ -91,7 +94,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             }
         }
 
-        private void DayTypeDropdown_CurrentDayTypeChanged()
+        private void RefreshDayTypeMealPatterns()
         {
             foreach (var mealSource in _scrollViewDictionary.Keys)
             {
