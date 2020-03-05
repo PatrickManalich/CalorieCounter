@@ -1,4 +1,5 @@
 ﻿using CalorieCounter.MealSources;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -6,6 +7,8 @@ using UnityEngine;
 namespace CalorieCounter.MealEntries {
 
     public class MealProportionsScrollView : AbstractScrollView {
+
+        public Action MealProportionAdded;
 
         public List<MealProportion> MealProportions { get; private set; } = new List<MealProportion>();
 
@@ -47,6 +50,7 @@ namespace CalorieCounter.MealEntries {
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
 
             ScrollToBottom();
+            MealProportionAdded?.Invoke();
         }
 
         public void AddMealSuggestion(MealSuggestion mealSuggestion)

@@ -44,12 +44,20 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
             _date.CurrentDateTimeChanged += RefreshDayMealPatterns;
             _dayTypeDropdown.CurrentDayTypeChanged += RefreshDayTypeMealPatterns;
+            foreach (var scrollView in _scrollViewDictionary.Values)
+            {
+                scrollView.MealProportionAdded += RefreshAllMealPatterns;
+            }
 
             RefreshAllMealPatterns();
         }
 
         private void OnDestroy()
         {
+            foreach (var scrollView in _scrollViewDictionary.Values)
+            {
+                scrollView.MealProportionAdded -= RefreshAllMealPatterns;
+            }
             _dayTypeDropdown.CurrentDayTypeChanged -= RefreshDayTypeMealPatterns;
             _date.CurrentDateTimeChanged -= RefreshDayMealPatterns;
         }
