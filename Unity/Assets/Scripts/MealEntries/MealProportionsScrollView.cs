@@ -12,6 +12,8 @@ namespace CalorieCounter.MealEntries {
 
         public List<MealProportion> MealProportions { get; private set; } = new List<MealProportion>();
 
+        public List<MealSuggestion> MealSuggestions { get; private set; } = new List<MealSuggestion>();
+
         [SerializeField]
         private GameObject _suggestionScrollViewTextPrefab = default;
 
@@ -26,8 +28,6 @@ namespace CalorieCounter.MealEntries {
         private MealSourcesAdapter _mealSourcesAdapter = default;
 
         private const string CustomMealSourceName = "Custom Meal";
-
-        private List<MealSuggestion> _mealSuggestions = new List<MealSuggestion>();
 
         public void AddMealProportion(MealProportion mealProportion)
         {
@@ -55,9 +55,9 @@ namespace CalorieCounter.MealEntries {
 
         public void AddMealSuggestion(MealSuggestion mealSuggestion)
         {
-            _mealSuggestions.Add(mealSuggestion);
+            MealSuggestions.Add(mealSuggestion);
 
-            int siblingStartIndex = (MealProportions.Count + _mealSuggestions.Count - 1) * _content.constraintCount;
+            int siblingStartIndex = (MealProportions.Count + MealSuggestions.Count - 1) * _content.constraintCount;
             GameObject servingAmountText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, siblingStartIndex);
             GameObject nameText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
             GameObject fatText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
@@ -87,7 +87,7 @@ namespace CalorieCounter.MealEntries {
         {
             if (rowIndex >= MealProportions.Count)
             {
-                var mealSuggestion = _mealSuggestions[rowIndex - MealProportions.Count];
+                var mealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
                 DeleteRow(rowIndex);
                 AddMealProportion(mealSuggestion.mealProportion);
             }
@@ -95,7 +95,7 @@ namespace CalorieCounter.MealEntries {
 
         public void ClearMealSuggestions()
         {
-            var mealSuggestionsCount = _mealSuggestions.Count;   // Cache since we're changing list
+            var mealSuggestionsCount = MealSuggestions.Count;   // Cache since we're changing list
             for (int i = 0; i < mealSuggestionsCount; i++)
             {
                 DeleteRow(MealProportions.Count);
@@ -109,9 +109,9 @@ namespace CalorieCounter.MealEntries {
                 _totals.RemoveFromTotals(MealProportions[rowIndex]);
                 MealProportions.RemoveAt(rowIndex);
             }
-            else if (_mealSuggestions.Count > 0 && rowIndex >= MealProportions.Count)
+            else if (MealSuggestions.Count > 0 && rowIndex >= MealProportions.Count)
             {
-                _mealSuggestions.RemoveAt(rowIndex - MealProportions.Count);
+                MealSuggestions.RemoveAt(rowIndex - MealProportions.Count);
             }
             base.DeleteRow(rowIndex);
         }
