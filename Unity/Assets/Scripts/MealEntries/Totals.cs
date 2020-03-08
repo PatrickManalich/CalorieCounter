@@ -1,10 +1,15 @@
 ﻿using CalorieCounter.TargetEntries;
+using RotaryHeart.Lib.SerializableDictionary;
+using System;
 using TMPro;
 using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
     public class Totals : MonoBehaviour {
+
+        [Serializable]
+        private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealProportionsScrollView> { }
 
         [SerializeField]
         private TargetEntriesAdapter _targetEntriesAdapter = default;
@@ -24,6 +29,9 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private TextMeshProUGUI _caloriesTotalText = default;
 
+        [SerializeField]
+        private ScrollViewDictionary _scrollViewDictionary = default;
+
         public float TotalFat { get; private set; } = 0;
         public float TotalCarbs { get; private set; } = 0;
         public float TotalProtein { get; private set; } = 0;
@@ -31,25 +39,45 @@ namespace CalorieCounter.MealEntries {
 
         private TargetEntry _targetEntry;
 
-        public void AddToTotals(MealProportion mealProportion) {
-            TotalFat += mealProportion.fat;
-            TotalCarbs += mealProportion.carbs;
-            TotalProtein += mealProportion.protein;
-            TotalCalories += mealProportion.calories;
-            RefreshTexts();
-        }
-
-        public void RemoveFromTotals(MealProportion mealProportion) {
-            TotalFat -= mealProportion.fat;
-            TotalCarbs -= mealProportion.carbs;
-            TotalProtein -= mealProportion.protein;
-            TotalCalories -= mealProportion.calories;
-            RefreshTexts();
-        }
-
         public void Refresh() {
             _targetEntry = _targetEntriesAdapter.GetLatestTargetEntry();
             RefreshTexts();
+        }
+
+        private void Start()
+        {
+            foreach (var scrollView in _scrollViewDictionary.Values)
+            {
+                scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var scrollView in _scrollViewDictionary.Values)
+            {
+                scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
+            }
+        }
+
+        private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)
+        {
+            if(e.MealProportionModifiedType == MealProportionModifiedType.Added)
+            {
+                TotalFat += e.MealProportion.fat;
+                TotalCarbs += e.MealProportion.carbs;
+                TotalProtein += e.MealProportion.protein;
+                TotalCalories += e.MealProportion.calories;
+                RefreshTexts();
+            }
+            else if(e.MealProportionModifiedType == MealProportionModifiedType.Removed)
+            {
+                TotalFat -= e.MealProportion.fat;
+                TotalCarbs -= e.MealProportion.carbs;
+                TotalProtein -= e.MealProportion.protein;
+                TotalCalories -= e.MealProportion.calories;
+                RefreshTexts();
+            }
         }
 
         private void RefreshTexts() {

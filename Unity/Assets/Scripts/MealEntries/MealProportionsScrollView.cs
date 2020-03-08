@@ -45,9 +45,6 @@ namespace CalorieCounter.MealEntries {
         private GameObject _suggestionScrollViewTextPrefab = default;
 
         [SerializeField]
-        private Totals _totals = default;
-
-        [SerializeField]
         private MealSourceType _mealSourceType = default;
 
         private const string CustomMealSourceName = "Custom Meal";
@@ -55,7 +52,6 @@ namespace CalorieCounter.MealEntries {
         public void AddMealProportion(MealProportion mealProportion)
         {
             MealProportions.Add(mealProportion);
-            _totals.AddToTotals(mealProportion);
 
             int siblingStartIndex = MealProportions.IndexOf(mealProportion) * _content.constraintCount;
             GameObject servingAmountText = InstantiateScrollViewText(siblingStartIndex);
@@ -130,8 +126,9 @@ namespace CalorieCounter.MealEntries {
             base.DeleteRow(rowIndex);
             if (MealProportions.Count > 0 && rowIndex < MealProportions.Count)
             {
-                _totals.RemoveFromTotals(MealProportions[rowIndex]);
-                MealProportions.RemoveAt(rowIndex);
+                var removedMealProportion = MealProportions[rowIndex];
+                MealProportions.Remove(removedMealProportion);
+                MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Removed, _mealSourceType, removedMealProportion));
             }
             else if (MealSuggestions.Count > 0 && rowIndex >= MealProportions.Count)
             {

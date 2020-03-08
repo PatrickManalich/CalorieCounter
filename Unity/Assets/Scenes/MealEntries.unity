@@ -337,7 +337,6 @@ MonoBehaviour:
     type: 3}
   _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
-  _totals: {fileID: 1566187486}
   _mealSourceType: 0
 --- !u!1 &29919848
 GameObject:
@@ -5616,7 +5615,6 @@ MonoBehaviour:
     type: 3}
   _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
-  _totals: {fileID: 1566187486}
   _mealSourceType: 1
 --- !u!114 &688997044
 MonoBehaviour:
@@ -7980,7 +7978,6 @@ MonoBehaviour:
     type: 3}
   _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
-  _totals: {fileID: 1566187486}
   _mealSourceType: 2
 --- !u!114 &920356583
 MonoBehaviour:
@@ -13309,6 +13306,35 @@ MonoBehaviour:
   _carbsTotalText: {fileID: 527433130}
   _proteinTotalText: {fileID: 863322316}
   _caloriesTotalText: {fileID: 1622163062}
+  _scrollViewDictionary:
+    reorderableList:
+      canAdd: 1
+      canRemove: 1
+      draggable: 1
+      expandable: 1
+      multipleSelection: 1
+      isExpanded: 1
+      label:
+        m_Text: Keys
+        m_Image: {fileID: 0}
+        m_Tooltip: 
+      headerHeight: 18
+      footerHeight: 13
+      slideEasing: 0.15
+      verticalSpacing: 2
+      showDefaultBackground: 1
+      elementDisplayType: 0
+      elementNameProperty: 
+      elementNameOverride: 
+      elementIcon: {fileID: 0}
+    reqReferences: {fileID: 0}
+    isExpanded: 1
+    _keyValues: 000000000100000002000000
+    _keys: 000000000100000002000000
+    _values:
+    - {fileID: 19275662}
+    - {fileID: 688997043}
+    - {fileID: 920356582}
 --- !u!114 &1566187487
 MonoBehaviour:
   m_ObjectHideFlags: 0
