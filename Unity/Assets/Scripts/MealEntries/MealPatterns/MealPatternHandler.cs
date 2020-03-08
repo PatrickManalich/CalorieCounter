@@ -94,6 +94,14 @@ namespace CalorieCounter.MealEntries.MealPatterns
             AddMealSuggestionsToScrollViews();
         }
 
+        private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)
+        {
+            if (e.MealProportionModifiedType == MealProportionModifiedType.Added)
+            {
+                RefreshAllMealPatterns();
+            }
+        }
+
         private void ScrollView_OnMealSuggestionRemoved(object sender, MealProportionsScrollView.MealSuggestionRemovedEventArgs e)
         {
             if (_mealSuggestionClearCount != 0)
@@ -103,14 +111,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
             }
             _removedMealSuggestionsDictionary[e.MealSourceType].Add(e.RemovedMealSuggestion);
             RefreshAllMealPatterns();
-        }
-
-        private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)
-        {
-            if(e.MealProportionModifiedType == MealProportionModifiedType.Added)
-            {
-                RefreshAllMealPatterns();
-            }
         }
 
         private void RefreshAllMealPatterns()
