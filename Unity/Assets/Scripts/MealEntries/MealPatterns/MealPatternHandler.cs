@@ -66,20 +66,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
             _date.CurrentDateTimeChanged -= RefreshDayMealPatterns;
         }
 
-        private void RefreshAllMealPatterns()
-        {
-            foreach (var mealSourceType in _scrollViewDictionary.Keys)
-            {
-                _mealSuggestionClearCount += _scrollViewDictionary[mealSourceType].MealSuggestions.Count;
-                _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
-                _mealSuggestionsDictionary[mealSourceType].Clear();
-            }
-
-            AddDayMealPatternSuggestionsToLists();
-            AddDayTypeMealPatternSuggestionsToLists();
-            AddMealSuggestionsToScrollViews();
-        }
-
         private void RefreshDayMealPatterns()
         {
             foreach (var mealSourceType in _scrollViewDictionary.Keys)
@@ -124,6 +110,20 @@ namespace CalorieCounter.MealEntries.MealPatterns
             {
                 RefreshAllMealPatterns();
             }
+        }
+
+        private void RefreshAllMealPatterns()
+        {
+            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            {
+                _mealSuggestionClearCount += _scrollViewDictionary[mealSourceType].MealSuggestions.Count;
+                _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
+                _mealSuggestionsDictionary[mealSourceType].Clear();
+            }
+
+            AddDayMealPatternSuggestionsToLists();
+            AddDayTypeMealPatternSuggestionsToLists();
+            AddMealSuggestionsToScrollViews();
         }
 
         private void AddDayMealPatternSuggestionsToLists()
