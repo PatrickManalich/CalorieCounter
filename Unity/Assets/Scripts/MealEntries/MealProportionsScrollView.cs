@@ -8,6 +8,20 @@ namespace CalorieCounter.MealEntries {
 
     public class MealProportionsScrollView : AbstractScrollView {
 
+        public class MealProportionModifiedEventArgs : EventArgs
+        {
+            public MealProportionModifiedType MealProportionModifiedType { get; private set; }
+            public MealSourceType MealSourceType { get; private set; }
+            public MealProportion MealProportion { get; private set; }
+
+            public MealProportionModifiedEventArgs(MealProportionModifiedType mealProportionModifiedType, MealSourceType mealSourceType, MealProportion mealProportion)
+            {
+                MealProportionModifiedType = mealProportionModifiedType;
+                MealSourceType = mealSourceType;
+                MealProportion = mealProportion;
+            }
+        }
+
         public class MealSuggestionRemovedEventArgs : EventArgs
         {
             public MealSourceType MealSourceType { get; private set; }
@@ -20,8 +34,8 @@ namespace CalorieCounter.MealEntries {
             }
         }
 
+        public event EventHandler<MealProportionModifiedEventArgs> MealProportionModified;
         public event EventHandler<MealSuggestionRemovedEventArgs> MealSuggestionRemoved;
-        public Action MealProportionAdded;
 
         public List<MealProportion> MealProportions { get; private set; } = new List<MealProportion>();
 
@@ -59,7 +73,7 @@ namespace CalorieCounter.MealEntries {
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
 
             ScrollToBottom();
-            MealProportionAdded?.Invoke();
+            MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Added, _mealSourceType, mealProportion));
         }
 
         public void AddMealSuggestion(MealSuggestion mealSuggestion)

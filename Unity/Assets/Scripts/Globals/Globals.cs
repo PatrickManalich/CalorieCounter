@@ -12,6 +12,8 @@ namespace CalorieCounter {
 
     public enum TextModifiedType { Instantiated, Destroying }
 
+    public enum MealProportionModifiedType { Added, Removed }
+
     public enum Scene {
         Menu = 0,
         MealEntries = 1,

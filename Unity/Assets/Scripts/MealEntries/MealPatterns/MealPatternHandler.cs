@@ -48,7 +48,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             _dayTypeDropdown.CurrentDayTypeChanged += RefreshDayTypeMealPatterns;
             foreach (var scrollView in _scrollViewDictionary.Values)
             {
-                scrollView.MealProportionAdded += RefreshAllMealPatterns;
+                scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
                 scrollView.MealSuggestionRemoved += ScrollView_OnMealSuggestionRemoved;
             }
 
@@ -60,7 +60,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             foreach (var scrollView in _scrollViewDictionary.Values)
             {
                 scrollView.MealSuggestionRemoved -= ScrollView_OnMealSuggestionRemoved;
-                scrollView.MealProportionAdded -= RefreshAllMealPatterns;
+                scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
             }
             _dayTypeDropdown.CurrentDayTypeChanged -= RefreshDayTypeMealPatterns;
             _date.CurrentDateTimeChanged -= RefreshDayMealPatterns;
@@ -116,6 +116,14 @@ namespace CalorieCounter.MealEntries.MealPatterns
             }
             _removedMealSuggestionsDictionary[e.MealSourceType].Add(e.RemovedMealSuggestion);
             RefreshAllMealPatterns();
+        }
+
+        private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)
+        {
+            if(e.MealProportionModifiedType == MealProportionModifiedType.Added)
+            {
+                RefreshAllMealPatterns();
+            }
         }
 
         private void AddDayMealPatternSuggestionsToLists()
