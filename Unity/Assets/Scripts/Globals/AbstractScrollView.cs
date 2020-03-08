@@ -55,14 +55,6 @@ namespace CalorieCounter
             }
         }
 
-        public GameObject InstantiateScrollViewText()
-        {
-            GameObject scrollViewText = Instantiate(_scrollViewTextPrefab);
-            AddToScrollView(scrollViewText.transform);
-            TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText.GetComponent<ScrollViewText>()));
-            return scrollViewText;
-        }
-
         public GameObject InstantiateScrollViewText(int siblingIndex)
         {
             return InstantiateScrollViewText(_scrollViewTextPrefab, siblingIndex);
@@ -87,18 +79,6 @@ namespace CalorieCounter
             transform.SetParent(_content.transform, false);
             transform.SetSiblingIndex(siblingIndex);
             _contentChildren.Insert(siblingIndex, transform.gameObject);
-        }
-
-        public bool HasInputFields()
-        {
-            foreach (Transform child in _content.transform)
-            {
-                if (child.GetComponent<TMP_InputField>() != null)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         public void ScrollToTop()
