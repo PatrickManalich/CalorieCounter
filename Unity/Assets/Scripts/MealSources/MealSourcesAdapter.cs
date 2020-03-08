@@ -21,6 +21,19 @@ namespace CalorieCounter.MealSources {
 
         private const int MealSourcesCountStartIndex = 0;
 
+        public override void Export()
+        {
+            var mealSourcesDictionary = new Dictionary<MealSourceType, Dictionary<string, MealSource>>() {
+                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSources },
+                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSources },
+            };
+            var mealSourceNamesDictionary = new Dictionary<MealSourceType, Dictionary<string, string>>() {
+                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSourceNames },
+                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSourceNames },
+            };
+            GameManager.MealSourcesManager.ExportDictionaries(mealSourcesDictionary, mealSourceNamesDictionary);
+        }
+
         public string GetMealSourceName(MealSource mealSource)
         {
             var mealSourceNamesDictionary = GameManager.MealSourcesManager.ImportMealSourceNamesDictionary();
@@ -37,19 +50,6 @@ namespace CalorieCounter.MealSources {
                 namedMealSources = namedMealSourcesDictionary[mealSourceType].Values.ToList();
             }
             return namedMealSources;
-        }
-
-        public override void Export()
-        {
-            var mealSourcesDictionary = new Dictionary<MealSourceType, Dictionary<string, MealSource>>() {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSources },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSources },
-            };
-            var mealSourceNamesDictionary = new Dictionary<MealSourceType, Dictionary<string, string>>() {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSourceNames },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSourceNames },
-            };
-            GameManager.MealSourcesManager.ExportDictionaries(mealSourcesDictionary, mealSourceNamesDictionary);
         }
 
         private void Start()

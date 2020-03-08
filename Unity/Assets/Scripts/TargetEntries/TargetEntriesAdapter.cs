@@ -20,14 +20,6 @@ namespace CalorieCounter.TargetEntries {
         [SerializeField]
         private ScaleEntriesScrollView _scaleEntriesScrollView = default;
 
-        public TargetEntry GetLatestTargetEntry() {
-            if (_scene != Scene.MealEntries) {
-                return default;
-            }
-
-            return GameManager.TargetEntriesManager.ImportLatestTargetEntry(_date.CurrentDateTime);
-        }
-
         public override void Export() {
             if (_scene != Scene.ScaleEntries)
             {
@@ -40,6 +32,14 @@ namespace CalorieCounter.TargetEntries {
                 targetEntries.Add(targetEntry.dateTime, targetEntry);
             }
             GameManager.TargetEntriesManager.ExportTargetEntries(targetEntries);
+        }
+
+        public TargetEntry GetLatestTargetEntry() {
+            if (_scene != Scene.MealEntries) {
+                return default;
+            }
+
+            return GameManager.TargetEntriesManager.ImportLatestTargetEntry(_date.CurrentDateTime);
         }
     }
 }
