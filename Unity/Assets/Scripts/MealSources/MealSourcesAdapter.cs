@@ -34,6 +34,20 @@ namespace CalorieCounter.MealSources {
             GameManager.MealSourcesManager.ExportDictionaries(mealSourcesDictionary, mealSourceNamesDictionary);
         }
 
+        public static bool DoesMealSourceExist(MealSource mealSource)
+        {
+            var mealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
+            if (mealSourcesDictionary.Count > 0 && mealSourcesDictionary.ContainsKey(mealSource.mealSourceType))
+            {
+                var mealSources = mealSourcesDictionary[mealSource.mealSourceType];
+                return mealSources.ContainsKey(mealSource.id);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static string GetMealSourceName(MealSource mealSource)
         {
             var mealSourceNamesDictionary = GameManager.MealSourcesManager.ImportMealSourceNamesDictionary();

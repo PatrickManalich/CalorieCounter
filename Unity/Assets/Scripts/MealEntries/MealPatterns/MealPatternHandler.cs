@@ -1,4 +1,5 @@
-﻿using RotaryHeart.Lib.SerializableDictionary;
+﻿using CalorieCounter.MealSources;
+using RotaryHeart.Lib.SerializableDictionary;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -180,10 +181,15 @@ namespace CalorieCounter.MealEntries.MealPatterns
             var isUniqueMealSuggestion = !mealProportionsScrollView.MealProportions.Exists(m => m.mealSource == mealSource) &&
                 !mealSuggestions.Exists(m => m.mealProportion.mealSource == mealSource);
             var isNotRemovedMealSuggestion = !_removedMealSuggestionsDictionary[mealSourceType].Contains(mealSuggestion);
+            var doesExist = MealSourcesAdapter.DoesMealSourceExist(mealSource);
 
-            if (isUniqueMealSuggestion && isNotRemovedMealSuggestion)
+            if (isUniqueMealSuggestion && isNotRemovedMealSuggestion && doesExist)
             {
                 mealSuggestions.Add(mealSuggestion);
+            }
+            else if (!doesExist)
+            {
+                Debug.LogWarning($"Meal source with ID: {mealSource.id} does not exist");
             }
         }
     }
