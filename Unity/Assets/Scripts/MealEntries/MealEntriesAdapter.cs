@@ -38,23 +38,6 @@ namespace CalorieCounter.MealEntries {
             return mealEntry.dayType;
         }
 
-        public void Refresh() {
-            foreach (var mealSourceType in _scrollViewDictionary.Keys) {
-                _scrollViewDictionary[mealSourceType].ClearMealProportions();
-            }
-
-            MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
-            if (mealEntry != default) {
-                foreach (var mealSourceType in mealEntry.mealProportionsDictionary.Keys) {
-                    MealProportionsScrollView scrollView = _scrollViewDictionary[mealSourceType];
-                    foreach (var mealProportion in mealEntry.mealProportionsDictionary[mealSourceType]) {
-                        scrollView.AddMealProportion(mealProportion);
-                    }
-                    scrollView.ScrollToTop();
-                }
-            }
-        }
-
         private void Start() {
             _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
             Refresh();
@@ -67,6 +50,28 @@ namespace CalorieCounter.MealEntries {
         private void Date_OnCurrentDateTimeChanged()
         {
             Refresh();
+        }
+
+        private void Refresh()
+        {
+            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            {
+                _scrollViewDictionary[mealSourceType].ClearMealProportions();
+            }
+
+            MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
+            if (mealEntry != default)
+            {
+                foreach (var mealSourceType in mealEntry.mealProportionsDictionary.Keys)
+                {
+                    MealProportionsScrollView scrollView = _scrollViewDictionary[mealSourceType];
+                    foreach (var mealProportion in mealEntry.mealProportionsDictionary[mealSourceType])
+                    {
+                        scrollView.AddMealProportion(mealProportion);
+                    }
+                    scrollView.ScrollToTop();
+                }
+            }
         }
     }
 }
