@@ -16,7 +16,7 @@ namespace CalorieCounter.EditorExtensions
         private static readonly string DayMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayMealPatternsDirectoryName);
         private static readonly string DayTypeMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayTypeMealPatternsDirectoryName);
 
-        [MenuItem(MenuItemDirectory + "Validate Meal Patterns")]
+        [MenuItem(MenuItemDirectory + "Validate Meal Patterns %#v")]
         public static void ValidateMealPatterns()
         {
             if (Application.isPlaying)
