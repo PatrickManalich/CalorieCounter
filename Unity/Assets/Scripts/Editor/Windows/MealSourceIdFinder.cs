@@ -19,6 +19,8 @@ namespace CalorieCounter.EditorExtensions
 
         public void OnGUI()
         {
+            EditorGUIUtility.labelWidth = 175;
+
             _mealSourceNameQuery = EditorGUILayout.TextField("Meal Source Name Query: ", _mealSourceNameQuery);
             _mealSourceNameResult = EditorGUILayout.TextField("Meal Source Name Result: ", _mealSourceNameResult);
             _mealSourceIdResult = EditorGUILayout.TextField("Meal Source ID Result: ", _mealSourceIdResult);
