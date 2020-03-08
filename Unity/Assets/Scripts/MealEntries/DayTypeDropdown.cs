@@ -31,9 +31,6 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private Date _date = default;
 
-        [SerializeField]
-        private Totals _totals = default;
-
         private DayType _dayType;
         private TMP_Dropdown _dropdown;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
@@ -80,7 +77,6 @@ namespace CalorieCounter.MealEntries {
             {
                 FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
             }
-            _totals.Refresh();
         }
 
         private void Refresh()

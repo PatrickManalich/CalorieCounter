@@ -39,13 +39,9 @@ namespace CalorieCounter.MealEntries {
 
         private TargetEntry _targetEntry;
 
-        public void Refresh() {
-            _targetEntry = _targetEntriesAdapter.GetLatestTargetEntry();
-            RefreshTexts();
-        }
-
         private void Start()
         {
+            _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_OnCurrentDayTypeChanged;
             foreach (var scrollView in _scrollViewDictionary.Values)
             {
                 scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
@@ -58,6 +54,13 @@ namespace CalorieCounter.MealEntries {
             {
                 scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
             }
+            _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_OnCurrentDayTypeChanged;
+        }
+
+        private void DayTypeDropdown_OnCurrentDayTypeChanged()
+        {
+            _targetEntry = _targetEntriesAdapter.GetLatestTargetEntry();
+            RefreshTexts();
         }
 
         private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)
