@@ -66,12 +66,11 @@ namespace CalorieCounter.MealSources {
 
         public override void DeleteRow(int rowIndex)
         {
+            base.DeleteRow(rowIndex);
             var archivedMealSource = _nonarchivedNamedMealSources.Values[rowIndex].mealSource;
             archivedMealSource.archived = true;
             MealSources[archivedMealSource.id] = archivedMealSource;
             _nonarchivedNamedMealSources.RemoveAt(rowIndex);
-            base.DeleteRow(rowIndex);
         }
-
     }
 }

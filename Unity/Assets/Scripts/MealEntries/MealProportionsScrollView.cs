@@ -104,6 +104,7 @@ namespace CalorieCounter.MealEntries {
 
         public override void DeleteRow(int rowIndex)
         {
+            base.DeleteRow(rowIndex);
             if (MealProportions.Count > 0 && rowIndex < MealProportions.Count)
             {
                 _totals.RemoveFromTotals(MealProportions[rowIndex]);
@@ -113,8 +114,6 @@ namespace CalorieCounter.MealEntries {
             {
                 MealSuggestions.RemoveAt(rowIndex - MealProportions.Count);
             }
-            base.DeleteRow(rowIndex);
         }
-
     }
 }
