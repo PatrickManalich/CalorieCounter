@@ -31,4 +31,4 @@ MonoBehaviour:
       protein: 28
       calories: 443
     mealPatternType: 0
-    priority: 0
+    priority: 1
