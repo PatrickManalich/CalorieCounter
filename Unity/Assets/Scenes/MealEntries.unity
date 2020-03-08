@@ -339,7 +339,6 @@ MonoBehaviour:
     type: 3}
   _totals: {fileID: 1566187486}
   _mealSourceType: 0
-  _mealSourcesAdapter: {fileID: 1906813654}
 --- !u!1 &29919848
 GameObject:
   m_ObjectHideFlags: 0
@@ -5619,7 +5618,6 @@ MonoBehaviour:
     type: 3}
   _totals: {fileID: 1566187486}
   _mealSourceType: 1
-  _mealSourcesAdapter: {fileID: 1906813654}
 --- !u!114 &688997044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6326,7 +6324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ad4da5d35a4a641a96516a65162e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealSourcesAdapter: {fileID: 1906813654}
   _mealSourceType: 1
 --- !u!114 &767946882
 MonoBehaviour:
@@ -7985,7 +7982,6 @@ MonoBehaviour:
     type: 3}
   _totals: {fileID: 1566187486}
   _mealSourceType: 2
-  _mealSourcesAdapter: {fileID: 0}
 --- !u!114 &920356583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13588,7 +13584,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ad4da5d35a4a641a96516a65162e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mealSourcesAdapter: {fileID: 1906813654}
   _mealSourceType: 0
 --- !u!1 &1585888870
 GameObject:

@@ -15,9 +15,6 @@ namespace CalorieCounter.MealEntries {
         public bool IsValid => SelectedNamedMealSource != default;
 
         [SerializeField]
-        private MealSourcesAdapter _mealSourcesAdapter = default;
-
-        [SerializeField]
         private MealSourceType _mealSourceType = default;
 
         public NamedMealSource SelectedNamedMealSource { get; private set; }
@@ -33,7 +30,7 @@ namespace CalorieCounter.MealEntries {
         private void Awake()
         {
             _dropdown = GetComponent<TMP_Dropdown>();
-            _nonarchivedNamedMealSources = _mealSourcesAdapter.GetNamedMealSources(_mealSourceType).Where(n => !n.mealSource.archived).ToList();
+            _nonarchivedNamedMealSources = MealSourcesAdapter.GetNamedMealSources(_mealSourceType).Where(n => !n.mealSource.archived).ToList();
             _dropdown.ClearOptions();
             var options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData("") };
             foreach (var nonarchivedNamedMealSource in _nonarchivedNamedMealSources)
