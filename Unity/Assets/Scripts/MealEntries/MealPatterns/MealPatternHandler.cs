@@ -1,5 +1,4 @@
-﻿using CalorieCounter.MealSources;
-using RotaryHeart.Lib.SerializableDictionary;
+﻿using RotaryHeart.Lib.SerializableDictionary;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,14 +25,17 @@ namespace CalorieCounter.MealEntries.MealPatterns
         private const int PrioritizedMealSuggestionLimit = 4;
 
         private Dictionary<MealSourceType, List<MealSuggestion>> _mealSuggestionsDictionary = new Dictionary<MealSourceType, List<MealSuggestion>>();
+        private Dictionary<MealSourceType, List<MealSuggestion>> _removedMealSuggestionsDictionary = new Dictionary<MealSourceType, List<MealSuggestion>>();
         private List<DayMealPattern> _dayMealPatterns = default;
         private List<DayTypeMealPattern> _dayTypeMealPatterns = default;
+        private int _mealSuggestionClearCount = 0;
 
         private void Start()
         {
             foreach (var mealSourceType in _scrollViewDictionary.Keys)
             {
                 _mealSuggestionsDictionary.Add(mealSourceType, new List<MealSuggestion>());
+                _removedMealSuggestionsDictionary.Add(mealSourceType, new List<MealSuggestion>());
             }
 
             var dayMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayMealPatternsDirectoryName);
@@ -47,6 +49,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             foreach (var scrollView in _scrollViewDictionary.Values)
             {
                 scrollView.MealProportionAdded += RefreshAllMealPatterns;
+                scrollView.MealSuggestionRemoved += ScrollView_OnMealSuggestionRemoved;
             }
 
             RefreshAllMealPatterns();
@@ -56,6 +59,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             foreach (var scrollView in _scrollViewDictionary.Values)
             {
+                scrollView.MealSuggestionRemoved -= ScrollView_OnMealSuggestionRemoved;
                 scrollView.MealProportionAdded -= RefreshAllMealPatterns;
             }
             _dayTypeDropdown.CurrentDayTypeChanged -= RefreshDayTypeMealPatterns;
@@ -66,6 +70,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             foreach (var mealSourceType in _scrollViewDictionary.Keys)
             {
+                _mealSuggestionClearCount += _scrollViewDictionary[mealSourceType].MealSuggestions.Count;
                 _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
                 _mealSuggestionsDictionary[mealSourceType].Clear();
             }
@@ -79,8 +84,10 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             foreach (var mealSourceType in _scrollViewDictionary.Keys)
             {
+                _mealSuggestionClearCount += _scrollViewDictionary[mealSourceType].MealSuggestions.Count;
                 _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
                 _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.Day);
+                _removedMealSuggestionsDictionary[mealSourceType].Clear();
             }
 
             AddDayMealPatternSuggestionsToLists();
@@ -91,12 +98,24 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             foreach (var mealSourceType in _scrollViewDictionary.Keys)
             {
+                _mealSuggestionClearCount += _scrollViewDictionary[mealSourceType].MealSuggestions.Count;
                 _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
                 _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.DayType);
             }
 
             AddDayTypeMealPatternSuggestionsToLists();
             AddMealSuggestionsToScrollViews();
+        }
+
+        private void ScrollView_OnMealSuggestionRemoved(object sender, MealProportionsScrollView.MealSuggestionRemovedEventArgs e)
+        {
+            if (_mealSuggestionClearCount != 0)
+            {
+                _mealSuggestionClearCount--;
+                return;
+            }
+            _removedMealSuggestionsDictionary[e.MealSourceType].Add(e.RemovedMealSuggestion);
+            RefreshAllMealPatterns();
         }
 
         private void AddDayMealPatternSuggestionsToLists()
@@ -152,8 +171,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
             var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
             var isUniqueMealSuggestion = !mealProportionsScrollView.MealProportions.Exists(m => m.mealSource == mealSource) &&
                 !mealSuggestions.Exists(m => m.mealProportion.mealSource == mealSource);
+            var isNotRemovedMealSuggestion = !_removedMealSuggestionsDictionary[mealSourceType].Contains(mealSuggestion);
 
-            if (isUniqueMealSuggestion)
+            if (isUniqueMealSuggestion && isNotRemovedMealSuggestion)
             {
                 mealSuggestions.Add(mealSuggestion);
             }

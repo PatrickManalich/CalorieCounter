@@ -8,6 +8,19 @@ namespace CalorieCounter.MealEntries {
 
     public class MealProportionsScrollView : AbstractScrollView {
 
+        public class MealSuggestionRemovedEventArgs : EventArgs
+        {
+            public MealSourceType MealSourceType { get; private set; }
+            public MealSuggestion RemovedMealSuggestion { get; private set; }
+
+            public MealSuggestionRemovedEventArgs(MealSourceType mealSourceType, MealSuggestion removedMealSuggestion)
+            {
+                MealSourceType = mealSourceType;
+                RemovedMealSuggestion = removedMealSuggestion;
+            }
+        }
+
+        public event EventHandler<MealSuggestionRemovedEventArgs> MealSuggestionRemoved;
         public Action MealProportionAdded;
 
         public List<MealProportion> MealProportions { get; private set; } = new List<MealProportion>();
@@ -112,7 +125,9 @@ namespace CalorieCounter.MealEntries {
             }
             else if (MealSuggestions.Count > 0 && rowIndex >= MealProportions.Count)
             {
-                MealSuggestions.RemoveAt(rowIndex - MealProportions.Count);
+                var removedMealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
+                MealSuggestions.Remove(removedMealSuggestion);
+                MealSuggestionRemoved?.Invoke(this, new MealSuggestionRemovedEventArgs(_mealSourceType, removedMealSuggestion));
             }
         }
     }
