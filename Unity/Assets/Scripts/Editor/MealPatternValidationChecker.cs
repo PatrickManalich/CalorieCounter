@@ -12,6 +12,7 @@ namespace CalorieCounter.EditorExtensions
 	{
         private static readonly string DayMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayMealPatternsDirectoryName);
         private static readonly string DayTypeMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayTypeMealPatternsDirectoryName);
+        private static readonly string GroupMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.GroupMealPatternsDirectoryName);
 
         static MealPatternValidationChecker()
 		{
@@ -32,6 +33,15 @@ namespace CalorieCounter.EditorExtensions
                 foreach (var dayTypeMealPattern in dayTypeMealPatterns)
                 {
                     CheckIfMealPatternHasBeenValidated(dayTypeMealPattern.name, dayTypeMealPattern.mealSuggestion);
+                }
+
+                var groupMealPatterns = Resources.LoadAll(GroupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
+                foreach (var groupMealPattern in groupMealPatterns)
+                {
+                    foreach(var mealSuggestion in groupMealPattern.mealSuggestions)
+                    {
+                        CheckIfMealPatternHasBeenValidated(groupMealPattern.name, mealSuggestion);
+                    }
                 }
             }
         }

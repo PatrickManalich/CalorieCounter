@@ -16,6 +16,7 @@ namespace CalorieCounter.EditorExtensions
 
         private static readonly string DayMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayMealPatternsDirectoryName);
         private static readonly string DayTypeMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayTypeMealPatternsDirectoryName);
+        private static readonly string GroupMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.GroupMealPatternsDirectoryName);
 
         [MenuItem(MenuItemDirectory + "Validate Meal Patterns %#v")]
         public static void ValidateMealPatterns()
@@ -23,7 +24,8 @@ namespace CalorieCounter.EditorExtensions
             if (Application.isPlaying)
                 return;
 
-            // Can't change intermediate local variables or else changes won't be dirtied and saved
+            // Since meal suggestions are structs and not classes, you can must directly change the value,
+            // or else you'll just be changing a copy
 
             var dayMealPatterns = Resources.LoadAll(DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
             foreach (var dayMealPattern in dayMealPatterns)
@@ -43,6 +45,19 @@ namespace CalorieCounter.EditorExtensions
                 dayTypeMealPattern.mealSuggestion.mealProportion = new MealProportion(mealProportion.servingAmount, mealSource);
                 dayTypeMealPattern.mealSuggestion.mealPatternType = MealPatternType.DayType;
                 EditorUtility.SetDirty(dayTypeMealPattern);
+            }
+
+            var groupMealPatterns = Resources.LoadAll(GroupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
+            foreach (var groupMealPattern in groupMealPatterns)
+            {
+                for(int i = 0; i < groupMealPattern.mealSuggestions.Count; i++)
+                {
+                    var mealSuggestion = groupMealPattern.mealSuggestions[i];
+                    var mealProportion = mealSuggestion.mealProportion;
+                    var mealSource = GetMealSource(mealProportion.mealSource.id);
+                    groupMealPattern.mealSuggestions[i] = new MealSuggestion(new MealProportion(mealProportion.servingAmount, mealSource), MealPatternType.Group, mealSuggestion.priority);
+                    EditorUtility.SetDirty(groupMealPattern);
+                }
             }
 
             AssetDatabase.SaveAssets();

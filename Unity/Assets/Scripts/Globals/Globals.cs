@@ -6,7 +6,7 @@ namespace CalorieCounter {
 
     public enum DayType { None, Rest, Training, Vacation }
 
-    public enum MealPatternType { Day, DayType }
+    public enum MealPatternType { Day, DayType, Group }
 
     public enum HighlightedType { Enter, Exit }
 
@@ -75,6 +75,7 @@ namespace CalorieCounter {
         public const string ScriptableObjectsDirectoryName = @"ScriptableObjects";
         public const string DayMealPatternsDirectoryName = @"DayMealPatterns";
         public const string DayTypeMealPatternsDirectoryName = @"DayTypeMealPatterns";
+        public const string GroupMealPatternsDirectoryName = @"GroupMealPatterns";
     }
 
     public static class GlobalMethods {
