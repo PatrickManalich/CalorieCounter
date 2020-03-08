@@ -27,8 +27,8 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private Dictionary<MealSourceType, List<MealSuggestion>> _mealSuggestionsDictionary = new Dictionary<MealSourceType, List<MealSuggestion>>();
         private Dictionary<MealSourceType, List<MealSuggestion>> _removedMealSuggestionsDictionary = new Dictionary<MealSourceType, List<MealSuggestion>>();
-        private List<DayMealPattern> _dayMealPatterns = default;
-        private List<DayTypeMealPattern> _dayTypeMealPatterns = default;
+        private List<DayMealPattern> _dayMealPatterns;
+        private List<DayTypeMealPattern> _dayTypeMealPatterns;
         private int _mealSuggestionClearCount = 0;
 
         private void Start()
