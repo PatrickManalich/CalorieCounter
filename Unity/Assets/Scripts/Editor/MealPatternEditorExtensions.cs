@@ -1,4 +1,5 @@
-﻿using CalorieCounter.MealEntries.MealPatterns;
+﻿using CalorieCounter.MealEntries;
+using CalorieCounter.MealEntries.MealPatterns;
 using CalorieCounter.MealSources;
 using CalorieCounter.Utilities;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace CalorieCounter.EditorExtensions
             {
                 var mealProportion = dayMealPattern.mealSuggestion.mealProportion;
                 var mealSource = GetMealSource(mealProportion.mealSource.id);
-                dayMealPattern.mealSuggestion.mealProportion = new MealEntries.MealProportion(mealProportion.servingAmount, mealSource);
+                dayMealPattern.mealSuggestion.mealProportion = new MealProportion(mealProportion.servingAmount, mealSource);
                 dayMealPattern.mealSuggestion.mealPatternType = MealPatternType.Day;
                 EditorUtility.SetDirty(dayMealPattern);
             }
@@ -39,7 +40,7 @@ namespace CalorieCounter.EditorExtensions
             {
                 var mealProportion = dayTypeMealPattern.mealSuggestion.mealProportion;
                 var mealSource = GetMealSource(mealProportion.mealSource.id);
-                dayTypeMealPattern.mealSuggestion.mealProportion = new MealEntries.MealProportion(mealProportion.servingAmount, mealSource);
+                dayTypeMealPattern.mealSuggestion.mealProportion = new MealProportion(mealProportion.servingAmount, mealSource);
                 dayTypeMealPattern.mealSuggestion.mealPatternType = MealPatternType.DayType;
                 EditorUtility.SetDirty(dayTypeMealPattern);
             }
