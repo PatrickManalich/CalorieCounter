@@ -7,6 +7,8 @@ namespace CalorieCounter.EditorExtensions
 {
     public class MealSourceIdFinder : EditorWindow
     {
+
+        private MealSourceType _mealSourceType;
         private string _mealSourceNameQuery = "";
         private string _mealSourceNameResult = "";
         private string _mealSourceIdResult = "";
@@ -21,6 +23,7 @@ namespace CalorieCounter.EditorExtensions
         {
             EditorGUIUtility.labelWidth = 175;
 
+            _mealSourceType = (MealSourceType)EditorGUILayout.EnumPopup("Meal Source Type: ", _mealSourceType);
             _mealSourceNameQuery = EditorGUILayout.TextField("Meal Source Name Query: ", _mealSourceNameQuery);
             _mealSourceNameResult = EditorGUILayout.TextField("Meal Source Name Result: ", _mealSourceNameResult);
             _mealSourceIdResult = EditorGUILayout.TextField("Meal Source ID Result: ", _mealSourceIdResult);
@@ -31,16 +34,13 @@ namespace CalorieCounter.EditorExtensions
 
                 _mealSourceNameResult = "Not Found";
                 _mealSourceIdResult = "Not Found";
-                foreach (var mealSourceNames in mealSourceNamesDictionary.Values)
+                foreach (var mealSourceNameKeyValuePair in mealSourceNamesDictionary[_mealSourceType])
                 {
-                    foreach(var mealSourceNameKeyValuePair in mealSourceNames)
+                    if (mealSourceNameKeyValuePair.Value.ToLower().Contains(_mealSourceNameQuery.ToLower()))
                     {
-                        if (mealSourceNameKeyValuePair.Value.ToLower().Contains(_mealSourceNameQuery.ToLower()))
-                        {
-                            _mealSourceNameResult = mealSourceNameKeyValuePair.Value;
-                            _mealSourceIdResult = mealSourceNameKeyValuePair.Key;
-                            break;
-                        }
+                        _mealSourceNameResult = mealSourceNameKeyValuePair.Value;
+                        _mealSourceIdResult = mealSourceNameKeyValuePair.Key;
+                        break;
                     }
                 }
             }
