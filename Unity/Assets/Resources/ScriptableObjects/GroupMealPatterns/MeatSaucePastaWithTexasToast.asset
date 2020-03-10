@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad5bef3a1ba22041ae8ccb4059482dd, type: 3}
+  m_Name: MeatSaucePastaWithTexasToast
+  m_EditorClassIdentifier: 
+  mealSuggestions:
+  - mealProportion:
+      servingAmount: 0.5
+      mealSource:
+        id: 84258f6d-800a-4473-9db0-13412b864cc8
+        servingSize: Container
+        fat: 92
+        carbs: 0
+        protein: 76
+        calories: 1132
+        description: Kroger ground beef 80% lean meat and 20% fat
+        mealSourceType: 1
+        archived: 0
+      fat: 46
+      carbs: 0
+      protein: 38
+      calories: 566
+    mealPatternType: 2
+    priority: 0
+  - mealProportion:
+      servingAmount: 0.5
+      mealSource:
+        id: 7245f643-a8b7-48ce-a653-154eacbd6545
+        servingSize: Jar
+        fat: 15
+        carbs: 130
+        protein: 20
+        calories: 735
+        description: Prego italian sauce traditional 45 oz jar
+        mealSourceType: 1
+        archived: 0
+      fat: 7.5
+      carbs: 65
+      protein: 10
+      calories: 367.5
+    mealPatternType: 2
+    priority: 0
+  - mealProportion:
+      servingAmount: 0.25
+      mealSource:
+        id: 0d63535d-9c90-4c74-b1f4-5436099aac76
+        servingSize: Box
+        fat: 8
+        carbs: 336
+        protein: 56
+        calories: 1640
+        description: Barilla farfalle box
+        mealSourceType: 1
+        archived: 0
+      fat: 2
+      carbs: 84
+      protein: 14
+      calories: 410
+    mealPatternType: 2
+    priority: 0
+  - mealProportion:
+      servingAmount: 2
+      mealSource:
+        id: 466db1a3-adc0-4d5a-ad71-1004937b9254
+        servingSize: Slice
+        fat: 9
+        carbs: 17
+        protein: 3
+        calories: 161
+        description: New York Bakery texas toast with real garlic
+        mealSourceType: 1
+        archived: 0
+      fat: 18
+      carbs: 34
+      protein: 6
+      calories: 322
+    mealPatternType: 2
+    priority: 0

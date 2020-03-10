@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad5bef3a1ba22041ae8ccb4059482dd, type: 3}
+  m_Name: ChickenAndPotatoes
+  m_EditorClassIdentifier: 
+  mealSuggestions:
+  - mealProportion:
+      servingAmount: 1
+      mealSource:
+        id: 7fa8d2da-933b-498c-b1c8-655a603d7da6
+        servingSize: Breast
+        fat: 1
+        carbs: 0
+        protein: 25
+        calories: 109
+        description: Simple Truth natural chicken breast
+        mealSourceType: 1
+        archived: 0
+      fat: 1
+      carbs: 0
+      protein: 25
+      calories: 109
+    mealPatternType: 2
+    priority: 1
+  - mealProportion:
+      servingAmount: 0.25
+      mealSource:
+        id: 76892867-512e-4270-90b5-334eddba872e
+        servingSize: Bag
+        fat: 20
+        carbs: 160
+        protein: 16
+        calories: 884
+        description: Idahoan buttery homestyle mashed potatoes family size
+        mealSourceType: 1
+        archived: 0
+      fat: 5
+      carbs: 40
+      protein: 4
+      calories: 221
+    mealPatternType: 2
+    priority: 0
