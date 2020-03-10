@@ -29,6 +29,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
         private Dictionary<MealSourceType, List<MealSuggestion>> _removedMealSuggestionsDictionary = new Dictionary<MealSourceType, List<MealSuggestion>>();
         private List<DayMealPattern> _dayMealPatterns;
         private List<DayTypeMealPattern> _dayTypeMealPatterns;
+        private List<GroupMealPattern> _groupMealPatterns;
         private int _mealSuggestionClearCount = 0;
 
         private void Start()
@@ -44,6 +45,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
             var dayTypeMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayTypeMealPatternsDirectoryName);
             _dayTypeMealPatterns = Resources.LoadAll(dayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
+
+            var groupMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.GroupMealPatternsDirectoryName);
+            _groupMealPatterns = Resources.LoadAll(groupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
 
             _date.CurrentDateTimeChanged += RefreshDayMealPatterns;
             _dayTypeDropdown.CurrentDayTypeChanged += RefreshDayTypeMealPatterns;
@@ -124,6 +128,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
             AddDayMealPatternSuggestionsToLists();
             AddDayTypeMealPatternSuggestionsToLists();
+            AddGroupMealPatternSuggestionsToLists();
             AddMealSuggestionsToScrollViews();
         }
 
@@ -146,6 +151,36 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 if (dayTypeMealPattern.dayType == _dayTypeDropdown.CurrentDayType)
                 {
                     AddMealSuggestionToList(dayTypeMealPattern.mealSuggestion);
+                }
+            }
+        }
+
+        private void AddGroupMealPatternSuggestionsToLists()
+        {
+            foreach (var groupMealPattern in _groupMealPatterns)
+            {
+                foreach (var mealSuggestion in groupMealPattern.mealSuggestions)
+                {
+                    var mealSource = mealSuggestion.mealProportion.mealSource;
+                    var mealProportions = _scrollViewDictionary[mealSource.mealSourceType].MealProportions;
+                    if (mealProportions.Exists(m => m.mealSource == mealSource))
+                    {
+                        var otherMealSuggestions = groupMealPattern.mealSuggestions.Where(m => m != mealSuggestion);
+                        var uniqueOtherMealSuggestions = new List<MealSuggestion>();
+                        foreach(var otherMealSuggestion in otherMealSuggestions)
+                        {
+                            if (!mealProportions.Exists(m => m.mealSource == otherMealSuggestion.mealProportion.mealSource))
+                            {
+                                uniqueOtherMealSuggestions.Add(otherMealSuggestion);
+                            }
+                        }
+
+                        foreach (var uniqueOtherMealSuggestion in uniqueOtherMealSuggestions)
+                        {
+                            AddMealSuggestionToList(uniqueOtherMealSuggestion);
+                        }
+                        break;
+                    }
                 }
             }
         }
