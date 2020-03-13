@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +24,8 @@ namespace CalorieCounter
         }
 
         public event EventHandler<TextModifiedEventArgs> TextModified;
+
+        public List<ScrollViewText> ScrollViewTexts { get; private set; } = new List<ScrollViewText>();
 
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
@@ -48,7 +50,9 @@ namespace CalorieCounter
                 var child = _contentChildren[childIndex];
                 if (child.GetComponent<ScrollViewText>())
                 {
-                    TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, child.GetComponent<ScrollViewText>()));
+                    var scrollViewText = child.GetComponent<ScrollViewText>();
+                    TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, scrollViewText));
+                    ScrollViewTexts.Remove(scrollViewText);
                 }
                 Destroy(child);
                 _contentChildren.Remove(child);
@@ -62,10 +66,12 @@ namespace CalorieCounter
 
         public GameObject InstantiateScrollViewText(GameObject scrollViewTextPrefab, int siblingIndex)
         {
-            GameObject scrollViewText = Instantiate(scrollViewTextPrefab);
-            AddToScrollView(scrollViewText.transform, siblingIndex);
-            TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText.GetComponent<ScrollViewText>()));
-            return scrollViewText;
+            GameObject scrollViewTextGameObject = Instantiate(scrollViewTextPrefab);
+            AddToScrollView(scrollViewTextGameObject.transform, siblingIndex);
+            var scrollViewText = scrollViewTextGameObject.GetComponent<ScrollViewText>();
+            TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText));
+            ScrollViewTexts.Add(scrollViewText);
+            return scrollViewTextGameObject;
         }
 
         public void AddToScrollView(Transform transform)

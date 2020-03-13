@@ -34,6 +34,11 @@ namespace CalorieCounter
 
         private void Start()
         {
+            foreach (var scrollViewText in _scrollView.ScrollViewTexts)
+            {
+                scrollViewText.Highlighted += ScrollViewText_OnHighlighted;
+                _scrollViewTexts.Add(scrollViewText);
+            }
             _scrollView.TextModified += ScrollView_OnTextModified;
             GameManager.InputKeyManager.InputKeyPressed += InputKeyManager_OnInputKeyPressed;
         }
