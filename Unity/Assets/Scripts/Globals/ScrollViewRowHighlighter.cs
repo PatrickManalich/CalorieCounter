@@ -69,10 +69,10 @@ namespace CalorieCounter
 
         private void ScrollViewText_OnHighlighted(object sender, ScrollViewText.HighlightedEventArgs e)
         {
-            if (e.HighlightedType == HighlightedType.Enter)
+            if (e.HighlightedType == HighlightedType.Entered)
             {
                 EnterHighlightRow(e.SiblingIndex);
-            } else if(e.HighlightedType == HighlightedType.Exit)
+            } else if(e.HighlightedType == HighlightedType.Exited)
             {
                 ExitHighlightRow();
             }

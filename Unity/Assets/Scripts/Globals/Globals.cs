@@ -8,7 +8,7 @@ namespace CalorieCounter {
 
     public enum MealPatternType { Day, DayType, Group }
 
-    public enum HighlightedType { Enter, Exit }
+    public enum HighlightedType { Entered, Exited }
 
     public enum TextModifiedType { Instantiated, Destroying }
 

@@ -23,12 +23,12 @@ namespace CalorieCounter
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            Highlighted?.Invoke(this, new HighlightedEventArgs(HighlightedType.Enter, transform.GetSiblingIndex()));
+            Highlighted?.Invoke(this, new HighlightedEventArgs(HighlightedType.Entered, transform.GetSiblingIndex()));
         }
 
         public void OnPointerExit(PointerEventData pointerEventData)
         {
-            Highlighted?.Invoke(this, new HighlightedEventArgs(HighlightedType.Exit, transform.GetSiblingIndex()));
+            Highlighted?.Invoke(this, new HighlightedEventArgs(HighlightedType.Exited, transform.GetSiblingIndex()));
         }
     }
 }
