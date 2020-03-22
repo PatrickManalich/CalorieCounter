@@ -49,15 +49,15 @@ namespace CalorieCounter.MealEntries.MealPatterns
             var groupMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.GroupMealPatternsDirectoryName);
             _groupMealPatterns = Resources.LoadAll(groupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
 
-            _date.CurrentDateTimeChanged += RefreshAllMealPatterns;
-            _dayTypeDropdown.CurrentDayTypeChanged += RefreshAllMealPatterns;
+            _date.CurrentDateTimeChanged += Refresh;
+            _dayTypeDropdown.CurrentDayTypeChanged += Refresh;
             foreach (var scrollView in _scrollViewDictionary.Values)
             {
                 scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
                 scrollView.MealSuggestionRemoved += ScrollView_OnMealSuggestionRemoved;
             }
 
-            RefreshAllMealPatterns();
+            Refresh();
         }
 
         private void OnDestroy()
@@ -67,15 +67,15 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 scrollView.MealSuggestionRemoved -= ScrollView_OnMealSuggestionRemoved;
                 scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
             }
-            _dayTypeDropdown.CurrentDayTypeChanged -= RefreshAllMealPatterns;
-            _date.CurrentDateTimeChanged -= RefreshAllMealPatterns;
+            _dayTypeDropdown.CurrentDayTypeChanged -= Refresh;
+            _date.CurrentDateTimeChanged -= Refresh;
         }
 
         private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)
         {
             if (e.MealProportionModifiedType == MealProportionModifiedType.Added)
             {
-                RefreshAllMealPatterns();
+                Refresh();
             }
         }
 
@@ -87,10 +87,10 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 return;
             }
             _removedMealSuggestionsDictionary[e.MealSourceType].Add(e.RemovedMealSuggestion);
-            RefreshAllMealPatterns();
+            Refresh();
         }
 
-        private void RefreshAllMealPatterns()
+        private void Refresh()
         {
             foreach (var mealSourceType in _scrollViewDictionary.Keys)
             {
