@@ -69,7 +69,7 @@ namespace CalorieCounter.MealEntries {
         public void Dropdown_OnValueChanged(int index)
         {
             CurrentDayType = (DayType)index;
-            if (CurrentDayType != DayType.None)
+            if (CurrentDayType != DayType.None && CurrentDayType != DayType.Vacation)
             {
                 FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             }
