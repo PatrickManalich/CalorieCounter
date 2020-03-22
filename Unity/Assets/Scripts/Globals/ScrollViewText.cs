@@ -9,8 +9,8 @@ namespace CalorieCounter
 
         public class HighlightedEventArgs : EventArgs
         {
-            public HighlightedType HighlightedType { get; private set; }
-            public int SiblingIndex { get; private set; }
+            public HighlightedType HighlightedType { get; }
+            public int SiblingIndex { get; }
 
             public HighlightedEventArgs(HighlightedType highlightedType, int siblingIndex)
             {

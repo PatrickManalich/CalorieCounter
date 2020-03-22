@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,9 +11,9 @@ namespace CalorieCounter
     {
         public class TextModifiedEventArgs : EventArgs
         {
-            public TextModifiedType TextModifiedType { get; private set; }
+            public TextModifiedType TextModifiedType { get; }
 
-            public ScrollViewText ScrollViewText { get; private set; }
+            public ScrollViewText ScrollViewText { get; }
 
             public TextModifiedEventArgs(TextModifiedType textModifiedType, ScrollViewText scrollViewText)
             {

@@ -4,12 +4,11 @@ using UnityEngine;
 
 namespace CalorieCounter.Managers
 {
-
     public class InputKeyManager : MonoBehaviour
     {
         public class InputKeyPressedEventArgs : EventArgs
         {
-            public InputKeyCode InputKeyCode { get; private set; }
+            public InputKeyCode InputKeyCode { get; }
 
             public InputKeyPressedEventArgs(InputKeyCode inputKeyCode)
             {

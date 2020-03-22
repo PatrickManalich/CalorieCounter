@@ -10,9 +10,9 @@ namespace CalorieCounter.MealEntries {
 
         public class MealProportionModifiedEventArgs : EventArgs
         {
-            public MealProportionModifiedType MealProportionModifiedType { get; private set; }
-            public MealSourceType MealSourceType { get; private set; }
-            public MealProportion MealProportion { get; private set; }
+            public MealProportionModifiedType MealProportionModifiedType { get; }
+            public MealSourceType MealSourceType { get; }
+            public MealProportion MealProportion { get; }
 
             public MealProportionModifiedEventArgs(MealProportionModifiedType mealProportionModifiedType, MealSourceType mealSourceType, MealProportion mealProportion)
             {
@@ -24,8 +24,8 @@ namespace CalorieCounter.MealEntries {
 
         public class MealSuggestionRemovedEventArgs : EventArgs
         {
-            public MealSourceType MealSourceType { get; private set; }
-            public MealSuggestion RemovedMealSuggestion { get; private set; }
+            public MealSourceType MealSourceType { get; }
+            public MealSuggestion RemovedMealSuggestion { get; }
 
             public MealSuggestionRemovedEventArgs(MealSourceType mealSourceType, MealSuggestion removedMealSuggestion)
             {
