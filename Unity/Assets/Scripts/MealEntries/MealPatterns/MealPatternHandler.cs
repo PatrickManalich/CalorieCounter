@@ -49,8 +49,8 @@ namespace CalorieCounter.MealEntries.MealPatterns
             var groupMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.GroupMealPatternsDirectoryName);
             _groupMealPatterns = Resources.LoadAll(groupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
 
-            _date.CurrentDateTimeChanged += RefreshDayMealPatterns;
-            _dayTypeDropdown.CurrentDayTypeChanged += RefreshDayTypeMealPatterns;
+            _date.CurrentDateTimeChanged += RefreshAllMealPatterns;
+            _dayTypeDropdown.CurrentDayTypeChanged += RefreshAllMealPatterns;
             foreach (var scrollView in _scrollViewDictionary.Values)
             {
                 scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
@@ -67,35 +67,8 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 scrollView.MealSuggestionRemoved -= ScrollView_OnMealSuggestionRemoved;
                 scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
             }
-            _dayTypeDropdown.CurrentDayTypeChanged -= RefreshDayTypeMealPatterns;
-            _date.CurrentDateTimeChanged -= RefreshDayMealPatterns;
-        }
-
-        private void RefreshDayMealPatterns()
-        {
-            foreach (var mealSourceType in _scrollViewDictionary.Keys)
-            {
-                _mealSuggestionClearCount += _scrollViewDictionary[mealSourceType].MealSuggestions.Count;
-                _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
-                _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.Day);
-                _removedMealSuggestionsDictionary[mealSourceType].Clear();
-            }
-
-            AddDayMealPatternSuggestionsToLists();
-            AddMealSuggestionsToScrollViews();
-        }
-
-        private void RefreshDayTypeMealPatterns()
-        {
-            foreach (var mealSourceType in _scrollViewDictionary.Keys)
-            {
-                _mealSuggestionClearCount += _scrollViewDictionary[mealSourceType].MealSuggestions.Count;
-                _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
-                _mealSuggestionsDictionary[mealSourceType].RemoveAll(m => m.mealPatternType == MealPatternType.DayType);
-            }
-
-            AddDayTypeMealPatternSuggestionsToLists();
-            AddMealSuggestionsToScrollViews();
+            _dayTypeDropdown.CurrentDayTypeChanged -= RefreshAllMealPatterns;
+            _date.CurrentDateTimeChanged -= RefreshAllMealPatterns;
         }
 
         private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)
