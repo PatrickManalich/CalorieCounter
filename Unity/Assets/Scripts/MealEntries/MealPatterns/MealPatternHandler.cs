@@ -2,7 +2,6 @@
 using RotaryHeart.Lib.SerializableDictionary;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -40,14 +39,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 _removedMealSuggestionsDictionary.Add(mealSourceType, new List<MealSuggestion>());
             }
 
-            var dayMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayMealPatternsDirectoryName);
-            _dayMealPatterns = Resources.LoadAll(dayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
-
-            var dayTypeMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayTypeMealPatternsDirectoryName);
-            _dayTypeMealPatterns = Resources.LoadAll(dayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
-
-            var groupMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.GroupMealPatternsDirectoryName);
-            _groupMealPatterns = Resources.LoadAll(groupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
+            _dayMealPatterns = Resources.LoadAll(GlobalPaths.DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
+            _dayTypeMealPatterns = Resources.LoadAll(GlobalPaths.DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
+            _groupMealPatterns = Resources.LoadAll(GlobalPaths.GroupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
 
             _date.CurrentDateTimeChanged += Refresh;
             _dayTypeDropdown.CurrentDayTypeChanged += Refresh;

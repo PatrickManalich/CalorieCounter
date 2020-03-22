@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace CalorieCounter {
 
@@ -76,6 +77,11 @@ namespace CalorieCounter {
         public const string DayMealPatternsDirectoryName = @"DayMealPatterns";
         public const string DayTypeMealPatternsDirectoryName = @"DayTypeMealPatterns";
         public const string GroupMealPatternsDirectoryName = @"GroupMealPatterns";
+
+        public static readonly string DayMealPatternsPath = Path.Combine(ScriptableObjectsDirectoryName, DayMealPatternsDirectoryName);
+        public static readonly string DayTypeMealPatternsPath = Path.Combine(ScriptableObjectsDirectoryName, DayTypeMealPatternsDirectoryName);
+        public static readonly string GroupMealPatternsPath = Path.Combine(ScriptableObjectsDirectoryName, GroupMealPatternsDirectoryName);
+
     }
 
     public static class GlobalMethods {

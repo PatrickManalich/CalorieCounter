@@ -3,7 +3,6 @@ using CalorieCounter.MealEntries.MealPatterns;
 using CalorieCounter.MealSources;
 using CalorieCounter.Utilities;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -14,10 +13,6 @@ namespace CalorieCounter.EditorExtensions
 	{
         private const string MenuItemDirectory = @"Calorie Counter/Meal Patterns/";
 
-        private static readonly string DayMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayMealPatternsDirectoryName);
-        private static readonly string DayTypeMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.DayTypeMealPatternsDirectoryName);
-        private static readonly string GroupMealPatternsPath = Path.Combine(GlobalPaths.ScriptableObjectsDirectoryName, GlobalPaths.GroupMealPatternsDirectoryName);
-
         [MenuItem(MenuItemDirectory + "Validate Meal Patterns %#v")]
         public static void ValidateMealPatterns()
         {
@@ -27,7 +22,7 @@ namespace CalorieCounter.EditorExtensions
             // Since meal suggestions are structs and not classes, you can must directly change the value,
             // or else you'll just be changing a copy
 
-            var dayMealPatterns = Resources.LoadAll(DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
+            var dayMealPatterns = Resources.LoadAll(GlobalPaths.DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
             foreach (var dayMealPattern in dayMealPatterns)
             {
                 var mealProportion = dayMealPattern.mealSuggestion.mealProportion;
@@ -37,7 +32,7 @@ namespace CalorieCounter.EditorExtensions
                 EditorUtility.SetDirty(dayMealPattern);
             }
 
-            var dayTypeMealPatterns = Resources.LoadAll(DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
+            var dayTypeMealPatterns = Resources.LoadAll(GlobalPaths.DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
             foreach (var dayTypeMealPattern in dayTypeMealPatterns)
             {
                 var mealProportion = dayTypeMealPattern.mealSuggestion.mealProportion;
@@ -47,7 +42,7 @@ namespace CalorieCounter.EditorExtensions
                 EditorUtility.SetDirty(dayTypeMealPattern);
             }
 
-            var groupMealPatterns = Resources.LoadAll(GroupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
+            var groupMealPatterns = Resources.LoadAll(GlobalPaths.GroupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
             foreach (var groupMealPattern in groupMealPatterns)
             {
                 for(int i = 0; i < groupMealPattern.mealSuggestions.Count; i++)
