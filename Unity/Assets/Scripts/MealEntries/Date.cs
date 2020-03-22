@@ -68,8 +68,9 @@ namespace CalorieCounter.MealEntries {
             Refresh();
         }
 
-        private void Refresh() {
-            _text.text = CurrentDateTime.ToShortDateString();
+        private void Refresh()
+        {
+            _text.text = $"{CurrentDateTime.DayOfWeek.ToString()}, {CurrentDateTime.ToShortDateString()}";
         }
     }
 }
