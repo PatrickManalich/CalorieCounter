@@ -25,6 +25,8 @@ namespace CalorieCounter.MealEntries {
             }
         }
 
+        public bool IsCurrentDayTypeRestOrTraining => CurrentDayType == DayType.Rest || CurrentDayType == DayType.Training;
+
         [SerializeField]
         private MealEntriesAdapter _mealEntriesAdapter = default;
 
@@ -69,7 +71,7 @@ namespace CalorieCounter.MealEntries {
         public void Dropdown_OnValueChanged(int index)
         {
             CurrentDayType = (DayType)index;
-            if (CurrentDayType != DayType.None && CurrentDayType != DayType.Vacation)
+            if (IsCurrentDayTypeRestOrTraining)
             {
                 FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             }

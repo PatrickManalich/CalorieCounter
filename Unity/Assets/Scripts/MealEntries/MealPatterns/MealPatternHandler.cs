@@ -154,7 +154,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private void AddMealSuggestionsToScrollViews()
         {
-            if (_dayTypeDropdown.CurrentDayType != DayType.None && _dayTypeDropdown.CurrentDayType != DayType.Vacation)
+            if (_dayTypeDropdown.IsCurrentDayTypeRestOrTraining)
             {
                 foreach (var mealSourceType in _scrollViewDictionary.Keys)
                 {
