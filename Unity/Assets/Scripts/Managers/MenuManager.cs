@@ -64,7 +64,7 @@ namespace CalorieCounter.Managers {
 
         private void InputKeyManager_OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
         {
-            if (e.InputKeyCode == InputKeyCode.ToggleMenu)
+            if (e.InputKeyCode == InputKeyCode.ToggleMenu && GameManager.CustomSceneManager.CurrentScene != Scene.Menu)
             {
                 _menuCanvas.SetActive(!_menuCanvas.activeSelf);
             }
