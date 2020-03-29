@@ -14,7 +14,7 @@ namespace CalorieCounter.ScaleEntries
         {
             ScaleEntries.Add(scaleEntry.dateTime, scaleEntry);
 
-            int siblingStartIndex = ScaleEntries.IndexOfKey(scaleEntry.dateTime) * _content.constraintCount;
+            int siblingStartIndex = ScaleEntries.IndexOfKey(scaleEntry.dateTime) * Content.constraintCount;
             GameObject dateText = InstantiateScrollViewText(siblingStartIndex);
             GameObject weightText = InstantiateScrollViewText(++siblingStartIndex);
             GameObject bodyFatText = InstantiateScrollViewText(++siblingStartIndex);

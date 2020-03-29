@@ -26,11 +26,11 @@ namespace CalorieCounter
 
         public List<ScrollViewText> ScrollViewTexts { get; private set; } = new List<ScrollViewText>();
 
+        public ScrollRect ScrollRect { get; private set; }
+        public GridLayoutGroup Content { get; private set; }
+
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
-
-        protected ScrollRect _scrollRect;
-        protected GridLayoutGroup _content;
 
         // We need to manually keep track of content children because calling Destroy() takes a frame to update,
         // so using GetChild() won't return the expected results.
@@ -42,8 +42,8 @@ namespace CalorieCounter
 
         public virtual void DeleteRow(int rowIndex)
         {
-            var childStartIndex = rowIndex * _content.constraintCount;
-            for (var i = _content.constraintCount - 1; i >= 0; i--)
+            var childStartIndex = rowIndex * Content.constraintCount;
+            for (var i = Content.constraintCount - 1; i >= 0; i--)
             {
                 var childIndex = childStartIndex + i;
                 var child = _contentChildren[childIndex];
@@ -75,13 +75,13 @@ namespace CalorieCounter
 
         public void AddToScrollView(Transform transform)
         {
-            transform.SetParent(_content.transform, false);
+            transform.SetParent(Content.transform, false);
             _contentChildren.Add(transform.gameObject);
         }
 
         public void AddToScrollView(Transform transform, int siblingIndex)
         {
-            transform.SetParent(_content.transform, false);
+            transform.SetParent(Content.transform, false);
             transform.SetSiblingIndex(siblingIndex);
             _contentChildren.Insert(siblingIndex, transform.gameObject);
         }
@@ -103,14 +103,14 @@ namespace CalorieCounter
 
         private void Awake()
         {
-            _scrollRect = GetComponent<ScrollRect>();
-            _content = _scrollRect.content.GetComponent<GridLayoutGroup>();
+            ScrollRect = GetComponent<ScrollRect>();
+            Content = ScrollRect.content.GetComponent<GridLayoutGroup>();
         }
 
         private IEnumerator ScrollToPercentCoroutine (float percent)
         {
             yield return new WaitForEndOfFrame();
-            _scrollRect.verticalNormalizedPosition = Mathf.Clamp01(percent);
+            ScrollRect.verticalNormalizedPosition = Mathf.Clamp01(percent);
         }
     }
 }

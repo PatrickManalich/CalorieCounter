@@ -56,7 +56,7 @@ namespace CalorieCounter.MealEntries {
         {
             MealProportions.Add(mealProportion);
 
-            int siblingStartIndex = MealProportions.IndexOf(mealProportion) * _content.constraintCount;
+            int siblingStartIndex = MealProportions.IndexOf(mealProportion) * Content.constraintCount;
             GameObject servingAmountText = InstantiateScrollViewText(siblingStartIndex);
             GameObject nameText = InstantiateScrollViewText(++siblingStartIndex);
             GameObject fatText = InstantiateScrollViewText(++siblingStartIndex);
@@ -79,7 +79,7 @@ namespace CalorieCounter.MealEntries {
         {
             MealSuggestions.Add(mealSuggestion);
 
-            int siblingStartIndex = (MealProportions.Count + MealSuggestions.Count - 1) * _content.constraintCount;
+            int siblingStartIndex = (MealProportions.Count + MealSuggestions.Count - 1) * Content.constraintCount;
             GameObject servingAmountText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, siblingStartIndex);
             GameObject nameText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
             GameObject fatText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);

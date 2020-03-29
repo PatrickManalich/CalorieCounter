@@ -26,7 +26,7 @@ namespace CalorieCounter.MealSources {
 
             _nonarchivedNamedMealSources.Add(namedMealSource.name, namedMealSource);
 
-            int siblingStartIndex = _nonarchivedNamedMealSources.IndexOfKey(namedMealSource.name) * _content.constraintCount;
+            int siblingStartIndex = _nonarchivedNamedMealSources.IndexOfKey(namedMealSource.name) * Content.constraintCount;
             GameObject mealNameText = InstantiateScrollViewText(siblingStartIndex);
             GameObject servingSizeText = InstantiateScrollViewText(++siblingStartIndex);
             GameObject fatText = InstantiateScrollViewText(++siblingStartIndex);
@@ -59,7 +59,7 @@ namespace CalorieCounter.MealSources {
 
         public override void ShowRenameField(int rowIndex)
         {
-            var parentTransform = _contentChildren[rowIndex * _content.constraintCount].transform;
+            var parentTransform = _contentChildren[rowIndex * Content.constraintCount].transform;
             var oldNamedMealSource = _nonarchivedNamedMealSources.Values[rowIndex];
             _mealSourceRenameField.Show(parentTransform, oldNamedMealSource);
         }
