@@ -47,6 +47,9 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private MealSourceType _mealSourceType = default;
 
+        [SerializeField]
+        private DayTypeDropdown _dayTypeDropdown = default;
+
         private const string CustomMealSourceName = "Custom Meal";
 
         public void AddMealProportion(MealProportion mealProportion)
@@ -135,6 +138,24 @@ namespace CalorieCounter.MealEntries {
                 var removedMealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
                 MealSuggestions.Remove(removedMealSuggestion);
                 MealSuggestionRemoved?.Invoke(this, new MealSuggestionRemovedEventArgs(_mealSourceType, removedMealSuggestion));
+            }
+        }
+
+        private void Start()
+        {
+            _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_OnCurrentDayTypeChanged;
+        }
+
+        private void OnDestroy()
+        {
+            _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_OnCurrentDayTypeChanged;
+        }
+
+        private void DayTypeDropdown_OnCurrentDayTypeChanged()
+        {
+            if(!_dayTypeDropdown.IsCurrentDayTypeRestOrTraining)
+            {
+                ClearMealProportions();
             }
         }
     }
