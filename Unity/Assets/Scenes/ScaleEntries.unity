@@ -149,7 +149,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
@@ -401,8 +401,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 25}
-  m_SizeDelta: {x: -50, y: 950}
+  m_AnchoredPosition: {x: -25, y: 25}
+  m_SizeDelta: {x: -100, y: 950}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &19275659
 MonoBehaviour:
@@ -465,7 +465,7 @@ MonoBehaviour:
   m_HorizontalScrollbar: {fileID: 1368058789}
   m_VerticalScrollbar: {fileID: 360970665}
   m_HorizontalScrollbarVisibility: 0
-  m_VerticalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 0
   m_HorizontalScrollbarSpacing: -3
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
@@ -1338,8 +1338,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: -17}
+  m_AnchoredPosition: {x: 50, y: 0}
+  m_SizeDelta: {x: 50, y: 0}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &360970665
 MonoBehaviour:
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_ChildAlignment: 2
   m_StartCorner: 1
   m_StartAxis: 0
-  m_CellSize: {x: 267.142, y: 50}
+  m_CellSize: {x: 260, y: 50}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 7
@@ -3958,9 +3958,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: -47, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1368058789
 MonoBehaviour:
@@ -6421,7 +6421,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 267.142, y: 50}
+  m_CellSize: {x: 260, y: 50}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 7
