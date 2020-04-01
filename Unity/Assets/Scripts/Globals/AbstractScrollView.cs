@@ -50,8 +50,8 @@ namespace CalorieCounter
                 if (child.GetComponent<ScrollViewText>())
                 {
                     var scrollViewText = child.GetComponent<ScrollViewText>();
-                    TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, scrollViewText));
                     ScrollViewTexts.Remove(scrollViewText);
+                    TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, scrollViewText));
                 }
                 Destroy(child);
                 _contentChildren.Remove(child);
@@ -68,8 +68,8 @@ namespace CalorieCounter
             GameObject scrollViewTextGameObject = Instantiate(scrollViewTextPrefab);
             AddToScrollView(scrollViewTextGameObject.transform, siblingIndex);
             var scrollViewText = scrollViewTextGameObject.GetComponent<ScrollViewText>();
-            TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText));
             ScrollViewTexts.Add(scrollViewText);
+            TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText));
             return scrollViewTextGameObject;
         }
 
