@@ -7,7 +7,7 @@ namespace CalorieCounter
     public class ScrollbarInteractableToggler : MonoBehaviour
 	{
         [SerializeField]
-        private AbstractScrollView _scrollView = default;
+        private ScrollView _scrollView = default;
 
         private Scrollbar _scrollbar;
 
@@ -16,14 +16,14 @@ namespace CalorieCounter
             _scrollbar = GetComponent<Scrollbar>();
             _scrollbar.interactable = false;
 
-            _scrollView.TextModified += (object sender, AbstractScrollView.TextModifiedEventArgs e) => Refresh();
+            _scrollView.TextModified += (object sender, ScrollView.TextModifiedEventArgs e) => Refresh();
 
             Refresh();
         }
 
         private void OnDestroy()
         {
-            _scrollView.TextModified -= (object sender, AbstractScrollView.TextModifiedEventArgs e) => Refresh();
+            _scrollView.TextModified -= (object sender, ScrollView.TextModifiedEventArgs e) => Refresh();
         }
 
         private void Refresh()

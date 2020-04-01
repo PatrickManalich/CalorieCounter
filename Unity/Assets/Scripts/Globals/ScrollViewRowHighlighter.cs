@@ -13,7 +13,7 @@ namespace CalorieCounter
         private GridLayoutGroup _content = default;
 
         [SerializeField]
-        private AbstractScrollView _scrollView = default;
+        private ScrollView _scrollView = default;
 
         private List<ScrollViewText> _scrollViewTexts = new List<ScrollViewText>();
 
@@ -53,7 +53,7 @@ namespace CalorieCounter
             _scrollView.TextModified -= ScrollView_OnTextModified;
         }
 
-        private void ScrollView_OnTextModified(object sender, AbstractScrollView.TextModifiedEventArgs e)
+        private void ScrollView_OnTextModified(object sender, ScrollView.TextModifiedEventArgs e)
         {
             if (e.TextModifiedType == TextModifiedType.Instantiated)
             {

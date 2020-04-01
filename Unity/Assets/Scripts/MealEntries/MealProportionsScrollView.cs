@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    public class MealProportionsScrollView : AbstractScrollView {
+    public class MealProportionsScrollView : ScrollView {
 
         public class MealProportionModifiedEventArgs : EventArgs
         {

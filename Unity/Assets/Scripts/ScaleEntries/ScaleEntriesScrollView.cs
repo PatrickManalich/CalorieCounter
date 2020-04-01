@@ -6,7 +6,7 @@ using UnityEngine;
 namespace CalorieCounter.ScaleEntries
 {
 
-    public class ScaleEntriesScrollView : AbstractScrollView
+    public class ScaleEntriesScrollView : ScrollView
     {
         public SortedList<DateTime, ScaleEntry> ScaleEntries { get; private set; } = new SortedList<DateTime, ScaleEntry>();
 

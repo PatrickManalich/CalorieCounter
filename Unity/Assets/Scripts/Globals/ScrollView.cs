@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace CalorieCounter
 {
     [RequireComponent(typeof(ScrollRect))]
-    public abstract class AbstractScrollView : MonoBehaviour
+    public class ScrollView : MonoBehaviour
     {
         public class TextModifiedEventArgs : EventArgs
         {

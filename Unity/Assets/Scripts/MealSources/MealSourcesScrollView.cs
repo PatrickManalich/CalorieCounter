@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealSources {
 
-    public class MealSourcesScrollView : AbstractScrollView
+    public class MealSourcesScrollView : ScrollView
     {
         public Dictionary<string, MealSource> MealSources { get; private set; } = new Dictionary<string, MealSource>();
 
