@@ -26,6 +26,7 @@ namespace CalorieCounter
 
         public List<ScrollViewText> ScrollViewTexts { get; private set; } = new List<ScrollViewText>();
 
+        public RectTransform RectTransform { get; private set; }
         public ScrollRect ScrollRect { get; private set; }
         public GridLayoutGroup Content { get; private set; }
 
@@ -103,6 +104,7 @@ namespace CalorieCounter
 
         private void Awake()
         {
+            RectTransform = GetComponent<RectTransform>();
             ScrollRect = GetComponent<ScrollRect>();
             Content = ScrollRect.content.GetComponent<GridLayoutGroup>();
         }
