@@ -105,7 +105,7 @@ namespace CalorieCounter.MealEntries {
             }
         }
 
-        public override void AcceptSuggestion(int rowIndex)
+        public void AcceptSuggestion(int rowIndex)
         {
             if (rowIndex >= MealProportions.Count)
             {

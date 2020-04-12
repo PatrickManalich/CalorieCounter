@@ -57,7 +57,7 @@ namespace CalorieCounter.MealSources {
             AddNamedMealSource(newNamedMealSource);
         }
 
-        public override void ShowRenameField(int rowIndex)
+        public void ShowRenameField(int rowIndex)
         {
             var parentTransform = _contentChildren[rowIndex * Content.constraintCount].transform;
             var oldNamedMealSource = _nonarchivedNamedMealSources.Values[rowIndex];

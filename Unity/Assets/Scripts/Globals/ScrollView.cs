@@ -37,10 +37,6 @@ namespace CalorieCounter
         // so using GetChild() won't return the expected results.
         protected List<GameObject> _contentChildren = new List<GameObject>();
 
-        public virtual void ShowRenameField(int rowIndex) { }
-
-        public virtual void AcceptSuggestion(int rowIndex) { }
-
         public virtual void DeleteRow(int rowIndex)
         {
             var childStartIndex = rowIndex * Content.constraintCount;
