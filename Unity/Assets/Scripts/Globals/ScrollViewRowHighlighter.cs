@@ -23,6 +23,20 @@ namespace CalorieCounter
         private RectTransform _rectTransform;
         private RectTransform _contentRectTransform;
 
+        public void EnterHighlightRow(int siblingIndex)
+        {
+            HighlightedRowIndex = siblingIndex / _content.constraintCount;
+            _canvasGroup.alpha = 1;
+            var contentOffset = _contentRectTransform.anchoredPosition.y;
+            _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _content.cellSize.y * -1) + contentOffset);
+        }
+
+        public void ExitHighlightRow()
+        {
+            HighlightedRowIndex = -1;
+            _canvasGroup.alpha = 0;
+        }
+
         private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
@@ -76,20 +90,5 @@ namespace CalorieCounter
                 ExitHighlightRow();
             }
         }
-
-        public void EnterHighlightRow(int siblingIndex)
-        {
-            HighlightedRowIndex = siblingIndex / _content.constraintCount;
-            _canvasGroup.alpha = 1;
-            var contentOffset = _contentRectTransform.anchoredPosition.y;
-            _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _content.cellSize.y * -1) + contentOffset);
-        }
-
-        public void ExitHighlightRow()
-        {
-            HighlightedRowIndex = -1;
-            _canvasGroup.alpha = 0;
-        }
-
     }
 }
