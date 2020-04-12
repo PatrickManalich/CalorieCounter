@@ -24,6 +24,8 @@ namespace CalorieCounter
 
         public event EventHandler<TextModifiedEventArgs> TextModified;
 
+        public Action RowChanged;
+
         public List<ScrollViewText> ScrollViewTexts { get; private set; } = new List<ScrollViewText>();
 
         public RectTransform RectTransform { get; private set; }
@@ -53,6 +55,7 @@ namespace CalorieCounter
                 Destroy(child);
                 _contentChildren.Remove(child);
             }
+            InvokeRowChanged();
         }
 
         public GameObject InstantiateScrollViewText(int siblingIndex)
@@ -96,6 +99,11 @@ namespace CalorieCounter
         public void ScrollToPercent(float percent)
         {
             StartCoroutine(ScrollToPercentCoroutine(percent));
+        }
+
+        protected void InvokeRowChanged()
+        {
+            RowChanged?.Invoke();
         }
 
         private void Awake()

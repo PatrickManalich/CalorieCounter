@@ -90,6 +90,7 @@ namespace CalorieCounter.MealEntries {
 
             ScrollToBottom();
             MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Added, _mealSourceType, mealProportion));
+            InvokeRowChanged();
         }
 
         public void AddMealSuggestion(MealSuggestion mealSuggestion)

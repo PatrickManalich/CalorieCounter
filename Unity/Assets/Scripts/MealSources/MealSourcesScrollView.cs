@@ -54,6 +54,7 @@ namespace CalorieCounter.MealSources {
 
             var percent = 1 - (_nonarchivedNamedMealSources.IndexOfKey(namedMealSource.name) / (float) (_nonarchivedNamedMealSources.Count - 1));
             ScrollToPercent(percent);
+            InvokeRowChanged();
         }
 
 
