@@ -10,6 +10,12 @@ namespace CalorieCounter.ScaleEntries
     {
         public SortedList<DateTime, ScaleEntry> ScaleEntries { get; private set; } = new SortedList<DateTime, ScaleEntry>();
 
+        public override void DeleteRow(int rowIndex)
+        {
+            base.DeleteRow(rowIndex);
+            ScaleEntries.RemoveAt(rowIndex);
+        }
+
         public void AddScaleEntry(ScaleEntry scaleEntry)
         {
             ScaleEntries.Add(scaleEntry.dateTime, scaleEntry);
@@ -33,12 +39,6 @@ namespace CalorieCounter.ScaleEntries
 
             var percent = 1 - (ScaleEntries.IndexOfKey(scaleEntry.dateTime) / (float)(ScaleEntries.Count - 1));
             ScrollToPercent(percent);
-        }
-
-        public override void DeleteRow(int rowIndex)
-        {
-            base.DeleteRow(rowIndex);
-            ScaleEntries.RemoveAt(rowIndex);
         }
     }
 }

@@ -52,6 +52,23 @@ namespace CalorieCounter.MealEntries {
 
         private const string CustomMealSourceName = "Custom Meal";
 
+        public override void DeleteRow(int rowIndex)
+        {
+            base.DeleteRow(rowIndex);
+            if (MealProportions.Count > 0 && rowIndex < MealProportions.Count)
+            {
+                var removedMealProportion = MealProportions[rowIndex];
+                MealProportions.Remove(removedMealProportion);
+                MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Removed, _mealSourceType, removedMealProportion));
+            }
+            else if (MealSuggestions.Count > 0 && rowIndex >= MealProportions.Count)
+            {
+                var removedMealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
+                MealSuggestions.Remove(removedMealSuggestion);
+                MealSuggestionRemoved?.Invoke(this, new MealSuggestionRemovedEventArgs(_mealSourceType, removedMealSuggestion));
+            }
+        }
+
         public void AddMealProportion(MealProportion mealProportion)
         {
             MealProportions.Add(mealProportion);
@@ -121,23 +138,6 @@ namespace CalorieCounter.MealEntries {
             for (int i = 0; i < mealSuggestionsCount; i++)
             {
                 DeleteRow(MealProportions.Count);
-            }
-        }
-
-        public override void DeleteRow(int rowIndex)
-        {
-            base.DeleteRow(rowIndex);
-            if (MealProportions.Count > 0 && rowIndex < MealProportions.Count)
-            {
-                var removedMealProportion = MealProportions[rowIndex];
-                MealProportions.Remove(removedMealProportion);
-                MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Removed, _mealSourceType, removedMealProportion));
-            }
-            else if (MealSuggestions.Count > 0 && rowIndex >= MealProportions.Count)
-            {
-                var removedMealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
-                MealSuggestions.Remove(removedMealSuggestion);
-                MealSuggestionRemoved?.Invoke(this, new MealSuggestionRemovedEventArgs(_mealSourceType, removedMealSuggestion));
             }
         }
 

@@ -15,6 +15,15 @@ namespace CalorieCounter.MealSources {
 
         private SortedList<string, NamedMealSource> _nonarchivedNamedMealSources = new SortedList<string, NamedMealSource>();
 
+        public override void DeleteRow(int rowIndex)
+        {
+            base.DeleteRow(rowIndex);
+            var archivedMealSource = _nonarchivedNamedMealSources.Values[rowIndex].mealSource;
+            archivedMealSource.archived = true;
+            MealSources[archivedMealSource.id] = archivedMealSource;
+            _nonarchivedNamedMealSources.RemoveAt(rowIndex);
+        }
+
         public void AddNamedMealSource(NamedMealSource namedMealSource)
         {
             var mealSource = namedMealSource.mealSource;
@@ -62,15 +71,6 @@ namespace CalorieCounter.MealSources {
             var parentTransform = _contentChildren[rowIndex * Content.constraintCount].transform;
             var oldNamedMealSource = _nonarchivedNamedMealSources.Values[rowIndex];
             _mealSourceRenameField.Show(parentTransform, oldNamedMealSource);
-        }
-
-        public override void DeleteRow(int rowIndex)
-        {
-            base.DeleteRow(rowIndex);
-            var archivedMealSource = _nonarchivedNamedMealSources.Values[rowIndex].mealSource;
-            archivedMealSource.archived = true;
-            MealSources[archivedMealSource.id] = archivedMealSource;
-            _nonarchivedNamedMealSources.RemoveAt(rowIndex);
         }
     }
 }
