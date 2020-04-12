@@ -209,6 +209,32 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 30691438}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &10544324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10544323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029a8522975f6084eaef4375117be7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mealProportionsScrollView: {fileID: 19275662}
+--- !u!114 &10544325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10544323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79471b7913715bd448fe2452f830f96b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scrollView: {fileID: 19275662}
 --- !u!1 &19275657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1136,32 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1547350072}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &176276079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176276078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029a8522975f6084eaef4375117be7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mealProportionsScrollView: {fileID: 688997043}
+--- !u!114 &176276080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176276078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79471b7913715bd448fe2452f830f96b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scrollView: {fileID: 688997043}
 --- !u!1 &180200856
 GameObject:
   m_ObjectHideFlags: 0
@@ -6679,6 +6731,32 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 706938727}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &800325925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800325924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029a8522975f6084eaef4375117be7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mealProportionsScrollView: {fileID: 920356582}
+--- !u!114 &800325926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800325924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79471b7913715bd448fe2452f830f96b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scrollView: {fileID: 920356582}
 --- !u!1 &803627970
 GameObject:
   m_ObjectHideFlags: 0

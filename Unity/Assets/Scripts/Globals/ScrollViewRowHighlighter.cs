@@ -1,6 +1,4 @@
-﻿using CalorieCounter.Managers;
-using CalorieCounter.Utilities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +7,10 @@ namespace CalorieCounter
     [RequireComponent(typeof(CanvasGroup))]
     public class ScrollViewRowHighlighter : MonoBehaviour
     {
+        public int HighlightedRowIndex { get; private set; }
+
+        public bool RowHighlighted => HighlightedRowIndex != -1 && _contentRectTransform.childCount > 0;
+
         [SerializeField]
         private GridLayoutGroup _content = default;
 
@@ -20,7 +22,6 @@ namespace CalorieCounter
         private CanvasGroup _canvasGroup;
         private RectTransform _rectTransform;
         private RectTransform _contentRectTransform;
-        private int _highlightedRowIndex;
 
         private void Awake()
         {
@@ -40,7 +41,6 @@ namespace CalorieCounter
                 _scrollViewTexts.Add(scrollViewText);
             }
             _scrollView.TextModified += ScrollView_OnTextModified;
-            GameManager.InputKeyManager.InputKeyPressed += InputKeyManager_OnInputKeyPressed;
         }
 
         private void OnDestroy()
@@ -49,7 +49,6 @@ namespace CalorieCounter
             {
                 scrollViewText.Highlighted -= ScrollViewText_OnHighlighted;
             }
-            GameManager.InputKeyManager.InputKeyPressed -= InputKeyManager_OnInputKeyPressed;
             _scrollView.TextModified -= ScrollView_OnTextModified;
         }
 
@@ -78,42 +77,17 @@ namespace CalorieCounter
             }
         }
 
-        private void InputKeyManager_OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
+        public void EnterHighlightRow(int siblingIndex)
         {
-            if (_highlightedRowIndex == -1 || _contentRectTransform.childCount <= 0)
-                return;
-
-            if (e.InputKeyCode == InputKeyCode.DeleteRow)
-            {
-                _scrollView.DeleteRow(_highlightedRowIndex);
-                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-                ExitHighlightRow();
-            }
-            else if (e.InputKeyCode == InputKeyCode.RenameRow)
-            {
-                _scrollView.ShowRenameField(_highlightedRowIndex);
-                ExitHighlightRow();
-            }
-            else if(e.InputKeyCode == InputKeyCode.AcceptSuggestion)
-            {
-                _scrollView.AcceptSuggestion(_highlightedRowIndex);
-                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-                ExitHighlightRow();
-            }
-
-        }
-
-        private void EnterHighlightRow(int siblingIndex)
-        {
-            _highlightedRowIndex = siblingIndex / _content.constraintCount;
+            HighlightedRowIndex = siblingIndex / _content.constraintCount;
             _canvasGroup.alpha = 1;
             var contentOffset = _contentRectTransform.anchoredPosition.y;
-            _rectTransform.anchoredPosition = new Vector2(0, (_highlightedRowIndex * _content.cellSize.y * -1) + contentOffset);
+            _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _content.cellSize.y * -1) + contentOffset);
         }
 
-        private void ExitHighlightRow()
+        public void ExitHighlightRow()
         {
-            _highlightedRowIndex = -1;
+            HighlightedRowIndex = -1;
             _canvasGroup.alpha = 0;
         }
 
