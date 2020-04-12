@@ -33,9 +33,9 @@ namespace CalorieCounter.Managers {
 
         private void Start()
         {
-            foreach (var gameObject in _sceneButtonDictionary.Keys)
+            foreach (var sceneButton in _sceneButtonDictionary.Keys)
             {
-                gameObject.GetComponent<Button>().onClick.AddListener(() => SceneButton_OnClick(gameObject));
+                sceneButton.GetComponent<Button>().onClick.AddListener(() => LoadSceneFromSceneButton(sceneButton));
             }
             _quitButton.onClick.AddListener(QuitButton_OnClick);
             GameManager.InputKeyManager.InputKeyPressed += InputKeyManager_OnInputKeyPressed;
@@ -48,9 +48,9 @@ namespace CalorieCounter.Managers {
             _quitButton.onClick.RemoveListener(QuitButton_OnClick);
         }
 
-        private void SceneButton_OnClick(GameObject key)
+        private void LoadSceneFromSceneButton(GameObject sceneButton)
         {
-            GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[key]);
+            GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[sceneButton]);
             GameManager.MenuManager.HideMenu();
         }
 
