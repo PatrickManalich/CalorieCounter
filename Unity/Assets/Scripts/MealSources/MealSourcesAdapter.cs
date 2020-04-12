@@ -23,15 +23,7 @@ namespace CalorieCounter.MealSources {
 
         public override void Export()
         {
-            var mealSourcesDictionary = new Dictionary<MealSourceType, Dictionary<string, MealSource>>() {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSources },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSources },
-            };
-            var mealSourceNamesDictionary = new Dictionary<MealSourceType, Dictionary<string, string>>() {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSourceNames },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSourceNames },
-            };
-            GameManager.MealSourcesManager.ExportDictionaries(mealSourcesDictionary, mealSourceNamesDictionary);
+            GameManager.MealSourcesManager.ExportDictionaries(GetScrollViewsMealSourcesDictionary(), GetScrollViewsMealSourceNamesDictionary());
         }
 
         public static bool DoesMealSourceExist(MealSource mealSource)
@@ -87,6 +79,22 @@ namespace CalorieCounter.MealSources {
                     mealSourcesScrollView.ScrollToTop();
                 }
             }
+        }
+
+        private Dictionary<MealSourceType, Dictionary<string, MealSource>> GetScrollViewsMealSourcesDictionary()
+        {
+            return new Dictionary<MealSourceType, Dictionary<string, MealSource>>() {
+                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSources },
+                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSources },
+            };
+        }
+
+        private Dictionary<MealSourceType, Dictionary<string, string>> GetScrollViewsMealSourceNamesDictionary()
+        {
+            return new Dictionary<MealSourceType, Dictionary<string, string>>() {
+                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSourceNames },
+                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSourceNames },
+            };
         }
     }
 }

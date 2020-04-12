@@ -20,16 +20,9 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
-        public override void Export() {
-            var mealProportionsDictionary = new Dictionary<MealSourceType, List<MealProportion>>
-            {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealProportions },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealProportions },
-                { MealSourceType.Custom, _scrollViewDictionary[MealSourceType.Custom].MealProportions }
-            };
-
-            MealEntry currentMealEntry = new MealEntry(_date.CurrentDateTime, _dayTypeDropdown.CurrentDayType, mealProportionsDictionary);
-            GameManager.MealEntriesManager.ExportMealEntry(currentMealEntry, _date.CurrentDateTime);
+        public override void Export()
+        {
+            GameManager.MealEntriesManager.ExportMealEntry(GetScrollViewsMealEntry(), _date.CurrentDateTime);
         }
 
         public DayType GetMealEntryDayType()
@@ -72,6 +65,17 @@ namespace CalorieCounter.MealEntries {
                     scrollView.ScrollToTop();
                 }
             }
+        }
+
+        private MealEntry GetScrollViewsMealEntry()
+        {
+            var mealProportionsDictionary = new Dictionary<MealSourceType, List<MealProportion>>
+            {
+                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealProportions },
+                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealProportions },
+                { MealSourceType.Custom, _scrollViewDictionary[MealSourceType.Custom].MealProportions }
+            };
+            return new MealEntry(_date.CurrentDateTime, _dayTypeDropdown.CurrentDayType, mealProportionsDictionary);
         }
     }
 }

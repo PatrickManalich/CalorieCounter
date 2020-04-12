@@ -26,12 +26,7 @@ namespace CalorieCounter.TargetEntries {
                 return;
             }
 
-            SortedList<DateTime, TargetEntry> targetEntries = new SortedList<DateTime, TargetEntry>();
-            foreach (var scaleEntry in _scaleEntriesScrollView.ScaleEntries.Values) {
-                var targetEntry = new TargetEntry(scaleEntry.dateTime, scaleEntry.weight);
-                targetEntries.Add(targetEntry.dateTime, targetEntry);
-            }
-            GameManager.TargetEntriesManager.ExportTargetEntries(targetEntries);
+            GameManager.TargetEntriesManager.ExportTargetEntries(GetScrollViewTargetEntries());
         }
 
         public TargetEntry GetLatestTargetEntry() {
@@ -40,6 +35,17 @@ namespace CalorieCounter.TargetEntries {
             }
 
             return GameManager.TargetEntriesManager.ImportLatestTargetEntry(_date.CurrentDateTime);
+        }
+
+        private SortedList<DateTime, TargetEntry> GetScrollViewTargetEntries()
+        {
+            var targetEntries = new SortedList<DateTime, TargetEntry>();
+            foreach (var scaleEntry in _scaleEntriesScrollView.ScaleEntries.Values)
+            {
+                var targetEntry = new TargetEntry(scaleEntry.dateTime, scaleEntry.weight);
+                targetEntries.Add(targetEntry.dateTime, targetEntry);
+            }
+            return targetEntries;
         }
     }
 }
