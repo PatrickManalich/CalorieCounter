@@ -7,6 +7,7 @@ namespace CalorieCounter.Managers {
 
     public class MenuManager : MonoBehaviour {
 
+        // Can't use Button instead of GameObject because Serializable Dictionary plugin doesn't support them
         [System.Serializable]
         private class SceneButtonDictionary : SerializableDictionaryBase<GameObject, Scene> { }
 
