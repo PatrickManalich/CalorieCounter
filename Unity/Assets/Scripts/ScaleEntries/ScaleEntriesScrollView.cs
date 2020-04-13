@@ -12,8 +12,8 @@ namespace CalorieCounter.ScaleEntries
 
         public override void DeleteRow(int rowIndex)
         {
-            base.DeleteRow(rowIndex);
             ScaleEntries.RemoveAt(rowIndex);
+            base.DeleteRow(rowIndex);
         }
 
         public void AddScaleEntry(ScaleEntry scaleEntry)
