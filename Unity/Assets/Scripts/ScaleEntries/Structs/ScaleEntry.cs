@@ -29,6 +29,25 @@ namespace CalorieCounter.ScaleEntries {
             this.bmi = bmi > 0 ? GlobalMethods.Round(bmi) : 0;
         }
 
+        public static bool operator ==(ScaleEntry scaleEntry1, ScaleEntry scaleEntry2)
+        {
+            return scaleEntry1.Equals(scaleEntry2);
+        }
+
+        public static bool operator !=(ScaleEntry scaleEntry1, ScaleEntry scaleEntry2)
+        {
+            return !scaleEntry1.Equals(scaleEntry2);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
         public override string ToString() {
             return $"Date: {dateTime.ToShortDateString()}, Weight: {weight}, Body Fat: {bodyFat}, Body Water: {bodyWater}, " +
                 $"Muscle Mass: {muscleMass}, Bone Mass: {boneMass}, BMI: {bmi}";
