@@ -1,5 +1,15 @@
 Calorie Counter Release Notes
 
+Release  1.6.0 (4/19/2020)
+ -Scrollbars become interactable depending on number of rows
+ -Tweak size of scrollbars
+ -Can no longer toggle the menu in menu scene
+ -Meal proportions are cleared if day type is set to None or Vacation
+ -Can no longer add meal proportions on vacation days
+ -Show day of the week in meal entries title text
+ -Fix bug where meal suggestions weren't suggesting correctly
+ -Fix bug where scroll view rows wouldn't highlight
+
 Release 1.5.0 (3/9/2020)
  -Implement group meal patterns
  -Add to editor extensions
