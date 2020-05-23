@@ -11,7 +11,7 @@ namespace CalorieCounter.EditorExtensions
 
         private const string MenuItemDirectory = @"Calorie Counter/";
 
-        [MenuItem(MenuItemDirectory + "Dirty Save Active Scene %#d")]
+        [MenuItem(MenuItemDirectory + "Dirty Save All Open Scenes %#d")]
         public static void DirtySaveAllOpenScenes()
         {
             if (Application.isPlaying)
@@ -22,7 +22,7 @@ namespace CalorieCounter.EditorExtensions
                 EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetSceneAt(i));
                 EditorSceneManager.SaveScene(EditorSceneManager.GetSceneAt(i));
             }
-            Debug.Log("Active scene dirty saved");
+            Debug.Log($"Dirty saved {EditorSceneManager.sceneCount} scene(s)");
         }
 
         [MenuItem(MenuItemDirectory + "Copy Release JSON %#r")]
