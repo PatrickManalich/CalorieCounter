@@ -10,7 +10,7 @@ namespace CalorieCounter
         [SerializeField]
         private ScrollView _scrollView = default;
 
-        private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
+        private ScrollViewRowHighlighter _scrollViewRowHighlighter;
 
         private void Start()
 		{

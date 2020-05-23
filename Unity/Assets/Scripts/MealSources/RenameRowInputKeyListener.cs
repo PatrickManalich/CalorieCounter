@@ -9,7 +9,7 @@ namespace CalorieCounter.MealSources
         [SerializeField]
         private MealSourcesScrollView _mealSourcesScrollView = default;
 
-        private ScrollViewRowHighlighter _scrollViewRowHighlighter = default;
+        private ScrollViewRowHighlighter _scrollViewRowHighlighter;
 
         private void Start()
 		{

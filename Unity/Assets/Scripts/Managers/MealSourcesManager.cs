@@ -9,11 +9,11 @@ namespace CalorieCounter.Managers
     public class MealSourcesManager : MonoBehaviour
     {
 
-        private Dictionary<MealSourceType, Dictionary<string, MealSource>> _mealSourcesDictionary = default;
+        private Dictionary<MealSourceType, Dictionary<string, MealSource>> _mealSourcesDictionary;
 
-        private Dictionary<MealSourceType, Dictionary<string, string>> _mealSourceNamesDictionary = default;
+        private Dictionary<MealSourceType, Dictionary<string, string>> _mealSourceNamesDictionary;
 
-        private Dictionary<MealSourceType, SortedList<string, NamedMealSource>> _namedMealSourcesDictionary = default;
+        private Dictionary<MealSourceType, SortedList<string, NamedMealSource>> _namedMealSourcesDictionary;
 
         private bool _mealSourcesDictionaryImported = false;
         private bool _mealSourceNamesDictionaryImported = false;
