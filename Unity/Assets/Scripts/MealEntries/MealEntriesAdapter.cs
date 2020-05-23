@@ -27,7 +27,7 @@ namespace CalorieCounter.MealEntries {
 
         public DayType GetMealEntryDayType()
         {
-            MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
+            var mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
             return mealEntry.dayType;
         }
 

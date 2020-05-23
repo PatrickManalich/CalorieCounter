@@ -14,7 +14,7 @@ namespace CalorieCounter.MealEntries {
                 var fat = float.Parse(_inputFields[1].text);
                 var carbs = float.Parse(_inputFields[2].text);
                 var protein = float.Parse(_inputFields[3].text);
-                MealSource customMealSource = MealSource.CreateCustomMealSource(fat, carbs, protein);
+                var customMealSource = MealSource.CreateCustomMealSource(fat, carbs, protein);
                 return new MealProportion(servingAmount, customMealSource);
             }
         }
