@@ -10,7 +10,7 @@ namespace CalorieCounter.MealEntries {
     [RequireComponent(typeof(TMP_Dropdown))]
     public class NonarchivedNamedMealSourceDropdown : MonoBehaviour {
 
-        public Action ValidityChanged;
+        public event Action ValidityChanged;
 
         public bool IsValid => SelectedNamedMealSource != default;
 

@@ -24,7 +24,7 @@ namespace CalorieCounter
 
         public event EventHandler<TextModifiedEventArgs> TextModified;
 
-        public Action RowChanged;
+        public event Action RowChanged;
 
         public List<ScrollViewText> ScrollViewTexts { get; private set; } = new List<ScrollViewText>();
 

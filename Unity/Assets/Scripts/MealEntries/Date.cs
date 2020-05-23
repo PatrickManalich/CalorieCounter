@@ -7,7 +7,7 @@ namespace CalorieCounter.MealEntries {
 
     public class Date : MonoBehaviour {
 
-        public Action CurrentDateTimeChanged;
+        public event Action CurrentDateTimeChanged;
 
         public DateTime CurrentDateTime {
             get {
