@@ -2,6 +2,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace CalorieCounter.Managers {
 
@@ -35,7 +36,7 @@ namespace CalorieCounter.Managers {
         {
             foreach (var sceneButton in _sceneButtonDictionary.Keys)
             {
-                sceneButton.GetComponent<Button>().onClick.AddListener(() => LoadSceneFromSceneButton(sceneButton));
+                sceneButton.GetComponent<Button>().onClick.AddListener(SceneButton_OnClick);
             }
             _quitButton.onClick.AddListener(QuitButton_OnClick);
             GameManager.InputKeyManager.InputKeyPressed += InputKeyManager_OnInputKeyPressed;
@@ -48,9 +49,9 @@ namespace CalorieCounter.Managers {
             _quitButton.onClick.RemoveListener(QuitButton_OnClick);
         }
 
-        private void LoadSceneFromSceneButton(GameObject sceneButton)
+        private void SceneButton_OnClick()
         {
-            GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[sceneButton]);
+            GameManager.CustomSceneManager.LoadScene(_sceneButtonDictionary[EventSystem.current.currentSelectedGameObject]);
             GameManager.MenuManager.HideMenu();
         }
 

@@ -1,6 +1,7 @@
 ﻿using RotaryHeart.Lib.SerializableDictionary;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace CalorieCounter.Utilities {
@@ -53,7 +54,7 @@ namespace CalorieCounter.Utilities {
         private void Awake() {
             foreach(var source in _serializedSourceDictionary.Keys) {
                 if (source.GetComponent<Button>())
-                    source.GetComponent<Button>().onClick.AddListener(() => Execute(source));
+                    source.GetComponent<Button>().onClick.AddListener(SourceButton_OnClick);
 
                 if (source.GetComponent<Selectable>() != null)
                     source.GetComponent<Selectable>().interactable = _serializedSourceDictionary[source].InteractableAfterAwake;
@@ -65,8 +66,13 @@ namespace CalorieCounter.Utilities {
             foreach (var source in _serializedSourceDictionary.Keys)
             {
                 if (source != null && source.GetComponent<Button>())
-                    source.GetComponent<Button>().onClick.RemoveListener(() => Execute(source));
+                    source.GetComponent<Button>().onClick.RemoveListener(SourceButton_OnClick);
             }
+        }
+
+        private void SourceButton_OnClick()
+        {
+            Execute(EventSystem.current.currentSelectedGameObject);
         }
     }
 }

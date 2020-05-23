@@ -15,13 +15,17 @@ namespace CalorieCounter
         private void Start()
         {
             _button = GetComponent<Button>();
-            _button.onClick.AddListener(() => Application.OpenURL(_url));
+            _button.onClick.AddListener(Button_OnClick);
         }
 
         private void OnDestroy()
         {
-            _button.onClick.RemoveListener(() => Application.OpenURL(_url));
+            _button.onClick.RemoveListener(Button_OnClick);
+        }
+
+        private void Button_OnClick()
+        {
+            Application.OpenURL(_url);
         }
     }
-
 }

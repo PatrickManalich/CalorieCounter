@@ -41,19 +41,39 @@ namespace CalorieCounter.MealEntries {
 
         private void Start()
         {
-            _oneMonthBackwardButton.onClick.AddListener(() => AddMonths(-1));
-            _oneDayBackwardButton.onClick.AddListener(() => AddDays(-1));
-            _oneDayForwardButton.onClick.AddListener(() => AddDays(1));
-            _oneMonthForwardButton.onClick.AddListener(() => AddMonths(1));
+            _oneMonthBackwardButton.onClick.AddListener(OneMonthBackwardButton_OnClick);
+            _oneDayBackwardButton.onClick.AddListener(OneDayBackwardButton_OnClick);
+            _oneDayForwardButton.onClick.AddListener(OneDayForwardButton_OnClick);
+            _oneMonthForwardButton.onClick.AddListener(OneMonthForwardButton_OnClick);
             Refresh();
         }
 
         private void OnDestroy()
         {
-            _oneMonthForwardButton.onClick.RemoveListener(() => AddMonths(1));
-            _oneDayForwardButton.onClick.RemoveListener(() => AddDays(1));
-            _oneDayBackwardButton.onClick.RemoveListener(() => AddDays(-1));
-            _oneMonthBackwardButton.onClick.RemoveListener(() => AddMonths(-1));
+            _oneMonthForwardButton.onClick.RemoveListener(OneMonthForwardButton_OnClick);
+            _oneDayForwardButton.onClick.RemoveListener(OneDayForwardButton_OnClick);
+            _oneDayBackwardButton.onClick.RemoveListener(OneDayBackwardButton_OnClick);
+            _oneMonthBackwardButton.onClick.RemoveListener(OneMonthBackwardButton_OnClick);
+        }
+
+        private void OneMonthBackwardButton_OnClick()
+        {
+            AddMonths(-1);
+        }
+
+        private void OneDayBackwardButton_OnClick()
+        {
+            AddDays(-1);
+        }
+
+        private void OneDayForwardButton_OnClick()
+        {
+            AddDays(1);
+        }
+
+        private void OneMonthForwardButton_OnClick()
+        {
+            AddMonths(1);
         }
 
         private void AddDays(int days)
