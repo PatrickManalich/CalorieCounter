@@ -31,7 +31,7 @@ namespace CalorieCounter.ScaleEntries
             _oneDayBackwardButton.onClick.RemoveListener(() => AddDays(-1));
         }
 
-        public void AddDays(int days)
+        private void AddDays(int days)
         {
             CurrentDate = CurrentDate.AddDays(days);
             Refresh();

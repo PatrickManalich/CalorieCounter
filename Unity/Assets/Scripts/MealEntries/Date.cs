@@ -56,13 +56,13 @@ namespace CalorieCounter.MealEntries {
             _oneMonthBackwardButton.onClick.RemoveListener(() => AddMonths(-1));
         }
 
-        public void AddDays(int days)
+        private void AddDays(int days)
         {
             CurrentDateTime = CurrentDateTime.AddDays(days);
             Refresh();
         }
 
-        public void AddMonths(int months)
+        private void AddMonths(int months)
         {
             CurrentDateTime = CurrentDateTime.AddMonths(months);
             Refresh();
