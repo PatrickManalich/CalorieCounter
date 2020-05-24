@@ -3,7 +3,7 @@
 namespace CalorieCounter.ScaleEntries {
 
     [Serializable]
-    public struct ScaleEntry {
+    public class ScaleEntry {
 
         public DateTime dateTime;
 

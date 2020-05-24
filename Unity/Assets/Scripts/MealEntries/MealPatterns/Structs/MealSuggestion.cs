@@ -5,7 +5,7 @@ namespace CalorieCounter.MealEntries
 {
 
     [Serializable]
-    public struct MealSuggestion
+    public class MealSuggestion
     {
 
         public MealProportion mealProportion;

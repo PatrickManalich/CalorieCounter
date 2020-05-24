@@ -4,7 +4,7 @@ using UnityEngine;
 namespace CalorieCounter.MealSources {
 
     [Serializable]
-    public struct MealSource {
+    public class MealSource {
 
         public string id;
 

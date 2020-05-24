@@ -6,7 +6,7 @@ using UnityEngine;
 namespace CalorieCounter.MealEntries {
 
     [Serializable]
-    public struct MealEntry {
+    public class MealEntry {
 
         public DateTime dateTime;
 

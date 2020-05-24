@@ -2,7 +2,7 @@
 
 namespace CalorieCounter.TargetEntries {
 
-    public struct TargetEntry {
+    public class TargetEntry {
 
         public DateTime dateTime;
         public float weight;

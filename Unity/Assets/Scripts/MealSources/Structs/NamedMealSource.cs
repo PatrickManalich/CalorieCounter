@@ -3,7 +3,7 @@
 namespace CalorieCounter.MealSources
 {
     [Serializable]
-    public struct NamedMealSource
+    public class NamedMealSource
     {
 
         public string name;

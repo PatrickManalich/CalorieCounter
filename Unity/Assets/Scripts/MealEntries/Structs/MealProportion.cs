@@ -5,7 +5,7 @@ using UnityEngine;
 namespace CalorieCounter.MealEntries {
 
     [Serializable]
-    public struct MealProportion {
+    public class MealProportion {
 
         public float servingAmount;
 
