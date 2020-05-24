@@ -68,7 +68,7 @@ namespace CalorieCounter.MealEntries {
         public override string ToString() {
             int mealProportionsDictCount = 0;
             if (mealProportionsDictionary != null) {
-                foreach(var mealSourceType in Enum.GetValues(typeof(MealSourceType)).Cast<MealSourceType>().ToList()) {
+                foreach(var mealSourceType in mealProportionsDictionary.Keys) {
                     mealProportionsDictCount += mealProportionsDictionary[mealSourceType].Count;
                 }
             }
