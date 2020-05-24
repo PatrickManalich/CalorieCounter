@@ -43,25 +43,58 @@ namespace CalorieCounter.TargetEntries {
             trainingDayCarbs = GlobalMethods.Round((trainingDayCalories - (trainingDayProtein * 4) - trainingDayFat * 9) / 4);
         }
 
-        public static bool operator ==(TargetEntry targetEntry1, TargetEntry targetEntry2) {
+        public static bool operator ==(TargetEntry targetEntry1, TargetEntry targetEntry2)
+        {
+            if (targetEntry1 is null)
+            {
+                if (targetEntry2 is null)
+                {
+                    return true;
+                }
+                return false;
+            }
             return targetEntry1.Equals(targetEntry2);
         }
 
-        public static bool operator !=(TargetEntry targetEntry1, TargetEntry targetEntry2) {
-            return !targetEntry1.Equals(targetEntry2);
+        public static bool operator !=(TargetEntry targetEntry1, TargetEntry targetEntry2)
+        {
+            return !(targetEntry1 == targetEntry2);
         }
 
-        public override bool Equals(object obj) {
-            return base.Equals(obj);
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as TargetEntry);
         }
-        public override int GetHashCode() {
-            return base.GetHashCode();
+
+        public override int GetHashCode()
+        {
+            return (dateTime, weight, calorieMaintenanceLevel, restDayFat, restDayCarbs, restDayProtein, restDayCalories, trainingDayFat, trainingDayCarbs, trainingDayProtein, trainingDayCalories).GetHashCode();
         }
 
         public override string ToString() {
             return $"Date: {dateTime.ToShortDateString()}, Weight: {weight}, Calorie Maintenance Level:{calorieMaintenanceLevel}, " +
                 $"Rest Day: [ Fat: {restDayFat}, Carbs: {restDayCarbs}, Protein: {restDayProtein}, Calories: {restDayCalories} ], " +
                 $"Training Day: [ Fat: {trainingDayFat}, Carbs: {trainingDayCarbs}, Protein: {trainingDayProtein}, Calories: {trainingDayCalories} ]";
+        }
+
+        public bool Equals(TargetEntry other)
+        {
+            if (other is null)
+            {
+                return false;
+            }
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+            if (GetType() != other.GetType())
+            {
+                return false;
+            }
+            return (dateTime == other.dateTime) && (weight == other.weight) && (calorieMaintenanceLevel == other.calorieMaintenanceLevel) &&
+                (restDayFat == other.restDayFat) && (restDayCarbs == other.restDayCarbs) && (restDayProtein == other.restDayProtein) &&
+                (restDayCalories == other.restDayCalories) && (trainingDayFat == other.trainingDayFat) && (trainingDayCarbs == other.trainingDayCarbs) &&
+                (trainingDayProtein == other.trainingDayProtein) && (trainingDayCalories == other.trainingDayCalories);
         }
     }
 }

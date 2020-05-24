@@ -51,24 +51,56 @@ namespace CalorieCounter.MealSources {
             return new MealSource(CustomMealSourceServingSize, fat, carbs, protein, "", MealSourceType.Custom);
         }
 
-        public static bool operator ==(MealSource mealSource1, MealSource mealSource2) {
+        public static bool operator ==(MealSource mealSource1, MealSource mealSource2)
+        {
+            if (mealSource1 is null)
+            {
+                if (mealSource2 is null)
+                {
+                    return true;
+                }
+                return false;
+            }
             return mealSource1.Equals(mealSource2);
         }
 
-        public static bool operator !=(MealSource mealSource1, MealSource mealSource2) {
-            return !mealSource1.Equals(mealSource2);
+        public static bool operator !=(MealSource mealSource1, MealSource mealSource2)
+        {
+            return !(mealSource1 == mealSource2);
         }
 
-        public override bool Equals(object obj) {
-            return base.Equals(obj);
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as MealSource);
         }
-        public override int GetHashCode() {
-            return base.GetHashCode();
+
+        public override int GetHashCode()
+        {
+            return (id, servingSize, fat, carbs, protein, calories, description, mealSourceType, archived).GetHashCode();
         }
 
         public override string ToString() {
             return $"ID: {id}, Serving Size: {servingSize}, [ Fat: {fat}, Carbs: {carbs}, Protein: {protein}, " +
                 $"Calories: {calories} ], Description: {description}, Meal Type: {mealSourceType}, Archived: {archived}";
+        }
+
+        public bool Equals(MealSource other)
+        {
+            if (other is null)
+            {
+                return false;
+            }
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+            if (GetType() != other.GetType())
+            {
+                return false;
+            }
+            return (id == other.id) && (servingSize == other.servingSize) && (fat == other.fat) && (carbs == other.carbs) &&
+                (protein == other.protein) && (calories == other.calories) && (description == other.description) &&
+                (mealSourceType == other.mealSourceType) && (archived == other.archived);
         }
     }
 }

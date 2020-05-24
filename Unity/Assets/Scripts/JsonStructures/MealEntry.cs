@@ -50,19 +50,32 @@ namespace CalorieCounter.MealEntries {
             this.mealProportionsDictionary = mealProportionsDictionary;
         }
 
-        public static bool operator ==(MealEntry mealEntry1, MealEntry mealEntry2) {
+        public static bool operator ==(MealEntry mealEntry1, MealEntry mealEntry2)
+        {
+            if (mealEntry1 is null)
+            {
+                if (mealEntry2 is null)
+                {
+                    return true;
+                }
+                return false;
+            }
             return mealEntry1.Equals(mealEntry2);
         }
 
-        public static bool operator !=(MealEntry mealEntry1, MealEntry mealEntry2) {
-            return !mealEntry1.Equals(mealEntry2);
+        public static bool operator !=(MealEntry mealEntry1, MealEntry mealEntry2)
+        {
+            return !(mealEntry1 == mealEntry2);
         }
 
-        public override bool Equals(object obj) {
-            return base.Equals(obj);
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as MealEntry);
         }
-        public override int GetHashCode() {
-            return base.GetHashCode();
+
+        public override int GetHashCode()
+        {
+            return (dateTime, dayType, totalFat, totalCarbs, totalProtein, totalCalories, mealProportionsDictionary).GetHashCode();
         }
 
         public override string ToString() {
@@ -75,6 +88,50 @@ namespace CalorieCounter.MealEntries {
             return $"Date: {dateTime.ToShortDateString()}, Day Type: {dayType}, [ Total Fat: {totalFat}, " +
                 $"Total Carbs: {totalCarbs}, Total Protein: {totalProtein}, Total Calories: {totalCalories} ], " +
                 $"Meal Proportions Dict Count: {mealProportionsDictCount}";
+        }
+
+        public bool Equals(MealEntry other)
+        {
+            if (other is null)
+            {
+                return false;
+            }
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+            if (GetType() != other.GetType())
+            {
+                return false;
+            }
+
+            var mealProportionsDictionariesAreEqual = true;
+
+            if (mealProportionsDictionary.Keys.Count == other.mealProportionsDictionary.Keys.Count && 
+                mealProportionsDictionary.Keys.All(other.mealProportionsDictionary.Keys.Contains))
+            {
+                // Keys are equal
+                foreach (var mealSourceType in mealProportionsDictionary.Keys)
+                {
+                    var mealProportions = mealProportionsDictionary[mealSourceType];
+                    var otherMealProportions = other.mealProportionsDictionary[mealSourceType];
+
+                    if (!mealProportions.All(otherMealProportions.Contains))
+                    {
+                        // Meal proportions aren't equal
+                        mealProportionsDictionariesAreEqual = false;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                mealProportionsDictionariesAreEqual = false;
+            }
+
+            return (dateTime == other.dateTime) && (dayType == other.dayType) && (totalFat == other.totalFat) &&
+                (totalCarbs == other.totalCarbs) && (totalProtein == other.totalProtein) && (totalCalories == other.totalCalories) &&
+                mealProportionsDictionariesAreEqual;
         }
     }
 }
