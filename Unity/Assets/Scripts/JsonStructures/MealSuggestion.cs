@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using UnityEngine;
 
 namespace CalorieCounter.MealEntries
@@ -15,6 +16,7 @@ namespace CalorieCounter.MealEntries
 
         public int priority;
 
+        [JsonConstructor]
         public MealSuggestion(MealProportion mealProportion, MealPatternType mealPatternType, int priority)
         {
             this.mealProportion = mealProportion;

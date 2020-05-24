@@ -1,4 +1,5 @@
 ﻿using CalorieCounter.MealSources;
+using Newtonsoft.Json;
 using System;
 using UnityEngine;
 
@@ -23,6 +24,7 @@ namespace CalorieCounter.MealEntries {
         [HideInInspector]
         public float calories;
 
+        [JsonConstructor]
         public MealProportion(float servingAmount, MealSource mealSource) {
             this.servingAmount = servingAmount;
             this.mealSource = mealSource;

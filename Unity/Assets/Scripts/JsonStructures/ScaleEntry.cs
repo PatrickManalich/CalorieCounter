@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace CalorieCounter.ScaleEntries {
 
@@ -19,6 +20,7 @@ namespace CalorieCounter.ScaleEntries {
 
         public float bmi;
 
+        [JsonConstructor]
         public ScaleEntry(DateTime dateTime, float weight, float bodyFat, float bodyWater, float muscleMass, float boneMass, float bmi) {
             this.dateTime = dateTime;
             this.weight = weight > 0 ? GlobalMethods.Round(weight) : 0;

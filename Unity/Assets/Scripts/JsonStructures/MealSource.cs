@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using UnityEngine;
 
 namespace CalorieCounter.MealSources {
@@ -39,6 +40,7 @@ namespace CalorieCounter.MealSources {
         {
         }
 
+        [JsonConstructor]
         public MealSource(string id, string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType, bool archived)
         {
             this.id = id;

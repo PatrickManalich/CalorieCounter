@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -26,6 +27,7 @@ namespace CalorieCounter.MealEntries {
 
         public Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary;
 
+        [JsonConstructor]
         public MealEntry(DateTime dateTime, DayType dayType, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary) {
             this.dateTime = dateTime;
             this.dayType = dayType;

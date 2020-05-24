@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace CalorieCounter.MealSources
 {
@@ -10,6 +11,7 @@ namespace CalorieCounter.MealSources
 
         public MealSource mealSource;
 
+        [JsonConstructor]
         public NamedMealSource(string name, MealSource mealSource)
         {
             this.name = name;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace CalorieCounter.TargetEntries {
 
@@ -27,6 +28,7 @@ namespace CalorieCounter.TargetEntries {
         private const float RestDayFatPercentage = 0.28f;
         private const float TrainingDayFatPercentage = 0.22f;
 
+        [JsonConstructor]
         public TargetEntry(DateTime dateTime, float weight) {
             this.dateTime = dateTime;
             this.weight = weight;
