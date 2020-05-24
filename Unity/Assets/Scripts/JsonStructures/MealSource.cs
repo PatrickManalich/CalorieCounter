@@ -35,8 +35,13 @@ namespace CalorieCounter.MealSources {
         private const string CustomMealSourceServingSize = "Meal";
 
         public MealSource(string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType)
+            : this(Guid.NewGuid().ToString(), servingSize, fat, carbs, protein, description, mealSourceType, false)
         {
-            id = Guid.NewGuid().ToString();
+        }
+
+        public MealSource(string id, string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType, bool archived)
+        {
+            this.id = id;
             this.servingSize = servingSize;
             this.fat = fat > 0 ? GlobalMethods.Round(fat) : 0;
             this.carbs = carbs > 0 ? GlobalMethods.Round(carbs) : 0;
@@ -44,7 +49,7 @@ namespace CalorieCounter.MealSources {
             calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
             this.description = description;
             this.mealSourceType = mealSourceType;
-            archived = false;
+            this.archived = archived;
         }
 
         public static MealSource CreateCustomMealSource(float fat, float carbs, float protein) {
