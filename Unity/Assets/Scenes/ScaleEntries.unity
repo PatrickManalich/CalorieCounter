@@ -2828,6 +2828,8 @@ MonoBehaviour:
   _adapters:
   - {fileID: 435475410}
   - {fileID: 1840775928}
+  _scrollViews:
+  - {fileID: 19275662}
 --- !u!114 &815858156
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13353,6 +13353,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _adapters:
   - {fileID: 1508925266}
+  _scrollViews:
+  - {fileID: 19275662}
+  - {fileID: 688997043}
+  - {fileID: 920356582}
 --- !u!1 &1566187484
 GameObject:
   m_ObjectHideFlags: 0
