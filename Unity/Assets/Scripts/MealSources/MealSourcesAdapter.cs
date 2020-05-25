@@ -26,6 +26,18 @@ namespace CalorieCounter.MealSources {
             GameManager.MealSourcesManager.ExportDictionaries(GetScrollViewsMealSourcesDictionary(), GetScrollViewsMealSourceNamesDictionary());
         }
 
+        public override bool DoDifferencesExist()
+        {
+            var importedMealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
+            var scrollViewsMealSourcesDictionary = GetScrollViewsMealSourcesDictionary();
+            var importedMealSourceNamesDictionary = GameManager.MealSourcesManager.ImportMealSourceNamesDictionary();
+            var scrollViewsMealSourceNamesDictionary = GetScrollViewsMealSourceNamesDictionary();
+
+            var doMealSourcesDictionariesDiffer = DoDifferencesExistForNestedDictionary(importedMealSourcesDictionary, scrollViewsMealSourcesDictionary);
+            var doMealSourceNamesDictionariesDiffer = DoDifferencesExistForNestedDictionary(importedMealSourceNamesDictionary, scrollViewsMealSourceNamesDictionary);
+            return doMealSourcesDictionariesDiffer || doMealSourceNamesDictionariesDiffer;
+        }
+
         public static bool DoesMealSourceExist(MealSource mealSource)
         {
             var mealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
@@ -95,6 +107,42 @@ namespace CalorieCounter.MealSources {
                 { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSourceNames },
                 { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSourceNames },
             };
+        }
+
+        private static bool DoDifferencesExistForNestedDictionary<T>(Dictionary<MealSourceType, Dictionary<string, T>> dictionary1, Dictionary<MealSourceType, Dictionary<string, T>> dictionary2)
+        {
+            var doDictionariesDiffer = false;
+            if (dictionary1.Keys.Count == dictionary2.Keys.Count &&
+                dictionary1.Keys.All(dictionary2.Keys.Contains))
+            {
+                // Keys are equal
+                foreach (var mealSourceType in dictionary1.Keys)
+                {
+                    var nestedDictionary1 = dictionary1[mealSourceType];
+                    var nestedDictionary2 = dictionary2[mealSourceType];
+
+                    if (nestedDictionary1.Keys.Count == nestedDictionary2.Keys.Count &&
+                        nestedDictionary1.Keys.All(nestedDictionary2.Keys.Contains))
+                    {
+                        // Keys are equal
+                        if (!nestedDictionary1.Values.All(nestedDictionary2.Values.Contains))
+                        {
+                            // Values aren't equal
+                            doDictionariesDiffer = true;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        doDictionariesDiffer = true;
+                    }
+                }
+            }
+            else
+            {
+                doDictionariesDiffer = true;
+            }
+            return doDictionariesDiffer;
         }
     }
 }

@@ -3,6 +3,7 @@ using CalorieCounter.MealEntries;
 using CalorieCounter.ScaleEntries;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace CalorieCounter.TargetEntries {
@@ -27,6 +28,14 @@ namespace CalorieCounter.TargetEntries {
             }
 
             GameManager.TargetEntriesManager.ExportTargetEntries(GetScrollViewTargetEntries());
+        }
+
+        public override bool DoDifferencesExist()
+        {
+            var importedTargetEntries = GameManager.TargetEntriesManager.ImportTargetEntries();
+            var scrollViewTargetEntries = GetScrollViewTargetEntries();
+            var doTargetEntriesDiffer = !importedTargetEntries.SequenceEqual(scrollViewTargetEntries);
+            return doTargetEntriesDiffer;
         }
 
         public TargetEntry GetLatestTargetEntry() {

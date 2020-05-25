@@ -25,6 +25,14 @@ namespace CalorieCounter.MealEntries {
             GameManager.MealEntriesManager.ExportMealEntry(GetScrollViewsMealEntry(), _date.CurrentDateTime);
         }
 
+        public override bool DoDifferencesExist()
+        {
+            var importedMealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
+            var scrollViewsMealEntry = GetScrollViewsMealEntry();
+            var doMealEntriesDiffer = importedMealEntry != scrollViewsMealEntry;
+            return doMealEntriesDiffer;
+        }
+
         public DayType GetMealEntryDayType()
         {
             var mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
