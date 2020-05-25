@@ -12,12 +12,19 @@ namespace CalorieCounter.Managers {
 
         private bool _imported = false;
 
-        public TargetEntry ImportLatestTargetEntry(DateTime dateTime) {
-            if (!_imported) {
+        public SortedList<DateTime, TargetEntry> ImportTargetEntries()
+        {
+            if (!_imported)
+            {
                 _targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName);
                 _imported = true;
             }
+            return _targetEntries;
+        }
 
+        public TargetEntry ImportLatestTargetEntry(DateTime dateTime)
+        {
+            ImportTargetEntries();
             var firstDateTimeFound = dateTime;
             var terminationDateTime = dateTime.AddYears(-1);
             while (!_targetEntries.ContainsKey(firstDateTimeFound))
