@@ -16,7 +16,7 @@ namespace CalorieCounter
 
         private Button _button;
 
-        private void Start()
+        protected virtual void Start()
         {
             _button = GetComponent<Button>();
 
@@ -28,7 +28,7 @@ namespace CalorieCounter
             _button.interactable = false;
         }
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             foreach (var scrollView in _scrollViews)
             {
@@ -37,7 +37,7 @@ namespace CalorieCounter
             _button.onClick.RemoveListener(Button_OnClick);
         }
 
-        private void RefreshButtonInteractability()
+        protected void RefreshButtonInteractability()
         {
             var doDifferencesExist = false;
             foreach (var adapter in _adapters)
