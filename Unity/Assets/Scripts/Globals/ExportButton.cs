@@ -19,10 +19,8 @@ namespace CalorieCounter
         private void Start()
         {
             _button = GetComponent<Button>();
-            foreach(var adapter in _adapters)
-            {
-                _button.onClick.AddListener(adapter.Export);
-            }
+
+            _button.onClick.AddListener(Button_OnClick);
             foreach(var scrollView in _scrollViews)
             {
                 scrollView.RowChanged += RefreshButtonInteractability;
@@ -36,10 +34,7 @@ namespace CalorieCounter
             {
                 scrollView.RowChanged -= RefreshButtonInteractability;
             }
-            foreach (var adapter in _adapters)
-            {
-                _button.onClick.RemoveListener(adapter.Export);
-            }
+            _button.onClick.RemoveListener(Button_OnClick);
         }
 
         private void RefreshButtonInteractability()
@@ -54,6 +49,14 @@ namespace CalorieCounter
                 }
             }
             _button.interactable = doDifferencesExist;
+        }
+
+        private void Button_OnClick()
+        {
+            foreach (var adapter in _adapters)
+            {
+                adapter.Export();
+            }
         }
     }
 }
