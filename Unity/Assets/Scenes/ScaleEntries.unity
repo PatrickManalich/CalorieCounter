@@ -3301,14 +3301,12 @@ MonoBehaviour:
     reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
     isExpanded: 1
     _keyValues:
-    - {fileID: 815858153}
     - {fileID: 1374171245}
     - {fileID: 497729716}
     - {fileID: 1128983964}
     - {fileID: 1625267895}
     - {fileID: 1013467827}
     _keys:
-    - {fileID: 815858153}
     - {fileID: 1374171245}
     - {fileID: 497729716}
     - {fileID: 1128983964}
@@ -3317,38 +3315,31 @@ MonoBehaviour:
     _values:
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
+      Targets:
+      - Target: {fileID: 1128983964}
+        InteractableAfterExecute: 1
+      - Target: {fileID: 497729716}
+        InteractableAfterExecute: 0
+    - InteractableAfterAwake: 0
+      InteractableAfterExecute: 0
+      Targets:
+      - Target: {fileID: 1374171245}
+        InteractableAfterExecute: 0
+      - Target: {fileID: 1128983964}
+        InteractableAfterExecute: 1
+    - InteractableAfterAwake: 1
+      InteractableAfterExecute: 0
+      Targets:
+      - Target: {fileID: 497729716}
+        InteractableAfterExecute: 1
+    - InteractableAfterAwake: 0
+      InteractableAfterExecute: 1
+      Targets:
+      - Target: {fileID: 1374171245}
+        InteractableAfterExecute: 1
+    - InteractableAfterAwake: 1
+      InteractableAfterExecute: 1
       Targets: []
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 815858153}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 497729716}
-        InteractableAfterExecute: 0
-      - Target: {fileID: 1128983964}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 1374171245}
-        InteractableAfterExecute: 0
-      - Target: {fileID: 1128983964}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 1
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 497729716}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 1374171245}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 1
-      InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 815858153}
-        InteractableAfterExecute: 1
 --- !u!4 &1077719443
 Transform:
   m_ObjectHideFlags: 0

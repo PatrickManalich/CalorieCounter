@@ -5806,7 +5806,6 @@ MonoBehaviour:
     reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
     isExpanded: 1
     _keyValues:
-    - {fileID: 1553792669}
     - {fileID: 945032636}
     - {fileID: 1405250080}
     - {fileID: 1671688302}
@@ -5824,7 +5823,6 @@ MonoBehaviour:
     - {fileID: 1859382612}
     - {fileID: 800325924}
     _keys:
-    - {fileID: 1553792669}
     - {fileID: 945032636}
     - {fileID: 1405250080}
     - {fileID: 1671688302}
@@ -5842,14 +5840,9 @@ MonoBehaviour:
     - {fileID: 1859382612}
     - {fileID: 800325924}
     _values:
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets: []
     - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
       Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterExecute: 1
       - Target: {fileID: 1671688302}
         InteractableAfterExecute: 1
       - Target: {fileID: 1576245866}
@@ -5870,17 +5863,13 @@ MonoBehaviour:
       Targets: []
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterExecute: 1
+      Targets: []
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
       Targets: []
     - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterExecute: 1
+      Targets: []
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
       Targets:
@@ -5891,17 +5880,13 @@ MonoBehaviour:
       Targets: []
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterExecute: 1
+      Targets: []
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
       Targets: []
     - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterExecute: 1
+      Targets: []
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
       Targets:
@@ -5910,8 +5895,6 @@ MonoBehaviour:
     - InteractableAfterAwake: 0
       InteractableAfterExecute: 0
       Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterExecute: 1
       - Target: {fileID: 209689742}
         InteractableAfterExecute: 1
       - Target: {fileID: 651122446}
@@ -5930,9 +5913,7 @@ MonoBehaviour:
         InteractableAfterExecute: 1
     - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 1553792669}
-        InteractableAfterExecute: 1
+      Targets: []
 --- !u!4 &691686221
 Transform:
   m_ObjectHideFlags: 0
