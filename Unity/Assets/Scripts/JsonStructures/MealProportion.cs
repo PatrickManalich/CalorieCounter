@@ -24,6 +24,8 @@ namespace CalorieCounter.MealEntries {
         [HideInInspector]
         public float calories;
 
+        public MealProportion() { }
+
         [JsonConstructor]
         public MealProportion(float servingAmount, MealSource mealSource) {
             this.servingAmount = servingAmount;

@@ -27,6 +27,8 @@ namespace CalorieCounter.MealEntries {
 
         public Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary;
 
+        public MealEntry() { }
+
         [JsonConstructor]
         public MealEntry(DateTime dateTime, DayType dayType, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary) {
             this.dateTime = dateTime;

@@ -20,6 +20,8 @@ namespace CalorieCounter.ScaleEntries {
 
         public float bmi;
 
+        public ScaleEntry() { }
+
         [JsonConstructor]
         public ScaleEntry(DateTime dateTime, float weight, float bodyFat, float bodyWater, float muscleMass, float boneMass, float bmi) {
             this.dateTime = dateTime;

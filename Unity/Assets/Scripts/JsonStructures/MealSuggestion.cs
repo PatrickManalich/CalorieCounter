@@ -16,6 +16,8 @@ namespace CalorieCounter.MealEntries
 
         public int priority;
 
+        public MealSuggestion() { }
+
         [JsonConstructor]
         public MealSuggestion(MealProportion mealProportion, MealPatternType mealPatternType, int priority)
         {

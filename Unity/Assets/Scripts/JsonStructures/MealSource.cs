@@ -35,6 +35,8 @@ namespace CalorieCounter.MealSources {
 
         private const string CustomMealSourceServingSize = "Meal";
 
+        public MealSource() { }
+
         public MealSource(string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType)
             : this(Guid.NewGuid().ToString(), servingSize, fat, carbs, protein, description, mealSourceType, false)
         {

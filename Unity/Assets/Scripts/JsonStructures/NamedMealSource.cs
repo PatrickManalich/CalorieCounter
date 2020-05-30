@@ -11,6 +11,8 @@ namespace CalorieCounter.MealSources
 
         public MealSource mealSource;
 
+        public NamedMealSource() { }
+
         [JsonConstructor]
         public NamedMealSource(string name, MealSource mealSource)
         {
