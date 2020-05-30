@@ -57,6 +57,7 @@ namespace CalorieCounter
             {
                 adapter.Export();
             }
+            _button.interactable = false;
         }
     }
 }
