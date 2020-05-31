@@ -18,15 +18,13 @@ namespace CalorieCounter.Utilities {
 
         public static T ImportFile<T>(string fileName, bool fromRelease = false) {
             string filePath = GetJsonFilePath(fileName, fromRelease);
-            T value = Activator.CreateInstance<T>();
-
             if (File.Exists(filePath)) {
                 using (StreamReader file = File.OpenText(filePath)) {
                     JsonSerializer serializer = new JsonSerializer();
-                    value = (T)serializer.Deserialize(file, typeof(T));
+                    return (T)serializer.Deserialize(file, typeof(T));
                 }
             }
-            return value;
+            return default;
         }
 
         public static SortedList<DateTime, MealEntry> ImportMealEntries(bool fromRelease = false)
