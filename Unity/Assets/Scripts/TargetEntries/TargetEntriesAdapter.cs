@@ -40,7 +40,7 @@ namespace CalorieCounter.TargetEntries {
 
         public TargetEntry GetLatestTargetEntry() {
             if (_scene != Scene.MealEntries) {
-                return default;
+                return null;
             }
 
             return GameManager.TargetEntriesManager.ImportLatestTargetEntry(_date.CurrentDateTime);

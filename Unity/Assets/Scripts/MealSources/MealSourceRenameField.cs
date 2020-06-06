@@ -9,7 +9,7 @@ namespace CalorieCounter.MealSources
     {
         public bool IsShown { get; private set; } = false;
 
-        public NamedMealSource OldNamedMealSource { get; private set; } = default;
+        public NamedMealSource OldNamedMealSource { get; private set; } = null;
 
         public NamedMealSource NewNamedMealSource {
             get 
@@ -40,7 +40,7 @@ namespace CalorieCounter.MealSources
             _inputField.text = "";
             _inputField.gameObject.SetActive(false);
             _inputField.transform.SetParent(transform, false);
-            OldNamedMealSource = default;
+            OldNamedMealSource = null;
             IsShown = false;
         }
 

@@ -78,7 +78,7 @@ namespace CalorieCounter.MealSources {
             }
 
             var namedMealSourcesDictionary = GameManager.MealSourcesManager.ImportNamedMealSourcesDictionary();
-            if (namedMealSourcesDictionary != default)
+            if (namedMealSourcesDictionary != null)
             {
                 foreach (var mealSourceType in namedMealSourcesDictionary.Keys)
                 {

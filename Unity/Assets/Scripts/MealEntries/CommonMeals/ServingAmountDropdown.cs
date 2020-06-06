@@ -10,7 +10,7 @@ namespace CalorieCounter.MealEntries {
 
         public event Action ValidityChanged;
 
-        public bool IsValid => SelectedServingAmount != default;
+        public bool IsValid => SelectedServingAmount != 0;
 
         public float SelectedServingAmount { get; private set; }
         
@@ -20,7 +20,7 @@ namespace CalorieCounter.MealEntries {
 
         public void Reset() {
             _dropdown.value = 0;
-            SelectedServingAmount = default;
+            SelectedServingAmount = 0;
         }
 
         private void Start() {
@@ -32,7 +32,7 @@ namespace CalorieCounter.MealEntries {
                 options.Add(new TMP_Dropdown.OptionData(servingAmount.ToString()));
             }
             _dropdown.AddOptions(options);
-            SelectedServingAmount = default;
+            SelectedServingAmount = 0;
 
             _dropdown.onValueChanged.AddListener(Dropdown_OnValueChanged);
         }

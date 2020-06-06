@@ -12,7 +12,7 @@ namespace CalorieCounter.MealEntries {
 
         public event Action ValidityChanged;
 
-        public bool IsValid => SelectedNamedMealSource != default;
+        public bool IsValid => SelectedNamedMealSource != null;
 
         [SerializeField]
         private MealSourceType _mealSourceType = default;
@@ -24,7 +24,7 @@ namespace CalorieCounter.MealEntries {
 
         public void Reset() {
             _dropdown.value = 0;
-            SelectedNamedMealSource = default;
+            SelectedNamedMealSource = null;
         }
 
         private void Awake()

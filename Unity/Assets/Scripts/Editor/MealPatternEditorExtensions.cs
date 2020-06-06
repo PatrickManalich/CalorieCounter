@@ -63,7 +63,7 @@ namespace CalorieCounter.EditorExtensions
         {
             var mealSourcesDictionary = JsonConverter.ImportFile<Dictionary<MealSourceType, Dictionary<string, MealSource>>>(GlobalPaths.JsonMealSourcesFileName);
 
-            MealSource mealSource = default;
+            MealSource mealSource = null;
             foreach (var mealSources in mealSourcesDictionary.Values)
             {
                 if (mealSources.ContainsKey(id))
@@ -72,7 +72,7 @@ namespace CalorieCounter.EditorExtensions
                     break;
                 }
             }
-            if(mealSource == default)
+            if(mealSource == null)
             {
                 Debug.LogWarning($"Unable to find meal source for ID: {id}");
             }

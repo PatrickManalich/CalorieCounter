@@ -56,7 +56,7 @@ namespace CalorieCounter.MealEntries {
             }
 
             MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
-            if (mealEntry != default)
+            if (mealEntry != null)
             {
                 foreach (var mealSourceType in mealEntry.mealProportionsDictionary.Keys)
                 {

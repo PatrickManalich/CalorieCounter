@@ -31,7 +31,9 @@ namespace CalorieCounter.Managers {
             {
                 firstDateTimeFound = firstDateTimeFound.AddDays(-1);
                 if (firstDateTimeFound < terminationDateTime)
-                    return default;
+                {
+                    return null;
+                }
             }
             return _targetEntries[firstDateTimeFound];
         }
