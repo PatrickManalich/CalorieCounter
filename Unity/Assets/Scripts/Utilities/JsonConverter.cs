@@ -8,6 +8,12 @@ namespace CalorieCounter.Utilities {
 
     public static class JsonConverter {
 
+        public static bool DoesFileExist(string fileName, bool fromRelease = false)
+        {
+            string filePath = GetJsonFilePath(fileName, fromRelease);
+            return File.Exists(filePath);
+        }
+
         public static void ExportFile<T>(T value, string fileName, bool intoRelease = false) {
             string filePath = GetJsonFilePath(fileName, intoRelease);
             using (StreamWriter file = File.CreateText(filePath)) {
