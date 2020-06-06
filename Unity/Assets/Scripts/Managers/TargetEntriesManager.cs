@@ -8,7 +8,7 @@ namespace CalorieCounter.Managers {
 
     public class TargetEntriesManager : MonoBehaviour {
 
-        public SortedList<DateTime, TargetEntry> _targetEntries;
+        private SortedList<DateTime, TargetEntry> _targetEntries;
 
         private bool _imported = false;
 
