@@ -1,5 +1,10 @@
 Calorie Counter Release Notes
 
+Release  1.6.1 (6/7/2020)
+ -Fix bug where export button shouldn't be interactable
+ -Add to editor extensions
+ -Fix memory leaks
+
 Release  1.6.0 (4/19/2020)
  -Scrollbars become interactable depending on number of rows
  -Tweak size of scrollbars
@@ -23,7 +28,7 @@ Release 1.4.0 (3/8/2020)
  -Add to editor extensions
 
 Release 1.3.0 (2/4/2020)
- -Add GoogleKeepUrlButton
+ -Add Google Keep button
  -Fix bug where meal scroll view's contents weren't centered
  -Fix bug where accepting meal proportions threw errors
  -Fix bug where accepting certain suggestions threw errors
@@ -41,7 +46,7 @@ Release 1.1.1 (10/12/2019)
  -Fix bug where Rice-White meal source was incorrect
  -Change default icon
  -Implement ability to export CSV files
- -Add NutritionixButton
+ -Add Nutritionix button
  
 Release 1.1.0 (9/28/2019)
  -Used JsonUpdater to update all entries
