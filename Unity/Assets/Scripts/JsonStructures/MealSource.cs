@@ -37,10 +37,11 @@ namespace CalorieCounter.MealSources {
 
         public MealSource() { }
 
+        public MealSource(MealSource mealSource, bool archived) : this(mealSource.id, mealSource.servingSize, mealSource.fat, mealSource.carbs,
+            mealSource.protein, mealSource.description, mealSource.mealSourceType, archived) {}
+
         public MealSource(string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType)
-            : this(Guid.NewGuid().ToString(), servingSize, fat, carbs, protein, description, mealSourceType, false)
-        {
-        }
+            : this(Guid.NewGuid().ToString(), servingSize, fat, carbs, protein, description, mealSourceType, false) {}
 
         [JsonConstructor]
         public MealSource(string id, string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType, bool archived)
