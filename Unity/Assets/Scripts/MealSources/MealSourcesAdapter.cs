@@ -15,7 +15,6 @@ namespace CalorieCounter.MealSources {
         [Serializable]
         private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealSourcesScrollView> { }
 
-        [DisplayBasedOnEnum("_scene", (int)Scene.MealSources)]
         [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
