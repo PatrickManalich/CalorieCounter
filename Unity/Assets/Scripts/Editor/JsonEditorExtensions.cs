@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CalorieCounter.EditorExtensions
 {
-    public static class MiscellaneousEditorExtensions
+    public static class JsonEditorExtensions
     {
 
         private const string MenuItemDirectory = @"Calorie Counter/";
