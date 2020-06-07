@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using CalorieCounter.Utilities;
+using System.IO;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -31,15 +32,11 @@ namespace CalorieCounter.EditorExtensions
             if (Application.isPlaying)
                 return;
 
-            var editorJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName));
-            var releaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
-                    GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName));
-
-            var directoryInfoSource = new DirectoryInfo(releaseJsonDirectoryPath);
-            var directoryInfoTarget = new DirectoryInfo(editorJsonDirectoryPath);
+            var directoryInfoSource = new DirectoryInfo(JsonConverter.ReleaseJsonDirectoryPath);
+            var directoryInfoTarget = new DirectoryInfo(JsonConverter.EditorJsonDirectoryPath);
 
             CopyAll(directoryInfoSource, directoryInfoTarget);
-            Debug.Log($"Copied {releaseJsonDirectoryPath} into {editorJsonDirectoryPath}");
+            Debug.Log($"Copied {JsonConverter.ReleaseJsonDirectoryPath} into {JsonConverter.EditorJsonDirectoryPath}");
         }
 
         [MenuItem(MenuItemDirectory + "JSON Updater %#j")]
