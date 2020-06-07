@@ -14,8 +14,8 @@ namespace CalorieCounter.MealSources
         public NamedMealSource NewNamedMealSource {
             get 
             {
-                var newNamedMealSource = OldNamedMealSource;
-                newNamedMealSource.name = _inputField.text == "" ? OldNamedMealSource.name : _inputField.text;
+                var newName = _inputField.text == "" ? OldNamedMealSource.name : _inputField.text;
+                var newNamedMealSource = new NamedMealSource(newName, OldNamedMealSource.mealSource);
                 return newNamedMealSource;
             }
         }

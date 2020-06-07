@@ -19,26 +19,27 @@ namespace CalorieCounter.EditorExtensions
             if (Application.isPlaying)
                 return;
 
-            // Since meal suggestions are structs and not classes, you can must directly change the value,
-            // or else you'll just be changing a copy
-
             var dayMealPatterns = Resources.LoadAll(GlobalPaths.DayMealPatternsPath, typeof(DayMealPattern)).Cast<DayMealPattern>().ToList();
             foreach (var dayMealPattern in dayMealPatterns)
             {
-                var mealProportion = dayMealPattern.mealSuggestion.mealProportion;
+                var mealSuggestion = dayMealPattern.mealSuggestion;
+                var mealProportion = mealSuggestion.mealProportion;
                 var mealSource = GetMealSource(mealProportion.mealSource.id);
-                dayMealPattern.mealSuggestion.mealProportion = new MealProportion(mealProportion.servingAmount, mealSource);
-                dayMealPattern.mealSuggestion.mealPatternType = MealPatternType.Day;
+                var validatedMealProportion = new MealProportion(mealProportion.servingAmount, mealSource);
+                var validatedMealSuggestion = new MealSuggestion(validatedMealProportion, MealPatternType.Day, mealSuggestion.priority);
+                dayMealPattern.mealSuggestion = validatedMealSuggestion;
                 EditorUtility.SetDirty(dayMealPattern);
             }
 
             var dayTypeMealPatterns = Resources.LoadAll(GlobalPaths.DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
             foreach (var dayTypeMealPattern in dayTypeMealPatterns)
             {
-                var mealProportion = dayTypeMealPattern.mealSuggestion.mealProportion;
+                var mealSuggestion = dayTypeMealPattern.mealSuggestion;
+                var mealProportion = mealSuggestion.mealProportion;
                 var mealSource = GetMealSource(mealProportion.mealSource.id);
-                dayTypeMealPattern.mealSuggestion.mealProportion = new MealProportion(mealProportion.servingAmount, mealSource);
-                dayTypeMealPattern.mealSuggestion.mealPatternType = MealPatternType.DayType;
+                var validatedMealProportion = new MealProportion(mealProportion.servingAmount, mealSource);
+                var validatedMealSuggestion = new MealSuggestion(validatedMealProportion, MealPatternType.DayType, mealSuggestion.priority);
+                dayTypeMealPattern.mealSuggestion = validatedMealSuggestion;
                 EditorUtility.SetDirty(dayTypeMealPattern);
             }
 
