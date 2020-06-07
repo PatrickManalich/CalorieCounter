@@ -8,6 +8,10 @@ namespace CalorieCounter.Utilities {
 
     public static class JsonConverter {
 
+        public static readonly string EditorJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName));
+        public static readonly string ReleaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
+            GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName));
+
         public static bool DoesFileExist(string fileName, bool fromRelease = false)
         {
             string filePath = GetJsonFilePath(fileName, fromRelease);
@@ -55,9 +59,8 @@ namespace CalorieCounter.Utilities {
         }
 
         private static string GetJsonFilePath(string fileName, bool useReleasePath = false) {
-            var editorJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, fileName));
-            var releaseJsonFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
-                    GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, fileName));
+            var editorJsonFilePath = Path.GetFullPath(Path.Combine(EditorJsonDirectoryPath, fileName));
+            var releaseJsonFilePath = Path.GetFullPath(Path.Combine(ReleaseJsonDirectoryPath, fileName));
 
             string jsonFilePath = useReleasePath ? releaseJsonFilePath : editorJsonFilePath;
             string jsonFilePathDirectory = Path.GetDirectoryName(jsonFilePath);
