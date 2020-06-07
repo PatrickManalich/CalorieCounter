@@ -8,13 +8,17 @@ namespace CalorieCounter.Managers {
 
     public class ScaleEntriesManager : MonoBehaviour {
 
-        private SortedList<DateTime, ScaleEntry> _scaleEntries;
+        private SortedList<DateTime, ScaleEntry> _scaleEntries = new SortedList<DateTime, ScaleEntry>();
 
         private bool _imported = false;
 
         public SortedList<DateTime, ScaleEntry> ImportScaleEntries() {
-            if (!_imported) {
-                _scaleEntries = JsonConverter.ImportFile<SortedList<DateTime, ScaleEntry>>(GlobalPaths.JsonScaleEntriesFileName);
+            if (!_imported)
+            {
+                if (JsonConverter.DoesFileExist(GlobalPaths.JsonScaleEntriesFileName))
+                {
+                    _scaleEntries = JsonConverter.ImportFile<SortedList<DateTime, ScaleEntry>>(GlobalPaths.JsonScaleEntriesFileName);
+                }
                 _imported = true;
             }
             return _scaleEntries;

@@ -77,18 +77,15 @@ namespace CalorieCounter.MealSources {
             }
 
             var namedMealSourcesDictionary = GameManager.MealSourcesManager.ImportNamedMealSourcesDictionary();
-            if (namedMealSourcesDictionary != null)
+            foreach (var mealSourceType in namedMealSourcesDictionary.Keys)
             {
-                foreach (var mealSourceType in namedMealSourcesDictionary.Keys)
+                var mealSourcesScrollView = _scrollViewDictionary[mealSourceType];
+                var namedMealSources = namedMealSourcesDictionary[mealSourceType];
+                foreach (var namedMealSource in namedMealSources.Values)
                 {
-                    var mealSourcesScrollView = _scrollViewDictionary[mealSourceType];
-                    var namedMealSources = namedMealSourcesDictionary[mealSourceType];
-                    foreach (var namedMealSource in namedMealSources.Values)
-                    {
-                        mealSourcesScrollView.AddNamedMealSource(namedMealSource);
-                    }
-                    mealSourcesScrollView.ScrollToTop();
+                    mealSourcesScrollView.AddNamedMealSource(namedMealSource);
                 }
+                mealSourcesScrollView.ScrollToTop();
             }
         }
 

@@ -56,17 +56,14 @@ namespace CalorieCounter.MealEntries {
             }
 
             MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
-            if (mealEntry != null)
+            foreach (var mealSourceType in mealEntry.mealProportionsDictionary.Keys)
             {
-                foreach (var mealSourceType in mealEntry.mealProportionsDictionary.Keys)
+                MealProportionsScrollView scrollView = _scrollViewDictionary[mealSourceType];
+                foreach (var mealProportion in mealEntry.mealProportionsDictionary[mealSourceType])
                 {
-                    MealProportionsScrollView scrollView = _scrollViewDictionary[mealSourceType];
-                    foreach (var mealProportion in mealEntry.mealProportionsDictionary[mealSourceType])
-                    {
-                        scrollView.AddMealProportion(mealProportion);
-                    }
-                    scrollView.ScrollToTop();
+                    scrollView.AddMealProportion(mealProportion);
                 }
+                scrollView.ScrollToTop();
             }
         }
 

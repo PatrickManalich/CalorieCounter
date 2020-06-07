@@ -8,7 +8,7 @@ namespace CalorieCounter.Managers {
 
     public class TargetEntriesManager : MonoBehaviour {
 
-        private SortedList<DateTime, TargetEntry> _targetEntries;
+        private SortedList<DateTime, TargetEntry> _targetEntries = new SortedList<DateTime, TargetEntry>();
 
         private bool _imported = false;
 
@@ -16,7 +16,10 @@ namespace CalorieCounter.Managers {
         {
             if (!_imported)
             {
-                _targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName);
+                if (JsonConverter.DoesFileExist(GlobalPaths.JsonTargetEntriesFileName))
+                {
+                    _targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName);
+                }
                 _imported = true;
             }
             return _targetEntries;
@@ -32,7 +35,7 @@ namespace CalorieCounter.Managers {
                 firstDateTimeFound = firstDateTimeFound.AddDays(-1);
                 if (firstDateTimeFound < terminationDateTime)
                 {
-                    return null;
+                    return new TargetEntry();
                 }
             }
             return _targetEntries[firstDateTimeFound];

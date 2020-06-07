@@ -9,11 +9,23 @@ namespace CalorieCounter.Managers
     public class MealSourcesManager : MonoBehaviour
     {
 
-        private Dictionary<MealSourceType, Dictionary<string, MealSource>> _mealSourcesDictionary;
+        private Dictionary<MealSourceType, Dictionary<string, MealSource>> _mealSourcesDictionary = new Dictionary<MealSourceType, Dictionary<string, MealSource>>()
+        {
+            { MealSourceType.Small, new Dictionary<string, MealSource>() },
+            { MealSourceType.Large, new Dictionary<string, MealSource>() },
+        };
 
-        private Dictionary<MealSourceType, Dictionary<string, string>> _mealSourceNamesDictionary;
+        private Dictionary<MealSourceType, Dictionary<string, string>> _mealSourceNamesDictionary = new Dictionary<MealSourceType, Dictionary<string, string>>()
+        {
+            { MealSourceType.Small, new Dictionary<string, string>() },
+            { MealSourceType.Large, new Dictionary<string, string>() },
+        };
 
-        private Dictionary<MealSourceType, SortedList<string, NamedMealSource>> _namedMealSourcesDictionary;
+        private Dictionary<MealSourceType, SortedList<string, NamedMealSource>> _namedMealSourcesDictionary = new Dictionary<MealSourceType, SortedList<string, NamedMealSource>>()
+        {
+            { MealSourceType.Small, new SortedList<string, NamedMealSource>() },
+            { MealSourceType.Large, new SortedList<string, NamedMealSource>() },
+        };
 
         private bool _mealSourcesDictionaryImported = false;
         private bool _mealSourceNamesDictionaryImported = false;
@@ -23,7 +35,10 @@ namespace CalorieCounter.Managers
         {
             if (!_mealSourcesDictionaryImported)
             {
-                _mealSourcesDictionary = JsonConverter.ImportFile<Dictionary<MealSourceType, Dictionary<string, MealSource>>>(GlobalPaths.JsonMealSourcesFileName);
+                if (JsonConverter.DoesFileExist(GlobalPaths.JsonMealSourcesFileName))
+                {
+                    _mealSourcesDictionary = JsonConverter.ImportFile<Dictionary<MealSourceType, Dictionary<string, MealSource>>>(GlobalPaths.JsonMealSourcesFileName);
+                }
                 _mealSourcesDictionaryImported = true;
             }
             return _mealSourcesDictionary;
@@ -33,7 +48,10 @@ namespace CalorieCounter.Managers
         {
             if (!_mealSourceNamesDictionaryImported)
             {
-                _mealSourceNamesDictionary = JsonConverter.ImportFile<Dictionary<MealSourceType, Dictionary<string, string>>>(GlobalPaths.JsonMealSourceNamesFileName);
+                if (JsonConverter.DoesFileExist(GlobalPaths.JsonMealSourceNamesFileName))
+                {
+                    _mealSourceNamesDictionary = JsonConverter.ImportFile<Dictionary<MealSourceType, Dictionary<string, string>>>(GlobalPaths.JsonMealSourceNamesFileName);
+                }
                 _mealSourceNamesDictionaryImported = true;
             }
             return _mealSourceNamesDictionary;
@@ -45,26 +63,30 @@ namespace CalorieCounter.Managers
             {
                 ImportMealSourcesDictionary();
                 ImportMealSourceNamesDictionary();
-                _namedMealSourcesDictionary = new Dictionary<MealSourceType, SortedList<string, NamedMealSource>>();
-                foreach (var mealSourceType in _mealSourcesDictionary.Keys)
+
+                if (JsonConverter.DoesFileExist(GlobalPaths.JsonMealSourcesFileName) && JsonConverter.DoesFileExist(GlobalPaths.JsonMealSourceNamesFileName))
                 {
-                    _namedMealSourcesDictionary.Add(mealSourceType, new SortedList<string, NamedMealSource>());
-                    var mealSources = _mealSourcesDictionary[mealSourceType];
-                    var mealSourceNames = _mealSourceNamesDictionary[mealSourceType];
-                    foreach (var mealSource in mealSources.Values)
+                    _namedMealSourcesDictionary = new Dictionary<MealSourceType, SortedList<string, NamedMealSource>>();
+                    foreach (var mealSourceType in _mealSourcesDictionary.Keys)
                     {
-                        if (mealSourceNames.ContainsKey(mealSource.id))
+                        _namedMealSourcesDictionary.Add(mealSourceType, new SortedList<string, NamedMealSource>());
+                        var mealSources = _mealSourcesDictionary[mealSourceType];
+                        var mealSourceNames = _mealSourceNamesDictionary[mealSourceType];
+                        foreach (var mealSource in mealSources.Values)
                         {
-                            var mealSourceName = mealSourceNames[mealSource.id];
-                            var namedMealSource = new NamedMealSource(mealSourceName, mealSource);
-                            _namedMealSourcesDictionary[mealSourceType].Add(namedMealSource.name, namedMealSource);
-                        } else
-                        {
-                            Debug.LogWarning($"No meal source ID found in MealSourceNames for: {mealSource.id}");
+                            if (mealSourceNames.ContainsKey(mealSource.id))
+                            {
+                                var mealSourceName = mealSourceNames[mealSource.id];
+                                var namedMealSource = new NamedMealSource(mealSourceName, mealSource);
+                                _namedMealSourcesDictionary[mealSourceType].Add(namedMealSource.name, namedMealSource);
+                            }
+                            else
+                            {
+                                Debug.LogWarning($"No meal source ID found in MealSourceNames for: {mealSource.id}");
+                            }
                         }
                     }
                 }
-
                 _namedMealSourcesDictionaryImported = true;
             }
             return _namedMealSourcesDictionary;
