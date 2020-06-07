@@ -37,15 +37,15 @@ namespace CalorieCounter.EditorExtensions
         {
             Directory.CreateDirectory(target.FullName);
 
-            foreach (FileInfo fi in source.GetFiles())
+            foreach (FileInfo fileInfo in source.GetFiles())
             {
-                fi.CopyTo(Path.Combine(target.FullName, fi.Name), true);
+                fileInfo.CopyTo(Path.Combine(target.FullName, fileInfo.Name), true);
             }
 
-            foreach (DirectoryInfo diSourceSubDir in source.GetDirectories())
+            foreach (DirectoryInfo targetSubDirectory in source.GetDirectories())
             {
-                DirectoryInfo nextTargetSubDir = target.CreateSubdirectory(diSourceSubDir.Name);
-                CopyAll(diSourceSubDir, nextTargetSubDir);
+                DirectoryInfo nextTargetSubDirectory = target.CreateSubdirectory(targetSubDirectory.Name);
+                CopyAll(targetSubDirectory, nextTargetSubDirectory);
             }
         }
     }
