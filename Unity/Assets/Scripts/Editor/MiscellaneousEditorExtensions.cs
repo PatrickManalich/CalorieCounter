@@ -1,7 +1,6 @@
 ﻿using CalorieCounter.Utilities;
 using System.IO;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 
 
@@ -11,20 +10,6 @@ namespace CalorieCounter.EditorExtensions
     {
 
         private const string MenuItemDirectory = @"Calorie Counter/";
-
-        [MenuItem(MenuItemDirectory + "Dirty Save All Open Scenes %#d")]
-        public static void DirtySaveAllOpenScenes()
-        {
-            if (Application.isPlaying)
-                return;
-
-            for (int i = 0; i < EditorSceneManager.sceneCount; i++)
-            {
-                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetSceneAt(i));
-                EditorSceneManager.SaveScene(EditorSceneManager.GetSceneAt(i));
-            }
-            Debug.Log($"Dirty saved {EditorSceneManager.sceneCount} scene(s)");
-        }
 
         [MenuItem(MenuItemDirectory + "Copy Release JSON %#r")]
         public static void CopyReleaseJson()
