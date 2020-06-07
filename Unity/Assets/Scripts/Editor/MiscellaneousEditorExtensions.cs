@@ -35,11 +35,10 @@ namespace CalorieCounter.EditorExtensions
             var releaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
                     GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName));
 
+            var directoryInfoSource = new DirectoryInfo(releaseJsonDirectoryPath);
+            var directoryInfoTarget = new DirectoryInfo(editorJsonDirectoryPath);
 
-            var diSource = new DirectoryInfo(releaseJsonDirectoryPath);
-            var diTarget = new DirectoryInfo(editorJsonDirectoryPath);
-
-            CopyAll(diSource, diTarget);
+            CopyAll(directoryInfoSource, directoryInfoTarget);
             Debug.Log($"Copied {releaseJsonDirectoryPath} into {editorJsonDirectoryPath}");
         }
 
