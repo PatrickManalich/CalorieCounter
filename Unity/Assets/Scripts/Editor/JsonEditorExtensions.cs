@@ -9,7 +9,7 @@ namespace CalorieCounter.EditorExtensions
     public static class JsonEditorExtensions
     {
 
-        private const string MenuItemDirectory = @"Calorie Counter/";
+        private const string MenuItemDirectory = @"Calorie Counter/Json/";
 
         [MenuItem(MenuItemDirectory + "Copy Release JSON %#r")]
         public static void CopyReleaseJson()
