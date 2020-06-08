@@ -2,7 +2,7 @@
 
 namespace CalorieCounter.MealEntries
 {
-	public class MealEntriesExportButton : ExportButton
+	public class MealEntriesSaveButton : SaveButton
 	{
         [SerializeField]
         private Date _date = default;

@@ -6,7 +6,7 @@ namespace CalorieCounter
 {
 
     [RequireComponent(typeof(Button))]
-    public class ExportButton : MonoBehaviour
+    public class SaveButton : MonoBehaviour
     {
         [SerializeField]
         private List<AbstractAdapter> _adapters = default;
