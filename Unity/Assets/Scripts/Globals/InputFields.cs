@@ -1,4 +1,5 @@
 ﻿using CalorieCounter.Utilities;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -7,12 +8,16 @@ namespace CalorieCounter
 {
     public class InputFields : MonoBehaviour
     {
+        public event Action ValidityChanged;
+
         public bool IsShown { get; private set; } = false;
 
         public bool IsValid => !_inputFields.Exists(i => i.text == string.Empty);
 
         [SerializeField]
         protected List<TMP_InputField> _inputFields = default;
+
+        private bool _oldIsValid;
 
         public virtual void Show()
         {
@@ -49,6 +54,11 @@ namespace CalorieCounter
             else
             {
                 FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+            }
+            if (IsValid != _oldIsValid)
+            {
+                ValidityChanged?.Invoke();
+                _oldIsValid = IsValid;
             }
         }
     }
