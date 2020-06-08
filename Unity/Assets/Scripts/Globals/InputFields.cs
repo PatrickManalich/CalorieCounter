@@ -9,6 +9,8 @@ namespace CalorieCounter
     {
         public bool IsShown { get; private set; } = false;
 
+        public bool IsValid => !_inputFields.Exists(i => i.text == string.Empty);
+
         [SerializeField]
         protected List<TMP_InputField> _inputFields = default;
 
@@ -40,15 +42,14 @@ namespace CalorieCounter
 
         private void InputField_OnValueChanged(string value)
         {
-            foreach (var inputField in _inputFields)
+            if (IsValid)
             {
-                if (inputField.text == "")
-                {
-                    FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
-                    return;
-                }
+                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             }
-            FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
+            else
+            {
+                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
+            }
         }
     }
 }
