@@ -28,9 +28,9 @@ namespace CalorieCounter.MealEntries {
             _dropdown.interactable = value;
         }
 
-        private void Start() {
+        private void Awake()
+        {
             _dropdown = GetComponent<TMP_Dropdown>();
-
             _dropdown.ClearOptions();
             var options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData("") };
             foreach (var servingAmount in ServingAmounts) {
@@ -38,7 +38,10 @@ namespace CalorieCounter.MealEntries {
             }
             _dropdown.AddOptions(options);
             SelectedServingAmount = 0;
+        }
 
+        private void Start()
+        {
             _dropdown.onValueChanged.AddListener(Dropdown_OnValueChanged);
         }
 
