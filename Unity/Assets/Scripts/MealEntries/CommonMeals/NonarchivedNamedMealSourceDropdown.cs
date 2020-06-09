@@ -27,6 +27,11 @@ namespace CalorieCounter.MealEntries {
             SelectedNamedMealSource = null;
         }
 
+        public void SetInteractable(bool value)
+        {
+            _dropdown.interactable = value;
+        }
+
         private void Awake()
         {
             _dropdown = GetComponent<TMP_Dropdown>();
