@@ -46,6 +46,18 @@ namespace CalorieCounter.MealEntries {
             {
                 scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
             }
+
+            foreach (var scrollView in _scrollViewDictionary.Values)
+            {
+                foreach(var mealProportion in scrollView.MealProportions)
+                {
+                    TotalFat += mealProportion.fat;
+                    TotalCarbs += mealProportion.carbs;
+                    TotalProtein += mealProportion.protein;
+                    TotalCalories += mealProportion.calories;
+                }
+            }
+            Refresh();
         }
 
         private void OnDestroy()
