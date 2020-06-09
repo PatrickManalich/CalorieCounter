@@ -4697,104 +4697,18 @@ MonoBehaviour:
     reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
     isExpanded: 1
     _keyValues:
-    - {fileID: 209689742}
-    - {fileID: 853450531}
-    - {fileID: 651122446}
-    - {fileID: 2073791304}
-    - {fileID: 109278361}
     - {fileID: 916258392}
-    - {fileID: 1972170842}
-    - {fileID: 1081389417}
-    - {fileID: 2019564306}
-    - {fileID: 516241994}
     - {fileID: 208960723}
-    - {fileID: 1123050179}
     _keys:
-    - {fileID: 209689742}
-    - {fileID: 853450531}
-    - {fileID: 651122446}
-    - {fileID: 2073791304}
-    - {fileID: 109278361}
     - {fileID: 916258392}
-    - {fileID: 1972170842}
-    - {fileID: 1081389417}
-    - {fileID: 2019564306}
-    - {fileID: 516241994}
     - {fileID: 208960723}
-    - {fileID: 1123050179}
     _values:
     - InteractableAfterAwake: 1
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 651122446}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 209689742}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 651122446}
-        InteractableAfterExecute: 0
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 209689742}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 853450531}
-        InteractableAfterExecute: 0
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 853450531}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 1
-      InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 209689742}
-        InteractableAfterExecute: 0
-      - Target: {fileID: 853450531}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 651122446}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 1
-      InteractableAfterExecute: 1
-      Targets: []
-    - InteractableAfterAwake: 1
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 2019564306}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 1972170842}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 2019564306}
-        InteractableAfterExecute: 0
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 1972170842}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 1081389417}
-        InteractableAfterExecute: 0
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 1081389417}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
       Targets: []
     - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 1972170842}
-        InteractableAfterExecute: 0
-      - Target: {fileID: 1081389417}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 2019564306}
-        InteractableAfterExecute: 1
+      Targets: []
 --- !u!4 &880397506
 Transform:
   m_ObjectHideFlags: 0

@@ -31,7 +31,6 @@ namespace CalorieCounter.MealSources
             _inputField.gameObject.SetActive(true);
             _inputField.text = OldNamedMealSource.name;
             _inputField.Select();
-            FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
             IsShown = true;
         }
 
