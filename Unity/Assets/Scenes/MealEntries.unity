@@ -953,6 +953,7 @@ MonoBehaviour:
   _mealProportionsScrollView: {fileID: 920356582}
   _customMealProportionInputFields: {fileID: 1859382614}
   _date: {fileID: 1767589936}
+  _dayTypeDropdown: {fileID: 945032638}
 --- !u!1001 &160281996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5806,111 +5807,20 @@ MonoBehaviour:
     reqReferences: {fileID: 11400000, guid: 3d6785e46e940b843aa5fbe4ca729d60, type: 2}
     isExpanded: 1
     _keyValues:
-    - {fileID: 945032636}
-    - {fileID: 1405250080}
-    - {fileID: 1671688302}
-    - {fileID: 1128983964}
-    - {fileID: 1576245866}
     - {fileID: 10544323}
-    - {fileID: 1471410823}
-    - {fileID: 1521270208}
-    - {fileID: 127662985}
-    - {fileID: 767946879}
     - {fileID: 176276078}
-    - {fileID: 209689742}
-    - {fileID: 853450531}
-    - {fileID: 651122446}
-    - {fileID: 1859382612}
     - {fileID: 800325924}
     _keys:
-    - {fileID: 945032636}
-    - {fileID: 1405250080}
-    - {fileID: 1671688302}
-    - {fileID: 1128983964}
-    - {fileID: 1576245866}
     - {fileID: 10544323}
-    - {fileID: 1471410823}
-    - {fileID: 1521270208}
-    - {fileID: 127662985}
-    - {fileID: 767946879}
     - {fileID: 176276078}
-    - {fileID: 209689742}
-    - {fileID: 853450531}
-    - {fileID: 651122446}
-    - {fileID: 1859382612}
     - {fileID: 800325924}
     _values:
     - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 1671688302}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 1576245866}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 1521270208}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 767946879}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 209689742}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 1128983964}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets: []
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets: []
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
       Targets: []
     - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
       Targets: []
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 127662985}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets: []
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets: []
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets: []
-    - InteractableAfterAwake: 1
-      InteractableAfterExecute: 1
-      Targets: []
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 651122446}
-        InteractableAfterExecute: 1
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 209689742}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 651122446}
-        InteractableAfterExecute: 0
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 0
-      Targets:
-      - Target: {fileID: 209689742}
-        InteractableAfterExecute: 1
-      - Target: {fileID: 853450531}
-        InteractableAfterExecute: 0
-    - InteractableAfterAwake: 0
-      InteractableAfterExecute: 1
-      Targets:
-      - Target: {fileID: 853450531}
-        InteractableAfterExecute: 1
     - InteractableAfterAwake: 1
       InteractableAfterExecute: 1
       Targets: []
@@ -11727,6 +11637,7 @@ MonoBehaviour:
   _submitButton: {fileID: 1128983966}
   _mealProportionsScrollView: {fileID: 19275662}
   _date: {fileID: 1767589936}
+  _dayTypeDropdown: {fileID: 945032638}
 --- !u!1 &1411289896
 GameObject:
   m_ObjectHideFlags: 0
@@ -12291,6 +12202,7 @@ MonoBehaviour:
   _submitButton: {fileID: 127662988}
   _mealProportionsScrollView: {fileID: 688997043}
   _date: {fileID: 1767589936}
+  _dayTypeDropdown: {fileID: 945032638}
 --- !u!1 &1508925265
 GameObject:
   m_ObjectHideFlags: 0

@@ -71,14 +71,6 @@ namespace CalorieCounter.MealEntries {
         public void Dropdown_OnValueChanged(int index)
         {
             CurrentDayType = (DayType)index;
-            if (IsCurrentDayTypeRestOrTraining)
-            {
-                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-            }
-            else
-            {
-                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
-            }
         }
 
         private void Refresh()

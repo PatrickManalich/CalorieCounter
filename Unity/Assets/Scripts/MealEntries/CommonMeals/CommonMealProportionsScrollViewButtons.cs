@@ -21,16 +21,25 @@ namespace CalorieCounter.MealEntries
         [SerializeField]
         private Date _date = default;
 
+        [SerializeField]
+        private DayTypeDropdown _dayTypeDropdown = default;
+
         private void Start()
         {
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
             _nonarchivedNamedMealSourceDropdown.ValidityChanged += Dropdown_OnValidityChanged;
             _submitButton.onClick.AddListener(SubmitButton_OnClick);
             _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
+            _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_CurrentDayTypeChanged;
+
+            _servingAmountDropdown.SetInteractable(_dayTypeDropdown.IsCurrentDayTypeRestOrTraining);
+            _nonarchivedNamedMealSourceDropdown.SetInteractable(_dayTypeDropdown.IsCurrentDayTypeRestOrTraining);
+            _submitButton.interactable = false;
         }
 
         private void OnDestroy()
         {
+            _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_CurrentDayTypeChanged;
             _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
             _submitButton.onClick.RemoveListener(SubmitButton_OnClick);
             _nonarchivedNamedMealSourceDropdown.ValidityChanged -= Dropdown_OnValidityChanged;
@@ -39,14 +48,7 @@ namespace CalorieCounter.MealEntries
 
         private void Dropdown_OnValidityChanged()
         {
-            if (_servingAmountDropdown.IsValid && _nonarchivedNamedMealSourceDropdown.IsValid)
-            {
-                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-            }
-            else
-            {
-                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
-            }
+            _submitButton.interactable = _servingAmountDropdown.IsValid && _nonarchivedNamedMealSourceDropdown.IsValid;
         }
 
         private void SubmitButton_OnClick()
@@ -56,11 +58,19 @@ namespace CalorieCounter.MealEntries
             _mealProportionsScrollView.AddMealProportion(mealProportion);
 
             ResetDropdowns();
+            _submitButton.interactable = false;
         }
 
         private void Date_OnCurrentDateTimeChanged()
         {
             ResetDropdowns();
+        }
+
+        private void DayTypeDropdown_CurrentDayTypeChanged()
+        {
+            var value = _dayTypeDropdown.IsCurrentDayTypeRestOrTraining;
+            _servingAmountDropdown.SetInteractable(value);
+            _nonarchivedNamedMealSourceDropdown.SetInteractable(value);
         }
 
         private void ResetDropdowns()
