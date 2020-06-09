@@ -47,14 +47,6 @@ namespace CalorieCounter
 
         private void InputField_OnValueChanged(string value)
         {
-            if (IsValid)
-            {
-                FindObjectOfType<InteractableHandler>()?.Execute(gameObject);
-            }
-            else
-            {
-                FindObjectOfType<InteractableHandler>()?.UndoExecute(gameObject);
-            }
             if (IsValid != _oldIsValid)
             {
                 ValidityChanged?.Invoke();

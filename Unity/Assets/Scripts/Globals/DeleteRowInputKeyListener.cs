@@ -33,7 +33,6 @@ namespace CalorieCounter
             if (e.InputKeyCode == InputKeyCode.DeleteRow)
             {
                 _scrollView.DeleteRow(_scrollViewRowHighlighter.HighlightedRowIndex);
-                FindObjectOfType<InteractableHandler>()?.Execute(_scrollViewRowHighlighter.gameObject);
                 _scrollViewRowHighlighter.ExitHighlightRow();
             }
         }
