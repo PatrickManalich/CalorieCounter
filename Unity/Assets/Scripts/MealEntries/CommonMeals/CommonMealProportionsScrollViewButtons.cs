@@ -10,10 +10,10 @@ namespace CalorieCounter.MealEntries
         private ServingAmountDropdown _servingAmountDropdown = default;
 
         [SerializeField]
-        private Button _submitButton = default;
+        private NonarchivedNamedMealSourceDropdown _nonarchivedNamedMealSourceDropdown = default;
 
         [SerializeField]
-        private NonarchivedNamedMealSourceDropdown _nonarchivedNamedMealSourceDropdown = default;
+        private Button _submitButton = default;
 
         [SerializeField]
         private MealProportionsScrollView _mealProportionsScrollView = default;
@@ -24,16 +24,16 @@ namespace CalorieCounter.MealEntries
         private void Start()
         {
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
-            _submitButton.onClick.AddListener(SubmitButton_OnClick);
             _nonarchivedNamedMealSourceDropdown.ValidityChanged += Dropdown_OnValidityChanged;
+            _submitButton.onClick.AddListener(SubmitButton_OnClick);
             _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
         }
 
         private void OnDestroy()
         {
             _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
-            _nonarchivedNamedMealSourceDropdown.ValidityChanged -= Dropdown_OnValidityChanged;
             _submitButton.onClick.RemoveListener(SubmitButton_OnClick);
+            _nonarchivedNamedMealSourceDropdown.ValidityChanged -= Dropdown_OnValidityChanged;
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
         }
 

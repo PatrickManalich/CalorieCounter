@@ -11723,8 +11723,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _servingAmountDropdown: {fileID: 1671688307}
-  _submitButton: {fileID: 1128983966}
   _nonarchivedNamedMealSourceDropdown: {fileID: 1576245871}
+  _submitButton: {fileID: 1128983966}
   _mealProportionsScrollView: {fileID: 19275662}
   _date: {fileID: 1767589936}
 --- !u!1 &1411289896
@@ -12287,8 +12287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _servingAmountDropdown: {fileID: 1521270210}
-  _submitButton: {fileID: 127662988}
   _nonarchivedNamedMealSourceDropdown: {fileID: 767946881}
+  _submitButton: {fileID: 127662988}
   _mealProportionsScrollView: {fileID: 688997043}
   _date: {fileID: 1767589936}
 --- !u!1 &1508925265
