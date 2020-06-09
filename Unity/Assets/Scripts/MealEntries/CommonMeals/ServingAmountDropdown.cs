@@ -37,7 +37,7 @@ namespace CalorieCounter.MealEntries {
                 options.Add(new TMP_Dropdown.OptionData(servingAmount.ToString()));
             }
             _dropdown.AddOptions(options);
-            SelectedServingAmount = 0;
+            Reset();
         }
 
         private void Start()
