@@ -14,7 +14,7 @@ namespace CalorieCounter.MealSources
         public NamedMealSource NewNamedMealSource {
             get 
             {
-                var newName = _inputField.text == "" ? OldNamedMealSource.name : _inputField.text;
+                var newName = _inputField.text == string.Empty ? OldNamedMealSource.name : _inputField.text;
                 var newNamedMealSource = new NamedMealSource(newName, OldNamedMealSource.mealSource);
                 return newNamedMealSource;
             }
@@ -36,7 +36,7 @@ namespace CalorieCounter.MealSources
 
         public void Hide()
         {
-            _inputField.text = "";
+            _inputField.text = string.Empty;
             _inputField.gameObject.SetActive(false);
             _inputField.transform.SetParent(transform, false);
             OldNamedMealSource = null;

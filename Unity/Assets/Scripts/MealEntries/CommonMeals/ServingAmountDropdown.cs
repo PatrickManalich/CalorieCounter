@@ -32,7 +32,7 @@ namespace CalorieCounter.MealEntries {
         {
             _dropdown = GetComponent<TMP_Dropdown>();
             _dropdown.ClearOptions();
-            var options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData("") };
+            var options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData(string.Empty) };
             foreach (var servingAmount in ServingAmounts) {
                 options.Add(new TMP_Dropdown.OptionData(servingAmount.ToString()));
             }

@@ -58,7 +58,7 @@ namespace CalorieCounter.MealSources {
         }
 
         public static MealSource CreateCustomMealSource(float fat, float carbs, float protein) {
-            return new MealSource(CustomMealSourceServingSize, fat, carbs, protein, "", MealSourceType.Custom);
+            return new MealSource(CustomMealSourceServingSize, fat, carbs, protein, string.Empty, MealSourceType.Custom);
         }
 
         public static bool operator ==(MealSource mealSource1, MealSource mealSource2)

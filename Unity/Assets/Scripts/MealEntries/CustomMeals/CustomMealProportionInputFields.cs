@@ -45,7 +45,7 @@ namespace CalorieCounter.MealEntries {
         public override void Hide() {
             base.Hide();
             foreach (var inputField in _inputFields) {
-                inputField.text = "";
+                inputField.text = string.Empty;
                 inputField.gameObject.SetActive(false);
                 inputField.transform.SetParent(transform, false);
             }

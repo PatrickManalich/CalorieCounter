@@ -46,7 +46,7 @@ namespace CalorieCounter.MealEntries {
             {
                 if (dayType == DayType.None.ToString())
                 {
-                    _optionDataList.Add(new TMP_Dropdown.OptionData(""));
+                    _optionDataList.Add(new TMP_Dropdown.OptionData(string.Empty));
                 }
                 else
                 {
