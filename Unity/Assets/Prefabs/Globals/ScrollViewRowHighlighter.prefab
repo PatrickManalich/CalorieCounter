@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3171886516535720994}
   - component: {fileID: 3171886516535720993}
   - component: {fileID: 3171886516535720995}
-  - component: {fileID: 3171886516535721004}
   m_Layer: 5
   m_Name: ScrollViewRowHighlighter
   m_TagString: Untagged
@@ -61,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -90,15 +89,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _content: {fileID: 0}
   _scrollView: {fileID: 0}
---- !u!225 &3171886516535721004
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3171886516535720999}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace CalorieCounter
 {
-    [RequireComponent(typeof(CanvasGroup))]
+    [RequireComponent(typeof(Image))]
     public class ScrollViewRowHighlighter : MonoBehaviour
     {
         public int HighlightedRowIndex { get; private set; }
@@ -19,14 +19,14 @@ namespace CalorieCounter
 
         private List<ScrollViewText> _scrollViewTexts = new List<ScrollViewText>();
 
-        private CanvasGroup _canvasGroup;
+        private Image _image;
         private RectTransform _rectTransform;
         private RectTransform _contentRectTransform;
 
         public void EnterHighlightRow(int siblingIndex)
         {
             HighlightedRowIndex = siblingIndex / _content.constraintCount;
-            _canvasGroup.alpha = 1;
+            _image.enabled = true;
             var contentOffset = _contentRectTransform.anchoredPosition.y;
             _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _content.cellSize.y * -1) + contentOffset);
         }
@@ -34,12 +34,12 @@ namespace CalorieCounter
         public void ExitHighlightRow()
         {
             HighlightedRowIndex = -1;
-            _canvasGroup.alpha = 0;
+            _image.enabled = false;
         }
 
         private void Awake()
         {
-            _canvasGroup = GetComponent<CanvasGroup>();
+            _image = GetComponent<Image>();
             _rectTransform = GetComponent<RectTransform>();
             _contentRectTransform = _content.GetComponent<RectTransform>();
 
