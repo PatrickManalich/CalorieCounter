@@ -9,9 +9,9 @@ namespace CalorieCounter.EditorExtensions
     {
 
         private MealSourceType _mealSourceType;
-        private string _mealSourceNameQuery = "";
-        private string _mealSourceNameResult = "";
-        private string _mealSourceIdResult = "";
+        private string _mealSourceNameQuery;
+        private string _mealSourceNameResult;
+        private string _mealSourceIdResult;
 
         [MenuItem("Calorie Counter/Window/Meal Source ID Finder")]
         public static void ShowWindow()
