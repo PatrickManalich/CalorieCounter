@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
+  _scrollViewSuggestionTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
   _mealSourceType: 0
   _dayTypeDropdown: {fileID: 945032638}
@@ -5667,7 +5667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
+  _scrollViewSuggestionTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
   _mealSourceType: 1
   _dayTypeDropdown: {fileID: 945032638}
@@ -7849,7 +7849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scrollViewTextPrefab: {fileID: 4638125472956906485, guid: 7becd7138cbaa7b47bb707030f0e2d0f,
     type: 3}
-  _suggestionScrollViewTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
+  _scrollViewSuggestionTextPrefab: {fileID: 4638125472956906485, guid: 4971cdda4250c584db4b6f68d7d90c53,
     type: 3}
   _mealSourceType: 2
   _dayTypeDropdown: {fileID: 945032638}

@@ -42,7 +42,7 @@ namespace CalorieCounter.MealEntries {
         public List<MealSuggestion> MealSuggestions { get; private set; } = new List<MealSuggestion>();
 
         [SerializeField]
-        private GameObject _suggestionScrollViewTextPrefab = default;
+        private GameObject _scrollViewSuggestionTextPrefab = default;
 
         [SerializeField]
         private MealSourceType _mealSourceType = default;
@@ -98,12 +98,12 @@ namespace CalorieCounter.MealEntries {
             MealSuggestions.Add(mealSuggestion);
 
             int siblingStartIndex = (MealProportions.Count + MealSuggestions.Count - 1) * Content.constraintCount;
-            GameObject servingAmountText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, siblingStartIndex);
-            GameObject nameText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
-            GameObject fatText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
-            GameObject carbText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
-            GameObject proteinText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
-            GameObject calorieText = InstantiateScrollViewText(_suggestionScrollViewTextPrefab, ++siblingStartIndex);
+            GameObject servingAmountText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, siblingStartIndex);
+            GameObject nameText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject fatText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject carbText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject proteinText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject calorieText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
 
             var mealProportion = mealSuggestion.mealProportion;
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
