@@ -19,8 +19,12 @@ namespace CalorieCounter.EditorExtensions
 
             for (int i = 0; i < EditorSceneManager.sceneCount; i++)
             {
-                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetSceneAt(i));
-                EditorSceneManager.SaveScene(EditorSceneManager.GetSceneAt(i));
+                var scene = EditorSceneManager.GetSceneAt(i);
+                if(scene.rootCount > 0)
+                {
+                    EditorSceneManager.MarkSceneDirty(scene);
+                    EditorSceneManager.SaveScene(scene);
+                }
             }
             Debug.Log($"Dirty saved {EditorSceneManager.sceneCount} scene(s)");
         }
