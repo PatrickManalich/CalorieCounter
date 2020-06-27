@@ -385,8 +385,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2207707452619756390}
-  - component: {fileID: 2207707452619756385}
   - component: {fileID: 2207707452619756384}
+  - component: {fileID: 1723064828681433798}
   - component: {fileID: 2207707452619756391}
   - component: {fileID: 4055726072949874970}
   m_Layer: 5
@@ -418,7 +418,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1870, y: 950}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2207707452619756385
+--- !u!222 &2207707452619756384
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2207707452619756389}
+  m_CullTransparentMesh: 0
+--- !u!114 &1723064828681433798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -427,7 +435,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2207707452619756389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1367256648, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 91fe1986ddbbd364abf8fd637433dbc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 2207707453117714254}
@@ -443,21 +451,13 @@ MonoBehaviour:
   m_VerticalScrollbar: {fileID: 2207707452425106757}
   m_HorizontalScrollbarVisibility: 0
   m_VerticalScrollbarVisibility: 1
-  m_HorizontalScrollbarSpacing: -3
-  m_VerticalScrollbarSpacing: -3
+  m_HorizontalScrollbarSpacing: 0
+  m_VerticalScrollbarSpacing: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!222 &2207707452619756384
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2207707452619756389}
-  m_CullTransparentMesh: 0
 --- !u!114 &2207707452619756391
 MonoBehaviour:
   m_ObjectHideFlags: 0
