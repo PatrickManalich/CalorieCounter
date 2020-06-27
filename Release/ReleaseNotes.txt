@@ -1,5 +1,12 @@
 Calorie Counter Release Notes
 
+Release  1.7.0 (6/27/2020)
+ -Redesign UI using plugin
+ -Fix bug in editor extension
+ -Import plugin Flat White Minimalistic GUI
+ -Fix race condition bug affecting totals
+ -Export button is now a save button
+
 Release  1.6.1 (6/7/2020)
  -Fix bug where export button shouldn't be interactable
  -Add to editor extensions
