@@ -1156,7 +1156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _adapters:
   - {fileID: 1982907307}
-  _scrollViews:
+  _scrollViewAssistants:
   - {fileID: 2042111771}
   - {fileID: 1517040377}
 --- !u!1001 &384456742

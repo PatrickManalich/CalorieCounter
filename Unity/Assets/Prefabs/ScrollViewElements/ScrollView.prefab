@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: {fileID: 2207707453117714248}
-  _scrollView: {fileID: 4055726072949874970}
+  _scrollViewAssistant: {fileID: 4055726072949874970}
 --- !u!114 &2207707451995473497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79471b7913715bd448fe2452f830f96b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scrollView: {fileID: 4055726072949874970}
+  _scrollViewAssistant: {fileID: 4055726072949874970}
 --- !u!1 &2207707452425106763
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3207843db5c3f134d95bb25cad13c575, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scrollView: {fileID: 4055726072949874970}
+  _scrollViewAssistant: {fileID: 4055726072949874970}
 --- !u!1 &2207707452509677808
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ namespace CalorieCounter
     public class ScrollbarInteractableToggler : MonoBehaviour
 	{
         [SerializeField]
-        private ScrollView _scrollView = default;
+        private ScrollViewAssistant _scrollViewAssistant = default;
 
         private Scrollbar _scrollbar;
 
@@ -16,26 +16,26 @@ namespace CalorieCounter
             _scrollbar = GetComponent<Scrollbar>();
             _scrollbar.interactable = false;
 
-            _scrollView.TextModified += (object sender, ScrollView.TextModifiedEventArgs e) => Refresh();
+            _scrollViewAssistant.TextModified += (object sender, ScrollViewAssistant.TextModifiedEventArgs e) => Refresh();
 
             Refresh();
         }
 
         private void OnDestroy()
         {
-            _scrollView.TextModified -= (object sender, ScrollView.TextModifiedEventArgs e) => Refresh();
+            _scrollViewAssistant.TextModified -= (object sender, ScrollViewAssistant.TextModifiedEventArgs e) => Refresh();
         }
 
         private void Refresh()
         {
-            if (_scrollView.ScrollViewTexts.Count <= 0)
+            if (_scrollViewAssistant.ScrollViewTexts.Count <= 0)
             {
                 _scrollbar.interactable = false;
             }
             else
             {
-                var scrollViewTextsHeight = _scrollView.ScrollViewTexts.Count / _scrollView.Content.constraintCount * _scrollView.Content.cellSize.y;
-                var scrollViewRectTransformHeight = _scrollView.RectTransform.sizeDelta.y;
+                var scrollViewTextsHeight = _scrollViewAssistant.ScrollViewTexts.Count / _scrollViewAssistant.Content.constraintCount * _scrollViewAssistant.Content.cellSize.y;
+                var scrollViewRectTransformHeight = _scrollViewAssistant.RectTransform.sizeDelta.y;
                 _scrollbar.interactable = scrollViewTextsHeight > scrollViewRectTransformHeight;
             }
         }

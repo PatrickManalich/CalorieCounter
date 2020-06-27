@@ -12,7 +12,7 @@ namespace CalorieCounter
         private List<AbstractAdapter> _adapters = default;
 
         [SerializeField]
-        private List<ScrollView> _scrollViews = default;
+        private List<ScrollViewAssistant> _scrollViewAssistants = default;
 
         private Button _button;
 
@@ -21,20 +21,20 @@ namespace CalorieCounter
             _button = GetComponent<Button>();
 
             _button.onClick.AddListener(Button_OnClick);
-            foreach(var scrollView in _scrollViews)
+            foreach(var scrollViewAssistant in _scrollViewAssistants)
             {
-                scrollView.RowAdded += ScrollView_OnRowAdded;
-                scrollView.RowRemoved += ScrollView_OnRowRemoved;
+                scrollViewAssistant.RowAdded += ScrollView_OnRowAdded;
+                scrollViewAssistant.RowRemoved += ScrollView_OnRowRemoved;
             }
             _button.interactable = false;
         }
 
         protected virtual void OnDestroy()
         {
-            foreach (var scrollView in _scrollViews)
+            foreach (var scrollViewAssistant in _scrollViewAssistants)
             {
-                scrollView.RowRemoved -= ScrollView_OnRowRemoved;
-                scrollView.RowAdded -= ScrollView_OnRowAdded;
+                scrollViewAssistant.RowRemoved -= ScrollView_OnRowRemoved;
+                scrollViewAssistant.RowAdded -= ScrollView_OnRowAdded;
             }
             _button.onClick.RemoveListener(Button_OnClick);
         }
@@ -62,12 +62,12 @@ namespace CalorieCounter
             _button.interactable = false;
         }
 
-        private void ScrollView_OnRowRemoved(object sender, ScrollView.RowChangedEventArgs e)
+        private void ScrollView_OnRowRemoved(object sender, ScrollViewAssistant.RowChangedEventArgs e)
         {
             RefreshButtonInteractability();
         }
 
-        private void ScrollView_OnRowAdded(object sender, ScrollView.RowChangedEventArgs e)
+        private void ScrollView_OnRowAdded(object sender, ScrollViewAssistant.RowChangedEventArgs e)
         {
             RefreshButtonInteractability();
         }

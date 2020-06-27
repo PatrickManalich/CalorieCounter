@@ -30,16 +30,16 @@ namespace CalorieCounter.MealEntries {
             for (int i = 0; i < _inputFields.Count + _blanks.Count; i++) {
                 if (i == 0 || i >= 2 && i <= 4) {
                     TMP_InputField inputField = i == 0 ? _inputFields[i] : _inputFields[i - 1];
-                    _mealProportionsScrollView.ScrollView.AddToScrollView(inputField.transform);
+                    _mealProportionsScrollView.ScrollViewAssistant.AddToScrollView(inputField.transform);
                     inputField.gameObject.SetActive(true);
                 } else {
                     GameObject blank = i == 1 ? _blanks[i - 1] : _blanks[i - 4];
-                    _mealProportionsScrollView.ScrollView.AddToScrollView(blank.transform);
+                    _mealProportionsScrollView.ScrollViewAssistant.AddToScrollView(blank.transform);
                     blank.SetActive(true);
                 }
             }
             _inputFields.First().ActivateInputField();
-            _mealProportionsScrollView.ScrollView.ScrollToBottom();
+            _mealProportionsScrollView.ScrollViewAssistant.ScrollToBottom();
         }
 
         public override void Hide() {

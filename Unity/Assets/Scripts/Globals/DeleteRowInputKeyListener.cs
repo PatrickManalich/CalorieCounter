@@ -1,5 +1,4 @@
 ﻿using CalorieCounter.Managers;
-using CalorieCounter.Utilities;
 using UnityEngine;
 
 namespace CalorieCounter
@@ -8,7 +7,7 @@ namespace CalorieCounter
     public class DeleteRowInputKeyListener : MonoBehaviour
 	{
         [SerializeField]
-        private ScrollView _scrollView = default;
+        private ScrollViewAssistant _scrollViewAssistant = default;
 
         private ScrollViewRowHighlighter _scrollViewRowHighlighter;
 
@@ -32,7 +31,7 @@ namespace CalorieCounter
 
             if (e.InputKeyCode == InputKeyCode.DeleteRow)
             {
-                _scrollView.DeleteRow(_scrollViewRowHighlighter.HighlightedRowIndex);
+                _scrollViewAssistant.DeleteRow(_scrollViewRowHighlighter.HighlightedRowIndex);
                 _scrollViewRowHighlighter.ExitHighlightRow();
             }
         }

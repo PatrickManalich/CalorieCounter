@@ -26,15 +26,15 @@ namespace CalorieCounter.ScaleEntries {
 
         public override void Show() {
             base.Show();
-            _scaleEntriesScrollView.ScrollView.AddToScrollView(_scaleEntryDateField.transform);
+            _scaleEntriesScrollView.ScrollViewAssistant.AddToScrollView(_scaleEntryDateField.transform);
             _scaleEntryDateField.gameObject.SetActive(true);
             for(int i = 0; i < _inputFields.Count; i++) {
                 var inputField = _inputFields[i];
-                _scaleEntriesScrollView.ScrollView.AddToScrollView(inputField.transform);
+                _scaleEntriesScrollView.ScrollViewAssistant.AddToScrollView(inputField.transform);
                 inputField.gameObject.SetActive(true);
             }
             _inputFields.First().ActivateInputField();
-            _scaleEntriesScrollView.ScrollView.ScrollToBottom();
+            _scaleEntriesScrollView.ScrollViewAssistant.ScrollToBottom();
         }
 
         public override void Hide() {

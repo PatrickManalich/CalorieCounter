@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace CalorieCounter.MealSources {
 
-    [RequireComponent(typeof(ScrollView))]
+    [RequireComponent(typeof(ScrollViewAssistant))]
     public class MealSourcesScrollView : MonoBehaviour
     {
-        public ScrollView ScrollView { get; private set; }
+        public ScrollViewAssistant ScrollViewAssistant { get; private set; }
 
         public Dictionary<string, MealSource> MealSources { get; private set; } = new Dictionary<string, MealSource>();
 
@@ -29,14 +29,14 @@ namespace CalorieCounter.MealSources {
 
             _nonarchivedNamedMealSources.Add(namedMealSource.name, namedMealSource);
 
-            int siblingStartIndex = _nonarchivedNamedMealSources.IndexOfKey(namedMealSource.name) * ScrollView.Content.constraintCount;
-            GameObject mealNameText = ScrollView.InstantiateScrollViewText(siblingStartIndex);
-            GameObject servingSizeText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject fatText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject carbText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject proteinText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject calorieText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject descriptionText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
+            int siblingStartIndex = _nonarchivedNamedMealSources.IndexOfKey(namedMealSource.name) * ScrollViewAssistant.Content.constraintCount;
+            GameObject mealNameText = ScrollViewAssistant.InstantiateScrollViewText(siblingStartIndex);
+            GameObject servingSizeText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject fatText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject carbText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject proteinText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject calorieText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject descriptionText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
 
             mealNameText.GetComponent<TextMeshProUGUI>().text = namedMealSource.name;
             servingSizeText.GetComponent<TextMeshProUGUI>().text = mealSource.servingSize;
@@ -47,8 +47,8 @@ namespace CalorieCounter.MealSources {
             descriptionText.GetComponent<TextMeshProUGUI>().text = mealSource.description;
 
             var percent = 1 - (_nonarchivedNamedMealSources.IndexOfKey(namedMealSource.name) / (float) (_nonarchivedNamedMealSources.Count - 1));
-            ScrollView.ScrollToPercent(percent);
-            ScrollView.InvokeRowAdded(siblingStartIndex);
+            ScrollViewAssistant.ScrollToPercent(percent);
+            ScrollViewAssistant.InvokeRowAdded(siblingStartIndex);
         }
 
 
@@ -56,34 +56,34 @@ namespace CalorieCounter.MealSources {
         {
             MealSources.Remove(oldNamedMealSource.mealSource.id);
             MealSourceNames.Remove(oldNamedMealSource.mealSource.id);
-            ScrollView.DeleteRow(_nonarchivedNamedMealSources.IndexOfKey(oldNamedMealSource.name));
+            ScrollViewAssistant.DeleteRow(_nonarchivedNamedMealSources.IndexOfKey(oldNamedMealSource.name));
             _nonarchivedNamedMealSources.Remove(oldNamedMealSource.name);
             AddNamedMealSource(newNamedMealSource);
         }
 
         public void ShowRenameField(int rowIndex)
         {
-            var parentTransform = ScrollView.ContentChildren[rowIndex * ScrollView.Content.constraintCount].transform;
+            var parentTransform = ScrollViewAssistant.ContentChildren[rowIndex * ScrollViewAssistant.Content.constraintCount].transform;
             var oldNamedMealSource = _nonarchivedNamedMealSources.Values[rowIndex];
             _mealSourceRenameField.Show(parentTransform, oldNamedMealSource);
         }
 
         private void Awake()
         {
-            ScrollView = GetComponent<ScrollView>();
+            ScrollViewAssistant = GetComponent<ScrollViewAssistant>();
         }
 
         private void Start()
         {
-            ScrollView.RowRemoved += ScrollView_OnRowRemoved;
+            ScrollViewAssistant.RowRemoved += ScrollViewAssistant_OnRowRemoved;
         }
 
         private void OnDestroy()
         {
-            ScrollView.RowRemoved -= ScrollView_OnRowRemoved;
+            ScrollViewAssistant.RowRemoved -= ScrollViewAssistant_OnRowRemoved;
         }
 
-        private void ScrollView_OnRowRemoved(object sender, ScrollView.RowChangedEventArgs e)
+        private void ScrollViewAssistant_OnRowRemoved(object sender, ScrollViewAssistant.RowChangedEventArgs e)
         {
             var highlightedMealSource = _nonarchivedNamedMealSources.Values[e.RowIndex].mealSource;
             var archivedMealSource = new MealSource(highlightedMealSource, true);

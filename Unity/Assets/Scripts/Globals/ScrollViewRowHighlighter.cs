@@ -15,7 +15,7 @@ namespace CalorieCounter
         private GridLayoutGroup _content = default;
 
         [SerializeField]
-        private ScrollView _scrollView = default;
+        private ScrollViewAssistant _scrollViewAssistant = default;
 
         private List<ScrollViewText> _scrollViewTexts = new List<ScrollViewText>();
 
@@ -49,12 +49,12 @@ namespace CalorieCounter
 
         private void Start()
         {
-            foreach (var scrollViewText in _scrollView.ScrollViewTexts)
+            foreach (var scrollViewText in _scrollViewAssistant.ScrollViewTexts)
             {
                 scrollViewText.Highlighted += ScrollViewText_OnHighlighted;
                 _scrollViewTexts.Add(scrollViewText);
             }
-            _scrollView.TextModified += ScrollView_OnTextModified;
+            _scrollViewAssistant.TextModified += ScrollView_OnTextModified;
         }
 
         private void OnDestroy()
@@ -63,10 +63,10 @@ namespace CalorieCounter
             {
                 scrollViewText.Highlighted -= ScrollViewText_OnHighlighted;
             }
-            _scrollView.TextModified -= ScrollView_OnTextModified;
+            _scrollViewAssistant.TextModified -= ScrollView_OnTextModified;
         }
 
-        private void ScrollView_OnTextModified(object sender, ScrollView.TextModifiedEventArgs e)
+        private void ScrollView_OnTextModified(object sender, ScrollViewAssistant.TextModifiedEventArgs e)
         {
             if (e.TextModifiedType == TextModifiedType.Instantiated)
             {

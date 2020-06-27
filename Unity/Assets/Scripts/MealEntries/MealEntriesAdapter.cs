@@ -63,7 +63,7 @@ namespace CalorieCounter.MealEntries {
                 {
                     scrollView.AddMealProportion(mealProportion);
                 }
-                scrollView.ScrollView.ScrollToTop();
+                scrollView.ScrollViewAssistant.ScrollToTop();
             }
         }
 

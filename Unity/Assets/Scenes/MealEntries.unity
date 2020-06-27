@@ -510,7 +510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _adapters:
   - {fileID: 1508925266}
-  _scrollViews:
+  _scrollViewAssistants:
   - {fileID: 478179530}
   - {fileID: 1264550865}
   - {fileID: 564145728}

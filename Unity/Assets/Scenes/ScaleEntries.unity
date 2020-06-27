@@ -2108,7 +2108,7 @@ MonoBehaviour:
   _adapters:
   - {fileID: 435475410}
   - {fileID: 1840775928}
-  _scrollViews:
+  _scrollViewAssistants:
   - {fileID: 1076232892}
 --- !u!224 &876335742 stripped
 RectTransform:

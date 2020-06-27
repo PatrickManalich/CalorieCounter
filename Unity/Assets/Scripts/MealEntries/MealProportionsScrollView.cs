@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    [RequireComponent(typeof(ScrollView))]
+    [RequireComponent(typeof(ScrollViewAssistant))]
     public class MealProportionsScrollView : MonoBehaviour {
 
         public class MealProportionModifiedEventArgs : EventArgs
@@ -38,7 +38,7 @@ namespace CalorieCounter.MealEntries {
         public event EventHandler<MealProportionModifiedEventArgs> MealProportionModified;
         public event EventHandler<MealSuggestionRemovedEventArgs> MealSuggestionRemoved;
 
-        public ScrollView ScrollView { get; private set; }
+        public ScrollViewAssistant ScrollViewAssistant { get; private set; }
 
         public List<MealProportion> MealProportions { get; private set; } = new List<MealProportion>();
 
@@ -59,13 +59,13 @@ namespace CalorieCounter.MealEntries {
         {
             MealProportions.Add(mealProportion);
 
-            int siblingStartIndex = MealProportions.IndexOf(mealProportion) * ScrollView.Content.constraintCount;
-            GameObject servingAmountText = ScrollView.InstantiateScrollViewText(siblingStartIndex);
-            GameObject nameText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject fatText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject carbText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject proteinText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject calorieText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
+            int siblingStartIndex = MealProportions.IndexOf(mealProportion) * ScrollViewAssistant.Content.constraintCount;
+            GameObject servingAmountText = ScrollViewAssistant.InstantiateScrollViewText(siblingStartIndex);
+            GameObject nameText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject fatText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject carbText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject proteinText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject calorieText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.mealSource);
@@ -74,22 +74,22 @@ namespace CalorieCounter.MealEntries {
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
 
-            ScrollView.ScrollToBottom();
+            ScrollViewAssistant.ScrollToBottom();
             MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Added, _mealSourceType, mealProportion));
-            ScrollView.InvokeRowAdded(siblingStartIndex);
+            ScrollViewAssistant.InvokeRowAdded(siblingStartIndex);
         }
 
         public void AddMealSuggestion(MealSuggestion mealSuggestion)
         {
             MealSuggestions.Add(mealSuggestion);
 
-            int siblingStartIndex = (MealProportions.Count + MealSuggestions.Count - 1) * ScrollView.Content.constraintCount;
-            GameObject servingAmountText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, siblingStartIndex);
-            GameObject nameText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
-            GameObject fatText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
-            GameObject carbText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
-            GameObject proteinText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
-            GameObject calorieText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            int siblingStartIndex = (MealProportions.Count + MealSuggestions.Count - 1) * ScrollViewAssistant.Content.constraintCount;
+            GameObject servingAmountText = ScrollViewAssistant.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, siblingStartIndex);
+            GameObject nameText = ScrollViewAssistant.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject fatText = ScrollViewAssistant.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject carbText = ScrollViewAssistant.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject proteinText = ScrollViewAssistant.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject calorieText = ScrollViewAssistant.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
 
             var mealProportion = mealSuggestion.mealProportion;
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
@@ -105,7 +105,7 @@ namespace CalorieCounter.MealEntries {
             var mealProportionsCount = MealProportions.Count;   // Cache since we're changing list
             for (int i = 0; i < mealProportionsCount; i++)
             {
-                ScrollView.DeleteRow(0);
+                ScrollViewAssistant.DeleteRow(0);
             }
         }
 
@@ -114,7 +114,7 @@ namespace CalorieCounter.MealEntries {
             if (rowIndex >= MealProportions.Count)
             {
                 var mealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
-                ScrollView.DeleteRow(rowIndex);
+                ScrollViewAssistant.DeleteRow(rowIndex);
                 AddMealProportion(mealSuggestion.mealProportion);
             }
         }
@@ -124,28 +124,28 @@ namespace CalorieCounter.MealEntries {
             var mealSuggestionsCount = MealSuggestions.Count;   // Cache since we're changing list
             for (int i = 0; i < mealSuggestionsCount; i++)
             {
-                ScrollView.DeleteRow(MealProportions.Count);
+                ScrollViewAssistant.DeleteRow(MealProportions.Count);
             }
         }
 
         private void Awake()
         {
-            ScrollView = GetComponent<ScrollView>();
+            ScrollViewAssistant = GetComponent<ScrollViewAssistant>();
         }
 
         private void Start()
         {
-            ScrollView.RowRemoved += ScrollView_OnRowRemoved;
+            ScrollViewAssistant.RowRemoved += ScrollViewAssistant_OnRowRemoved;
             _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_OnCurrentDayTypeChanged;
         }
 
         private void OnDestroy()
         {
             _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_OnCurrentDayTypeChanged;
-            ScrollView.RowRemoved -= ScrollView_OnRowRemoved;
+            ScrollViewAssistant.RowRemoved -= ScrollViewAssistant_OnRowRemoved;
         }
 
-        private void ScrollView_OnRowRemoved(object sender, ScrollView.RowChangedEventArgs e)
+        private void ScrollViewAssistant_OnRowRemoved(object sender, ScrollViewAssistant.RowChangedEventArgs e)
         {
             if (MealProportions.Count > 0 && e.RowIndex < MealProportions.Count)
             {
