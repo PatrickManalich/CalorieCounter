@@ -29,6 +29,7 @@ namespace CalorieCounter.MealSources
             _submitButton.onClick.AddListener(SubmitButton_OnClick);
             _cancelButton.onClick.AddListener(CancelButton_OnClick);
             _mealSourceInputFields.ValidityChanged += MealSourceInputFields_OnValidityChanged;
+            _mealSourceRenameField.Shown += MealSourceRenameField_OnShown;
 
             _addButton.interactable = true;
             _submitButton.interactable = false;
@@ -37,6 +38,7 @@ namespace CalorieCounter.MealSources
 
         private void OnDestroy()
         {
+            _mealSourceRenameField.Shown -= MealSourceRenameField_OnShown;
             _mealSourceInputFields.ValidityChanged -= MealSourceInputFields_OnValidityChanged;
             _cancelButton.onClick.RemoveListener(CancelButton_OnClick);
             _submitButton.onClick.RemoveListener(SubmitButton_OnClick);
@@ -89,6 +91,13 @@ namespace CalorieCounter.MealSources
         private void MealSourceInputFields_OnValidityChanged()
         {
             _submitButton.interactable = _mealSourceInputFields.IsValid;
+        }
+
+        private void MealSourceRenameField_OnShown()
+        {
+            _addButton.interactable = false;
+            _submitButton.interactable = true;
+            _cancelButton.interactable = true;
         }
     }
 }

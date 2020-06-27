@@ -1,4 +1,4 @@
-﻿using CalorieCounter.Utilities;
+﻿using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -7,6 +7,8 @@ namespace CalorieCounter.MealSources
 {
     public class MealSourceRenameField : MonoBehaviour
     {
+        public event Action Shown;
+
         public bool IsShown { get; private set; } = false;
 
         public NamedMealSource OldNamedMealSource { get; private set; } = null;
@@ -32,6 +34,7 @@ namespace CalorieCounter.MealSources
             _inputField.text = OldNamedMealSource.name;
             _inputField.Select();
             IsShown = true;
+            Shown?.Invoke();
         }
 
         public void Hide()
