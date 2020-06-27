@@ -12,9 +12,6 @@ namespace CalorieCounter
         public bool RowHighlighted => HighlightedRowIndex != -1 && _contentRectTransform.childCount > 0;
 
         [SerializeField]
-        private GridLayoutGroup _content = default;
-
-        [SerializeField]
         private ScrollViewAssistant _scrollViewAssistant = default;
 
         private List<ScrollViewText> _scrollViewTexts = new List<ScrollViewText>();
@@ -25,10 +22,10 @@ namespace CalorieCounter
 
         public void EnterHighlightRow(int siblingIndex)
         {
-            HighlightedRowIndex = siblingIndex / _content.constraintCount;
+            HighlightedRowIndex = siblingIndex / _scrollViewAssistant.Content.constraintCount;
             _image.enabled = true;
             var contentOffset = _contentRectTransform.anchoredPosition.y;
-            _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _content.cellSize.y * -1) + contentOffset);
+            _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _scrollViewAssistant.Content.cellSize.y * -1) + contentOffset);
         }
 
         public void ExitHighlightRow()
@@ -41,10 +38,6 @@ namespace CalorieCounter
         {
             _image = GetComponent<Image>();
             _rectTransform = GetComponent<RectTransform>();
-            _contentRectTransform = _content.GetComponent<RectTransform>();
-
-            _rectTransform.sizeDelta = new Vector2(0, _content.cellSize.y);
-            ExitHighlightRow();
         }
 
         private void Start()
@@ -55,6 +48,10 @@ namespace CalorieCounter
                 _scrollViewTexts.Add(scrollViewText);
             }
             _scrollViewAssistant.TextModified += ScrollView_OnTextModified;
+
+            _contentRectTransform = _scrollViewAssistant.Content.GetComponent<RectTransform>();
+            _rectTransform.sizeDelta = new Vector2(0, _scrollViewAssistant.Content.cellSize.y);
+            ExitHighlightRow();
         }
 
         private void OnDestroy()

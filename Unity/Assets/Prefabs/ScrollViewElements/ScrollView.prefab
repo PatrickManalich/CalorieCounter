@@ -88,7 +88,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9318f9e9a402d4593cd0c4af47534e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _content: {fileID: 2207707453117714248}
   _scrollViewAssistant: {fileID: 4055726072949874970}
 --- !u!114 &2207707451995473497
 MonoBehaviour:
