@@ -24,7 +24,19 @@ namespace CalorieCounter
 
         public event EventHandler<TextModifiedEventArgs> TextModified;
 
-        public event Action RowChanged;
+        public class RowChangedEventArgs : EventArgs
+        {
+            public int RowIndex { get; }
+
+            public RowChangedEventArgs(int rowIndex)
+            {
+                RowIndex = rowIndex;
+            }
+        }
+
+        public event EventHandler<RowChangedEventArgs> RowAdded;
+
+        public event EventHandler<RowChangedEventArgs> RowRemoved;
 
         public List<ScrollViewText> ScrollViewTexts { get; private set; } = new List<ScrollViewText>();
 
@@ -55,7 +67,7 @@ namespace CalorieCounter
                 Destroy(child);
                 _contentChildren.Remove(child);
             }
-            InvokeRowChanged();
+            RowRemoved?.Invoke(this, new RowChangedEventArgs(rowIndex));
         }
 
         public GameObject InstantiateScrollViewText(int siblingIndex)
@@ -101,9 +113,9 @@ namespace CalorieCounter
             StartCoroutine(ScrollToPercentCoroutine(percent));
         }
 
-        protected void InvokeRowChanged()
+        protected void InvokeRowAdded(int rowIndex)
         {
-            RowChanged?.Invoke();
+            RowAdded?.Invoke(this, new RowChangedEventArgs(rowIndex));
         }
 
         private void Awake()

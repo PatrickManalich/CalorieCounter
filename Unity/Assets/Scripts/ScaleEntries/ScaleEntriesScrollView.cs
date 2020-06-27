@@ -39,7 +39,7 @@ namespace CalorieCounter.ScaleEntries
 
             var percent = 1 - (ScaleEntries.IndexOfKey(scaleEntry.dateTime) / (float)(ScaleEntries.Count - 1));
             ScrollToPercent(percent);
-            InvokeRowChanged();
+            InvokeRowAdded(siblingStartIndex);
         }
     }
 }

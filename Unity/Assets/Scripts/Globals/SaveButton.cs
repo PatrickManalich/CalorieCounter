@@ -23,7 +23,8 @@ namespace CalorieCounter
             _button.onClick.AddListener(Button_OnClick);
             foreach(var scrollView in _scrollViews)
             {
-                scrollView.RowChanged += RefreshButtonInteractability;
+                scrollView.RowAdded += ScrollView_OnRowAdded;
+                scrollView.RowRemoved += ScrollView_OnRowRemoved;
             }
             _button.interactable = false;
         }
@@ -32,7 +33,8 @@ namespace CalorieCounter
         {
             foreach (var scrollView in _scrollViews)
             {
-                scrollView.RowChanged -= RefreshButtonInteractability;
+                scrollView.RowRemoved -= ScrollView_OnRowRemoved;
+                scrollView.RowAdded -= ScrollView_OnRowAdded;
             }
             _button.onClick.RemoveListener(Button_OnClick);
         }
@@ -58,6 +60,16 @@ namespace CalorieCounter
                 adapter.Export();
             }
             _button.interactable = false;
+        }
+
+        private void ScrollView_OnRowRemoved(object sender, ScrollView.RowChangedEventArgs e)
+        {
+            RefreshButtonInteractability();
+        }
+
+        private void ScrollView_OnRowAdded(object sender, ScrollView.RowChangedEventArgs e)
+        {
+            RefreshButtonInteractability();
         }
     }
 }
