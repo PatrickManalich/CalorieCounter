@@ -6,7 +6,8 @@ using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    public class MealProportionsScrollView : ScrollView {
+    [RequireComponent(typeof(ScrollView))]
+    public class MealProportionsScrollView : MonoBehaviour {
 
         public class MealProportionModifiedEventArgs : EventArgs
         {
@@ -37,6 +38,8 @@ namespace CalorieCounter.MealEntries {
         public event EventHandler<MealProportionModifiedEventArgs> MealProportionModified;
         public event EventHandler<MealSuggestionRemovedEventArgs> MealSuggestionRemoved;
 
+        public ScrollView ScrollView { get; private set; }
+
         public List<MealProportion> MealProportions { get; private set; } = new List<MealProportion>();
 
         public List<MealSuggestion> MealSuggestions { get; private set; } = new List<MealSuggestion>();
@@ -52,34 +55,17 @@ namespace CalorieCounter.MealEntries {
 
         private const string CustomMealSourceName = "Custom Meal";
 
-        public override void DeleteRow(int rowIndex)
-        {
-            if (MealProportions.Count > 0 && rowIndex < MealProportions.Count)
-            {
-                var removedMealProportion = MealProportions[rowIndex];
-                MealProportions.Remove(removedMealProportion);
-                MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Removed, _mealSourceType, removedMealProportion));
-            }
-            else if (MealSuggestions.Count > 0 && rowIndex >= MealProportions.Count)
-            {
-                var removedMealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
-                MealSuggestions.Remove(removedMealSuggestion);
-                MealSuggestionRemoved?.Invoke(this, new MealSuggestionRemovedEventArgs(_mealSourceType, removedMealSuggestion));
-            }
-            base.DeleteRow(rowIndex);
-        }
-
         public void AddMealProportion(MealProportion mealProportion)
         {
             MealProportions.Add(mealProportion);
 
-            int siblingStartIndex = MealProportions.IndexOf(mealProportion) * Content.constraintCount;
-            GameObject servingAmountText = InstantiateScrollViewText(siblingStartIndex);
-            GameObject nameText = InstantiateScrollViewText(++siblingStartIndex);
-            GameObject fatText = InstantiateScrollViewText(++siblingStartIndex);
-            GameObject carbText = InstantiateScrollViewText(++siblingStartIndex);
-            GameObject proteinText = InstantiateScrollViewText(++siblingStartIndex);
-            GameObject calorieText = InstantiateScrollViewText(++siblingStartIndex);
+            int siblingStartIndex = MealProportions.IndexOf(mealProportion) * ScrollView.Content.constraintCount;
+            GameObject servingAmountText = ScrollView.InstantiateScrollViewText(siblingStartIndex);
+            GameObject nameText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject fatText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject carbText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject proteinText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
+            GameObject calorieText = ScrollView.InstantiateScrollViewText(++siblingStartIndex);
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
             nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.mealSource);
@@ -88,22 +74,22 @@ namespace CalorieCounter.MealEntries {
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
 
-            ScrollToBottom();
+            ScrollView.ScrollToBottom();
             MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Added, _mealSourceType, mealProportion));
-            InvokeRowAdded(siblingStartIndex);
+            ScrollView.InvokeRowAdded(siblingStartIndex);
         }
 
         public void AddMealSuggestion(MealSuggestion mealSuggestion)
         {
             MealSuggestions.Add(mealSuggestion);
 
-            int siblingStartIndex = (MealProportions.Count + MealSuggestions.Count - 1) * Content.constraintCount;
-            GameObject servingAmountText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, siblingStartIndex);
-            GameObject nameText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
-            GameObject fatText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
-            GameObject carbText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
-            GameObject proteinText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
-            GameObject calorieText = InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            int siblingStartIndex = (MealProportions.Count + MealSuggestions.Count - 1) * ScrollView.Content.constraintCount;
+            GameObject servingAmountText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, siblingStartIndex);
+            GameObject nameText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject fatText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject carbText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject proteinText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
+            GameObject calorieText = ScrollView.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
 
             var mealProportion = mealSuggestion.mealProportion;
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
@@ -119,7 +105,7 @@ namespace CalorieCounter.MealEntries {
             var mealProportionsCount = MealProportions.Count;   // Cache since we're changing list
             for (int i = 0; i < mealProportionsCount; i++)
             {
-                DeleteRow(0);
+                ScrollView.DeleteRow(0);
             }
         }
 
@@ -128,7 +114,7 @@ namespace CalorieCounter.MealEntries {
             if (rowIndex >= MealProportions.Count)
             {
                 var mealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
-                DeleteRow(rowIndex);
+                ScrollView.DeleteRow(rowIndex);
                 AddMealProportion(mealSuggestion.mealProportion);
             }
         }
@@ -138,18 +124,41 @@ namespace CalorieCounter.MealEntries {
             var mealSuggestionsCount = MealSuggestions.Count;   // Cache since we're changing list
             for (int i = 0; i < mealSuggestionsCount; i++)
             {
-                DeleteRow(MealProportions.Count);
+                ScrollView.DeleteRow(MealProportions.Count);
             }
+        }
+
+        private void Awake()
+        {
+            ScrollView = GetComponent<ScrollView>();
         }
 
         private void Start()
         {
+            ScrollView.RowRemoved += ScrollView_OnRowRemoved;
             _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_OnCurrentDayTypeChanged;
         }
 
         private void OnDestroy()
         {
             _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_OnCurrentDayTypeChanged;
+            ScrollView.RowRemoved -= ScrollView_OnRowRemoved;
+        }
+
+        private void ScrollView_OnRowRemoved(object sender, ScrollView.RowChangedEventArgs e)
+        {
+            if (MealProportions.Count > 0 && e.RowIndex < MealProportions.Count)
+            {
+                var removedMealProportion = MealProportions[e.RowIndex];
+                MealProportions.Remove(removedMealProportion);
+                MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Removed, _mealSourceType, removedMealProportion));
+            }
+            else if (MealSuggestions.Count > 0 && e.RowIndex >= MealProportions.Count)
+            {
+                var removedMealSuggestion = MealSuggestions[e.RowIndex - MealProportions.Count];
+                MealSuggestions.Remove(removedMealSuggestion);
+                MealSuggestionRemoved?.Invoke(this, new MealSuggestionRemovedEventArgs(_mealSourceType, removedMealSuggestion));
+            }
         }
 
         private void DayTypeDropdown_OnCurrentDayTypeChanged()

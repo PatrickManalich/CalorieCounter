@@ -49,15 +49,15 @@ namespace CalorieCounter
 
         // We need to manually keep track of content children because calling Destroy() takes a frame to update,
         // so using GetChild() won't return the expected results.
-        protected List<GameObject> _contentChildren = new List<GameObject>();
+        public List<GameObject> ContentChildren { get; private set; } = new List<GameObject>();
 
-        public virtual void DeleteRow(int rowIndex)
+        public void DeleteRow(int rowIndex)
         {
             var childStartIndex = rowIndex * Content.constraintCount;
             for (var i = Content.constraintCount - 1; i >= 0; i--)
             {
                 var childIndex = childStartIndex + i;
-                var child = _contentChildren[childIndex];
+                var child = ContentChildren[childIndex];
                 if (child.GetComponent<ScrollViewText>())
                 {
                     var scrollViewText = child.GetComponent<ScrollViewText>();
@@ -65,7 +65,7 @@ namespace CalorieCounter
                     TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, scrollViewText));
                 }
                 Destroy(child);
-                _contentChildren.Remove(child);
+                ContentChildren.Remove(child);
             }
             RowRemoved?.Invoke(this, new RowChangedEventArgs(rowIndex));
         }
@@ -88,14 +88,14 @@ namespace CalorieCounter
         public void AddToScrollView(Transform transform)
         {
             transform.SetParent(Content.transform, false);
-            _contentChildren.Add(transform.gameObject);
+            ContentChildren.Add(transform.gameObject);
         }
 
         public void AddToScrollView(Transform transform, int siblingIndex)
         {
             transform.SetParent(Content.transform, false);
             transform.SetSiblingIndex(siblingIndex);
-            _contentChildren.Insert(siblingIndex, transform.gameObject);
+            ContentChildren.Insert(siblingIndex, transform.gameObject);
         }
 
         public void ScrollToTop()
@@ -113,7 +113,7 @@ namespace CalorieCounter
             StartCoroutine(ScrollToPercentCoroutine(percent));
         }
 
-        protected void InvokeRowAdded(int rowIndex)
+        public void InvokeRowAdded(int rowIndex)
         {
             RowAdded?.Invoke(this, new RowChangedEventArgs(rowIndex));
         }

@@ -511,9 +511,9 @@ MonoBehaviour:
   _adapters:
   - {fileID: 1508925266}
   _scrollViews:
-  - {fileID: 478179528}
-  - {fileID: 1264550863}
-  - {fileID: 564145725}
+  - {fileID: 478179530}
+  - {fileID: 1264550865}
+  - {fileID: 564145728}
   _date: {fileID: 1767589936}
   _dayTypeDropdown: {fileID: 1584375629}
 --- !u!114 &104649630 stripped
@@ -1542,21 +1542,6 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.2509804
       objectReference: {fileID: 0}
-    - target: {fileID: 2207707451995473499, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 478179528}
-    - target: {fileID: 2207707451995473497, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 478179528}
-    - target: {fileID: 2207707452425106752, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 478179528}
     - target: {fileID: 2207707453870116299, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1570,10 +1555,9 @@ PrefabInstance:
     - target: {fileID: 2207707453117714254, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000009796437
+      value: 0.00007276048
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7186c6ff6182f1842a7627fe5cb01f6c, type: 3}
 --- !u!224 &478179525 stripped
 RectTransform:
@@ -1605,8 +1589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affee1cb0a0de024c8c514c6bde076f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scrollViewTextPrefab: {fileID: 3800675787430429258, guid: 981bebcabfd9ff14082dddc50168b385,
-    type: 3}
   _scrollViewSuggestionTextPrefab: {fileID: 6568891147678359355, guid: cd9c95c85294b9c4081c09b3f38fad50,
     type: 3}
   _mealSourceType: 0
@@ -1624,6 +1606,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealProportionsScrollView: {fileID: 478179528}
+--- !u!114 &478179530 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 478179524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478179527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84692115bdf89984abf817a12834cb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &514968287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2113,21 +2107,6 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.2509804
       objectReference: {fileID: 0}
-    - target: {fileID: 2207707451995473499, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 564145725}
-    - target: {fileID: 2207707451995473497, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 564145725}
-    - target: {fileID: 2207707452425106752, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 564145725}
     - target: {fileID: 2207707453870116299, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2141,7 +2120,7 @@ PrefabInstance:
     - target: {fileID: 2207707453117714254, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000016500484
+      value: -0.00000095199096
       objectReference: {fileID: 0}
     - target: {fileID: 2207707452509677809, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
         type: 3}
@@ -2228,8 +2207,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: TotalTexts
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7186c6ff6182f1842a7627fe5cb01f6c, type: 3}
 --- !u!224 &564145720 stripped
 RectTransform:
@@ -2273,8 +2251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affee1cb0a0de024c8c514c6bde076f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scrollViewTextPrefab: {fileID: 3800675787430429258, guid: 981bebcabfd9ff14082dddc50168b385,
-    type: 3}
   _scrollViewSuggestionTextPrefab: {fileID: 6568891147678359355, guid: cd9c95c85294b9c4081c09b3f38fad50,
     type: 3}
   _mealSourceType: 2
@@ -2339,6 +2315,18 @@ MonoBehaviour:
     - {fileID: 478179528}
     - {fileID: 1264550863}
     - {fileID: 564145725}
+--- !u!114 &564145728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 564145719}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564145724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84692115bdf89984abf817a12834cb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &580917167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4535,21 +4523,6 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.2509804
       objectReference: {fileID: 0}
-    - target: {fileID: 2207707451995473499, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 1264550863}
-    - target: {fileID: 2207707451995473497, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 1264550863}
-    - target: {fileID: 2207707452425106752, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-        type: 3}
-      propertyPath: _scrollView
-      value: 
-      objectReference: {fileID: 1264550863}
     - target: {fileID: 2207707453870116299, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4563,15 +4536,14 @@ PrefabInstance:
     - target: {fileID: 2207707453117714254, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000019280296
+      value: 0.000017986167
       objectReference: {fileID: 0}
     - target: {fileID: 2207707453624752536, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7186c6ff6182f1842a7627fe5cb01f6c, type: 3}
 --- !u!1 &1264550861 stripped
 GameObject:
@@ -4597,8 +4569,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: affee1cb0a0de024c8c514c6bde076f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scrollViewTextPrefab: {fileID: 3800675787430429258, guid: 981bebcabfd9ff14082dddc50168b385,
-    type: 3}
   _scrollViewSuggestionTextPrefab: {fileID: 6568891147678359355, guid: cd9c95c85294b9c4081c09b3f38fad50,
     type: 3}
   _mealSourceType: 1
@@ -4616,6 +4586,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealProportionsScrollView: {fileID: 1264550863}
+--- !u!114 &1264550865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1264550860}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264550862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84692115bdf89984abf817a12834cb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1276876968
 PrefabInstance:
   m_ObjectHideFlags: 0

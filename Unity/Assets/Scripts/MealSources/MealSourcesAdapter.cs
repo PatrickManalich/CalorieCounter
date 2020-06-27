@@ -85,7 +85,7 @@ namespace CalorieCounter.MealSources {
                 {
                     mealSourcesScrollView.AddNamedMealSource(namedMealSource);
                 }
-                mealSourcesScrollView.ScrollToTop();
+                mealSourcesScrollView.ScrollView.ScrollToTop();
             }
         }
 
