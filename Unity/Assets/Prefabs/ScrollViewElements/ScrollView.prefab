@@ -115,7 +115,6 @@ GameObject:
   - component: {fileID: 2207707452425106759}
   - component: {fileID: 2207707452425106758}
   - component: {fileID: 2207707452425106757}
-  - component: {fileID: 2207707452425106752}
   m_Layer: 5
   m_Name: ScrollbarVertical
   m_TagString: Untagged
@@ -227,19 +226,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Scrollbar+ScrollEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &2207707452425106752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2207707452425106763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3207843db5c3f134d95bb25cad13c575, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scrollViewAssistant: {fileID: 4055726072949874970}
 --- !u!1 &2207707452509677808
 GameObject:
   m_ObjectHideFlags: 0
