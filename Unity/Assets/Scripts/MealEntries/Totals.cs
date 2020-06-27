@@ -30,6 +30,12 @@ namespace CalorieCounter.MealEntries {
         private TextMeshProUGUI _caloriesTotalText = default;
 
         [SerializeField]
+        private Color _aboveTargetColor = default;
+
+        [SerializeField]
+        private Color _belowTargetColor = default;
+
+        [SerializeField]
         private ScrollViewDictionary _scrollViewDictionary = default;
 
         public float TotalFat { get; private set; } = 0;
@@ -38,9 +44,12 @@ namespace CalorieCounter.MealEntries {
         public float TotalCalories { get; private set; } = 0;
 
         private TargetEntry _targetEntry;
+        private Color _originalColor;
 
         private void Start()
         {
+            _originalColor = _fatTotalText.color;
+
             _dayTypeDropdown.CurrentDayTypeChanged += Refresh;
             foreach (var scrollView in _scrollViewDictionary.Values)
             {
@@ -57,6 +66,7 @@ namespace CalorieCounter.MealEntries {
                     TotalCalories += mealProportion.calories;
                 }
             }
+
             Refresh();
         }
 
@@ -126,11 +136,11 @@ namespace CalorieCounter.MealEntries {
 
         private void RefreshText(TextMeshProUGUI text, float total, float target) {
             if (target == 0) {
-                text.color = Color.black;
+                text.color = _originalColor;
             } else if(total < target) {
-                text.color = Color.red;
+                text.color = _belowTargetColor;
             } else {
-                text.color = Color.green;
+                text.color = _aboveTargetColor;
             }
             text.text = total + " / " + target;
         }
