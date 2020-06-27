@@ -44,31 +44,12 @@ namespace CalorieCounter
         public ScrollRect ScrollRect { get; private set; }
         public GridLayoutGroup Content { get; private set; }
 
-        [SerializeField]
-        private GameObject _scrollViewTextPrefab = default;
-
         // We need to manually keep track of content children because calling Destroy() takes a frame to update,
         // so using GetChild() won't return the expected results.
         public List<GameObject> ContentChildren { get; private set; } = new List<GameObject>();
 
-        public void DeleteRow(int rowIndex)
-        {
-            var childStartIndex = rowIndex * Content.constraintCount;
-            for (var i = Content.constraintCount - 1; i >= 0; i--)
-            {
-                var childIndex = childStartIndex + i;
-                var child = ContentChildren[childIndex];
-                if (child.GetComponent<ScrollViewText>())
-                {
-                    var scrollViewText = child.GetComponent<ScrollViewText>();
-                    ScrollViewTexts.Remove(scrollViewText);
-                    TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, scrollViewText));
-                }
-                Destroy(child);
-                ContentChildren.Remove(child);
-            }
-            RowRemoved?.Invoke(this, new RowChangedEventArgs(rowIndex));
-        }
+        [SerializeField]
+        private GameObject _scrollViewTextPrefab = default;
 
         public GameObject InstantiateScrollViewText(int siblingIndex)
         {
@@ -98,6 +79,30 @@ namespace CalorieCounter
             ContentChildren.Insert(siblingIndex, transform.gameObject);
         }
 
+        public void InvokeRowAdded(int rowIndex)
+        {
+            RowAdded?.Invoke(this, new RowChangedEventArgs(rowIndex));
+        }
+
+        public void DeleteRow(int rowIndex)
+        {
+            var childStartIndex = rowIndex * Content.constraintCount;
+            for (var i = Content.constraintCount - 1; i >= 0; i--)
+            {
+                var childIndex = childStartIndex + i;
+                var child = ContentChildren[childIndex];
+                if (child.GetComponent<ScrollViewText>())
+                {
+                    var scrollViewText = child.GetComponent<ScrollViewText>();
+                    ScrollViewTexts.Remove(scrollViewText);
+                    TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, scrollViewText));
+                }
+                Destroy(child);
+                ContentChildren.Remove(child);
+            }
+            RowRemoved?.Invoke(this, new RowChangedEventArgs(rowIndex));
+        }
+
         public void ScrollToTop()
         {
             StartCoroutine(ScrollToPercentCoroutine(1));
@@ -111,11 +116,6 @@ namespace CalorieCounter
         public void ScrollToPercent(float percent)
         {
             StartCoroutine(ScrollToPercentCoroutine(percent));
-        }
-
-        public void InvokeRowAdded(int rowIndex)
-        {
-            RowAdded?.Invoke(this, new RowChangedEventArgs(rowIndex));
         }
 
         private void Awake()
