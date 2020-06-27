@@ -22,7 +22,7 @@ namespace CalorieCounter.MealEntries {
         private TMP_Dropdown _dropdown;
         private List<NamedMealSource> _nonarchivedNamedMealSources;
 
-        public void Reset() {
+        public void ResetDropdown() {
             _dropdown.value = 0;
             SelectedNamedMealSource = null;
         }
@@ -43,7 +43,7 @@ namespace CalorieCounter.MealEntries {
                 options.Add(new TMP_Dropdown.OptionData($"{nonarchivedNamedMealSource.name} (per {nonarchivedNamedMealSource.mealSource.servingSize.ToLower()})"));
             }
             _dropdown.AddOptions(options);
-            Reset();
+            ResetDropdown();
         }
 
         private void Start() {

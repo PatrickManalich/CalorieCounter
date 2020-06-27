@@ -75,8 +75,8 @@ namespace CalorieCounter.MealEntries
 
         private void ResetDropdowns()
         {
-            _servingAmountDropdown.Reset();
-            _nonarchivedNamedMealSourceDropdown.Reset();
+            _servingAmountDropdown.ResetDropdown();
+            _nonarchivedNamedMealSourceDropdown.ResetDropdown();
         }
     }
 }
