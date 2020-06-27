@@ -105,7 +105,7 @@ namespace CalorieCounter.MealEntries {
             var mealProportionsCount = MealProportions.Count;   // Cache since we're changing list
             for (int i = 0; i < mealProportionsCount; i++)
             {
-                ScrollViewAssistant.DeleteRow(0);
+                ScrollViewAssistant.RemoveRow(0);
             }
         }
 
@@ -114,7 +114,7 @@ namespace CalorieCounter.MealEntries {
             if (rowIndex >= MealProportions.Count)
             {
                 var mealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
-                ScrollViewAssistant.DeleteRow(rowIndex);
+                ScrollViewAssistant.RemoveRow(rowIndex);
                 AddMealProportion(mealSuggestion.mealProportion);
             }
         }
@@ -124,7 +124,7 @@ namespace CalorieCounter.MealEntries {
             var mealSuggestionsCount = MealSuggestions.Count;   // Cache since we're changing list
             for (int i = 0; i < mealSuggestionsCount; i++)
             {
-                ScrollViewAssistant.DeleteRow(MealProportions.Count);
+                ScrollViewAssistant.RemoveRow(MealProportions.Count);
             }
         }
 

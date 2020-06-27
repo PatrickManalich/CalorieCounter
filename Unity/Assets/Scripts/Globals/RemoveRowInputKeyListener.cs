@@ -4,7 +4,7 @@ using UnityEngine;
 namespace CalorieCounter
 {
     [RequireComponent(typeof(ScrollViewRowHighlighter))]
-    public class DeleteRowInputKeyListener : MonoBehaviour
+    public class RemoveRowInputKeyListener : MonoBehaviour
 	{
         [SerializeField]
         private ScrollViewAssistant _scrollViewAssistant = default;
@@ -29,9 +29,9 @@ namespace CalorieCounter
                 return;
             }
 
-            if (e.InputKeyCode == InputKeyCode.DeleteRow)
+            if (e.InputKeyCode == InputKeyCode.RemoveRow)
             {
-                _scrollViewAssistant.DeleteRow(_scrollViewRowHighlighter.HighlightedRowIndex);
+                _scrollViewAssistant.RemoveRow(_scrollViewRowHighlighter.HighlightedRowIndex);
                 _scrollViewRowHighlighter.ExitHighlightRow();
             }
         }

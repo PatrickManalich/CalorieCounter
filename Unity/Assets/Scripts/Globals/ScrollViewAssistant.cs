@@ -84,7 +84,7 @@ namespace CalorieCounter
             RowAdded?.Invoke(this, new RowChangedEventArgs(rowIndex));
         }
 
-        public void DeleteRow(int rowIndex)
+        public void RemoveRow(int rowIndex)
         {
             var childStartIndex = rowIndex * Content.constraintCount;
             for (var i = Content.constraintCount - 1; i >= 0; i--)
