@@ -1,4 +1,10 @@
-﻿using CalorieCounter.Utilities;
+﻿using CalorieCounter.MealEntries;
+using CalorieCounter.MealSources;
+using CalorieCounter.ScaleEntries;
+using CalorieCounter.TargetEntries;
+using CalorieCounter.Utilities;
+using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -44,7 +50,31 @@ namespace CalorieCounter.EditorExtensions
             if (Application.isPlaying)
                 return;
 
-            Debug.LogWarning("JSON Updater not implemented");
+            var scaleEntries = JsonConverter.ImportFile<SortedList<DateTime, ScaleEntry>>(GlobalPaths.JsonScaleEntriesFileName);
+            JsonConverter.ExportFile(scaleEntries, GlobalPaths.JsonScaleEntriesFileName);
+
+            var targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName);
+            JsonConverter.ExportFile(targetEntries, GlobalPaths.JsonTargetEntriesFileName);
+
+            var mealSourcesDictionary = JsonConverter.ImportFile<Dictionary<MealSourceType, Dictionary<string, MealSource>>>(GlobalPaths.JsonMealSourcesFileName);
+            JsonConverter.ExportFile(mealSourcesDictionary, GlobalPaths.JsonMealSourcesFileName);
+
+            var mealSourceNamesDictionary = JsonConverter.ImportFile<Dictionary<MealSourceType, Dictionary<string, string>>>(GlobalPaths.JsonMealSourceNamesFileName);
+            JsonConverter.ExportFile(mealSourceNamesDictionary, GlobalPaths.JsonMealSourceNamesFileName);
+
+            var dateTime = new DateTime(2019, 1, 1);
+            while (dateTime <= DateTime.Today)
+            {
+                var mealEntryPath = JsonConverter.GetMealEntryPath(dateTime);
+                if (JsonConverter.DoesFileExist(mealEntryPath))
+                {
+                    var mealEntry = JsonConverter.ImportFile<MealEntry>(mealEntryPath);
+                    JsonConverter.ExportFile(mealEntry, mealEntryPath);
+                }
+                dateTime = dateTime.AddDays(1);
+            }
+
+            Debug.Log("JSON Updater executed");
         }
 
         private static void CopyAll(DirectoryInfo source, DirectoryInfo target)
