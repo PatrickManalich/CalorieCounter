@@ -106,7 +106,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             {
                 if (dayMealPattern.daysOfTheWeek.HasFlag(dayOfTheWeek))
                 {
-                    AddMealSuggestionToList(dayMealPattern.mealSuggestion);
+                    AddMealSuggestionToList(dayMealPattern.serializableMealSuggestion.GetMealSuggestion());
                 }
             }
         }
@@ -117,7 +117,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             {
                 if (dayTypeMealPattern.dayType == _dayTypeDropdown.CurrentDayType)
                 {
-                    AddMealSuggestionToList(dayTypeMealPattern.mealSuggestion);
+                    AddMealSuggestionToList(dayTypeMealPattern.serializableMealSuggestion.GetMealSuggestion());
                 }
             }
         }
@@ -126,13 +126,14 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             foreach (var groupMealPattern in _groupMealPatterns)
             {
-                foreach (var mealSuggestion in groupMealPattern.mealSuggestions)
+                var mealSuggestions = groupMealPattern.serializableMealSuggestions.Select(s => s.GetMealSuggestion()).ToList();
+                foreach (var mealSuggestion in mealSuggestions)
                 {
                     var mealSource = mealSuggestion.mealProportion.mealSource;
                     var mealProportions = _scrollViewDictionary[mealSource.mealSourceType].MealProportions;
                     if (mealProportions.Exists(m => m.mealSource == mealSource))
                     {
-                        var otherMealSuggestions = groupMealPattern.mealSuggestions.Where(m => m != mealSuggestion);
+                        var otherMealSuggestions = mealSuggestions.Where(m => m != mealSuggestion);
                         var uniqueOtherMealSuggestions = new List<MealSuggestion>();
                         foreach(var otherMealSuggestion in otherMealSuggestions)
                         {

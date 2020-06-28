@@ -12,41 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad5bef3a1ba22041ae8ccb4059482dd, type: 3}
   m_Name: ChickenAndPotatoes
   m_EditorClassIdentifier: 
-  mealSuggestions:
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 7fa8d2da-933b-498c-b1c8-655a603d7da6
-        servingSize: Breast
-        fat: 1
-        carbs: 0
-        protein: 25
-        calories: 109
-        description: Simple Truth natural chicken breast
-        mealSourceType: 1
-        archived: 0
-      fat: 1
-      carbs: 0
-      protein: 25
-      calories: 109
-    priority: 1
-  - mealProportion:
-      servingAmount: 0.25
-      mealSource:
-        id: 76892867-512e-4270-90b5-334eddba872e
-        servingSize: Bag
-        fat: 20
-        carbs: 160
-        protein: 16
-        calories: 884
-        description: Idahoan buttery homestyle mashed potatoes family size
-        mealSourceType: 1
-        archived: 0
-      fat: 5
-      carbs: 40
-      protein: 4
-      calories: 221
-    priority: 0
   serializableMealSuggestions:
   - _serializableMealProportion:
       _servingAmount: 1

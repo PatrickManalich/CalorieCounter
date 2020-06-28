@@ -8,7 +8,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
     {
         [EnumFlag("Days Of The Week")]
         public DaysOfTheWeek daysOfTheWeek;
-        public MealSuggestion mealSuggestion;
         public SerializableMealSuggestion serializableMealSuggestion;
     }
 }

@@ -13,24 +13,6 @@ MonoBehaviour:
   m_Name: CfaNuggetsTwelveCount
   m_EditorClassIdentifier: 
   daysOfTheWeek: 8
-  mealSuggestion:
-    mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 6e095bf4-7439-4bce-8946-4a6434bed151
-        servingSize: Container
-        fat: 18
-        carbs: 13.5
-        protein: 42
-        calories: 384
-        description: Chic-fil-A twelve count nuggets
-        mealSourceType: 1
-        archived: 0
-      fat: 18
-      carbs: 13.5
-      protein: 42
-      calories: 384
-    priority: 0
   serializableMealSuggestion:
     _serializableMealProportion:
       _servingAmount: 1

@@ -13,24 +13,6 @@ MonoBehaviour:
   m_Name: ProteinSmoothie
   m_EditorClassIdentifier: 
   dayType: 2
-  mealSuggestion:
-    mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: a927f188-780c-459a-a546-fb5b01b5b033
-        servingSize: Smoothie
-        fat: 5.4
-        carbs: 60.4
-        protein: 32.2
-        calories: 419
-        description: The Classic protein smoothie
-        mealSourceType: 0
-        archived: 0
-      fat: 5.4
-      carbs: 60.4
-      protein: 32.2
-      calories: 419
-    priority: 0
   serializableMealSuggestion:
     _serializableMealProportion:
       _servingAmount: 1

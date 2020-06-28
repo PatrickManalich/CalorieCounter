@@ -12,41 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad5bef3a1ba22041ae8ccb4059482dd, type: 3}
   m_Name: ChickenCaesarSalad
   m_EditorClassIdentifier: 
-  mealSuggestions:
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 7fa8d2da-933b-498c-b1c8-655a603d7da6
-        servingSize: Breast
-        fat: 1
-        carbs: 0
-        protein: 25
-        calories: 109
-        description: Simple Truth natural chicken breast
-        mealSourceType: 1
-        archived: 0
-      fat: 1
-      carbs: 0
-      protein: 25
-      calories: 109
-    priority: 3
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 1be10e3d-4020-4245-acf3-d318bcef6823
-        servingSize: Bag
-        fat: 39
-        carbs: 30
-        protein: 15
-        calories: 531
-        description: Dole premium kit ultimate caesar
-        mealSourceType: 1
-        archived: 0
-      fat: 39
-      carbs: 30
-      protein: 15
-      calories: 531
-    priority: 0
   serializableMealSuggestions:
   - _serializableMealProportion:
       _servingAmount: 1

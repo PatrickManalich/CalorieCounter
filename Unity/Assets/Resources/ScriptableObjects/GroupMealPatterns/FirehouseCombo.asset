@@ -12,59 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad5bef3a1ba22041ae8ccb4059482dd, type: 3}
   m_Name: FirehouseCombo
   m_EditorClassIdentifier: 
-  mealSuggestions:
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 1c45dec9-91d7-4929-9feb-38a270caa8f5
-        servingSize: Sandwich
-        fat: 14
-        carbs: 44
-        protein: 39
-        calories: 458
-        description: Firehouse medium roast beef sandwich on white bread with only
-          provolone cheese
-        mealSourceType: 1
-        archived: 0
-      fat: 14
-      carbs: 44
-      protein: 39
-      calories: 458
-    priority: 0
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 08c49000-aa7c-4b56-b9f7-1f382aec76d4
-        servingSize: Cup
-        fat: 0.3
-        carbs: 52.3
-        protein: 0
-        calories: 211.9
-        description: Firehouse Powerade sports drink orange 22 fl oz
-        mealSourceType: 1
-        archived: 0
-      fat: 0.3
-      carbs: 52.3
-      protein: 0
-      calories: 211.9
-    priority: 0
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: f088eb64-762a-4dd2-8e28-a520efd07ce7
-        servingSize: Bag
-        fat: 8
-        carbs: 20
-        protein: 2
-        calories: 160
-        description: Firehouse Funyuns onion flavored rings
-        mealSourceType: 1
-        archived: 0
-      fat: 8
-      carbs: 20
-      protein: 2
-      calories: 160
-    priority: 0
   serializableMealSuggestions:
   - _serializableMealProportion:
       _servingAmount: 1

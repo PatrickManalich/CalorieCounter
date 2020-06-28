@@ -13,24 +13,6 @@ MonoBehaviour:
   m_Name: CfaShakeLarge
   m_EditorClassIdentifier: 
   daysOfTheWeek: 8
-  mealSuggestion:
-    mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: f632ab19-b9f2-487c-bfb3-5466da9a186d
-        servingSize: Shake
-        fat: 25
-        carbs: 86
-        protein: 15
-        calories: 629
-        description: Chic-fil-A large vanilla shake
-        mealSourceType: 1
-        archived: 0
-      fat: 25
-      carbs: 86
-      protein: 15
-      calories: 629
-    priority: 1
   serializableMealSuggestion:
     _serializableMealProportion:
       _servingAmount: 1

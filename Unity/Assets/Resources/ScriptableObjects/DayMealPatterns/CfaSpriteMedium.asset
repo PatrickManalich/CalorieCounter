@@ -13,24 +13,6 @@ MonoBehaviour:
   m_Name: CfaSpriteMedium
   m_EditorClassIdentifier: 
   daysOfTheWeek: 8
-  mealSuggestion:
-    mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: dfecb953-6351-4621-a98e-b65c5de371b7
-        servingSize: Container
-        fat: 0
-        carbs: 44
-        protein: 0
-        calories: 176
-        description: Chic-fil-A medium sprite
-        mealSourceType: 1
-        archived: 0
-      fat: 0
-      carbs: 44
-      protein: 0
-      calories: 176
-    priority: 0
   serializableMealSuggestion:
     _serializableMealProportion:
       _servingAmount: 1

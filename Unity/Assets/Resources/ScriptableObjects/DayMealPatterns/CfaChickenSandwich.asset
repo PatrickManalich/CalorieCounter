@@ -13,24 +13,6 @@ MonoBehaviour:
   m_Name: CfaChickenSandwich
   m_EditorClassIdentifier: 
   daysOfTheWeek: 8
-  mealSuggestion:
-    mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 21c41625-15f4-4efe-8ee8-ca437e6c3b16
-        servingSize: Sandwich
-        fat: 19
-        carbs: 40
-        protein: 28
-        calories: 443
-        description: Chic-fil-A chicken sandwich
-        mealSourceType: 1
-        archived: 0
-      fat: 19
-      carbs: 40
-      protein: 28
-      calories: 443
-    priority: 1
   serializableMealSuggestion:
     _serializableMealProportion:
       _servingAmount: 1

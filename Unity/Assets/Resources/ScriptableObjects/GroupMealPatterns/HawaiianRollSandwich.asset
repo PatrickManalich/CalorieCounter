@@ -12,58 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad5bef3a1ba22041ae8ccb4059482dd, type: 3}
   m_Name: HawaiianRollSandwich
   m_EditorClassIdentifier: 
-  mealSuggestions:
-  - mealProportion:
-      servingAmount: 4
-      mealSource:
-        id: 5a1fbfbf-e62f-47a6-aed8-a2a370cd9d67
-        servingSize: Roll
-        fat: 2.5
-        carbs: 14
-        protein: 3
-        calories: 90.5
-        description: King's Hawaiian savory butter roll
-        mealSourceType: 1
-        archived: 0
-      fat: 10
-      carbs: 56
-      protein: 12
-      calories: 362
-    priority: 1
-  - mealProportion:
-      servingAmount: 0.33
-      mealSource:
-        id: d1351318-c5b3-405a-add8-76e7208140c8
-        servingSize: Bag
-        fat: 12.6
-        carbs: 2.7
-        protein: 55.8
-        calories: 347.4
-        description: Kroger bag of 0.8 lb of sliced ham
-        mealSourceType: 1
-        archived: 0
-      fat: 4.2
-      carbs: 0.9
-      protein: 18.4
-      calories: 115
-    priority: 1
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 30d473b1-e992-4085-8142-e35d6b1b99e5
-        servingSize: Slice
-        fat: 5
-        carbs: 0
-        protein: 5
-        calories: 65
-        description: Sargento provolone cheese
-        mealSourceType: 1
-        archived: 0
-      fat: 5
-      carbs: 0
-      protein: 5
-      calories: 65
-    priority: 1
   serializableMealSuggestions:
   - _serializableMealProportion:
       _servingAmount: 4

@@ -12,58 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad5bef3a1ba22041ae8ccb4059482dd, type: 3}
   m_Name: PeanutButterAndJelly
   m_EditorClassIdentifier: 
-  mealSuggestions:
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: f89c3f26-9a89-4b4e-a0fa-29353551e9a2
-        servingSize: Sandwich
-        fat: 16
-        carbs: 8
-        protein: 7
-        calories: 204
-        description: Two tbsp. of Jif creamy peanut butter
-        mealSourceType: 0
-        archived: 0
-      fat: 16
-      carbs: 8
-      protein: 7
-      calories: 204
-    priority: 2
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 4bc5ded9-82d9-4a92-9263-ecc92d3acd9b
-        servingSize: Sandwich
-        fat: 0
-        carbs: 26
-        protein: 0
-        calories: 104
-        description: Two tbsp. of Welch's concord grape jelly
-        mealSourceType: 0
-        archived: 0
-      fat: 0
-      carbs: 26
-      protein: 0
-      calories: 104
-    priority: 2
-  - mealProportion:
-      servingAmount: 2
-      mealSource:
-        id: 17705e78-dcbb-4158-8b58-90731773adca
-        servingSize: Slice
-        fat: 0.8
-        carbs: 11.5
-        protein: 3
-        calories: 65.2
-        description: One slice of Nature's Own whitewheat healthy white bread
-        mealSourceType: 0
-        archived: 0
-      fat: 1.6
-      carbs: 23
-      protein: 6
-      calories: 130.4
-    priority: 2
   serializableMealSuggestions:
   - _serializableMealProportion:
       _servingAmount: 1

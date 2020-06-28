@@ -12,41 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad5bef3a1ba22041ae8ccb4059482dd, type: 3}
   m_Name: CreamCheeseBagel
   m_EditorClassIdentifier: 
-  mealSuggestions:
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: ec544bd0-c811-4627-a440-bad70cbe477f
-        servingSize: Bagel
-        fat: 20
-        carbs: 3.2
-        protein: 3.6
-        calories: 207.2
-        description: Philadelphia cream cheese original
-        mealSourceType: 0
-        archived: 0
-      fat: 20
-      carbs: 3.2
-      protein: 3.6
-      calories: 207.2
-    priority: 0
-  - mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: c721f1a1-ebd0-477b-9ffd-f25856d14eae
-        servingSize: Bagel
-        fat: 3.5
-        carbs: 53
-        protein: 9
-        calories: 279.5
-        description: Thomas everything bagel
-        mealSourceType: 0
-        archived: 0
-      fat: 3.5
-      carbs: 53
-      protein: 9
-      calories: 279.5
-    priority: 0
   serializableMealSuggestions:
   - _serializableMealProportion:
       _servingAmount: 1

@@ -13,24 +13,6 @@ MonoBehaviour:
   m_Name: CfaFriesMedium
   m_EditorClassIdentifier: 
   daysOfTheWeek: 8
-  mealSuggestion:
-    mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 1f7d8135-8164-4c38-bfc8-644981d2f1ad
-        servingSize: Container
-        fat: 18
-        carbs: 43
-        protein: 5
-        calories: 354
-        description: Chic-fil-A medium fries
-        mealSourceType: 1
-        archived: 0
-      fat: 18
-      carbs: 43
-      protein: 5
-      calories: 354
-    priority: 0
   serializableMealSuggestion:
     _serializableMealProportion:
       _servingAmount: 1

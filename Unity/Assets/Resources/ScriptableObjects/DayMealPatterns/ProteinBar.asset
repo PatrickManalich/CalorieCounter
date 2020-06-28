@@ -13,24 +13,6 @@ MonoBehaviour:
   m_Name: ProteinBar
   m_EditorClassIdentifier: 
   daysOfTheWeek: 62
-  mealSuggestion:
-    mealProportion:
-      servingAmount: 1
-      mealSource:
-        id: 2db5d992-e797-43c8-b6f5-a6c2aec3396b
-        servingSize: Bar
-        fat: 20
-        carbs: 9
-        protein: 30
-        calories: 336
-        description: Clif builder's protein bar chocolate mint
-        mealSourceType: 0
-        archived: 0
-      fat: 20
-      carbs: 9
-      protein: 30
-      calories: 336
-    priority: 0
   serializableMealSuggestion:
     _serializableMealProportion:
       _servingAmount: 1
