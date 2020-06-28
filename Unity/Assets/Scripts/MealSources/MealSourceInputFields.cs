@@ -14,13 +14,10 @@ namespace CalorieCounter.MealSources {
                 var carbs = float.Parse(_inputFields[3].text);
                 var protein = float.Parse(_inputFields[4].text);
                 var description = _inputFields[5].text;
-                var mealSource = new MealSource(servingSize, fat, carbs, protein, description, _mealSourceType);
+                var mealSource = new MealSource(servingSize, fat, carbs, protein, description, _mealSourcesScrollView.MealSourceType);
                 return new NamedMealSource(name, mealSource);
             }
         }
-
-        [SerializeField]
-        private MealSourceType _mealSourceType = default;
 
         [SerializeField]
         private GameObject _blank = default;

@@ -13,6 +13,11 @@ namespace CalorieCounter.MealSources {
 
         public Dictionary<string, string> MealSourceNames { get; private set; } = new Dictionary<string, string>();
 
+        public MealSourceType MealSourceType => _mealSourceType;
+
+        [SerializeField]
+        private MealSourceType _mealSourceType = default;
+
         [SerializeField]
         private MealSourceRenameField _mealSourceRenameField = default;
 

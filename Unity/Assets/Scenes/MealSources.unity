@@ -4659,7 +4659,6 @@ MonoBehaviour:
   - {fileID: 566115109}
   - {fileID: 999039802}
   - {fileID: 836488029}
-  _mealSourceType: 1
   _blank: {fileID: 854274375}
   _mealSourcesScrollView: {fileID: 1517040374}
 --- !u!1 &1336579274
@@ -5588,6 +5587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f9df830763d244f8e468cb9d46f69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealSourceType: 1
   _mealSourceRenameField: {fileID: 794435053}
 --- !u!1 &1517040375 stripped
 GameObject:
@@ -6629,6 +6629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f9df830763d244f8e468cb9d46f69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mealSourceType: 0
   _mealSourceRenameField: {fileID: 109278363}
 --- !u!1 &2042111769 stripped
 GameObject:
@@ -6723,7 +6724,6 @@ MonoBehaviour:
   - {fileID: 1914131442}
   - {fileID: 137061636}
   - {fileID: 574566188}
-  _mealSourceType: 0
   _blank: {fileID: 240646561}
   _mealSourcesScrollView: {fileID: 2042111768}
 --- !u!1001 &2100852472
