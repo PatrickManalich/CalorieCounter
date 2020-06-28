@@ -8,6 +8,8 @@ namespace CalorieCounter.MealSources
         public string Name { get; }
         public MealSource MealSource { get; }
 
+        public const string CustomMealSourceName = "Custom Meal";
+
         public NamedMealSource() { }
 
         [JsonConstructor]

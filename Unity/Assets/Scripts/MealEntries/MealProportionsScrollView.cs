@@ -53,8 +53,6 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private DayTypeDropdown _dayTypeDropdown = default;
 
-        private const string CustomMealSourceName = "Custom Meal";
-
         public void AddMealProportion(MealProportion mealProportion)
         {
             MealProportions.Add(mealProportion);
@@ -68,7 +66,7 @@ namespace CalorieCounter.MealEntries {
             GameObject calorieText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
 
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.MealSource);
+            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? NamedMealSource.CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.MealSource);
             fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
@@ -93,7 +91,7 @@ namespace CalorieCounter.MealEntries {
 
             var mealProportion = mealSuggestion.MealProportion;
             servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.MealSource);
+            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? NamedMealSource.CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.MealSource);
             fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
             carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
