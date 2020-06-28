@@ -26,7 +26,7 @@ namespace CalorieCounter.EditorExtensions
                 var mealProportion = mealSuggestion.mealProportion;
                 var mealSource = GetMealSource(mealProportion.mealSource.id);
                 var validatedMealProportion = new MealProportion(mealProportion.servingAmount, mealSource);
-                var validatedMealSuggestion = new MealSuggestion(validatedMealProportion, MealPatternType.Day, mealSuggestion.priority);
+                var validatedMealSuggestion = new MealSuggestion(validatedMealProportion, mealSuggestion.priority);
                 dayMealPattern.mealSuggestion = validatedMealSuggestion;
                 EditorUtility.SetDirty(dayMealPattern);
             }
@@ -38,7 +38,7 @@ namespace CalorieCounter.EditorExtensions
                 var mealProportion = mealSuggestion.mealProportion;
                 var mealSource = GetMealSource(mealProportion.mealSource.id);
                 var validatedMealProportion = new MealProportion(mealProportion.servingAmount, mealSource);
-                var validatedMealSuggestion = new MealSuggestion(validatedMealProportion, MealPatternType.DayType, mealSuggestion.priority);
+                var validatedMealSuggestion = new MealSuggestion(validatedMealProportion, mealSuggestion.priority);
                 dayTypeMealPattern.mealSuggestion = validatedMealSuggestion;
                 EditorUtility.SetDirty(dayTypeMealPattern);
             }
@@ -51,7 +51,7 @@ namespace CalorieCounter.EditorExtensions
                     var mealSuggestion = groupMealPattern.mealSuggestions[i];
                     var mealProportion = mealSuggestion.mealProportion;
                     var mealSource = GetMealSource(mealProportion.mealSource.id);
-                    groupMealPattern.mealSuggestions[i] = new MealSuggestion(new MealProportion(mealProportion.servingAmount, mealSource), MealPatternType.Group, mealSuggestion.priority);
+                    groupMealPattern.mealSuggestions[i] = new MealSuggestion(new MealProportion(mealProportion.servingAmount, mealSource), mealSuggestion.priority);
                     EditorUtility.SetDirty(groupMealPattern);
                 }
             }

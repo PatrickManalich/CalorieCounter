@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using UnityEngine;
 
 namespace CalorieCounter.MealEntries
 {
@@ -11,18 +10,14 @@ namespace CalorieCounter.MealEntries
 
         public MealProportion mealProportion;
 
-        [HideInInspector]
-        public MealPatternType mealPatternType;
-
         public int priority;
 
         public MealSuggestion() { }
 
         [JsonConstructor]
-        public MealSuggestion(MealProportion mealProportion, MealPatternType mealPatternType, int priority)
+        public MealSuggestion(MealProportion mealProportion, int priority)
         {
             this.mealProportion = mealProportion;
-            this.mealPatternType = mealPatternType;
             this.priority = priority;
         }
 
@@ -51,12 +46,12 @@ namespace CalorieCounter.MealEntries
 
         public override int GetHashCode()
         {
-            return (mealProportion, mealPatternType, priority).GetHashCode();
+            return (mealProportion, priority).GetHashCode();
         }
 
         public override string ToString()
         {
-            return $"Meal Proportion: {mealProportion}, Meal Pattern Type: {mealPatternType}, Priority: {priority}";
+            return $"Meal Proportion: {mealProportion}, Priority: {priority}";
         }
 
         public bool Equals(MealSuggestion other)
@@ -73,7 +68,7 @@ namespace CalorieCounter.MealEntries
             {
                 return false;
             }
-            return (mealProportion == other.mealProportion) && (mealPatternType == other.mealPatternType) && (priority == other.priority);
+            return (mealProportion == other.mealProportion) && (priority == other.priority);
         }
     }
 }

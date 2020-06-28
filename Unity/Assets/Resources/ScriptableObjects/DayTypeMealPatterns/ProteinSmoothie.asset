@@ -30,5 +30,4 @@ MonoBehaviour:
       carbs: 60.4
       protein: 32.2
       calories: 419
-    mealPatternType: 1
     priority: 0

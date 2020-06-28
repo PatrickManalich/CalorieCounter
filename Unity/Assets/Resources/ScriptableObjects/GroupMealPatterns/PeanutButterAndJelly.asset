@@ -29,7 +29,6 @@ MonoBehaviour:
       carbs: 8
       protein: 7
       calories: 204
-    mealPatternType: 2
     priority: 2
   - mealProportion:
       servingAmount: 1
@@ -47,7 +46,6 @@ MonoBehaviour:
       carbs: 26
       protein: 0
       calories: 104
-    mealPatternType: 2
     priority: 2
   - mealProportion:
       servingAmount: 2
@@ -65,5 +63,4 @@ MonoBehaviour:
       carbs: 23
       protein: 6
       calories: 130.4
-    mealPatternType: 2
     priority: 2

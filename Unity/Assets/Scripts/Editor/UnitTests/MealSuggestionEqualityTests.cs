@@ -16,7 +16,6 @@ namespace CalorieCounter.UnitTests
             RunSameReferenceTest();
             RunSameValuesTest();
             RunDifferentMealProportionsTest();
-            RunDifferentMealPatternTypesTest();
             RunDifferentPrioritiesTest();
             Utils.LogFailedTests(nameof(RunMealSuggestionEqualityTests));
         }
@@ -61,13 +60,6 @@ namespace CalorieCounter.UnitTests
             var mealSuggestion1 = Utils.CreateTestMealSuggestionWithMealProportion(Utils.CreateTestMealProportionWithServingAmount(1));
             var mealSuggestion2 = Utils.CreateTestMealSuggestionWithMealProportion(Utils.CreateTestMealProportionWithServingAmount(2));
             Utils.RunTestAndLog(mealSuggestion1 == mealSuggestion2, false, nameof(RunDifferentMealProportionsTest));
-        }
-
-        private static void RunDifferentMealPatternTypesTest()
-        {
-            var mealSuggestion1 = Utils.CreateTestMealSuggestionWithMealPatternType(MealPatternType.Day);
-            var mealSuggestion2 = Utils.CreateTestMealSuggestionWithMealPatternType(MealPatternType.DayType);
-            Utils.RunTestAndLog(mealSuggestion1 == mealSuggestion2, false, nameof(RunDifferentMealPatternTypesTest));
         }
 
         private static void RunDifferentPrioritiesTest()

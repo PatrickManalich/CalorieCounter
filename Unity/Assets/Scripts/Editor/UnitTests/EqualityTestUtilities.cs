@@ -96,22 +96,17 @@ namespace CalorieCounter.UnitTests
 
         public static MealSuggestion CreateTestMealSuggestion()
         {
-            return new MealSuggestion(CreateTestMealProportion(), MealPatternType.Day, 1);
+            return new MealSuggestion(CreateTestMealProportion(), 1);
         }
 
         public static MealSuggestion CreateTestMealSuggestionWithMealProportion(MealProportion mealProportion)
         {
-            return new MealSuggestion(mealProportion, MealPatternType.Day, 1);
-        }
-
-        public static MealSuggestion CreateTestMealSuggestionWithMealPatternType(MealPatternType mealPatternType)
-        {
-            return new MealSuggestion(CreateTestMealProportion(), mealPatternType, 1);
+            return new MealSuggestion(mealProportion, 1);
         }
 
         public static MealSuggestion CreateTestMealSuggestionWithPriority(int priority)
         {
-            return new MealSuggestion(CreateTestMealProportion(), MealPatternType.Day, priority);
+            return new MealSuggestion(CreateTestMealProportion(), priority);
         }
 
         public static Dictionary<MealSourceType, List<MealProportion>> CreateTestMealProportionsDictionary()
