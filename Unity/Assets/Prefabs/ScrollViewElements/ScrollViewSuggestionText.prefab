@@ -19,11 +19,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9160411999982760482, guid: f50e7026ef049824a9bb453a46b6f3c8,
-        type: 3}
-      propertyPath: m_Name
-      value: ScrollViewSuggestionText
-      objectReference: {fileID: 0}
     - target: {fileID: 9160411999982760480, guid: f50e7026ef049824a9bb453a46b6f3c8,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -78,6 +73,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontColor32.rgba
       value: 2156431496
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160411999982760482, guid: f50e7026ef049824a9bb453a46b6f3c8,
+        type: 3}
+      propertyPath: m_Name
+      value: ScrollViewSuggestionText
       objectReference: {fileID: 0}
     - target: {fileID: 9160411999982760483, guid: f50e7026ef049824a9bb453a46b6f3c8,
         type: 3}

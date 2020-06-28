@@ -7,10 +7,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7009641991965331291, guid: a2f9e774ec027af408cfe4db516ffdd6,
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
         type: 3}
-      propertyPath: m_Name
-      value: ButtonsHeaderText
+      propertyPath: m_textInfo.characterCount
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_text
+      value: Heading Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7009641991965331290, guid: a2f9e774ec027af408cfe4db516ffdd6,
         type: 3}
@@ -117,50 +157,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+    - target: {fileID: 7009641991965331291, guid: a2f9e774ec027af408cfe4db516ffdd6,
         type: 3}
-      propertyPath: m_textInfo.characterCount
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
-        type: 3}
-      propertyPath: m_textInfo.spaceCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
-        type: 3}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
-        type: 3}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
-        type: 3}
-      propertyPath: m_text
-      value: Heading Text
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
-        type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: -1
+      propertyPath: m_Name
+      value: ButtonsHeaderText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2f9e774ec027af408cfe4db516ffdd6, type: 3}
