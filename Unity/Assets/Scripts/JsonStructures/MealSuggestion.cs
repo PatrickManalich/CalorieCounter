@@ -51,7 +51,7 @@ namespace CalorieCounter.MealEntries
 
         public override int GetHashCode()
         {
-            return (mealProportion, mealPatternType).GetHashCode();
+            return (mealProportion, mealPatternType, priority).GetHashCode();
         }
 
         public override string ToString()
