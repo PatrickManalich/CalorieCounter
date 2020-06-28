@@ -8,6 +8,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
     {
         public DayType dayType;
         public MealSuggestion mealSuggestion;
+        public SerializableMealSuggestion serializableMealSuggestion;
     }
 }
 

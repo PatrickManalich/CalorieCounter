@@ -47,3 +47,14 @@ MonoBehaviour:
       protein: 9
       calories: 279.5
     priority: 0
+  serializableMealSuggestions:
+  - _serializableMealProportion:
+      _servingAmount: 1
+      _serializableMealSource:
+        _id: ec544bd0-c811-4627-a440-bad70cbe477f
+    _priority: 0
+  - _serializableMealProportion:
+      _servingAmount: 1
+      _serializableMealSource:
+        _id: c721f1a1-ebd0-477b-9ffd-f25856d14eae
+    _priority: 0

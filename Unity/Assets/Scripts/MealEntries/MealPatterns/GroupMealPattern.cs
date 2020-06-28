@@ -8,6 +8,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
     public class GroupMealPattern : ScriptableObject
     {
         public List<MealSuggestion> mealSuggestions;
+        public SerializableMealSuggestion[] serializableMealSuggestions;
     }
 }
 
