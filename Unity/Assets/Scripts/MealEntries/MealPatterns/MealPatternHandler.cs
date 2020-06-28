@@ -130,7 +130,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 foreach (var mealSuggestion in mealSuggestions)
                 {
                     var mealSource = mealSuggestion.mealProportion.mealSource;
-                    var mealProportions = _scrollViewDictionary[mealSource.mealSourceType].MealProportions;
+                    var mealProportions = _scrollViewDictionary[mealSource.MealSourceType].MealProportions;
                     if (mealProportions.Exists(m => m.mealSource == mealSource))
                     {
                         var otherMealSuggestions = mealSuggestions.Where(m => m != mealSuggestion);
@@ -177,7 +177,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             var mealProportion = mealSuggestion.mealProportion;
             var mealSource = mealProportion.mealSource;
-            var mealSourceType = mealSource.mealSourceType;
+            var mealSourceType = mealSource.MealSourceType;
 
             var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
             var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
@@ -192,7 +192,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             }
             else if (!doesExist)
             {
-                Debug.LogWarning($"Meal source with ID: {mealSource.id} does not exist");
+                Debug.LogWarning($"Meal source with ID: {mealSource.Id} does not exist");
             }
         }
     }

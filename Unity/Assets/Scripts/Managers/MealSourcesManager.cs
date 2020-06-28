@@ -74,15 +74,15 @@ namespace CalorieCounter.Managers
                         var mealSourceNames = _mealSourceNamesDictionary[mealSourceType];
                         foreach (var mealSource in mealSources.Values)
                         {
-                            if (mealSourceNames.ContainsKey(mealSource.id))
+                            if (mealSourceNames.ContainsKey(mealSource.Id))
                             {
-                                var mealSourceName = mealSourceNames[mealSource.id];
+                                var mealSourceName = mealSourceNames[mealSource.Id];
                                 var namedMealSource = new NamedMealSource(mealSourceName, mealSource);
-                                _namedMealSourcesDictionary[mealSourceType].Add(namedMealSource.name, namedMealSource);
+                                _namedMealSourcesDictionary[mealSourceType].Add(namedMealSource.Name, namedMealSource);
                             }
                             else
                             {
-                                Debug.LogWarning($"No meal source ID found in MealSourceNames for: {mealSource.id}");
+                                Debug.LogWarning($"No meal source ID found in MealSourceNames for: {mealSource.Id}");
                             }
                         }
                     }

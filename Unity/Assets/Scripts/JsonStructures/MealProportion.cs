@@ -23,9 +23,9 @@ namespace CalorieCounter.MealEntries {
         public MealProportion(float servingAmount, MealSource mealSource) {
             this.servingAmount = servingAmount;
             this.mealSource = mealSource;
-            fat = GlobalMethods.Round(mealSource.fat * this.servingAmount);
-            carbs = GlobalMethods.Round(mealSource.carbs * this.servingAmount);
-            protein = GlobalMethods.Round(mealSource.protein * this.servingAmount);
+            fat = GlobalMethods.Round(mealSource.Fat * this.servingAmount);
+            carbs = GlobalMethods.Round(mealSource.Carbs * this.servingAmount);
+            protein = GlobalMethods.Round(mealSource.Protein * this.servingAmount);
             calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
         }
 
@@ -58,7 +58,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         public override string ToString() {
-            return $"Serving Amount: {servingAmount}, Meal Source ID: {mealSource.id}, [ Fat: {fat}, Carbs: {carbs}, " +
+            return $"Serving Amount: {servingAmount}, Meal Source ID: {mealSource.Id}, [ Fat: {fat}, Carbs: {carbs}, " +
                 $"Protein: {protein}, Calories: {calories} ]";
         }
 

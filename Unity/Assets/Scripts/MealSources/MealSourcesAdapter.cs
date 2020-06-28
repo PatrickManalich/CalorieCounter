@@ -40,10 +40,10 @@ namespace CalorieCounter.MealSources {
         public static bool DoesMealSourceExist(MealSource mealSource)
         {
             var mealSourcesDictionary = GameManager.MealSourcesManager.ImportMealSourcesDictionary();
-            if (mealSourcesDictionary.Count > 0 && mealSourcesDictionary.ContainsKey(mealSource.mealSourceType))
+            if (mealSourcesDictionary.Count > 0 && mealSourcesDictionary.ContainsKey(mealSource.MealSourceType))
             {
-                var mealSources = mealSourcesDictionary[mealSource.mealSourceType];
-                return mealSources.ContainsKey(mealSource.id);
+                var mealSources = mealSourcesDictionary[mealSource.MealSourceType];
+                return mealSources.ContainsKey(mealSource.Id);
             }
             else
             {
@@ -54,8 +54,8 @@ namespace CalorieCounter.MealSources {
         public static string GetMealSourceName(MealSource mealSource)
         {
             var mealSourceNamesDictionary = GameManager.MealSourcesManager.ImportMealSourceNamesDictionary();
-            var mealSourceNames = mealSourceNamesDictionary[mealSource.mealSourceType];
-            return mealSourceNames[mealSource.id];
+            var mealSourceNames = mealSourceNamesDictionary[mealSource.MealSourceType];
+            return mealSourceNames[mealSource.Id];
         }
 
         public static List<NamedMealSource> GetNamedMealSources(MealSourceType mealSourceType)

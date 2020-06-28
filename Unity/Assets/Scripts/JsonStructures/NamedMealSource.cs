@@ -5,17 +5,16 @@ namespace CalorieCounter.MealSources
     public class NamedMealSource
     {
 
-        public string name;
-
-        public MealSource mealSource;
+        public string Name { get; }
+        public MealSource MealSource { get; }
 
         public NamedMealSource() { }
 
         [JsonConstructor]
         public NamedMealSource(string name, MealSource mealSource)
         {
-            this.name = name;
-            this.mealSource = mealSource;
+            Name = name;
+            MealSource = mealSource;
         }
 
         public static bool operator ==(NamedMealSource namedMealSource1, NamedMealSource namedMealSource2)
@@ -43,12 +42,12 @@ namespace CalorieCounter.MealSources
 
         public override int GetHashCode()
         {
-            return (name, mealSource).GetHashCode();
+            return (Name, MealSource).GetHashCode();
         }
 
         public override string ToString()
         {
-            return $"Name: {name}, Meal Source: {mealSource}";
+            return $"Name: {Name}, Meal Source: {MealSource}";
         }
 
         public bool Equals(NamedMealSource other)
@@ -65,7 +64,7 @@ namespace CalorieCounter.MealSources
             {
                 return false;
             }
-            return (name == other.name) && (mealSource == other.mealSource);
+            return (Name == other.Name) && (MealSource == other.MealSource);
         }
     }
 }

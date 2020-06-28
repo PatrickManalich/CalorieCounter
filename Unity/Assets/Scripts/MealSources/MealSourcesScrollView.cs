@@ -20,16 +20,16 @@ namespace CalorieCounter.MealSources {
 
         public void AddNamedMealSource(NamedMealSource namedMealSource)
         {
-            var mealSource = namedMealSource.mealSource;
-            MealSources.Add(mealSource.id, mealSource);
-            MealSourceNames.Add(mealSource.id, namedMealSource.name);
+            var mealSource = namedMealSource.MealSource;
+            MealSources.Add(mealSource.Id, mealSource);
+            MealSourceNames.Add(mealSource.Id, namedMealSource.Name);
 
-            if (mealSource.archived)
+            if (mealSource.Archived)
                 return;
 
-            _nonarchivedNamedMealSources.Add(namedMealSource.name, namedMealSource);
+            _nonarchivedNamedMealSources.Add(namedMealSource.Name, namedMealSource);
 
-            int siblingStartIndex = _nonarchivedNamedMealSources.IndexOfKey(namedMealSource.name) * ScrollViewAssistant.Content.constraintCount;
+            int siblingStartIndex = _nonarchivedNamedMealSources.IndexOfKey(namedMealSource.Name) * ScrollViewAssistant.Content.constraintCount;
             GameObject mealNameText = ScrollViewAssistant.InstantiateScrollViewText(siblingStartIndex);
             GameObject servingSizeText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
             GameObject fatText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
@@ -38,15 +38,15 @@ namespace CalorieCounter.MealSources {
             GameObject calorieText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
             GameObject descriptionText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
 
-            mealNameText.GetComponent<TextMeshProUGUI>().text = namedMealSource.name;
-            servingSizeText.GetComponent<TextMeshProUGUI>().text = mealSource.servingSize;
-            fatText.GetComponent<TextMeshProUGUI>().text = mealSource.fat.ToString();
-            carbText.GetComponent<TextMeshProUGUI>().text = mealSource.carbs.ToString();
-            proteinText.GetComponent<TextMeshProUGUI>().text = mealSource.protein.ToString();
-            calorieText.GetComponent<TextMeshProUGUI>().text = mealSource.calories.ToString();
-            descriptionText.GetComponent<TextMeshProUGUI>().text = mealSource.description;
+            mealNameText.GetComponent<TextMeshProUGUI>().text = namedMealSource.Name;
+            servingSizeText.GetComponent<TextMeshProUGUI>().text = mealSource.ServingSize;
+            fatText.GetComponent<TextMeshProUGUI>().text = mealSource.Fat.ToString();
+            carbText.GetComponent<TextMeshProUGUI>().text = mealSource.Carbs.ToString();
+            proteinText.GetComponent<TextMeshProUGUI>().text = mealSource.Protein.ToString();
+            calorieText.GetComponent<TextMeshProUGUI>().text = mealSource.Calories.ToString();
+            descriptionText.GetComponent<TextMeshProUGUI>().text = mealSource.Description;
 
-            var percent = 1 - (_nonarchivedNamedMealSources.IndexOfKey(namedMealSource.name) / (float) (_nonarchivedNamedMealSources.Count - 1));
+            var percent = 1 - (_nonarchivedNamedMealSources.IndexOfKey(namedMealSource.Name) / (float) (_nonarchivedNamedMealSources.Count - 1));
             ScrollViewAssistant.ScrollToPercent(percent);
             ScrollViewAssistant.InvokeRowAdded(siblingStartIndex);
         }
@@ -54,10 +54,10 @@ namespace CalorieCounter.MealSources {
 
         public void RenameNamedMealSource(NamedMealSource oldNamedMealSource, NamedMealSource newNamedMealSource)
         {
-            MealSources.Remove(oldNamedMealSource.mealSource.id);
-            MealSourceNames.Remove(oldNamedMealSource.mealSource.id);
-            ScrollViewAssistant.RemoveRow(_nonarchivedNamedMealSources.IndexOfKey(oldNamedMealSource.name));
-            _nonarchivedNamedMealSources.Remove(oldNamedMealSource.name);
+            MealSources.Remove(oldNamedMealSource.MealSource.Id);
+            MealSourceNames.Remove(oldNamedMealSource.MealSource.Id);
+            ScrollViewAssistant.RemoveRow(_nonarchivedNamedMealSources.IndexOfKey(oldNamedMealSource.Name));
+            _nonarchivedNamedMealSources.Remove(oldNamedMealSource.Name);
             AddNamedMealSource(newNamedMealSource);
         }
 
@@ -85,9 +85,9 @@ namespace CalorieCounter.MealSources {
 
         private void ScrollViewAssistant_OnRowRemoved(object sender, ScrollViewAssistant.RowChangedEventArgs e)
         {
-            var highlightedMealSource = _nonarchivedNamedMealSources.Values[e.RowIndex].mealSource;
+            var highlightedMealSource = _nonarchivedNamedMealSources.Values[e.RowIndex].MealSource;
             var archivedMealSource = new MealSource(highlightedMealSource, true);
-            MealSources[archivedMealSource.id] = archivedMealSource;
+            MealSources[archivedMealSource.Id] = archivedMealSource;
             _nonarchivedNamedMealSources.RemoveAt(e.RowIndex);
         }
     }

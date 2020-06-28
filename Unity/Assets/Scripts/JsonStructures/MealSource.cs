@@ -5,30 +5,22 @@ namespace CalorieCounter.MealSources {
 
     public class MealSource {
 
-        public string id;
-
-        public string servingSize;
-
-        public float fat;
-
-        public float carbs;
-
-        public float protein;
-
-        public float calories;
-
-        public string description;
-
-        public MealSourceType mealSourceType;
-
-        public bool archived;
+        public string Id { get; }
+        public string ServingSize { get; }
+        public float Fat { get; }
+        public float Carbs { get; }
+        public float Protein { get; }
+        public float Calories { get; }
+        public string Description { get; }
+        public MealSourceType MealSourceType { get; }
+        public bool Archived { get; }
 
         private const string CustomMealSourceServingSize = "Meal";
 
         public MealSource() { }
 
-        public MealSource(MealSource mealSource, bool archived) : this(mealSource.id, mealSource.servingSize, mealSource.fat, mealSource.carbs,
-            mealSource.protein, mealSource.description, mealSource.mealSourceType, archived) {}
+        public MealSource(MealSource mealSource, bool archived) : this(mealSource.Id, mealSource.ServingSize, mealSource.Fat, mealSource.Carbs,
+            mealSource.Protein, mealSource.Description, mealSource.MealSourceType, archived) {}
 
         public MealSource(string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType)
             : this(Guid.NewGuid().ToString(), servingSize, fat, carbs, protein, description, mealSourceType, false) {}
@@ -36,15 +28,15 @@ namespace CalorieCounter.MealSources {
         [JsonConstructor]
         public MealSource(string id, string servingSize, float fat, float carbs, float protein, string description, MealSourceType mealSourceType, bool archived)
         {
-            this.id = id;
-            this.servingSize = servingSize;
-            this.fat = fat > 0 ? GlobalMethods.Round(fat) : 0;
-            this.carbs = carbs > 0 ? GlobalMethods.Round(carbs) : 0;
-            this.protein = protein > 0 ? GlobalMethods.Round(protein) : 0;
-            calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
-            this.description = description;
-            this.mealSourceType = mealSourceType;
-            this.archived = archived;
+            Id = id;
+            ServingSize = servingSize;
+            Fat = fat > 0 ? GlobalMethods.Round(fat) : 0;
+            Carbs = carbs > 0 ? GlobalMethods.Round(carbs) : 0;
+            Protein = protein > 0 ? GlobalMethods.Round(protein) : 0;
+            Calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
+            Description = description;
+            MealSourceType = mealSourceType;
+            Archived = archived;
         }
 
         public static MealSource CreateCustomMealSource(float fat, float carbs, float protein) {
@@ -76,12 +68,12 @@ namespace CalorieCounter.MealSources {
 
         public override int GetHashCode()
         {
-            return (id, servingSize, fat, carbs, protein, calories, description, mealSourceType, archived).GetHashCode();
+            return (Id, ServingSize, Fat, Carbs, Protein, Calories, Description, MealSourceType, Archived).GetHashCode();
         }
 
         public override string ToString() {
-            return $"ID: {id}, Serving Size: {servingSize}, [ Fat: {fat}, Carbs: {carbs}, Protein: {protein}, " +
-                $"Calories: {calories} ], Description: {description}, Meal Type: {mealSourceType}, Archived: {archived}";
+            return $"ID: {Id}, Serving Size: {ServingSize}, [ Fat: {Fat}, Carbs: {Carbs}, Protein: {Protein}, " +
+                $"Calories: {Calories} ], Description: {Description}, Meal Type: {MealSourceType}, Archived: {Archived}";
         }
 
         public bool Equals(MealSource other)
@@ -98,9 +90,9 @@ namespace CalorieCounter.MealSources {
             {
                 return false;
             }
-            return (id == other.id) && (servingSize == other.servingSize) && (fat == other.fat) && (carbs == other.carbs) &&
-                (protein == other.protein) && (calories == other.calories) && (description == other.description) &&
-                (mealSourceType == other.mealSourceType) && (archived == other.archived);
+            return (Id == other.Id) && (ServingSize == other.ServingSize) && (Fat == other.Fat) && (Carbs == other.Carbs) &&
+                (Protein == other.Protein) && (Calories == other.Calories) && (Description == other.Description) &&
+                (MealSourceType == other.MealSourceType) && (Archived == other.Archived);
         }
     }
 }

@@ -35,12 +35,12 @@ namespace CalorieCounter.MealEntries {
         private void Awake()
         {
             _dropdown = GetComponent<TMP_Dropdown>();
-            _nonarchivedNamedMealSources = MealSourcesAdapter.GetNamedMealSources(_mealSourceType).Where(n => !n.mealSource.archived).ToList();
+            _nonarchivedNamedMealSources = MealSourcesAdapter.GetNamedMealSources(_mealSourceType).Where(n => !n.MealSource.Archived).ToList();
             _dropdown.ClearOptions();
             var options = new List<TMP_Dropdown.OptionData> { new TMP_Dropdown.OptionData(string.Empty) };
             foreach (var nonarchivedNamedMealSource in _nonarchivedNamedMealSources)
             {
-                options.Add(new TMP_Dropdown.OptionData($"{nonarchivedNamedMealSource.name} (per {nonarchivedNamedMealSource.mealSource.servingSize.ToLower()})"));
+                options.Add(new TMP_Dropdown.OptionData($"{nonarchivedNamedMealSource.Name} (per {nonarchivedNamedMealSource.MealSource.ServingSize.ToLower()})"));
             }
             _dropdown.AddOptions(options);
             ResetDropdown();

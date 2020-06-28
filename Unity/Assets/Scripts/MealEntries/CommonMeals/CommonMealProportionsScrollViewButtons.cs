@@ -54,7 +54,7 @@ namespace CalorieCounter.MealEntries
         private void SubmitButton_OnClick()
         {
             var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, 
-                _nonarchivedNamedMealSourceDropdown.SelectedNamedMealSource.mealSource);
+                _nonarchivedNamedMealSourceDropdown.SelectedNamedMealSource.MealSource);
             _mealProportionsScrollView.AddMealProportion(mealProportion);
 
             ResetDropdowns();
