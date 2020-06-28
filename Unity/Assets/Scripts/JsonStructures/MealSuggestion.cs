@@ -4,7 +4,6 @@ using System;
 namespace CalorieCounter.MealEntries
 {
 
-    [Serializable]
     public class MealSuggestion : IEquatable<MealSuggestion>
     {
 

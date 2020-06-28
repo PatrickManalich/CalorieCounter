@@ -1,36 +1,26 @@
 ﻿using Newtonsoft.Json;
 using System;
-using UnityEngine;
 
 namespace CalorieCounter.MealSources {
 
-    [Serializable]
     public class MealSource {
 
         public string id;
 
-        [HideInInspector]
         public string servingSize;
 
-        [HideInInspector]
         public float fat;
 
-        [HideInInspector]
         public float carbs;
 
-        [HideInInspector]
         public float protein;
 
-        [HideInInspector]
         public float calories;
 
-        [HideInInspector]
         public string description;
 
-        [HideInInspector]
         public MealSourceType mealSourceType;
 
-        [HideInInspector]
         public bool archived;
 
         private const string CustomMealSourceServingSize = "Meal";

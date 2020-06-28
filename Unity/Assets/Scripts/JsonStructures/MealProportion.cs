@@ -1,27 +1,20 @@
 ﻿using CalorieCounter.MealSources;
 using Newtonsoft.Json;
-using System;
-using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    [Serializable]
     public class MealProportion {
 
         public float servingAmount;
 
         public MealSource mealSource;
 
-        [HideInInspector]
         public float fat;
 
-        [HideInInspector]
         public float carbs;
 
-        [HideInInspector]
         public float protein;
 
-        [HideInInspector]
         public float calories;
 
         public MealProportion() { }

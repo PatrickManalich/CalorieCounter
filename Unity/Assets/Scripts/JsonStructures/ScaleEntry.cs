@@ -3,7 +3,6 @@ using System;
 
 namespace CalorieCounter.ScaleEntries {
 
-    [Serializable]
     public class ScaleEntry {
 
         public DateTime dateTime;

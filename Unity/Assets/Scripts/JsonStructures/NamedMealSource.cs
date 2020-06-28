@@ -1,9 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 
 namespace CalorieCounter.MealSources
 {
-    [Serializable]
     public class NamedMealSource
     {
 
