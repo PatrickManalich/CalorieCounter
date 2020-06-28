@@ -71,6 +71,7 @@ namespace CalorieCounter.MealEntries
             var value = _dayTypeDropdown.IsCurrentDayTypeRestOrTraining;
             _servingAmountDropdown.SetInteractable(value);
             _nonarchivedNamedMealSourceDropdown.SetInteractable(value);
+            ResetDropdowns();
         }
 
         private void ResetDropdowns()
