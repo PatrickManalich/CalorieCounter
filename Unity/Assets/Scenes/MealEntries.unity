@@ -6934,6 +6934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mealEntriesAdapter: {fileID: 1508925266}
   _date: {fileID: 1767589936}
+  _vacationDayCreator: {fileID: 932165868}
 --- !u!1001 &1662223369
 PrefabInstance:
   m_ObjectHideFlags: 0

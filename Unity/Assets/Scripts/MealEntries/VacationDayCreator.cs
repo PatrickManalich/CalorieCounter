@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,8 @@ namespace CalorieCounter.MealEntries
 {
 	public class VacationDayCreator : MonoBehaviour
 	{
+        public event Action VacationDaysCreated;
+
         [SerializeField]
         private MealEntriesAdapter _mealEntriesAdapter = default;
 
@@ -72,6 +75,7 @@ namespace CalorieCounter.MealEntries
                 _mealEntriesAdapter.Export(mealEntry, dateTime);
                 dateTime = dateTime.AddDays(1);
             }
+            VacationDaysCreated?.Invoke();
             Hide();
         }
 

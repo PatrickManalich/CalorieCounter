@@ -33,6 +33,9 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private Date _date = default;
 
+        [SerializeField]
+        private VacationDayCreator _vacationDayCreator = default;
+
         private DayType _dayType;
         private TMP_Dropdown _dropdown;
         private List<TMP_Dropdown.OptionData> _optionDataList = new List<TMP_Dropdown.OptionData>();
@@ -60,10 +63,12 @@ namespace CalorieCounter.MealEntries {
         private void Start() {
             _dropdown.onValueChanged.AddListener(i => Dropdown_OnValueChanged(i));
             _date.CurrentDateTimeChanged += Refresh;
+            _vacationDayCreator.VacationDaysCreated += Refresh;
         }
 
         private void OnDestroy()
         {
+            _vacationDayCreator.VacationDaysCreated -= Refresh;
             _date.CurrentDateTimeChanged -= Refresh;
             _dropdown.onValueChanged.RemoveListener(i => Dropdown_OnValueChanged(i));
         }
