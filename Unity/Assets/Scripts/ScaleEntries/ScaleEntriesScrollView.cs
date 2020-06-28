@@ -14,9 +14,9 @@ namespace CalorieCounter.ScaleEntries
 
         public void AddScaleEntry(ScaleEntry scaleEntry)
         {
-            ScaleEntries.Add(scaleEntry.dateTime, scaleEntry);
+            ScaleEntries.Add(scaleEntry.DateTime, scaleEntry);
 
-            int siblingStartIndex = ScaleEntries.IndexOfKey(scaleEntry.dateTime) * ScrollViewAssistant.Content.constraintCount;
+            int siblingStartIndex = ScaleEntries.IndexOfKey(scaleEntry.DateTime) * ScrollViewAssistant.Content.constraintCount;
             GameObject dateText = ScrollViewAssistant.InstantiateScrollViewText(siblingStartIndex);
             GameObject weightText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
             GameObject bodyFatText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
@@ -25,15 +25,15 @@ namespace CalorieCounter.ScaleEntries
             GameObject boneMassText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
             GameObject bmiText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
 
-            dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.dateTime.ToShortDateString();
-            weightText.GetComponent<TextMeshProUGUI>().text = scaleEntry.weight.ToString();
-            bodyFatText.GetComponent<TextMeshProUGUI>().text = scaleEntry.bodyFat.ToString();
-            bodyWaterText.GetComponent<TextMeshProUGUI>().text = scaleEntry.bodyWater.ToString();
-            muscleMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.muscleMass.ToString();
-            boneMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.boneMass.ToString();
-            bmiText.GetComponent<TextMeshProUGUI>().text = scaleEntry.bmi.ToString();
+            dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.DateTime.ToShortDateString();
+            weightText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Weight.ToString();
+            bodyFatText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BodyFat.ToString();
+            bodyWaterText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BodyWater.ToString();
+            muscleMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.MuscleMass.ToString();
+            boneMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BoneMass.ToString();
+            bmiText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Bmi.ToString();
 
-            var percent = 1 - (ScaleEntries.IndexOfKey(scaleEntry.dateTime) / (float)(ScaleEntries.Count - 1));
+            var percent = 1 - (ScaleEntries.IndexOfKey(scaleEntry.DateTime) / (float)(ScaleEntries.Count - 1));
             ScrollViewAssistant.ScrollToPercent(percent);
             ScrollViewAssistant.InvokeRowAdded(siblingStartIndex);
         }

@@ -51,8 +51,8 @@ namespace CalorieCounter.TargetEntries {
             var targetEntries = new SortedList<DateTime, TargetEntry>();
             foreach (var scaleEntry in _scaleEntriesScrollView.ScaleEntries.Values)
             {
-                var targetEntry = new TargetEntry(scaleEntry.dateTime, scaleEntry.weight);
-                targetEntries.Add(targetEntry.dateTime, targetEntry);
+                var targetEntry = new TargetEntry(scaleEntry.DateTime, scaleEntry.Weight);
+                targetEntries.Add(targetEntry.DateTime, targetEntry);
             }
             return targetEntries;
         }

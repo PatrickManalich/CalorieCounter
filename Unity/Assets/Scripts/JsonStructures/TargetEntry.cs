@@ -5,17 +5,17 @@ namespace CalorieCounter.TargetEntries {
 
     public class TargetEntry {
 
-        public DateTime dateTime;
-        public float weight;
-        public float calorieMaintenanceLevel;
-        public float restDayFat;
-        public float restDayCarbs;
-        public float restDayProtein;
-        public float restDayCalories;
-        public float trainingDayFat;
-        public float trainingDayCarbs;
-        public float trainingDayProtein;
-        public float trainingDayCalories;
+        public DateTime DateTime { get; }
+        public float Weight { get; }
+        public float CalorieMaintenanceLevel { get; }
+        public float RestDayFat { get; }
+        public float RestDayCarbs { get; }
+        public float RestDayProtein { get; }
+        public float RestDayCalories { get; }
+        public float TrainingDayFat { get; }
+        public float TrainingDayCarbs { get; }
+        public float TrainingDayProtein { get; }
+        public float TrainingDayCalories { get; }
 
         private const float HeightInInches = 68;
         private const int AgeInYears = 23;
@@ -32,19 +32,19 @@ namespace CalorieCounter.TargetEntries {
 
         [JsonConstructor]
         public TargetEntry(DateTime dateTime, float weight) {
-            this.dateTime = dateTime;
-            this.weight = weight;
-            calorieMaintenanceLevel = GlobalMethods.Round(((4.536f * this.weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
+            DateTime = dateTime;
+            Weight = weight;
+            CalorieMaintenanceLevel = GlobalMethods.Round(((4.536f * Weight) + (15.88f * HeightInInches) - (5 * AgeInYears) + 5) * ActivityMultiplier);
 
-            restDayCalories = GlobalMethods.Round(calorieMaintenanceLevel + RestDayCalorieSurplus);
-            restDayProtein = GlobalMethods.Round(this.weight * ProteinPerPound);
-            restDayFat = GlobalMethods.Round(restDayCalories * RestDayFatPercentage / 9);
-            restDayCarbs = GlobalMethods.Round((restDayCalories - (restDayProtein * 4) - restDayFat * 9) / 4);
+            RestDayCalories = GlobalMethods.Round(CalorieMaintenanceLevel + RestDayCalorieSurplus);
+            RestDayProtein = GlobalMethods.Round(Weight * ProteinPerPound);
+            RestDayFat = GlobalMethods.Round(RestDayCalories * RestDayFatPercentage / 9);
+            RestDayCarbs = GlobalMethods.Round((RestDayCalories - (RestDayProtein * 4) - RestDayFat * 9) / 4);
 
-            trainingDayCalories = GlobalMethods.Round(calorieMaintenanceLevel + TrainingDayCalorieSurplus);
-            trainingDayProtein = GlobalMethods.Round(this.weight * ProteinPerPound);
-            trainingDayFat = GlobalMethods.Round(trainingDayCalories * TrainingDayFatPercentage / 9);
-            trainingDayCarbs = GlobalMethods.Round((trainingDayCalories - (trainingDayProtein * 4) - trainingDayFat * 9) / 4);
+            TrainingDayCalories = GlobalMethods.Round(CalorieMaintenanceLevel + TrainingDayCalorieSurplus);
+            TrainingDayProtein = GlobalMethods.Round(Weight * ProteinPerPound);
+            TrainingDayFat = GlobalMethods.Round(TrainingDayCalories * TrainingDayFatPercentage / 9);
+            TrainingDayCarbs = GlobalMethods.Round((TrainingDayCalories - (TrainingDayProtein * 4) - TrainingDayFat * 9) / 4);
         }
 
         public static bool operator ==(TargetEntry targetEntry1, TargetEntry targetEntry2)
@@ -72,13 +72,13 @@ namespace CalorieCounter.TargetEntries {
 
         public override int GetHashCode()
         {
-            return (dateTime, weight, calorieMaintenanceLevel, restDayFat, restDayCarbs, restDayProtein, restDayCalories, trainingDayFat, trainingDayCarbs, trainingDayProtein, trainingDayCalories).GetHashCode();
+            return (DateTime, Weight, CalorieMaintenanceLevel, RestDayFat, RestDayCarbs, RestDayProtein, RestDayCalories, TrainingDayFat, TrainingDayCarbs, TrainingDayProtein, TrainingDayCalories).GetHashCode();
         }
 
         public override string ToString() {
-            return $"Date: {dateTime.ToShortDateString()}, Weight: {weight}, Calorie Maintenance Level:{calorieMaintenanceLevel}, " +
-                $"Rest Day: [ Fat: {restDayFat}, Carbs: {restDayCarbs}, Protein: {restDayProtein}, Calories: {restDayCalories} ], " +
-                $"Training Day: [ Fat: {trainingDayFat}, Carbs: {trainingDayCarbs}, Protein: {trainingDayProtein}, Calories: {trainingDayCalories} ]";
+            return $"Date: {DateTime.ToShortDateString()}, Weight: {Weight}, Calorie Maintenance Level:{CalorieMaintenanceLevel}, " +
+                $"Rest Day: [ Fat: {RestDayFat}, Carbs: {RestDayCarbs}, Protein: {RestDayProtein}, Calories: {RestDayCalories} ], " +
+                $"Training Day: [ Fat: {TrainingDayFat}, Carbs: {TrainingDayCarbs}, Protein: {TrainingDayProtein}, Calories: {TrainingDayCalories} ]";
         }
 
         public bool Equals(TargetEntry other)
@@ -95,10 +95,10 @@ namespace CalorieCounter.TargetEntries {
             {
                 return false;
             }
-            return (dateTime == other.dateTime) && (weight == other.weight) && (calorieMaintenanceLevel == other.calorieMaintenanceLevel) &&
-                (restDayFat == other.restDayFat) && (restDayCarbs == other.restDayCarbs) && (restDayProtein == other.restDayProtein) &&
-                (restDayCalories == other.restDayCalories) && (trainingDayFat == other.trainingDayFat) && (trainingDayCarbs == other.trainingDayCarbs) &&
-                (trainingDayProtein == other.trainingDayProtein) && (trainingDayCalories == other.trainingDayCalories);
+            return (DateTime == other.DateTime) && (Weight == other.Weight) && (CalorieMaintenanceLevel == other.CalorieMaintenanceLevel) &&
+                (RestDayFat == other.RestDayFat) && (RestDayCarbs == other.RestDayCarbs) && (RestDayProtein == other.RestDayProtein) &&
+                (RestDayCalories == other.RestDayCalories) && (TrainingDayFat == other.TrainingDayFat) && (TrainingDayCarbs == other.TrainingDayCarbs) &&
+                (TrainingDayProtein == other.TrainingDayProtein) && (TrainingDayCalories == other.TrainingDayCalories);
         }
     }
 }

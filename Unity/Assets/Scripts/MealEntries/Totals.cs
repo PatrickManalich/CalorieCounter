@@ -116,15 +116,15 @@ namespace CalorieCounter.MealEntries {
             float targetEntryProtein = 0;
             float targetEntryCalories = 0;
             if (_dayTypeDropdown.CurrentDayType == DayType.Rest) {
-                targetEntryFat = _targetEntry.restDayFat;
-                targetEntryCarbs = _targetEntry.restDayCarbs;
-                targetEntryProtein = _targetEntry.restDayProtein;
-                targetEntryCalories = _targetEntry.restDayCalories;
+                targetEntryFat = _targetEntry.RestDayFat;
+                targetEntryCarbs = _targetEntry.RestDayCarbs;
+                targetEntryProtein = _targetEntry.RestDayProtein;
+                targetEntryCalories = _targetEntry.RestDayCalories;
             } else if (_dayTypeDropdown.CurrentDayType == DayType.Training) {
-                targetEntryFat = _targetEntry.trainingDayFat;
-                targetEntryCarbs = _targetEntry.trainingDayCarbs;
-                targetEntryProtein = _targetEntry.trainingDayProtein;
-                targetEntryCalories = _targetEntry.trainingDayCalories;
+                targetEntryFat = _targetEntry.TrainingDayFat;
+                targetEntryCarbs = _targetEntry.TrainingDayCarbs;
+                targetEntryProtein = _targetEntry.TrainingDayProtein;
+                targetEntryCalories = _targetEntry.TrainingDayCalories;
             }
 
             RefreshText(_fatTotalText, TotalFat, targetEntryFat);

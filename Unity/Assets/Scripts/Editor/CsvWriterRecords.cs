@@ -18,13 +18,13 @@ namespace CalorieCounter.EditorExtensions
 
         public ScaleEntryRecord(ScaleEntry scaleEntry)
         {
-            Date = scaleEntry.dateTime.ToShortDateString();
-            Weight = scaleEntry.weight;
-            BodyFat = scaleEntry.bodyFat;
-            BodyWater = scaleEntry.bodyWater;
-            MuscleMass = scaleEntry.muscleMass;
-            BoneMass = scaleEntry.boneMass;
-            Bmi = scaleEntry.bmi;
+            Date = scaleEntry.DateTime.ToShortDateString();
+            Weight = scaleEntry.Weight;
+            BodyFat = scaleEntry.BodyFat;
+            BodyWater = scaleEntry.BodyWater;
+            MuscleMass = scaleEntry.MuscleMass;
+            BoneMass = scaleEntry.BoneMass;
+            Bmi = scaleEntry.Bmi;
         }
     }
 
@@ -45,17 +45,17 @@ namespace CalorieCounter.EditorExtensions
 
         public TargetEntryRecord(TargetEntry targetEntry)
         {
-            Date = targetEntry.dateTime.ToShortDateString();
-            Weight = targetEntry.weight;
-            CalorieMaintenanceLevel = targetEntry.calorieMaintenanceLevel;
-            RestDayFat = targetEntry.restDayFat;
-            RestDayCarbs = targetEntry.restDayCarbs;
-            RestDayProtein = targetEntry.restDayProtein;
-            RestDayCalories = targetEntry.restDayCalories;
-            TrainingDayFat = targetEntry.trainingDayFat;
-            TrainingDayCarbs = targetEntry.trainingDayCarbs;
-            TrainingDayProtein = targetEntry.trainingDayProtein;
-            TrainingDayCalories = targetEntry.trainingDayCalories;
+            Date = targetEntry.DateTime.ToShortDateString();
+            Weight = targetEntry.Weight;
+            CalorieMaintenanceLevel = targetEntry.CalorieMaintenanceLevel;
+            RestDayFat = targetEntry.RestDayFat;
+            RestDayCarbs = targetEntry.RestDayCarbs;
+            RestDayProtein = targetEntry.RestDayProtein;
+            RestDayCalories = targetEntry.RestDayCalories;
+            TrainingDayFat = targetEntry.TrainingDayFat;
+            TrainingDayCarbs = targetEntry.TrainingDayCarbs;
+            TrainingDayProtein = targetEntry.TrainingDayProtein;
+            TrainingDayCalories = targetEntry.TrainingDayCalories;
         }
     }
 
@@ -82,13 +82,13 @@ namespace CalorieCounter.EditorExtensions
             if (mealEntry.dayType == CalorieCounter.DayType.Rest || mealEntry.dayType == CalorieCounter.DayType.Training)
             {
                 TotalFat = mealEntry.totalFat;
-                TargetFat = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.restDayFat : targetEntry.trainingDayFat;
+                TargetFat = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayFat : targetEntry.TrainingDayFat;
                 TotalCarbs = mealEntry.totalCarbs;
-                TargetCarbs = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.restDayCarbs : targetEntry.trainingDayCarbs;
+                TargetCarbs = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayCarbs : targetEntry.TrainingDayCarbs;
                 TotalProtein = mealEntry.totalProtein;
-                TargetProtein = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.restDayProtein : targetEntry.trainingDayProtein;
+                TargetProtein = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayProtein : targetEntry.TrainingDayProtein;
                 TotalCalories = mealEntry.totalCalories;
-                TargetCalories = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.restDayCalories : targetEntry.trainingDayCalories;
+                TargetCalories = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayCalories : targetEntry.TrainingDayCalories;
             }
         }
     }
