@@ -7,45 +7,39 @@ namespace CalorieCounter.MealEntries {
 
     public class MealEntry {
 
-        public DateTime dateTime;
-
-        public DayType dayType;
-
-        public float totalFat;
-
-        public float totalCarbs;
-
-        public float totalProtein;
-
-        public float totalCalories;
-
-        public Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary;
+        public DateTime DateTime { get; }
+        public DayType DayType { get; }
+        public float TotalFat { get; }
+        public float TotalCarbs { get; }
+        public float TotalProtein { get; }
+        public float TotalCalories { get; }
+        public Dictionary<MealSourceType, List<MealProportion>> MealProportionsDictionary { get; }
 
         public MealEntry() { }
 
         [JsonConstructor]
         public MealEntry(DateTime dateTime, DayType dayType, Dictionary<MealSourceType, List<MealProportion>> mealProportionsDictionary) {
-            this.dateTime = dateTime;
-            this.dayType = dayType;
+            DateTime = dateTime;
+            DayType = dayType;
 
-            totalFat = 0;
-            totalCarbs = 0;
-            totalProtein = 0;
+            TotalFat = 0;
+            TotalCarbs = 0;
+            TotalProtein = 0;
             foreach(var mealProportions in mealProportionsDictionary.Values)
             {
                 foreach(var mealProportion in mealProportions)
                 {
-                    totalFat += mealProportion.Fat;
-                    totalCarbs += mealProportion.Carbs;
-                    totalProtein += mealProportion.Protein;
+                    TotalFat += mealProportion.Fat;
+                    TotalCarbs += mealProportion.Carbs;
+                    TotalProtein += mealProportion.Protein;
                 }
             }
-            totalFat = GlobalMethods.Round(totalFat);
-            totalCarbs = GlobalMethods.Round(totalCarbs);
-            totalProtein = GlobalMethods.Round(totalProtein);
-            totalCalories = GlobalMethods.Round((totalFat * 9) + (totalCarbs * 4) + (totalProtein * 4));
+            TotalFat = GlobalMethods.Round(TotalFat);
+            TotalCarbs = GlobalMethods.Round(TotalCarbs);
+            TotalProtein = GlobalMethods.Round(TotalProtein);
+            TotalCalories = GlobalMethods.Round((TotalFat * 9) + (TotalCarbs * 4) + (TotalProtein * 4));
 
-            this.mealProportionsDictionary = mealProportionsDictionary;
+            MealProportionsDictionary = mealProportionsDictionary;
         }
 
         public static bool operator ==(MealEntry mealEntry1, MealEntry mealEntry2)
@@ -73,18 +67,18 @@ namespace CalorieCounter.MealEntries {
 
         public override int GetHashCode()
         {
-            return (dateTime, dayType, totalFat, totalCarbs, totalProtein, totalCalories, mealProportionsDictionary).GetHashCode();
+            return (DateTime, DayType, TotalFat, TotalCarbs, TotalProtein, TotalCalories, MealProportionsDictionary).GetHashCode();
         }
 
         public override string ToString() {
             int mealProportionsDictCount = 0;
-            if (mealProportionsDictionary != null) {
-                foreach(var mealSourceType in mealProportionsDictionary.Keys) {
-                    mealProportionsDictCount += mealProportionsDictionary[mealSourceType].Count;
+            if (MealProportionsDictionary != null) {
+                foreach(var mealSourceType in MealProportionsDictionary.Keys) {
+                    mealProportionsDictCount += MealProportionsDictionary[mealSourceType].Count;
                 }
             }
-            return $"Date: {dateTime.ToShortDateString()}, Day Type: {dayType}, [ Total Fat: {totalFat}, " +
-                $"Total Carbs: {totalCarbs}, Total Protein: {totalProtein}, Total Calories: {totalCalories} ], " +
+            return $"Date: {DateTime.ToShortDateString()}, Day Type: {DayType}, [ Total Fat: {TotalFat}, " +
+                $"Total Carbs: {TotalCarbs}, Total Protein: {TotalProtein}, Total Calories: {TotalCalories} ], " +
                 $"Meal Proportions Dict Count: {mealProportionsDictCount}";
         }
 
@@ -105,14 +99,14 @@ namespace CalorieCounter.MealEntries {
 
             var mealProportionsDictionariesAreEqual = true;
 
-            if (mealProportionsDictionary.Keys.Count == other.mealProportionsDictionary.Keys.Count && 
-                mealProportionsDictionary.Keys.All(other.mealProportionsDictionary.Keys.Contains))
+            if (MealProportionsDictionary.Keys.Count == other.MealProportionsDictionary.Keys.Count && 
+                MealProportionsDictionary.Keys.All(other.MealProportionsDictionary.Keys.Contains))
             {
                 // Keys are equal
-                foreach (var mealSourceType in mealProportionsDictionary.Keys)
+                foreach (var mealSourceType in MealProportionsDictionary.Keys)
                 {
-                    var mealProportions = mealProportionsDictionary[mealSourceType];
-                    var otherMealProportions = other.mealProportionsDictionary[mealSourceType];
+                    var mealProportions = MealProportionsDictionary[mealSourceType];
+                    var otherMealProportions = other.MealProportionsDictionary[mealSourceType];
 
                     if (!mealProportions.All(otherMealProportions.Contains))
                     {
@@ -127,8 +121,8 @@ namespace CalorieCounter.MealEntries {
                 mealProportionsDictionariesAreEqual = false;
             }
 
-            return (dateTime == other.dateTime) && (dayType == other.dayType) && (totalFat == other.totalFat) &&
-                (totalCarbs == other.totalCarbs) && (totalProtein == other.totalProtein) && (totalCalories == other.totalCalories) &&
+            return (DateTime == other.DateTime) && (DayType == other.DayType) && (TotalFat == other.TotalFat) &&
+                (TotalCarbs == other.TotalCarbs) && (TotalProtein == other.TotalProtein) && (TotalCalories == other.TotalCalories) &&
                 mealProportionsDictionariesAreEqual;
         }
     }

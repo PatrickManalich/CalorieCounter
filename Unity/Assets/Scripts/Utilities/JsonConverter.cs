@@ -46,7 +46,7 @@ namespace CalorieCounter.Utilities {
             {
                 var mealEntryPath = Path.Combine(GlobalPaths.MealEntriesDirectoryName, fileInfo.Name);
                 var mealEntry = ImportFile<MealEntry>(mealEntryPath, true);
-                mealEntries.Add(mealEntry.dateTime, mealEntry);
+                mealEntries.Add(mealEntry.DateTime, mealEntry);
             }
             return mealEntries;
         }

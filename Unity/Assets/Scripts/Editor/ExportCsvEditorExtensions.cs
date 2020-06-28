@@ -58,11 +58,11 @@ namespace CalorieCounter.EditorExtensions
             var records = new List<ResultRecord>();
             foreach (var mealEntry in mealEntries.Values)
             {
-                if (mealEntry.dayType != DayType.Rest && mealEntry.dayType != DayType.Training)
+                if (mealEntry.DayType != DayType.Rest && mealEntry.DayType != DayType.Training)
                     continue;
 
-                var firstDateTimeFound = mealEntry.dateTime;
-                var terminationDateTime = mealEntry.dateTime.AddYears(-1);
+                var firstDateTimeFound = mealEntry.DateTime;
+                var terminationDateTime = mealEntry.DateTime.AddYears(-1);
                 while (!targetEntries.ContainsKey(firstDateTimeFound))
                 {
                     firstDateTimeFound = firstDateTimeFound.AddDays(-1);

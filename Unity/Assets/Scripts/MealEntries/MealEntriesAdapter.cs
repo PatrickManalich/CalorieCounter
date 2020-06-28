@@ -36,7 +36,7 @@ namespace CalorieCounter.MealEntries {
         public DayType GetMealEntryDayType()
         {
             var mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
-            return mealEntry.dayType;
+            return mealEntry.DayType;
         }
 
         private void Start() {
@@ -56,10 +56,10 @@ namespace CalorieCounter.MealEntries {
             }
 
             MealEntry mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
-            foreach (var mealSourceType in mealEntry.mealProportionsDictionary.Keys)
+            foreach (var mealSourceType in mealEntry.MealProportionsDictionary.Keys)
             {
                 MealProportionsScrollView scrollView = _scrollViewDictionary[mealSourceType];
-                foreach (var mealProportion in mealEntry.mealProportionsDictionary[mealSourceType])
+                foreach (var mealProportion in mealEntry.MealProportionsDictionary[mealSourceType])
                 {
                     scrollView.AddMealProportion(mealProportion);
                 }

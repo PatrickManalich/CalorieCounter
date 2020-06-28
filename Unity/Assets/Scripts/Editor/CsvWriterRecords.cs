@@ -75,20 +75,20 @@ namespace CalorieCounter.EditorExtensions
 
         public ResultRecord(MealEntry mealEntry, TargetEntry targetEntry)
         {
-            Date = mealEntry.dateTime.ToShortDateString();
-            DayType = mealEntry.dayType.ToString();
-            DayOfWeek = mealEntry.dateTime.DayOfWeek.ToString();
+            Date = mealEntry.DateTime.ToShortDateString();
+            DayType = mealEntry.DayType.ToString();
+            DayOfWeek = mealEntry.DateTime.DayOfWeek.ToString();
 
-            if (mealEntry.dayType == CalorieCounter.DayType.Rest || mealEntry.dayType == CalorieCounter.DayType.Training)
+            if (mealEntry.DayType == CalorieCounter.DayType.Rest || mealEntry.DayType == CalorieCounter.DayType.Training)
             {
-                TotalFat = mealEntry.totalFat;
-                TargetFat = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayFat : targetEntry.TrainingDayFat;
-                TotalCarbs = mealEntry.totalCarbs;
-                TargetCarbs = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayCarbs : targetEntry.TrainingDayCarbs;
-                TotalProtein = mealEntry.totalProtein;
-                TargetProtein = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayProtein : targetEntry.TrainingDayProtein;
-                TotalCalories = mealEntry.totalCalories;
-                TargetCalories = mealEntry.dayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayCalories : targetEntry.TrainingDayCalories;
+                TotalFat = mealEntry.TotalFat;
+                TargetFat = mealEntry.DayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayFat : targetEntry.TrainingDayFat;
+                TotalCarbs = mealEntry.TotalCarbs;
+                TargetCarbs = mealEntry.DayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayCarbs : targetEntry.TrainingDayCarbs;
+                TotalProtein = mealEntry.TotalProtein;
+                TargetProtein = mealEntry.DayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayProtein : targetEntry.TrainingDayProtein;
+                TotalCalories = mealEntry.TotalCalories;
+                TargetCalories = mealEntry.DayType == CalorieCounter.DayType.Rest ? targetEntry.RestDayCalories : targetEntry.TrainingDayCalories;
             }
         }
     }
