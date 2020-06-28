@@ -1,18 +1,25 @@
 Calorie Counter Release Notes
 
-Release  1.7.0 (6/27/2020)
+Release 1.8.0 (6/28/2020)
+ -Fix memory leak
+ -Create vacation day creator 
+ -Fix bug where dropdowns didn't reset if day type changed
+ -Used JSON updater to update all entries
+ -Fix bug regarding meal suggestion comparison
+
+Release 1.7.0 (6/27/2020)
  -Redesign UI using plugin
  -Fix bug in editor extension
  -Import plugin Flat White Minimalistic GUI
  -Fix race condition bug affecting totals
  -Export button is now a save button
 
-Release  1.6.1 (6/7/2020)
+Release 1.6.1 (6/7/2020)
  -Fix bug where export button shouldn't be interactable
  -Add to editor extensions
  -Fix memory leaks
 
-Release  1.6.0 (4/19/2020)
+Release 1.6.0 (4/19/2020)
  -Scrollbars become interactable depending on number of rows
  -Tweak size of scrollbars
  -Can no longer toggle the menu in menu scene
@@ -56,7 +63,7 @@ Release 1.1.1 (10/12/2019)
  -Add Nutritionix button
  
 Release 1.1.0 (9/28/2019)
- -Used JsonUpdater to update all entries
+ -Used JSON updater to update all entries
  -Fix bug where deleting a row exits highlighting
  -Add 0.1 and 6 as serving amount options
  -Ability to rename meal sources with F2
