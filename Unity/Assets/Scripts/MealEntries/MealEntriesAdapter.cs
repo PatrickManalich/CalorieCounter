@@ -33,6 +33,12 @@ namespace CalorieCounter.MealEntries {
             return doMealEntriesDiffer;
         }
 
+        public void Export(MealEntry mealEntry, DateTime dateTime)
+        {
+            GameManager.MealEntriesManager.ExportMealEntry(mealEntry, dateTime);
+            Refresh();
+        }
+
         public DayType GetMealEntryDayType()
         {
             var mealEntry = GameManager.MealEntriesManager.ImportMealEntry(_date.CurrentDateTime);
