@@ -40,6 +40,11 @@ namespace CalorieCounter.MealEntries {
 
         private DateTime _currentDateTime = DateTime.Today;
 
+        public void ResetDate()
+        {
+            CurrentDateTime = DateTime.Today;
+        }
+
         private void Start()
         {
             _oneMonthBackwardButton.onClick.AddListener(OneMonthBackwardButton_OnClick);
