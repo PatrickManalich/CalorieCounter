@@ -25,7 +25,7 @@ namespace CalorieCounter.EditorExtensions
             Debug.Log($"{JsonConverter.ReleaseJsonDirectoryPath} directory opened");
         }
 
-        [MenuItem(MenuItemDirectory + "Copy Release JSON %#r")]
+        [MenuItem(MenuItemDirectory + "Copy Release JSON %#j")]
         public static void CopyReleaseJson()
         {
             if (Application.isPlaying)
@@ -38,7 +38,7 @@ namespace CalorieCounter.EditorExtensions
             Debug.Log($"Copied {JsonConverter.ReleaseJsonDirectoryPath} into {JsonConverter.EditorJsonDirectoryPath}");
         }
 
-        [MenuItem(MenuItemDirectory + "JSON Updater %#j")]
+        [MenuItem(MenuItemDirectory + "JSON Updater")]
         public static void JsonUpdater()
         {
             if (Application.isPlaying)
