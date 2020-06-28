@@ -17,6 +17,7 @@ namespace CalorieCounter.MealEntries {
                 if (_currentDateTime != value)
                 {
                     _currentDateTime = value;
+                    Refresh();
                     CurrentDateTimeChanged?.Invoke();
                 }
             }
@@ -58,34 +59,22 @@ namespace CalorieCounter.MealEntries {
 
         private void OneMonthBackwardButton_OnClick()
         {
-            AddMonths(-1);
+            CurrentDateTime = CurrentDateTime.AddMonths(-1);
         }
 
         private void OneDayBackwardButton_OnClick()
         {
-            AddDays(-1);
+            CurrentDateTime = CurrentDateTime.AddDays(-1);
         }
 
         private void OneDayForwardButton_OnClick()
         {
-            AddDays(1);
+            CurrentDateTime = CurrentDateTime.AddDays(1);
         }
 
         private void OneMonthForwardButton_OnClick()
         {
-            AddMonths(1);
-        }
-
-        private void AddDays(int days)
-        {
-            CurrentDateTime = CurrentDateTime.AddDays(days);
-            Refresh();
-        }
-
-        private void AddMonths(int months)
-        {
-            CurrentDateTime = CurrentDateTime.AddMonths(months);
-            Refresh();
+            CurrentDateTime = CurrentDateTime.AddMonths(1);
         }
 
         private void Refresh()
