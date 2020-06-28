@@ -60,10 +60,10 @@ namespace CalorieCounter.MealEntries {
             {
                 foreach(var mealProportion in scrollView.MealProportions)
                 {
-                    TotalFat += mealProportion.fat;
-                    TotalCarbs += mealProportion.carbs;
-                    TotalProtein += mealProportion.protein;
-                    TotalCalories += mealProportion.calories;
+                    TotalFat += mealProportion.Fat;
+                    TotalCarbs += mealProportion.Carbs;
+                    TotalProtein += mealProportion.Protein;
+                    TotalCalories += mealProportion.Calories;
                 }
             }
 
@@ -83,18 +83,18 @@ namespace CalorieCounter.MealEntries {
         {
             if(e.MealProportionModifiedType == MealProportionModifiedType.Added)
             {
-                TotalFat += e.MealProportion.fat;
-                TotalCarbs += e.MealProportion.carbs;
-                TotalProtein += e.MealProportion.protein;
-                TotalCalories += e.MealProportion.calories;
+                TotalFat += e.MealProportion.Fat;
+                TotalCarbs += e.MealProportion.Carbs;
+                TotalProtein += e.MealProportion.Protein;
+                TotalCalories += e.MealProportion.Calories;
                 RefreshTexts();
             }
             else if(e.MealProportionModifiedType == MealProportionModifiedType.Removed)
             {
-                TotalFat -= e.MealProportion.fat;
-                TotalCarbs -= e.MealProportion.carbs;
-                TotalProtein -= e.MealProportion.protein;
-                TotalCalories -= e.MealProportion.calories;
+                TotalFat -= e.MealProportion.Fat;
+                TotalCarbs -= e.MealProportion.Carbs;
+                TotalProtein -= e.MealProportion.Protein;
+                TotalCalories -= e.MealProportion.Calories;
                 RefreshTexts();
             }
         }

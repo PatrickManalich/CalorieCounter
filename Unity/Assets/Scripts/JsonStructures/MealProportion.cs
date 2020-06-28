@@ -5,28 +5,23 @@ namespace CalorieCounter.MealEntries {
 
     public class MealProportion {
 
-        public float servingAmount;
-
-        public MealSource mealSource;
-
-        public float fat;
-
-        public float carbs;
-
-        public float protein;
-
-        public float calories;
+        public float ServingAmount { get; }
+        public MealSource MealSource { get; }
+        public float Fat { get; }
+        public float Carbs { get; }
+        public float Protein { get; }
+        public float Calories { get; }
 
         public MealProportion() { }
 
         [JsonConstructor]
         public MealProportion(float servingAmount, MealSource mealSource) {
-            this.servingAmount = servingAmount;
-            this.mealSource = mealSource;
-            fat = GlobalMethods.Round(mealSource.Fat * this.servingAmount);
-            carbs = GlobalMethods.Round(mealSource.Carbs * this.servingAmount);
-            protein = GlobalMethods.Round(mealSource.Protein * this.servingAmount);
-            calories = GlobalMethods.Round((fat * 9) + (carbs * 4) + (protein * 4));
+            ServingAmount = servingAmount;
+            MealSource = mealSource;
+            Fat = GlobalMethods.Round(mealSource.Fat * ServingAmount);
+            Carbs = GlobalMethods.Round(mealSource.Carbs * ServingAmount);
+            Protein = GlobalMethods.Round(mealSource.Protein * ServingAmount);
+            Calories = GlobalMethods.Round((Fat * 9) + (Carbs * 4) + (Protein * 4));
         }
 
         public static bool operator ==(MealProportion mealProportion1, MealProportion mealProportion2)
@@ -54,12 +49,12 @@ namespace CalorieCounter.MealEntries {
 
         public override int GetHashCode()
         {
-            return (servingAmount, mealSource, fat, carbs, protein, calories).GetHashCode();
+            return (ServingAmount, MealSource, Fat, Carbs, Protein, Calories).GetHashCode();
         }
 
         public override string ToString() {
-            return $"Serving Amount: {servingAmount}, Meal Source ID: {mealSource.Id}, [ Fat: {fat}, Carbs: {carbs}, " +
-                $"Protein: {protein}, Calories: {calories} ]";
+            return $"Serving Amount: {ServingAmount}, Meal Source ID: {MealSource.Id}, [ Fat: {Fat}, Carbs: {Carbs}, " +
+                $"Protein: {Protein}, Calories: {Calories} ]";
         }
 
         public bool Equals(MealProportion other)
@@ -76,8 +71,8 @@ namespace CalorieCounter.MealEntries {
             {
                 return false;
             }
-            return (servingAmount == other.servingAmount) && (mealSource == other.mealSource) && (fat == other.fat)
-                && (carbs == other.carbs) && (protein == other.protein) && (calories == other.calories);
+            return (ServingAmount == other.ServingAmount) && (MealSource == other.MealSource) && (Fat == other.Fat)
+                && (Carbs == other.Carbs) && (Protein == other.Protein) && (Calories == other.Calories);
         }
     }
 }

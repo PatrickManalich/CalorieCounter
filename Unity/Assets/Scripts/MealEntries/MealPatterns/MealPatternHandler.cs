@@ -129,15 +129,15 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 var mealSuggestions = groupMealPattern.serializableMealSuggestions.Select(s => s.GetMealSuggestion()).ToList();
                 foreach (var mealSuggestion in mealSuggestions)
                 {
-                    var mealSource = mealSuggestion.mealProportion.mealSource;
+                    var mealSource = mealSuggestion.MealProportion.MealSource;
                     var mealProportions = _scrollViewDictionary[mealSource.MealSourceType].MealProportions;
-                    if (mealProportions.Exists(m => m.mealSource == mealSource))
+                    if (mealProportions.Exists(m => m.MealSource == mealSource))
                     {
                         var otherMealSuggestions = mealSuggestions.Where(m => m != mealSuggestion);
                         var uniqueOtherMealSuggestions = new List<MealSuggestion>();
                         foreach(var otherMealSuggestion in otherMealSuggestions)
                         {
-                            if (!mealProportions.Exists(m => m.mealSource == otherMealSuggestion.mealProportion.mealSource))
+                            if (!mealProportions.Exists(m => m.MealSource == otherMealSuggestion.MealProportion.MealSource))
                             {
                                 uniqueOtherMealSuggestions.Add(otherMealSuggestion);
                             }
@@ -163,7 +163,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
                     var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
                     var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
                     var count = Mathf.Min(PrioritizedMealSuggestionLimit, mealSuggestions.Count);
-                    var prioritizedMealSuggestions = mealSuggestions.OrderBy(m => m.priority).ToList().GetRange(0, count);
+                    var prioritizedMealSuggestions = mealSuggestions.OrderBy(m => m.Priority).ToList().GetRange(0, count);
 
                     foreach (var prioritizedMealSuggestion in prioritizedMealSuggestions)
                     {
@@ -175,14 +175,14 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private void AddMealSuggestionToList(MealSuggestion mealSuggestion)
         {
-            var mealProportion = mealSuggestion.mealProportion;
-            var mealSource = mealProportion.mealSource;
+            var mealProportion = mealSuggestion.MealProportion;
+            var mealSource = mealProportion.MealSource;
             var mealSourceType = mealSource.MealSourceType;
 
             var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
             var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
-            var isUniqueMealSuggestion = !mealProportionsScrollView.MealProportions.Exists(m => m.mealSource == mealSource) &&
-                !mealSuggestions.Exists(m => m.mealProportion.mealSource == mealSource);
+            var isUniqueMealSuggestion = !mealProportionsScrollView.MealProportions.Exists(m => m.MealSource == mealSource) &&
+                !mealSuggestions.Exists(m => m.MealProportion.MealSource == mealSource);
             var isNotRemovedMealSuggestion = !_removedMealSuggestionsDictionary[mealSourceType].Contains(mealSuggestion);
             var doesExist = MealSourcesAdapter.DoesMealSourceExist(mealSource);
 

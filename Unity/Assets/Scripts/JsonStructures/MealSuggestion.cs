@@ -7,17 +7,16 @@ namespace CalorieCounter.MealEntries
     public class MealSuggestion : IEquatable<MealSuggestion>
     {
 
-        public MealProportion mealProportion;
-
-        public int priority;
+        public MealProportion MealProportion { get; }
+        public int Priority { get; }
 
         public MealSuggestion() { }
 
         [JsonConstructor]
         public MealSuggestion(MealProportion mealProportion, int priority)
         {
-            this.mealProportion = mealProportion;
-            this.priority = priority;
+            MealProportion = mealProportion;
+            Priority = priority;
         }
 
         public static bool operator ==(MealSuggestion mealSuggestion1, MealSuggestion mealSuggestion2)
@@ -45,12 +44,12 @@ namespace CalorieCounter.MealEntries
 
         public override int GetHashCode()
         {
-            return (mealProportion, priority).GetHashCode();
+            return (MealProportion, Priority).GetHashCode();
         }
 
         public override string ToString()
         {
-            return $"Meal Proportion: {mealProportion}, Priority: {priority}";
+            return $"Meal Proportion: {MealProportion}, Priority: {Priority}";
         }
 
         public bool Equals(MealSuggestion other)
@@ -67,7 +66,7 @@ namespace CalorieCounter.MealEntries
             {
                 return false;
             }
-            return (mealProportion == other.mealProportion) && (priority == other.priority);
+            return (MealProportion == other.MealProportion) && (Priority == other.Priority);
         }
     }
 }

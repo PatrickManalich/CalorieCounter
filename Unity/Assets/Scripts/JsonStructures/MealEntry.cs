@@ -35,9 +35,9 @@ namespace CalorieCounter.MealEntries {
             {
                 foreach(var mealProportion in mealProportions)
                 {
-                    totalFat += mealProportion.fat;
-                    totalCarbs += mealProportion.carbs;
-                    totalProtein += mealProportion.protein;
+                    totalFat += mealProportion.Fat;
+                    totalCarbs += mealProportion.Carbs;
+                    totalProtein += mealProportion.Protein;
                 }
             }
             totalFat = GlobalMethods.Round(totalFat);

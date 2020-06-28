@@ -67,12 +67,12 @@ namespace CalorieCounter.MealEntries {
             GameObject proteinText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
             GameObject calorieText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
 
-            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.mealSource);
-            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.fat.ToString();
-            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.carbs.ToString();
-            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
-            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
+            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
+            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.MealSource);
+            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
+            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
+            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
+            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
 
             ScrollViewAssistant.ScrollToBottom();
             MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Added, _mealSourceType, mealProportion));
@@ -91,13 +91,13 @@ namespace CalorieCounter.MealEntries {
             GameObject proteinText = ScrollViewAssistant.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
             GameObject calorieText = ScrollViewAssistant.InstantiateScrollViewText(_scrollViewSuggestionTextPrefab, ++siblingStartIndex);
 
-            var mealProportion = mealSuggestion.mealProportion;
-            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.servingAmount.ToString();
-            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.mealSource);
-            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.fat.ToString();
-            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.carbs.ToString();
-            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.protein.ToString();
-            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.calories.ToString();
+            var mealProportion = mealSuggestion.MealProportion;
+            servingAmountText.GetComponent<TextMeshProUGUI>().text = mealProportion.ServingAmount.ToString();
+            nameText.GetComponent<TextMeshProUGUI>().text = _mealSourceType == MealSourceType.Custom ? CustomMealSourceName : MealSourcesAdapter.GetMealSourceName(mealProportion.MealSource);
+            fatText.GetComponent<TextMeshProUGUI>().text = mealProportion.Fat.ToString();
+            carbText.GetComponent<TextMeshProUGUI>().text = mealProportion.Carbs.ToString();
+            proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
+            calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
         }
 
         public void ClearMealProportions()
@@ -115,7 +115,7 @@ namespace CalorieCounter.MealEntries {
             {
                 var mealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
                 ScrollViewAssistant.RemoveRow(rowIndex);
-                AddMealProportion(mealSuggestion.mealProportion);
+                AddMealProportion(mealSuggestion.MealProportion);
             }
         }
 
