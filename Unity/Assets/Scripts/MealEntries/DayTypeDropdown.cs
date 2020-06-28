@@ -64,7 +64,7 @@ namespace CalorieCounter.MealEntries {
 
         private void OnDestroy()
         {
-            _date.CurrentDateTimeChanged += Refresh;
+            _date.CurrentDateTimeChanged -= Refresh;
             _dropdown.onValueChanged.RemoveListener(i => Dropdown_OnValueChanged(i));
         }
 
