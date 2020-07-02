@@ -1,5 +1,4 @@
-﻿
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ namespace CalorieCounter.EditorExtensions
 
         private const string MenuItemDirectory = @"Calorie Counter/Scene/";
 
-        [MenuItem(MenuItemDirectory + "Dirty Save All Open Scenes %#d")]
+        [MenuItem(MenuItemDirectory + "Dirty Save All Open Scenes %&#d")]
         public static void DirtySaveAllOpenScenes()
         {
             if (Application.isPlaying)

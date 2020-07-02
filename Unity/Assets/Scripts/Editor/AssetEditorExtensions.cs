@@ -8,7 +8,7 @@ namespace CalorieCounter.EditorExtensions
     {
         private const string MenuItemDirectory = @"Calorie Counter/Assets/";
 
-        [MenuItem(MenuItemDirectory + "Force Reserialize Selected Assets %#r")]
+        [MenuItem(MenuItemDirectory + "Force Reserialize Selected Assets %&#r")]
         public static void ForceReserializeSelectedAssets()
         {
             var assetPaths = new List<string>();
