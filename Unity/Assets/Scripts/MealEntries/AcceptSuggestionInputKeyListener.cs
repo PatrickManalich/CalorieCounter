@@ -24,7 +24,7 @@ namespace CalorieCounter.MealEntries
 
         private void InputKeyManager_OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
         {
-            if (!_scrollViewRowHighlighter.RowHighlighted)
+            if (!_scrollViewRowHighlighter.IsRowHighlighted)
             {
                 return;
             }

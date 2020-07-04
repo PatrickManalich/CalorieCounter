@@ -9,7 +9,7 @@ namespace CalorieCounter
     {
         public int HighlightedRowIndex { get; private set; }
 
-        public bool RowHighlighted => HighlightedRowIndex != -1 && _contentRectTransform.childCount > 0;
+        public bool IsRowHighlighted => HighlightedRowIndex != -1 && _contentRectTransform.childCount > 0;
 
         [SerializeField]
         private ScrollViewAssistant _scrollViewAssistant = default;
