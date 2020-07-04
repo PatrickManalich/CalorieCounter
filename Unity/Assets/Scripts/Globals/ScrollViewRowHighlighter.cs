@@ -20,14 +20,6 @@ namespace CalorieCounter
         private RectTransform _rectTransform;
         private RectTransform _contentRectTransform;
 
-        public void EnterHighlightRow(int siblingIndex)
-        {
-            HighlightedRowIndex = siblingIndex / _scrollViewAssistant.Content.constraintCount;
-            _image.enabled = true;
-            var contentOffset = _contentRectTransform.anchoredPosition.y;
-            _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _scrollViewAssistant.Content.cellSize.y * -1) + contentOffset);
-        }
-
         public void ExitHighlightRow()
         {
             HighlightedRowIndex = -1;
@@ -81,8 +73,12 @@ namespace CalorieCounter
         {
             if (e.HighlightedType == HighlightedType.Entered)
             {
-                EnterHighlightRow(e.SiblingIndex);
-            } else if(e.HighlightedType == HighlightedType.Exited)
+                HighlightedRowIndex = e.SiblingIndex / _scrollViewAssistant.Content.constraintCount;
+                _image.enabled = true;
+                var contentOffset = _contentRectTransform.anchoredPosition.y;
+                _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _scrollViewAssistant.Content.cellSize.y * -1) + contentOffset);
+            }
+            else if(e.HighlightedType == HighlightedType.Exited)
             {
                 ExitHighlightRow();
             }
