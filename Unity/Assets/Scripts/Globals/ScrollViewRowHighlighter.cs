@@ -75,8 +75,8 @@ namespace CalorieCounter
             {
                 HighlightedRowIndex = e.SiblingIndex / _scrollViewAssistant.Content.constraintCount;
                 _image.enabled = true;
-                var contentOffset = _contentRectTransform.anchoredPosition.y;
-                _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _scrollViewAssistant.Content.cellSize.y * -1) + contentOffset);
+                _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _scrollViewAssistant.Content.cellSize.y * -1)
+                    + _contentRectTransform.anchoredPosition.y);
             }
             else if(e.HighlightedType == HighlightedType.Exited)
             {
