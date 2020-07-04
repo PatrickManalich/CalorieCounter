@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,12 @@ namespace CalorieCounter
     [RequireComponent(typeof(Image))]
     public class ScrollViewRowHighlighter : MonoBehaviour
     {
+        public event Action EnteredHighlightRow;
+
+        public event Action ExitedHighlightRow;
+
+        public ScrollViewText HighlightedScrollViewText { get; private set; }
+
         public int HighlightedRowIndex { get; private set; }
 
         public bool IsRowHighlighted => HighlightedRowIndex != -1 && _contentRectTransform.childCount > 0;
@@ -22,8 +29,11 @@ namespace CalorieCounter
 
         public void ExitHighlightRow()
         {
+            HighlightedScrollViewText = null;
             HighlightedRowIndex = -1;
             _image.enabled = false;
+
+            ExitedHighlightRow?.Invoke();
         }
 
         private void Awake()
@@ -73,10 +83,13 @@ namespace CalorieCounter
         {
             if (e.HighlightedType == HighlightedType.Entered)
             {
+                HighlightedScrollViewText = (ScrollViewText)sender;
                 HighlightedRowIndex = e.SiblingIndex / _scrollViewAssistant.Content.constraintCount;
                 _image.enabled = true;
                 _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _scrollViewAssistant.Content.cellSize.y * -1)
                     + _contentRectTransform.anchoredPosition.y);
+
+                EnteredHighlightRow?.Invoke();
             }
             else if(e.HighlightedType == HighlightedType.Exited)
             {
