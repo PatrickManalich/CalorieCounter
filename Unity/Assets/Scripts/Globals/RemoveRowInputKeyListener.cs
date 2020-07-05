@@ -24,12 +24,7 @@ namespace CalorieCounter
 
         private void InputKeyManager_OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
         {
-            if (!_scrollViewRowHighlighter.IsRowHighlighted)
-            {
-                return;
-            }
-
-            if (e.InputKeyCode == InputKeyCode.RemoveRow)
+            if (e.InputKeyCode == InputKeyCode.RemoveRow && _scrollViewRowHighlighter.IsRowHighlighted)
             {
                 _scrollViewAssistant.RemoveRow(_scrollViewRowHighlighter.HighlightedRowIndex);
                 _scrollViewRowHighlighter.ExitHighlightRow();

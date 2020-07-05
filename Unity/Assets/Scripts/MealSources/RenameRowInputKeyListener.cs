@@ -24,12 +24,7 @@ namespace CalorieCounter.MealSources
 
         private void InputKeyManager_OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
         {
-            if (!_scrollViewRowHighlighter.IsRowHighlighted)
-            {
-                return;
-            }
-
-            if (e.InputKeyCode == InputKeyCode.RenameRow)
+            if (e.InputKeyCode == InputKeyCode.RenameRow && _scrollViewRowHighlighter.IsRowHighlighted)
             {
                 _mealSourcesScrollView.ShowRenameField(_scrollViewRowHighlighter.HighlightedRowIndex);
                 _scrollViewRowHighlighter.ExitHighlightRow();
