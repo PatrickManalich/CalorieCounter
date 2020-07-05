@@ -33,7 +33,7 @@ namespace CalorieCounter {
         Saturday = 64
     }
 
-    public enum InputKeyCode { ToggleMenu, RemoveRow, RenameRow, AcceptSuggestion }
+    public enum InputKeyCode { ToggleMenu, RemoveRow, RenameRow, AcceptSuggestion, SelectNext }
 
     public static class GlobalConsts
     {
