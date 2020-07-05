@@ -1,9 +1,11 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace CalorieCounter
 {
+    [RequireComponent(typeof(TextMeshProUGUI))]
     public class ScrollViewText : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
 
@@ -21,6 +23,8 @@ namespace CalorieCounter
 
         public event EventHandler<HighlightedEventArgs> Highlighted;
 
+        public TextMeshProUGUI Text { get; private set; }
+
         public void OnPointerEnter(PointerEventData eventData)
         {
             Highlighted?.Invoke(this, new HighlightedEventArgs(HighlightedType.Entered, transform.GetSiblingIndex()));
@@ -29,6 +33,11 @@ namespace CalorieCounter
         public void OnPointerExit(PointerEventData pointerEventData)
         {
             Highlighted?.Invoke(this, new HighlightedEventArgs(HighlightedType.Exited, transform.GetSiblingIndex()));
+        }
+
+        private void Awake()
+        {
+            Text = GetComponent<TextMeshProUGUI>();
         }
     }
 }
