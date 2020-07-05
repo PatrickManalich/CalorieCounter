@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1761669258879479364}
   - component: {fileID: 288078043438211392}
   - component: {fileID: 5467599884560894102}
+  - component: {fileID: 7442448791743199761}
   m_Layer: 5
   m_Name: GreenLongTextButton
   m_TagString: Untagged
@@ -120,6 +121,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7442448791743199761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2693983719533860013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552c47f39fb4d224da31e8cc9510f2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1546955099825124246
 PrefabInstance:
   m_ObjectHideFlags: 0

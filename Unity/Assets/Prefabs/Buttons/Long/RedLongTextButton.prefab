@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4764693007399540958}
   - component: {fileID: 2950028511702411987}
   - component: {fileID: 1428353282359246258}
+  - component: {fileID: 1671414411445305080}
   m_Layer: 5
   m_Name: RedLongTextButton
   m_TagString: Untagged
@@ -120,6 +121,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1671414411445305080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5340488219532066291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552c47f39fb4d224da31e8cc9510f2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2205167699809146571
 PrefabInstance:
   m_ObjectHideFlags: 0
