@@ -58,7 +58,7 @@ namespace CalorieCounter.MealEntries {
         private void Dropdown_OnValueChanged(int value)
         {
             var oldIsValid = IsValid;
-            SelectedNamedMealSource = value > 0 ? _nonarchivedNamedMealSources[value - 1] : default;
+            SelectedNamedMealSource = value > 0 ? _nonarchivedNamedMealSources[value - 1] : null;
             if(IsValid != oldIsValid)
             {
                 ValidityChanged?.Invoke();
