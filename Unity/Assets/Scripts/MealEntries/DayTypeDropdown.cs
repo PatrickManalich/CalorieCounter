@@ -60,7 +60,7 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void Start() {
-            _dropdown.onValueChanged.AddListener(i => Dropdown_OnValueChanged(i));
+            _dropdown.onValueChanged.AddListener(Dropdown_OnValueChanged);
             _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
             _vacationDayCreator.VacationDaysCreated += VacationDayCreator_OnVacationDaysCreated;
         }
@@ -69,7 +69,7 @@ namespace CalorieCounter.MealEntries {
         {
             _vacationDayCreator.VacationDaysCreated -= VacationDayCreator_OnVacationDaysCreated;
             _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
-            _dropdown.onValueChanged.RemoveListener(i => Dropdown_OnValueChanged(i));
+            _dropdown.onValueChanged.RemoveListener(Dropdown_OnValueChanged);
         }
 
         public void Dropdown_OnValueChanged(int index)
