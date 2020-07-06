@@ -1,5 +1,17 @@
 Calorie Counter Release Notes
 
+Release 1.9.0 (7/5/2020)
+ -Fix memory leak
+ -Set first selected selectable in all scenes
+ -Make input fields navigable with tab key
+ -Add scroll view text overflow panel
+ -Add shader backgrounds to all scenes
+ -Change scroll view row highlighter colors
+ -Import plugin Gradient Shader Pack
+ -Upgrade all packages in package manager
+ -Import dependency packages for Gradient Shader Pack 
+ -Update Unity project to 2019.4.1f1
+
 Release 1.8.0 (6/28/2020)
  -Fix memory leak
  -Create vacation day creator 
