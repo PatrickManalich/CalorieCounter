@@ -88,12 +88,12 @@ namespace CalorieCounter.MealSources
             _cancelButton.interactable = false;
         }
 
-        private void MealSourceInputFields_OnValidityChanged()
+        private void MealSourceInputFields_OnValidityChanged(object sender, System.EventArgs e)
         {
             _submitButton.interactable = _mealSourceInputFields.IsValid;
         }
 
-        private void MealSourceRenameField_OnShown()
+        private void MealSourceRenameField_OnShown(object sender, System.EventArgs e)
         {
             _addButton.interactable = false;
             _submitButton.interactable = true;

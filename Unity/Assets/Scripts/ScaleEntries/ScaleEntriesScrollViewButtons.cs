@@ -72,7 +72,7 @@ namespace CalorieCounter.ScaleEntries
             _cancelButton.interactable = false;
         }
 
-        private void ScaleEntryInputFields_OnValidityChanged()
+        private void ScaleEntryInputFields_OnValidityChanged(object sender, System.EventArgs e)
         {
             _submitButton.interactable = _scaleEntryInputFields.IsValid;
         }

@@ -45,7 +45,7 @@ namespace CalorieCounter.MealEntries {
         {
             _originalColor = _fatTotalText.color;
 
-            _dayTypeDropdown.CurrentDayTypeChanged += Refresh;
+            _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_CurrentDayTypeChanged;
             foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
             {
                 scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
@@ -71,7 +71,12 @@ namespace CalorieCounter.MealEntries {
             {
                 scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
             }
-            _dayTypeDropdown.CurrentDayTypeChanged -= Refresh;
+            _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_CurrentDayTypeChanged;
+        }
+
+        private void DayTypeDropdown_CurrentDayTypeChanged(object sender, System.EventArgs e)
+        {
+            Refresh();
         }
 
         private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)

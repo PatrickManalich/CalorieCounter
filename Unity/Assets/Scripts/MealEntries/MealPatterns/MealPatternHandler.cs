@@ -39,8 +39,8 @@ namespace CalorieCounter.MealEntries.MealPatterns
             _dayTypeMealPatterns = Resources.LoadAll(GlobalPaths.DayTypeMealPatternsPath, typeof(DayTypeMealPattern)).Cast<DayTypeMealPattern>().ToList();
             _groupMealPatterns = Resources.LoadAll(GlobalPaths.GroupMealPatternsPath, typeof(GroupMealPattern)).Cast<GroupMealPattern>().ToList();
 
-            _date.CurrentDateTimeChanged += Refresh;
-            _dayTypeDropdown.CurrentDayTypeChanged += Refresh;
+            _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
+            _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_OnCurrentDayTypeChanged;
             foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
             {
                 scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
@@ -57,8 +57,18 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 scrollView.MealSuggestionRemoved -= ScrollView_OnMealSuggestionRemoved;
                 scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
             }
-            _dayTypeDropdown.CurrentDayTypeChanged -= Refresh;
-            _date.CurrentDateTimeChanged -= Refresh;
+            _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_OnCurrentDayTypeChanged;
+            _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
+        }
+
+        private void Date_OnCurrentDateTimeChanged(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        private void DayTypeDropdown_OnCurrentDayTypeChanged(object sender, EventArgs e)
+        {
+            Refresh();
         }
 
         private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)

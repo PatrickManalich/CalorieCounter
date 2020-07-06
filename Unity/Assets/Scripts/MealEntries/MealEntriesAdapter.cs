@@ -41,13 +41,20 @@ namespace CalorieCounter.MealEntries {
             return mealEntry.DayType;
         }
 
-        private void Start() {
-            _date.CurrentDateTimeChanged += Refresh;
+        private void Start()
+        {
+            _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
             Refresh();
         }
+
         private void OnDestroy()
         {
-            _date.CurrentDateTimeChanged -= Refresh;
+            _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
+        }
+
+        private void Date_OnCurrentDateTimeChanged(object sender, EventArgs e)
+        {
+            Refresh();
         }
 
         private void Refresh()

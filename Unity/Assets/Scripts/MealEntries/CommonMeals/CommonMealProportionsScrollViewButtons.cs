@@ -46,7 +46,7 @@ namespace CalorieCounter.MealEntries
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
         }
 
-        private void Dropdown_OnValidityChanged()
+        private void Dropdown_OnValidityChanged(object sender, System.EventArgs e)
         {
             _submitButton.interactable = _servingAmountDropdown.IsValid && _nonarchivedNamedMealSourceDropdown.IsValid;
         }
@@ -61,12 +61,12 @@ namespace CalorieCounter.MealEntries
             _submitButton.interactable = false;
         }
 
-        private void Date_OnCurrentDateTimeChanged()
+        private void Date_OnCurrentDateTimeChanged(object sender, System.EventArgs e)
         {
             ResetDropdowns();
         }
 
-        private void DayTypeDropdown_CurrentDayTypeChanged()
+        private void DayTypeDropdown_CurrentDayTypeChanged(object sender, System.EventArgs e)
         {
             var value = _dayTypeDropdown.IsCurrentDayTypeRestOrTraining;
             _servingAmountDropdown.SetInteractable(value);

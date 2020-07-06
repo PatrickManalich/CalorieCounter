@@ -7,7 +7,7 @@ namespace CalorieCounter.MealEntries
 {
 	public class VacationDayCreator : MonoBehaviour
 	{
-        public event Action VacationDaysCreated;
+        public event EventHandler VacationDaysCreated;
 
         [SerializeField]
         private MealEntriesAdapter _mealEntriesAdapter = default;
@@ -52,7 +52,7 @@ namespace CalorieCounter.MealEntries
             _startDate.CurrentDateTimeChanged -= RefreshSubmitButtonInteractability;
         }
 
-        private void RefreshSubmitButtonInteractability()
+        private void RefreshSubmitButtonInteractability(object sender, EventArgs e)
         {
             var totalDaysGreaterThanZero = (_endDate.CurrentDateTime - _startDate.CurrentDateTime).TotalDays > 0;
             var startDateBeforeEndDate = _startDate.CurrentDateTime < _endDate.CurrentDateTime;
@@ -75,7 +75,7 @@ namespace CalorieCounter.MealEntries
                 _mealEntriesAdapter.Export(mealEntry, dateTime);
                 dateTime = dateTime.AddDays(1);
             }
-            VacationDaysCreated?.Invoke();
+            VacationDaysCreated?.Invoke(this, EventArgs.Empty);
             Hide();
         }
 

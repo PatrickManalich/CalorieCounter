@@ -82,18 +82,18 @@ namespace CalorieCounter.MealEntries
             _cancelButton.interactable = false;
         }
 
-        private void Date_OnCurrentDateTimeChanged()
+        private void Date_OnCurrentDateTimeChanged(object sender, System.EventArgs e)
         {
             _customMealProportionInputFields.Hide();
         }
 
-        private void DayTypeDropdown_CurrentDayTypeChanged()
+        private void DayTypeDropdown_CurrentDayTypeChanged(object sender, System.EventArgs e)
         {
             var value = _dayTypeDropdown.IsCurrentDayTypeRestOrTraining;
             _addButton.interactable = value;
         }
 
-        private void CustomMealProportionInputFields_OnValidityChanged()
+        private void CustomMealProportionInputFields_OnValidityChanged(object sender, System.EventArgs e)
         {
             _submitButton.interactable = _customMealProportionInputFields.IsValid;
         }

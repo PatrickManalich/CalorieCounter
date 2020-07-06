@@ -159,7 +159,7 @@ namespace CalorieCounter.MealEntries {
             }
         }
 
-        private void DayTypeDropdown_OnCurrentDayTypeChanged()
+        private void DayTypeDropdown_OnCurrentDayTypeChanged(object sender, EventArgs e)
         {
             if(!_dayTypeDropdown.IsCurrentDayTypeRestOrTraining)
             {

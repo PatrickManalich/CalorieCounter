@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
-using CalorieCounter.Utilities;
 using System;
 using System.Linq;
 
@@ -10,7 +9,7 @@ namespace CalorieCounter.MealEntries {
     [RequireComponent(typeof(TMP_Dropdown))]
     public class DayTypeDropdown : MonoBehaviour {
 
-        public event Action CurrentDayTypeChanged;
+        public event EventHandler CurrentDayTypeChanged;
 
         public DayType CurrentDayType {
             get {
@@ -20,7 +19,7 @@ namespace CalorieCounter.MealEntries {
                 if (_dayType != value)
                 {
                     _dayType = value;
-                    CurrentDayTypeChanged?.Invoke();
+                    CurrentDayTypeChanged?.Invoke(this, EventArgs.Empty);
                 }
             }
         }
@@ -62,20 +61,30 @@ namespace CalorieCounter.MealEntries {
 
         private void Start() {
             _dropdown.onValueChanged.AddListener(i => Dropdown_OnValueChanged(i));
-            _date.CurrentDateTimeChanged += Refresh;
-            _vacationDayCreator.VacationDaysCreated += Refresh;
+            _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
+            _vacationDayCreator.VacationDaysCreated += VacationDayCreator_OnVacationDaysCreated;
         }
 
         private void OnDestroy()
         {
-            _vacationDayCreator.VacationDaysCreated -= Refresh;
-            _date.CurrentDateTimeChanged -= Refresh;
+            _vacationDayCreator.VacationDaysCreated -= VacationDayCreator_OnVacationDaysCreated;
+            _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
             _dropdown.onValueChanged.RemoveListener(i => Dropdown_OnValueChanged(i));
         }
 
         public void Dropdown_OnValueChanged(int index)
         {
             CurrentDayType = (DayType)index;
+        }
+
+        private void Date_OnCurrentDateTimeChanged(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        private void VacationDayCreator_OnVacationDaysCreated(object sender, EventArgs e)
+        {
+            Refresh();
         }
 
         private void Refresh()

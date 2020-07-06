@@ -44,7 +44,7 @@ namespace CalorieCounter
             _scrollViewRowHighlighter.EnteredHighlightRow -= ScrollViewRowHighlighter_OnEnteredHighlightRow;
         }
 
-        private void ScrollViewRowHighlighter_OnEnteredHighlightRow()
+        private void ScrollViewRowHighlighter_OnEnteredHighlightRow(object sender, System.EventArgs e)
         {
             StopFadeInCoroutine();
             if (_scrollViewRowHighlighter.HighlightedScrollViewText.Text.isTextTruncated)
@@ -53,7 +53,7 @@ namespace CalorieCounter
             }
         }
 
-        private void ScrollViewRowHighlighter_OnExitedHighlightRow()
+        private void ScrollViewRowHighlighter_OnExitedHighlightRow(object sender, System.EventArgs e)
         {
             StopFadeInCoroutine();
             _canvasGroup.alpha = 0;

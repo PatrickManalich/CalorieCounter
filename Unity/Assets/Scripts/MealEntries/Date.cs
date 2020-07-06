@@ -7,7 +7,7 @@ namespace CalorieCounter.MealEntries {
 
     public class Date : MonoBehaviour {
 
-        public event Action CurrentDateTimeChanged;
+        public event EventHandler CurrentDateTimeChanged;
 
         public DateTime CurrentDateTime {
             get {
@@ -18,7 +18,7 @@ namespace CalorieCounter.MealEntries {
                 {
                     _currentDateTime = value;
                     Refresh();
-                    CurrentDateTimeChanged?.Invoke();
+                    CurrentDateTimeChanged?.Invoke(this, EventArgs.Empty);
                 }
             }
         }

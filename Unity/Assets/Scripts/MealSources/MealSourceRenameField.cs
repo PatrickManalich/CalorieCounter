@@ -7,7 +7,7 @@ namespace CalorieCounter.MealSources
 {
     public class MealSourceRenameField : MonoBehaviour
     {
-        public event Action Shown;
+        public event EventHandler Shown;
 
         public bool IsShown { get; private set; } = false;
 
@@ -34,7 +34,7 @@ namespace CalorieCounter.MealSources
             _inputField.text = OldNamedMealSource.Name;
             _inputField.Select();
             IsShown = true;
-            Shown?.Invoke();
+            Shown?.Invoke(this, EventArgs.Empty);
         }
 
         public void Hide()

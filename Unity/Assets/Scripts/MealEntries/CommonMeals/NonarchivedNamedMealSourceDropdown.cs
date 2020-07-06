@@ -10,7 +10,7 @@ namespace CalorieCounter.MealEntries {
     [RequireComponent(typeof(TMP_Dropdown))]
     public class NonarchivedNamedMealSourceDropdown : MonoBehaviour {
 
-        public event Action ValidityChanged;
+        public event EventHandler ValidityChanged;
 
         public bool IsValid => SelectedNamedMealSource != null;
 
@@ -61,7 +61,7 @@ namespace CalorieCounter.MealEntries {
             SelectedNamedMealSource = value > 0 ? _nonarchivedNamedMealSources[value - 1] : null;
             if(IsValid != oldIsValid)
             {
-                ValidityChanged?.Invoke();
+                ValidityChanged?.Invoke(this, EventArgs.Empty);
             }
         }
     }

@@ -8,9 +8,9 @@ namespace CalorieCounter
     [RequireComponent(typeof(Image))]
     public class ScrollViewRowHighlighter : MonoBehaviour
     {
-        public event Action EnteredHighlightRow;
+        public event EventHandler EnteredHighlightRow;
 
-        public event Action ExitedHighlightRow;
+        public event EventHandler ExitedHighlightRow;
 
         public ScrollViewText HighlightedScrollViewText { get; private set; }
 
@@ -33,7 +33,7 @@ namespace CalorieCounter
             HighlightedRowIndex = -1;
             _image.enabled = false;
 
-            ExitedHighlightRow?.Invoke();
+            ExitedHighlightRow?.Invoke(this, EventArgs.Empty);
         }
 
         private void Awake()
@@ -89,7 +89,7 @@ namespace CalorieCounter
                 _rectTransform.anchoredPosition = new Vector2(0, (HighlightedRowIndex * _scrollViewAssistant.Content.cellSize.y * -1)
                     + _contentRectTransform.anchoredPosition.y);
 
-                EnteredHighlightRow?.Invoke();
+                EnteredHighlightRow?.Invoke(this, EventArgs.Empty);
             }
             else if(e.HighlightedType == HighlightedType.Exited)
             {

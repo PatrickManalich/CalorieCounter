@@ -13,16 +13,25 @@ namespace CalorieCounter.MealEntries
         protected override void Start()
 		{
             base.Start();
-            _date.CurrentDateTimeChanged += RefreshButtonInteractability;
-            _dayTypeDropdown.CurrentDayTypeChanged += RefreshButtonInteractability;
+            _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
+            _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_OnCurrentDayTypeChanged;
         }
 
         protected override void OnDestroy()
 		{
-            _dayTypeDropdown.CurrentDayTypeChanged -= RefreshButtonInteractability;
-            _date.CurrentDateTimeChanged -= RefreshButtonInteractability;
+            _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_OnCurrentDayTypeChanged;
+            _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
             base.OnDestroy();
 		}
+        private void Date_OnCurrentDateTimeChanged(object sender, System.EventArgs e)
+        {
+            RefreshButtonInteractability();
+        }
+
+        private void DayTypeDropdown_OnCurrentDayTypeChanged(object sender, System.EventArgs e)
+        {
+            RefreshButtonInteractability();
+        }
     }
 }
 

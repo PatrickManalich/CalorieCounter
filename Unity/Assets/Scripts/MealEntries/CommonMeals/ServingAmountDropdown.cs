@@ -8,7 +8,7 @@ namespace CalorieCounter.MealEntries {
     [RequireComponent(typeof(TMP_Dropdown))]
     public class ServingAmountDropdown : MonoBehaviour {
 
-        public event Action ValidityChanged;
+        public event EventHandler ValidityChanged;
 
         public bool IsValid => SelectedServingAmount != 0;
 
@@ -56,7 +56,7 @@ namespace CalorieCounter.MealEntries {
             SelectedServingAmount = value > 0 ? ServingAmounts[value - 1] : default;
             if (IsValid != oldIsValid)
             {
-                ValidityChanged?.Invoke();
+                ValidityChanged?.Invoke(this, EventArgs.Empty);
             }
         }
     }

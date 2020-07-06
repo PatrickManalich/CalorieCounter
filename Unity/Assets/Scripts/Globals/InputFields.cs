@@ -1,5 +1,4 @@
-﻿using CalorieCounter.Utilities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,7 +7,7 @@ namespace CalorieCounter
 {
     public class InputFields : MonoBehaviour
     {
-        public event Action ValidityChanged;
+        public event EventHandler ValidityChanged;
 
         public bool IsShown { get; private set; } = false;
 
@@ -49,7 +48,7 @@ namespace CalorieCounter
         {
             if (IsValid != _oldIsValid)
             {
-                ValidityChanged?.Invoke();
+                ValidityChanged?.Invoke(this, EventArgs.Empty);
                 _oldIsValid = IsValid;
             }
         }
