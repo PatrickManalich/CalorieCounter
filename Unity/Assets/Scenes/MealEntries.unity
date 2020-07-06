@@ -679,6 +679,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 2042442249}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 377786864}
     - target: {fileID: 7483694594688795970, guid: 29f2803dae56c2c429b41e9de11df9ac,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -866,6 +881,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 377786864}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 580917169}
     - target: {fileID: 7483694594688795970, guid: 29f2803dae56c2c429b41e9de11df9ac,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3240,6 +3270,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 141549877}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 2042442249}
     - target: {fileID: 7483694594688795970, guid: 29f2803dae56c2c429b41e9de11df9ac,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -9560,6 +9605,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 580917169}
+    - target: {fileID: 7395204509001593675, guid: 29f2803dae56c2c429b41e9de11df9ac,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 126117143}
     - target: {fileID: 7483694594688795970, guid: 29f2803dae56c2c429b41e9de11df9ac,
         type: 3}
       propertyPath: m_textInfo.characterCount
