@@ -1,5 +1,4 @@
 ﻿using CalorieCounter.MealSources;
-using RotaryHeart.Lib.SerializableDictionary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +8,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
 {
     public class MealPatternHandler : MonoBehaviour
     {
-
-        [Serializable]
-        private class MealProportionsScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealProportionsScrollView> { }
 
         [SerializeField]
         private Date _date = default;

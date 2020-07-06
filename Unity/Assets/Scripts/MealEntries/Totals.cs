@@ -1,15 +1,10 @@
 ﻿using CalorieCounter.TargetEntries;
-using RotaryHeart.Lib.SerializableDictionary;
-using System;
 using TMPro;
 using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
     public class Totals : MonoBehaviour {
-
-        [Serializable]
-        private class MealProportionsScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealProportionsScrollView> { }
 
         [SerializeField]
         private TargetEntriesAdapter _targetEntriesAdapter = default;
