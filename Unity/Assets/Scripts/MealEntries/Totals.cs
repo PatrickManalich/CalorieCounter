@@ -9,7 +9,7 @@ namespace CalorieCounter.MealEntries {
     public class Totals : MonoBehaviour {
 
         [Serializable]
-        private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealProportionsScrollView> { }
+        private class MealProportionsScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealProportionsScrollView> { }
 
         [SerializeField]
         private TargetEntriesAdapter _targetEntriesAdapter = default;
@@ -36,7 +36,7 @@ namespace CalorieCounter.MealEntries {
         private Color _belowTargetColor = default;
 
         [SerializeField]
-        private ScrollViewDictionary _scrollViewDictionary = default;
+        private MealProportionsScrollViewDictionary _mealProportionsScrollViewDictionary = default;
 
         public float TotalFat { get; private set; } = 0;
         public float TotalCarbs { get; private set; } = 0;
@@ -51,12 +51,12 @@ namespace CalorieCounter.MealEntries {
             _originalColor = _fatTotalText.color;
 
             _dayTypeDropdown.CurrentDayTypeChanged += Refresh;
-            foreach (var scrollView in _scrollViewDictionary.Values)
+            foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
             {
                 scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
             }
 
-            foreach (var scrollView in _scrollViewDictionary.Values)
+            foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
             {
                 foreach(var mealProportion in scrollView.MealProportions)
                 {
@@ -72,7 +72,7 @@ namespace CalorieCounter.MealEntries {
 
         private void OnDestroy()
         {
-            foreach (var scrollView in _scrollViewDictionary.Values)
+            foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
             {
                 scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
             }

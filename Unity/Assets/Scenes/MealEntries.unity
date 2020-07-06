@@ -1911,7 +1911,7 @@ MonoBehaviour:
   _caloriesTotalText: {fileID: 104649630}
   _aboveTargetColor: {r: 0.5647059, g: 0.93333334, b: 0.5647059, a: 1}
   _belowTargetColor: {r: 1, g: 0.4575472, b: 0.4575472, a: 1}
-  _scrollViewDictionary:
+  _mealProportionsScrollViewDictionary:
     reorderableList:
       canAdd: 1
       canRemove: 1
@@ -3921,7 +3921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _date: {fileID: 1767589936}
   _dayTypeDropdown: {fileID: 1584375629}
-  _scrollViewDictionary:
+  _mealProportionsScrollViewDictionary:
     reorderableList:
       canAdd: 1
       canRemove: 1
@@ -6838,7 +6838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _date: {fileID: 1767589936}
   _dayTypeDropdown: {fileID: 1584375629}
-  _scrollViewDictionary:
+  _mealProportionsScrollViewDictionary:
     reorderableList:
       canAdd: 1
       canRemove: 1
@@ -9183,7 +9183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scene: 1
-  _scrollViewDictionary:
+  _mealSourcesScrollViewDictionary:
     reorderableList:
       canAdd: 1
       canRemove: 1

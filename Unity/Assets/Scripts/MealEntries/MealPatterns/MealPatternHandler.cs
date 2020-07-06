@@ -11,7 +11,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
     {
 
         [Serializable]
-        private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealProportionsScrollView> { }
+        private class MealProportionsScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealProportionsScrollView> { }
 
         [SerializeField]
         private Date _date = default;
@@ -20,7 +20,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
         private DayTypeDropdown _dayTypeDropdown = default;
 
         [SerializeField]
-        private ScrollViewDictionary _scrollViewDictionary = default;
+        private MealProportionsScrollViewDictionary _mealProportionsScrollViewDictionary = default;
 
         private const int PrioritizedMealSuggestionLimit = 4;
 
@@ -33,7 +33,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private void Start()
         {
-            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            foreach (var mealSourceType in _mealProportionsScrollViewDictionary.Keys)
             {
                 _mealSuggestionsDictionary.Add(mealSourceType, new List<MealSuggestion>());
                 _removedMealSuggestionsDictionary.Add(mealSourceType, new List<MealSuggestion>());
@@ -45,7 +45,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
             _date.CurrentDateTimeChanged += Refresh;
             _dayTypeDropdown.CurrentDayTypeChanged += Refresh;
-            foreach (var scrollView in _scrollViewDictionary.Values)
+            foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
             {
                 scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
                 scrollView.MealSuggestionRemoved += ScrollView_OnMealSuggestionRemoved;
@@ -56,7 +56,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private void OnDestroy()
         {
-            foreach (var scrollView in _scrollViewDictionary.Values)
+            foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
             {
                 scrollView.MealSuggestionRemoved -= ScrollView_OnMealSuggestionRemoved;
                 scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
@@ -86,10 +86,10 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private void Refresh()
         {
-            foreach (var mealSourceType in _scrollViewDictionary.Keys)
+            foreach (var mealSourceType in _mealProportionsScrollViewDictionary.Keys)
             {
-                _mealSuggestionClearCount += _scrollViewDictionary[mealSourceType].MealSuggestions.Count;
-                _scrollViewDictionary[mealSourceType].ClearMealSuggestions();
+                _mealSuggestionClearCount += _mealProportionsScrollViewDictionary[mealSourceType].MealSuggestions.Count;
+                _mealProportionsScrollViewDictionary[mealSourceType].ClearMealSuggestions();
                 _mealSuggestionsDictionary[mealSourceType].Clear();
             }
 
@@ -130,7 +130,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
                 foreach (var mealSuggestion in mealSuggestions)
                 {
                     var mealSource = mealSuggestion.MealProportion.MealSource;
-                    var mealProportions = _scrollViewDictionary[mealSource.MealSourceType].MealProportions;
+                    var mealProportions = _mealProportionsScrollViewDictionary[mealSource.MealSourceType].MealProportions;
                     if (mealProportions.Exists(m => m.MealSource == mealSource))
                     {
                         var otherMealSuggestions = mealSuggestions.Where(m => m != mealSuggestion);
@@ -157,10 +157,10 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             if (_dayTypeDropdown.IsCurrentDayTypeRestOrTraining)
             {
-                foreach (var mealSourceType in _scrollViewDictionary.Keys)
+                foreach (var mealSourceType in _mealProportionsScrollViewDictionary.Keys)
                 {
                     // Meal suggestions with lower priority values will come before meal suggestions with higher priority values
-                    var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
+                    var mealProportionsScrollView = _mealProportionsScrollViewDictionary[mealSourceType];
                     var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
                     var count = Mathf.Min(PrioritizedMealSuggestionLimit, mealSuggestions.Count);
                     var prioritizedMealSuggestions = mealSuggestions.OrderBy(m => m.Priority).ToList().GetRange(0, count);
@@ -179,7 +179,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
             var mealSource = mealProportion.MealSource;
             var mealSourceType = mealSource.MealSourceType;
 
-            var mealProportionsScrollView = _scrollViewDictionary[mealSourceType];
+            var mealProportionsScrollView = _mealProportionsScrollViewDictionary[mealSourceType];
             var mealSuggestions = _mealSuggestionsDictionary[mealSourceType];
             var isUniqueMealSuggestion = !mealProportionsScrollView.MealProportions.Exists(m => m.MealSource == mealSource) &&
                 !mealSuggestions.Exists(m => m.MealProportion.MealSource == mealSource);

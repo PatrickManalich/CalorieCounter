@@ -13,10 +13,10 @@ namespace CalorieCounter.MealSources {
         private Scene _scene = default;
 
         [Serializable]
-        private class ScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealSourcesScrollView> { }
+        private class MealSourcesScrollViewDictionary : SerializableDictionaryBase<MealSourceType, MealSourcesScrollView> { }
 
         [SerializeField]
-        private ScrollViewDictionary _scrollViewDictionary = default;
+        private MealSourcesScrollViewDictionary _mealSourcesScrollViewDictionary = default;
 
         private const int MealSourcesCountStartIndex = 0;
 
@@ -79,7 +79,7 @@ namespace CalorieCounter.MealSources {
             var namedMealSourcesDictionary = GameManager.MealSourcesManager.ImportNamedMealSourcesDictionary();
             foreach (var mealSourceType in namedMealSourcesDictionary.Keys)
             {
-                var mealSourcesScrollView = _scrollViewDictionary[mealSourceType];
+                var mealSourcesScrollView = _mealSourcesScrollViewDictionary[mealSourceType];
                 var namedMealSources = namedMealSourcesDictionary[mealSourceType];
                 foreach (var namedMealSource in namedMealSources.Values)
                 {
@@ -92,16 +92,16 @@ namespace CalorieCounter.MealSources {
         private Dictionary<MealSourceType, Dictionary<string, MealSource>> GetScrollViewsMealSourcesDictionary()
         {
             return new Dictionary<MealSourceType, Dictionary<string, MealSource>>() {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSources },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSources },
+                { MealSourceType.Small, _mealSourcesScrollViewDictionary[MealSourceType.Small].MealSources },
+                { MealSourceType.Large, _mealSourcesScrollViewDictionary[MealSourceType.Large].MealSources },
             };
         }
 
         private Dictionary<MealSourceType, Dictionary<string, string>> GetScrollViewsMealSourceNamesDictionary()
         {
             return new Dictionary<MealSourceType, Dictionary<string, string>>() {
-                { MealSourceType.Small, _scrollViewDictionary[MealSourceType.Small].MealSourceNames },
-                { MealSourceType.Large, _scrollViewDictionary[MealSourceType.Large].MealSourceNames },
+                { MealSourceType.Small, _mealSourcesScrollViewDictionary[MealSourceType.Small].MealSourceNames },
+                { MealSourceType.Large, _mealSourcesScrollViewDictionary[MealSourceType.Large].MealSourceNames },
             };
         }
 
