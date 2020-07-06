@@ -3661,7 +3661,7 @@ PrefabInstance:
     - target: {fileID: 7186423315185655660, guid: 0f1360ef431484b4d8e60a0068dd00f7,
         type: 3}
       propertyPath: m_Name
-      value: AddButtom
+      value: AddButton
       objectReference: {fileID: 0}
     - target: {fileID: 9072285420453995797, guid: 0f1360ef431484b4d8e60a0068dd00f7,
         type: 3}
