@@ -17,11 +17,11 @@ namespace CalorieCounter.EditorExtensions
 
         private const string MenuItemDirectory = @"Calorie Counter/Json/";
 
-        [MenuItem(MenuItemDirectory + "Open Editor JSON")]
-        public static void OpenEditorJson()
+        [MenuItem(MenuItemDirectory + "Open Default JSON")]
+        public static void OpenDefaultJson()
         {
-            Application.OpenURL(JsonConverter.EditorJsonDirectoryPath);
-            Debug.Log($"{JsonConverter.EditorJsonDirectoryPath} directory opened");
+            Application.OpenURL(JsonConverter.DefaultJsonDirectoryPath);
+            Debug.Log($"{JsonConverter.DefaultJsonDirectoryPath} directory opened");
         }
 
         [MenuItem(MenuItemDirectory + "Open Release JSON")]
@@ -38,10 +38,10 @@ namespace CalorieCounter.EditorExtensions
                 return;
 
             var directoryInfoSource = new DirectoryInfo(JsonConverter.ReleaseJsonDirectoryPath);
-            var directoryInfoTarget = new DirectoryInfo(JsonConverter.EditorJsonDirectoryPath);
+            var directoryInfoTarget = new DirectoryInfo(JsonConverter.DefaultJsonDirectoryPath);
 
             CopyAll(directoryInfoSource, directoryInfoTarget);
-            Debug.Log($"Copied {JsonConverter.ReleaseJsonDirectoryPath} into {JsonConverter.EditorJsonDirectoryPath}");
+            Debug.Log($"Copied {JsonConverter.ReleaseJsonDirectoryPath} into {JsonConverter.DefaultJsonDirectoryPath}");
         }
 
         [MenuItem(MenuItemDirectory + "JSON Updater")]

@@ -8,7 +8,7 @@ namespace CalorieCounter.Utilities {
 
     public static class JsonConverter {
 
-        public static readonly string EditorJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName));
+        public static readonly string DefaultJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName));
         public static readonly string ReleaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
             GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName));
 
@@ -39,11 +39,11 @@ namespace CalorieCounter.Utilities {
 
         public static SortedList<DateTime, MealEntry> ImportMealEntries(bool fromRelease = false)
         {
-            var editorJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, GlobalPaths.MealEntriesDirectoryName));
+            var defaultJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, GlobalPaths.MealEntriesDirectoryName));
             var releaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
                     GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, GlobalPaths.MealEntriesDirectoryName));
 
-            var directoryPath = fromRelease ? releaseJsonDirectoryPath : editorJsonDirectoryPath;
+            var directoryPath = fromRelease ? releaseJsonDirectoryPath : defaultJsonDirectoryPath;
             var mealEntries = new SortedList<DateTime, MealEntry>();
             var directoryInfo = new DirectoryInfo(directoryPath);
             foreach (var fileInfo in directoryInfo.GetFiles())
@@ -63,10 +63,10 @@ namespace CalorieCounter.Utilities {
         }
 
         private static string GetJsonFilePath(string fileName, bool useReleasePath = false) {
-            var editorJsonFilePath = Path.GetFullPath(Path.Combine(EditorJsonDirectoryPath, fileName));
+            var defaultJsonFilePath = Path.GetFullPath(Path.Combine(DefaultJsonDirectoryPath, fileName));
             var releaseJsonFilePath = Path.GetFullPath(Path.Combine(ReleaseJsonDirectoryPath, fileName));
 
-            var jsonFilePath = useReleasePath ? releaseJsonFilePath : editorJsonFilePath;
+            var jsonFilePath = useReleasePath ? releaseJsonFilePath : defaultJsonFilePath;
             var jsonFilePathDirectory = Path.GetDirectoryName(jsonFilePath);
 
             if (!Directory.Exists(jsonFilePathDirectory)) {
