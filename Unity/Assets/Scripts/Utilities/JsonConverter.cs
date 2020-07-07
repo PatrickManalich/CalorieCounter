@@ -12,22 +12,22 @@ namespace CalorieCounter.Utilities {
         public static readonly string ReleaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
             GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName));
 
-        public static bool DoesFileExist(string fileName, bool fromRelease = false)
+        public static bool DoesFileExist(string fileName)
         {
-            var filePath = GetJsonFilePath(fileName, fromRelease);
+            var filePath = GetJsonFilePath(fileName);
             return File.Exists(filePath);
         }
 
-        public static void ExportFile<T>(T value, string fileName, bool intoRelease = false) {
-            var filePath = GetJsonFilePath(fileName, intoRelease);
+        public static void ExportFile<T>(T value, string fileName) {
+            var filePath = GetJsonFilePath(fileName);
             using (StreamWriter file = File.CreateText(filePath)) {
                 JsonSerializer serializer = new JsonSerializer() { Formatting = Formatting.Indented };
                 serializer.Serialize(file, value);
             }
         }
 
-        public static T ImportFile<T>(string fileName, bool fromRelease = false) {
-            var filePath = GetJsonFilePath(fileName, fromRelease);
+        public static T ImportFile<T>(string fileName) {
+            var filePath = GetJsonFilePath(fileName);
             if (File.Exists(filePath)) {
                 using (StreamReader file = File.OpenText(filePath)) {
                     JsonSerializer serializer = new JsonSerializer();
@@ -37,19 +37,15 @@ namespace CalorieCounter.Utilities {
             return default;
         }
 
-        public static SortedList<DateTime, MealEntry> ImportMealEntries(bool fromRelease = false)
+        public static SortedList<DateTime, MealEntry> ImportMealEntries()
         {
-            var defaultJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, GlobalPaths.MealEntriesDirectoryName));
-            var releaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
-                    GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, GlobalPaths.MealEntriesDirectoryName));
-
-            var directoryPath = fromRelease ? releaseJsonDirectoryPath : defaultJsonDirectoryPath;
+            var directoryPath = Path.Combine(GetJsonDirectoryPath(), GlobalPaths.MealEntriesDirectoryName);
             var mealEntries = new SortedList<DateTime, MealEntry>();
             var directoryInfo = new DirectoryInfo(directoryPath);
             foreach (var fileInfo in directoryInfo.GetFiles())
             {
                 var mealEntryPath = Path.Combine(GlobalPaths.MealEntriesDirectoryName, fileInfo.Name);
-                var mealEntry = ImportFile<MealEntry>(mealEntryPath, true);
+                var mealEntry = ImportFile<MealEntry>(mealEntryPath);
                 mealEntries.Add(mealEntry.DateTime, mealEntry);
             }
             return mealEntries;
@@ -62,17 +58,23 @@ namespace CalorieCounter.Utilities {
             return Path.Combine(GlobalPaths.MealEntriesDirectoryName, mealEntryFileName);
         }
 
-        private static string GetJsonFilePath(string fileName, bool useReleasePath = false) {
-            var defaultJsonFilePath = Path.GetFullPath(Path.Combine(DefaultJsonDirectoryPath, fileName));
-            var releaseJsonFilePath = Path.GetFullPath(Path.Combine(ReleaseJsonDirectoryPath, fileName));
-
-            var jsonFilePath = useReleasePath ? releaseJsonFilePath : defaultJsonFilePath;
+        private static string GetJsonFilePath(string fileName) {
+            var jsonFilePath = Path.GetFullPath(Path.Combine(GetJsonDirectoryPath(), fileName));
             var jsonFilePathDirectory = Path.GetDirectoryName(jsonFilePath);
 
             if (!Directory.Exists(jsonFilePathDirectory)) {
                 Directory.CreateDirectory(jsonFilePathDirectory);
             }
             return jsonFilePath;
+        }
+
+        private static string GetJsonDirectoryPath()
+        {
+#if UNITY_EDITOR
+            return ReleaseJsonDirectoryPath;
+#else
+            return DefaultJsonDirectoryPath;
+#endif
         }
     }
 }

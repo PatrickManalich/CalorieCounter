@@ -21,7 +21,7 @@ namespace CalorieCounter.EditorExtensions
             if (Application.isPlaying)
                 return;
 
-            var scaleEntries = JsonConverter.ImportFile<SortedList<DateTime, ScaleEntry>>(GlobalPaths.JsonScaleEntriesFileName, true);
+            var scaleEntries = JsonConverter.ImportFile<SortedList<DateTime, ScaleEntry>>(GlobalPaths.JsonScaleEntriesFileName);
             var records = new List<ScaleEntryRecord>();
             foreach (var scaleEntry in scaleEntries.Values)
             {
@@ -36,7 +36,7 @@ namespace CalorieCounter.EditorExtensions
             if (Application.isPlaying)
                 return;
 
-            var targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName, true);
+            var targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName);
             var records = new List<TargetEntryRecord>();
             foreach (var targetEntry in targetEntries.Values)
             {
@@ -51,8 +51,8 @@ namespace CalorieCounter.EditorExtensions
             if (Application.isPlaying)
                 return;
 
-            var mealEntries = JsonConverter.ImportMealEntries(true);
-            var targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName, true);
+            var mealEntries = JsonConverter.ImportMealEntries();
+            var targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName);
             var records = new List<ResultRecord>();
             foreach (var mealEntry in mealEntries.Values)
             {
