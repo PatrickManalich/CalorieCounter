@@ -14,12 +14,12 @@ namespace CalorieCounter.Utilities {
 
         public static bool DoesFileExist(string fileName, bool fromRelease = false)
         {
-            string filePath = GetJsonFilePath(fileName, fromRelease);
+            var filePath = GetJsonFilePath(fileName, fromRelease);
             return File.Exists(filePath);
         }
 
         public static void ExportFile<T>(T value, string fileName, bool intoRelease = false) {
-            string filePath = GetJsonFilePath(fileName, intoRelease);
+            var filePath = GetJsonFilePath(fileName, intoRelease);
             using (StreamWriter file = File.CreateText(filePath)) {
                 JsonSerializer serializer = new JsonSerializer() { Formatting = Formatting.Indented };
                 serializer.Serialize(file, value);
@@ -27,7 +27,7 @@ namespace CalorieCounter.Utilities {
         }
 
         public static T ImportFile<T>(string fileName, bool fromRelease = false) {
-            string filePath = GetJsonFilePath(fileName, fromRelease);
+            var filePath = GetJsonFilePath(fileName, fromRelease);
             if (File.Exists(filePath)) {
                 using (StreamReader file = File.OpenText(filePath)) {
                     JsonSerializer serializer = new JsonSerializer();
@@ -39,7 +39,7 @@ namespace CalorieCounter.Utilities {
 
         public static SortedList<DateTime, MealEntry> ImportMealEntries(bool fromRelease = false)
         {
-            string directoryPath = GetJsonDirectoryPath(GlobalPaths.MealEntriesDirectoryName, fromRelease);
+            var directoryPath = GetJsonDirectoryPath(GlobalPaths.MealEntriesDirectoryName, fromRelease);
             var mealEntries = new SortedList<DateTime, MealEntry>();
             var directoryInfo = new DirectoryInfo(directoryPath);
             foreach (var fileInfo in directoryInfo.GetFiles())
@@ -53,8 +53,8 @@ namespace CalorieCounter.Utilities {
 
         public static string GetMealEntryPath(DateTime dateTime)
         {
-            string mealEntryFileDate = "-" + dateTime.Year + "-" + dateTime.Month + "-" + dateTime.Day;
-            string mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.JsonFileExtension;
+            var mealEntryFileDate = "-" + dateTime.Year + "-" + dateTime.Month + "-" + dateTime.Day;
+            var mealEntryFileName = GlobalPaths.MealEntryFilePrefix + mealEntryFileDate + GlobalPaths.JsonFileExtension;
             return Path.Combine(GlobalPaths.MealEntriesDirectoryName, mealEntryFileName);
         }
 
@@ -62,8 +62,8 @@ namespace CalorieCounter.Utilities {
             var editorJsonFilePath = Path.GetFullPath(Path.Combine(EditorJsonDirectoryPath, fileName));
             var releaseJsonFilePath = Path.GetFullPath(Path.Combine(ReleaseJsonDirectoryPath, fileName));
 
-            string jsonFilePath = useReleasePath ? releaseJsonFilePath : editorJsonFilePath;
-            string jsonFilePathDirectory = Path.GetDirectoryName(jsonFilePath);
+            var jsonFilePath = useReleasePath ? releaseJsonFilePath : editorJsonFilePath;
+            var jsonFilePathDirectory = Path.GetDirectoryName(jsonFilePath);
 
             if (!Directory.Exists(jsonFilePathDirectory)) {
                 Directory.CreateDirectory(jsonFilePathDirectory);
@@ -77,7 +77,7 @@ namespace CalorieCounter.Utilities {
             var releaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
                     GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, directoryName));
 
-            string jsonDirectoryPath = useReleasePath ? releaseJsonDirectoryPath : editorJsonDirectoryPath;
+            var jsonDirectoryPath = useReleasePath ? releaseJsonDirectoryPath : editorJsonDirectoryPath;
             return jsonDirectoryPath;
         }
     }
