@@ -1,12 +1,10 @@
-﻿using CalorieCounter.MealEntries;
-using CalorieCounter.ScaleEntries;
+﻿using CalorieCounter.ScaleEntries;
 using CalorieCounter.TargetEntries;
 using CalorieCounter.Utilities;
 using CsvHelper;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -90,27 +88,21 @@ namespace CalorieCounter.EditorExtensions
         }
 
         private static void WriteRecords<T>(IEnumerable<T> records, string fileName){
-            var filePath = GetCsvFilePath(fileName);
-            File.WriteAllText(filePath, string.Empty);
+            string csvFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.CsvDirectoryName, fileName));
+            string csvFilePathDirectory = Path.GetDirectoryName(csvFilePath);
 
-            using (var writer = new StreamWriter(filePath))
+            if (!Directory.Exists(csvFilePathDirectory))
+            {
+                Directory.CreateDirectory(csvFilePathDirectory);
+            }
+            File.WriteAllText(csvFilePath, string.Empty);
+
+            using (var writer = new StreamWriter(csvFilePath))
             using (var csv = new CsvWriter(writer))
             {
                 csv.WriteRecords(records);
             }
-            Debug.Log($"New records written to {filePath}");
-        }
-
-        private static string GetCsvFilePath(string filePath)
-        {
-            string csvFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.CsvDirectoryName, filePath));
-            string csvFilePathDir = Path.GetDirectoryName(csvFilePath);
-
-            if (!Directory.Exists(csvFilePathDir))
-            {
-                Directory.CreateDirectory(csvFilePathDir);
-            }
-            return csvFilePath;
+            Debug.Log($"New records written to {csvFilePath}");
         }
     }
 }

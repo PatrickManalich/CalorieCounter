@@ -39,7 +39,11 @@ namespace CalorieCounter.Utilities {
 
         public static SortedList<DateTime, MealEntry> ImportMealEntries(bool fromRelease = false)
         {
-            var directoryPath = GetJsonDirectoryPath(GlobalPaths.MealEntriesDirectoryName, fromRelease);
+            var editorJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, GlobalPaths.MealEntriesDirectoryName));
+            var releaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
+                    GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, GlobalPaths.MealEntriesDirectoryName));
+
+            var directoryPath = fromRelease ? releaseJsonDirectoryPath : editorJsonDirectoryPath;
             var mealEntries = new SortedList<DateTime, MealEntry>();
             var directoryInfo = new DirectoryInfo(directoryPath);
             foreach (var fileInfo in directoryInfo.GetFiles())
@@ -69,16 +73,6 @@ namespace CalorieCounter.Utilities {
                 Directory.CreateDirectory(jsonFilePathDirectory);
             }
             return jsonFilePath;
-        }
-
-        private static string GetJsonDirectoryPath(string directoryName, bool useReleasePath = false)
-        {
-            var editorJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.JsonDirectoryName, directoryName));
-            var releaseJsonDirectoryPath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\",
-                    GlobalPaths.CalorieCounterReleaseDirectoryName, GlobalPaths.ReleaseDirectoryName, GlobalPaths.JsonDirectoryName, directoryName));
-
-            var jsonDirectoryPath = useReleasePath ? releaseJsonDirectoryPath : editorJsonDirectoryPath;
-            return jsonDirectoryPath;
         }
     }
 }
