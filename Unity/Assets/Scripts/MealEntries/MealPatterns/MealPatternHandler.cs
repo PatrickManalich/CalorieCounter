@@ -25,7 +25,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
         private List<DayMealPattern> _dayMealPatterns;
         private List<DayTypeMealPattern> _dayTypeMealPatterns;
         private List<GroupMealPattern> _groupMealPatterns;
-        private int _mealSuggestionClearCount = 0;
 
         private void Start()
         {
@@ -41,22 +40,14 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
             _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
             _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_OnCurrentDayTypeChanged;
-            foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
-            {
-                scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
-                scrollView.MealSuggestionRemoved += ScrollView_OnMealSuggestionRemoved;
-            }
+            SubscribeToMealProportionScrollViewEvents();
 
             Refresh();
         }
 
         private void OnDestroy()
         {
-            foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
-            {
-                scrollView.MealSuggestionRemoved -= ScrollView_OnMealSuggestionRemoved;
-                scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
-            }
+            UnsubscribeToMealProportionScrollViewEvents();
             _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_OnCurrentDayTypeChanged;
             _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
         }
@@ -81,11 +72,6 @@ namespace CalorieCounter.MealEntries.MealPatterns
 
         private void ScrollView_OnMealSuggestionRemoved(object sender, MealProportionsScrollView.MealSuggestionRemovedEventArgs e)
         {
-            if (_mealSuggestionClearCount != 0)
-            {
-                _mealSuggestionClearCount--;
-                return;
-            }
             _removedMealSuggestionsDictionary[e.MealSourceType].Add(e.RemovedMealSuggestion);
             Refresh();
         }
@@ -94,8 +80,9 @@ namespace CalorieCounter.MealEntries.MealPatterns
         {
             foreach (var mealSourceType in _mealProportionsScrollViewDictionary.Keys)
             {
-                _mealSuggestionClearCount += _mealProportionsScrollViewDictionary[mealSourceType].MealSuggestions.Count;
+                UnsubscribeToMealProportionScrollViewEvents();
                 _mealProportionsScrollViewDictionary[mealSourceType].ClearMealSuggestions();
+                SubscribeToMealProportionScrollViewEvents();
                 _mealSuggestionsDictionary[mealSourceType].Clear();
             }
 
@@ -199,6 +186,24 @@ namespace CalorieCounter.MealEntries.MealPatterns
             else if (!doesExist)
             {
                 Debug.LogWarning($"Meal source with ID: {mealSource.Id} does not exist");
+            }
+        }
+
+        private void SubscribeToMealProportionScrollViewEvents()
+        {
+            foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
+            {
+                scrollView.MealProportionModified += ScrollView_OnMealProportionModified;
+                scrollView.MealSuggestionRemoved += ScrollView_OnMealSuggestionRemoved;
+            }
+        }
+
+        private void UnsubscribeToMealProportionScrollViewEvents()
+        {
+            foreach (var scrollView in _mealProportionsScrollViewDictionary.Values)
+            {
+                scrollView.MealSuggestionRemoved -= ScrollView_OnMealSuggestionRemoved;
+                scrollView.MealProportionModified -= ScrollView_OnMealProportionModified;
             }
         }
     }
