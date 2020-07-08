@@ -61,7 +61,11 @@ namespace CalorieCounter.MealSources {
         {
             MealSources.Remove(oldNamedMealSource.MealSource.Id);
             MealSourceNames.Remove(oldNamedMealSource.MealSource.Id);
+
+            ScrollViewAssistant.RowRemoved -= ScrollViewAssistant_OnRowRemoved;
             ScrollViewAssistant.RemoveRow(_nonarchivedNamedMealSources.IndexOfKey(oldNamedMealSource.Name));
+            ScrollViewAssistant.RowRemoved += ScrollViewAssistant_OnRowRemoved;
+
             _nonarchivedNamedMealSources.Remove(oldNamedMealSource.Name);
             AddNamedMealSource(newNamedMealSource);
         }
