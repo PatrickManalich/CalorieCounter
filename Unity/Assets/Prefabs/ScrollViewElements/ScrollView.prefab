@@ -856,7 +856,7 @@ PrefabInstance:
     - target: {fileID: 4260618125142493537, guid: 83f01b1e731d4994db528d3213664eef,
         type: 3}
       propertyPath: m_textAlignment
-      value: 513
+      value: 65535
       objectReference: {fileID: 0}
     - target: {fileID: 4260618125142493537, guid: 83f01b1e731d4994db528d3213664eef,
         type: 3}
@@ -867,6 +867,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Overflow Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260618125142493537, guid: 83f01b1e731d4994db528d3213664eef,
+        type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 4260618125142493537, guid: 83f01b1e731d4994db528d3213664eef,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 4260618125142493539, guid: 83f01b1e731d4994db528d3213664eef,
         type: 3}
