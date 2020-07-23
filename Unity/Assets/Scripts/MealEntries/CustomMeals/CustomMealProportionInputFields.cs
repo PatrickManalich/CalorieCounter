@@ -27,19 +27,22 @@ namespace CalorieCounter.MealEntries {
 
         public override void Show() {
             base.Show();
-            for (int i = 0; i < _inputFields.Count + _blanks.Count; i++) {
-                if (i == 0 || i >= 2 && i <= 4) {
-                    TMP_InputField inputField = i == 0 ? _inputFields[i] : _inputFields[i - 1];
-                    _mealProportionsScrollView.ScrollViewAssistant.AddToScrollView(inputField.transform);
-                    inputField.gameObject.SetActive(true);
-                } else {
-                    GameObject blank = i == 1 ? _blanks[i - 1] : _blanks[i - 4];
-                    _mealProportionsScrollView.ScrollViewAssistant.AddToScrollView(blank.transform);
-                    blank.SetActive(true);
+            var transforms = new List<Transform>();
+            for (int i = 0; i < _inputFields.Count + _blanks.Count; i++)
+            {
+                if (i == 0 || i >= 2 && i <= 4)
+                {
+                    var inputField = i == 0 ? _inputFields[i] : _inputFields[i - 1];
+                    transforms.Add(inputField.transform);
+                }
+                else
+                {
+                    var blank = i == 1 ? _blanks[i - 1] : _blanks[i - 4];
+                    transforms.Add(blank.transform);
                 }
             }
+            _mealProportionsScrollView.AddToScrollView(transforms);
             _inputFields.First().ActivateInputField();
-            _mealProportionsScrollView.ScrollViewAssistant.ScrollToBottom();
         }
 
         public override void Hide() {

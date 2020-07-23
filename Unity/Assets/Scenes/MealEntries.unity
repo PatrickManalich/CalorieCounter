@@ -519,10 +519,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _adapters:
   - {fileID: 1508925266}
-  _scrollViewAssistants:
-  - {fileID: 478179530}
-  - {fileID: 1264550865}
-  - {fileID: 564145728}
+  _scrollViews:
+  - {fileID: 478179528}
+  - {fileID: 1264550863}
+  - {fileID: 564145725}
   _date: {fileID: 1767589936}
   _dayTypeDropdown: {fileID: 1584375629}
 --- !u!114 &104649630 stripped
@@ -2299,18 +2299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealProportionsScrollView: {fileID: 478179528}
---- !u!114 &478179530 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 478179524}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 478179527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84692115bdf89984abf817a12834cb39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &514968287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3116,18 +3104,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealProportionsScrollView: {fileID: 564145725}
---- !u!114 &564145728 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 564145719}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564145724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84692115bdf89984abf817a12834cb39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &580917167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5963,18 +5939,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealProportionsScrollView: {fileID: 1264550863}
---- !u!114 &1264550865 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1264550860}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264550862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84692115bdf89984abf817a12834cb39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1305809648
 PrefabInstance:
   m_ObjectHideFlags: 0

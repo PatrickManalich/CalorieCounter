@@ -70,9 +70,8 @@ namespace CalorieCounter.MealEntries {
                 MealProportionsScrollView scrollView = _mealProportionsScrollViewDictionary[mealSourceType];
                 foreach (var mealProportion in mealEntry.MealProportionsDictionary[mealSourceType])
                 {
-                    scrollView.AddMealProportion(mealProportion);
+                    scrollView.AddMealProportion(mealProportion, false);
                 }
-                scrollView.ScrollViewAssistant.ScrollToTop();
             }
         }
 

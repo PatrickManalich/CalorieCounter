@@ -5,14 +5,11 @@ using UnityEngine;
 
 namespace CalorieCounter.ScaleEntries
 {
-    [RequireComponent(typeof(ScrollViewAssistant))]
-    public class ScaleEntriesScrollView : MonoBehaviour
+    public class ScaleEntriesScrollView : ScrollView
     {
-        public ScrollViewAssistant ScrollViewAssistant { get; private set; }
-
         public SortedList<DateTime, ScaleEntry> ScaleEntries { get; private set; } = new SortedList<DateTime, ScaleEntry>();
 
-        public void AddScaleEntry(ScaleEntry scaleEntry)
+        public void AddScaleEntry(ScaleEntry scaleEntry, bool scrollToPercent = true)
         {
             ScaleEntries.Add(scaleEntry.DateTime, scaleEntry);
 
@@ -33,29 +30,19 @@ namespace CalorieCounter.ScaleEntries
             boneMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BoneMass.ToString();
             bmiText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Bmi.ToString();
 
-            var percent = 1 - (ScaleEntries.IndexOfKey(scaleEntry.DateTime) / (float)(ScaleEntries.Count - 1));
-            ScrollViewAssistant.ScrollToPercent(percent);
-            ScrollViewAssistant.InvokeRowAdded(siblingStartIndex);
+            if (scrollToPercent)
+            {
+                var percent = 1 - (ScaleEntries.IndexOfKey(scaleEntry.DateTime) / (float)(ScaleEntries.Count - 1));
+                ScrollViewAssistant.ScrollToPercent(percent);
+            }
+            InvokeRowAdded(siblingStartIndex);
         }
 
-        private void Awake()
+        public void RemoveRow(int rowIndex)
         {
-            ScrollViewAssistant = GetComponent<ScrollViewAssistant>();
-        }
-
-        private void Start()
-        {
-            ScrollViewAssistant.RowRemoved += ScrollViewAssistant_OnRowRemoved;
-        }
-
-        private void OnDestroy()
-        {
-            ScrollViewAssistant.RowRemoved -= ScrollViewAssistant_OnRowRemoved;
-        }
-
-        private void ScrollViewAssistant_OnRowRemoved(object sender, ScrollViewAssistant.RowChangedEventArgs e)
-        {
-            ScaleEntries.RemoveAt(e.RowIndex);
+            ScaleEntries.RemoveAt(rowIndex);
+            ScrollViewAssistant.RemoveRow(rowIndex);
+            InvokeRowRemoved(rowIndex);
         }
     }
 }

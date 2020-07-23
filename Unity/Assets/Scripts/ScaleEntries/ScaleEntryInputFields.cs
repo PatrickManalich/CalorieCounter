@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace CalorieCounter.ScaleEntries {
@@ -26,15 +27,13 @@ namespace CalorieCounter.ScaleEntries {
 
         public override void Show() {
             base.Show();
-            _scaleEntriesScrollView.ScrollViewAssistant.AddToScrollView(_scaleEntryDateField.transform);
-            _scaleEntryDateField.gameObject.SetActive(true);
-            for(int i = 0; i < _inputFields.Count; i++) {
-                var inputField = _inputFields[i];
-                _scaleEntriesScrollView.ScrollViewAssistant.AddToScrollView(inputField.transform);
-                inputField.gameObject.SetActive(true);
-            }
+            var transforms = new List<Transform>
+            {
+                _scaleEntryDateField.transform,
+            };
+            transforms.AddRange(_inputFields.Select(i => i.transform));
+            _scaleEntriesScrollView.AddToScrollView(transforms);
             _inputFields.First().ActivateInputField();
-            _scaleEntriesScrollView.ScrollViewAssistant.ScrollToBottom();
         }
 
         public override void Hide() {

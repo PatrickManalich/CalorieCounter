@@ -6,8 +6,8 @@ using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
-    [RequireComponent(typeof(ScrollViewAssistant))]
-    public class MealProportionsScrollView : MonoBehaviour {
+    public class MealProportionsScrollView : ScrollView
+    {
 
         public class MealProportionModifiedEventArgs : EventArgs
         {
@@ -38,8 +38,6 @@ namespace CalorieCounter.MealEntries {
         public event EventHandler<MealProportionModifiedEventArgs> MealProportionModified;
         public event EventHandler<MealSuggestionRemovedEventArgs> MealSuggestionRemoved;
 
-        public ScrollViewAssistant ScrollViewAssistant { get; private set; }
-
         public List<MealProportion> MealProportions { get; private set; } = new List<MealProportion>();
 
         public List<MealSuggestion> MealSuggestions { get; private set; } = new List<MealSuggestion>();
@@ -53,7 +51,7 @@ namespace CalorieCounter.MealEntries {
         [SerializeField]
         private DayTypeDropdown _dayTypeDropdown = default;
 
-        public void AddMealProportion(MealProportion mealProportion)
+        public void AddMealProportion(MealProportion mealProportion, bool scrollToBottom = true)
         {
             MealProportions.Add(mealProportion);
 
@@ -72,9 +70,12 @@ namespace CalorieCounter.MealEntries {
             proteinText.GetComponent<TextMeshProUGUI>().text = mealProportion.Protein.ToString();
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
 
-            ScrollViewAssistant.ScrollToBottom();
+            if (scrollToBottom)
+            {
+                ScrollViewAssistant.ScrollToBottom();
+            }
             MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Added, _mealSourceType, mealProportion));
-            ScrollViewAssistant.InvokeRowAdded(siblingStartIndex);
+            InvokeRowAdded(siblingStartIndex);
         }
 
         public void AddMealSuggestion(MealSuggestion mealSuggestion)
@@ -98,12 +99,30 @@ namespace CalorieCounter.MealEntries {
             calorieText.GetComponent<TextMeshProUGUI>().text = mealProportion.Calories.ToString();
         }
 
+        public void RemoveRow(int rowIndex)
+        {
+            if (MealProportions.Count > 0 && rowIndex < MealProportions.Count)
+            {
+                var removedMealProportion = MealProportions[rowIndex];
+                MealProportions.Remove(removedMealProportion);
+                MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Removed, _mealSourceType, removedMealProportion));
+            }
+            else if (MealSuggestions.Count > 0 && rowIndex >= MealProportions.Count)
+            {
+                var removedMealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
+                MealSuggestions.Remove(removedMealSuggestion);
+                MealSuggestionRemoved?.Invoke(this, new MealSuggestionRemovedEventArgs(_mealSourceType, removedMealSuggestion));
+            }
+            ScrollViewAssistant.RemoveRow(rowIndex);
+            InvokeRowRemoved(rowIndex);
+        }
+
         public void ClearMealProportions()
         {
             var mealProportionsCount = MealProportions.Count;   // Cache since we're changing list
             for (int i = 0; i < mealProportionsCount; i++)
             {
-                ScrollViewAssistant.RemoveRow(0);
+                RemoveRow(0);
             }
         }
 
@@ -111,9 +130,9 @@ namespace CalorieCounter.MealEntries {
         {
             if (rowIndex >= MealProportions.Count)
             {
-                var mealSuggestion = MealSuggestions[rowIndex - MealProportions.Count];
-                ScrollViewAssistant.RemoveRow(rowIndex);
-                AddMealProportion(mealSuggestion.MealProportion);
+                var mealProportion = MealSuggestions[rowIndex - MealProportions.Count].MealProportion;
+                RemoveRow(rowIndex);
+                AddMealProportion(mealProportion);
             }
         }
 
@@ -122,41 +141,18 @@ namespace CalorieCounter.MealEntries {
             var mealSuggestionsCount = MealSuggestions.Count;   // Cache since we're changing list
             for (int i = 0; i < mealSuggestionsCount; i++)
             {
-                ScrollViewAssistant.RemoveRow(MealProportions.Count);
+                RemoveRow(MealProportions.Count);
             }
-        }
-
-        private void Awake()
-        {
-            ScrollViewAssistant = GetComponent<ScrollViewAssistant>();
         }
 
         private void Start()
         {
-            ScrollViewAssistant.RowRemoved += ScrollViewAssistant_OnRowRemoved;
             _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_OnCurrentDayTypeChanged;
         }
 
         private void OnDestroy()
         {
             _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_OnCurrentDayTypeChanged;
-            ScrollViewAssistant.RowRemoved -= ScrollViewAssistant_OnRowRemoved;
-        }
-
-        private void ScrollViewAssistant_OnRowRemoved(object sender, ScrollViewAssistant.RowChangedEventArgs e)
-        {
-            if (MealProportions.Count > 0 && e.RowIndex < MealProportions.Count)
-            {
-                var removedMealProportion = MealProportions[e.RowIndex];
-                MealProportions.Remove(removedMealProportion);
-                MealProportionModified?.Invoke(this, new MealProportionModifiedEventArgs(MealProportionModifiedType.Removed, _mealSourceType, removedMealProportion));
-            }
-            else if (MealSuggestions.Count > 0 && e.RowIndex >= MealProportions.Count)
-            {
-                var removedMealSuggestion = MealSuggestions[e.RowIndex - MealProportions.Count];
-                MealSuggestions.Remove(removedMealSuggestion);
-                MealSuggestionRemoved?.Invoke(this, new MealSuggestionRemovedEventArgs(_mealSourceType, removedMealSuggestion));
-            }
         }
 
         private void DayTypeDropdown_OnCurrentDayTypeChanged(object sender, EventArgs e)

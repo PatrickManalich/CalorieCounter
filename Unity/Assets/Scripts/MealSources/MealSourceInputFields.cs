@@ -1,5 +1,5 @@
-﻿using System.Linq;
-using TMPro;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace CalorieCounter.MealSources {
@@ -27,18 +27,21 @@ namespace CalorieCounter.MealSources {
 
         public override void Show() {
             base.Show();
-            for (int i = 0; i < _inputFields.Count + 1; i++) {
-                if (i == 5) {
-                    _mealSourcesScrollView.ScrollViewAssistant.AddToScrollView(_blank.transform);
-                    _blank.SetActive(true);
-                } else {
-                    TMP_InputField inputField = i == 6 ? _inputFields[i - 1] : _inputFields[i];
-                    _mealSourcesScrollView.ScrollViewAssistant.AddToScrollView(inputField.transform);
-                    inputField.gameObject.SetActive(true);
+            var transforms = new List<Transform>();
+            for (int i = 0; i < _inputFields.Count + 1; i++)
+            {
+                if (i == 5)
+                {
+                    transforms.Add(_blank.transform);
+                }
+                else
+                {
+                    var inputField = i == 6 ? _inputFields[i - 1] : _inputFields[i];
+                    transforms.Add(inputField.transform);
                 }
             }
+            _mealSourcesScrollView.AddToScrollView(transforms);
             _inputFields.First().ActivateInputField();
-            _mealSourcesScrollView.ScrollViewAssistant.ScrollToBottom();
         }
 
         public override void Hide() {

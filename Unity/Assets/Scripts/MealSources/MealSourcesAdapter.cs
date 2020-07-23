@@ -78,9 +78,8 @@ namespace CalorieCounter.MealSources {
                 var namedMealSources = namedMealSourcesDictionary[mealSourceType];
                 foreach (var namedMealSource in namedMealSources.Values)
                 {
-                    mealSourcesScrollView.AddNamedMealSource(namedMealSource);
+                    mealSourcesScrollView.AddNamedMealSource(namedMealSource, false);
                 }
-                mealSourcesScrollView.ScrollViewAssistant.ScrollToTop();
             }
         }
 

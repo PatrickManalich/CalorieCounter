@@ -2221,8 +2221,8 @@ MonoBehaviour:
   _adapters:
   - {fileID: 435475410}
   - {fileID: 1840775928}
-  _scrollViewAssistants:
-  - {fileID: 1076232892}
+  _scrollViews:
+  - {fileID: 1076232891}
 --- !u!224 &876335742 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6352665693693712970, guid: c7e8d05503fbd694bbd66231e7a5d5d1,
@@ -2435,18 +2435,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 293e105d6ff55c049952f87ad3a50495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1076232892 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1076232887}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1076232889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84692115bdf89984abf817a12834cb39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1115520380

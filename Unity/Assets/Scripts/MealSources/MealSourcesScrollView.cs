@@ -4,11 +4,8 @@ using UnityEngine;
 
 namespace CalorieCounter.MealSources {
 
-    [RequireComponent(typeof(ScrollViewAssistant))]
-    public class MealSourcesScrollView : MonoBehaviour
+    public class MealSourcesScrollView : ScrollView
     {
-        public ScrollViewAssistant ScrollViewAssistant { get; private set; }
-
         public Dictionary<string, MealSource> MealSources { get; private set; } = new Dictionary<string, MealSource>();
 
         public Dictionary<string, string> MealSourceNames { get; private set; } = new Dictionary<string, string>();
@@ -23,7 +20,7 @@ namespace CalorieCounter.MealSources {
 
         private SortedList<string, NamedMealSource> _nonarchivedNamedMealSources = new SortedList<string, NamedMealSource>();
 
-        public void AddNamedMealSource(NamedMealSource namedMealSource)
+        public void AddNamedMealSource(NamedMealSource namedMealSource, bool scrollToPercent = true)
         {
             var mealSource = namedMealSource.MealSource;
             MealSources.Add(mealSource.Id, mealSource);
@@ -51,22 +48,33 @@ namespace CalorieCounter.MealSources {
             calorieText.GetComponent<TextMeshProUGUI>().text = mealSource.Calories.ToString();
             descriptionText.GetComponent<TextMeshProUGUI>().text = mealSource.Description;
 
-            var percent = 1 - (_nonarchivedNamedMealSources.IndexOfKey(namedMealSource.Name) / (float) (_nonarchivedNamedMealSources.Count - 1));
-            ScrollViewAssistant.ScrollToPercent(percent);
-            ScrollViewAssistant.InvokeRowAdded(siblingStartIndex);
+            if (scrollToPercent)
+            {
+                var percent = 1 - (_nonarchivedNamedMealSources.IndexOfKey(namedMealSource.Name) / (float)(_nonarchivedNamedMealSources.Count - 1));
+                ScrollViewAssistant.ScrollToPercent(percent);
+            }
+            InvokeRowAdded(siblingStartIndex);
         }
 
+        public void ArchiveRow(int rowIndex)
+        {
+            var highlightedMealSource = _nonarchivedNamedMealSources.Values[rowIndex].MealSource;
+            var archivedMealSource = new MealSource(highlightedMealSource, true);
+            MealSources[archivedMealSource.Id] = archivedMealSource;
+            _nonarchivedNamedMealSources.RemoveAt(rowIndex);
+            ScrollViewAssistant.RemoveRow(rowIndex);
+            InvokeRowRemoved(rowIndex);
+        }
 
         public void RenameNamedMealSource(NamedMealSource oldNamedMealSource, NamedMealSource newNamedMealSource)
         {
+            var rowIndex = _nonarchivedNamedMealSources.IndexOfKey(oldNamedMealSource.Name);
             MealSources.Remove(oldNamedMealSource.MealSource.Id);
             MealSourceNames.Remove(oldNamedMealSource.MealSource.Id);
-
-            ScrollViewAssistant.RowRemoved -= ScrollViewAssistant_OnRowRemoved;
-            ScrollViewAssistant.RemoveRow(_nonarchivedNamedMealSources.IndexOfKey(oldNamedMealSource.Name));
-            ScrollViewAssistant.RowRemoved += ScrollViewAssistant_OnRowRemoved;
-
             _nonarchivedNamedMealSources.Remove(oldNamedMealSource.Name);
+            ScrollViewAssistant.RemoveRow(rowIndex);
+            InvokeRowRemoved(rowIndex);
+
             AddNamedMealSource(newNamedMealSource);
         }
 
@@ -75,29 +83,6 @@ namespace CalorieCounter.MealSources {
             var parentTransform = ScrollViewAssistant.ContentChildren[rowIndex * ScrollViewAssistant.Content.constraintCount].transform;
             var oldNamedMealSource = _nonarchivedNamedMealSources.Values[rowIndex];
             _mealSourceRenameField.Show(parentTransform, oldNamedMealSource);
-        }
-
-        private void Awake()
-        {
-            ScrollViewAssistant = GetComponent<ScrollViewAssistant>();
-        }
-
-        private void Start()
-        {
-            ScrollViewAssistant.RowRemoved += ScrollViewAssistant_OnRowRemoved;
-        }
-
-        private void OnDestroy()
-        {
-            ScrollViewAssistant.RowRemoved -= ScrollViewAssistant_OnRowRemoved;
-        }
-
-        private void ScrollViewAssistant_OnRowRemoved(object sender, ScrollViewAssistant.RowChangedEventArgs e)
-        {
-            var highlightedMealSource = _nonarchivedNamedMealSources.Values[e.RowIndex].MealSource;
-            var archivedMealSource = new MealSource(highlightedMealSource, true);
-            MealSources[archivedMealSource.Id] = archivedMealSource;
-            _nonarchivedNamedMealSources.RemoveAt(e.RowIndex);
         }
     }
 }

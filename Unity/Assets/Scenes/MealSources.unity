@@ -1165,9 +1165,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _adapters:
   - {fileID: 1982907307}
-  _scrollViewAssistants:
-  - {fileID: 2042111771}
-  - {fileID: 1517040377}
+  _scrollViews:
+  - {fileID: 2042111768}
+  - {fileID: 1517040374}
 --- !u!1001 &384456742
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5689,18 +5689,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealSourcesScrollView: {fileID: 1517040374}
---- !u!114 &1517040377 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1517040371}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517040373}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84692115bdf89984abf817a12834cb39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1538776555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6801,18 +6789,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealSourcesScrollView: {fileID: 2042111768}
---- !u!114 &2042111771 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4055726072949874970, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
-    type: 3}
-  m_PrefabInstance: {fileID: 2042111764}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042111767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84692115bdf89984abf817a12834cb39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2066146307
 PrefabInstance:
   m_ObjectHideFlags: 0

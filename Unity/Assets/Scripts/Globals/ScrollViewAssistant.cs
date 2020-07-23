@@ -24,20 +24,6 @@ namespace CalorieCounter
 
         public event EventHandler<TextModifiedEventArgs> TextModified;
 
-        public class RowChangedEventArgs : EventArgs
-        {
-            public int RowIndex { get; }
-
-            public RowChangedEventArgs(int rowIndex)
-            {
-                RowIndex = rowIndex;
-            }
-        }
-
-        public event EventHandler<RowChangedEventArgs> RowAdded;
-
-        public event EventHandler<RowChangedEventArgs> RowRemoved;
-
         public List<ScrollViewText> ScrollViewTexts { get; private set; } = new List<ScrollViewText>();
 
         public RectTransform RectTransform { get; private set; }
@@ -79,11 +65,6 @@ namespace CalorieCounter
             ContentChildren.Insert(siblingIndex, transform.gameObject);
         }
 
-        public void InvokeRowAdded(int rowIndex)
-        {
-            RowAdded?.Invoke(this, new RowChangedEventArgs(rowIndex));
-        }
-
         public void RemoveRow(int rowIndex)
         {
             var childStartIndex = rowIndex * Content.constraintCount;
@@ -100,7 +81,6 @@ namespace CalorieCounter
                 Destroy(child);
                 ContentChildren.Remove(child);
             }
-            RowRemoved?.Invoke(this, new RowChangedEventArgs(rowIndex));
         }
 
         public void ScrollToTop()
