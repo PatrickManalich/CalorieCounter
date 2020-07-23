@@ -2299,6 +2299,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mealProportionsScrollView: {fileID: 478179528}
+--- !u!114 &478179530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478179526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834421d2dfde90f45b2f39998b6fb096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mealProportionsScrollView: {fileID: 478179528}
 --- !u!1001 &514968287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3069,6 +3082,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 564145719}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &564145722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564145721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834421d2dfde90f45b2f39998b6fb096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mealProportionsScrollView: {fileID: 564145725}
 --- !u!1 &564145724 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2207707452619756389, guid: 7186c6ff6182f1842a7627fe5cb01f6c,
@@ -5936,6 +5962,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 029a8522975f6084eaef4375117be7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mealProportionsScrollView: {fileID: 1264550863}
+--- !u!114 &1264550865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264550861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834421d2dfde90f45b2f39998b6fb096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _mealProportionsScrollView: {fileID: 1264550863}
