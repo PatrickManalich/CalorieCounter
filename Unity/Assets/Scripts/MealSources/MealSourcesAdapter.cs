@@ -56,11 +56,7 @@ namespace CalorieCounter.MealSources {
         public static List<NamedMealSource> GetNamedMealSources(MealSourceType mealSourceType)
         {
             var namedMealSourcesDictionary = GameManager.MealSourcesManager.ImportNamedMealSourcesDictionary();
-            var namedMealSources = new List<NamedMealSource>();
-            if(namedMealSourcesDictionary.Count > 0)
-            {
-                namedMealSources = namedMealSourcesDictionary[mealSourceType].Values.ToList();
-            }
+            var namedMealSources = namedMealSourcesDictionary[mealSourceType].Values.ToList();
             return namedMealSources;
         }
 
