@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 namespace CalorieCounter.MealSources {
@@ -32,21 +31,13 @@ namespace CalorieCounter.MealSources {
             _nonarchivedNamedMealSources.Add(namedMealSource.Name, namedMealSource);
 
             int siblingStartIndex = _nonarchivedNamedMealSources.IndexOfKey(namedMealSource.Name) * ScrollViewAssistant.Content.constraintCount;
-            GameObject mealNameText = ScrollViewAssistant.InstantiateScrollViewText(siblingStartIndex);
-            GameObject servingSizeText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject fatText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject carbText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject proteinText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject calorieText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject descriptionText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-
-            mealNameText.GetComponent<TextMeshProUGUI>().text = namedMealSource.Name;
-            servingSizeText.GetComponent<TextMeshProUGUI>().text = mealSource.ServingSize;
-            fatText.GetComponent<TextMeshProUGUI>().text = mealSource.Fat.ToString();
-            carbText.GetComponent<TextMeshProUGUI>().text = mealSource.Carbs.ToString();
-            proteinText.GetComponent<TextMeshProUGUI>().text = mealSource.Protein.ToString();
-            calorieText.GetComponent<TextMeshProUGUI>().text = mealSource.Calories.ToString();
-            descriptionText.GetComponent<TextMeshProUGUI>().text = mealSource.Description;
+            ScrollViewAssistant.InstantiateScrollViewText(siblingStartIndex, namedMealSource.Name);
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, mealSource.ServingSize);
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, mealSource.Fat.ToString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, mealSource.Carbs.ToString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, mealSource.Protein.ToString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, mealSource.Calories.ToString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, mealSource.Description);
 
             if (scrollToPercent)
             {

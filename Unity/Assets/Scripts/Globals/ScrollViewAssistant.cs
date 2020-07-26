@@ -37,19 +37,19 @@ namespace CalorieCounter
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
 
-        public GameObject InstantiateScrollViewText(int siblingIndex)
+        public void InstantiateScrollViewText(int siblingIndex, string text)
         {
-            return InstantiateScrollViewText(_scrollViewTextPrefab, siblingIndex);
+            InstantiateScrollViewText(_scrollViewTextPrefab, siblingIndex, text);
         }
 
-        public GameObject InstantiateScrollViewText(GameObject scrollViewTextPrefab, int siblingIndex)
+        public void InstantiateScrollViewText(GameObject scrollViewTextPrefab, int siblingIndex, string text)
         {
             GameObject scrollViewTextGameObject = Instantiate(scrollViewTextPrefab);
             AddToScrollView(scrollViewTextGameObject.transform, siblingIndex);
             var scrollViewText = scrollViewTextGameObject.GetComponent<ScrollViewText>();
+            scrollViewText.Text.text = text;
             ScrollViewTexts.Add(scrollViewText);
             TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText));
-            return scrollViewTextGameObject;
         }
 
         public void AddToScrollView(Transform transform)

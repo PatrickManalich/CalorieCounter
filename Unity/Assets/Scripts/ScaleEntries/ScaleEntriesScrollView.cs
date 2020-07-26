@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
 
 namespace CalorieCounter.ScaleEntries
 {
@@ -14,21 +12,13 @@ namespace CalorieCounter.ScaleEntries
             ScaleEntries.Add(scaleEntry.DateTime, scaleEntry);
 
             int siblingStartIndex = ScaleEntries.IndexOfKey(scaleEntry.DateTime) * ScrollViewAssistant.Content.constraintCount;
-            GameObject dateText = ScrollViewAssistant.InstantiateScrollViewText(siblingStartIndex);
-            GameObject weightText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject bodyFatText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject bodyWaterText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject muscleMassText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject boneMassText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-            GameObject bmiText = ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex);
-
-            dateText.GetComponent<TextMeshProUGUI>().text = scaleEntry.DateTime.ToShortDateString();
-            weightText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Weight.ToString();
-            bodyFatText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BodyFat.ToString();
-            bodyWaterText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BodyWater.ToString();
-            muscleMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.MuscleMass.ToString();
-            boneMassText.GetComponent<TextMeshProUGUI>().text = scaleEntry.BoneMass.ToString();
-            bmiText.GetComponent<TextMeshProUGUI>().text = scaleEntry.Bmi.ToString();
+            ScrollViewAssistant.InstantiateScrollViewText(siblingStartIndex, scaleEntry.DateTime.ToShortDateString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, scaleEntry.Weight.ToString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, scaleEntry.BodyFat.ToString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, scaleEntry.BodyWater.ToString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, scaleEntry.MuscleMass.ToString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, scaleEntry.BoneMass.ToString());
+            ScrollViewAssistant.InstantiateScrollViewText(++siblingStartIndex, scaleEntry.Bmi.ToString());
 
             if (scrollToPercent)
             {
