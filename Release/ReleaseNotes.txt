@@ -1,5 +1,11 @@
 Calorie Counter Release Notes
 
+Release 1.9.1 (8/4/2020)
+ -Fix bug where meal suggestions were incorrect
+ -Fix bug where the totals weren't visible
+ -Update plugin TextMesh pro
+ -Fix bug where you couldn't rename meal source
+
 Release 1.9.0 (7/5/2020)
  -Fix memory leak
  -Set first selected selectable in all scenes
