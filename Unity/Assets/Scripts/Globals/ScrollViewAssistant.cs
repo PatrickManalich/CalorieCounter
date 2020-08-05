@@ -29,10 +29,6 @@ namespace CalorieCounter
         public ScrollRect ScrollRect { get; private set; }
         public GridLayoutGroup Content { get; private set; }
 
-        // We need to manually keep track of content children because calling Destroy() takes a frame to update,
-        // so using GetChild() won't return the expected results.
-        public List<GameObject> ContentChildren { get; private set; } = new List<GameObject>();
-
         private Queue<Action> _actionQueue = new Queue<Action>();
         private bool _isBlocking;
 
@@ -51,7 +47,6 @@ namespace CalorieCounter
                 var scrollViewTextTransform = Instantiate(scrollViewTextPrefab).transform;
                 scrollViewTextTransform.SetParent(Content.transform, false);
                 scrollViewTextTransform.SetSiblingIndex(siblingIndex);
-                ContentChildren.Insert(siblingIndex, scrollViewTextTransform.gameObject);
                 var scrollViewText = scrollViewTextTransform.GetComponent<ScrollViewText>();
                 scrollViewText.Text.text = text;
                 ScrollViewTexts.Add(scrollViewText);
@@ -65,7 +60,6 @@ namespace CalorieCounter
             void AddAction()
             {
                 transformToAdd.SetParent(Content.transform, false);
-                ContentChildren.Add(transformToAdd.gameObject);
             }
             _actionQueue.Enqueue(AddAction);
         }
@@ -78,7 +72,7 @@ namespace CalorieCounter
                 for (var i = Content.constraintCount - 1; i >= 0; i--)
                 {
                     var childIndex = childStartIndex + i;
-                    var child = ContentChildren[childIndex];
+                    var child = Content.transform.GetChild(childIndex).gameObject;
                     if (child.GetComponent<ScrollViewText>())
                     {
                         var scrollViewText = child.GetComponent<ScrollViewText>();
@@ -86,7 +80,6 @@ namespace CalorieCounter
                         TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, scrollViewText));
                     }
                     Destroy(child);
-                    ContentChildren.Remove(child);
                 }
             }
             _actionQueue.Enqueue(DestroyAction);
