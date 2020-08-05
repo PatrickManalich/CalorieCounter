@@ -44,9 +44,11 @@ namespace CalorieCounter
 
         public void InstantiateScrollViewText(GameObject scrollViewTextPrefab, int siblingIndex, string text)
         {
-            GameObject scrollViewTextGameObject = Instantiate(scrollViewTextPrefab);
-            AddToScrollView(scrollViewTextGameObject.transform, siblingIndex);
-            var scrollViewText = scrollViewTextGameObject.GetComponent<ScrollViewText>();
+            var scrollViewTextTransform = Instantiate(scrollViewTextPrefab).transform;
+            scrollViewTextTransform.SetParent(Content.transform, false);
+            scrollViewTextTransform.SetSiblingIndex(siblingIndex);
+            ContentChildren.Insert(siblingIndex, scrollViewTextTransform.gameObject);
+            var scrollViewText = scrollViewTextTransform.GetComponent<ScrollViewText>();
             scrollViewText.Text.text = text;
             ScrollViewTexts.Add(scrollViewText);
             TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText));
@@ -56,13 +58,6 @@ namespace CalorieCounter
         {
             transform.SetParent(Content.transform, false);
             ContentChildren.Add(transform.gameObject);
-        }
-
-        public void AddToScrollView(Transform transform, int siblingIndex)
-        {
-            transform.SetParent(Content.transform, false);
-            transform.SetSiblingIndex(siblingIndex);
-            ContentChildren.Insert(siblingIndex, transform.gameObject);
         }
 
         public void RemoveRow(int rowIndex)
