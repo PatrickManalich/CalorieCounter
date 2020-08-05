@@ -54,10 +54,10 @@ namespace CalorieCounter
             TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText));
         }
 
-        public void AddToScrollView(Transform transform)
+        public void AddToScrollView(Transform transformToAdd)
         {
-            transform.SetParent(Content.transform, false);
-            ContentChildren.Add(transform.gameObject);
+            transformToAdd.SetParent(Content.transform, false);
+            ContentChildren.Add(transformToAdd.gameObject);
         }
 
         public void RemoveRow(int rowIndex)
