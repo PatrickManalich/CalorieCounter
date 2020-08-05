@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,6 +33,9 @@ namespace CalorieCounter
         // so using GetChild() won't return the expected results.
         public List<GameObject> ContentChildren { get; private set; } = new List<GameObject>();
 
+        private Queue<Action> _actionQueue = new Queue<Action>();
+        private bool _isBlocking;
+
         [SerializeField]
         private GameObject _scrollViewTextPrefab = default;
 
@@ -44,53 +46,71 @@ namespace CalorieCounter
 
         public void InstantiateScrollViewText(GameObject scrollViewTextPrefab, int siblingIndex, string text)
         {
-            var scrollViewTextTransform = Instantiate(scrollViewTextPrefab).transform;
-            scrollViewTextTransform.SetParent(Content.transform, false);
-            scrollViewTextTransform.SetSiblingIndex(siblingIndex);
-            ContentChildren.Insert(siblingIndex, scrollViewTextTransform.gameObject);
-            var scrollViewText = scrollViewTextTransform.GetComponent<ScrollViewText>();
-            scrollViewText.Text.text = text;
-            ScrollViewTexts.Add(scrollViewText);
-            TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText));
+            void InstantiateAction()
+            {
+                var scrollViewTextTransform = Instantiate(scrollViewTextPrefab).transform;
+                scrollViewTextTransform.SetParent(Content.transform, false);
+                scrollViewTextTransform.SetSiblingIndex(siblingIndex);
+                ContentChildren.Insert(siblingIndex, scrollViewTextTransform.gameObject);
+                var scrollViewText = scrollViewTextTransform.GetComponent<ScrollViewText>();
+                scrollViewText.Text.text = text;
+                ScrollViewTexts.Add(scrollViewText);
+                TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Instantiated, scrollViewText));
+            }
+            _actionQueue.Enqueue(InstantiateAction);
         }
 
         public void AddToScrollView(Transform transformToAdd)
         {
-            transformToAdd.SetParent(Content.transform, false);
-            ContentChildren.Add(transformToAdd.gameObject);
+            void AddAction()
+            {
+                transformToAdd.SetParent(Content.transform, false);
+                ContentChildren.Add(transformToAdd.gameObject);
+            }
+            _actionQueue.Enqueue(AddAction);
         }
 
         public void RemoveRow(int rowIndex)
         {
-            var childStartIndex = rowIndex * Content.constraintCount;
-            for (var i = Content.constraintCount - 1; i >= 0; i--)
+            void DestroyAction()
             {
-                var childIndex = childStartIndex + i;
-                var child = ContentChildren[childIndex];
-                if (child.GetComponent<ScrollViewText>())
+                var childStartIndex = rowIndex * Content.constraintCount;
+                for (var i = Content.constraintCount - 1; i >= 0; i--)
                 {
-                    var scrollViewText = child.GetComponent<ScrollViewText>();
-                    ScrollViewTexts.Remove(scrollViewText);
-                    TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, scrollViewText));
+                    var childIndex = childStartIndex + i;
+                    var child = ContentChildren[childIndex];
+                    if (child.GetComponent<ScrollViewText>())
+                    {
+                        var scrollViewText = child.GetComponent<ScrollViewText>();
+                        ScrollViewTexts.Remove(scrollViewText);
+                        TextModified?.Invoke(this, new TextModifiedEventArgs(TextModifiedType.Destroying, scrollViewText));
+                    }
+                    Destroy(child);
+                    ContentChildren.Remove(child);
                 }
-                Destroy(child);
-                ContentChildren.Remove(child);
             }
+            _actionQueue.Enqueue(DestroyAction);
+            _actionQueue.Enqueue(BlockAction);
         }
 
         public void ScrollToTop()
         {
-            StartCoroutine(ScrollToPercentCoroutine(1));
+            ScrollToPercent(1);
         }
 
         public void ScrollToBottom()
         {
-            StartCoroutine(ScrollToPercentCoroutine(0));
+            ScrollToPercent(0);
         }
 
         public void ScrollToPercent(float percent)
         {
-            StartCoroutine(ScrollToPercentCoroutine(percent));
+            _actionQueue.Enqueue(BlockAction);
+            void ScrollAction()
+            {
+                ScrollRect.verticalNormalizedPosition = Mathf.Clamp01(percent);
+            }
+            _actionQueue.Enqueue(ScrollAction);
         }
 
         private void Awake()
@@ -100,10 +120,25 @@ namespace CalorieCounter
             Content = ScrollRect.content.GetComponent<GridLayoutGroup>();
         }
 
-        private IEnumerator ScrollToPercentCoroutine (float percent)
+        private void Update()
         {
-            yield return new WaitForEndOfFrame();
-            ScrollRect.verticalNormalizedPosition = Mathf.Clamp01(percent);
+            while (_actionQueue.Count > 0)
+            {
+                if (_isBlocking)
+                {
+                    _isBlocking = false;
+                    return;
+                }
+                else
+                {
+                    _actionQueue.Dequeue()?.Invoke();
+                }
+            }
+        }
+
+        private void BlockAction()
+        {
+            _isBlocking = true;
         }
     }
 }
