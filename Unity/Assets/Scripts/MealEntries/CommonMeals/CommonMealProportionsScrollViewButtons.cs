@@ -1,5 +1,4 @@
-﻿using CalorieCounter.Utilities;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace CalorieCounter.MealEntries
@@ -57,13 +56,13 @@ namespace CalorieCounter.MealEntries
                 _nonarchivedNamedMealSourceDropdown.SelectedNamedMealSource.MealSource);
             _mealProportionsScrollView.AddMealProportion(mealProportion);
 
-            ResetDropdowns();
+            ClearAll();
             _submitButton.interactable = false;
         }
 
         private void Date_OnCurrentDateTimeChanged(object sender, System.EventArgs e)
         {
-            ResetDropdowns();
+            ClearAll();
         }
 
         private void DayTypeDropdown_CurrentDayTypeChanged(object sender, System.EventArgs e)
@@ -71,13 +70,13 @@ namespace CalorieCounter.MealEntries
             var value = _dayTypeDropdown.IsCurrentDayTypeRestOrTraining;
             _servingAmountDropdown.SetInteractable(value);
             _nonarchivedNamedMealSourceDropdown.SetInteractable(value);
-            ResetDropdowns();
+            ClearAll();
         }
 
-        private void ResetDropdowns()
+        private void ClearAll()
         {
-            _servingAmountDropdown.ResetDropdown();
-            _nonarchivedNamedMealSourceDropdown.ResetDropdown();
+            _servingAmountDropdown.Clear();
+            _nonarchivedNamedMealSourceDropdown.Clear();
         }
     }
 }
