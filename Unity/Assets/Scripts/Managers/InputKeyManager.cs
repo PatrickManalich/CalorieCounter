@@ -30,8 +30,7 @@ namespace CalorieCounter.Managers
             {
                 if (Input.GetKeyDown(keyCode))
                 {
-                    var inputKeyCode = _inputKeyCodeDictionary[keyCode];
-                    InputKeyPressed?.Invoke(this, new InputKeyPressedEventArgs(inputKeyCode));
+                    InputKeyPressed?.Invoke(this, new InputKeyPressedEventArgs(_inputKeyCodeDictionary[keyCode]));
                 }
             }
         }
