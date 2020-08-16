@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ad5bef3a1ba22041ae8ccb4059482dd, type: 3}
-  m_Name: MojoPorkSandwiches
+  m_Name: MojoPorkSandwichesWithWhiteRice
   m_EditorClassIdentifier: 
   serializableMealSuggestions:
   - _serializableMealProportion:
@@ -22,4 +22,9 @@ MonoBehaviour:
       _servingAmount: 4
       _serializableMealSource:
         _id: 5a1fbfbf-e62f-47a6-aed8-a2a370cd9d67
+    _priority: 0
+  - _serializableMealProportion:
+      _servingAmount: 0.33
+      _serializableMealSource:
+        _id: 43ff7c5d-b870-40f9-90a8-c55a7afa3305
     _priority: 0
