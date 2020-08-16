@@ -1,5 +1,11 @@
 Calorie Counter Release Notes
 
+Release 1.10.0 (8/16/2020)
+ -Fix visual bug in meal source rename field
+ -Increase text limit on description input field
+ -Change accept suggestion key to be Q
+ -Add named meal source search input fields
+
 Release 1.9.1 (8/4/2020)
  -Fix bug where meal suggestions were incorrect
  -Fix bug where the totals weren't visible
