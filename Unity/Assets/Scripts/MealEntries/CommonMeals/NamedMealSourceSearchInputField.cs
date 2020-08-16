@@ -8,7 +8,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace CalorieCounter.MealEntries
+namespace CalorieCounter.MealEntries.CommonMeals
 {
     [RequireComponent(typeof(TMP_InputField))]
     public class NamedMealSourceSearchInputField : MonoBehaviour

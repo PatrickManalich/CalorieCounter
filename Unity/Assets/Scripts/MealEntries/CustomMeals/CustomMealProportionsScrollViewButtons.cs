@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace CalorieCounter.MealEntries
+namespace CalorieCounter.MealEntries.CustomMeals
 {
     public class CustomMealProportionsScrollViewButtons : MonoBehaviour
     {
