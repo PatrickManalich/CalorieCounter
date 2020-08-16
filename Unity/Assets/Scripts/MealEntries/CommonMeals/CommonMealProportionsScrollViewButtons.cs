@@ -9,7 +9,7 @@ namespace CalorieCounter.MealEntries
         private ServingAmountDropdown _servingAmountDropdown = default;
 
         [SerializeField]
-        private NonarchivedNamedMealSourceDropdown _nonarchivedNamedMealSourceDropdown = default;
+        private NamedMealSourceSearchInputField _namedMealSourceSearchInputField = default;
 
         [SerializeField]
         private Button _submitButton = default;
@@ -26,13 +26,13 @@ namespace CalorieCounter.MealEntries
         private void Start()
         {
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
-            _nonarchivedNamedMealSourceDropdown.ValidityChanged += Dropdown_OnValidityChanged;
+            _namedMealSourceSearchInputField.ValidityChanged += Dropdown_OnValidityChanged;
             _submitButton.onClick.AddListener(SubmitButton_OnClick);
             _date.CurrentDateTimeChanged += Date_OnCurrentDateTimeChanged;
             _dayTypeDropdown.CurrentDayTypeChanged += DayTypeDropdown_CurrentDayTypeChanged;
 
             _servingAmountDropdown.SetInteractable(_dayTypeDropdown.IsCurrentDayTypeRestOrTraining);
-            _nonarchivedNamedMealSourceDropdown.SetInteractable(_dayTypeDropdown.IsCurrentDayTypeRestOrTraining);
+            _namedMealSourceSearchInputField.SetInteractable(_dayTypeDropdown.IsCurrentDayTypeRestOrTraining);
             _submitButton.interactable = false;
         }
 
@@ -41,19 +41,19 @@ namespace CalorieCounter.MealEntries
             _dayTypeDropdown.CurrentDayTypeChanged -= DayTypeDropdown_CurrentDayTypeChanged;
             _date.CurrentDateTimeChanged -= Date_OnCurrentDateTimeChanged;
             _submitButton.onClick.RemoveListener(SubmitButton_OnClick);
-            _nonarchivedNamedMealSourceDropdown.ValidityChanged -= Dropdown_OnValidityChanged;
+            _namedMealSourceSearchInputField.ValidityChanged -= Dropdown_OnValidityChanged;
             _servingAmountDropdown.ValidityChanged += Dropdown_OnValidityChanged;
         }
 
         private void Dropdown_OnValidityChanged(object sender, System.EventArgs e)
         {
-            _submitButton.interactable = _servingAmountDropdown.IsValid && _nonarchivedNamedMealSourceDropdown.IsValid;
+            _submitButton.interactable = _servingAmountDropdown.IsValid && _namedMealSourceSearchInputField.IsValid;
         }
 
         private void SubmitButton_OnClick()
         {
             var mealProportion = new MealProportion(_servingAmountDropdown.SelectedServingAmount, 
-                _nonarchivedNamedMealSourceDropdown.SelectedNamedMealSource.MealSource);
+                _namedMealSourceSearchInputField.SelectedNamedMealSource.MealSource);
             _mealProportionsScrollView.AddMealProportion(mealProportion);
 
             ClearAll();
@@ -69,14 +69,14 @@ namespace CalorieCounter.MealEntries
         {
             var value = _dayTypeDropdown.IsCurrentDayTypeRestOrTraining;
             _servingAmountDropdown.SetInteractable(value);
-            _nonarchivedNamedMealSourceDropdown.SetInteractable(value);
+            _namedMealSourceSearchInputField.SetInteractable(value);
             ClearAll();
         }
 
         private void ClearAll()
         {
             _servingAmountDropdown.Clear();
-            _nonarchivedNamedMealSourceDropdown.Clear();
+            _namedMealSourceSearchInputField.Clear();
         }
     }
 }
