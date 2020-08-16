@@ -1,10 +1,12 @@
-﻿using CalorieCounter.MealSources;
+﻿using CalorieCounter.Managers;
+using CalorieCounter.MealSources;
 using CalorieCounter.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace CalorieCounter.MealEntries
 {
@@ -55,10 +57,12 @@ namespace CalorieCounter.MealEntries
 
             _inputField.onValueChanged.AddListener(InputField_OnValueChanged);
             _dropdown.onValueChanged.AddListener(Dropdown_OnValueChanged);
+            GameManager.InputKeyManager.InputKeyPressed += InputKeyManager_OnInputKeyPressed;
         }
 
         private void OnDestroy()
         {
+            GameManager.InputKeyManager.InputKeyPressed -= InputKeyManager_OnInputKeyPressed;
             _dropdown.onValueChanged.RemoveListener(Dropdown_OnValueChanged);
             _inputField.onValueChanged.RemoveListener(InputField_OnValueChanged);
         }
@@ -109,6 +113,19 @@ namespace CalorieCounter.MealEntries
             {
                 // Account for the empty option
                 _inputField.text = _searchResults[value - 1].Name;
+            }
+        }
+
+        private void InputKeyManager_OnInputKeyPressed(object sender, InputKeyManager.InputKeyPressedEventArgs e)
+        {
+            if (e.InputKeyCode == InputKeyCode.SelectNext && EventSystem.current.currentSelectedGameObject == gameObject)
+            {
+                if(_dropdown.options.Count > 1)
+                {
+                    _inputField.text = _searchResults[0].Name;
+                    _inputField.MoveToEndOfLine(false, false);
+                    _dropdown.Hide();
+                }
             }
         }
     }
