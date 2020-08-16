@@ -248,32 +248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ddfcb1efefcc5b449b21193c5a61e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputKeyCodeDictionary:
-    reorderableList:
-      canAdd: 1
-      canRemove: 1
-      draggable: 1
-      expandable: 1
-      multipleSelection: 1
-      isExpanded: 1
-      label:
-        m_Text: Keys
-        m_Image: {fileID: 0}
-        m_Tooltip: 
-      headerHeight: 18
-      footerHeight: 13
-      slideEasing: 0.15
-      verticalSpacing: 2
-      showDefaultBackground: 1
-      elementDisplayType: 0
-      elementNameProperty: 
-      elementNameOverride: 
-      elementIcon: {fileID: 0}
-    reqReferences: {fileID: 0}
-    isExpanded: 1
-    _keyValues: 1b0000007f0000001b0100007300000009000000
-    _keys: 1b0000007f0000001b0100007300000009000000
-    _values: 0000000001000000020000000300000004000000
 --- !u!1 &7699840029912765179
 GameObject:
   m_ObjectHideFlags: 0

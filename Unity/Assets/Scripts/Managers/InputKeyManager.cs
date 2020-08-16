@@ -1,5 +1,6 @@
 ﻿using RotaryHeart.Lib.SerializableDictionary;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace CalorieCounter.Managers
@@ -18,11 +19,14 @@ namespace CalorieCounter.Managers
 
         public event EventHandler<InputKeyPressedEventArgs> InputKeyPressed;
 
-        [Serializable]
-        private class InputKeyCodeDictionary : SerializableDictionaryBase<KeyCode, InputKeyCode> { }
-
-        [SerializeField]
-        private InputKeyCodeDictionary _inputKeyCodeDictionary = default;
+        private Dictionary<KeyCode, InputKeyCode> _inputKeyCodeDictionary = new Dictionary<KeyCode, InputKeyCode>()
+        {
+            { KeyCode.Escape, InputKeyCode.ToggleMenu },
+            { KeyCode.Delete, InputKeyCode.RemoveRow },
+            { KeyCode.F2, InputKeyCode.RenameRow },
+            { KeyCode.S, InputKeyCode.AcceptSuggestion },
+            { KeyCode.Tab, InputKeyCode.SelectNext },
+        };
 
         private void Update()
         {
