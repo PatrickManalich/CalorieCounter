@@ -24,7 +24,7 @@ namespace CalorieCounter.Managers
             { KeyCode.Escape, InputKeyCode.ToggleMenu },
             { KeyCode.Delete, InputKeyCode.RemoveRow },
             { KeyCode.F2, InputKeyCode.RenameRow },
-            { KeyCode.S, InputKeyCode.AcceptSuggestion },
+            { KeyCode.Q, InputKeyCode.AcceptSuggestion },
             { KeyCode.Tab, InputKeyCode.SelectNext },
         };
 
