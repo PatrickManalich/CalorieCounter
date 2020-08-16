@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CalorieCounter.Utilities;
+using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -25,7 +26,6 @@ namespace CalorieCounter.MealSources
         [SerializeField]
         private TMP_InputField _inputField = default;
 
-
         public void Show(Transform parentTransform, NamedMealSource oldNamedMealSource)
         {
             OldNamedMealSource = oldNamedMealSource;
@@ -48,12 +48,7 @@ namespace CalorieCounter.MealSources
 
         private void Awake()
         {
-            _inputField.onValidateInput = ValidateNonDecimalInput;
-        }
-
-        private static char ValidateNonDecimalInput(string text, int charIndex, char addedChar)
-        {
-            return char.IsLetterOrDigit(addedChar) || GlobalConsts.ValidSpecialChars.Contains(addedChar) ? addedChar : '\0';
+            _inputField.onValidateInput = InputUtilities.ValidateNonDecimalInput;
         }
     }
 }

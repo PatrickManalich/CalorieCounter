@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CalorieCounter.Utilities;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -61,14 +62,9 @@ namespace CalorieCounter.MealSources {
             for (int i = 0; i < _inputFields.Count; i++) {
                 if (i == 0 || i == 1 || i == 5)
                 {
-                    _inputFields[i].onValidateInput = ValidateNonDecimalInput;
+                    _inputFields[i].onValidateInput = InputUtilities.ValidateNonDecimalInput;
                 }
             }
-        }
-
-        private static char ValidateNonDecimalInput(string text, int charIndex, char addedChar)
-        {
-            return char.IsLetterOrDigit(addedChar) || GlobalConsts.ValidSpecialChars.Contains(addedChar) ? addedChar : '\0';
         }
     }
 }
