@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Placeholder: {fileID: 7483694594688795970}
   m_VerticalScrollbar: {fileID: 0}
   m_VerticalScrollbarEventHandler: {fileID: 0}
+  m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
   m_ContentType: 3
   m_InputType: 0

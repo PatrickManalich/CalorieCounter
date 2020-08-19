@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Template: {fileID: 7820443339835039693}
   m_CaptionText: {fileID: 1416269822198325651}
   m_CaptionImage: {fileID: 0}
+  m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 1416269821355494150}
   m_ItemImage: {fileID: 0}
   m_Value: 0
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+  m_AlphaFadeSpeed: 0.15
 --- !u!114 &-2587234470875415221
 MonoBehaviour:
   m_ObjectHideFlags: 0

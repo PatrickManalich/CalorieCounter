@@ -732,6 +732,26 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 7009641991965331237, guid: a2f9e774ec027af408cfe4db516ffdd6,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
     - target: {fileID: 7009641991965331290, guid: a2f9e774ec027af408cfe4db516ffdd6,
         type: 3}
       propertyPath: m_LocalPosition.x
