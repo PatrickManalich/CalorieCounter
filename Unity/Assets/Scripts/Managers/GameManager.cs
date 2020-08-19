@@ -22,6 +22,8 @@ namespace CalorieCounter.Managers {
 
         public static InputKeyManager InputKeyManager { get { return Instance._inputKeyManager; } }
 
+        public static BackgroundMusicManager BackgroundMusicManager { get { return Instance._backgroundMusicManager; } }
+
         [SerializeField]
         private CustomSceneManager _customSceneManager = default;
 
@@ -45,6 +47,9 @@ namespace CalorieCounter.Managers {
 
         [SerializeField]
         private InputKeyManager _inputKeyManager = default;
+
+        [SerializeField]
+        private BackgroundMusicManager _backgroundMusicManager = default;
 
         private void Awake() {
             if (Instance == null) {
