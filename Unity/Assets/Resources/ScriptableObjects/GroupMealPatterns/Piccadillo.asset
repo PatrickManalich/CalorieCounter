@@ -29,7 +29,7 @@ MonoBehaviour:
         _id: 60a634a6-e431-4cde-8a19-63c50747c4ee
     _priority: 0
   - _serializableMealProportion:
-      _servingAmount: 1
+      _servingAmount: 0.5
       _serializableMealSource:
         _id: 7a263155-8967-4521-aaf7-a6d3d8f2b404
     _priority: 0
