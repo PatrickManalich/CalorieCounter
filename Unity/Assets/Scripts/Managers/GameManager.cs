@@ -24,6 +24,8 @@ namespace CalorieCounter.Managers {
 
         public static BackgroundMusicManager BackgroundMusicManager { get { return Instance._backgroundMusicManager; } }
 
+        public static SoundEffectsManager SoundEffectsManager { get { return Instance._soundEffectsManager; } }
+
         [SerializeField]
         private CustomSceneManager _customSceneManager = default;
 
@@ -50,6 +52,9 @@ namespace CalorieCounter.Managers {
 
         [SerializeField]
         private BackgroundMusicManager _backgroundMusicManager = default;
+
+        [SerializeField]
+        private SoundEffectsManager _soundEffectsManager = default;
 
         private void Awake() {
             if (Instance == null) {
