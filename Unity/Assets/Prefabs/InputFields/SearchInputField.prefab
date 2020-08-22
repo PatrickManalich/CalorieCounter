@@ -62,6 +62,7 @@ GameObject:
   - component: {fileID: 8800622546013484729}
   - component: {fileID: 2842790306361148494}
   - component: {fileID: 2291674361980731499}
+  - component: {fileID: -1035046608157408249}
   m_Layer: 5
   m_Name: SearchInputField
   m_TagString: Untagged
@@ -224,6 +225,18 @@ MonoBehaviour:
   m_isRichTextEditingAllowed: 1
   m_LineLimit: 2
   m_InputValidator: {fileID: 0}
+--- !u!114 &-1035046608157408249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7322074218034899442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40a398add75ec94488b769ca780acfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &247271663000320161
 PrefabInstance:
   m_ObjectHideFlags: 0

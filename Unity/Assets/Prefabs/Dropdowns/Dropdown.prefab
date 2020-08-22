@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 7820443338061273047}
   - component: {fileID: 7820443338061273040}
   - component: {fileID: -2587234470875415221}
+  - component: {fileID: 4555248960170465749}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -237,6 +238,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 552c47f39fb4d224da31e8cc9510f2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4555248960170465749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7820443338061273042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40a398add75ec94488b769ca780acfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7820443338160109853
@@ -433,6 +446,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7820443339492536943}
   - component: {fileID: 7820443339492536942}
+  - component: {fileID: 4605274495987307837}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -509,6 +523,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &4605274495987307837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7820443339492536936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40a398add75ec94488b769ca780acfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7820443339588764062
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +933,17 @@ PrefabInstance:
     - target: {fileID: 9160411999982760480, guid: f50e7026ef049824a9bb453a46b6f3c8,
         type: 3}
       propertyPath: m_textAlignment
-      value: 513
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160411999982760480, guid: f50e7026ef049824a9bb453a46b6f3c8,
+        type: 3}
+      propertyPath: m_TextStyleHashCode
+      value: -1183493901
+      objectReference: {fileID: 0}
+    - target: {fileID: 9160411999982760480, guid: f50e7026ef049824a9bb453a46b6f3c8,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 9160411999982760482, guid: f50e7026ef049824a9bb453a46b6f3c8,
         type: 3}

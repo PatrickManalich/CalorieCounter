@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3860049965562576885}
   - component: {fileID: 4972781194582607123}
   - component: {fileID: -9140820546829940079}
+  - component: {fileID: -6078219297875115616}
   m_Layer: 5
   m_Name: RedRoundImageButton
   m_TagString: Untagged
@@ -131,6 +132,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 552c47f39fb4d224da31e8cc9510f2e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-6078219297875115616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117007414577160469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40a398add75ec94488b769ca780acfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &6619750477603065723
