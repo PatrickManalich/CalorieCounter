@@ -135,11 +135,16 @@ namespace CalorieCounter.MealEntries {
         }
 
         private void RefreshText(TextMeshProUGUI text, float total, float target) {
-            if (target == 0) {
+            if (target == 0)
+            {
                 text.color = _originalColor;
-            } else if(total < target) {
+            }
+            else if(total < target)
+            {
                 text.color = _belowTargetColor;
-            } else {
+            }
+            else
+            {
                 text.color = _aboveTargetColor;
             }
             text.text = total + " / " + target;
