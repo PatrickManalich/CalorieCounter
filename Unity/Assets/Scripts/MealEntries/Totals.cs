@@ -1,10 +1,14 @@
 ﻿using CalorieCounter.TargetEntries;
+using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 namespace CalorieCounter.MealEntries {
 
     public class Totals : MonoBehaviour {
+
+        public event EventHandler TargetAttained;
 
         [SerializeField]
         private TargetEntriesAdapter _targetEntriesAdapter = default;
@@ -40,6 +44,7 @@ namespace CalorieCounter.MealEntries {
 
         private TargetEntry _targetEntry;
         private Color _originalColor;
+        private Dictionary<TextMeshProUGUI, bool> _targetsAttainedDictionary = new Dictionary<TextMeshProUGUI, bool>();
 
         private void Start()
         {
@@ -62,6 +67,10 @@ namespace CalorieCounter.MealEntries {
                 }
             }
 
+            _targetsAttainedDictionary.Add(_fatTotalText, false);
+            _targetsAttainedDictionary.Add(_carbsTotalText, false);
+            _targetsAttainedDictionary.Add(_proteinTotalText, false);
+            _targetsAttainedDictionary.Add(_caloriesTotalText, false);
             RefreshTargetEntry();
         }
 
@@ -142,10 +151,19 @@ namespace CalorieCounter.MealEntries {
             else if(total < target)
             {
                 text.color = _belowTargetColor;
+                if (_targetsAttainedDictionary[text])
+                {
+                    _targetsAttainedDictionary[text] = false;
+                }
             }
             else
             {
                 text.color = _aboveTargetColor;
+                if (!_targetsAttainedDictionary[text])
+                {
+                    _targetsAttainedDictionary[text] = true;
+                    TargetAttained?.Invoke(this, EventArgs.Empty);
+                }
             }
             text.text = total + " / " + target;
         }
