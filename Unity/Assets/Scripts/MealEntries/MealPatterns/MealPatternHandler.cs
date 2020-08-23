@@ -18,7 +18,7 @@ namespace CalorieCounter.MealEntries.MealPatterns
         [SerializeField]
         private MealProportionsScrollViewDictionary _mealProportionsScrollViewDictionary = default;
 
-        private const int PrioritizedMealSuggestionLimit = 4;
+        private const int PrioritizedMealSuggestionLimit = 6;
 
         private Dictionary<MealSourceType, List<MealSuggestion>> _mealSuggestionsDictionary = new Dictionary<MealSourceType, List<MealSuggestion>>();
         private Dictionary<MealSourceType, List<MealSuggestion>> _removedMealSuggestionsDictionary = new Dictionary<MealSourceType, List<MealSuggestion>>();
