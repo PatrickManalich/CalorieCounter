@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7875099662431694377}
   - component: {fileID: 7875099662431694378}
   - component: {fileID: 7675327995297478019}
+  - component: {fileID: 520728417178360279}
   m_Layer: 5
   m_Name: VerticalScrollbar
   m_TagString: Untagged
@@ -135,6 +136,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c40a398add75ec94488b769ca780acfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &520728417178360279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7875099662431694372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 436c24d2bf7f7e1488c391a021d28783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7875099663003866789
