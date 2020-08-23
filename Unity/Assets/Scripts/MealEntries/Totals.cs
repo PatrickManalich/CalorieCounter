@@ -62,7 +62,7 @@ namespace CalorieCounter.MealEntries {
                 }
             }
 
-            Refresh();
+            RefreshTargetEntry();
         }
 
         private void OnDestroy()
@@ -76,7 +76,7 @@ namespace CalorieCounter.MealEntries {
 
         private void DayTypeDropdown_CurrentDayTypeChanged(object sender, System.EventArgs e)
         {
-            Refresh();
+            RefreshTargetEntry();
         }
 
         private void ScrollView_OnMealProportionModified(object sender, MealProportionsScrollView.MealProportionModifiedEventArgs e)
@@ -99,7 +99,7 @@ namespace CalorieCounter.MealEntries {
             }
         }
 
-        private void Refresh()
+        private void RefreshTargetEntry()
         {
             _targetEntry = _targetEntriesAdapter.GetLatestTargetEntry();
             RefreshTexts();
