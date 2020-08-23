@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 7395204509001593675}
   - component: {fileID: -2017018402429007501}
   - component: {fileID: -2638171453062940035}
+  - component: {fileID: 7670142930765302366}
   m_Layer: 5
   m_Name: DecimalInputField
   m_TagString: Untagged
@@ -247,6 +248,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c40a398add75ec94488b769ca780acfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7670142930765302366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7395204509001593673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1c470e562174504db692c559e0fceb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1800101450543698235
