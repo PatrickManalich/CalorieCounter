@@ -224,7 +224,7 @@ MonoBehaviour:
   m_ResetOnDeActivation: 1
   m_RestoreOriginalTextOnEscape: 1
   m_isRichTextEditingAllowed: 1
-  m_LineLimit: 2
+  m_LineLimit: 4
   m_InputValidator: {fileID: 0}
 --- !u!114 &-1035046608157408249
 MonoBehaviour:
