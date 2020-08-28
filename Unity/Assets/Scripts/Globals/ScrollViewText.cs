@@ -28,6 +28,7 @@ namespace CalorieCounter
         public void OnPointerEnter(PointerEventData eventData)
         {
             Highlighted?.Invoke(this, new HighlightedEventArgs(HighlightedType.Entered, transform.GetSiblingIndex()));
+            EventSystem.current.SetSelectedGameObject(null);
         }
 
         public void OnPointerExit(PointerEventData pointerEventData)
