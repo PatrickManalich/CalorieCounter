@@ -1,5 +1,17 @@
 Calorie Counter Release Notes
 
+Release 1.11.0 (8/27/2020)
+ -Fixes typo in meal source descriptions
+ -Updates to meal patterns
+ -Fix bug where meal proportions couldn't be submitted
+ -Fix bug with selecting search input field when accepting suggestions
+ -Add Google Keep button to meal entries
+ -Increase meal suggestion limit
+ -Play sound effects
+ -Update month button symbols
+ -Update cursor
+ -Add background music
+
 Release 1.10.0 (8/16/2020)
  -Fix visual bug in meal source rename field
  -Increase text limit on description input field
