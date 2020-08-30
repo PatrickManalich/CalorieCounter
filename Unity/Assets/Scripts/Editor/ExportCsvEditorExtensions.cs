@@ -88,8 +88,8 @@ namespace CalorieCounter.EditorExtensions
         }
 
         private static void WriteRecords<T>(IEnumerable<T> records, string fileName){
-            string csvFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.CsvDirectoryName, fileName));
-            string csvFilePathDirectory = Path.GetDirectoryName(csvFilePath);
+            var csvFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.CsvDirectoryName, fileName));
+            var csvFilePathDirectory = Path.GetDirectoryName(csvFilePath);
 
             if (!Directory.Exists(csvFilePathDirectory))
             {
