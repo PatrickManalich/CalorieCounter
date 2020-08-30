@@ -5,6 +5,7 @@ using CsvHelper;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -14,6 +15,7 @@ namespace CalorieCounter.EditorExtensions
     {
 
         private const string MenuItemDirectory = @"Calorie Counter/Export CSV/";
+        private const int ExportYear = 2019;
 
         [MenuItem(MenuItemDirectory + "Scale Entries")]
         public static void ExportCsvScaleEntries()
@@ -23,7 +25,7 @@ namespace CalorieCounter.EditorExtensions
 
             var scaleEntries = JsonConverter.ImportFile<SortedList<DateTime, ScaleEntry>>(GlobalPaths.JsonScaleEntriesFileName);
             var records = new List<ScaleEntryRecord>();
-            foreach (var scaleEntry in scaleEntries.Values)
+            foreach (var scaleEntry in scaleEntries.Values.Where(s => s.DateTime.Year == ExportYear))
             {
                 records.Add(new ScaleEntryRecord(scaleEntry));
             }
@@ -38,7 +40,7 @@ namespace CalorieCounter.EditorExtensions
 
             var targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName);
             var records = new List<TargetEntryRecord>();
-            foreach (var targetEntry in targetEntries.Values)
+            foreach (var targetEntry in targetEntries.Values.Where(t => t.DateTime.Year == ExportYear))
             {
                 records.Add(new TargetEntryRecord(targetEntry));
             }
@@ -54,7 +56,7 @@ namespace CalorieCounter.EditorExtensions
             var mealEntries = JsonConverter.ImportMealEntries();
             var targetEntries = JsonConverter.ImportFile<SortedList<DateTime, TargetEntry>>(GlobalPaths.JsonTargetEntriesFileName);
             var records = new List<ResultRecord>();
-            foreach (var mealEntry in mealEntries.Values)
+            foreach (var mealEntry in mealEntries.Values.Where(m => m.DateTime.Year == ExportYear))
             {
                 if (mealEntry.DayType != DayType.Rest && mealEntry.DayType != DayType.Training)
                     continue;
@@ -88,7 +90,7 @@ namespace CalorieCounter.EditorExtensions
         }
 
         private static void WriteRecords<T>(IEnumerable<T> records, string fileName){
-            var csvFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.CsvDirectoryName, fileName));
+            var csvFilePath = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), GlobalPaths.CsvDirectoryName, ExportYear.ToString(), fileName));
             var csvFilePathDirectory = Path.GetDirectoryName(csvFilePath);
 
             if (!Directory.Exists(csvFilePathDirectory))
