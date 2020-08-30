@@ -15,7 +15,7 @@ namespace CalorieCounter.EditorExtensions
     {
 
         private const string MenuItemDirectory = @"Calorie Counter/Export CSV/";
-        private const int ExportYear = 2019;
+        private const int ExportYear = 2020;
 
         [MenuItem(MenuItemDirectory + "Scale Entries")]
         public static void ExportCsvScaleEntries()
