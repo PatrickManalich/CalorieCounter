@@ -1,5 +1,8 @@
 Calorie Counter Release Notes
 
+Release 1.11.1 (2/13/2021)
+ -Create CSV and excel files
+
 Release 1.11.0 (8/27/2020)
  -Fixes typo in meal source descriptions
  -Updates to meal patterns
